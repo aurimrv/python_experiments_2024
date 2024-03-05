@@ -1,0 +1,379 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 20/04/2023 14:01:52</p><p>Total jobs: 19</p><p>Complete: 19 (100.00%)</p><p>Surviving mutants: 1 (5.26%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID 3d8cbdd447a74ca9bc3030df82c223df</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Sub, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" - str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py ....F                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_4 - TypeError: unsupported...
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID 13394c432822431e9984f7edbfe4689f</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mul, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" * str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py ....F                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_4 - TypeError: can't multi...
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID a180cd4fe5a94c7ea6687576d53da3ba</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Div, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" / str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py ....F                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_4 - TypeError: unsupported...
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID 853435eab59447e38172f3d5e689c053</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_FloorDiv, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" // str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py ....F                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_4 - TypeError: unsupported...
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID a976c0aa48604a01a3723b97c9600314</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mod, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" % str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py ....F                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_4 - TypeError: not all arg...
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID 1e8f3de6aa9243da86137f9d062750c2</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Pow, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" ** str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py ....F                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_4 - TypeError: unsupported...
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID 5fb55d508ac84d6ea86dcf628e2d597d</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_RShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" &gt;&gt; str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py ....F                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_4 - TypeError: unsupported...
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID ea2e7e2ad92743089139d1fafb9ea8b7</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_LShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" &lt;&lt; str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py ....F                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_4 - TypeError: unsupported...
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID 609d6f0930dd467ea068b486d88e7929</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" | str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py ....F                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_4 - TypeError: unsupported...
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID 2e68cf5a12de4ab0bb5308feab6744a6</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitAnd, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" &amp; str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py ....F                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_4 - TypeError: unsupported...
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID 3d3e90979cb6408c8d6c9d991214c518</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitXor, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" ^ str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py ....F                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_4 - TypeError: unsupported...
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID a7662563be924adc98b61b53f5835f73</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) != 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py .F.F.                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_1 - Exception: Stack is em...
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_3 - assert False is True
+========================= 2 failed, 3 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID 5c93b79dd928492585c9b85f0beece4a</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) &lt; 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py ...F.                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_3 - assert False is True
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_14_1"><button class="btn btn-outline-danger"><span class="job_id">14 : Job ID fc90a7ec6bf74f47a6e58c90a38fb38b</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) &lt;= 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py .....                                   [100%]
+
+============================== 5 passed in 0.02s ===============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_15_1"><button class="btn btn-outline-success"><span class="job_id">15 : Job ID a180943157cc496e8f9e637ea7710dd5</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) &gt; 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py .F.F.                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_1 - Exception: Stack is em...
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_3 - assert False is True
+========================= 2 failed, 3 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_16_1"><button class="btn btn-outline-success"><span class="job_id">16 : Job ID 520288490c1b44b083cf4ad0dec7e189</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) &gt;= 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py .F...                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_1 - Exception: Stack is em...
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_17_1"><button class="btn btn-outline-success"><span class="job_id">17 : Job ID 57df33d5b3964697a3518bdb087a1e9a</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (21, 11), end pos: (21, 25)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -18,7 +18,7 @@
+ 
+     def pop(self):
+         """Remove topmost element and return it. O(1) performance."""
+-        if self.isEmpty():
++        if not self.isEmpty():
+             raise Exception('Stack is empty.')
+         return self.stack.pop()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py .F...                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_1 - Exception: Stack is em...
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_18_1"><button class="btn btn-outline-success"><span class="job_id">18 : Job ID 96def563b080455486935fdbc74a468f</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 34), end pos: (13, 35)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) == 1
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py .F.F.                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_1 - Exception: Stack is em...
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_3 - assert False is True
+========================= 2 failed, 3 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_19"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_19_1" aria-expanded="false" aria-controls="job_list___sub_collapse_19_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_19_1"><button class="btn btn-outline-success"><span class="job_id">19 : Job ID 5e3f1d6caec64b849d95af69ef1254ed</span></button></div></a><div aria-labelledby="job_list___sub_heading_19_1" data-parent="#job_list___sub_accordion_19" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_19_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 34), end pos: (13, 35)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) == -1
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 5 items
+
+DYNAMOSA/test_stack2_DYNAMOSA.py ...F.                                   [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_stack2_DYNAMOSA.py::test_case_3 - assert False is True
+========================= 1 failed, 4 passed in 0.02s ==========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

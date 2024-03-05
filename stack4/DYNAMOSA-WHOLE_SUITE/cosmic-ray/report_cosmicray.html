@@ -1,0 +1,1788 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 20/04/2023 15:27:22</p><p>Total jobs: 72</p><p>Complete: 72 (100.00%)</p><p>Surviving mutants: 11 (15.28%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID 69cad33ee1574be48605209ddf432bb5</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Sub, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) - ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID 9d487ccb4c1248619becd8ef59fc031e</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Sub, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] - ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......FF....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID a58b18e44b334fa28d27e4dd2084835d</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mul, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) * ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+========================= 3 failed, 22 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID ec988998442440f2bfcef6d842d43d18</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mul, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] * ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......FF....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID 6ea51c8351954a2bb89d2fe6eb029e37</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Div, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) / ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID 38009241766642b7a960e16f25ed2232</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Div, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] / ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......FF....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID 1b0d8008d1604901bd65fb192887a5f9</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_FloorDiv, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) // ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID a63ae3c94c92421592a059cd3fed694b</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_FloorDiv, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] // ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......FF....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID d3386fd98aa34299a6b8fcc145dbe487</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mod, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) % ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID 9af239f8d125475bb7bd28a7b25cb867</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mod, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] % ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......FF....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID 86039c84e78f487db360bb5f2b001d57</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Pow, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) ** ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID dd151efe968344869bfb4df5b44daca7</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Pow, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] ** ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......FF....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID 203e1ba9cc534fcbb680a881ef22fee9</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_RShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) &gt;&gt; ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID 9cc1fba17afa462689e602fc6ed68743</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_RShift, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] &gt;&gt; ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......FF....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_15_1"><button class="btn btn-outline-success"><span class="job_id">15 : Job ID a27f656be3d04afa8bd0f7a8a677ac07</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_LShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) &lt;&lt; ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_16_1"><button class="btn btn-outline-success"><span class="job_id">16 : Job ID da1993fa4a824c7c83c4250ca5d8e8b4</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_LShift, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] &lt;&lt; ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......FF....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_17_1"><button class="btn btn-outline-success"><span class="job_id">17 : Job ID 24c249b2a1e24fa1a78393effec9d51b</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) | ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_18_1"><button class="btn btn-outline-success"><span class="job_id">18 : Job ID dd08b137c2454f8482eae85d6562fe0b</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitOr, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] | ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......FF....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_19"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_19_1" aria-expanded="false" aria-controls="job_list___sub_collapse_19_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_19_1"><button class="btn btn-outline-success"><span class="job_id">19 : Job ID 7746184bdba14e7eac87b1f9156d7272</span></button></div></a><div aria-labelledby="job_list___sub_heading_19_1" data-parent="#job_list___sub_accordion_19" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_19_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitAnd, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) &amp; ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_20"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_20_1" aria-expanded="false" aria-controls="job_list___sub_collapse_20_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_20_1"><button class="btn btn-outline-success"><span class="job_id">20 : Job ID 8045b8446d2d4c3d8d7c469789c79b80</span></button></div></a><div aria-labelledby="job_list___sub_heading_20_1" data-parent="#job_list___sub_accordion_20" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_20_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitAnd, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] &amp; ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......FF....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_21"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_21_1" aria-expanded="false" aria-controls="job_list___sub_collapse_21_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_21_1"><button class="btn btn-outline-success"><span class="job_id">21 : Job ID 50ed396f97ee4590a6538d7264a44d56</span></button></div></a><div aria-labelledby="job_list___sub_heading_21_1" data-parent="#job_list___sub_accordion_21" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_21_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitXor, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) ^ ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_22"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_22_1" aria-expanded="false" aria-controls="job_list___sub_collapse_22_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_22_1"><button class="btn btn-outline-success"><span class="job_id">22 : Job ID cca702eb79f346308f4d633cb68f4d0f</span></button></div></a><div aria-labelledby="job_list___sub_heading_22_1" data-parent="#job_list___sub_accordion_22" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_22_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitXor, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] ^ ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......FF....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_23"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_23_1" aria-expanded="false" aria-controls="job_list___sub_collapse_23_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_23_1"><button class="btn btn-outline-success"><span class="job_id">23 : Job ID a8585366b8c74461bb993c65511e9225</span></button></div></a><div aria-labelledby="job_list___sub_heading_23_1" data-parent="#job_list___sub_accordion_23" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_23_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if curr.data != val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ....F.........F.            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ..F......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - Assertion...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - Asserti...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_24"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_24_1" aria-expanded="false" aria-controls="job_list___sub_collapse_24_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_24_1"><button class="btn btn-outline-danger"><span class="job_id">24 : Job ID c39aefe0c0a647739a625c2420541325</span></button></div></a><div aria-labelledby="job_list___sub_heading_24_1" data-parent="#job_list___sub_accordion_24" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_24_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 45), end pos: (74, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data != val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ................            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+============================== 25 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_25"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_25_1" aria-expanded="false" aria-controls="job_list___sub_collapse_25_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_25_1"><button class="btn btn-outline-success"><span class="job_id">25 : Job ID ef3012c019644b0db474b001de962279</span></button></div></a><div aria-labelledby="job_list___sub_heading_25_1" data-parent="#job_list___sub_accordion_25" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_25_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if curr.data &lt; val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ....F......F.FF.            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .FF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - Assertion...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_26"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_26_1" aria-expanded="false" aria-controls="job_list___sub_collapse_26_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_26_1"><button class="btn btn-outline-success"><span class="job_id">26 : Job ID 45c83f6b3c7848aaa1a9c348aee864cf</span></button></div></a><div aria-labelledby="job_list___sub_heading_26_1" data-parent="#job_list___sub_accordion_26" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_26_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 45), end pos: (74, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data &lt; val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py .............F.F            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_15 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_27"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_27_1" aria-expanded="false" aria-controls="job_list___sub_collapse_27_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_27_1"><button class="btn btn-outline-success"><span class="job_id">27 : Job ID e42ecbc94b89414bbd399b9641f92b16</span></button></div></a><div aria-labelledby="job_list___sub_heading_27_1" data-parent="#job_list___sub_accordion_27" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_27_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if curr.data &lt;= val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ...........F.F..            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .FF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 4 failed, 21 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_28"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_28_1" aria-expanded="false" aria-controls="job_list___sub_collapse_28_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_28_1"><button class="btn btn-outline-success"><span class="job_id">28 : Job ID 87aba56a8d3442b499b13d200155ace9</span></button></div></a><div aria-labelledby="job_list___sub_heading_28_1" data-parent="#job_list___sub_accordion_28" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_28_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 45), end pos: (74, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data &lt;= val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py .............F.F            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_15 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_29"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_29_1" aria-expanded="false" aria-controls="job_list___sub_collapse_29_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_29_1"><button class="btn btn-outline-success"><span class="job_id">29 : Job ID e5af3f1fb92e417b91e55d0492da8bce</span></button></div></a><div aria-labelledby="job_list___sub_heading_29_1" data-parent="#job_list___sub_accordion_29" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_29_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if curr.data &gt; val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ....F......F.FF.            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .FF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - Assertion...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_30"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_30_1" aria-expanded="false" aria-controls="job_list___sub_collapse_30_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_30_1"><button class="btn btn-outline-success"><span class="job_id">30 : Job ID d937c18b30004501804009dd539c39d1</span></button></div></a><div aria-labelledby="job_list___sub_heading_30_1" data-parent="#job_list___sub_accordion_30" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_30_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 45), end pos: (74, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data &gt; val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py .............F.F            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_15 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_31"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_31_1" aria-expanded="false" aria-controls="job_list___sub_collapse_31_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_31_1"><button class="btn btn-outline-success"><span class="job_id">31 : Job ID 31abf8b4eefd49498f642a4a7f29d0a8</span></button></div></a><div aria-labelledby="job_list___sub_heading_31_1" data-parent="#job_list___sub_accordion_31" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_31_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if curr.data &gt;= val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ...........F.F..            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .FF......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeErr...
+========================= 4 failed, 21 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_32"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_32_1" aria-expanded="false" aria-controls="job_list___sub_collapse_32_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_32_1"><button class="btn btn-outline-success"><span class="job_id">32 : Job ID 31d3c6e1a43e4afe9466340bf128a6f4</span></button></div></a><div aria-labelledby="job_list___sub_heading_32_1" data-parent="#job_list___sub_accordion_32" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_32_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 45), end pos: (74, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data &gt;= val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py .............F.F            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_15 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_33"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_33_1" aria-expanded="false" aria-controls="job_list___sub_collapse_33_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_33_1"><button class="btn btn-outline-danger"><span class="job_id">33 : Job ID 4248ea7ec08645039fc4ca81f9229b56</span></button></div></a><div aria-labelledby="job_list___sub_heading_33_1" data-parent="#job_list___sub_accordion_33" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_33_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if curr.data is val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ................            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+============================== 25 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_34"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_34_1" aria-expanded="false" aria-controls="job_list___sub_collapse_34_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_34_1"><button class="btn btn-outline-danger"><span class="job_id">34 : Job ID 86d09bfbc40b4e7399a7f2d859978bdf</span></button></div></a><div aria-labelledby="job_list___sub_heading_34_1" data-parent="#job_list___sub_accordion_34" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_34_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 45), end pos: (74, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data is val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ................            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+============================== 25 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_35"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_35_1" aria-expanded="false" aria-controls="job_list___sub_collapse_35_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_35_1"><button class="btn btn-outline-success"><span class="job_id">35 : Job ID ece66e5883f5474681d0107c69b3baad</span></button></div></a><div aria-labelledby="job_list___sub_heading_35_1" data-parent="#job_list___sub_accordion_35" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_35_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if curr.data is not val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ....F.........F.            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ..F......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - Assertion...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - Asserti...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_36"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_36_1" aria-expanded="false" aria-controls="job_list___sub_collapse_36_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_36_1"><button class="btn btn-outline-danger"><span class="job_id">36 : Job ID 17564f4af7df4599a64928db7bec361a</span></button></div></a><div aria-labelledby="job_list___sub_heading_36_1" data-parent="#job_list___sub_accordion_36" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_36_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 45), end pos: (74, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data is not val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ................            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+============================== 25 passed in 0.04s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_37"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_37_1" aria-expanded="false" aria-controls="job_list___sub_collapse_37_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_37_1"><button class="btn btn-outline-danger"><span class="job_id">37 : Job ID f700ae8f5dad48668aa903428bc696df</span></button></div></a><div aria-labelledby="job_list___sub_heading_37_1" data-parent="#job_list___sub_accordion_37" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_37_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 24), end pos: (70, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_Eq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val == self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ................            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+============================== 25 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_38"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_38_1" aria-expanded="false" aria-controls="job_list___sub_collapse_38_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_38_1"><button class="btn btn-outline-success"><span class="job_id">38 : Job ID aa63a220024c4ad3be6a74e5cf077259</span></button></div></a><div aria-labelledby="job_list___sub_heading_38_1" data-parent="#job_list___sub_accordion_38" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_38_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 24), end pos: (70, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val != self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ..............F.            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - assert &lt;s...
+========================= 1 failed, 24 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_39"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_39_1" aria-expanded="false" aria-controls="job_list___sub_collapse_39_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_39_1"><button class="btn btn-outline-success"><span class="job_id">39 : Job ID 8162260cc9124d9ebc5ee70df5aac151</span></button></div></a><div aria-labelledby="job_list___sub_heading_39_1" data-parent="#job_list___sub_accordion_39" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_39_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 24), end pos: (70, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val &lt; self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ..........FF.FFF            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_10 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - assert &lt;s...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_15 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_40"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_40_1" aria-expanded="false" aria-controls="job_list___sub_collapse_40_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_40_1"><button class="btn btn-outline-success"><span class="job_id">40 : Job ID 773e9be2f35d469db6ad62740b238e58</span></button></div></a><div aria-labelledby="job_list___sub_heading_40_1" data-parent="#job_list___sub_accordion_40" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_40_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 24), end pos: (70, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val &lt;= self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ..........FF.F.F            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_10 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_15 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+========================= 5 failed, 20 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_41"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_41_1" aria-expanded="false" aria-controls="job_list___sub_collapse_41_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_41_1"><button class="btn btn-outline-success"><span class="job_id">41 : Job ID 16e7f50f3bb742a59c6281890c5bd62d</span></button></div></a><div aria-labelledby="job_list___sub_heading_41_1" data-parent="#job_list___sub_accordion_41" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_41_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 24), end pos: (70, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val &gt; self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ..........FF.FFF            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_10 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - assert &lt;s...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_15 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_42"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_42_1" aria-expanded="false" aria-controls="job_list___sub_collapse_42_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_42_1"><button class="btn btn-outline-success"><span class="job_id">42 : Job ID 43068637da4643de93c1e4343f9ca5e1</span></button></div></a><div aria-labelledby="job_list___sub_heading_42_1" data-parent="#job_list___sub_accordion_42" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_42_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 24), end pos: (70, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val &gt;= self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ..........FF.F.F            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_10 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_15 - TypeError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeErr...
+========================= 5 failed, 20 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_43"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_43_1" aria-expanded="false" aria-controls="job_list___sub_collapse_43_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_43_1"><button class="btn btn-outline-success"><span class="job_id">43 : Job ID b391a00face54010846efda309dc4d2b</span></button></div></a><div aria-labelledby="job_list___sub_heading_43_1" data-parent="#job_list___sub_accordion_43" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_43_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 24), end pos: (70, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val is not self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ..............F.            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - assert &lt;s...
+========================= 1 failed, 24 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_44"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_44_1" aria-expanded="false" aria-controls="job_list___sub_collapse_44_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_44_1"><button class="btn btn-outline-success"><span class="job_id">44 : Job ID 1d7e83a244774b4fa56ddd6eacaae4a5</span></button></div></a><div aria-labelledby="job_list___sub_heading_44_1" data-parent="#job_list___sub_accordion_44" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_44_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 24), end pos: (86, 25)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_USub_UAdd, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:+2] + ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......FF....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F.F......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - Assertion...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - Asserti...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - Asserti...
+========================= 5 failed, 20 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_45"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_45_1" aria-expanded="false" aria-controls="job_list___sub_collapse_45_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_45_1"><button class="btn btn-outline-success"><span class="job_id">45 : Job ID 2b450bdc42484cc5bb2cd710b468bb74</span></button></div></a><div aria-labelledby="job_list___sub_heading_45_1" data-parent="#job_list___sub_accordion_45" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_45_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 24), end pos: (86, 25)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_USub_Invert, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:~2] + ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - Assertion...
+========================= 2 failed, 23 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_46"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_46_1" aria-expanded="false" aria-controls="job_list___sub_collapse_46_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_46_1"><button class="btn btn-outline-success"><span class="job_id">46 : Job ID e17b455b7a304a1092b8f13772f28011</span></button></div></a><div aria-labelledby="job_list___sub_heading_46_1" data-parent="#job_list___sub_accordion_46" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_46_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 24), end pos: (86, 25)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_USub_Not, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:not 2] + ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - Assertion...
+========================= 2 failed, 23 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_47"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_47_1" aria-expanded="false" aria-controls="job_list___sub_collapse_47_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_47_1"><button class="btn btn-outline-success"><span class="job_id">47 : Job ID 174b66199935416b82d990c28c7c089b</span></button></div></a><div aria-labelledby="job_list___sub_heading_47_1" data-parent="#job_list___sub_accordion_47" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_47_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 24), end pos: (86, 25)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_Delete_USub, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:2] + ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......FF....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F.F......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - Assertion...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - Asserti...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - Asserti...
+========================= 5 failed, 20 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_48"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_48_1" aria-expanded="false" aria-controls="job_list___sub_collapse_48_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_48_1"><button class="btn btn-outline-success"><span class="job_id">48 : Job ID 1a0c42aa071646b994d862d6c3239b15</span></button></div></a><div aria-labelledby="job_list___sub_heading_48_1" data-parent="#job_list___sub_accordion_48" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_48_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (48, 11), end pos: (48, 14)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_Delete_Not, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -45,7 +45,7 @@
+ 
+     def pop(self):
+         """Remove the first value and return it."""
+-        if not self.head:
++        if  self.head:
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ..F.............            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ...FF.F..                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2 - IndexError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_3 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_4 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_6 - IndexEr...
+========================= 4 failed, 21 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_49"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_49_1" aria-expanded="false" aria-controls="job_list___sub_collapse_49_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_49_1"><button class="btn btn-outline-success"><span class="job_id">49 : Job ID 5592fdef08d44e0fb63bb8913423f097</span></button></div></a><div aria-labelledby="job_list___sub_heading_49_1" data-parent="#job_list___sub_accordion_49" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_49_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=37" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (37, 15), end pos: (37, 19)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -34,7 +34,7 @@
+             for val in data:
+                 self.push(val)
+         except TypeError:
+-            if data:
++            if not data:
+                 self.push(data)
+ 
+     def push(self, val):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py FFF.FFFF..FF.FFF            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFFFFFF..                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0 - assert &lt;st...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_1 - assert &lt;st...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2 - assert &lt;st...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4 - assert &lt;st...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_5 - assert &lt;st...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - assert &lt;st...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_10 - Assertion...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - assert &lt;s...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - assert &lt;s...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - Assertion...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_15 - assert &lt;s...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_3 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_4 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_5 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_6 - IndexEr...
+========================= 19 failed, 6 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_50"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_50_1" aria-expanded="false" aria-controls="job_list___sub_collapse_50_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_50_1"><button class="btn btn-outline-success"><span class="job_id">50 : Job ID e6c1be9cbd58436499561fe6f3b52a88</span></button></div></a><div aria-labelledby="job_list___sub_heading_50_1" data-parent="#job_list___sub_accordion_50" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_50_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (48, 11), end pos: (48, 24)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -45,7 +45,7 @@
+ 
+     def pop(self):
+         """Remove the first value and return it."""
+-        if not self.head:
++        if not not self.head:
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ..F.............            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ...FF.F..                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2 - IndexError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_3 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_4 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_6 - IndexEr...
+========================= 4 failed, 21 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_51"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_51_1" aria-expanded="false" aria-controls="job_list___sub_collapse_51_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_51_1"><button class="btn btn-outline-success"><span class="job_id">51 : Job ID ebec1c19db84498e981a006b9257b51b</span></button></div></a><div aria-labelledby="job_list___sub_heading_51_1" data-parent="#job_list___sub_accordion_51" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_51_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=62" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (62, 14), end pos: (62, 18)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -59,7 +59,7 @@
+     def search(self, val):
+         """Return the node containing val."""
+         curr = self.head
+-        while curr:
++        while not curr:
+             if curr.data == val:
+                 return curr
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ....F......F..F.            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F.F......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - Assertion...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - Asserti...
+========================= 5 failed, 20 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_52"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_52_1" aria-expanded="false" aria-controls="job_list___sub_collapse_52_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_52_1"><button class="btn btn-outline-success"><span class="job_id">52 : Job ID 85c2f98fd3f74896838af5663bef38c5</span></button></div></a><div aria-labelledby="job_list___sub_heading_52_1" data-parent="#job_list___sub_accordion_52" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_52_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 15), end pos: (63, 31)</button></a></pre><pre>operator: core/AddNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if not curr.data == val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ....F.........F.            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ..F......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - Assertion...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - Asserti...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_53"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_53_1" aria-expanded="false" aria-controls="job_list___sub_collapse_53_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_53_1"><button class="btn btn-outline-success"><span class="job_id">53 : Job ID 2811417d355748029d7159a0eb7a31c3</span></button></div></a><div aria-labelledby="job_list___sub_heading_53_1" data-parent="#job_list___sub_accordion_53" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_53_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 11), end pos: (70, 41)</button></a></pre><pre>operator: core/AddNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if not curr and val is self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ..F..F.....F..F.            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_5 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - assert &lt;s...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - Attribu...
+========================= 5 failed, 20 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_54"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_54_1" aria-expanded="false" aria-controls="job_list___sub_collapse_54_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_54_1"><button class="btn btn-outline-success"><span class="job_id">54 : Job ID 7d70a6cdbfae4fce88d01e5e24b743c7</span></button></div></a><div aria-labelledby="job_list___sub_heading_54_1" data-parent="#job_list___sub_accordion_54" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_54_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=73" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (73, 14), end pos: (73, 18)</button></a></pre><pre>operator: core/AddNot, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -70,7 +70,7 @@
+         if curr and val is self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+-        while curr:
++        while not curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+                 self._length -= 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ..F..F.....F....            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_5 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - Attribu...
+========================= 4 failed, 21 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_55"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_55_1" aria-expanded="false" aria-controls="job_list___sub_collapse_55_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_55_1"><button class="btn btn-outline-success"><span class="job_id">55 : Job ID cea97911da4d4a5eab91335f4cfb7095</span></button></div></a><div aria-labelledby="job_list___sub_heading_55_1" data-parent="#job_list___sub_accordion_55" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_55_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 15), end pos: (74, 52)</button></a></pre><pre>operator: core/AddNot, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if not (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ..........FF.FFF            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F....F...                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_10 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_15 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_5 - Attribu...
+========================= 7 failed, 18 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_56"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_56_1" aria-expanded="false" aria-controls="job_list___sub_collapse_56_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_56_1"><button class="btn btn-outline-success"><span class="job_id">56 : Job ID 74e71246704c4ae18c30d49be69f3048</span></button></div></a><div aria-labelledby="job_list___sub_heading_56_1" data-parent="#job_list___sub_accordion_56" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_56_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=83" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (83, 14), end pos: (83, 18)</button></a></pre><pre>operator: core/AddNot, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -80,7 +80,7 @@
+         """Display list as a tuple."""
+         curr = self.head
+         display = '('
+-        while curr:
++        while not curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+         return display[:-2] + ')'</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......FF....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F.F......                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - Assertion...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - Attribu...
+========================= 5 failed, 20 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_57"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_57_1" aria-expanded="false" aria-controls="job_list___sub_collapse_57_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_57_1"><button class="btn btn-outline-success"><span class="job_id">57 : Job ID e1afd97e205f4863808d46333ee755d8</span></button></div></a><div aria-labelledby="job_list___sub_heading_57_1" data-parent="#job_list___sub_accordion_57" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_57_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 16), end pos: (70, 19)</button></a></pre><pre>operator: core/ReplaceAndWithOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr or val is self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ..F..F.....F...F            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_5 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_15 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - Attribu...
+========================= 5 failed, 20 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_58"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_58_1" aria-expanded="false" aria-controls="job_list___sub_collapse_58_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_58_1"><button class="btn btn-outline-success"><span class="job_id">58 : Job ID f0f1ead986314d7a992f774e3ba7483f</span></button></div></a><div aria-labelledby="job_list___sub_heading_58_1" data-parent="#job_list___sub_accordion_58" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_58_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 26), end pos: (74, 29)</button></a></pre><pre>operator: core/ReplaceAndWithOr, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next or curr.next.data == val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ..........FF.FFF            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .....F...                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_10 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_15 - Attribute...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_5 - Attribu...
+========================= 6 failed, 19 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_59"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_59_1" aria-expanded="false" aria-controls="job_list___sub_collapse_59_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_59_1"><button class="btn btn-outline-success"><span class="job_id">59 : Job ID dbf9acee577043198bf901335bc6d302</span></button></div></a><div aria-labelledby="job_list___sub_heading_59_1" data-parent="#job_list___sub_accordion_59" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_59_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=36" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (36, 15), end pos: (36, 24)</button></a></pre><pre>operator: core/ExceptionReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -33,7 +33,7 @@
+         try:
+             for val in data:
+                 self.push(val)
+-        except TypeError:
++        except CosmicRayTestingException:
+             if data:
+                 self.push(data)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py FFFFFFFFFFFF.FFF            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFFFFFFFF                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0 - NameError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_1 - NameError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2 - NameError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_3 - NameError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4 - NameError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_5 - NameError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - NameError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_7 - NameError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_8 - NameError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_9 - NameError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_10 - NameError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_11 - NameError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_13 - NameError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - NameError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_15 - NameError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - NameErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - NameErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - NameErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_3 - NameErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_4 - NameErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_5 - NameErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_6 - NameErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_7 - NameErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_8 - NameErr...
+========================= 24 failed, 1 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_60"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_60_1" aria-expanded="false" aria-controls="job_list___sub_collapse_60_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_60_1"><button class="btn btn-outline-success"><span class="job_id">60 : Job ID c595cbfc0f12454fb9bfca6ee6167dc4</span></button></div></a><div aria-labelledby="job_list___sub_heading_60_1" data-parent="#job_list___sub_accordion_60" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_60_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=31" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (31, 23), end pos: (31, 24)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -28,7 +28,7 @@
+ 
+     def __init__(self, data=None):
+         """Linked list initialized with head."""
+-        self._length = 0
++        self._length = 1
+         self.head = None
+         try:
+             for val in data:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py .....F......F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ...F.....                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_5 - assert 1 == 0
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - assert 4 ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_3 - assert ...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_61"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_61_1" aria-expanded="false" aria-controls="job_list___sub_collapse_61_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_61_1"><button class="btn btn-outline-success"><span class="job_id">61 : Job ID 726a004e36924d5cbb3e43e78267a414</span></button></div></a><div aria-labelledby="job_list___sub_heading_61_1" data-parent="#job_list___sub_accordion_61" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_61_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=31" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (31, 23), end pos: (31, 24)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -28,7 +28,7 @@
+ 
+     def __init__(self, data=None):
+         """Linked list initialized with head."""
+-        self._length = 0
++        self._length = -1
+         self.head = None
+         try:
+             for val in data:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py .....F......F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ...F.....                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_5 - assert -1 ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - assert 2 ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_3 - assert ...
+========================= 3 failed, 22 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_62"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_62_1" aria-expanded="false" aria-controls="job_list___sub_collapse_62_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_62_1"><button class="btn btn-outline-success"><span class="job_id">62 : Job ID c9698f273265472384f8e7681df69468</span></button></div></a><div aria-labelledby="job_list___sub_heading_62_1" data-parent="#job_list___sub_accordion_62" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_62_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (44, 24), end pos: (44, 25)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -41,7 +41,7 @@
+         """Insert a value at the head of the list."""
+         old_head = self.head
+         self.head = Node(val, old_head)
+-        self._length += 1
++        self._length += 2
+ 
+     def pop(self):
+         """Remove the first value and return it."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ............F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - assert 6 ...
+========================= 1 failed, 24 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_63"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_63_1" aria-expanded="false" aria-controls="job_list___sub_collapse_63_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_63_1"><button class="btn btn-outline-success"><span class="job_id">63 : Job ID 3281907aa1ab4d9d8aa52b0e27646c68</span></button></div></a><div aria-labelledby="job_list___sub_heading_63_1" data-parent="#job_list___sub_accordion_63" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_63_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (44, 24), end pos: (44, 25)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -41,7 +41,7 @@
+         """Insert a value at the head of the list."""
+         old_head = self.head
+         self.head = Node(val, old_head)
+-        self._length += 1
++        self._length += 0
+ 
+     def pop(self):
+         """Remove the first value and return it."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ............F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - assert 0 ...
+========================= 1 failed, 24 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_64"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_64_1" aria-expanded="false" aria-controls="job_list___sub_collapse_64_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_64_1"><button class="btn btn-outline-danger"><span class="job_id">64 : Job ID c8d3aa3b874c4dd19bb46696cb75d1d5</span></button></div></a><div aria-labelledby="job_list___sub_heading_64_1" data-parent="#job_list___sub_accordion_64" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_64_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=52" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (52, 24), end pos: (52, 25)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -49,7 +49,7 @@
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next
+-        self._length -= 1
++        self._length -= 2
+         return to_return.data
+ 
+     def size(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ................            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+============================== 25 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_65"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_65_1" aria-expanded="false" aria-controls="job_list___sub_collapse_65_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_65_1"><button class="btn btn-outline-danger"><span class="job_id">65 : Job ID 048dcaeaafbc493bb5fa30d7dc081d05</span></button></div></a><div aria-labelledby="job_list___sub_heading_65_1" data-parent="#job_list___sub_accordion_65" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_65_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=52" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (52, 24), end pos: (52, 25)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -49,7 +49,7 @@
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next
+-        self._length -= 1
++        self._length -= 0
+         return to_return.data
+ 
+     def size(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ................            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+============================== 25 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_66"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_66_1" aria-expanded="false" aria-controls="job_list___sub_collapse_66_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_66_1"><button class="btn btn-outline-danger"><span class="job_id">66 : Job ID 85ec8f337b654d0eac3a98f6b46efcbd</span></button></div></a><div aria-labelledby="job_list___sub_heading_66_1" data-parent="#job_list___sub_accordion_66" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_66_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=72" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (72, 28), end pos: (72, 29)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -69,7 +69,7 @@
+         curr = self.head
+         if curr and val is self.head.data:
+             self.head = self.head.next
+-            self._length -= 1
++            self._length -= 2
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ................            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+============================== 25 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_67"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_67_1" aria-expanded="false" aria-controls="job_list___sub_collapse_67_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_67_1"><button class="btn btn-outline-danger"><span class="job_id">67 : Job ID ca3a1ba955ea4026a95970cdd64b772b</span></button></div></a><div aria-labelledby="job_list___sub_heading_67_1" data-parent="#job_list___sub_accordion_67" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_67_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=72" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (72, 28), end pos: (72, 29)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -69,7 +69,7 @@
+         curr = self.head
+         if curr and val is self.head.data:
+             self.head = self.head.next
+-            self._length -= 1
++            self._length -= 0
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ................            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+============================== 25 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_68"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_68_1" aria-expanded="false" aria-controls="job_list___sub_collapse_68_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_68_1"><button class="btn btn-outline-danger"><span class="job_id">68 : Job ID adb7de43ceeb4135820cedfab6b44fb4</span></button></div></a><div aria-labelledby="job_list___sub_heading_68_1" data-parent="#job_list___sub_accordion_68" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_68_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=76" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (76, 32), end pos: (76, 33)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 8</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -73,7 +73,7 @@
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+-                self._length -= 1
++                self._length -= 2
+             curr = curr.next
+ 
+     def display(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ................            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+============================== 25 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_69"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_69_1" aria-expanded="false" aria-controls="job_list___sub_collapse_69_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_69_1"><button class="btn btn-outline-danger"><span class="job_id">69 : Job ID d5b2f857eb3043758fa7bc92db2417ac</span></button></div></a><div aria-labelledby="job_list___sub_heading_69_1" data-parent="#job_list___sub_accordion_69" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_69_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=76" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (76, 32), end pos: (76, 33)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 9</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -73,7 +73,7 @@
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+-                self._length -= 1
++                self._length -= 0
+             curr = curr.next
+ 
+     def display(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ................            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+============================== 25 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_70"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_70_1" aria-expanded="false" aria-controls="job_list___sub_collapse_70_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_70_1"><button class="btn btn-outline-success"><span class="job_id">70 : Job ID 63290e5c013b41beb431e8127e5adc27</span></button></div></a><div aria-labelledby="job_list___sub_heading_70_1" data-parent="#job_list___sub_accordion_70" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_70_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 25), end pos: (86, 26)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 10</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:- 3] + ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - Assertion...
+========================= 2 failed, 23 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_71"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_71_1" aria-expanded="false" aria-controls="job_list___sub_collapse_71_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_71_1"><button class="btn btn-outline-success"><span class="job_id">71 : Job ID 77ab75e596d24cc6b31c02db0265facc</span></button></div></a><div aria-labelledby="job_list___sub_heading_71_1" data-parent="#job_list___sub_accordion_71" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_71_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 25), end pos: (86, 26)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 11</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:- 1] + ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ......F.....F...            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - Assertion...
+========================= 2 failed, 23 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_72"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_72_1" aria-expanded="false" aria-controls="job_list___sub_collapse_72_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_72_1"><button class="btn btn-outline-success"><span class="job_id">72 : Job ID 899ee734b0ae4bf8b3eecfc6216462b6</span></button></div></a><div aria-labelledby="job_list___sub_heading_72_1" data-parent="#job_list___sub_accordion_72" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_72_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=34" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (34, 23), end pos: (34, 27)</button></a></pre><pre>operator: core/ZeroIterationForLoop, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -31,7 +31,7 @@
+         self._length = 0
+         self.head = None
+         try:
+-            for val in data:
++            for val in []:
+                 self.push(val)
+         except TypeError:
+             if data:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 25 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py ..F...F...F.F.F.            [ 64%]
+DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ..F..FF..                [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_10 - Assertion...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12 - Assertion...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14 - Assertion...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - Asserti...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_5 - Asserti...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_6 - IndexEr...
+========================= 8 failed, 17 passed in 0.05s =========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

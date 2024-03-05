@@ -1,0 +1,143 @@
+<html><body><h1>linkedList5.py</h1>Killed 41 out of 54 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 36</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -63,7 +63,7 @@
+         curr_node = self.head.next
+         while curr_node is not None:
+             if curr_node.data == data:
+-                prev_node.next = curr_node.next
++                prev_node.next = None
+                 return
+             prev_node = curr_node
+             curr_node = curr_node.next
+</pre><h3>Mutant 37</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -65,7 +65,7 @@
+             if curr_node.data == data:
+                 prev_node.next = curr_node.next
+                 return
+-            prev_node = curr_node
++            prev_node = None
+             curr_node = curr_node.next
+ 
+     def delete_alt(self, data):
+</pre><h3>Mutant 38</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -66,7 +66,7 @@
+                 prev_node.next = curr_node.next
+                 return
+             prev_node = curr_node
+-            curr_node = curr_node.next
++            curr_node = None
+ 
+     def delete_alt(self, data):
+         if data is None:
+</pre><h3>Mutant 43</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -75,7 +75,7 @@
+             return
+         curr_node = self.head
+         if curr_node.data == data:
+-            curr_node = curr_node.next
++            curr_node = None
+             return
+         while curr_node.next is not None:
+             if curr_node.next.data == data:
+</pre><h3>Mutant 46</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -79,7 +79,7 @@
+             return
+         while curr_node.next is not None:
+             if curr_node.next.data == data:
+-                curr_node.next = curr_node.next.next
++                curr_node.next = None
+                 return
+             curr_node = curr_node.next
+ 
+</pre><h3>Mutant 48</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -84,7 +84,7 @@
+             curr_node = curr_node.next
+ 
+     def print_list(self):
+-        curr_node = self.head
++        curr_node = None
+         while curr_node is not None:
+             print(curr_node.data)
+             curr_node = curr_node.next
+</pre><h3>Mutant 50</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -87,7 +87,7 @@
+         curr_node = self.head
+         while curr_node is not None:
+             print(curr_node.data)
+-            curr_node = curr_node.next
++            curr_node = None
+ 
+     def get_all_data(self):
+         data = []
+</pre><h3>Mutant 52</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -91,7 +91,7 @@
+ 
+     def get_all_data(self):
+         data = []
+-        curr_node = self.head
++        curr_node = None
+         while curr_node is not None:
+             data.append(curr_node.data)
+             curr_node = curr_node.next
+</pre><h3>Mutant 54</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -94,6 +94,6 @@
+         curr_node = self.head
+         while curr_node is not None:
+             data.append(curr_node.data)
+-            curr_node = curr_node.next
++            curr_node = None
+         return data
+ 
+</pre><h2>Suspicious</h2>Mutants that made the test suite take longer, but otherwise seemed ok<h3>Mutant 4</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -14,7 +14,7 @@
+         self.head = head
+ 
+     def __len__(self):
+-        curr = self.head
++        curr = None
+         counter = 0
+         while curr is not None:
+             counter += 1
+</pre><h3>Mutant 5</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -15,7 +15,7 @@
+ 
+     def __len__(self):
+         curr = self.head
+-        counter = 0
++        counter = 1
+         while curr is not None:
+             counter += 1
+             curr = curr.next
+</pre><h3>Mutant 6</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -15,7 +15,7 @@
+ 
+     def __len__(self):
+         curr = self.head
+-        counter = 0
++        counter = None
+         while curr is not None:
+             counter += 1
+             curr = curr.next
+</pre><h3>Mutant 7</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -16,7 +16,7 @@
+     def __len__(self):
+         curr = self.head
+         counter = 0
+-        while curr is not None:
++        while curr is  None:
+             counter += 1
+             curr = curr.next
+         return counter
+</pre></body></html>

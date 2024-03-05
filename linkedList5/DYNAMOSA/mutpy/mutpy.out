@@ -1,0 +1,4213 @@
+[34m[*][0m Start mutation process:
+[36m   -[0m targets: linkedList5.py
+[36m   -[0m tests: ./DYNAMOSA
+[34m[*][0m 36 tests passed:
+[36m   -[0m test_linkedList5_DYNAMOSA [0.30251 s]
+[34m[*][0m Start mutants generation and execution:
+[36m   -[0m [#   1] ASR linkedList5: 
+--------------------------------------------------------------------------------
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+[34m- 20:             counter += 1[0m
+[32m+ 20:             counter -= 1[0m
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+--------------------------------------------------------------------------------
+[0.19525 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       ValueError: __len__() should return >= 0
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:11: ValueError
+[36m   -[0m [#   2] CDI linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+[34m-  3:     def __init__(self, data, next=None):[0m
+[34m-  4:         self.next = next[0m
+[34m-  5:         self.data = data[0m
+[34m-  6:     [0m
+[32m+  3:     @classmethod[0m
+[32m+  4:     def __init__(self, data, next=None):[0m
+[32m+  5:         self.next = next[0m
+[32m+  6:         self.data = data[0m
+   7:     def __str__(self):
+   8:         return self.data
+   9: 
+  10: 
+--------------------------------------------------------------------------------
+[5.00793 s] [33mtimeout[0m
+[36m   -[0m [#   3] CDI linkedList5: 
+--------------------------------------------------------------------------------
+   3:     def __init__(self, data, next=None):
+   4:         self.next = next
+   5:         self.data = data
+   6:     
+[34m-  7:     def __str__(self):[0m
+[34m-  8:         return self.data[0m
+[34m-  9: [0m
+[32m+  7:     @classmethod[0m
+[32m+  8:     def __str__(self):[0m
+[32m+  9:         return self.data[0m
+  10: 
+  11: class LinkedList(object):
+  12:     
+  13:     def __init__(self, head=None):
+--------------------------------------------------------------------------------
+[0.20791 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_13
+
+def test_case_13():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+>       var_0 = node_0.__str__()
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.Node'>
+
+>   ???
+E   AttributeError: type object 'Node' has no attribute 'data'
+
+linkedList5:9: AttributeError
+[36m   -[0m [#   4] CDI linkedList5: 
+--------------------------------------------------------------------------------
+   9: 
+  10: 
+  11: class LinkedList(object):
+  12:     
+[34m- 13:     def __init__(self, head=None):[0m
+[34m- 14:         self.head = head[0m
+[34m- 15:     [0m
+[32m+ 13:     @classmethod[0m
+[32m+ 14:     def __init__(self, head=None):[0m
+[32m+ 15:         self.head = head[0m
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+--------------------------------------------------------------------------------
+[0.19916 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.delete_alt(linked_list_0)
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        linked_list_1 = module_0.LinkedList(linked_list_0)
+>       assert len(linked_list_1.head) == 0
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c80a1d0>
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute 'next'
+
+linkedList5:21: AttributeError
+[36m   -[0m [#   5] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  12:     
+  13:     def __init__(self, head=None):
+  14:         self.head = head
+  15:     
+[34m- 16:     def __len__(self):[0m
+[34m- 17:         curr = self.head[0m
+[34m- 18:         counter = 0[0m
+[34m- 19:         while curr is not None:[0m
+[34m- 20:             counter += 1[0m
+[34m- 21:             curr = curr.next[0m
+[34m- 22:         return counter[0m
+[34m- 23:     [0m
+[32m+ 16:     @classmethod[0m
+[32m+ 17:     def __len__(self):[0m
+[32m+ 18:         curr = self.head[0m
+[32m+ 19:         counter = 0[0m
+[32m+ 20:         while curr is not None:[0m
+[32m+ 21:             counter += 1[0m
+[32m+ 22:             curr = curr.next[0m
+[32m+ 23:         return counter[0m
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+--------------------------------------------------------------------------------
+[0.19557 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:18: AttributeError
+[36m   -[0m [#   6] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+[34m- 24:     def insert_to_front(self, data):[0m
+[34m- 25:         if data is None:[0m
+[34m- 26:             return None[0m
+[34m- 27:         node = Node(data, self.head)[0m
+[34m- 28:         self.head = node[0m
+[34m- 29:         return node[0m
+[34m- 30:     [0m
+[32m+ 24:     @classmethod[0m
+[32m+ 25:     def insert_to_front(self, data):[0m
+[32m+ 26:         if data is None:[0m
+[32m+ 27:             return None[0m
+[32m+ 28:         node = Node(data, self.head)[0m
+[32m+ 29:         self.head = node[0m
+[32m+ 30:         return node[0m
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+--------------------------------------------------------------------------------
+[0.18965 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.insert_to_front(linked_list_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+data = <linkedList5.LinkedList object at 0x7f5b5c71a590>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:28: AttributeError
+[36m   -[0m [#   7] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+  29:         return node
+  30:     
+[34m- 31:     def append(self, data):[0m
+[34m- 32:         if data is None:[0m
+[34m- 33:             return None[0m
+[34m- 34:         node = Node(data)[0m
+[34m- 35:         if self.head is None:[0m
+[34m- 36:             self.head = node[0m
+[34m- 37:             return node[0m
+[34m- 38:         curr_node = self.head[0m
+[34m- 39:         while curr_node.next is not None:[0m
+[34m- 40:             curr_node = curr_node.next[0m
+[34m- 41:         curr_node.next = node[0m
+[34m- 42:         return node[0m
+[34m- 43:     [0m
+[32m+ 31:     @classmethod[0m
+[32m+ 32:     def append(self, data):[0m
+[32m+ 33:         if data is None:[0m
+[32m+ 34:             return None[0m
+[32m+ 35:         node = Node(data)[0m
+[32m+ 36:         if self.head is None:[0m
+[32m+ 37:             self.head = node[0m
+[32m+ 38:             return node[0m
+[32m+ 39:         curr_node = self.head[0m
+[32m+ 40:         while curr_node.next is not None:[0m
+[32m+ 41:             curr_node = curr_node.next[0m
+[32m+ 42:         curr_node.next = node[0m
+[32m+ 43:         return node[0m
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.21281 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_14
+
+def test_case_14():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+>       var_1 = linked_list_0.append(var_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>, data = []
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:36: AttributeError
+[36m   -[0m [#   8] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+[34m- 44:     def find(self, data):[0m
+[34m- 45:         if data is None:[0m
+[34m- 46:             return None[0m
+[34m- 47:         curr_node = self.head[0m
+[34m- 48:         while curr_node is not None:[0m
+[34m- 49:             if curr_node.data == data:[0m
+[34m- 50:                 return curr_node[0m
+[34m- 51:             curr_node = curr_node.next[0m
+[34m- 52:         return None[0m
+[34m- 53:     [0m
+[32m+ 44:     @classmethod[0m
+[32m+ 45:     def find(self, data):[0m
+[32m+ 46:         if data is None:[0m
+[32m+ 47:             return None[0m
+[32m+ 48:         curr_node = self.head[0m
+[32m+ 49:         while curr_node is not None:[0m
+[32m+ 50:             if curr_node.data == data:[0m
+[32m+ 51:                 return curr_node[0m
+[32m+ 52:             curr_node = curr_node.next[0m
+[32m+ 53:         return None[0m
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.25696 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = False
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.__len__()
+        assert var_0 == 0
+>       var_1 = linked_list_0.find(bool_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>, data = False
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:48: AttributeError
+[36m   -[0m [#   9] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+[34m- 54:     def delete(self, data):[0m
+[34m- 55:         if data is None:[0m
+[34m- 56:             return[0m
+[34m- 57:         if self.head is None:[0m
+[34m- 58:             return[0m
+[34m- 59:         if self.head.data == data:[0m
+[34m- 60:             self.head = self.head.next[0m
+[34m- 61:             return[0m
+[34m- 62:         prev_node = self.head[0m
+[34m- 63:         curr_node = self.head.next[0m
+[34m- 64:         while curr_node is not None:[0m
+[34m- 65:             if curr_node.data == data:[0m
+[34m- 66:                 prev_node.next = curr_node.next[0m
+[34m- 67:                 return[0m
+[34m- 68:             prev_node = curr_node[0m
+[34m- 69:             curr_node = curr_node.next[0m
+[34m- 70:     [0m
+[32m+ 54:     @classmethod[0m
+[32m+ 55:     def delete(self, data):[0m
+[32m+ 56:         if data is None:[0m
+[32m+ 57:             return[0m
+[32m+ 58:         if self.head is None:[0m
+[32m+ 59:             return[0m
+[32m+ 60:         if self.head.data == data:[0m
+[32m+ 61:             self.head = self.head.next[0m
+[32m+ 62:             return[0m
+[32m+ 63:         prev_node = self.head[0m
+[32m+ 64:         curr_node = self.head.next[0m
+[32m+ 65:         while curr_node is not None:[0m
+[32m+ 66:             if curr_node.data == data:[0m
+[32m+ 67:                 prev_node.next = curr_node.next[0m
+[32m+ 68:                 return[0m
+[32m+ 69:             prev_node = curr_node[0m
+[32m+ 70:             curr_node = curr_node.next[0m
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.24603 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(none_type_0)
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.delete(none_type_0)
+        var_1 = linked_list_0.delete_alt(var_0)
+        bool_0 = False
+        var_2 = linked_list_0.delete_alt(bool_0)
+        bytes_0 = b'\x11'
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+>       var_3 = linked_list_1.delete(bytes_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>, data = b'\x11'
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:58: AttributeError
+[36m   -[0m [#  10] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+[34m- 71:     def delete_alt(self, data):[0m
+[34m- 72:         if data is None:[0m
+[34m- 73:             return[0m
+[34m- 74:         if self.head is None:[0m
+[34m- 75:             return[0m
+[34m- 76:         curr_node = self.head[0m
+[34m- 77:         if curr_node.data == data:[0m
+[34m- 78:             curr_node = curr_node.next[0m
+[34m- 79:             return[0m
+[34m- 80:         while curr_node.next is not None:[0m
+[34m- 81:             if curr_node.next.data == data:[0m
+[34m- 82:                 curr_node.next = curr_node.next.next[0m
+[34m- 83:                 return[0m
+[34m- 84:             curr_node = curr_node.next[0m
+[34m- 85:     [0m
+[32m+ 71:     @classmethod[0m
+[32m+ 72:     def delete_alt(self, data):[0m
+[32m+ 73:         if data is None:[0m
+[32m+ 74:             return[0m
+[32m+ 75:         if self.head is None:[0m
+[32m+ 76:             return[0m
+[32m+ 77:         curr_node = self.head[0m
+[32m+ 78:         if curr_node.data == data:[0m
+[32m+ 79:             curr_node = curr_node.next[0m
+[32m+ 80:             return[0m
+[32m+ 81:         while curr_node.next is not None:[0m
+[32m+ 82:             if curr_node.next.data == data:[0m
+[32m+ 83:                 curr_node.next = curr_node.next.next[0m
+[32m+ 84:                 return[0m
+[32m+ 85:             curr_node = curr_node.next[0m
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+--------------------------------------------------------------------------------
+[0.20170 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.delete_alt(linked_list_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+data = <linkedList5.LinkedList object at 0x7f5b5c8e47f0>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:75: AttributeError
+[36m   -[0m [#  11] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+[34m- 86:     def print_list(self):[0m
+[34m- 87:         curr_node = self.head[0m
+[34m- 88:         while curr_node is not None:[0m
+[34m- 89:             print(curr_node.data)[0m
+[34m- 90:             curr_node = curr_node.next[0m
+[34m- 91:     [0m
+[32m+ 86:     @classmethod[0m
+[32m+ 87:     def print_list(self):[0m
+[32m+ 88:         curr_node = self.head[0m
+[32m+ 89:         while curr_node is not None:[0m
+[32m+ 90:             print(curr_node.data)[0m
+[32m+ 91:             curr_node = curr_node.next[0m
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.20166 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.delete_alt(linked_list_0)
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        linked_list_1 = module_0.LinkedList(linked_list_0)
+        assert len(linked_list_1.head) == 0
+>       var_1 = linked_list_0.print_list()
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:88: AttributeError
+[36m   -[0m [#  12] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+[34m- 92:     def get_all_data(self):[0m
+[34m- 93:         data = [][0m
+[34m- 94:         curr_node = self.head[0m
+[34m- 95:         while curr_node is not None:[0m
+[34m- 96:             data.append(curr_node.data)[0m
+[34m- 97:             curr_node = curr_node.next[0m
+[34m- 98:         return data[0m
+[32m+ 92:     @classmethod[0m
+[32m+ 93:     def get_all_data(self):[0m
+[32m+ 94:         data = [][0m
+[32m+ 95:         curr_node = self.head[0m
+[32m+ 96:         while curr_node is not None:[0m
+[32m+ 97:             data.append(curr_node.data)[0m
+[32m+ 98:             curr_node = curr_node.next[0m
+[32m+ 99:         return data[0m
+--------------------------------------------------------------------------------
+[0.18317 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(none_type_0)
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.get_all_data()
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:95: AttributeError
+[36m   -[0m [#  13] COI linkedList5: 
+--------------------------------------------------------------------------------
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+[34m- 19:         while curr is not None:[0m
+[32m+ 19:         while not (curr is not None):[0m
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+--------------------------------------------------------------------------------
+[0.18101 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c7891b0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:21: AttributeError
+[36m   -[0m [#  14] COI linkedList5: 
+--------------------------------------------------------------------------------
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+[34m- 25:         if data is None:[0m
+[32m+ 25:         if not (data is None):[0m
+  26:             return None
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+  29:         return node
+--------------------------------------------------------------------------------
+[0.19775 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:11: AssertionError
+[36m   -[0m [#  15] COI linkedList5: 
+--------------------------------------------------------------------------------
+  28:         self.head = node
+  29:         return node
+  30:     
+  31:     def append(self, data):
+[34m- 32:         if data is None:[0m
+[32m+ 32:         if not (data is None):[0m
+  33:             return None
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+--------------------------------------------------------------------------------
+[0.20535 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_14
+
+def test_case_14():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:140: AssertionError
+[36m   -[0m [#  16] COI linkedList5: 
+--------------------------------------------------------------------------------
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+[34m- 35:         if self.head is None:[0m
+[32m+ 35:         if not (self.head is None):[0m
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+--------------------------------------------------------------------------------
+[0.20592 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_14
+
+def test_case_14():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+>       var_1 = linked_list_0.append(var_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c789d80>, data = []
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:39: AttributeError
+[36m   -[0m [#  17] COI linkedList5: 
+--------------------------------------------------------------------------------
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+[34m- 39:         while curr_node.next is not None:[0m
+[32m+ 39:         while not (curr_node.next is not None):[0m
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+--------------------------------------------------------------------------------
+[0.21653 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_18
+
+def test_case_18():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+>       var_1 = linked_list_0.append(var_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:196: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c4449d0>
+data = <linkedList5.Node object at 0x7f5b5c4462f0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:39: AttributeError
+[36m   -[0m [#  18] COI linkedList5: 
+--------------------------------------------------------------------------------
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+  44:     def find(self, data):
+[34m- 45:         if data is None:[0m
+[32m+ 45:         if not (data is None):[0m
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+--------------------------------------------------------------------------------
+[0.27825 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_27
+
+def test_case_27():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete_alt(var_1)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.delete(var_4)
+        node_0 = module_0.Node(var_0)
+        var_6 = linked_list_0.find(var_1)
+        var_7 = linked_list_0.find(var_0)
+>       assert f'{type(var_7).__module__}.{type(var_7).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:431: AssertionError
+[36m   -[0m [#  19] COI linkedList5: 
+--------------------------------------------------------------------------------
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+[34m- 48:         while curr_node is not None:[0m
+[32m+ 48:         while not (curr_node is not None):[0m
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+--------------------------------------------------------------------------------
+[0.25667 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = False
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.__len__()
+        assert var_0 == 0
+>       var_1 = linked_list_0.find(bool_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c5a96f0>, data = False
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:49: AttributeError
+[36m   -[0m [#  20] COI linkedList5: 
+--------------------------------------------------------------------------------
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+[34m- 49:             if curr_node.data == data:[0m
+[32m+ 49:             if not (curr_node.data == data):[0m
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+--------------------------------------------------------------------------------
+[0.20828 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_27
+
+def test_case_27():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete_alt(var_1)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.delete(var_4)
+        node_0 = module_0.Node(var_0)
+        var_6 = linked_list_0.find(var_1)
+        var_7 = linked_list_0.find(var_0)
+>       assert f'{type(var_7).__module__}.{type(var_7).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:431: AssertionError
+[36m   -[0m [#  21] COI linkedList5: 
+--------------------------------------------------------------------------------
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+[34m- 55:         if data is None:[0m
+[32m+ 55:         if not (data is None):[0m
+  56:             return
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+--------------------------------------------------------------------------------
+[0.22697 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_31
+
+def test_case_31():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.print_list()
+        var_2 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert var_2.data == []
+        var_3 = var_1.__str__()
+        var_4 = linked_list_0.delete_alt(linked_list_0)
+        var_5 = linked_list_0.delete(var_0)
+>       assert len(linked_list_0) == 0
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:526: AssertionError
+[36m   -[0m [#  22] COI linkedList5: 
+--------------------------------------------------------------------------------
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+[34m- 57:         if self.head is None:[0m
+[32m+ 57:         if not (self.head is None):[0m
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+--------------------------------------------------------------------------------
+[0.19998 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(none_type_0)
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.delete(none_type_0)
+        var_1 = linked_list_0.delete_alt(var_0)
+        bool_0 = False
+        var_2 = linked_list_0.delete_alt(bool_0)
+        bytes_0 = b'\x11'
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+>       var_3 = linked_list_1.delete(bytes_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c61a920>, data = b'\x11'
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:59: AttributeError
+[36m   -[0m [#  23] COI linkedList5: 
+--------------------------------------------------------------------------------
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+  58:             return
+[34m- 59:         if self.head.data == data:[0m
+[32m+ 59:         if not (self.head.data == data):[0m
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+--------------------------------------------------------------------------------
+[0.21159 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_31
+
+def test_case_31():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.print_list()
+        var_2 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert var_2.data == []
+        var_3 = var_1.__str__()
+        var_4 = linked_list_0.delete_alt(linked_list_0)
+        var_5 = linked_list_0.delete(var_0)
+>       assert len(linked_list_0) == 0
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:526: AssertionError
+[36m   -[0m [#  24] COI linkedList5: 
+--------------------------------------------------------------------------------
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+[34m- 64:         while curr_node is not None:[0m
+[32m+ 64:         while not (curr_node is not None):[0m
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+--------------------------------------------------------------------------------
+[0.22899 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_33
+
+def test_case_33():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = module_1.object()
+        var_2 = linked_list_0.print_list()
+        var_3 = var_1.__str__()
+        var_4 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList5.Node'
+        assert var_4.next is None
+        assert var_4.data == []
+        var_5 = linked_list_0.delete_alt(var_1)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_6 = linked_list_1.delete(var_5)
+        node_0 = module_0.Node(var_0)
+        var_7 = linked_list_0.find(var_1)
+        linked_list_2 = module_0.LinkedList(linked_list_0)
+        assert len(linked_list_2.head) == 1
+>       var_8 = linked_list_0.delete(var_4)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:588: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c6bd900>
+data = <linkedList5.Node object at 0x7f5b5c6bd1b0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:65: AttributeError
+[36m   -[0m [#  25] COI linkedList5: 
+--------------------------------------------------------------------------------
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+[34m- 65:             if curr_node.data == data:[0m
+[32m+ 65:             if not (curr_node.data == data):[0m
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.21376 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_32
+
+def test_case_32():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.append(var_1)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 3
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.delete_alt(var_1)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:552: AssertionError
+[36m   -[0m [#  26] COI linkedList5: 
+--------------------------------------------------------------------------------
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+  71:     def delete_alt(self, data):
+[34m- 72:         if data is None:[0m
+[32m+ 72:         if not (data is None):[0m
+  73:             return
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.22420 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_32
+
+def test_case_32():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.append(var_1)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 3
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.delete_alt(var_1)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:552: AssertionError
+[36m   -[0m [#  27] COI linkedList5: 
+--------------------------------------------------------------------------------
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+[34m- 74:         if self.head is None:[0m
+[32m+ 74:         if not (self.head is None):[0m
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.19815 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.delete_alt(linked_list_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c6dfdc0>
+data = <linkedList5.LinkedList object at 0x7f5b5c6dfdc0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:77: AttributeError
+[36m   -[0m [#  28] COI linkedList5: 
+--------------------------------------------------------------------------------
+  73:             return
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+[34m- 77:         if curr_node.data == data:[0m
+[32m+ 77:         if not (curr_node.data == data):[0m
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+--------------------------------------------------------------------------------
+[0.27172 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_32
+
+def test_case_32():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.append(var_1)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 3
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.delete_alt(var_1)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:552: AssertionError
+[36m   -[0m [#  29] COI linkedList5: 
+--------------------------------------------------------------------------------
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+[34m- 80:         while curr_node.next is not None:[0m
+[32m+ 80:         while not (curr_node.next is not None):[0m
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.26263 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_14
+
+def test_case_14():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+>       var_2 = linked_list_0.delete_alt(var_1)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c807ac0>
+data = <linkedList5.Node object at 0x7f5b5c8072e0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:81: AttributeError
+[36m   -[0m [#  30] COI linkedList5: 
+--------------------------------------------------------------------------------
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+[34m- 81:             if curr_node.next.data == data:[0m
+[32m+ 81:             if not (curr_node.next.data == data):[0m
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+--------------------------------------------------------------------------------
+[0.21376 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_22
+
+def test_case_22():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete_alt(var_1)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.delete(var_4)
+        node_0 = module_0.Node(var_0)
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        linked_list_3 = module_0.LinkedList(linked_list_0)
+>       assert len(linked_list_3.head) == 2
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:278: AssertionError
+[36m   -[0m [#  31] COI linkedList5: 
+--------------------------------------------------------------------------------
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+[34m- 88:         while curr_node is not None:[0m
+[32m+ 88:         while not (curr_node is not None):[0m
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+--------------------------------------------------------------------------------
+[0.20440 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.delete_alt(linked_list_0)
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        linked_list_1 = module_0.LinkedList(linked_list_0)
+        assert len(linked_list_1.head) == 0
+>       var_1 = linked_list_0.print_list()
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c803460>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:89: AttributeError
+[36m   -[0m [#  32] COI linkedList5: 
+--------------------------------------------------------------------------------
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+[34m- 95:         while curr_node is not None:[0m
+[32m+ 95:         while not (curr_node is not None):[0m
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+  98:         return data
+--------------------------------------------------------------------------------
+[0.18371 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(none_type_0)
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.get_all_data()
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c6deef0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:96: AttributeError
+[36m   -[0m [#  33] CRP linkedList5: 
+--------------------------------------------------------------------------------
+  14:         self.head = head
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+[34m- 18:         counter = 0[0m
+[32m+ 18:         counter = 1[0m
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+--------------------------------------------------------------------------------
+[0.18113 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:9: AssertionError
+[36m   -[0m [#  34] CRP linkedList5: 
+--------------------------------------------------------------------------------
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+[34m- 20:             counter += 1[0m
+[32m+ 20:             counter += 2[0m
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+--------------------------------------------------------------------------------
+[0.18080 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:11: AssertionError
+[36m   -[0m [#  35] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+[34m- 22:         return counter[0m
+[34m- 23:     [0m
+[32m+ 22:             break[0m
+[32m+ 23:         return counter[0m
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+--------------------------------------------------------------------------------
+[0.21346 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_15
+
+def test_case_15():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.insert_to_front(var_0)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:157: AssertionError
+[36m   -[0m [#  36] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+[34m- 41:         curr_node.next = node[0m
+[34m- 42:         return node[0m
+[34m- 43:     [0m
+[32m+ 41:             break[0m
+[32m+ 42:         curr_node.next = node[0m
+[32m+ 43:         return node[0m
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.23333 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_34
+
+def test_case_34():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.__str__()
+        var_5 = linked_list_0.delete_alt(var_1)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_6 = linked_list_1.delete(var_5)
+        var_7 = linked_list_0.find(var_1)
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        var_8 = linked_list_2.delete(linked_list_2)
+        linked_list_3 = module_0.LinkedList(var_2)
+        assert len(linked_list_3) == 0
+        linked_list_4 = module_0.LinkedList()
+        assert len(linked_list_4) == 0
+        var_9 = linked_list_4.get_all_data()
+        var_10 = linked_list_2.find(linked_list_0)
+        var_11 = linked_list_0.delete_alt(var_10)
+        node_0 = module_0.Node(var_7, var_0)
+        assert node_0.data is None
+        var_12 = var_6.__str__()
+        var_13 = linked_list_4.__str__()
+        node_1 = module_0.Node(var_11, var_2)
+        var_14 = linked_list_0.__len__()
+        assert var_14 == 2
+        var_15 = linked_list_0.append(var_12)
+        assert len(linked_list_0) == 3
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_15).__module__}.{type(var_15).__qualname__}' == 'linkedList5.Node'
+        assert var_15.next is None
+        assert var_15.data == 'None'
+        var_16 = linked_list_0.append(linked_list_4)
+>       assert len(linked_list_0) == 4
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:640: AssertionError
+[36m   -[0m [#  37] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+[34m- 52:         return None[0m
+[34m- 53:     [0m
+[32m+ 52:             break[0m
+[32m+ 53:         return None[0m
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.17507 s] [31msurvived[0m
+[36m   -[0m [#  38] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+[34m- 70:     [0m
+[32m+ 70:             break[0m
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.18244 s] [31msurvived[0m
+[36m   -[0m [#  39] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+[34m- 85:     [0m
+[32m+ 85:             break[0m
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+--------------------------------------------------------------------------------
+[0.27774 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_32
+
+def test_case_32():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.append(var_1)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 3
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.delete_alt(var_1)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:552: AssertionError
+[36m   -[0m [#  40] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+[34m- 91:     [0m
+[32m+ 91:             break[0m
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.18155 s] [31msurvived[0m
+[36m   -[0m [#  41] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+[34m- 98:         return data[0m
+[32m+ 98:             break[0m
+[32m+ 99:         return data[0m
+--------------------------------------------------------------------------------
+[0.18082 s] [31msurvived[0m
+[36m   -[0m [#  42] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+[34m- 49:             if curr_node.data == data:[0m
+[32m+ 49:             if curr_node.data != data:[0m
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+--------------------------------------------------------------------------------
+[0.22054 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_27
+
+def test_case_27():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete_alt(var_1)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.delete(var_4)
+        node_0 = module_0.Node(var_0)
+        var_6 = linked_list_0.find(var_1)
+        var_7 = linked_list_0.find(var_0)
+>       assert f'{type(var_7).__module__}.{type(var_7).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:431: AssertionError
+[36m   -[0m [#  43] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+  58:             return
+[34m- 59:         if self.head.data == data:[0m
+[32m+ 59:         if self.head.data != data:[0m
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+--------------------------------------------------------------------------------
+[0.23097 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_31
+
+def test_case_31():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.print_list()
+        var_2 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert var_2.data == []
+        var_3 = var_1.__str__()
+        var_4 = linked_list_0.delete_alt(linked_list_0)
+        var_5 = linked_list_0.delete(var_0)
+>       assert len(linked_list_0) == 0
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:526: AssertionError
+[36m   -[0m [#  44] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+[34m- 65:             if curr_node.data == data:[0m
+[32m+ 65:             if curr_node.data != data:[0m
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.23137 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_32
+
+def test_case_32():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.append(var_1)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 3
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.delete_alt(var_1)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:552: AssertionError
+[36m   -[0m [#  45] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  73:             return
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+[34m- 77:         if curr_node.data == data:[0m
+[32m+ 77:         if curr_node.data != data:[0m
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+--------------------------------------------------------------------------------
+[0.22607 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_32
+
+def test_case_32():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.append(var_1)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 3
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.delete_alt(var_1)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:552: AssertionError
+[36m   -[0m [#  46] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+[34m- 81:             if curr_node.next.data == data:[0m
+[32m+ 81:             if curr_node.next.data != data:[0m
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+--------------------------------------------------------------------------------
+[0.21565 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_22
+
+def test_case_22():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete_alt(var_1)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.delete(var_4)
+        node_0 = module_0.Node(var_0)
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        linked_list_3 = module_0.LinkedList(linked_list_0)
+>       assert len(linked_list_3.head) == 2
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:278: AssertionError
+[36m   -[0m [#  47] SDI linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+[34m-  3:     def __init__(self, data, next=None):[0m
+[34m-  4:         self.next = next[0m
+[34m-  5:         self.data = data[0m
+[34m-  6:     [0m
+[32m+  3:     @staticmethod[0m
+[32m+  4:     def __init__(self, data, next=None):[0m
+[32m+  5:         self.next = next[0m
+[32m+  6:         self.data = data[0m
+   7:     def __str__(self):
+   8:         return self.data
+   9: 
+  10: 
+--------------------------------------------------------------------------------
+[0.18043 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+>       assert len(linked_list_0) == 1
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c55e320>
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'next'
+
+linkedList5:21: AttributeError
+[36m   -[0m [#  48] SDI linkedList5: 
+--------------------------------------------------------------------------------
+   3:     def __init__(self, data, next=None):
+   4:         self.next = next
+   5:         self.data = data
+   6:     
+[34m-  7:     def __str__(self):[0m
+[34m-  8:         return self.data[0m
+[34m-  9: [0m
+[32m+  7:     @staticmethod[0m
+[32m+  8:     def __str__(self):[0m
+[32m+  9:         return self.data[0m
+  10: 
+  11: class LinkedList(object):
+  12:     
+  13:     def __init__(self, head=None):
+--------------------------------------------------------------------------------
+[0.25360 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList5/DYNAMOSA/test_linkedList5_DYNAMOSA.py:130: TypeError: Node.__str__() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  49] SDI linkedList5: 
+--------------------------------------------------------------------------------
+   9: 
+  10: 
+  11: class LinkedList(object):
+  12:     
+[34m- 13:     def __init__(self, head=None):[0m
+[34m- 14:         self.head = head[0m
+[34m- 15:     [0m
+[32m+ 13:     @staticmethod[0m
+[32m+ 14:     def __init__(self, head=None):[0m
+[32m+ 15:         self.head = head[0m
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+--------------------------------------------------------------------------------
+[0.24058 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList5/DYNAMOSA/test_linkedList5_DYNAMOSA.py:8: TypeError: LinkedList.__init__() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  50] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  12:     
+  13:     def __init__(self, head=None):
+  14:         self.head = head
+  15:     
+[34m- 16:     def __len__(self):[0m
+[34m- 17:         curr = self.head[0m
+[34m- 18:         counter = 0[0m
+[34m- 19:         while curr is not None:[0m
+[34m- 20:             counter += 1[0m
+[34m- 21:             curr = curr.next[0m
+[34m- 22:         return counter[0m
+[34m- 23:     [0m
+[32m+ 16:     @staticmethod[0m
+[32m+ 17:     def __len__(self):[0m
+[32m+ 18:         curr = self.head[0m
+[32m+ 19:         counter = 0[0m
+[32m+ 20:         while curr is not None:[0m
+[32m+ 21:             counter += 1[0m
+[32m+ 22:             curr = curr.next[0m
+[32m+ 23:         return counter[0m
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+--------------------------------------------------------------------------------
+[0.19196 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList5/DYNAMOSA/test_linkedList5_DYNAMOSA.py:9: TypeError: LinkedList.__len__() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  51] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+[34m- 24:     def insert_to_front(self, data):[0m
+[34m- 25:         if data is None:[0m
+[34m- 26:             return None[0m
+[34m- 27:         node = Node(data, self.head)[0m
+[34m- 28:         self.head = node[0m
+[34m- 29:         return node[0m
+[34m- 30:     [0m
+[32m+ 24:     @staticmethod[0m
+[32m+ 25:     def insert_to_front(self, data):[0m
+[32m+ 26:         if data is None:[0m
+[32m+ 27:             return None[0m
+[32m+ 28:         node = Node(data, self.head)[0m
+[32m+ 29:         self.head = node[0m
+[32m+ 30:         return node[0m
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+--------------------------------------------------------------------------------
+[0.19430 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList5/DYNAMOSA/test_linkedList5_DYNAMOSA.py:10: TypeError: LinkedList.insert_to_front() missing 1 required positional argument: 'data'
+
+[36m   -[0m [#  52] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+  29:         return node
+  30:     
+[34m- 31:     def append(self, data):[0m
+[34m- 32:         if data is None:[0m
+[34m- 33:             return None[0m
+[34m- 34:         node = Node(data)[0m
+[34m- 35:         if self.head is None:[0m
+[34m- 36:             self.head = node[0m
+[34m- 37:             return node[0m
+[34m- 38:         curr_node = self.head[0m
+[34m- 39:         while curr_node.next is not None:[0m
+[34m- 40:             curr_node = curr_node.next[0m
+[34m- 41:         curr_node.next = node[0m
+[34m- 42:         return node[0m
+[34m- 43:     [0m
+[32m+ 31:     @staticmethod[0m
+[32m+ 32:     def append(self, data):[0m
+[32m+ 33:         if data is None:[0m
+[32m+ 34:             return None[0m
+[32m+ 35:         node = Node(data)[0m
+[32m+ 36:         if self.head is None:[0m
+[32m+ 37:             self.head = node[0m
+[32m+ 38:             return node[0m
+[32m+ 39:         curr_node = self.head[0m
+[32m+ 40:         while curr_node.next is not None:[0m
+[32m+ 41:             curr_node = curr_node.next[0m
+[32m+ 42:         curr_node.next = node[0m
+[32m+ 43:         return node[0m
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.21444 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList5/DYNAMOSA/test_linkedList5_DYNAMOSA.py:139: TypeError: LinkedList.append() missing 1 required positional argument: 'data'
+
+[36m   -[0m [#  53] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+[34m- 44:     def find(self, data):[0m
+[34m- 45:         if data is None:[0m
+[34m- 46:             return None[0m
+[34m- 47:         curr_node = self.head[0m
+[34m- 48:         while curr_node is not None:[0m
+[34m- 49:             if curr_node.data == data:[0m
+[34m- 50:                 return curr_node[0m
+[34m- 51:             curr_node = curr_node.next[0m
+[34m- 52:         return None[0m
+[34m- 53:     [0m
+[32m+ 44:     @staticmethod[0m
+[32m+ 45:     def find(self, data):[0m
+[32m+ 46:         if data is None:[0m
+[32m+ 47:             return None[0m
+[32m+ 48:         curr_node = self.head[0m
+[32m+ 49:         while curr_node is not None:[0m
+[32m+ 50:             if curr_node.data == data:[0m
+[32m+ 51:                 return curr_node[0m
+[32m+ 52:             curr_node = curr_node.next[0m
+[32m+ 53:         return None[0m
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.20511 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList5/DYNAMOSA/test_linkedList5_DYNAMOSA.py:58: TypeError: LinkedList.find() missing 1 required positional argument: 'data'
+
+[36m   -[0m [#  54] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+[34m- 54:     def delete(self, data):[0m
+[34m- 55:         if data is None:[0m
+[34m- 56:             return[0m
+[34m- 57:         if self.head is None:[0m
+[34m- 58:             return[0m
+[34m- 59:         if self.head.data == data:[0m
+[34m- 60:             self.head = self.head.next[0m
+[34m- 61:             return[0m
+[34m- 62:         prev_node = self.head[0m
+[34m- 63:         curr_node = self.head.next[0m
+[34m- 64:         while curr_node is not None:[0m
+[34m- 65:             if curr_node.data == data:[0m
+[34m- 66:                 prev_node.next = curr_node.next[0m
+[34m- 67:                 return[0m
+[34m- 68:             prev_node = curr_node[0m
+[34m- 69:             curr_node = curr_node.next[0m
+[34m- 70:     [0m
+[32m+ 54:     @staticmethod[0m
+[32m+ 55:     def delete(self, data):[0m
+[32m+ 56:         if data is None:[0m
+[32m+ 57:             return[0m
+[32m+ 58:         if self.head is None:[0m
+[32m+ 59:             return[0m
+[32m+ 60:         if self.head.data == data:[0m
+[32m+ 61:             self.head = self.head.next[0m
+[32m+ 62:             return[0m
+[32m+ 63:         prev_node = self.head[0m
+[32m+ 64:         curr_node = self.head.next[0m
+[32m+ 65:         while curr_node is not None:[0m
+[32m+ 66:             if curr_node.data == data:[0m
+[32m+ 67:                 prev_node.next = curr_node.next[0m
+[32m+ 68:                 return[0m
+[32m+ 69:             prev_node = curr_node[0m
+[32m+ 70:             curr_node = curr_node.next[0m
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.20476 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList5/DYNAMOSA/test_linkedList5_DYNAMOSA.py:76: TypeError: LinkedList.delete() missing 1 required positional argument: 'data'
+
+[36m   -[0m [#  55] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+[34m- 71:     def delete_alt(self, data):[0m
+[34m- 72:         if data is None:[0m
+[34m- 73:             return[0m
+[34m- 74:         if self.head is None:[0m
+[34m- 75:             return[0m
+[34m- 76:         curr_node = self.head[0m
+[34m- 77:         if curr_node.data == data:[0m
+[34m- 78:             curr_node = curr_node.next[0m
+[34m- 79:             return[0m
+[34m- 80:         while curr_node.next is not None:[0m
+[34m- 81:             if curr_node.next.data == data:[0m
+[34m- 82:                 curr_node.next = curr_node.next.next[0m
+[34m- 83:                 return[0m
+[34m- 84:             curr_node = curr_node.next[0m
+[34m- 85:     [0m
+[32m+ 71:     @staticmethod[0m
+[32m+ 72:     def delete_alt(self, data):[0m
+[32m+ 73:         if data is None:[0m
+[32m+ 74:             return[0m
+[32m+ 75:         if self.head is None:[0m
+[32m+ 76:             return[0m
+[32m+ 77:         curr_node = self.head[0m
+[32m+ 78:         if curr_node.data == data:[0m
+[32m+ 79:             curr_node = curr_node.next[0m
+[32m+ 80:             return[0m
+[32m+ 81:         while curr_node.next is not None:[0m
+[32m+ 82:             if curr_node.next.data == data:[0m
+[32m+ 83:                 curr_node.next = curr_node.next.next[0m
+[32m+ 84:                 return[0m
+[32m+ 85:             curr_node = curr_node.next[0m
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+--------------------------------------------------------------------------------
+[0.20175 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList5/DYNAMOSA/test_linkedList5_DYNAMOSA.py:38: TypeError: LinkedList.delete_alt() missing 1 required positional argument: 'data'
+
+[36m   -[0m [#  56] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+[34m- 86:     def print_list(self):[0m
+[34m- 87:         curr_node = self.head[0m
+[34m- 88:         while curr_node is not None:[0m
+[34m- 89:             print(curr_node.data)[0m
+[34m- 90:             curr_node = curr_node.next[0m
+[34m- 91:     [0m
+[32m+ 86:     @staticmethod[0m
+[32m+ 87:     def print_list(self):[0m
+[32m+ 88:         curr_node = self.head[0m
+[32m+ 89:         while curr_node is not None:[0m
+[32m+ 90:             print(curr_node.data)[0m
+[32m+ 91:             curr_node = curr_node.next[0m
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.19907 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList5/DYNAMOSA/test_linkedList5_DYNAMOSA.py:109: TypeError: LinkedList.print_list() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  57] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+[34m- 92:     def get_all_data(self):[0m
+[34m- 93:         data = [][0m
+[34m- 94:         curr_node = self.head[0m
+[34m- 95:         while curr_node is not None:[0m
+[34m- 96:             data.append(curr_node.data)[0m
+[34m- 97:             curr_node = curr_node.next[0m
+[34m- 98:         return data[0m
+[32m+ 92:     @staticmethod[0m
+[32m+ 93:     def get_all_data(self):[0m
+[32m+ 94:         data = [][0m
+[32m+ 95:         curr_node = self.head[0m
+[32m+ 96:         while curr_node is not None:[0m
+[32m+ 97:             data.append(curr_node.data)[0m
+[32m+ 98:             curr_node = curr_node.next[0m
+[32m+ 99:         return data[0m
+--------------------------------------------------------------------------------
+[0.19592 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList5/DYNAMOSA/test_linkedList5_DYNAMOSA.py:30: TypeError: LinkedList.get_all_data() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  58] SDL linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data, next=None):
+[34m-  4:         self.next = next[0m
+[32m+  4:         pass[0m
+   5:         self.data = data
+   6:     
+   7:     def __str__(self):
+   8:         return self.data
+--------------------------------------------------------------------------------
+[0.25786 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+>       assert len(linked_list_0) == 1
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c74fc40>
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'next'
+
+linkedList5:21: AttributeError
+[36m   -[0m [#  59] SDL linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data, next=None):
+   4:         self.next = next
+[34m-  5:         self.data = data[0m
+[32m+  5:         pass[0m
+   6:     
+   7:     def __str__(self):
+   8:         return self.data
+   9: 
+--------------------------------------------------------------------------------
+[0.23545 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+>       assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+E       AttributeError: 'Node' object has no attribute 'data'
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:14: AttributeError
+[36m   -[0m [#  60] SDL linkedList5: 
+--------------------------------------------------------------------------------
+   4:         self.next = next
+   5:         self.data = data
+   6:     
+   7:     def __str__(self):
+[34m-  8:         return self.data[0m
+[32m+  8:         pass[0m
+   9: 
+  10: 
+  11: class LinkedList(object):
+  12:     
+--------------------------------------------------------------------------------
+[0.18034 s] [31msurvived[0m
+[36m   -[0m [#  61] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  10: 
+  11: class LinkedList(object):
+  12:     
+  13:     def __init__(self, head=None):
+[34m- 14:         self.head = head[0m
+[32m+ 14:         pass[0m
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+--------------------------------------------------------------------------------
+[0.19478 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c804880>
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute 'head'
+
+linkedList5:17: AttributeError
+[36m   -[0m [#  62] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  13:     def __init__(self, head=None):
+  14:         self.head = head
+  15:     
+  16:     def __len__(self):
+[34m- 17:         curr = self.head[0m
+[32m+ 17:         pass[0m
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.18240 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c78be20>
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+linkedList5:19: UnboundLocalError
+[36m   -[0m [#  63] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  14:         self.head = head
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+[34m- 18:         counter = 0[0m
+[32m+ 18:         pass[0m
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+--------------------------------------------------------------------------------
+[0.19927 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c807ca0>
+
+>   ???
+E   UnboundLocalError: local variable 'counter' referenced before assignment
+
+linkedList5:22: UnboundLocalError
+[36m   -[0m [#  64] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+[34m- 21:             curr = curr.next[0m
+[32m+ 21:             pass[0m
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+--------------------------------------------------------------------------------
+[5.00804 s] [33mtimeout[0m
+[36m   -[0m [#  65] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+[34m- 22:         return counter[0m
+[32m+ 22:         pass[0m
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+--------------------------------------------------------------------------------
+[0.19972 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList5/DYNAMOSA/test_linkedList5_DYNAMOSA.py:9: TypeError: 'NoneType' object cannot be interpreted as an integer
+
+[36m   -[0m [#  66] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+[34m- 26:             return None[0m
+[32m+ 26:             pass[0m
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+  29:         return node
+  30:     
+--------------------------------------------------------------------------------
+[0.18487 s] [31msurvived[0m
+[36m   -[0m [#  67] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+[34m- 27:         node = Node(data, self.head)[0m
+[32m+ 27:         pass[0m
+  28:         self.head = node
+  29:         return node
+  30:     
+  31:     def append(self, data):
+--------------------------------------------------------------------------------
+[0.20158 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.insert_to_front(linked_list_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c5db010>
+data = <linkedList5.LinkedList object at 0x7f5b5c5db010>
+
+>   ???
+E   NameError: name 'node' is not defined
+
+linkedList5:28: NameError
+[36m   -[0m [#  68] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+[34m- 28:         self.head = node[0m
+[32m+ 28:         pass[0m
+  29:         return node
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+--------------------------------------------------------------------------------
+[0.24076 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:11: AssertionError
+[36m   -[0m [#  69] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+[34m- 29:         return node[0m
+[32m+ 29:         pass[0m
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+--------------------------------------------------------------------------------
+[0.23502 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:12: AssertionError
+[36m   -[0m [#  70] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  29:         return node
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+[34m- 33:             return None[0m
+[32m+ 33:             pass[0m
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+--------------------------------------------------------------------------------
+[0.21852 s] [31msurvived[0m
+[36m   -[0m [#  71] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+[34m- 34:         node = Node(data)[0m
+[32m+ 34:         pass[0m
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.24776 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_14
+
+def test_case_14():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+>       var_1 = linked_list_0.append(var_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c8e7f10>, data = []
+
+>   ???
+E   NameError: name 'node' is not defined
+
+linkedList5:36: NameError
+[36m   -[0m [#  72] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+  35:         if self.head is None:
+[34m- 36:             self.head = node[0m
+[32m+ 36:             pass[0m
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.21452 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_14
+
+def test_case_14():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:140: AssertionError
+[36m   -[0m [#  73] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  33:             return None
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+[34m- 37:             return node[0m
+[32m+ 37:             pass[0m
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+--------------------------------------------------------------------------------
+[5.00800 s] [33mtimeout[0m
+[36m   -[0m [#  74] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+[34m- 38:         curr_node = self.head[0m
+[32m+ 38:         pass[0m
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+--------------------------------------------------------------------------------
+[0.21296 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_18
+
+def test_case_18():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+>       var_1 = linked_list_0.append(var_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:196: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c8ca860>
+data = <linkedList5.Node object at 0x7f5b5c8cb760>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:39: UnboundLocalError
+[36m   -[0m [#  75] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+[34m- 40:             curr_node = curr_node.next[0m
+[32m+ 40:             pass[0m
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+  44:     def find(self, data):
+--------------------------------------------------------------------------------
+[5.00799 s] [33mtimeout[0m
+[36m   -[0m [#  76] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+[34m- 41:         curr_node.next = node[0m
+[32m+ 41:         pass[0m
+  42:         return node
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+--------------------------------------------------------------------------------
+[0.14365 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_18
+
+def test_case_18():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.append(var_0)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:197: AssertionError
+[36m   -[0m [#  77] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+[34m- 42:         return node[0m
+[32m+ 42:         pass[0m
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+--------------------------------------------------------------------------------
+[0.15543 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_18
+
+def test_case_18():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:200: AssertionError
+[36m   -[0m [#  78] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  42:         return node
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+[34m- 46:             return None[0m
+[32m+ 46:             pass[0m
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+--------------------------------------------------------------------------------
+[0.18172 s] [31msurvived[0m
+[36m   -[0m [#  79] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+[34m- 47:         curr_node = self.head[0m
+[32m+ 47:         pass[0m
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.18297 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = False
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.__len__()
+        assert var_0 == 0
+>       var_1 = linked_list_0.find(bool_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c8e6f50>, data = False
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:48: UnboundLocalError
+[36m   -[0m [#  80] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+[34m- 50:                 return curr_node[0m
+[32m+ 50:                 pass[0m
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+--------------------------------------------------------------------------------
+[0.28420 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_27
+
+def test_case_27():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete_alt(var_1)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.delete(var_4)
+        node_0 = module_0.Node(var_0)
+        var_6 = linked_list_0.find(var_1)
+        var_7 = linked_list_0.find(var_0)
+>       assert f'{type(var_7).__module__}.{type(var_7).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:431: AssertionError
+[36m   -[0m [#  81] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+[34m- 51:             curr_node = curr_node.next[0m
+[32m+ 51:             pass[0m
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+--------------------------------------------------------------------------------
+[5.00799 s] [33mtimeout[0m
+[36m   -[0m [#  82] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+[34m- 52:         return None[0m
+[32m+ 52:         pass[0m
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+--------------------------------------------------------------------------------
+[0.22957 s] [31msurvived[0m
+[36m   -[0m [#  83] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+[34m- 56:             return[0m
+[32m+ 56:             pass[0m
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[0.17692 s] [31msurvived[0m
+[36m   -[0m [#  84] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+[34m- 58:             return[0m
+[32m+ 58:             pass[0m
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+--------------------------------------------------------------------------------
+[0.20173 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(none_type_0)
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.delete(none_type_0)
+        var_1 = linked_list_0.delete_alt(var_0)
+        bool_0 = False
+        var_2 = linked_list_0.delete_alt(bool_0)
+        bytes_0 = b'\x11'
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+>       var_3 = linked_list_1.delete(bytes_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c6a4ee0>, data = b'\x11'
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:59: AttributeError
+[36m   -[0m [#  85] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  56:             return
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+[34m- 60:             self.head = self.head.next[0m
+[32m+ 60:             pass[0m
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.22498 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_31
+
+def test_case_31():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.print_list()
+        var_2 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert var_2.data == []
+        var_3 = var_1.__str__()
+        var_4 = linked_list_0.delete_alt(linked_list_0)
+        var_5 = linked_list_0.delete(var_0)
+>       assert len(linked_list_0) == 0
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:526: AssertionError
+[36m   -[0m [#  86] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+[34m- 61:             return[0m
+[32m+ 61:             pass[0m
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+--------------------------------------------------------------------------------
+[0.21635 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_31
+
+def test_case_31():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.print_list()
+        var_2 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert var_2.data == []
+        var_3 = var_1.__str__()
+        var_4 = linked_list_0.delete_alt(linked_list_0)
+>       var_5 = linked_list_0.delete(var_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:525: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c8cd0f0>, data = []
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:63: AttributeError
+[36m   -[0m [#  87] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+[34m- 62:         prev_node = self.head[0m
+[32m+ 62:         pass[0m
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+--------------------------------------------------------------------------------
+[0.23490 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_35
+
+def test_case_35():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.print_list()
+        var_2 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete(var_2)
+        var_4 = linked_list_0.delete_alt(var_0)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+>       var_5 = linked_list_0.delete(linked_list_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:677: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c788130>
+data = <linkedList5.LinkedList object at 0x7f5b5c788130>
+
+>   ???
+E   UnboundLocalError: local variable 'prev_node' referenced before assignment
+
+linkedList5:66: UnboundLocalError
+[36m   -[0m [#  88] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+[34m- 63:         curr_node = self.head.next[0m
+[32m+ 63:         pass[0m
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+--------------------------------------------------------------------------------
+[0.22427 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_25
+
+def test_case_25():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.__str__()
+        var_5 = linked_list_0.delete_alt(var_1)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(linked_list_0)
+        assert len(node_0.data) == 2
+        var_6 = linked_list_1.delete(var_5)
+        var_7 = linked_list_0.find(var_1)
+>       var_8 = linked_list_0.delete(linked_list_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:372: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c8e56f0>
+data = <linkedList5.LinkedList object at 0x7f5b5c8e56f0>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:64: UnboundLocalError
+[36m   -[0m [#  89] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+[34m- 66:                 prev_node.next = curr_node.next[0m
+[32m+ 66:                 pass[0m
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+--------------------------------------------------------------------------------
+[0.23299 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_35
+
+def test_case_35():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.print_list()
+        var_2 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete(var_2)
+        var_4 = linked_list_0.delete_alt(var_0)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        var_5 = linked_list_0.delete(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:678: AssertionError
+[36m   -[0m [#  90] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+[34m- 67:                 return[0m
+[32m+ 67:                 pass[0m
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+  71:     def delete_alt(self, data):
+--------------------------------------------------------------------------------
+[0.18425 s] [31msurvived[0m
+[36m   -[0m [#  91] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+[34m- 68:             prev_node = curr_node[0m
+[32m+ 68:             pass[0m
+  69:             curr_node = curr_node.next
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+--------------------------------------------------------------------------------
+[0.17683 s] [31msurvived[0m
+[36m   -[0m [#  92] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+[34m- 69:             curr_node = curr_node.next[0m
+[32m+ 69:             pass[0m
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+--------------------------------------------------------------------------------
+[5.00798 s] [33mtimeout[0m
+[36m   -[0m [#  93] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  69:             curr_node = curr_node.next
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+[34m- 73:             return[0m
+[32m+ 73:             pass[0m
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+--------------------------------------------------------------------------------
+[0.22216 s] [31msurvived[0m
+[36m   -[0m [#  94] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+[34m- 75:             return[0m
+[32m+ 75:             pass[0m
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+--------------------------------------------------------------------------------
+[0.20391 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.delete_alt(linked_list_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c8ce1a0>
+data = <linkedList5.LinkedList object at 0x7f5b5c8ce1a0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:77: AttributeError
+[36m   -[0m [#  95] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+  75:             return
+[34m- 76:         curr_node = self.head[0m
+[32m+ 76:         pass[0m
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+--------------------------------------------------------------------------------
+[0.21074 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_14
+
+def test_case_14():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+>       var_2 = linked_list_0.delete_alt(var_1)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c5db4c0>
+data = <linkedList5.Node object at 0x7f5b5c5da380>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:77: UnboundLocalError
+[36m   -[0m [#  96] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+[34m- 78:             curr_node = curr_node.next[0m
+[32m+ 78:             pass[0m
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+--------------------------------------------------------------------------------
+[0.18421 s] [31msurvived[0m
+[36m   -[0m [#  97] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+[34m- 79:             return[0m
+[32m+ 79:             pass[0m
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+--------------------------------------------------------------------------------
+[0.21746 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_23
+
+def test_case_23():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+>       var_2 = linked_list_0.delete_alt(var_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:296: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c789900>, data = []
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:80: AttributeError
+[36m   -[0m [#  98] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+[34m- 82:                 curr_node.next = curr_node.next.next[0m
+[32m+ 82:                 pass[0m
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+--------------------------------------------------------------------------------
+[0.22754 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_32
+
+def test_case_32():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.append(var_1)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 3
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.delete_alt(var_1)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:552: AssertionError
+[36m   -[0m [#  99] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+[34m- 83:                 return[0m
+[32m+ 83:                 pass[0m
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.22846 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_32
+
+def test_case_32():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.append(var_1)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 3
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete(var_3)
+>       var_5 = linked_list_0.delete_alt(var_1)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:551: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c7e8e20>
+data = <linkedList5.Node object at 0x7f5b5c7e8d60>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:80: AttributeError
+[36m   -[0m [# 100] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+[34m- 84:             curr_node = curr_node.next[0m
+[32m+ 84:             pass[0m
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[5.00803 s] [33mtimeout[0m
+[36m   -[0m [# 101] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+[34m- 87:         curr_node = self.head[0m
+[32m+ 87:         pass[0m
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+--------------------------------------------------------------------------------
+[0.20517 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.delete_alt(linked_list_0)
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        linked_list_1 = module_0.LinkedList(linked_list_0)
+        assert len(linked_list_1.head) == 0
+>       var_1 = linked_list_0.print_list()
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c78ae30>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:88: UnboundLocalError
+[36m   -[0m [# 102] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+[34m- 89:             print(curr_node.data)[0m
+[32m+ 89:             pass[0m
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+--------------------------------------------------------------------------------
+[0.18409 s] [31msurvived[0m
+[36m   -[0m [# 103] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+[34m- 90:             curr_node = curr_node.next[0m
+[32m+ 90:             pass[0m
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+--------------------------------------------------------------------------------
+[5.00792 s] [33mtimeout[0m
+[36m   -[0m [# 104] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+[34m- 93:         data = [][0m
+[32m+ 93:         pass[0m
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.18291 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(none_type_0)
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.get_all_data()
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c8cb1c0>
+
+>   ???
+E   NameError: name 'data' is not defined
+
+linkedList5:98: NameError
+[36m   -[0m [# 105] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+[34m- 94:         curr_node = self.head[0m
+[32m+ 94:         pass[0m
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+  98:         return data
+--------------------------------------------------------------------------------
+[0.18608 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(none_type_0)
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.get_all_data()
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c5d9fc0>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:95: UnboundLocalError
+[36m   -[0m [# 106] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+[34m- 96:             data.append(curr_node.data)[0m
+[32m+ 96:             pass[0m
+  97:             curr_node = curr_node.next
+  98:         return data
+--------------------------------------------------------------------------------
+[0.17869 s] [31msurvived[0m
+[36m   -[0m [# 107] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+[34m- 97:             curr_node = curr_node.next[0m
+[32m+ 97:             pass[0m
+  98:         return data
+--------------------------------------------------------------------------------
+[5.00802 s] [33mtimeout[0m
+[36m   -[0m [# 108] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+[34m- 98:         return data[0m
+[32m+ 98:         pass[0m
+--------------------------------------------------------------------------------
+[0.21589 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_14
+
+def test_case_14():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:140: AssertionError
+[36m   -[0m [# 109] SVD linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data, next=None):
+[34m-  4:         self.next = next[0m
+[32m+  4:         next = next[0m
+   5:         self.data = data
+   6:     
+   7:     def __str__(self):
+   8:         return self.data
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 110] SVD linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data, next=None):
+   4:         self.next = next
+[34m-  5:         self.data = data[0m
+[32m+  5:         data = data[0m
+   6:     
+   7:     def __str__(self):
+   8:         return self.data
+   9: 
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 111] SVD linkedList5: 
+--------------------------------------------------------------------------------
+   4:         self.next = next
+   5:         self.data = data
+   6:     
+   7:     def __str__(self):
+[34m-  8:         return self.data[0m
+[32m+  8:         return data[0m
+   9: 
+  10: 
+  11: class LinkedList(object):
+  12:     
+--------------------------------------------------------------------------------
+[0.20728 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_13
+
+def test_case_13():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+>       var_0 = node_0.__str__()
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.Node object at 0x7f5b5c803040>
+
+>   ???
+E   NameError: name 'data' is not defined
+
+linkedList5:8: NameError
+[36m   -[0m [# 112] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  10: 
+  11: class LinkedList(object):
+  12:     
+  13:     def __init__(self, head=None):
+[34m- 14:         self.head = head[0m
+[32m+ 14:         head = head[0m
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 113] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  13:     def __init__(self, head=None):
+  14:         self.head = head
+  15:     
+  16:     def __len__(self):
+[34m- 17:         curr = self.head[0m
+[32m+ 17:         curr = head[0m
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.25332 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c618a60>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:17: NameError
+[36m   -[0m [# 114] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+[34m- 27:         node = Node(data, self.head)[0m
+[32m+ 27:         node = Node(data, head)[0m
+  28:         self.head = node
+  29:         return node
+  30:     
+  31:     def append(self, data):
+--------------------------------------------------------------------------------
+[0.25341 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.insert_to_front(linked_list_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c7881c0>
+data = <linkedList5.LinkedList object at 0x7f5b5c7881c0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:27: NameError
+[36m   -[0m [# 115] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+[34m- 28:         self.head = node[0m
+[32m+ 28:         head = node[0m
+  29:         return node
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 116] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+[34m- 35:         if self.head is None:[0m
+[32m+ 35:         if head is None:[0m
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+--------------------------------------------------------------------------------
+[0.20845 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_14
+
+def test_case_14():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+>       var_1 = linked_list_0.append(var_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c800a00>, data = []
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:35: NameError
+[36m   -[0m [# 117] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+  35:         if self.head is None:
+[34m- 36:             self.head = node[0m
+[32m+ 36:             head = node[0m
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 118] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+[34m- 38:         curr_node = self.head[0m
+[32m+ 38:         curr_node = head[0m
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+--------------------------------------------------------------------------------
+[0.20296 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_18
+
+def test_case_18():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+>       var_1 = linked_list_0.append(var_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:196: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c8021a0>
+data = <linkedList5.Node object at 0x7f5b5c801450>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:38: NameError
+[36m   -[0m [# 119] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+[34m- 47:         curr_node = self.head[0m
+[32m+ 47:         curr_node = head[0m
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.20135 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = False
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.__len__()
+        assert var_0 == 0
+>       var_1 = linked_list_0.find(bool_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5cdfd900>, data = False
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:47: NameError
+[36m   -[0m [# 120] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+[34m- 57:         if self.head is None:[0m
+[32m+ 57:         if head is None:[0m
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+--------------------------------------------------------------------------------
+[0.20342 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(none_type_0)
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.delete(none_type_0)
+        var_1 = linked_list_0.delete_alt(var_0)
+        bool_0 = False
+        var_2 = linked_list_0.delete_alt(bool_0)
+        bytes_0 = b'\x11'
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+>       var_3 = linked_list_1.delete(bytes_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c6bcdc0>, data = b'\x11'
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:57: NameError
+[36m   -[0m [# 121] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+  58:             return
+[34m- 59:         if self.head.data == data:[0m
+[32m+ 59:         if head.data == data:[0m
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+--------------------------------------------------------------------------------
+[0.22215 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_25
+
+def test_case_25():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.__str__()
+        var_5 = linked_list_0.delete_alt(var_1)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(linked_list_0)
+        assert len(node_0.data) == 2
+        var_6 = linked_list_1.delete(var_5)
+        var_7 = linked_list_0.find(var_1)
+>       var_8 = linked_list_0.delete(linked_list_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:372: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c6bf9a0>
+data = <linkedList5.LinkedList object at 0x7f5b5c6bf9a0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:59: NameError
+[36m   -[0m [# 122] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  56:             return
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+[34m- 60:             self.head = self.head.next[0m
+[32m+ 60:             head = self.head.next[0m
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 123] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  56:             return
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+[34m- 60:             self.head = self.head.next[0m
+[32m+ 60:             self.head = head.next[0m
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.26982 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_31
+
+def test_case_31():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.print_list()
+        var_2 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert var_2.data == []
+        var_3 = var_1.__str__()
+        var_4 = linked_list_0.delete_alt(linked_list_0)
+>       var_5 = linked_list_0.delete(var_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:525: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c8a4100>, data = []
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:60: NameError
+[36m   -[0m [# 124] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+[34m- 62:         prev_node = self.head[0m
+[32m+ 62:         prev_node = head[0m
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+--------------------------------------------------------------------------------
+[0.26819 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_25
+
+def test_case_25():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.__str__()
+        var_5 = linked_list_0.delete_alt(var_1)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(linked_list_0)
+        assert len(node_0.data) == 2
+        var_6 = linked_list_1.delete(var_5)
+        var_7 = linked_list_0.find(var_1)
+>       var_8 = linked_list_0.delete(linked_list_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:372: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c68dae0>
+data = <linkedList5.LinkedList object at 0x7f5b5c68dae0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:62: NameError
+[36m   -[0m [# 125] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+[34m- 63:         curr_node = self.head.next[0m
+[32m+ 63:         curr_node = head.next[0m
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+--------------------------------------------------------------------------------
+[0.26114 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_25
+
+def test_case_25():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.__str__()
+        var_5 = linked_list_0.delete_alt(var_1)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(linked_list_0)
+        assert len(node_0.data) == 2
+        var_6 = linked_list_1.delete(var_5)
+        var_7 = linked_list_0.find(var_1)
+>       var_8 = linked_list_0.delete(linked_list_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:372: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c8cd2a0>
+data = <linkedList5.LinkedList object at 0x7f5b5c8cd2a0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:63: NameError
+[36m   -[0m [# 126] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+[34m- 74:         if self.head is None:[0m
+[32m+ 74:         if head is None:[0m
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.19773 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.delete_alt(linked_list_0)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c800ac0>
+data = <linkedList5.LinkedList object at 0x7f5b5c800ac0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:74: NameError
+[36m   -[0m [# 127] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+  75:             return
+[34m- 76:         curr_node = self.head[0m
+[32m+ 76:         curr_node = head[0m
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+--------------------------------------------------------------------------------
+[0.21398 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_14
+
+def test_case_14():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+>       var_2 = linked_list_0.delete_alt(var_1)
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c8cb190>
+data = <linkedList5.Node object at 0x7f5b5c8cbdf0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:76: NameError
+[36m   -[0m [# 128] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+[34m- 87:         curr_node = self.head[0m
+[32m+ 87:         curr_node = head[0m
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+--------------------------------------------------------------------------------
+[0.19464 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.delete_alt(linked_list_0)
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        linked_list_1 = module_0.LinkedList(linked_list_0)
+        assert len(linked_list_1.head) == 0
+>       var_1 = linked_list_0.print_list()
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c92f550>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:87: NameError
+[36m   -[0m [# 129] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+[34m- 94:         curr_node = self.head[0m
+[32m+ 94:         curr_node = head[0m
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+  98:         return data
+--------------------------------------------------------------------------------
+[0.18593 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(none_type_0)
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.get_all_data()
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5b5c6bf9d0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:94: NameError
+[36m   -[0m [# 130] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+[34m- 20:             counter += 1[0m
+[34m- 21:             curr = curr.next[0m
+[32m+ 20:             break[0m
+[32m+ 21:         [0m
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+--------------------------------------------------------------------------------
+[0.19223 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '\txqHl;v&thuBSb3'
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:11: AssertionError
+[36m   -[0m [# 131] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+[34m- 40:             curr_node = curr_node.next[0m
+[32m+ 40:             break[0m
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+  44:     def find(self, data):
+--------------------------------------------------------------------------------
+[0.21816 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_24
+
+def test_case_24():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.__str__()
+        var_5 = linked_list_0.delete_alt(var_1)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_6 = linked_list_1.delete(var_5)
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        var_7 = linked_list_2.delete(linked_list_2)
+        linked_list_3 = module_0.LinkedList(var_2)
+        assert len(linked_list_3) == 0
+        linked_list_4 = module_0.LinkedList()
+        assert len(linked_list_4) == 0
+        var_8 = linked_list_4.get_all_data()
+        var_9 = linked_list_2.find(linked_list_0)
+        var_10 = linked_list_0.delete_alt(var_9)
+        node_0 = module_0.Node(var_9, var_0)
+        var_11 = var_6.__str__()
+        var_12 = linked_list_4.__str__()
+        node_1 = module_0.Node(var_10, var_2)
+        var_13 = linked_list_0.__len__()
+        assert var_13 == 2
+        var_14 = linked_list_0.append(var_11)
+>       assert len(linked_list_0) == 3
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:341: AssertionError
+[36m   -[0m [# 132] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+[34m- 49:             if curr_node.data == data:[0m
+[34m- 50:                 return curr_node[0m
+[34m- 51:             curr_node = curr_node.next[0m
+[32m+ 49:             break[0m
+[32m+ 50:         [0m
+[32m+ 51:         [0m
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+--------------------------------------------------------------------------------
+[0.22298 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_27
+
+def test_case_27():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete_alt(var_1)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.delete(var_4)
+        node_0 = module_0.Node(var_0)
+        var_6 = linked_list_0.find(var_1)
+        var_7 = linked_list_0.find(var_0)
+>       assert f'{type(var_7).__module__}.{type(var_7).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:431: AssertionError
+[36m   -[0m [# 133] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+[34m- 65:             if curr_node.data == data:[0m
+[34m- 66:                 prev_node.next = curr_node.next[0m
+[34m- 67:                 return[0m
+[34m- 68:             prev_node = curr_node[0m
+[34m- 69:             curr_node = curr_node.next[0m
+[32m+ 65:             break[0m
+[32m+ 66:     [0m
+[32m+ 67:     [0m
+[32m+ 68:     [0m
+[32m+ 69:     [0m
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+--------------------------------------------------------------------------------
+[0.29204 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_35
+
+def test_case_35():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.print_list()
+        var_2 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete(var_2)
+        var_4 = linked_list_0.delete_alt(var_0)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        var_5 = linked_list_0.delete(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:678: AssertionError
+[36m   -[0m [# 134] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+[34m- 81:             if curr_node.next.data == data:[0m
+[34m- 82:                 curr_node.next = curr_node.next.next[0m
+[34m- 83:                 return[0m
+[34m- 84:             curr_node = curr_node.next[0m
+[32m+ 81:             break[0m
+[32m+ 82:     [0m
+[32m+ 83:     [0m
+[32m+ 84:     [0m
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.26722 s] [32mkilled[0m by DYNAMOSA/test_linkedList5_DYNAMOSA.py::test_case_32
+
+def test_case_32():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.append(var_1)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 3
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_3.next).__module__}.{type(var_3.next).__qualname__}' == 'linkedList5.Node'
+        assert var_3.data == []
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.delete_alt(var_1)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+DYNAMOSA/test_linkedList5_DYNAMOSA.py:552: AssertionError
+[36m   -[0m [# 135] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+[34m- 89:             print(curr_node.data)[0m
+[34m- 90:             curr_node = curr_node.next[0m
+[32m+ 89:             break[0m
+[32m+ 90:     [0m
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.23636 s] [31msurvived[0m
+[36m   -[0m [# 136] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+[34m- 96:             data.append(curr_node.data)[0m
+[34m- 97:             curr_node = curr_node.next[0m
+[32m+ 96:             break[0m
+[32m+ 97:         [0m
+  98:         return data
+--------------------------------------------------------------------------------
+[0.16572 s] [31msurvived[0m
+[34m[*][0m Mutation score [81.57055 s]: [1m[34m84.9%[0m
+[36m   -[0m all: 136
+[36m   -[0m killed: 92 (67.6%)
+[36m   -[0m survived: 18 (13.2%)
+[36m   -[0m incompetent: 17 (12.5%)
+[36m   -[0m timeout: 9 (6.6%)

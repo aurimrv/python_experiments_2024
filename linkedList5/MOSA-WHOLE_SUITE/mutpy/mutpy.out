@@ -1,0 +1,4469 @@
+[*] Start mutation process:
+   - targets: linkedList5.py
+   - tests: ./MOSA-WHOLE_SUITE
+[*] 52 tests passed:
+   - test_linkedList5_WHOLE_SUITE [0.05859 s]
+   - test_linkedList5_MOSA [0.05420 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR linkedList5: 
+--------------------------------------------------------------------------------
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+- 20:             counter += 1
++ 20:             counter -= 1
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+--------------------------------------------------------------------------------
+[0.07829 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       ValueError: __len__() should return >= 0
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:19: ValueError
+   - [#   2] CDI linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data, next=None):
+-  4:         self.next = next
+-  5:         self.data = data
+-  6:     
++  3:     @classmethod
++  4:     def __init__(self, data, next=None):
++  5:         self.next = next
++  6:         self.data = data
+   7:     def __str__(self):
+   8:         return self.data
+   9: 
+  10: 
+--------------------------------------------------------------------------------
+[5.00301 s] timeout
+   - [#   3] CDI linkedList5: 
+--------------------------------------------------------------------------------
+   3:     def __init__(self, data, next=None):
+   4:         self.next = next
+   5:         self.data = data
+   6:     
+-  7:     def __str__(self):
+-  8:         return self.data
+-  9: 
++  7:     @classmethod
++  8:     def __str__(self):
++  9:         return self.data
+  10: 
+  11: class LinkedList(object):
+  12:     
+  13:     def __init__(self, head=None):
+--------------------------------------------------------------------------------
+[0.08320 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 3
+        assert len(var_0.data) == 3
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_2.data) == 3
+        var_3 = linked_list_0.delete(var_2)
+>       var_4 = var_2.__str__()
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.Node'>
+
+>   ???
+E   AttributeError: type object 'Node' has no attribute 'data'
+
+linkedList5:9: AttributeError
+   - [#   4] CDI linkedList5: 
+--------------------------------------------------------------------------------
+   9: 
+  10: 
+  11: class LinkedList(object):
+  12:     
+- 13:     def __init__(self, head=None):
+- 14:         self.head = head
+- 15:     
++ 13:     @classmethod
++ 14:     def __init__(self, head=None):
++ 15:         self.head = head
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+--------------------------------------------------------------------------------
+[0.08925 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_15
+
+def test_case_15():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        node_0 = module_0.Node(linked_list_0)
+        assert len(node_0.data) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.print_list()
+        linked_list_2 = module_0.LinkedList(linked_list_1)
+>       assert len(linked_list_2.head) == 0
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:305: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57cf74c0>
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute 'next'
+
+linkedList5:21: AttributeError
+   - [#   5] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  12:     
+  13:     def __init__(self, head=None):
+  14:         self.head = head
+  15:     
+- 16:     def __len__(self):
+- 17:         curr = self.head
+- 18:         counter = 0
+- 19:         while curr is not None:
+- 20:             counter += 1
+- 21:             curr = curr.next
+- 22:         return counter
+- 23:     
++ 16:     @classmethod
++ 17:     def __len__(self):
++ 18:         curr = self.head
++ 19:         counter = 0
++ 20:         while curr is not None:
++ 21:             counter += 1
++ 22:             curr = curr.next
++ 23:         return counter
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+--------------------------------------------------------------------------------
+[0.08059 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:18: AttributeError
+   - [#   6] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+- 24:     def insert_to_front(self, data):
+- 25:         if data is None:
+- 26:             return None
+- 27:         node = Node(data, self.head)
+- 28:         self.head = node
+- 29:         return node
+- 30:     
++ 24:     @classmethod
++ 25:     def insert_to_front(self, data):
++ 26:         if data is None:
++ 27:             return None
++ 28:         node = Node(data, self.head)
++ 29:         self.head = node
++ 30:         return node
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+--------------------------------------------------------------------------------
+[0.08137 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+>       var_1 = linked_list_0.insert_to_front(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+data = <linkedList5.LinkedList object at 0x7fbc57a663e0>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:28: AttributeError
+   - [#   7] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+  29:         return node
+  30:     
+- 31:     def append(self, data):
+- 32:         if data is None:
+- 33:             return None
+- 34:         node = Node(data)
+- 35:         if self.head is None:
+- 36:             self.head = node
+- 37:             return node
+- 38:         curr_node = self.head
+- 39:         while curr_node.next is not None:
+- 40:             curr_node = curr_node.next
+- 41:         curr_node.next = node
+- 42:         return node
+- 43:     
++ 31:     @classmethod
++ 32:     def append(self, data):
++ 33:         if data is None:
++ 34:             return None
++ 35:         node = Node(data)
++ 36:         if self.head is None:
++ 37:             self.head = node
++ 38:             return node
++ 39:         curr_node = self.head
++ 40:         while curr_node.next is not None:
++ 41:             curr_node = curr_node.next
++ 42:         curr_node.next = node
++ 43:         return node
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.08436 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.append(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+data = <linkedList5.LinkedList object at 0x7fbc57b25930>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:36: AttributeError
+   - [#   8] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+- 44:     def find(self, data):
+- 45:         if data is None:
+- 46:             return None
+- 47:         curr_node = self.head
+- 48:         while curr_node is not None:
+- 49:             if curr_node.data == data:
+- 50:                 return curr_node
+- 51:             curr_node = curr_node.next
+- 52:         return None
+- 53:     
++ 44:     @classmethod
++ 45:     def find(self, data):
++ 46:         if data is None:
++ 47:             return None
++ 48:         curr_node = self.head
++ 49:         while curr_node is not None:
++ 50:             if curr_node.data == data:
++ 51:                 return curr_node
++ 52:             curr_node = curr_node.next
++ 53:         return None
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.08238 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.get_all_data()
+>       var_1 = linked_list_0.find(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+data = <linkedList5.LinkedList object at 0x7fbc57cf79a0>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:48: AttributeError
+   - [#   9] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+- 54:     def delete(self, data):
+- 55:         if data is None:
+- 56:             return
+- 57:         if self.head is None:
+- 58:             return
+- 59:         if self.head.data == data:
+- 60:             self.head = self.head.next
+- 61:             return
+- 62:         prev_node = self.head
+- 63:         curr_node = self.head.next
+- 64:         while curr_node is not None:
+- 65:             if curr_node.data == data:
+- 66:                 prev_node.next = curr_node.next
+- 67:                 return
+- 68:             prev_node = curr_node
+- 69:             curr_node = curr_node.next
+- 70:     
++ 54:     @classmethod
++ 55:     def delete(self, data):
++ 56:         if data is None:
++ 57:             return
++ 58:         if self.head is None:
++ 59:             return
++ 60:         if self.head.data == data:
++ 61:             self.head = self.head.next
++ 62:             return
++ 63:         prev_node = self.head
++ 64:         curr_node = self.head.next
++ 65:         while curr_node is not None:
++ 66:             if curr_node.data == data:
++ 67:                 prev_node.next = curr_node.next
++ 68:                 return
++ 69:             prev_node = curr_node
++ 70:             curr_node = curr_node.next
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.08195 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.get_all_data()
+        var_1 = linked_list_0.find(linked_list_0)
+>       var_2 = linked_list_0.delete(var_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>, data = []
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:58: AttributeError
+   - [#  10] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+- 71:     def delete_alt(self, data):
+- 72:         if data is None:
+- 73:             return
+- 74:         if self.head is None:
+- 75:             return
+- 76:         curr_node = self.head
+- 77:         if curr_node.data == data:
+- 78:             curr_node = curr_node.next
+- 79:             return
+- 80:         while curr_node.next is not None:
+- 81:             if curr_node.next.data == data:
+- 82:                 curr_node.next = curr_node.next.next
+- 83:                 return
+- 84:             curr_node = curr_node.next
+- 85:     
++ 71:     @classmethod
++ 72:     def delete_alt(self, data):
++ 73:         if data is None:
++ 74:             return
++ 75:         if self.head is None:
++ 76:             return
++ 77:         curr_node = self.head
++ 78:         if curr_node.data == data:
++ 79:             curr_node = curr_node.next
++ 80:             return
++ 81:         while curr_node.next is not None:
++ 82:             if curr_node.next.data == data:
++ 83:                 curr_node.next = curr_node.next.next
++ 84:                 return
++ 85:             curr_node = curr_node.next
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+--------------------------------------------------------------------------------
+[0.10230 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.find(linked_list_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 1
+        set_0 = {var_0, var_1, linked_list_0}
+        var_2 = linked_list_0.append(set_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_1.data) == 2
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'builtins.set'
+        assert len(var_2.data) == 2
+        var_3 = linked_list_0.find(var_1)
+        var_4 = var_0.__str__()
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_4) == 2
+>       var_5 = var_4.delete_alt(var_4)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:167: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+data = <linkedList5.LinkedList object at 0x7fbc57991bd0>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:75: AttributeError
+   - [#  11] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+- 86:     def print_list(self):
+- 87:         curr_node = self.head
+- 88:         while curr_node is not None:
+- 89:             print(curr_node.data)
+- 90:             curr_node = curr_node.next
+- 91:     
++ 86:     @classmethod
++ 87:     def print_list(self):
++ 88:         curr_node = self.head
++ 89:         while curr_node is not None:
++ 90:             print(curr_node.data)
++ 91:             curr_node = curr_node.next
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.08347 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 2
+>       var_2 = linked_list_0.print_list()
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:88: AttributeError
+   - [#  12] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+- 92:     def get_all_data(self):
+- 93:         data = []
+- 94:         curr_node = self.head
+- 95:         while curr_node is not None:
+- 96:             data.append(curr_node.data)
+- 97:             curr_node = curr_node.next
+- 98:         return data
++ 92:     @classmethod
++ 93:     def get_all_data(self):
++ 94:         data = []
++ 95:         curr_node = self.head
++ 96:         while curr_node is not None:
++ 97:             data.append(curr_node.data)
++ 98:             curr_node = curr_node.next
++ 99:         return data
+--------------------------------------------------------------------------------
+[0.08056 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+>       var_0 = linked_list_1.get_all_data()
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:95: AttributeError
+   - [#  13] COI linkedList5: 
+--------------------------------------------------------------------------------
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+- 19:         while curr is not None:
++ 19:         while not (curr is not None):
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+--------------------------------------------------------------------------------
+[0.08094 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57b02dd0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:21: AttributeError
+   - [#  14] COI linkedList5: 
+--------------------------------------------------------------------------------
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+- 25:         if data is None:
++ 25:         if not (data is None):
+  26:             return None
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+  29:         return node
+--------------------------------------------------------------------------------
+[0.08325 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(linked_list_0)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:25: AssertionError
+   - [#  15] COI linkedList5: 
+--------------------------------------------------------------------------------
+  28:         self.head = node
+  29:         return node
+  30:     
+  31:     def append(self, data):
+- 32:         if data is None:
++ 32:         if not (data is None):
+  33:             return None
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+--------------------------------------------------------------------------------
+[0.08075 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:19: AssertionError
+   - [#  16] COI linkedList5: 
+--------------------------------------------------------------------------------
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+- 35:         if self.head is None:
++ 35:         if not (self.head is None):
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+--------------------------------------------------------------------------------
+[0.08097 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.append(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57b03760>
+data = <linkedList5.LinkedList object at 0x7fbc57b03760>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:39: AttributeError
+   - [#  17] COI linkedList5: 
+--------------------------------------------------------------------------------
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+- 39:         while curr_node.next is not None:
++ 39:         while not (curr_node.next is not None):
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+--------------------------------------------------------------------------------
+[0.08337 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 2
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.append(linked_list_0)
+>       assert len(linked_list_0) == 3
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:51: AssertionError
+   - [#  18] COI linkedList5: 
+--------------------------------------------------------------------------------
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+  44:     def find(self, data):
+- 45:         if data is None:
++ 45:         if not (data is None):
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+--------------------------------------------------------------------------------
+[0.08435 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.find(linked_list_0)
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:148: AssertionError
+   - [#  19] COI linkedList5: 
+--------------------------------------------------------------------------------
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+- 48:         while curr_node is not None:
++ 48:         while not (curr_node is not None):
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+--------------------------------------------------------------------------------
+[0.08160 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.get_all_data()
+>       var_1 = linked_list_0.find(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57ca1ba0>
+data = <linkedList5.LinkedList object at 0x7fbc57ca1ba0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:49: AttributeError
+   - [#  20] COI linkedList5: 
+--------------------------------------------------------------------------------
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+- 49:             if curr_node.data == data:
++ 49:             if not (curr_node.data == data):
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+--------------------------------------------------------------------------------
+[0.09975 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.find(linked_list_0)
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:148: AssertionError
+   - [#  21] COI linkedList5: 
+--------------------------------------------------------------------------------
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+- 55:         if data is None:
++ 55:         if not (data is None):
+  56:             return
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+--------------------------------------------------------------------------------
+[0.08296 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        float_0 = -532.81
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(float_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert var_1.data == pytest.approx(-532.81, abs=0.01, rel=0.01)
+        var_2 = linked_list_0.delete(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:88: AssertionError
+   - [#  22] COI linkedList5: 
+--------------------------------------------------------------------------------
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+- 57:         if self.head is None:
++ 57:         if not (self.head is None):
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+--------------------------------------------------------------------------------
+[0.08079 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.get_all_data()
+        var_1 = linked_list_0.find(linked_list_0)
+>       var_2 = linked_list_0.delete(var_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57cf0f10>, data = []
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:59: AttributeError
+   - [#  23] COI linkedList5: 
+--------------------------------------------------------------------------------
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+  58:             return
+- 59:         if self.head.data == data:
++ 59:         if not (self.head.data == data):
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+--------------------------------------------------------------------------------
+[0.08660 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        float_0 = -532.81
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(float_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert var_1.data == pytest.approx(-532.81, abs=0.01, rel=0.01)
+        var_2 = linked_list_0.delete(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert len(var_0.data) == 1
+>       assert var_1.next is None
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:90: AssertionError
+   - [#  24] COI linkedList5: 
+--------------------------------------------------------------------------------
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+- 64:         while curr_node is not None:
++ 64:         while not (curr_node is not None):
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+--------------------------------------------------------------------------------
+[0.08218 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        float_0 = -532.81
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(float_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert var_1.data == pytest.approx(-532.81, abs=0.01, rel=0.01)
+        var_2 = linked_list_0.delete(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:88: AssertionError
+   - [#  25] COI linkedList5: 
+--------------------------------------------------------------------------------
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+- 65:             if curr_node.data == data:
++ 65:             if not (curr_node.data == data):
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.08144 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        float_0 = -532.81
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(float_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert var_1.data == pytest.approx(-532.81, abs=0.01, rel=0.01)
+        var_2 = linked_list_0.delete(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:88: AssertionError
+   - [#  26] COI linkedList5: 
+--------------------------------------------------------------------------------
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+  71:     def delete_alt(self, data):
+- 72:         if data is None:
++ 72:         if not (data is None):
+  73:             return
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.08522 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_9
+
+def test_case_9():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        int_0 = -3730
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.insert_to_front(int_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert var_0.data == -3730
+        var_1 = linked_list_1.insert_to_front(linked_list_0)
+        assert len(linked_list_1) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 0
+        var_2 = linked_list_1.delete_alt(int_0)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:206: AssertionError
+   - [#  27] COI linkedList5: 
+--------------------------------------------------------------------------------
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+- 74:         if self.head is None:
++ 74:         if not (self.head is None):
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.08514 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_9
+
+def test_case_9():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        int_0 = -3730
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.insert_to_front(int_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert var_0.data == -3730
+        var_1 = linked_list_1.insert_to_front(linked_list_0)
+        assert len(linked_list_1) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 0
+        var_2 = linked_list_1.delete_alt(int_0)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:206: AssertionError
+   - [#  28] COI linkedList5: 
+--------------------------------------------------------------------------------
+  73:             return
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+- 77:         if curr_node.data == data:
++ 77:         if not (curr_node.data == data):
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+--------------------------------------------------------------------------------
+[0.08678 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_9
+
+def test_case_9():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        int_0 = -3730
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.insert_to_front(int_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert var_0.data == -3730
+        var_1 = linked_list_1.insert_to_front(linked_list_0)
+        assert len(linked_list_1) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 0
+        var_2 = linked_list_1.delete_alt(int_0)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:206: AssertionError
+   - [#  29] COI linkedList5: 
+--------------------------------------------------------------------------------
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+- 80:         while curr_node.next is not None:
++ 80:         while not (curr_node.next is not None):
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.09174 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.find(linked_list_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 1
+        set_0 = {var_0, var_1, linked_list_0}
+        var_2 = linked_list_0.append(set_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_1.data) == 2
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'builtins.set'
+        assert len(var_2.data) == 2
+        var_3 = linked_list_0.find(var_1)
+        var_4 = var_0.__str__()
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_4) == 2
+        var_5 = var_4.delete_alt(var_4)
+        var_6 = var_4.__len__()
+        assert var_6 == 2
+        var_7 = linked_list_0.delete(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert len(var_0.data) == 1
+        assert len(var_1.data) == 1
+        assert len(var_4) == 1
+>       var_8 = linked_list_0.delete_alt(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:175: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc579c5f60>
+data = <linkedList5.LinkedList object at 0x7fbc579c5f60>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:81: AttributeError
+   - [#  30] COI linkedList5: 
+--------------------------------------------------------------------------------
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+- 81:             if curr_node.next.data == data:
++ 81:             if not (curr_node.next.data == data):
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+--------------------------------------------------------------------------------
+[0.10322 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_9
+
+def test_case_9():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        int_0 = -3730
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.insert_to_front(int_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert var_0.data == -3730
+        var_1 = linked_list_1.insert_to_front(linked_list_0)
+        assert len(linked_list_1) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 0
+        var_2 = linked_list_1.delete_alt(int_0)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:206: AssertionError
+   - [#  31] COI linkedList5: 
+--------------------------------------------------------------------------------
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+- 88:         while curr_node is not None:
++ 88:         while not (curr_node is not None):
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+--------------------------------------------------------------------------------
+[0.08388 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        bytes_0 = b'u\x8c\x1c\xf9\xa6\xef>)_\xce\xa6'
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.find(bytes_0)
+>       var_1 = linked_list_0.print_list()
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:126: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57df0a30>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:89: AttributeError
+   - [#  32] COI linkedList5: 
+--------------------------------------------------------------------------------
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+- 95:         while curr_node is not None:
++ 95:         while not (curr_node is not None):
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+  98:         return data
+--------------------------------------------------------------------------------
+[0.08165 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+>       var_0 = linked_list_1.get_all_data()
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57ca10c0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:96: AttributeError
+   - [#  33] CRP linkedList5: 
+--------------------------------------------------------------------------------
+  14:         self.head = head
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+- 18:         counter = 0
++ 18:         counter = 1
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+--------------------------------------------------------------------------------
+[0.08097 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:7: AssertionError
+   - [#  34] CRP linkedList5: 
+--------------------------------------------------------------------------------
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+- 20:             counter += 1
++ 20:             counter += 2
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+--------------------------------------------------------------------------------
+[0.08100 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:19: AssertionError
+   - [#  35] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+- 22:         return counter
+- 23:     
++ 22:             break
++ 23:         return counter
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+--------------------------------------------------------------------------------
+[0.08045 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(linked_list_0)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:25: AssertionError
+   - [#  36] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+- 41:         curr_node.next = node
+- 42:         return node
+- 43:     
++ 41:             break
++ 42:         curr_node.next = node
++ 43:         return node
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.08226 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 2
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 3
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 3
+        assert len(var_1.data) == 3
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert var_3.next is None
+        assert f'{type(var_3.data).__module__}.{type(var_3.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_3.data) == 3
+        var_4 = linked_list_0.append(var_1)
+>       assert len(linked_list_0) == 4
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:60: AssertionError
+   - [#  37] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+- 52:         return None
+- 53:     
++ 52:             break
++ 53:         return None
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.07936 s] survived
+   - [#  38] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+- 70:     
++ 70:             break
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.08054 s] survived
+   - [#  39] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+- 85:     
++ 85:             break
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+--------------------------------------------------------------------------------
+[0.10363 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_10
+
+def test_case_10():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 2
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.append(var_1)
+        assert len(linked_list_0) == 3
+        assert len(var_0.data) == 3
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_1.data) == 3
+        assert f'{type(var_3.data).__module__}.{type(var_3.data).__qualname__}' == 'linkedList5.Node'
+        var_4 = var_1.__str__()
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_4) == 3
+        var_5 = linked_list_1.append(linked_list_1)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+        assert var_5.next is None
+        assert f'{type(var_5.data).__module__}.{type(var_5.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_5.data) == 1
+        var_6 = var_4.get_all_data()
+        var_7 = linked_list_0.delete_alt(var_1)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:246: AssertionError
+   - [#  40] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+- 91:     
++ 91:             break
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.09600 s] survived
+   - [#  41] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+- 98:         return data
++ 98:             break
++ 99:         return data
+--------------------------------------------------------------------------------
+[0.11930 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_MOSA.py::test_case_29
+
+def test_case_29():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = var_0.__str__()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1) == 1
+        var_2 = linked_list_0.__len__()
+        assert var_2 == 1
+        var_3 = linked_list_0.append(var_2)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert len(var_1) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert var_3.next is None
+        assert var_3.data == 1
+        var_4 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.insert_to_front(var_4)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+        assert var_5.next is None
+        assert f'{type(var_5.data).__module__}.{type(var_5.data).__qualname__}' == 'builtins.list'
+>       assert len(var_5.data) == 2
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_MOSA.py:652: AssertionError
+   - [#  42] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+- 49:             if curr_node.data == data:
++ 49:             if curr_node.data != data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+--------------------------------------------------------------------------------
+[0.08366 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.find(linked_list_0)
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:148: AssertionError
+   - [#  43] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+  58:             return
+- 59:         if self.head.data == data:
++ 59:         if self.head.data != data:
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+--------------------------------------------------------------------------------
+[0.08463 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        float_0 = -532.81
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(float_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert var_1.data == pytest.approx(-532.81, abs=0.01, rel=0.01)
+        var_2 = linked_list_0.delete(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert len(var_0.data) == 1
+>       assert var_1.next is None
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:90: AssertionError
+   - [#  44] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+- 65:             if curr_node.data == data:
++ 65:             if curr_node.data != data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.08310 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        float_0 = -532.81
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(float_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert var_1.data == pytest.approx(-532.81, abs=0.01, rel=0.01)
+        var_2 = linked_list_0.delete(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:88: AssertionError
+   - [#  45] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  73:             return
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+- 77:         if curr_node.data == data:
++ 77:         if curr_node.data != data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+--------------------------------------------------------------------------------
+[0.08559 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_9
+
+def test_case_9():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        int_0 = -3730
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.insert_to_front(int_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert var_0.data == -3730
+        var_1 = linked_list_1.insert_to_front(linked_list_0)
+        assert len(linked_list_1) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 0
+        var_2 = linked_list_1.delete_alt(int_0)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:206: AssertionError
+   - [#  46] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+- 81:             if curr_node.next.data == data:
++ 81:             if curr_node.next.data != data:
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+--------------------------------------------------------------------------------
+[0.08656 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_9
+
+def test_case_9():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        int_0 = -3730
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.insert_to_front(int_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert var_0.data == -3730
+        var_1 = linked_list_1.insert_to_front(linked_list_0)
+        assert len(linked_list_1) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 0
+        var_2 = linked_list_1.delete_alt(int_0)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:206: AssertionError
+   - [#  47] SDI linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data, next=None):
+-  4:         self.next = next
+-  5:         self.data = data
+-  6:     
++  3:     @staticmethod
++  4:     def __init__(self, data, next=None):
++  5:         self.next = next
++  6:         self.data = data
+   7:     def __str__(self):
+   8:         return self.data
+   9: 
+  10: 
+--------------------------------------------------------------------------------
+[0.08073 s] incompetent
+
+TypeError: linkedList5:34: TypeError: Node.__init__() missing 1 required positional argument: 'data'
+
+   - [#  48] SDI linkedList5: 
+--------------------------------------------------------------------------------
+   3:     def __init__(self, data, next=None):
+   4:         self.next = next
+   5:         self.data = data
+   6:     
+-  7:     def __str__(self):
+-  8:         return self.data
+-  9: 
++  7:     @staticmethod
++  8:     def __str__(self):
++  9:         return self.data
+  10: 
+  11: class LinkedList(object):
+  12:     
+  13:     def __init__(self, head=None):
+--------------------------------------------------------------------------------
+[0.08350 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:115: TypeError: Node.__str__() missing 1 required positional argument: 'self'
+
+   - [#  49] SDI linkedList5: 
+--------------------------------------------------------------------------------
+   9: 
+  10: 
+  11: class LinkedList(object):
+  12:     
+- 13:     def __init__(self, head=None):
+- 14:         self.head = head
+- 15:     
++ 13:     @staticmethod
++ 14:     def __init__(self, head=None):
++ 15:         self.head = head
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+--------------------------------------------------------------------------------
+[0.09624 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:6: TypeError: LinkedList.__init__() missing 1 required positional argument: 'self'
+
+   - [#  50] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  12:     
+  13:     def __init__(self, head=None):
+  14:         self.head = head
+  15:     
+- 16:     def __len__(self):
+- 17:         curr = self.head
+- 18:         counter = 0
+- 19:         while curr is not None:
+- 20:             counter += 1
+- 21:             curr = curr.next
+- 22:         return counter
+- 23:     
++ 16:     @staticmethod
++ 17:     def __len__(self):
++ 18:         curr = self.head
++ 19:         counter = 0
++ 20:         while curr is not None:
++ 21:             counter += 1
++ 22:             curr = curr.next
++ 23:         return counter
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+--------------------------------------------------------------------------------
+[0.09500 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:7: TypeError: LinkedList.__len__() missing 1 required positional argument: 'self'
+
+   - [#  51] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+- 24:     def insert_to_front(self, data):
+- 25:         if data is None:
+- 26:             return None
+- 27:         node = Node(data, self.head)
+- 28:         self.head = node
+- 29:         return node
+- 30:     
++ 24:     @staticmethod
++ 25:     def insert_to_front(self, data):
++ 26:         if data is None:
++ 27:             return None
++ 28:         node = Node(data, self.head)
++ 29:         self.head = node
++ 30:         return node
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+--------------------------------------------------------------------------------
+[0.08061 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:24: TypeError: LinkedList.insert_to_front() missing 1 required positional argument: 'data'
+
+   - [#  52] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+  29:         return node
+  30:     
+- 31:     def append(self, data):
+- 32:         if data is None:
+- 33:             return None
+- 34:         node = Node(data)
+- 35:         if self.head is None:
+- 36:             self.head = node
+- 37:             return node
+- 38:         curr_node = self.head
+- 39:         while curr_node.next is not None:
+- 40:             curr_node = curr_node.next
+- 41:         curr_node.next = node
+- 42:         return node
+- 43:     
++ 31:     @staticmethod
++ 32:     def append(self, data):
++ 33:         if data is None:
++ 34:             return None
++ 35:         node = Node(data)
++ 36:         if self.head is None:
++ 37:             self.head = node
++ 38:             return node
++ 39:         curr_node = self.head
++ 40:         while curr_node.next is not None:
++ 41:             curr_node = curr_node.next
++ 42:         curr_node.next = node
++ 43:         return node
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.08068 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:18: TypeError: LinkedList.append() missing 1 required positional argument: 'data'
+
+   - [#  53] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+- 44:     def find(self, data):
+- 45:         if data is None:
+- 46:             return None
+- 47:         curr_node = self.head
+- 48:         while curr_node is not None:
+- 49:             if curr_node.data == data:
+- 50:                 return curr_node
+- 51:             curr_node = curr_node.next
+- 52:         return None
+- 53:     
++ 44:     @staticmethod
++ 45:     def find(self, data):
++ 46:         if data is None:
++ 47:             return None
++ 48:         curr_node = self.head
++ 49:         while curr_node is not None:
++ 50:             if curr_node.data == data:
++ 51:                 return curr_node
++ 52:             curr_node = curr_node.next
++ 53:         return None
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.07943 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:11: TypeError: LinkedList.find() missing 1 required positional argument: 'data'
+
+   - [#  54] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+- 54:     def delete(self, data):
+- 55:         if data is None:
+- 56:             return
+- 57:         if self.head is None:
+- 58:             return
+- 59:         if self.head.data == data:
+- 60:             self.head = self.head.next
+- 61:             return
+- 62:         prev_node = self.head
+- 63:         curr_node = self.head.next
+- 64:         while curr_node is not None:
+- 65:             if curr_node.data == data:
+- 66:                 prev_node.next = curr_node.next
+- 67:                 return
+- 68:             prev_node = curr_node
+- 69:             curr_node = curr_node.next
+- 70:     
++ 54:     @staticmethod
++ 55:     def delete(self, data):
++ 56:         if data is None:
++ 57:             return
++ 58:         if self.head is None:
++ 59:             return
++ 60:         if self.head.data == data:
++ 61:             self.head = self.head.next
++ 62:             return
++ 63:         prev_node = self.head
++ 64:         curr_node = self.head.next
++ 65:         while curr_node is not None:
++ 66:             if curr_node.data == data:
++ 67:                 prev_node.next = curr_node.next
++ 68:                 return
++ 69:             prev_node = curr_node
++ 70:             curr_node = curr_node.next
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.08121 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:12: TypeError: LinkedList.delete() missing 1 required positional argument: 'data'
+
+   - [#  55] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+- 71:     def delete_alt(self, data):
+- 72:         if data is None:
+- 73:             return
+- 74:         if self.head is None:
+- 75:             return
+- 76:         curr_node = self.head
+- 77:         if curr_node.data == data:
+- 78:             curr_node = curr_node.next
+- 79:             return
+- 80:         while curr_node.next is not None:
+- 81:             if curr_node.next.data == data:
+- 82:                 curr_node.next = curr_node.next.next
+- 83:                 return
+- 84:             curr_node = curr_node.next
+- 85:     
++ 71:     @staticmethod
++ 72:     def delete_alt(self, data):
++ 73:         if data is None:
++ 74:             return
++ 75:         if self.head is None:
++ 76:             return
++ 77:         curr_node = self.head
++ 78:         if curr_node.data == data:
++ 79:             curr_node = curr_node.next
++ 80:             return
++ 81:         while curr_node.next is not None:
++ 82:             if curr_node.next.data == data:
++ 83:                 curr_node.next = curr_node.next.next
++ 84:                 return
++ 85:             curr_node = curr_node.next
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+--------------------------------------------------------------------------------
+[0.08554 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:167: TypeError: LinkedList.delete_alt() missing 1 required positional argument: 'data'
+
+   - [#  56] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+- 86:     def print_list(self):
+- 87:         curr_node = self.head
+- 88:         while curr_node is not None:
+- 89:             print(curr_node.data)
+- 90:             curr_node = curr_node.next
+- 91:     
++ 86:     @staticmethod
++ 87:     def print_list(self):
++ 88:         curr_node = self.head
++ 89:         while curr_node is not None:
++ 90:             print(curr_node.data)
++ 91:             curr_node = curr_node.next
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.08375 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:31: TypeError: LinkedList.print_list() missing 1 required positional argument: 'self'
+
+   - [#  57] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+- 92:     def get_all_data(self):
+- 93:         data = []
+- 94:         curr_node = self.head
+- 95:         while curr_node is not None:
+- 96:             data.append(curr_node.data)
+- 97:             curr_node = curr_node.next
+- 98:         return data
++ 92:     @staticmethod
++ 93:     def get_all_data(self):
++ 94:         data = []
++ 95:         curr_node = self.head
++ 96:         while curr_node is not None:
++ 97:             data.append(curr_node.data)
++ 98:             curr_node = curr_node.next
++ 99:         return data
+--------------------------------------------------------------------------------
+[0.07980 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:10: TypeError: LinkedList.get_all_data() missing 1 required positional argument: 'self'
+
+   - [#  58] SDL linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data, next=None):
+-  4:         self.next = next
++  4:         pass
+   5:         self.data = data
+   6:     
+   7:     def __str__(self):
+   8:         return self.data
+--------------------------------------------------------------------------------
+[0.08287 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+>       assert len(linked_list_0) == 1
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57df3970>
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'next'
+
+linkedList5:21: AttributeError
+   - [#  59] SDL linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data, next=None):
+   4:         self.next = next
+-  5:         self.data = data
++  5:         pass
+   6:     
+   7:     def __str__(self):
+   8:         return self.data
+   9: 
+--------------------------------------------------------------------------------
+[0.09851 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+>       assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+E       AttributeError: 'Node' object has no attribute 'data'
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:22: AttributeError
+   - [#  60] SDL linkedList5: 
+--------------------------------------------------------------------------------
+   4:         self.next = next
+   5:         self.data = data
+   6:     
+   7:     def __str__(self):
+-  8:         return self.data
++  8:         pass
+   9: 
+  10: 
+  11: class LinkedList(object):
+  12:     
+--------------------------------------------------------------------------------
+[0.08301 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 3
+        assert len(var_0.data) == 3
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_2.data) == 3
+        var_3 = linked_list_0.delete(var_2)
+        var_4 = var_2.__str__()
+>       assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList5.LinkedList'
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:116: AssertionError
+   - [#  61] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  10: 
+  11: class LinkedList(object):
+  12:     
+  13:     def __init__(self, head=None):
+- 14:         self.head = head
++ 14:         pass
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+--------------------------------------------------------------------------------
+[0.08046 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57c775e0>
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute 'head'
+
+linkedList5:17: AttributeError
+   - [#  62] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  13:     def __init__(self, head=None):
+  14:         self.head = head
+  15:     
+  16:     def __len__(self):
+- 17:         curr = self.head
++ 17:         pass
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.07897 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57e2d300>
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+linkedList5:19: UnboundLocalError
+   - [#  63] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  14:         self.head = head
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+- 18:         counter = 0
++ 18:         pass
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+--------------------------------------------------------------------------------
+[0.07995 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57d55570>
+
+>   ???
+E   UnboundLocalError: local variable 'counter' referenced before assignment
+
+linkedList5:22: UnboundLocalError
+   - [#  64] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+- 21:             curr = curr.next
++ 21:             pass
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+--------------------------------------------------------------------------------
+[5.00647 s] timeout
+   - [#  65] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+- 22:         return counter
++ 22:         pass
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+--------------------------------------------------------------------------------
+[0.07969 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:7: TypeError: 'NoneType' object cannot be interpreted as an integer
+
+   - [#  66] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+- 26:             return None
++ 26:             pass
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+  29:         return node
+  30:     
+--------------------------------------------------------------------------------
+[0.08119 s] survived
+   - [#  67] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+- 27:         node = Node(data, self.head)
++ 27:         pass
+  28:         self.head = node
+  29:         return node
+  30:     
+  31:     def append(self, data):
+--------------------------------------------------------------------------------
+[0.08115 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+>       var_1 = linked_list_0.insert_to_front(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57bf40a0>
+data = <linkedList5.LinkedList object at 0x7fbc57bf40a0>
+
+>   ???
+E   NameError: name 'node' is not defined
+
+linkedList5:28: NameError
+   - [#  68] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+- 28:         self.head = node
++ 28:         pass
+  29:         return node
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+--------------------------------------------------------------------------------
+[0.08208 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(linked_list_0)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:25: AssertionError
+   - [#  69] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+- 29:         return node
++ 29:         pass
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+--------------------------------------------------------------------------------
+[0.08193 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:27: AssertionError
+   - [#  70] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  29:         return node
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+- 33:             return None
++ 33:             pass
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+--------------------------------------------------------------------------------
+[0.10541 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_12
+
+def test_case_12():
+        int_0 = 491
+        bool_0 = True
+        node_0 = module_0.Node(bool_0)
+        linked_list_0 = module_0.LinkedList(int_0)
+        none_type_0 = None
+>       var_0 = linked_list_0.append(none_type_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:274: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57c464a0>, data = None
+
+>   ???
+E   AttributeError: 'int' object has no attribute 'next'
+
+linkedList5:39: AttributeError
+   - [#  71] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+- 34:         node = Node(data)
++ 34:         pass
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.08081 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.append(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57c757b0>
+data = <linkedList5.LinkedList object at 0x7fbc57c757b0>
+
+>   ???
+E   NameError: name 'node' is not defined
+
+linkedList5:36: NameError
+   - [#  72] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+  35:         if self.head is None:
+- 36:             self.head = node
++ 36:             pass
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.08196 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:19: AssertionError
+   - [#  73] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  33:             return None
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+- 37:             return node
++ 37:             pass
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+--------------------------------------------------------------------------------
+[5.00656 s] timeout
+   - [#  74] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+- 38:         curr_node = self.head
++ 38:         pass
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+--------------------------------------------------------------------------------
+[0.08195 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 2
+        var_2 = linked_list_0.print_list()
+>       var_3 = linked_list_0.append(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57cf3520>
+data = <linkedList5.LinkedList object at 0x7fbc57cf3520>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:39: UnboundLocalError
+   - [#  75] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+- 40:             curr_node = curr_node.next
++ 40:             pass
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+  44:     def find(self, data):
+--------------------------------------------------------------------------------
+[5.00650 s] timeout
+   - [#  76] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+- 41:         curr_node.next = node
++ 41:         pass
+  42:         return node
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+--------------------------------------------------------------------------------
+[0.08190 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 2
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.append(linked_list_0)
+>       assert len(linked_list_0) == 3
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:51: AssertionError
+   - [#  77] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+- 42:         return node
++ 42:         pass
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+--------------------------------------------------------------------------------
+[0.08220 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 2
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 3
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 3
+        assert len(var_1.data) == 3
+>       assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:55: AssertionError
+   - [#  78] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  42:         return node
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+- 46:             return None
++ 46:             pass
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+--------------------------------------------------------------------------------
+[0.08137 s] survived
+   - [#  79] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+- 47:         curr_node = self.head
++ 47:         pass
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.08168 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.get_all_data()
+>       var_1 = linked_list_0.find(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57b99ab0>
+data = <linkedList5.LinkedList object at 0x7fbc57b99ab0>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:48: UnboundLocalError
+   - [#  80] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+- 50:                 return curr_node
++ 50:                 pass
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+--------------------------------------------------------------------------------
+[0.08455 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.find(linked_list_0)
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:148: AssertionError
+   - [#  81] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+- 51:             curr_node = curr_node.next
++ 51:             pass
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+--------------------------------------------------------------------------------
+[5.00647 s] timeout
+   - [#  82] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+- 52:         return None
++ 52:         pass
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+--------------------------------------------------------------------------------
+[0.08073 s] survived
+   - [#  83] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+- 56:             return
++ 56:             pass
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[0.07978 s] survived
+   - [#  84] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+- 58:             return
++ 58:             pass
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+--------------------------------------------------------------------------------
+[0.08088 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.get_all_data()
+        var_1 = linked_list_0.find(linked_list_0)
+>       var_2 = linked_list_0.delete(var_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57f72380>, data = []
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:59: AttributeError
+   - [#  85] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  56:             return
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+- 60:             self.head = self.head.next
++ 60:             pass
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.08616 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.find(linked_list_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 1
+        set_0 = {var_0, var_1, linked_list_0}
+        var_2 = linked_list_0.append(set_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_1.data) == 2
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'builtins.set'
+        assert len(var_2.data) == 2
+        var_3 = linked_list_0.find(var_1)
+        var_4 = var_0.__str__()
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_4) == 2
+        var_5 = var_4.delete_alt(var_4)
+        var_6 = var_4.__len__()
+        assert var_6 == 2
+        var_7 = linked_list_0.delete(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:171: AssertionError
+   - [#  86] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+- 61:             return
++ 61:             pass
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+--------------------------------------------------------------------------------
+[0.11407 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_MOSA.py::test_case_20
+
+def test_case_20():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete_alt(var_0)
+>       var_4 = linked_list_1.delete(var_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_MOSA.py:340: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57cf47f0>, data = []
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:63: AttributeError
+   - [#  87] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+- 62:         prev_node = self.head
++ 62:         pass
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+--------------------------------------------------------------------------------
+[0.08293 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        float_0 = -532.81
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(float_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert var_1.data == pytest.approx(-532.81, abs=0.01, rel=0.01)
+>       var_2 = linked_list_0.delete(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57e78bb0>
+data = <linkedList5.LinkedList object at 0x7fbc57e78bb0>
+
+>   ???
+E   UnboundLocalError: local variable 'prev_node' referenced before assignment
+
+linkedList5:66: UnboundLocalError
+   - [#  88] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+- 63:         curr_node = self.head.next
++ 63:         pass
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+--------------------------------------------------------------------------------
+[0.08267 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        float_0 = -532.81
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(float_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert var_1.data == pytest.approx(-532.81, abs=0.01, rel=0.01)
+>       var_2 = linked_list_0.delete(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57cf6f50>
+data = <linkedList5.LinkedList object at 0x7fbc57cf6f50>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:64: UnboundLocalError
+   - [#  89] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+- 66:                 prev_node.next = curr_node.next
++ 66:                 pass
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+--------------------------------------------------------------------------------
+[0.08264 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        float_0 = -532.81
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(float_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert var_1.data == pytest.approx(-532.81, abs=0.01, rel=0.01)
+        var_2 = linked_list_0.delete(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:88: AssertionError
+   - [#  90] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+- 67:                 return
++ 67:                 pass
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+  71:     def delete_alt(self, data):
+--------------------------------------------------------------------------------
+[0.08078 s] survived
+   - [#  91] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+- 68:             prev_node = curr_node
++ 68:             pass
+  69:             curr_node = curr_node.next
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+--------------------------------------------------------------------------------
+[0.08043 s] survived
+   - [#  92] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+- 69:             curr_node = curr_node.next
++ 69:             pass
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+--------------------------------------------------------------------------------
+[5.00647 s] timeout
+   - [#  93] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  69:             curr_node = curr_node.next
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+- 73:             return
++ 73:             pass
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+--------------------------------------------------------------------------------
+[0.07983 s] survived
+   - [#  94] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+- 75:             return
++ 75:             pass
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+--------------------------------------------------------------------------------
+[0.08852 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_15
+
+def test_case_15():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        node_0 = module_0.Node(linked_list_0)
+        assert len(node_0.data) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.print_list()
+        linked_list_2 = module_0.LinkedList(linked_list_1)
+        assert len(linked_list_2.head) == 0
+>       var_1 = linked_list_1.delete_alt(linked_list_1)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57cf1420>
+data = <linkedList5.LinkedList object at 0x7fbc57cf1420>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:77: AttributeError
+   - [#  95] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+  75:             return
+- 76:         curr_node = self.head
++ 76:         pass
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+--------------------------------------------------------------------------------
+[0.08599 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.find(linked_list_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 1
+        set_0 = {var_0, var_1, linked_list_0}
+        var_2 = linked_list_0.append(set_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_1.data) == 2
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'builtins.set'
+        assert len(var_2.data) == 2
+        var_3 = linked_list_0.find(var_1)
+        var_4 = var_0.__str__()
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_4) == 2
+>       var_5 = var_4.delete_alt(var_4)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:167: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57a3e320>
+data = <linkedList5.LinkedList object at 0x7fbc57a3e320>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:77: UnboundLocalError
+   - [#  96] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+- 78:             curr_node = curr_node.next
++ 78:             pass
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+--------------------------------------------------------------------------------
+[0.08017 s] survived
+   - [#  97] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+- 79:             return
++ 79:             pass
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+--------------------------------------------------------------------------------
+[0.10816 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_MOSA.py::test_case_12
+
+def test_case_12():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+>       var_1 = linked_list_0.delete_alt(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_MOSA.py:219: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57a3dd50>
+data = <linkedList5.LinkedList object at 0x7fbc57a3dd50>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:80: AttributeError
+   - [#  98] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+- 82:                 curr_node.next = curr_node.next.next
++ 82:                 pass
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+--------------------------------------------------------------------------------
+[0.08678 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_9
+
+def test_case_9():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        int_0 = -3730
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.insert_to_front(int_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert var_0.data == -3730
+        var_1 = linked_list_1.insert_to_front(linked_list_0)
+        assert len(linked_list_1) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 0
+        var_2 = linked_list_1.delete_alt(int_0)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:206: AssertionError
+   - [#  99] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+- 83:                 return
++ 83:                 pass
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.08636 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_9
+
+def test_case_9():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        int_0 = -3730
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.insert_to_front(int_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert var_0.data == -3730
+        var_1 = linked_list_1.insert_to_front(linked_list_0)
+        assert len(linked_list_1) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 0
+>       var_2 = linked_list_1.delete_alt(int_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57a488e0>, data = -3730
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:80: AttributeError
+   - [# 100] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+- 84:             curr_node = curr_node.next
++ 84:             pass
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[5.00651 s] timeout
+   - [# 101] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+- 87:         curr_node = self.head
++ 87:         pass
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+--------------------------------------------------------------------------------
+[0.08386 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 2
+>       var_2 = linked_list_0.print_list()
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57993040>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:88: UnboundLocalError
+   - [# 102] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+- 89:             print(curr_node.data)
++ 89:             pass
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+--------------------------------------------------------------------------------
+[0.08173 s] survived
+   - [# 103] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+- 90:             curr_node = curr_node.next
++ 90:             pass
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+--------------------------------------------------------------------------------
+[5.00640 s] timeout
+   - [# 104] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+- 93:         data = []
++ 93:         pass
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.08052 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+>       var_0 = linked_list_1.get_all_data()
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57c3d720>
+
+>   ???
+E   NameError: name 'data' is not defined
+
+linkedList5:98: NameError
+   - [# 105] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+- 94:         curr_node = self.head
++ 94:         pass
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+  98:         return data
+--------------------------------------------------------------------------------
+[0.08046 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+>       var_0 = linked_list_1.get_all_data()
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57c19750>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:95: UnboundLocalError
+   - [# 106] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+- 96:             data.append(curr_node.data)
++ 96:             pass
+  97:             curr_node = curr_node.next
+  98:         return data
+--------------------------------------------------------------------------------
+[0.11801 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_MOSA.py::test_case_29
+
+def test_case_29():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = var_0.__str__()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1) == 1
+        var_2 = linked_list_0.__len__()
+        assert var_2 == 1
+        var_3 = linked_list_0.append(var_2)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert len(var_1) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert var_3.next is None
+        assert var_3.data == 1
+        var_4 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.insert_to_front(var_4)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+        assert var_5.next is None
+        assert f'{type(var_5.data).__module__}.{type(var_5.data).__qualname__}' == 'builtins.list'
+>       assert len(var_5.data) == 2
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_MOSA.py:652: AssertionError
+   - [# 107] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+- 97:             curr_node = curr_node.next
++ 97:             pass
+  98:         return data
+--------------------------------------------------------------------------------
+[5.00559 s] timeout
+   - [# 108] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+- 98:         return data
++ 98:         pass
+--------------------------------------------------------------------------------
+[0.08423 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.get_all_data()
+        var_1 = linked_list_0.find(linked_list_0)
+        var_2 = linked_list_0.delete(var_0)
+>       var_3 = var_0.__len__()
+E       AttributeError: 'NoneType' object has no attribute '__len__'. Did you mean: '__le__'?
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:13: AttributeError
+   - [# 109] SVD linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data, next=None):
+-  4:         self.next = next
++  4:         next = next
+   5:         self.data = data
+   6:     
+   7:     def __str__(self):
+   8:         return self.data
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 110] SVD linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data, next=None):
+   4:         self.next = next
+-  5:         self.data = data
++  5:         data = data
+   6:     
+   7:     def __str__(self):
+   8:         return self.data
+   9: 
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 111] SVD linkedList5: 
+--------------------------------------------------------------------------------
+   4:         self.next = next
+   5:         self.data = data
+   6:     
+   7:     def __str__(self):
+-  8:         return self.data
++  8:         return data
+   9: 
+  10: 
+  11: class LinkedList(object):
+  12:     
+--------------------------------------------------------------------------------
+[0.08637 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 3
+        assert len(var_0.data) == 3
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_2.data) == 3
+        var_3 = linked_list_0.delete(var_2)
+>       var_4 = var_2.__str__()
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.Node object at 0x7fbc57a4bbb0>
+
+>   ???
+E   NameError: name 'data' is not defined
+
+linkedList5:8: NameError
+   - [# 112] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  10: 
+  11: class LinkedList(object):
+  12:     
+  13:     def __init__(self, head=None):
+- 14:         self.head = head
++ 14:         head = head
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 113] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  13:     def __init__(self, head=None):
+  14:         self.head = head
+  15:     
+  16:     def __len__(self):
+- 17:         curr = self.head
++ 17:         curr = head
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.08036 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57a49720>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:17: NameError
+   - [# 114] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+- 27:         node = Node(data, self.head)
++ 27:         node = Node(data, head)
+  28:         self.head = node
+  29:         return node
+  30:     
+  31:     def append(self, data):
+--------------------------------------------------------------------------------
+[0.09675 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+>       var_1 = linked_list_0.insert_to_front(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57cf2260>
+data = <linkedList5.LinkedList object at 0x7fbc57cf2260>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:27: NameError
+   - [# 115] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+- 28:         self.head = node
++ 28:         head = node
+  29:         return node
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 116] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+- 35:         if self.head is None:
++ 35:         if head is None:
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+--------------------------------------------------------------------------------
+[0.08083 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.append(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57cf1ab0>
+data = <linkedList5.LinkedList object at 0x7fbc57cf1ab0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:35: NameError
+   - [# 117] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+  35:         if self.head is None:
+- 36:             self.head = node
++ 36:             head = node
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 118] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+- 38:         curr_node = self.head
++ 38:         curr_node = head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+--------------------------------------------------------------------------------
+[0.08224 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 2
+        var_2 = linked_list_0.print_list()
+>       var_3 = linked_list_0.append(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57c188b0>
+data = <linkedList5.LinkedList object at 0x7fbc57c188b0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:38: NameError
+   - [# 119] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+- 47:         curr_node = self.head
++ 47:         curr_node = head
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.08114 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.get_all_data()
+>       var_1 = linked_list_0.find(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57a2e740>
+data = <linkedList5.LinkedList object at 0x7fbc57a2e740>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:47: NameError
+   - [# 120] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+- 57:         if self.head is None:
++ 57:         if head is None:
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+--------------------------------------------------------------------------------
+[0.08368 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.get_all_data()
+        var_1 = linked_list_0.find(linked_list_0)
+>       var_2 = linked_list_0.delete(var_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57bf6890>, data = []
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:57: NameError
+   - [# 121] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+  58:             return
+- 59:         if self.head.data == data:
++ 59:         if head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+--------------------------------------------------------------------------------
+[0.08347 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        float_0 = -532.81
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(float_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert var_1.data == pytest.approx(-532.81, abs=0.01, rel=0.01)
+>       var_2 = linked_list_0.delete(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57bf7e80>
+data = <linkedList5.LinkedList object at 0x7fbc57bf7e80>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:59: NameError
+   - [# 122] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  56:             return
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+- 60:             self.head = self.head.next
++ 60:             head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 123] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  56:             return
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+- 60:             self.head = self.head.next
++ 60:             self.head = head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.08459 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.find(linked_list_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 1
+        set_0 = {var_0, var_1, linked_list_0}
+        var_2 = linked_list_0.append(set_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_1.data) == 2
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'builtins.set'
+        assert len(var_2.data) == 2
+        var_3 = linked_list_0.find(var_1)
+        var_4 = var_0.__str__()
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_4) == 2
+        var_5 = var_4.delete_alt(var_4)
+        var_6 = var_4.__len__()
+        assert var_6 == 2
+>       var_7 = linked_list_0.delete(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:170: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57cf51e0>
+data = <linkedList5.LinkedList object at 0x7fbc57cf51e0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:60: NameError
+   - [# 124] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+- 62:         prev_node = self.head
++ 62:         prev_node = head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+--------------------------------------------------------------------------------
+[0.09833 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        float_0 = -532.81
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(float_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert var_1.data == pytest.approx(-532.81, abs=0.01, rel=0.01)
+>       var_2 = linked_list_0.delete(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57bc6c20>
+data = <linkedList5.LinkedList object at 0x7fbc57bc6c20>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:62: NameError
+   - [# 125] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+- 63:         curr_node = self.head.next
++ 63:         curr_node = head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+--------------------------------------------------------------------------------
+[0.09649 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        float_0 = -532.81
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(float_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert var_1.data == pytest.approx(-532.81, abs=0.01, rel=0.01)
+>       var_2 = linked_list_0.delete(linked_list_0)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57ef7820>
+data = <linkedList5.LinkedList object at 0x7fbc57ef7820>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:63: NameError
+   - [# 126] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+- 74:         if self.head is None:
++ 74:         if head is None:
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.08569 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.find(linked_list_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 1
+        set_0 = {var_0, var_1, linked_list_0}
+        var_2 = linked_list_0.append(set_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_1.data) == 2
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'builtins.set'
+        assert len(var_2.data) == 2
+        var_3 = linked_list_0.find(var_1)
+        var_4 = var_0.__str__()
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_4) == 2
+>       var_5 = var_4.delete_alt(var_4)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:167: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57e79660>
+data = <linkedList5.LinkedList object at 0x7fbc57e79660>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:74: NameError
+   - [# 127] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+  75:             return
+- 76:         curr_node = self.head
++ 76:         curr_node = head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+--------------------------------------------------------------------------------
+[0.08570 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.find(linked_list_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 1
+        set_0 = {var_0, var_1, linked_list_0}
+        var_2 = linked_list_0.append(set_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_1.data) == 2
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'builtins.set'
+        assert len(var_2.data) == 2
+        var_3 = linked_list_0.find(var_1)
+        var_4 = var_0.__str__()
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_4) == 2
+>       var_5 = var_4.delete_alt(var_4)
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:167: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57e7b5e0>
+data = <linkedList5.LinkedList object at 0x7fbc57e7b5e0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:76: NameError
+   - [# 128] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+- 87:         curr_node = self.head
++ 87:         curr_node = head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+--------------------------------------------------------------------------------
+[0.08437 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 2
+>       var_2 = linked_list_0.print_list()
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57e7bbb0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:87: NameError
+   - [# 129] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+- 94:         curr_node = self.head
++ 94:         curr_node = head
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+  98:         return data
+--------------------------------------------------------------------------------
+[0.08104 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+>       var_0 = linked_list_1.get_all_data()
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7fbc57e7bf40>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:94: NameError
+   - [# 130] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+- 20:             counter += 1
+- 21:             curr = curr.next
++ 20:             break
++ 21:         
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+--------------------------------------------------------------------------------
+[0.08026 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:19: AssertionError
+   - [# 131] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+- 40:             curr_node = curr_node.next
++ 40:             break
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+  44:     def find(self, data):
+--------------------------------------------------------------------------------
+[0.08201 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 2
+        var_2 = linked_list_0.print_list()
+        var_3 = linked_list_0.append(linked_list_0)
+>       assert len(linked_list_0) == 3
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:51: AssertionError
+   - [# 132] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+- 49:             if curr_node.data == data:
+- 50:                 return curr_node
+- 51:             curr_node = curr_node.next
++ 49:             break
++ 50:         
++ 51:         
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+--------------------------------------------------------------------------------
+[0.08574 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.find(linked_list_0)
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:148: AssertionError
+   - [# 133] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+- 65:             if curr_node.data == data:
+- 66:                 prev_node.next = curr_node.next
+- 67:                 return
+- 68:             prev_node = curr_node
+- 69:             curr_node = curr_node.next
++ 65:             break
++ 66:     
++ 67:     
++ 68:     
++ 69:     
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+--------------------------------------------------------------------------------
+[0.08549 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        float_0 = -532.81
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(float_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert var_1.data == pytest.approx(-532.81, abs=0.01, rel=0.01)
+        var_2 = linked_list_0.delete(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:88: AssertionError
+   - [# 134] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+- 81:             if curr_node.next.data == data:
+- 82:                 curr_node.next = curr_node.next.next
+- 83:                 return
+- 84:             curr_node = curr_node.next
++ 81:             break
++ 82:     
++ 83:     
++ 84:     
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.08606 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py::test_case_9
+
+def test_case_9():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        int_0 = -3730
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.insert_to_front(int_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert var_0.data == -3730
+        var_1 = linked_list_1.insert_to_front(linked_list_0)
+        assert len(linked_list_1) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1.data) == 0
+        var_2 = linked_list_1.delete_alt(int_0)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py:206: AssertionError
+   - [# 135] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+- 89:             print(curr_node.data)
+- 90:             curr_node = curr_node.next
++ 89:             break
++ 90:     
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.09614 s] survived
+   - [# 136] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+- 96:             data.append(curr_node.data)
+- 97:             curr_node = curr_node.next
++ 96:             break
++ 97:         
+  98:         return data
+--------------------------------------------------------------------------------
+[0.11861 s] killed by MOSA-WHOLE_SUITE/test_linkedList5_MOSA.py::test_case_29
+
+def test_case_29():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = var_0.__str__()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1) == 1
+        var_2 = linked_list_0.__len__()
+        assert var_2 == 1
+        var_3 = linked_list_0.append(var_2)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert len(var_1) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert var_3.next is None
+        assert var_3.data == 1
+        var_4 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.insert_to_front(var_4)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+        assert var_5.next is None
+        assert f'{type(var_5.data).__module__}.{type(var_5.data).__qualname__}' == 'builtins.list'
+>       assert len(var_5.data) == 2
+E       AssertionError
+
+MOSA-WHOLE_SUITE/test_linkedList5_MOSA.py:652: AssertionError
+[*] Mutation score [61.53914 s]: 89.0%
+   - all: 136
+   - killed: 96 (70.6%)
+   - survived: 13 (9.6%)
+   - incompetent: 18 (13.2%)
+   - timeout: 9 (6.6%)

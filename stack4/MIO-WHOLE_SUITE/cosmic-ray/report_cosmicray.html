@@ -1,0 +1,1754 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 20/04/2023 18:00:07</p><p>Total jobs: 72</p><p>Complete: 72 (100.00%)</p><p>Surviving mutants: 13 (18.06%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID c31af8762fb541a199d9c9b7d020989f</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Sub, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) - ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FF...                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+========================= 3 failed, 26 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID f33fcd58cb5e426a8116edad866a779f</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Sub, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] - ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FFF..                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: u...
+========================= 6 failed, 23 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 063bb35025fb456aaffce3a1f3adedf5</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mul, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) * ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FF...                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: can't mu...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: can't mu...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: c...
+========================= 3 failed, 26 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID c385753f579a407095228a37eda8bb8d</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mul, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] * ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FFF..                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: can't mu...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: can't mu...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - TypeError: can't mu...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: c...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: c...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: c...
+========================= 6 failed, 23 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID b70aa1fe4e9f40828a27be5b06556e22</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Div, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) / ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FF...                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+========================= 3 failed, 26 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID ad1e92fc1e0b484cba7bfe851b898125</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Div, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] / ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FFF..                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: u...
+========================= 6 failed, 23 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID eaacfa17d38a48c2b0cb856fc71d956f</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_FloorDiv, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) // ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FF...                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+========================= 3 failed, 26 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID 54ec8b77e6f6490ea046677a5900e90e</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_FloorDiv, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] // ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FFF..                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: u...
+========================= 6 failed, 23 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID 9072a228abb442088b629f2501a08765</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mod, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) % ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FF...                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: not all ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: not all ...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: n...
+========================= 3 failed, 26 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID 0b2bcd2ef46c46089ef8f0331bfb1410</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mod, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] % ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FFF..                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: not all ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: not all ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - TypeError: not all ...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: n...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: n...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: n...
+========================= 6 failed, 23 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID a4696cdaf3af4bba9f4f41c933b3f9c2</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Pow, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) ** ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FF...                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+========================= 3 failed, 26 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID 94b0475dc5c1443688378cd8d9261e9d</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Pow, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] ** ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FFF..                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: u...
+========================= 6 failed, 23 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID 22af2df712994fdfb76b3aba5f4897a0</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_RShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) &gt;&gt; ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FF...                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+========================= 3 failed, 26 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID 4f3ba5d27b11481ba9ef32eec12e3047</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_RShift, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] &gt;&gt; ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FFF..                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: u...
+========================= 6 failed, 23 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_15_1"><button class="btn btn-outline-success"><span class="job_id">15 : Job ID 4eed17e2c7bf47b0b6377cb29b9a4832</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_LShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) &lt;&lt; ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FF...                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+========================= 3 failed, 26 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_16_1"><button class="btn btn-outline-success"><span class="job_id">16 : Job ID 4b7c402a215c4eea90e0fb43340b2925</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_LShift, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] &lt;&lt; ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FFF..                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: u...
+========================= 6 failed, 23 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_17_1"><button class="btn btn-outline-success"><span class="job_id">17 : Job ID bc2a370961764c07a21e48fa9cea7050</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) | ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FF...                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+========================= 3 failed, 26 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_18_1"><button class="btn btn-outline-success"><span class="job_id">18 : Job ID fdc672714c1642aa9a60005f7838ec69</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitOr, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] | ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FFF..                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: u...
+========================= 6 failed, 23 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_19"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_19_1" aria-expanded="false" aria-controls="job_list___sub_collapse_19_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_19_1"><button class="btn btn-outline-success"><span class="job_id">19 : Job ID 4069a980a7b74c26977703ceaa59b181</span></button></div></a><div aria-labelledby="job_list___sub_heading_19_1" data-parent="#job_list___sub_accordion_19" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_19_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitAnd, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) &amp; ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FF...                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+========================= 3 failed, 26 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_20"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_20_1" aria-expanded="false" aria-controls="job_list___sub_collapse_20_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_20_1"><button class="btn btn-outline-success"><span class="job_id">20 : Job ID 9586f80da1c948a69cfcc1588b98e86c</span></button></div></a><div aria-labelledby="job_list___sub_heading_20_1" data-parent="#job_list___sub_accordion_20" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_20_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitAnd, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] &amp; ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FFF..                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: u...
+========================= 6 failed, 23 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_21"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_21_1" aria-expanded="false" aria-controls="job_list___sub_collapse_21_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_21_1"><button class="btn btn-outline-success"><span class="job_id">21 : Job ID a914af92b85a4d60946dd8aea0a24336</span></button></div></a><div aria-labelledby="job_list___sub_heading_21_1" data-parent="#job_list___sub_accordion_21" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_21_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=84" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (84, 38), end pos: (84, 39)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitXor, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -81,7 +81,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) ^ ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FF...                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .F.......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+========================= 3 failed, 26 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_22"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_22_1" aria-expanded="false" aria-controls="job_list___sub_collapse_22_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_22_1"><button class="btn btn-outline-success"><span class="job_id">22 : Job ID 7f02bb44f7534975ac8d997874ce6c19</span></button></div></a><div aria-labelledby="job_list___sub_heading_22_1" data-parent="#job_list___sub_accordion_22" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_22_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 28), end pos: (86, 29)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitXor, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] ^ ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............FFF..                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - TypeError: unsuppor...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: u...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: u...
+========================= 6 failed, 23 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_23"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_23_1" aria-expanded="false" aria-controls="job_list___sub_collapse_23_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_23_1"><button class="btn btn-outline-success"><span class="job_id">23 : Job ID b2ce3830562e4edbaee80cf50870c815</span></button></div></a><div aria-labelledby="job_list___sub_heading_23_1" data-parent="#job_list___sub_accordion_23" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_23_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if curr.data != val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ......F.............                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ..F......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_6 - AssertionError: asse...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - AssertionErr...
+========================= 2 failed, 27 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_24"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_24_1" aria-expanded="false" aria-controls="job_list___sub_collapse_24_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_24_1"><button class="btn btn-outline-danger"><span class="job_id">24 : Job ID 903d9e42405a42d1947f06fffeb0433e</span></button></div></a><div aria-labelledby="job_list___sub_heading_24_1" data-parent="#job_list___sub_accordion_24" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_24_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 45), end pos: (74, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data != val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....................                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+============================== 29 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_25"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_25_1" aria-expanded="false" aria-controls="job_list___sub_collapse_25_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_25_1"><button class="btn btn-outline-success"><span class="job_id">25 : Job ID ea3b9c23a9bc405d984c623837d8ad4c</span></button></div></a><div aria-labelledby="job_list___sub_heading_25_1" data-parent="#job_list___sub_accordion_25" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_25_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if curr.data &lt; val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ......FF............                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .FF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_6 - TypeError: '&lt;' not s...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_7 - TypeError: '&lt;' not s...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: '...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: '...
+========================= 4 failed, 25 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_26"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_26_1" aria-expanded="false" aria-controls="job_list___sub_collapse_26_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_26_1"><button class="btn btn-outline-success"><span class="job_id">26 : Job ID b1827b17452042bcb27d6dd376d4e557</span></button></div></a><div aria-labelledby="job_list___sub_heading_26_1" data-parent="#job_list___sub_accordion_26" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_26_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 45), end pos: (74, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data &lt; val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ..........F...F.....                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_10 - TypeError: '&lt;' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_14 - TypeError: '&lt;' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: '...
+========================= 3 failed, 26 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_27"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_27_1" aria-expanded="false" aria-controls="job_list___sub_collapse_27_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_27_1"><button class="btn btn-outline-success"><span class="job_id">27 : Job ID 18a3ff639d3948f1bc19819d618f1a0c</span></button></div></a><div aria-labelledby="job_list___sub_heading_27_1" data-parent="#job_list___sub_accordion_27" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_27_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if curr.data &lt;= val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ......FF............                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .FF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_6 - TypeError: '&lt;=' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_7 - TypeError: '&lt;=' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: '...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: '...
+========================= 4 failed, 25 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_28"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_28_1" aria-expanded="false" aria-controls="job_list___sub_collapse_28_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_28_1"><button class="btn btn-outline-success"><span class="job_id">28 : Job ID 1360c223172b4986b25e6bc7230999de</span></button></div></a><div aria-labelledby="job_list___sub_heading_28_1" data-parent="#job_list___sub_accordion_28" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_28_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 45), end pos: (74, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data &lt;= val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ..........F...F.....                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_10 - TypeError: '&lt;=' not...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_14 - TypeError: '&lt;=' not...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: '...
+========================= 3 failed, 26 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_29"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_29_1" aria-expanded="false" aria-controls="job_list___sub_collapse_29_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_29_1"><button class="btn btn-outline-success"><span class="job_id">29 : Job ID eaa8f3f4ee9e4ce48dc4a1c2e68218fc</span></button></div></a><div aria-labelledby="job_list___sub_heading_29_1" data-parent="#job_list___sub_accordion_29" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_29_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if curr.data &gt; val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ......FF............                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .FF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_6 - TypeError: '&gt;' not s...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_7 - TypeError: '&gt;' not s...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: '...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: '...
+========================= 4 failed, 25 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_30"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_30_1" aria-expanded="false" aria-controls="job_list___sub_collapse_30_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_30_1"><button class="btn btn-outline-success"><span class="job_id">30 : Job ID 87a9688b7f0b4ec292a5c261211ed294</span></button></div></a><div aria-labelledby="job_list___sub_heading_30_1" data-parent="#job_list___sub_accordion_30" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_30_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 45), end pos: (74, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data &gt; val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ..........F...F.....                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_10 - TypeError: '&gt;' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_14 - TypeError: '&gt;' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: '...
+========================= 3 failed, 26 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_31"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_31_1" aria-expanded="false" aria-controls="job_list___sub_collapse_31_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_31_1"><button class="btn btn-outline-success"><span class="job_id">31 : Job ID a70b748cb3f941cda28c4a6057e7742b</span></button></div></a><div aria-labelledby="job_list___sub_heading_31_1" data-parent="#job_list___sub_accordion_31" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_31_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if curr.data &gt;= val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ......FF............                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .FF......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_6 - TypeError: '&gt;=' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_7 - TypeError: '&gt;=' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - TypeError: '...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - TypeError: '...
+========================= 4 failed, 25 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_32"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_32_1" aria-expanded="false" aria-controls="job_list___sub_collapse_32_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_32_1"><button class="btn btn-outline-success"><span class="job_id">32 : Job ID f98330cc92ca474aaeb1e8e5d15b944b</span></button></div></a><div aria-labelledby="job_list___sub_heading_32_1" data-parent="#job_list___sub_accordion_32" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_32_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 45), end pos: (74, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data &gt;= val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ..........F...F.....                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_10 - TypeError: '&gt;=' not...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_14 - TypeError: '&gt;=' not...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: '...
+========================= 3 failed, 26 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_33"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_33_1" aria-expanded="false" aria-controls="job_list___sub_collapse_33_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_33_1"><button class="btn btn-outline-danger"><span class="job_id">33 : Job ID 083253482a2b4a87885d31f68545ff25</span></button></div></a><div aria-labelledby="job_list___sub_heading_33_1" data-parent="#job_list___sub_accordion_33" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_33_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if curr.data is val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....................                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+============================== 29 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_34"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_34_1" aria-expanded="false" aria-controls="job_list___sub_collapse_34_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_34_1"><button class="btn btn-outline-danger"><span class="job_id">34 : Job ID eb35e78ca6094f3baf9f3ab503bb00a7</span></button></div></a><div aria-labelledby="job_list___sub_heading_34_1" data-parent="#job_list___sub_accordion_34" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_34_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 45), end pos: (74, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data is val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....................                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+============================== 29 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_35"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_35_1" aria-expanded="false" aria-controls="job_list___sub_collapse_35_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_35_1"><button class="btn btn-outline-success"><span class="job_id">35 : Job ID 5e37c1520e79410cac4ac02434a5c276</span></button></div></a><div aria-labelledby="job_list___sub_heading_35_1" data-parent="#job_list___sub_accordion_35" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_35_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if curr.data is not val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ......F.............                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ..F......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_6 - AssertionError: asse...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - AssertionErr...
+========================= 2 failed, 27 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_36"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_36_1" aria-expanded="false" aria-controls="job_list___sub_collapse_36_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_36_1"><button class="btn btn-outline-danger"><span class="job_id">36 : Job ID b1d3ff55de9b47ad94f08bf3d6285210</span></button></div></a><div aria-labelledby="job_list___sub_heading_36_1" data-parent="#job_list___sub_accordion_36" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_36_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 45), end pos: (74, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data is not val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....................                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+============================== 29 passed in 0.04s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_37"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_37_1" aria-expanded="false" aria-controls="job_list___sub_collapse_37_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_37_1"><button class="btn btn-outline-danger"><span class="job_id">37 : Job ID ed5d31f4ebea415ba5c6d241229e37d1</span></button></div></a><div aria-labelledby="job_list___sub_heading_37_1" data-parent="#job_list___sub_accordion_37" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_37_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 24), end pos: (70, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_Eq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val == self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....................                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+============================== 29 passed in 0.04s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_38"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_38_1" aria-expanded="false" aria-controls="job_list___sub_collapse_38_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_38_1"><button class="btn btn-outline-success"><span class="job_id">38 : Job ID 2ce849261fa7420ba242d191f7d44e9e</span></button></div></a><div aria-labelledby="job_list___sub_heading_38_1" data-parent="#job_list___sub_accordion_38" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_38_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 24), end pos: (70, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val != self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ............F.......                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_12 - assert &lt;stack4.Node...
+========================= 1 failed, 28 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_39"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_39_1" aria-expanded="false" aria-controls="job_list___sub_collapse_39_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_39_1"><button class="btn btn-outline-success"><span class="job_id">39 : Job ID 9c186f4bae3149e39287d72f5682ef3b</span></button></div></a><div aria-labelledby="job_list___sub_heading_39_1" data-parent="#job_list___sub_accordion_39" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_39_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 24), end pos: (70, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val &lt; self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ..........FFF.F.....                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_10 - TypeError: '&lt;' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_11 - TypeError: '&lt;' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_12 - TypeError: '&lt;' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_14 - TypeError: '&lt;' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: '...
+========================= 5 failed, 24 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_40"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_40_1" aria-expanded="false" aria-controls="job_list___sub_collapse_40_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_40_1"><button class="btn btn-outline-success"><span class="job_id">40 : Job ID 4958f994f3824d3f94f7e55d2b6c88f1</span></button></div></a><div aria-labelledby="job_list___sub_heading_40_1" data-parent="#job_list___sub_accordion_40" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_40_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 24), end pos: (70, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val &lt;= self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ..........FFF.F.....                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_10 - TypeError: '&lt;=' not...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_11 - TypeError: '&lt;=' not...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_12 - TypeError: '&lt;=' not...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_14 - TypeError: '&lt;=' not...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: '...
+========================= 5 failed, 24 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_41"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_41_1" aria-expanded="false" aria-controls="job_list___sub_collapse_41_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_41_1"><button class="btn btn-outline-success"><span class="job_id">41 : Job ID 3f3210fc5bc140109894fa644e9b5198</span></button></div></a><div aria-labelledby="job_list___sub_heading_41_1" data-parent="#job_list___sub_accordion_41" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_41_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 24), end pos: (70, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val &gt; self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ..........FFF.F.....                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_10 - TypeError: '&gt;' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_11 - TypeError: '&gt;' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_12 - TypeError: '&gt;' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_14 - TypeError: '&gt;' not ...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: '...
+========================= 5 failed, 24 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_42"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_42_1" aria-expanded="false" aria-controls="job_list___sub_collapse_42_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_42_1"><button class="btn btn-outline-success"><span class="job_id">42 : Job ID add03af3e9de4544b2be609c98126d6a</span></button></div></a><div aria-labelledby="job_list___sub_heading_42_1" data-parent="#job_list___sub_accordion_42" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_42_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 24), end pos: (70, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val &gt;= self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ..........FFF.F.....                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_10 - TypeError: '&gt;=' not...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_11 - TypeError: '&gt;=' not...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_12 - TypeError: '&gt;=' not...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_14 - TypeError: '&gt;=' not...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - TypeError: '...
+========================= 5 failed, 24 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_43"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_43_1" aria-expanded="false" aria-controls="job_list___sub_collapse_43_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_43_1"><button class="btn btn-outline-success"><span class="job_id">43 : Job ID 6efb0bd0b6e9434684fcab6d60cb61b8</span></button></div></a><div aria-labelledby="job_list___sub_heading_43_1" data-parent="#job_list___sub_accordion_43" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_43_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 24), end pos: (70, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val is not self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ............F.......                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_12 - assert &lt;stack4.Node...
+========================= 1 failed, 28 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_44"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_44_1" aria-expanded="false" aria-controls="job_list___sub_collapse_44_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_44_1"><button class="btn btn-outline-success"><span class="job_id">44 : Job ID b882a25ac9164ef9a521cbf2513b94e8</span></button></div></a><div aria-labelledby="job_list___sub_heading_44_1" data-parent="#job_list___sub_accordion_44" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_44_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 24), end pos: (86, 25)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_USub_UAdd, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:+2] + ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............F.F..                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F.F......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - AssertionError: ass...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - AssertionError: ass...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - AssertionErr...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - AssertionErr...
+========================= 4 failed, 25 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_45"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_45_1" aria-expanded="false" aria-controls="job_list___sub_collapse_45_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_45_1"><button class="btn btn-outline-success"><span class="job_id">45 : Job ID b228e413737e4e2ab4c1fb979ca5eeed</span></button></div></a><div aria-labelledby="job_list___sub_heading_45_1" data-parent="#job_list___sub_accordion_45" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_45_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 24), end pos: (86, 25)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_USub_Invert, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:~2] + ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............F....                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - AssertionError: ass...
+========================= 1 failed, 28 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_46"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_46_1" aria-expanded="false" aria-controls="job_list___sub_collapse_46_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_46_1"><button class="btn btn-outline-success"><span class="job_id">46 : Job ID 9f4f0b2d19f24fa5be65942f6fb5a86f</span></button></div></a><div aria-labelledby="job_list___sub_heading_46_1" data-parent="#job_list___sub_accordion_46" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_46_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 24), end pos: (86, 25)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_USub_Not, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:not 2] + ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............F....                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - AssertionError: ass...
+========================= 1 failed, 28 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_47"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_47_1" aria-expanded="false" aria-controls="job_list___sub_collapse_47_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_47_1"><button class="btn btn-outline-success"><span class="job_id">47 : Job ID e134a9282c8e40bb916498a6a12b4b7a</span></button></div></a><div aria-labelledby="job_list___sub_heading_47_1" data-parent="#job_list___sub_accordion_47" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_47_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 24), end pos: (86, 25)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_Delete_USub, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:2] + ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............F.F..                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F.F......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - AssertionError: ass...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - AssertionError: ass...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - AssertionErr...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - AssertionErr...
+========================= 4 failed, 25 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_48"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_48_1" aria-expanded="false" aria-controls="job_list___sub_collapse_48_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_48_1"><button class="btn btn-outline-success"><span class="job_id">48 : Job ID 431b613d54f5461da75218ff6d0fc7a0</span></button></div></a><div aria-labelledby="job_list___sub_heading_48_1" data-parent="#job_list___sub_accordion_48" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_48_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (48, 11), end pos: (48, 14)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_Delete_Not, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -45,7 +45,7 @@
+ 
+     def pop(self):
+         """Remove the first value and return it."""
+-        if not self.head:
++        if  self.head:
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....F...............                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ...FF.F..                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_4 - IndexError: Cannot p...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_3 - AttributeErr...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_4 - AttributeErr...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_6 - IndexError: ...
+========================= 4 failed, 25 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_49"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_49_1" aria-expanded="false" aria-controls="job_list___sub_collapse_49_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_49_1"><button class="btn btn-outline-success"><span class="job_id">49 : Job ID b485fde4098c4243b02f3ee1f11c8fdf</span></button></div></a><div aria-labelledby="job_list___sub_heading_49_1" data-parent="#job_list___sub_accordion_49" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_49_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=37" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (37, 15), end pos: (37, 19)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -34,7 +34,7 @@
+             for val in data:
+                 self.push(val)
+         except TypeError:
+-            if data:
++            if not data:
+                 self.push(data)
+ 
+     def push(self, val):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ..F...FF.FFFFFF.FF.F                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFFFFFF..                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_2 - AssertionError: asse...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_6 - assert &lt;stack4.Node ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_7 - assert &lt;stack4.Node ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_9 - assert &lt;stack4.Node ...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_10 - assert &lt;stack4.Node...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_11 - assert &lt;stack4.Node...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_12 - assert &lt;stack4.Node...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_13 - assert &lt;stack4.Node...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_14 - assert &lt;stack4.Node...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - AssertionError: ass...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - assert &lt;stack4.Node...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_19 - assert &lt;stack4.Node...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - assert &lt;stac...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - assert &lt;stac...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - assert &lt;stac...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_3 - assert &lt;stac...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_4 - assert &lt;stac...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_5 - assert &lt;stac...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_6 - IndexError: ...
+======================== 19 failed, 10 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_50"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_50_1" aria-expanded="false" aria-controls="job_list___sub_collapse_50_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_50_1"><button class="btn btn-outline-success"><span class="job_id">50 : Job ID 2d83a4d828b745f7a0bc1d018fd80282</span></button></div></a><div aria-labelledby="job_list___sub_heading_50_1" data-parent="#job_list___sub_accordion_50" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_50_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (48, 11), end pos: (48, 24)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -45,7 +45,7 @@
+ 
+     def pop(self):
+         """Remove the first value and return it."""
+-        if not self.head:
++        if not not self.head:
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....F...............                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ...FF.F..                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_4 - IndexError: Cannot p...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_3 - AttributeErr...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_4 - AttributeErr...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_6 - IndexError: ...
+========================= 4 failed, 25 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_51"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_51_1" aria-expanded="false" aria-controls="job_list___sub_collapse_51_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_51_1"><button class="btn btn-outline-success"><span class="job_id">51 : Job ID 9ba0c772cabe4861944985735c167c27</span></button></div></a><div aria-labelledby="job_list___sub_heading_51_1" data-parent="#job_list___sub_accordion_51" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_51_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=62" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (62, 14), end pos: (62, 18)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -59,7 +59,7 @@
+     def search(self, val):
+         """Return the node containing val."""
+         curr = self.head
+-        while curr:
++        while not curr:
+             if curr.data == val:
+                 return curr
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ......F..F..........                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F.F......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_6 - AssertionError: asse...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_9 - AttributeError: 'Non...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - AttributeErr...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - AssertionErr...
+========================= 4 failed, 25 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_52"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_52_1" aria-expanded="false" aria-controls="job_list___sub_collapse_52_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_52_1"><button class="btn btn-outline-success"><span class="job_id">52 : Job ID e5be4074ddcb4e4ebc3a0f09af7e5cd0</span></button></div></a><div aria-labelledby="job_list___sub_heading_52_1" data-parent="#job_list___sub_accordion_52" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_52_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (63, 15), end pos: (63, 31)</button></a></pre><pre>operator: core/AddNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -60,7 +60,7 @@
+         """Return the node containing val."""
+         curr = self.head
+         while curr:
+-            if curr.data == val:
++            if not curr.data == val:
+                 return curr
+             curr = curr.next
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ......F.............                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ..F......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_6 - AssertionError: asse...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - AssertionErr...
+========================= 2 failed, 27 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_53"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_53_1" aria-expanded="false" aria-controls="job_list___sub_collapse_53_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_53_1"><button class="btn btn-outline-success"><span class="job_id">53 : Job ID 137973ebb52544d0aec9a8a8bd58b92c</span></button></div></a><div aria-labelledby="job_list___sub_heading_53_1" data-parent="#job_list___sub_accordion_53" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_53_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 11), end pos: (70, 41)</button></a></pre><pre>operator: core/AddNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if not curr and val is self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ............FF......                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_12 - assert &lt;stack4.Node...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_13 - AttributeError: 'No...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - AttributeErr...
+========================= 3 failed, 26 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_54"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_54_1" aria-expanded="false" aria-controls="job_list___sub_collapse_54_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_54_1"><button class="btn btn-outline-success"><span class="job_id">54 : Job ID 72cd22f3433e421886560f34a15cbc9b</span></button></div></a><div aria-labelledby="job_list___sub_heading_54_1" data-parent="#job_list___sub_accordion_54" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_54_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=73" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (73, 14), end pos: (73, 18)</button></a></pre><pre>operator: core/AddNot, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -70,7 +70,7 @@
+         if curr and val is self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+-        while curr:
++        while not curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+                 self._length -= 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py .............F......                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_13 - AttributeError: 'No...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - AttributeErr...
+========================= 2 failed, 27 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_55"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_55_1" aria-expanded="false" aria-controls="job_list___sub_collapse_55_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_55_1"><button class="btn btn-outline-success"><span class="job_id">55 : Job ID 0a62c2665d654bc891d2e5bc79305f9c</span></button></div></a><div aria-labelledby="job_list___sub_heading_55_1" data-parent="#job_list___sub_accordion_55" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_55_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 15), end pos: (74, 52)</button></a></pre><pre>operator: core/AddNot, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if not (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ..........FFF.......                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F....F...                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_10 - AttributeError: 'No...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_11 - AttributeError: 'No...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_12 - AttributeError: 'No...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - AttributeErr...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_5 - AttributeErr...
+========================= 5 failed, 24 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_56"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_56_1" aria-expanded="false" aria-controls="job_list___sub_collapse_56_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_56_1"><button class="btn btn-outline-success"><span class="job_id">56 : Job ID a5b450713fbe4e8682f355efda7d2023</span></button></div></a><div aria-labelledby="job_list___sub_heading_56_1" data-parent="#job_list___sub_accordion_56" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_56_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=83" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (83, 14), end pos: (83, 18)</button></a></pre><pre>operator: core/AddNot, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -80,7 +80,7 @@
+         """Display list as a tuple."""
+         curr = self.head
+         display = '('
+-        while curr:
++        while not curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+         return display[:-2] + ')'</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............F.F..                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F.F......                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - AssertionError: ass...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - AttributeError: 'No...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - AttributeErr...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - AttributeErr...
+========================= 4 failed, 25 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_57"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_57_1" aria-expanded="false" aria-controls="job_list___sub_collapse_57_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_57_1"><button class="btn btn-outline-success"><span class="job_id">57 : Job ID 22daaf0380664a0f9f4613805f87fe3e</span></button></div></a><div aria-labelledby="job_list___sub_heading_57_1" data-parent="#job_list___sub_accordion_57" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_57_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=70" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (70, 16), end pos: (70, 19)</button></a></pre><pre>operator: core/ReplaceAndWithOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -67,7 +67,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr or val is self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py .............F......                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py F........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_13 - AttributeError: 'No...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - AttributeErr...
+========================= 2 failed, 27 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_58"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_58_1" aria-expanded="false" aria-controls="job_list___sub_collapse_58_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_58_1"><button class="btn btn-outline-success"><span class="job_id">58 : Job ID 975140599cd54051b0923936b1e18bd1</span></button></div></a><div aria-labelledby="job_list___sub_heading_58_1" data-parent="#job_list___sub_accordion_58" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_58_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (74, 26), end pos: (74, 29)</button></a></pre><pre>operator: core/ReplaceAndWithOr, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next or curr.next.data == val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...........FF.......                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .....F...                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_11 - AttributeError: 'No...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_12 - AttributeError: 'No...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_5 - AttributeErr...
+========================= 3 failed, 26 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_59"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_59_1" aria-expanded="false" aria-controls="job_list___sub_collapse_59_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_59_1"><button class="btn btn-outline-success"><span class="job_id">59 : Job ID 65639310c1a949229c6c332264af740a</span></button></div></a><div aria-labelledby="job_list___sub_heading_59_1" data-parent="#job_list___sub_accordion_59" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_59_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=36" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (36, 15), end pos: (36, 24)</button></a></pre><pre>operator: core/ExceptionReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -33,7 +33,7 @@
+         try:
+             for val in data:
+                 self.push(val)
+-        except TypeError:
++        except CosmicRayTestingException:
+             if data:
+                 self.push(data)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ..FFFFFF.FFFFFF.FFFF                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py FFFFFFFFF                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_2 - NameError: name 'Cos...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_3 - NameError: name 'Cos...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_4 - NameError: name 'Cos...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_5 - NameError: name 'Cos...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_6 - NameError: name 'Cos...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_7 - NameError: name 'Cos...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_9 - NameError: name 'Cos...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_10 - NameError: name 'Co...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_11 - NameError: name 'Co...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_12 - NameError: name 'Co...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_13 - NameError: name 'Co...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_14 - NameError: name 'Co...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - NameError: name 'Co...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_17 - NameError: name 'Co...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_18 - NameError: name 'Co...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_19 - NameError: name 'Co...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_0 - NameError: n...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_1 - NameError: n...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - NameError: n...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_3 - NameError: n...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_4 - NameError: n...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_5 - NameError: n...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_6 - NameError: n...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_7 - NameError: n...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_8 - NameError: n...
+========================= 25 failed, 4 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_60"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_60_1" aria-expanded="false" aria-controls="job_list___sub_collapse_60_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_60_1"><button class="btn btn-outline-success"><span class="job_id">60 : Job ID 1183867225b64c82afac942ed872a4d6</span></button></div></a><div aria-labelledby="job_list___sub_heading_60_1" data-parent="#job_list___sub_accordion_60" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_60_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=31" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (31, 23), end pos: (31, 24)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -28,7 +28,7 @@
+ 
+     def __init__(self, data=None):
+         """Linked list initialized with head."""
+-        self._length = 0
++        self._length = 1
+         self.head = None
+         try:
+             for val in data:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...................F                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ...F.....                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_19 - assert 1 == 0
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_3 - assert 1 == 0
+========================= 2 failed, 27 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_61"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_61_1" aria-expanded="false" aria-controls="job_list___sub_collapse_61_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_61_1"><button class="btn btn-outline-success"><span class="job_id">61 : Job ID d26af90e81964534bdb279c1d68570fe</span></button></div></a><div aria-labelledby="job_list___sub_heading_61_1" data-parent="#job_list___sub_accordion_61" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_61_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=31" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (31, 23), end pos: (31, 24)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -28,7 +28,7 @@
+ 
+     def __init__(self, data=None):
+         """Linked list initialized with head."""
+-        self._length = 0
++        self._length = -1
+         self.head = None
+         try:
+             for val in data:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...................F                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ...F.....                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_19 - assert -1 == 0
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_3 - assert -1 == 0
+========================= 2 failed, 27 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_62"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_62_1" aria-expanded="false" aria-controls="job_list___sub_collapse_62_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_62_1"><button class="btn btn-outline-danger"><span class="job_id">62 : Job ID 75aa873ddca4408ebbb6a59cdcc3f155</span></button></div></a><div aria-labelledby="job_list___sub_heading_62_1" data-parent="#job_list___sub_accordion_62" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_62_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (44, 24), end pos: (44, 25)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -41,7 +41,7 @@
+         """Insert a value at the head of the list."""
+         old_head = self.head
+         self.head = Node(val, old_head)
+-        self._length += 1
++        self._length += 2
+ 
+     def pop(self):
+         """Remove the first value and return it."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....................                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+============================== 29 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_63"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_63_1" aria-expanded="false" aria-controls="job_list___sub_collapse_63_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_63_1"><button class="btn btn-outline-danger"><span class="job_id">63 : Job ID 53c5e29884c64372a3f8d893f6470d7a</span></button></div></a><div aria-labelledby="job_list___sub_heading_63_1" data-parent="#job_list___sub_accordion_63" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_63_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (44, 24), end pos: (44, 25)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -41,7 +41,7 @@
+         """Insert a value at the head of the list."""
+         old_head = self.head
+         self.head = Node(val, old_head)
+-        self._length += 1
++        self._length += 0
+ 
+     def pop(self):
+         """Remove the first value and return it."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....................                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+============================== 29 passed in 0.04s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_64"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_64_1" aria-expanded="false" aria-controls="job_list___sub_collapse_64_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_64_1"><button class="btn btn-outline-danger"><span class="job_id">64 : Job ID 077819949f0f40b685990df02a5dc956</span></button></div></a><div aria-labelledby="job_list___sub_heading_64_1" data-parent="#job_list___sub_accordion_64" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_64_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=52" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (52, 24), end pos: (52, 25)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -49,7 +49,7 @@
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next
+-        self._length -= 1
++        self._length -= 2
+         return to_return.data
+ 
+     def size(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....................                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+============================== 29 passed in 0.04s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_65"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_65_1" aria-expanded="false" aria-controls="job_list___sub_collapse_65_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_65_1"><button class="btn btn-outline-danger"><span class="job_id">65 : Job ID 94a240d8a3f140aea2949d08f4391ec6</span></button></div></a><div aria-labelledby="job_list___sub_heading_65_1" data-parent="#job_list___sub_accordion_65" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_65_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=52" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (52, 24), end pos: (52, 25)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -49,7 +49,7 @@
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next
+-        self._length -= 1
++        self._length -= 0
+         return to_return.data
+ 
+     def size(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....................                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+============================== 29 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_66"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_66_1" aria-expanded="false" aria-controls="job_list___sub_collapse_66_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_66_1"><button class="btn btn-outline-danger"><span class="job_id">66 : Job ID 79de8ea7ea4542abac2637d1ae9ef60b</span></button></div></a><div aria-labelledby="job_list___sub_heading_66_1" data-parent="#job_list___sub_accordion_66" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_66_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=72" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (72, 28), end pos: (72, 29)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -69,7 +69,7 @@
+         curr = self.head
+         if curr and val is self.head.data:
+             self.head = self.head.next
+-            self._length -= 1
++            self._length -= 2
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....................                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+============================== 29 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_67"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_67_1" aria-expanded="false" aria-controls="job_list___sub_collapse_67_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_67_1"><button class="btn btn-outline-danger"><span class="job_id">67 : Job ID 41274e85daf94798a33e5f3bfeab69c0</span></button></div></a><div aria-labelledby="job_list___sub_heading_67_1" data-parent="#job_list___sub_accordion_67" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_67_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=72" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (72, 28), end pos: (72, 29)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -69,7 +69,7 @@
+         curr = self.head
+         if curr and val is self.head.data:
+             self.head = self.head.next
+-            self._length -= 1
++            self._length -= 0
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....................                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+============================== 29 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_68"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_68_1" aria-expanded="false" aria-controls="job_list___sub_collapse_68_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_68_1"><button class="btn btn-outline-danger"><span class="job_id">68 : Job ID 163e26344814495ea69ac91e1bf010af</span></button></div></a><div aria-labelledby="job_list___sub_heading_68_1" data-parent="#job_list___sub_accordion_68" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_68_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=76" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (76, 32), end pos: (76, 33)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 8</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -73,7 +73,7 @@
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+-                self._length -= 1
++                self._length -= 2
+             curr = curr.next
+ 
+     def display(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....................                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+============================== 29 passed in 0.04s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_69"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_69_1" aria-expanded="false" aria-controls="job_list___sub_collapse_69_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_69_1"><button class="btn btn-outline-danger"><span class="job_id">69 : Job ID 1259d334e1064469a84085f94edce3fd</span></button></div></a><div aria-labelledby="job_list___sub_heading_69_1" data-parent="#job_list___sub_accordion_69" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_69_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=76" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (76, 32), end pos: (76, 33)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 9</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -73,7 +73,7 @@
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+-                self._length -= 1
++                self._length -= 0
+             curr = curr.next
+ 
+     def display(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ....................                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+============================== 29 passed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_70"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_70_1" aria-expanded="false" aria-controls="job_list___sub_collapse_70_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_70_1"><button class="btn btn-outline-success"><span class="job_id">70 : Job ID 15fcd3ef3f6e4bd1b0c98b19d7c6a4f5</span></button></div></a><div aria-labelledby="job_list___sub_heading_70_1" data-parent="#job_list___sub_accordion_70" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_70_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 25), end pos: (86, 26)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 10</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:- 3] + ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............F....                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - AssertionError: ass...
+========================= 1 failed, 28 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_71"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_71_1" aria-expanded="false" aria-controls="job_list___sub_collapse_71_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_71_1"><button class="btn btn-outline-success"><span class="job_id">71 : Job ID a2514dfaee4146e994a97f6a18f5c145</span></button></div></a><div aria-labelledby="job_list___sub_heading_71_1" data-parent="#job_list___sub_accordion_71" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_71_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=86" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (86, 25), end pos: (86, 26)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 11</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -83,7 +83,7 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:- 1] + ')'
+ 
+ 
+ class Stack(object):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ...............F....                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py .........                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - AssertionError: ass...
+========================= 1 failed, 28 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_72"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_72_1" aria-expanded="false" aria-controls="job_list___sub_collapse_72_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_72_1"><button class="btn btn-outline-success"><span class="job_id">72 : Job ID 915f3e413ec74f21b2db0f871052333b</span></button></div></a><div aria-labelledby="job_list___sub_heading_72_1" data-parent="#job_list___sub_accordion_72" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_72_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack4.py&amp;line=34" class="text-secondary"><button class="btn btn-outline-dark">stack4.py, start pos: (34, 23), end pos: (34, 27)</button></a></pre><pre>operator: core/ZeroIterationForLoop, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack4.py
++++ bstack4.py
+@@ -31,7 +31,7 @@
+         self._length = 0
+         self.head = None
+         try:
+-            for val in data:
++            for val in []:
+                 self.push(val)
+         except TypeError:
+             if data:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack4
+collected 29 items
+
+MIO-WHOLE_SUITE/test_stack4_MIO.py ..F.....F...F..FF...                  [ 68%]
+MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py ..F..FF..                     [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_2 - AssertionError: asse...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_8 - AssertionError: asse...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_12 - AssertionError: ass...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_15 - AssertionError: ass...
+FAILED MIO-WHOLE_SUITE/test_stack4_MIO.py::test_case_16 - AssertionError: ass...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_2 - AssertionErr...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_5 - AssertionErr...
+FAILED MIO-WHOLE_SUITE/test_stack4_WHOLE_SUITE.py::test_case_6 - IndexError: ...
+========================= 8 failed, 21 passed in 0.05s =========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

@@ -1,0 +1,23 @@
+<html><body><h1>binarySearchTree4.py</h1>Killed 15 out of 17 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 5</h3><pre>--- binarySearchTree4.py
++++ binarySearchTree4.py
+@@ -12,7 +12,7 @@
+ class Bst(object):
+ 
+     def __init__(self, root=None):
+-        self.root = root
++        self.root = None
+ 
+     def insert(self, data):
+         if data is None:
+</pre><h3>Mutant 7</h3><pre>--- binarySearchTree4.py
++++ binarySearchTree4.py
+@@ -16,7 +16,7 @@
+ 
+     def insert(self, data):
+         if data is None:
+-            raise TypeError('data cannot be None')
++            raise TypeError('XXdata cannot be NoneXX')
+         if self.root is None:
+             self.root = Node(data)
+             return self.root
+</pre></body></html>

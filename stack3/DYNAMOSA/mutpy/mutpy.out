@@ -1,0 +1,3943 @@
+[34m[*][0m Start mutation process:
+[36m   -[0m targets: stack3.py
+[36m   -[0m tests: ./DYNAMOSA
+[34m[*][0m 17 tests passed:
+[36m   -[0m test_stack3_DYNAMOSA [0.28654 s]
+[34m[*][0m Start mutants generation and execution:
+[36m   -[0m [#   1] AOD stack3: 
+--------------------------------------------------------------------------------
+  133:     def __str__(self) -> str:
+  134:         
+  135:         '''Get string representation of the stack.'''
+  136:         
+[34m- 137:         return str(self.__stack.toArray()[::-1])[0m
+[32m+ 137:         return str(self.__stack.toArray()[::1])[0m
+  138: 
+  139: 
+  140: if __name__ == '__main__':
+  141:     pass
+--------------------------------------------------------------------------------
+[0.14672 s] [31msurvived[0m
+[36m   -[0m [#   2] AOR stack3: 
+--------------------------------------------------------------------------------
+  133:     def __str__(self) -> str:
+  134:         
+  135:         '''Get string representation of the stack.'''
+  136:         
+[34m- 137:         return str(self.__stack.toArray()[::-1])[0m
+[32m+ 137:         return str(self.__stack.toArray()[::+1])[0m
+  138: 
+  139: 
+  140: if __name__ == '__main__':
+  141:     pass
+--------------------------------------------------------------------------------
+[0.14658 s] [31msurvived[0m
+[36m   -[0m [#   3] ASR stack3: 
+--------------------------------------------------------------------------------
+   23:         newNode = Node(value)
+   24:         if self.__size == 0:
+   25:             self.__head.next = newNode
+   26:             self.__head = newNode
+[34m-  27:             self.__size += 1[0m
+[32m+  27:             self.__size -= 1[0m
+   28:         else:
+   29:             self.__sentinel.next = newNode
+   30:             newNode.next = self.__head
+   31:             self.__head = newNode
+--------------------------------------------------------------------------------
+[0.16142 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_9
+
+def test_case_9():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        str_0 = singly_linked_list_0.__str__()
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'stack3.SinglyLinkedList'
+        assert var_0.next is None
+        node_0 = singly_linked_list_0.getHeadNode()
+>       assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'stack3.Node'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:77: AssertionError
+[36m   -[0m [#   4] ASR stack3: 
+--------------------------------------------------------------------------------
+   28:         else:
+   29:             self.__sentinel.next = newNode
+   30:             newNode.next = self.__head
+   31:             self.__head = newNode
+[34m-  32:             self.__size += 1[0m
+[32m+  32:             self.__size -= 1[0m
+   33:     
+   34:     def remove(self):
+   35:         
+   36:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[0.16802 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_15
+
+def test_case_15():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is False
+        none_type_1 = singly_linked_list_0.add(list_0)
+        bool_1 = singly_linked_list_0.isEmpty()
+>       assert bool_1 is False
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:136: AssertionError
+[36m   -[0m [#   5] ASR stack3: 
+--------------------------------------------------------------------------------
+   40:         if self.__size >= 1:
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+   43:             self.__head = self.__sentinel
+[34m-  44:             self.__size -= 1[0m
+[32m+  44:             self.__size += 1[0m
+   45:             return nodeToRemove
+   46:         else:
+   47:             nodeToRemove = self.__head
+   48:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[0.14785 s] [31msurvived[0m
+[36m   -[0m [#   6] ASR stack3: 
+--------------------------------------------------------------------------------
+   46:         else:
+   47:             nodeToRemove = self.__head
+   48:             self.__sentinel.next = self.__head.next
+   49:             self.__head = self.__sentinel.next
+[34m-  50:             self.__size -= 1[0m
+[32m+  50:             self.__size += 1[0m
+   51:             return nodeToRemove
+   52:     
+   53:     def getHead(self) -> T:
+   54:         
+--------------------------------------------------------------------------------
+[0.13679 s] [31msurvived[0m
+[36m   -[0m [#   7] CDI stack3: 
+--------------------------------------------------------------------------------
+    4: 
+    5: T = TypeVar('T')
+    6: 
+    7: class Node:
+[34m-   8:     def __init__(self, value: T):[0m
+[34m-   9:         self.value = value[0m
+[34m-  10:         self.next = None[0m
+[34m-  11: [0m
+[32m+   8:     @classmethod[0m
+[32m+   9:     def __init__(self, value: T):[0m
+[32m+  10:         self.value = value[0m
+[32m+  11:         self.next = None[0m
+   12: 
+   13: class SinglyLinkedList:
+   14:     def __init__(self):
+   15:         self.__sentinel = Node(None)
+--------------------------------------------------------------------------------
+[0.17596 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_9
+
+def test_case_9():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        str_0 = singly_linked_list_0.__str__()
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'stack3.SinglyLinkedList'
+        assert var_0.next is None
+        node_0 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'stack3.Node'
+>       assert node_0.value is None
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:78: AssertionError
+[36m   -[0m [#   8] CDI stack3: 
+--------------------------------------------------------------------------------
+   10:         self.next = None
+   11: 
+   12: 
+   13: class SinglyLinkedList:
+[34m-  14:     def __init__(self):[0m
+[34m-  15:         self.__sentinel = Node(None)[0m
+[34m-  16:         self.__head = self.__sentinel[0m
+[34m-  17:         self.__size = 0[0m
+[34m-  18:     [0m
+[32m+  14:     @classmethod[0m
+[32m+  15:     def __init__(self):[0m
+[32m+  16:         self.__sentinel = Node(None)[0m
+[32m+  17:         self.__head = self.__sentinel[0m
+[32m+  18:         self.__size = 0[0m
+   19:     def add(self, value: T) -> None:
+   20:         
+   21:         '''Add element to linked list.'''
+   22:         
+--------------------------------------------------------------------------------
+[0.15877 s] [31msurvived[0m
+[36m   -[0m [#   9] CDI stack3: 
+--------------------------------------------------------------------------------
+   15:         self.__sentinel = Node(None)
+   16:         self.__head = self.__sentinel
+   17:         self.__size = 0
+   18:     
+[34m-  19:     def add(self, value: T) -> None:[0m
+[34m-  20:         [0m
+[34m-  21:         '''Add element to linked list.'''[0m
+[34m-  22:         [0m
+[34m-  23:         newNode = Node(value)[0m
+[34m-  24:         if self.__size == 0:[0m
+[34m-  25:             self.__head.next = newNode[0m
+[34m-  26:             self.__head = newNode[0m
+[34m-  27:             self.__size += 1[0m
+[34m-  28:         else:[0m
+[34m-  29:             self.__sentinel.next = newNode[0m
+[34m-  30:             newNode.next = self.__head[0m
+[34m-  31:             self.__head = newNode[0m
+[34m-  32:             self.__size += 1[0m
+[34m-  33:     [0m
+[32m+  19:     @classmethod[0m
+[32m+  20:     def add(self, value: T) -> None:[0m
+[32m+  21:         [0m
+[32m+  22:         '''Add element to linked list.'''[0m
+[32m+  23:         [0m
+[32m+  24:         newNode = Node(value)[0m
+[32m+  25:         if self.__size == 0:[0m
+[32m+  26:             self.__head.next = newNode[0m
+[32m+  27:             self.__head = newNode[0m
+[32m+  28:             self.__size += 1[0m
+[32m+  29:         else:[0m
+[32m+  30:             self.__sentinel.next = newNode[0m
+[32m+  31:             newNode.next = self.__head[0m
+[32m+  32:             self.__head = newNode[0m
+[32m+  33:             self.__size += 1[0m
+   34:     def remove(self):
+   35:         
+   36:         '''Remove node from linkedlist.'''
+   37:         
+--------------------------------------------------------------------------------
+[0.22640 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack3.SinglyLinkedList'>
+value = <stack3.SinglyLinkedList object at 0x7f47e336c0a0>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+stack3:25: AttributeError
+[36m   -[0m [#  10] CDI stack3: 
+--------------------------------------------------------------------------------
+   30:             newNode.next = self.__head
+   31:             self.__head = newNode
+   32:             self.__size += 1
+   33:     
+[34m-  34:     def remove(self):[0m
+[34m-  35:         [0m
+[34m-  36:         '''Remove node from linkedlist.'''[0m
+[34m-  37:         [0m
+[34m-  38:         if self.__size == 0:[0m
+[34m-  39:             return None[0m
+[34m-  40:         if self.__size >= 1:[0m
+[34m-  41:             nodeToRemove = self.__head[0m
+[34m-  42:             self.__sentinel.next = None[0m
+[34m-  43:             self.__head = self.__sentinel[0m
+[34m-  44:             self.__size -= 1[0m
+[34m-  45:             return nodeToRemove[0m
+[34m-  46:         else:[0m
+[34m-  47:             nodeToRemove = self.__head[0m
+[34m-  48:             self.__sentinel.next = self.__head.next[0m
+[34m-  49:             self.__head = self.__sentinel.next[0m
+[34m-  50:             self.__size -= 1[0m
+[34m-  51:             return nodeToRemove[0m
+[34m-  52:     [0m
+[32m+  34:     @classmethod[0m
+[32m+  35:     def remove(self):[0m
+[32m+  36:         [0m
+[32m+  37:         '''Remove node from linkedlist.'''[0m
+[32m+  38:         [0m
+[32m+  39:         if self.__size == 0:[0m
+[32m+  40:             return None[0m
+[32m+  41:         if self.__size >= 1:[0m
+[32m+  42:             nodeToRemove = self.__head[0m
+[32m+  43:             self.__sentinel.next = None[0m
+[32m+  44:             self.__head = self.__sentinel[0m
+[32m+  45:             self.__size -= 1[0m
+[32m+  46:             return nodeToRemove[0m
+[32m+  47:         else:[0m
+[32m+  48:             nodeToRemove = self.__head[0m
+[32m+  49:             self.__sentinel.next = self.__head.next[0m
+[32m+  50:             self.__head = self.__sentinel.next[0m
+[32m+  51:             self.__size -= 1[0m
+[32m+  52:             return nodeToRemove[0m
+   53:     def getHead(self) -> T:
+   54:         
+   55:         '''Get value of the linkedlist head node.'''
+   56:         
+--------------------------------------------------------------------------------
+[0.17426 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       var_0 = singly_linked_list_0.remove()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+stack3:39: AttributeError
+[36m   -[0m [#  11] CDI stack3: 
+--------------------------------------------------------------------------------
+   49:             self.__head = self.__sentinel.next
+   50:             self.__size -= 1
+   51:             return nodeToRemove
+   52:     
+[34m-  53:     def getHead(self) -> T:[0m
+[34m-  54:         [0m
+[34m-  55:         '''Get value of the linkedlist head node.'''[0m
+[34m-  56:         [0m
+[34m-  57:         return self.__head.value[0m
+[34m-  58:     [0m
+[32m+  53:     @classmethod[0m
+[32m+  54:     def getHead(self) -> T:[0m
+[32m+  55:         [0m
+[32m+  56:         '''Get value of the linkedlist head node.'''[0m
+[32m+  57:         [0m
+[32m+  58:         return self.__head.value[0m
+   59:     def getHeadNode(self) -> Node:
+   60:         
+   61:         '''Get head node referance.'''
+   62:         
+--------------------------------------------------------------------------------
+[0.18527 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        int_0 = 4462
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       var_0 = singly_linked_list_0.getHead()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+stack3:58: AttributeError
+[36m   -[0m [#  12] CDI stack3: 
+--------------------------------------------------------------------------------
+   55:         '''Get value of the linkedlist head node.'''
+   56:         
+   57:         return self.__head.value
+   58:     
+[34m-  59:     def getHeadNode(self) -> Node:[0m
+[34m-  60:         [0m
+[34m-  61:         '''Get head node referance.'''[0m
+[34m-  62:         [0m
+[34m-  63:         return self.__head[0m
+[34m-  64:     [0m
+[32m+  59:     @classmethod[0m
+[32m+  60:     def getHeadNode(self) -> Node:[0m
+[32m+  61:         [0m
+[32m+  62:         '''Get head node referance.'''[0m
+[32m+  63:         [0m
+[32m+  64:         return self.__head[0m
+   65:     def getSize(self) -> int:
+   66:         
+   67:         '''Return size of the linkedlist.'''
+   68:         
+--------------------------------------------------------------------------------
+[0.17656 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       node_0 = singly_linked_list_0.getHeadNode()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+stack3:64: AttributeError
+[36m   -[0m [#  13] CDI stack3: 
+--------------------------------------------------------------------------------
+   61:         '''Get head node referance.'''
+   62:         
+   63:         return self.__head
+   64:     
+[34m-  65:     def getSize(self) -> int:[0m
+[34m-  66:         [0m
+[34m-  67:         '''Return size of the linkedlist.'''[0m
+[34m-  68:         [0m
+[34m-  69:         return self.__size[0m
+[34m-  70:     [0m
+[32m+  65:     @classmethod[0m
+[32m+  66:     def getSize(self) -> int:[0m
+[32m+  67:         [0m
+[32m+  68:         '''Return size of the linkedlist.'''[0m
+[32m+  69:         [0m
+[32m+  70:         return self.__size[0m
+   71:     def isEmpty(self) -> bool:
+   72:         
+   73:         '''Checks if linkedlist is empty.'''
+   74:         
+--------------------------------------------------------------------------------
+[0.15792 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       int_0 = singly_linked_list_0.getSize()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+stack3:70: AttributeError
+[36m   -[0m [#  14] CDI stack3: 
+--------------------------------------------------------------------------------
+   67:         '''Return size of the linkedlist.'''
+   68:         
+   69:         return self.__size
+   70:     
+[34m-  71:     def isEmpty(self) -> bool:[0m
+[34m-  72:         [0m
+[34m-  73:         '''Checks if linkedlist is empty.'''[0m
+[34m-  74:         [0m
+[34m-  75:         return True if self.__size == 0 else False[0m
+[34m-  76:     [0m
+[32m+  71:     @classmethod[0m
+[32m+  72:     def isEmpty(self) -> bool:[0m
+[32m+  73:         [0m
+[32m+  74:         '''Checks if linkedlist is empty.'''[0m
+[32m+  75:         [0m
+[32m+  76:         return True if self.__size == 0 else False[0m
+   77:     def toArray(self) -> list:
+   78:         
+   79:         '''Converts linkedlist to list.'''
+   80:         
+--------------------------------------------------------------------------------
+[0.15742 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       bool_0 = singly_linked_list_0.isEmpty()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+stack3:76: AttributeError
+[36m   -[0m [#  15] CDI stack3: 
+--------------------------------------------------------------------------------
+   73:         '''Checks if linkedlist is empty.'''
+   74:         
+   75:         return True if self.__size == 0 else False
+   76:     
+[34m-  77:     def toArray(self) -> list:[0m
+[34m-  78:         [0m
+[34m-  79:         '''Converts linkedlist to list.'''[0m
+[34m-  80:         [0m
+[34m-  81:         arr = [][0m
+[34m-  82:         current = self.__head[0m
+[34m-  83:         while current:[0m
+[34m-  84:             arr.append(current.value)[0m
+[34m-  85:             current = current.next[0m
+[34m-  86:         return arr[0m
+[34m-  87:     [0m
+[32m+  77:     @classmethod[0m
+[32m+  78:     def toArray(self) -> list:[0m
+[32m+  79:         [0m
+[32m+  80:         '''Converts linkedlist to list.'''[0m
+[32m+  81:         [0m
+[32m+  82:         arr = [][0m
+[32m+  83:         current = self.__head[0m
+[32m+  84:         while current:[0m
+[32m+  85:             arr.append(current.value)[0m
+[32m+  86:             current = current.next[0m
+[32m+  87:         return arr[0m
+   88:     def __str__(self) -> str:
+   89:         
+   90:         '''Return String representation of linkedlist values.'''
+   91:         
+--------------------------------------------------------------------------------
+[0.17625 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+>       list_0 = singly_linked_list_0.toArray()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+stack3:83: AttributeError
+[36m   -[0m [#  16] CDI stack3: 
+--------------------------------------------------------------------------------
+   84:             arr.append(current.value)
+   85:             current = current.next
+   86:         return arr
+   87:     
+[34m-  88:     def __str__(self) -> str:[0m
+[34m-  89:         [0m
+[34m-  90:         '''Return String representation of linkedlist values.'''[0m
+[34m-  91:         [0m
+[34m-  92:         arr = [][0m
+[34m-  93:         current = self.__head[0m
+[34m-  94:         while current:[0m
+[34m-  95:             arr.append(current.value)[0m
+[34m-  96:             current = current.next[0m
+[34m-  97:         return str(arr)[0m
+[34m-  98: [0m
+[32m+  88:     @classmethod[0m
+[32m+  89:     def __str__(self) -> str:[0m
+[32m+  90:         [0m
+[32m+  91:         '''Return String representation of linkedlist values.'''[0m
+[32m+  92:         [0m
+[32m+  93:         arr = [][0m
+[32m+  94:         current = self.__head[0m
+[32m+  95:         while current:[0m
+[32m+  96:             arr.append(current.value)[0m
+[32m+  97:             current = current.next[0m
+[32m+  98:         return str(arr)[0m
+   99: class Stack:
+  100:     def __init__(self):
+  101:         self.__stack = SinglyLinkedList()
+  102:     
+--------------------------------------------------------------------------------
+[0.17370 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       str_0 = singly_linked_list_0.__str__()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+stack3:94: AttributeError
+[36m   -[0m [#  17] CDI stack3: 
+--------------------------------------------------------------------------------
+   96:             current = current.next
+   97:         return str(arr)
+   98: 
+   99: class Stack:
+[34m- 100:     def __init__(self):[0m
+[34m- 101:         self.__stack = SinglyLinkedList()[0m
+[34m- 102:     [0m
+[32m+ 100:     @classmethod[0m
+[32m+ 101:     def __init__(self):[0m
+[32m+ 102:         self.__stack = SinglyLinkedList()[0m
+  103:     def push(self, value: T) -> None:
+  104:         
+  105:         '''Add element to the top of the stack.'''
+  106:         
+--------------------------------------------------------------------------------
+[0.18508 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_13
+
+def test_case_13():
+        stack_0 = module_0.Stack()
+        none_type_0 = stack_0.push(stack_0)
+        var_0 = stack_0.peek()
+        bool_0 = var_0.isEmpty()
+        assert bool_0 is False
+        stack_1 = module_0.Stack()
+        var_1 = stack_0.pop()
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'stack3.Node'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:111: AssertionError
+[36m   -[0m [#  18] CDI stack3: 
+--------------------------------------------------------------------------------
+   99: class Stack:
+  100:     def __init__(self):
+  101:         self.__stack = SinglyLinkedList()
+  102:     
+[34m- 103:     def push(self, value: T) -> None:[0m
+[34m- 104:         [0m
+[34m- 105:         '''Add element to the top of the stack.'''[0m
+[34m- 106:         [0m
+[34m- 107:         self.__stack.add(value)[0m
+[34m- 108:     [0m
+[32m+ 103:     @classmethod[0m
+[32m+ 104:     def push(self, value: T) -> None:[0m
+[32m+ 105:         [0m
+[32m+ 106:         '''Add element to the top of the stack.'''[0m
+[32m+ 107:         [0m
+[32m+ 108:         self.__stack.add(value)[0m
+  109:     def pop(self) -> T:
+  110:         
+  111:         '''Remove element from the top of the stack.'''
+  112:         
+--------------------------------------------------------------------------------
+[0.23249 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        stack_0 = module_0.Stack()
+        bool_0 = False
+        none_type_0 = singly_linked_list_0.add(bool_0)
+>       none_type_1 = stack_0.push(singly_linked_list_0)
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack3.Stack'>
+value = <stack3.SinglyLinkedList object at 0x7f47e3691300>
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute '_Stack__stack'
+
+stack3:108: AttributeError
+[36m   -[0m [#  19] CDI stack3: 
+--------------------------------------------------------------------------------
+  105:         '''Add element to the top of the stack.'''
+  106:         
+  107:         self.__stack.add(value)
+  108:     
+[34m- 109:     def pop(self) -> T:[0m
+[34m- 110:         [0m
+[34m- 111:         '''Remove element from the top of the stack.'''[0m
+[34m- 112:         [0m
+[34m- 113:         return self.__stack.remove()[0m
+[34m- 114:     [0m
+[32m+ 109:     @classmethod[0m
+[32m+ 110:     def pop(self) -> T:[0m
+[32m+ 111:         [0m
+[32m+ 112:         '''Remove element from the top of the stack.'''[0m
+[32m+ 113:         [0m
+[32m+ 114:         return self.__stack.remove()[0m
+  115:     def peek(self) -> T:
+  116:         
+  117:         '''View top element in the stack.'''
+  118:         
+--------------------------------------------------------------------------------
+[0.22217 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        stack_0 = module_0.Stack()
+        bool_0 = stack_0.isEmpty()
+        assert bool_0 is True
+>       var_0 = stack_0.pop()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack3.Stack'>
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute '_Stack__stack'
+
+stack3:114: AttributeError
+[36m   -[0m [#  20] CDI stack3: 
+--------------------------------------------------------------------------------
+  111:         '''Remove element from the top of the stack.'''
+  112:         
+  113:         return self.__stack.remove()
+  114:     
+[34m- 115:     def peek(self) -> T:[0m
+[34m- 116:         [0m
+[34m- 117:         '''View top element in the stack.'''[0m
+[34m- 118:         [0m
+[34m- 119:         return self.__stack.getHead()[0m
+[34m- 120:     [0m
+[32m+ 115:     @classmethod[0m
+[32m+ 116:     def peek(self) -> T:[0m
+[32m+ 117:         [0m
+[32m+ 118:         '''View top element in the stack.'''[0m
+[32m+ 119:         [0m
+[32m+ 120:         return self.__stack.getHead()[0m
+  121:     def isEmpty(self) -> bool:
+  122:         
+  123:         '''Check if stack is empty.'''
+  124:         
+--------------------------------------------------------------------------------
+[0.18328 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_11
+
+def test_case_11():
+        stack_0 = module_0.Stack()
+>       var_0 = stack_0.peek()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack3.Stack'>
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute '_Stack__stack'
+
+stack3:120: AttributeError
+[36m   -[0m [#  21] CDI stack3: 
+--------------------------------------------------------------------------------
+  117:         '''View top element in the stack.'''
+  118:         
+  119:         return self.__stack.getHead()
+  120:     
+[34m- 121:     def isEmpty(self) -> bool:[0m
+[34m- 122:         [0m
+[34m- 123:         '''Check if stack is empty.'''[0m
+[34m- 124:         [0m
+[34m- 125:         return True if self.__stack.getSize() == 0 else False[0m
+[34m- 126:     [0m
+[32m+ 121:     @classmethod[0m
+[32m+ 122:     def isEmpty(self) -> bool:[0m
+[32m+ 123:         [0m
+[32m+ 124:         '''Check if stack is empty.'''[0m
+[32m+ 125:         [0m
+[32m+ 126:         return True if self.__stack.getSize() == 0 else False[0m
+  127:     def getSize(self) -> int:
+  128:         
+  129:         '''Get size of the stack.'''
+  130:         
+--------------------------------------------------------------------------------
+[0.16211 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        stack_0 = module_0.Stack()
+>       bool_0 = stack_0.isEmpty()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack3.Stack'>
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute '_Stack__stack'
+
+stack3:126: AttributeError
+[36m   -[0m [#  22] CDI stack3: 
+--------------------------------------------------------------------------------
+  123:         '''Check if stack is empty.'''
+  124:         
+  125:         return True if self.__stack.getSize() == 0 else False
+  126:     
+[34m- 127:     def getSize(self) -> int:[0m
+[34m- 128:         [0m
+[34m- 129:         '''Get size of the stack.'''[0m
+[34m- 130:         [0m
+[34m- 131:         return self.__stack.getSize()[0m
+[34m- 132:     [0m
+[32m+ 127:     @classmethod[0m
+[32m+ 128:     def getSize(self) -> int:[0m
+[32m+ 129:         [0m
+[32m+ 130:         '''Get size of the stack.'''[0m
+[32m+ 131:         [0m
+[32m+ 132:         return self.__stack.getSize()[0m
+  133:     def __str__(self) -> str:
+  134:         
+  135:         '''Get string representation of the stack.'''
+  136:         
+--------------------------------------------------------------------------------
+[0.17295 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_12
+
+def test_case_12():
+        stack_0 = module_0.Stack()
+        str_0 = stack_0.__str__()
+        assert str_0 == '[None]'
+        var_0 = stack_0.peek()
+>       int_0 = stack_0.getSize()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack3.Stack'>
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute '_Stack__stack'
+
+stack3:132: AttributeError
+[36m   -[0m [#  23] CDI stack3: 
+--------------------------------------------------------------------------------
+  129:         '''Get size of the stack.'''
+  130:         
+  131:         return self.__stack.getSize()
+  132:     
+[34m- 133:     def __str__(self) -> str:[0m
+[34m- 134:         [0m
+[34m- 135:         '''Get string representation of the stack.'''[0m
+[34m- 136:         [0m
+[34m- 137:         return str(self.__stack.toArray()[::-1])[0m
+[34m- 138: [0m
+[32m+ 133:     @classmethod[0m
+[32m+ 134:     def __str__(self) -> str:[0m
+[32m+ 135:         [0m
+[32m+ 136:         '''Get string representation of the stack.'''[0m
+[32m+ 137:         [0m
+[32m+ 138:         return str(self.__stack.toArray()[::-1])[0m
+  139: 
+  140: if __name__ == '__main__':
+  141:     pass
+--------------------------------------------------------------------------------
+[0.17862 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_5
+
+def test_case_5():
+        stack_0 = module_0.Stack()
+>       str_0 = stack_0.__str__()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack3.Stack'>
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute '_Stack__stack'
+
+stack3:138: AttributeError
+[36m   -[0m [#  24] COI stack3: 
+--------------------------------------------------------------------------------
+   20:         
+   21:         '''Add element to linked list.'''
+   22:         
+   23:         newNode = Node(value)
+[34m-  24:         if self.__size == 0:[0m
+[32m+  24:         if not (self.__size == 0):[0m
+   25:             self.__head.next = newNode
+   26:             self.__head = newNode
+   27:             self.__size += 1
+   28:         else:
+--------------------------------------------------------------------------------
+[0.17175 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'stack3.SinglyLinkedList'
+>       assert var_0.next is None
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:14: AssertionError
+[36m   -[0m [#  25] COI stack3: 
+--------------------------------------------------------------------------------
+   34:     def remove(self):
+   35:         
+   36:         '''Remove node from linkedlist.'''
+   37:         
+[34m-  38:         if self.__size == 0:[0m
+[32m+  38:         if not (self.__size == 0):[0m
+   39:             return None
+   40:         if self.__size >= 1:
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.17096 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:12: AssertionError
+[36m   -[0m [#  26] COI stack3: 
+--------------------------------------------------------------------------------
+   36:         '''Remove node from linkedlist.'''
+   37:         
+   38:         if self.__size == 0:
+   39:             return None
+[34m-  40:         if self.__size >= 1:[0m
+[32m+  40:         if not (self.__size >= 1):[0m
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+   43:             self.__head = self.__sentinel
+   44:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.18097 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_9
+
+def test_case_9():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        str_0 = singly_linked_list_0.__str__()
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'stack3.SinglyLinkedList'
+        assert var_0.next is None
+        node_0 = singly_linked_list_0.getHeadNode()
+>       assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'stack3.Node'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:77: AssertionError
+[36m   -[0m [#  27] COI stack3: 
+--------------------------------------------------------------------------------
+   79:         '''Converts linkedlist to list.'''
+   80:         
+   81:         arr = []
+   82:         current = self.__head
+[34m-  83:         while current:[0m
+[32m+  83:         while not current:[0m
+   84:             arr.append(current.value)
+   85:             current = current.next
+   86:         return arr
+   87:     
+--------------------------------------------------------------------------------
+[0.16946 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is False
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+>       assert var_0.value == [None]
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:39: AssertionError
+[36m   -[0m [#  28] COI stack3: 
+--------------------------------------------------------------------------------
+   90:         '''Return String representation of linkedlist values.'''
+   91:         
+   92:         arr = []
+   93:         current = self.__head
+[34m-  94:         while current:[0m
+[32m+  94:         while not current:[0m
+   95:             arr.append(current.value)
+   96:             current = current.next
+   97:         return str(arr)
+   98: 
+--------------------------------------------------------------------------------
+[0.23592 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:54: AssertionError
+[36m   -[0m [#  29] COI stack3: 
+--------------------------------------------------------------------------------
+  136:         
+  137:         return str(self.__stack.toArray()[::-1])
+  138: 
+  139: 
+[34m- 140: if __name__ == '__main__':[0m
+[32m+ 140: if not (__name__ == '__main__'):[0m
+  141:     pass
+--------------------------------------------------------------------------------
+[0.15545 s] [31msurvived[0m
+[36m   -[0m [#  30] CRP stack3: 
+--------------------------------------------------------------------------------
+    1: '''Stack is an abstract data type that serves as a collection of elements, with two main principal operations: Push, which adds an element to the collection, and Pop, which removes the most recently added element that was not yet removed.'''
+    2: 
+    3: from typing import TypeVar
+    4: 
+[34m-   5: T = TypeVar('T')[0m
+[32m+   5: T = TypeVar('mutpy')[0m
+    6: 
+    7: class Node:
+    8:     def __init__(self, value: T):
+    9:         self.value = value
+--------------------------------------------------------------------------------
+[0.15005 s] [31msurvived[0m
+[36m   -[0m [#  31] CRP stack3: 
+--------------------------------------------------------------------------------
+    1: '''Stack is an abstract data type that serves as a collection of elements, with two main principal operations: Push, which adds an element to the collection, and Pop, which removes the most recently added element that was not yet removed.'''
+    2: 
+    3: from typing import TypeVar
+    4: 
+[34m-   5: T = TypeVar('T')[0m
+[32m+   5: T = TypeVar('')[0m
+    6: 
+    7: class Node:
+    8:     def __init__(self, value: T):
+    9:         self.value = value
+--------------------------------------------------------------------------------
+[0.14903 s] [31msurvived[0m
+[36m   -[0m [#  32] CRP stack3: 
+--------------------------------------------------------------------------------
+   13: class SinglyLinkedList:
+   14:     def __init__(self):
+   15:         self.__sentinel = Node(None)
+   16:         self.__head = self.__sentinel
+[34m-  17:         self.__size = 0[0m
+[32m+  17:         self.__size = 1[0m
+   18:     
+   19:     def add(self, value: T) -> None:
+   20:         
+   21:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[0.17672 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'stack3.SinglyLinkedList'
+>       assert var_0.next is None
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:14: AssertionError
+[36m   -[0m [#  33] CRP stack3: 
+--------------------------------------------------------------------------------
+   20:         
+   21:         '''Add element to linked list.'''
+   22:         
+   23:         newNode = Node(value)
+[34m-  24:         if self.__size == 0:[0m
+[32m+  24:         if self.__size == 1:[0m
+   25:             self.__head.next = newNode
+   26:             self.__head = newNode
+   27:             self.__size += 1
+   28:         else:
+--------------------------------------------------------------------------------
+[0.17025 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'stack3.SinglyLinkedList'
+>       assert var_0.next is None
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:14: AssertionError
+[36m   -[0m [#  34] CRP stack3: 
+--------------------------------------------------------------------------------
+   23:         newNode = Node(value)
+   24:         if self.__size == 0:
+   25:             self.__head.next = newNode
+   26:             self.__head = newNode
+[34m-  27:             self.__size += 1[0m
+[32m+  27:             self.__size += 2[0m
+   28:         else:
+   29:             self.__sentinel.next = newNode
+   30:             newNode.next = self.__head
+   31:             self.__head = newNode
+--------------------------------------------------------------------------------
+[0.17062 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_16
+
+def test_case_16():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(str_0)
+        str_1 = singly_linked_list_0.__str__()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is False
+        int_0 = singly_linked_list_0.getSize()
+>       assert int_0 == 2
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:154: AssertionError
+[36m   -[0m [#  35] CRP stack3: 
+--------------------------------------------------------------------------------
+   28:         else:
+   29:             self.__sentinel.next = newNode
+   30:             newNode.next = self.__head
+   31:             self.__head = newNode
+[34m-  32:             self.__size += 1[0m
+[32m+  32:             self.__size += 2[0m
+   33:     
+   34:     def remove(self):
+   35:         
+   36:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[0.18470 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_16
+
+def test_case_16():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(str_0)
+        str_1 = singly_linked_list_0.__str__()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is False
+        int_0 = singly_linked_list_0.getSize()
+>       assert int_0 == 2
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:154: AssertionError
+[36m   -[0m [#  36] CRP stack3: 
+--------------------------------------------------------------------------------
+   34:     def remove(self):
+   35:         
+   36:         '''Remove node from linkedlist.'''
+   37:         
+[34m-  38:         if self.__size == 0:[0m
+[32m+  38:         if self.__size == 1:[0m
+   39:             return None
+   40:         if self.__size >= 1:
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.17547 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:12: AssertionError
+[36m   -[0m [#  37] CRP stack3: 
+--------------------------------------------------------------------------------
+   36:         '''Remove node from linkedlist.'''
+   37:         
+   38:         if self.__size == 0:
+   39:             return None
+[34m-  40:         if self.__size >= 1:[0m
+[32m+  40:         if self.__size >= 2:[0m
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+   43:             self.__head = self.__sentinel
+   44:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.23445 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_9
+
+def test_case_9():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        str_0 = singly_linked_list_0.__str__()
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'stack3.SinglyLinkedList'
+        assert var_0.next is None
+        node_0 = singly_linked_list_0.getHeadNode()
+>       assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'stack3.Node'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:77: AssertionError
+[36m   -[0m [#  38] CRP stack3: 
+--------------------------------------------------------------------------------
+   40:         if self.__size >= 1:
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+   43:             self.__head = self.__sentinel
+[34m-  44:             self.__size -= 1[0m
+[32m+  44:             self.__size -= 2[0m
+   45:             return nodeToRemove
+   46:         else:
+   47:             nodeToRemove = self.__head
+   48:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[0.20591 s] [31msurvived[0m
+[36m   -[0m [#  39] CRP stack3: 
+--------------------------------------------------------------------------------
+   46:         else:
+   47:             nodeToRemove = self.__head
+   48:             self.__sentinel.next = self.__head.next
+   49:             self.__head = self.__sentinel.next
+[34m-  50:             self.__size -= 1[0m
+[32m+  50:             self.__size -= 2[0m
+   51:             return nodeToRemove
+   52:     
+   53:     def getHead(self) -> T:
+   54:         
+--------------------------------------------------------------------------------
+[0.15079 s] [31msurvived[0m
+[36m   -[0m [#  40] CRP stack3: 
+--------------------------------------------------------------------------------
+   71:     def isEmpty(self) -> bool:
+   72:         
+   73:         '''Checks if linkedlist is empty.'''
+   74:         
+[34m-  75:         return True if self.__size == 0 else False[0m
+[32m+  75:         return True if self.__size == 1 else False[0m
+   76:     
+   77:     def toArray(self) -> list:
+   78:         
+   79:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.16694 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:25: AssertionError
+[36m   -[0m [#  41] CRP stack3: 
+--------------------------------------------------------------------------------
+  121:     def isEmpty(self) -> bool:
+  122:         
+  123:         '''Check if stack is empty.'''
+  124:         
+[34m- 125:         return True if self.__stack.getSize() == 0 else False[0m
+[32m+ 125:         return True if self.__stack.getSize() == 1 else False[0m
+  126:     
+  127:     def getSize(self) -> int:
+  128:         
+  129:         '''Get size of the stack.'''
+--------------------------------------------------------------------------------
+[0.17787 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        stack_0 = module_0.Stack()
+        bool_0 = stack_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:59: AssertionError
+[36m   -[0m [#  42] CRP stack3: 
+--------------------------------------------------------------------------------
+  133:     def __str__(self) -> str:
+  134:         
+  135:         '''Get string representation of the stack.'''
+  136:         
+[34m- 137:         return str(self.__stack.toArray()[::-1])[0m
+[32m+ 137:         return str(self.__stack.toArray()[::-2])[0m
+  138: 
+  139: 
+  140: if __name__ == '__main__':
+  141:     pass
+--------------------------------------------------------------------------------
+[0.14933 s] [31msurvived[0m
+[36m   -[0m [#  43] CRP stack3: 
+--------------------------------------------------------------------------------
+  136:         
+  137:         return str(self.__stack.toArray()[::-1])
+  138: 
+  139: 
+[34m- 140: if __name__ == '__main__':[0m
+[32m+ 140: if __name__ == 'mutpy':[0m
+  141:     pass
+--------------------------------------------------------------------------------
+[0.15102 s] [31msurvived[0m
+[36m   -[0m [#  44] CRP stack3: 
+--------------------------------------------------------------------------------
+  136:         
+  137:         return str(self.__stack.toArray()[::-1])
+  138: 
+  139: 
+[34m- 140: if __name__ == '__main__':[0m
+[32m+ 140: if __name__ == '':[0m
+  141:     pass
+--------------------------------------------------------------------------------
+[0.15739 s] [31msurvived[0m
+[36m   -[0m [#  45] OIL stack3: 
+--------------------------------------------------------------------------------
+   82:         current = self.__head
+   83:         while current:
+   84:             arr.append(current.value)
+   85:             current = current.next
+[34m-  86:         return arr[0m
+[34m-  87:     [0m
+[32m+  86:             break[0m
+[32m+  87:         return arr[0m
+   88:     def __str__(self) -> str:
+   89:         
+   90:         '''Return String representation of linkedlist values.'''
+   91:         
+--------------------------------------------------------------------------------
+[0.15780 s] [31msurvived[0m
+[36m   -[0m [#  46] OIL stack3: 
+--------------------------------------------------------------------------------
+   93:         current = self.__head
+   94:         while current:
+   95:             arr.append(current.value)
+   96:             current = current.next
+[34m-  97:         return str(arr)[0m
+[34m-  98: [0m
+[32m+  97:             break[0m
+[32m+  98:         return str(arr)[0m
+   99: class Stack:
+  100:     def __init__(self):
+  101:         self.__stack = SinglyLinkedList()
+  102:     
+--------------------------------------------------------------------------------
+[0.13812 s] [31msurvived[0m
+[36m   -[0m [#  47] ROR stack3: 
+--------------------------------------------------------------------------------
+   20:         
+   21:         '''Add element to linked list.'''
+   22:         
+   23:         newNode = Node(value)
+[34m-  24:         if self.__size == 0:[0m
+[32m+  24:         if self.__size != 0:[0m
+   25:             self.__head.next = newNode
+   26:             self.__head = newNode
+   27:             self.__size += 1
+   28:         else:
+--------------------------------------------------------------------------------
+[0.21574 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'stack3.SinglyLinkedList'
+>       assert var_0.next is None
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:14: AssertionError
+[36m   -[0m [#  48] ROR stack3: 
+--------------------------------------------------------------------------------
+   34:     def remove(self):
+   35:         
+   36:         '''Remove node from linkedlist.'''
+   37:         
+[34m-  38:         if self.__size == 0:[0m
+[32m+  38:         if self.__size != 0:[0m
+   39:             return None
+   40:         if self.__size >= 1:
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.17257 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:12: AssertionError
+[36m   -[0m [#  49] ROR stack3: 
+--------------------------------------------------------------------------------
+   36:         '''Remove node from linkedlist.'''
+   37:         
+   38:         if self.__size == 0:
+   39:             return None
+[34m-  40:         if self.__size >= 1:[0m
+[32m+  40:         if self.__size <= 1:[0m
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+   43:             self.__head = self.__sentinel
+   44:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.15760 s] [31msurvived[0m
+[36m   -[0m [#  50] ROR stack3: 
+--------------------------------------------------------------------------------
+   36:         '''Remove node from linkedlist.'''
+   37:         
+   38:         if self.__size == 0:
+   39:             return None
+[34m-  40:         if self.__size >= 1:[0m
+[32m+  40:         if self.__size > 1:[0m
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+   43:             self.__head = self.__sentinel
+   44:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.18147 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_9
+
+def test_case_9():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        str_0 = singly_linked_list_0.__str__()
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'stack3.SinglyLinkedList'
+        assert var_0.next is None
+        node_0 = singly_linked_list_0.getHeadNode()
+>       assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'stack3.Node'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:77: AssertionError
+[36m   -[0m [#  51] ROR stack3: 
+--------------------------------------------------------------------------------
+   71:     def isEmpty(self) -> bool:
+   72:         
+   73:         '''Checks if linkedlist is empty.'''
+   74:         
+[34m-  75:         return True if self.__size == 0 else False[0m
+[32m+  75:         return True if self.__size != 0 else False[0m
+   76:     
+   77:     def toArray(self) -> list:
+   78:         
+   79:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.17729 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:25: AssertionError
+[36m   -[0m [#  52] ROR stack3: 
+--------------------------------------------------------------------------------
+  121:     def isEmpty(self) -> bool:
+  122:         
+  123:         '''Check if stack is empty.'''
+  124:         
+[34m- 125:         return True if self.__stack.getSize() == 0 else False[0m
+[32m+ 125:         return True if self.__stack.getSize() != 0 else False[0m
+  126:     
+  127:     def getSize(self) -> int:
+  128:         
+  129:         '''Get size of the stack.'''
+--------------------------------------------------------------------------------
+[0.17998 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        stack_0 = module_0.Stack()
+        bool_0 = stack_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:59: AssertionError
+[36m   -[0m [#  53] ROR stack3: 
+--------------------------------------------------------------------------------
+  136:         
+  137:         return str(self.__stack.toArray()[::-1])
+  138: 
+  139: 
+[34m- 140: if __name__ == '__main__':[0m
+[32m+ 140: if __name__ != '__main__':[0m
+  141:     pass
+--------------------------------------------------------------------------------
+[0.13588 s] [31msurvived[0m
+[36m   -[0m [#  54] SDI stack3: 
+--------------------------------------------------------------------------------
+    4: 
+    5: T = TypeVar('T')
+    6: 
+    7: class Node:
+[34m-   8:     def __init__(self, value: T):[0m
+[34m-   9:         self.value = value[0m
+[34m-  10:         self.next = None[0m
+[34m-  11: [0m
+[32m+   8:     @staticmethod[0m
+[32m+   9:     def __init__(self, value: T):[0m
+[32m+  10:         self.value = value[0m
+[32m+  11:         self.next = None[0m
+   12: 
+   13: class SinglyLinkedList:
+   14:     def __init__(self):
+   15:         self.__sentinel = Node(None)
+--------------------------------------------------------------------------------
+[0.16160 s] [36mincompetent[0m
+
+TypeError: stack3:15: TypeError: Node.__init__() missing 1 required positional argument: 'value'
+
+[36m   -[0m [#  55] SDI stack3: 
+--------------------------------------------------------------------------------
+   10:         self.next = None
+   11: 
+   12: 
+   13: class SinglyLinkedList:
+[34m-  14:     def __init__(self):[0m
+[34m-  15:         self.__sentinel = Node(None)[0m
+[34m-  16:         self.__head = self.__sentinel[0m
+[34m-  17:         self.__size = 0[0m
+[34m-  18:     [0m
+[32m+  14:     @staticmethod[0m
+[32m+  15:     def __init__(self):[0m
+[32m+  16:         self.__sentinel = Node(None)[0m
+[32m+  17:         self.__head = self.__sentinel[0m
+[32m+  18:         self.__size = 0[0m
+   19:     def add(self, value: T) -> None:
+   20:         
+   21:         '''Add element to linked list.'''
+   22:         
+--------------------------------------------------------------------------------
+[0.17396 s] [36mincompetent[0m
+
+TypeError: stack3:101: TypeError: SinglyLinkedList.__init__() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  56] SDI stack3: 
+--------------------------------------------------------------------------------
+   15:         self.__sentinel = Node(None)
+   16:         self.__head = self.__sentinel
+   17:         self.__size = 0
+   18:     
+[34m-  19:     def add(self, value: T) -> None:[0m
+[34m-  20:         [0m
+[34m-  21:         '''Add element to linked list.'''[0m
+[34m-  22:         [0m
+[34m-  23:         newNode = Node(value)[0m
+[34m-  24:         if self.__size == 0:[0m
+[34m-  25:             self.__head.next = newNode[0m
+[34m-  26:             self.__head = newNode[0m
+[34m-  27:             self.__size += 1[0m
+[34m-  28:         else:[0m
+[34m-  29:             self.__sentinel.next = newNode[0m
+[34m-  30:             newNode.next = self.__head[0m
+[34m-  31:             self.__head = newNode[0m
+[34m-  32:             self.__size += 1[0m
+[34m-  33:     [0m
+[32m+  19:     @staticmethod[0m
+[32m+  20:     def add(self, value: T) -> None:[0m
+[32m+  21:         [0m
+[32m+  22:         '''Add element to linked list.'''[0m
+[32m+  23:         [0m
+[32m+  24:         newNode = Node(value)[0m
+[32m+  25:         if self.__size == 0:[0m
+[32m+  26:             self.__head.next = newNode[0m
+[32m+  27:             self.__head = newNode[0m
+[32m+  28:             self.__size += 1[0m
+[32m+  29:         else:[0m
+[32m+  30:             self.__sentinel.next = newNode[0m
+[32m+  31:             newNode.next = self.__head[0m
+[32m+  32:             self.__head = newNode[0m
+[32m+  33:             self.__size += 1[0m
+   34:     def remove(self):
+   35:         
+   36:         '''Remove node from linkedlist.'''
+   37:         
+--------------------------------------------------------------------------------
+[0.22598 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:10: TypeError: SinglyLinkedList.add() missing 1 required positional argument: 'value'
+
+[36m   -[0m [#  57] SDI stack3: 
+--------------------------------------------------------------------------------
+   30:             newNode.next = self.__head
+   31:             self.__head = newNode
+   32:             self.__size += 1
+   33:     
+[34m-  34:     def remove(self):[0m
+[34m-  35:         [0m
+[34m-  36:         '''Remove node from linkedlist.'''[0m
+[34m-  37:         [0m
+[34m-  38:         if self.__size == 0:[0m
+[34m-  39:             return None[0m
+[34m-  40:         if self.__size >= 1:[0m
+[34m-  41:             nodeToRemove = self.__head[0m
+[34m-  42:             self.__sentinel.next = None[0m
+[34m-  43:             self.__head = self.__sentinel[0m
+[34m-  44:             self.__size -= 1[0m
+[34m-  45:             return nodeToRemove[0m
+[34m-  46:         else:[0m
+[34m-  47:             nodeToRemove = self.__head[0m
+[34m-  48:             self.__sentinel.next = self.__head.next[0m
+[34m-  49:             self.__head = self.__sentinel.next[0m
+[34m-  50:             self.__size -= 1[0m
+[34m-  51:             return nodeToRemove[0m
+[34m-  52:     [0m
+[32m+  34:     @staticmethod[0m
+[32m+  35:     def remove(self):[0m
+[32m+  36:         [0m
+[32m+  37:         '''Remove node from linkedlist.'''[0m
+[32m+  38:         [0m
+[32m+  39:         if self.__size == 0:[0m
+[32m+  40:             return None[0m
+[32m+  41:         if self.__size >= 1:[0m
+[32m+  42:             nodeToRemove = self.__head[0m
+[32m+  43:             self.__sentinel.next = None[0m
+[32m+  44:             self.__head = self.__sentinel[0m
+[32m+  45:             self.__size -= 1[0m
+[32m+  46:             return nodeToRemove[0m
+[32m+  47:         else:[0m
+[32m+  48:             nodeToRemove = self.__head[0m
+[32m+  49:             self.__sentinel.next = self.__head.next[0m
+[32m+  50:             self.__head = self.__sentinel.next[0m
+[32m+  51:             self.__size -= 1[0m
+[32m+  52:             return nodeToRemove[0m
+   53:     def getHead(self) -> T:
+   54:         
+   55:         '''Get value of the linkedlist head node.'''
+   56:         
+--------------------------------------------------------------------------------
+[0.17197 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:11: TypeError: SinglyLinkedList.remove() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  58] SDI stack3: 
+--------------------------------------------------------------------------------
+   49:             self.__head = self.__sentinel.next
+   50:             self.__size -= 1
+   51:             return nodeToRemove
+   52:     
+[34m-  53:     def getHead(self) -> T:[0m
+[34m-  54:         [0m
+[34m-  55:         '''Get value of the linkedlist head node.'''[0m
+[34m-  56:         [0m
+[34m-  57:         return self.__head.value[0m
+[34m-  58:     [0m
+[32m+  53:     @staticmethod[0m
+[32m+  54:     def getHead(self) -> T:[0m
+[32m+  55:         [0m
+[32m+  56:         '''Get value of the linkedlist head node.'''[0m
+[32m+  57:         [0m
+[32m+  58:         return self.__head.value[0m
+   59:     def getHeadNode(self) -> Node:
+   60:         
+   61:         '''Get head node referance.'''
+   62:         
+--------------------------------------------------------------------------------
+[0.18424 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:66: TypeError: SinglyLinkedList.getHead() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  59] SDI stack3: 
+--------------------------------------------------------------------------------
+   55:         '''Get value of the linkedlist head node.'''
+   56:         
+   57:         return self.__head.value
+   58:     
+[34m-  59:     def getHeadNode(self) -> Node:[0m
+[34m-  60:         [0m
+[34m-  61:         '''Get head node referance.'''[0m
+[34m-  62:         [0m
+[34m-  63:         return self.__head[0m
+[34m-  64:     [0m
+[32m+  59:     @staticmethod[0m
+[32m+  60:     def getHeadNode(self) -> Node:[0m
+[32m+  61:         [0m
+[32m+  62:         '''Get head node referance.'''[0m
+[32m+  63:         [0m
+[32m+  64:         return self.__head[0m
+   65:     def getSize(self) -> int:
+   66:         
+   67:         '''Return size of the linkedlist.'''
+   68:         
+--------------------------------------------------------------------------------
+[0.17300 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:30: TypeError: SinglyLinkedList.getHeadNode() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  60] SDI stack3: 
+--------------------------------------------------------------------------------
+   61:         '''Get head node referance.'''
+   62:         
+   63:         return self.__head
+   64:     
+[34m-  65:     def getSize(self) -> int:[0m
+[34m-  66:         [0m
+[34m-  67:         '''Return size of the linkedlist.'''[0m
+[34m-  68:         [0m
+[34m-  69:         return self.__size[0m
+[34m-  70:     [0m
+[32m+  65:     @staticmethod[0m
+[32m+  66:     def getSize(self) -> int:[0m
+[32m+  67:         [0m
+[32m+  68:         '''Return size of the linkedlist.'''[0m
+[32m+  69:         [0m
+[32m+  70:         return self.__size[0m
+   71:     def isEmpty(self) -> bool:
+   72:         
+   73:         '''Checks if linkedlist is empty.'''
+   74:         
+--------------------------------------------------------------------------------
+[0.17025 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:18: TypeError: SinglyLinkedList.getSize() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  61] SDI stack3: 
+--------------------------------------------------------------------------------
+   67:         '''Return size of the linkedlist.'''
+   68:         
+   69:         return self.__size
+   70:     
+[34m-  71:     def isEmpty(self) -> bool:[0m
+[34m-  72:         [0m
+[34m-  73:         '''Checks if linkedlist is empty.'''[0m
+[34m-  74:         [0m
+[34m-  75:         return True if self.__size == 0 else False[0m
+[34m-  76:     [0m
+[32m+  71:     @staticmethod[0m
+[32m+  72:     def isEmpty(self) -> bool:[0m
+[32m+  73:         [0m
+[32m+  74:         '''Checks if linkedlist is empty.'''[0m
+[32m+  75:         [0m
+[32m+  76:         return True if self.__size == 0 else False[0m
+   77:     def toArray(self) -> list:
+   78:         
+   79:         '''Converts linkedlist to list.'''
+   80:         
+--------------------------------------------------------------------------------
+[0.17614 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:24: TypeError: SinglyLinkedList.isEmpty() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  62] SDI stack3: 
+--------------------------------------------------------------------------------
+   73:         '''Checks if linkedlist is empty.'''
+   74:         
+   75:         return True if self.__size == 0 else False
+   76:     
+[34m-  77:     def toArray(self) -> list:[0m
+[34m-  78:         [0m
+[34m-  79:         '''Converts linkedlist to list.'''[0m
+[34m-  80:         [0m
+[34m-  81:         arr = [][0m
+[34m-  82:         current = self.__head[0m
+[34m-  83:         while current:[0m
+[34m-  84:             arr.append(current.value)[0m
+[34m-  85:             current = current.next[0m
+[34m-  86:         return arr[0m
+[34m-  87:     [0m
+[32m+  77:     @staticmethod[0m
+[32m+  78:     def toArray(self) -> list:[0m
+[32m+  79:         [0m
+[32m+  80:         '''Converts linkedlist to list.'''[0m
+[32m+  81:         [0m
+[32m+  82:         arr = [][0m
+[32m+  83:         current = self.__head[0m
+[32m+  84:         while current:[0m
+[32m+  85:             arr.append(current.value)[0m
+[32m+  86:             current = current.next[0m
+[32m+  87:         return arr[0m
+   88:     def __str__(self) -> str:
+   89:         
+   90:         '''Return String representation of linkedlist values.'''
+   91:         
+--------------------------------------------------------------------------------
+[0.16964 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:32: TypeError: SinglyLinkedList.toArray() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  63] SDI stack3: 
+--------------------------------------------------------------------------------
+   84:             arr.append(current.value)
+   85:             current = current.next
+   86:         return arr
+   87:     
+[34m-  88:     def __str__(self) -> str:[0m
+[34m-  89:         [0m
+[34m-  90:         '''Return String representation of linkedlist values.'''[0m
+[34m-  91:         [0m
+[34m-  92:         arr = [][0m
+[34m-  93:         current = self.__head[0m
+[34m-  94:         while current:[0m
+[34m-  95:             arr.append(current.value)[0m
+[34m-  96:             current = current.next[0m
+[34m-  97:         return str(arr)[0m
+[34m-  98: [0m
+[32m+  88:     @staticmethod[0m
+[32m+  89:     def __str__(self) -> str:[0m
+[32m+  90:         [0m
+[32m+  91:         '''Return String representation of linkedlist values.'''[0m
+[32m+  92:         [0m
+[32m+  93:         arr = [][0m
+[32m+  94:         current = self.__head[0m
+[32m+  95:         while current:[0m
+[32m+  96:             arr.append(current.value)[0m
+[32m+  97:             current = current.next[0m
+[32m+  98:         return str(arr)[0m
+   99: class Stack:
+  100:     def __init__(self):
+  101:         self.__stack = SinglyLinkedList()
+  102:     
+--------------------------------------------------------------------------------
+[0.17109 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:53: TypeError: SinglyLinkedList.__str__() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  64] SDI stack3: 
+--------------------------------------------------------------------------------
+   96:             current = current.next
+   97:         return str(arr)
+   98: 
+   99: class Stack:
+[34m- 100:     def __init__(self):[0m
+[34m- 101:         self.__stack = SinglyLinkedList()[0m
+[34m- 102:     [0m
+[32m+ 100:     @staticmethod[0m
+[32m+ 101:     def __init__(self):[0m
+[32m+ 102:         self.__stack = SinglyLinkedList()[0m
+  103:     def push(self, value: T) -> None:
+  104:         
+  105:         '''Add element to the top of the stack.'''
+  106:         
+--------------------------------------------------------------------------------
+[0.15879 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:6: TypeError: Stack.__init__() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  65] SDI stack3: 
+--------------------------------------------------------------------------------
+   99: class Stack:
+  100:     def __init__(self):
+  101:         self.__stack = SinglyLinkedList()
+  102:     
+[34m- 103:     def push(self, value: T) -> None:[0m
+[34m- 104:         [0m
+[34m- 105:         '''Add element to the top of the stack.'''[0m
+[34m- 106:         [0m
+[34m- 107:         self.__stack.add(value)[0m
+[34m- 108:     [0m
+[32m+ 103:     @staticmethod[0m
+[32m+ 104:     def push(self, value: T) -> None:[0m
+[32m+ 105:         [0m
+[32m+ 106:         '''Add element to the top of the stack.'''[0m
+[32m+ 107:         [0m
+[32m+ 108:         self.__stack.add(value)[0m
+  109:     def pop(self) -> T:
+  110:         
+  111:         '''Remove element from the top of the stack.'''
+  112:         
+--------------------------------------------------------------------------------
+[0.17646 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:86: TypeError: Stack.push() missing 1 required positional argument: 'value'
+
+[36m   -[0m [#  66] SDI stack3: 
+--------------------------------------------------------------------------------
+  105:         '''Add element to the top of the stack.'''
+  106:         
+  107:         self.__stack.add(value)
+  108:     
+[34m- 109:     def pop(self) -> T:[0m
+[34m- 110:         [0m
+[34m- 111:         '''Remove element from the top of the stack.'''[0m
+[34m- 112:         [0m
+[34m- 113:         return self.__stack.remove()[0m
+[34m- 114:     [0m
+[32m+ 109:     @staticmethod[0m
+[32m+ 110:     def pop(self) -> T:[0m
+[32m+ 111:         [0m
+[32m+ 112:         '''Remove element from the top of the stack.'''[0m
+[32m+ 113:         [0m
+[32m+ 114:         return self.__stack.remove()[0m
+  115:     def peek(self) -> T:
+  116:         
+  117:         '''View top element in the stack.'''
+  118:         
+--------------------------------------------------------------------------------
+[0.22567 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:60: TypeError: Stack.pop() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  67] SDI stack3: 
+--------------------------------------------------------------------------------
+  111:         '''Remove element from the top of the stack.'''
+  112:         
+  113:         return self.__stack.remove()
+  114:     
+[34m- 115:     def peek(self) -> T:[0m
+[34m- 116:         [0m
+[34m- 117:         '''View top element in the stack.'''[0m
+[34m- 118:         [0m
+[34m- 119:         return self.__stack.getHead()[0m
+[34m- 120:     [0m
+[32m+ 115:     @staticmethod[0m
+[32m+ 116:     def peek(self) -> T:[0m
+[32m+ 117:         [0m
+[32m+ 118:         '''View top element in the stack.'''[0m
+[32m+ 119:         [0m
+[32m+ 120:         return self.__stack.getHead()[0m
+  121:     def isEmpty(self) -> bool:
+  122:         
+  123:         '''Check if stack is empty.'''
+  124:         
+--------------------------------------------------------------------------------
+[0.18794 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:94: TypeError: Stack.peek() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  68] SDI stack3: 
+--------------------------------------------------------------------------------
+  117:         '''View top element in the stack.'''
+  118:         
+  119:         return self.__stack.getHead()
+  120:     
+[34m- 121:     def isEmpty(self) -> bool:[0m
+[34m- 122:         [0m
+[34m- 123:         '''Check if stack is empty.'''[0m
+[34m- 124:         [0m
+[34m- 125:         return True if self.__stack.getSize() == 0 else False[0m
+[34m- 126:     [0m
+[32m+ 121:     @staticmethod[0m
+[32m+ 122:     def isEmpty(self) -> bool:[0m
+[32m+ 123:         [0m
+[32m+ 124:         '''Check if stack is empty.'''[0m
+[32m+ 125:         [0m
+[32m+ 126:         return True if self.__stack.getSize() == 0 else False[0m
+  127:     def getSize(self) -> int:
+  128:         
+  129:         '''Get size of the stack.'''
+  130:         
+--------------------------------------------------------------------------------
+[0.17637 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:58: TypeError: Stack.isEmpty() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  69] SDI stack3: 
+--------------------------------------------------------------------------------
+  123:         '''Check if stack is empty.'''
+  124:         
+  125:         return True if self.__stack.getSize() == 0 else False
+  126:     
+[34m- 127:     def getSize(self) -> int:[0m
+[34m- 128:         [0m
+[34m- 129:         '''Get size of the stack.'''[0m
+[34m- 130:         [0m
+[34m- 131:         return self.__stack.getSize()[0m
+[34m- 132:     [0m
+[32m+ 127:     @staticmethod[0m
+[32m+ 128:     def getSize(self) -> int:[0m
+[32m+ 129:         [0m
+[32m+ 130:         '''Get size of the stack.'''[0m
+[32m+ 131:         [0m
+[32m+ 132:         return self.__stack.getSize()[0m
+  133:     def __str__(self) -> str:
+  134:         
+  135:         '''Get string representation of the stack.'''
+  136:         
+--------------------------------------------------------------------------------
+[0.18733 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:101: TypeError: Stack.getSize() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  70] SDI stack3: 
+--------------------------------------------------------------------------------
+  129:         '''Get size of the stack.'''
+  130:         
+  131:         return self.__stack.getSize()
+  132:     
+[34m- 133:     def __str__(self) -> str:[0m
+[34m- 134:         [0m
+[34m- 135:         '''Get string representation of the stack.'''[0m
+[34m- 136:         [0m
+[34m- 137:         return str(self.__stack.toArray()[::-1])[0m
+[34m- 138: [0m
+[32m+ 133:     @staticmethod[0m
+[32m+ 134:     def __str__(self) -> str:[0m
+[32m+ 135:         [0m
+[32m+ 136:         '''Get string representation of the stack.'''[0m
+[32m+ 137:         [0m
+[32m+ 138:         return str(self.__stack.toArray()[::-1])[0m
+  139: 
+  140: if __name__ == '__main__':
+  141:     pass
+--------------------------------------------------------------------------------
+[0.15898 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack3/DYNAMOSA/test_stack3_DYNAMOSA.py:48: TypeError: Stack.__str__() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  71] SDL stack3: 
+--------------------------------------------------------------------------------
+    1: '''Stack is an abstract data type that serves as a collection of elements, with two main principal operations: Push, which adds an element to the collection, and Pop, which removes the most recently added element that was not yet removed.'''
+    2: 
+    3: from typing import TypeVar
+    4: 
+[34m-   5: T = TypeVar('T')[0m
+[32m+   5: pass[0m
+    6: 
+    7: class Node:
+    8:     def __init__(self, value: T):
+    9:         self.value = value
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+NameError: name 'T' is not defined
+
+[36m   -[0m [#  72] SDL stack3: 
+--------------------------------------------------------------------------------
+    5: T = TypeVar('T')
+    6: 
+    7: class Node:
+    8:     def __init__(self, value: T):
+[34m-   9:         self.value = value[0m
+[32m+   9:         pass[0m
+   10:         self.next = None
+   11: 
+   12: 
+   13: class SinglyLinkedList:
+--------------------------------------------------------------------------------
+[0.17571 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+>       assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'stack3.SinglyLinkedList'
+E       AttributeError: 'Node' object has no attribute 'value'
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:13: AttributeError
+[36m   -[0m [#  73] SDL stack3: 
+--------------------------------------------------------------------------------
+    6: 
+    7: class Node:
+    8:     def __init__(self, value: T):
+    9:         self.value = value
+[34m-  10:         self.next = None[0m
+[32m+  10:         pass[0m
+   11: 
+   12: 
+   13: class SinglyLinkedList:
+   14:     def __init__(self):
+--------------------------------------------------------------------------------
+[0.17894 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'stack3.SinglyLinkedList'
+>       assert var_0.next is None
+E       AttributeError: 'Node' object has no attribute 'next'
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:14: AttributeError
+[36m   -[0m [#  74] SDL stack3: 
+--------------------------------------------------------------------------------
+   11: 
+   12: 
+   13: class SinglyLinkedList:
+   14:     def __init__(self):
+[34m-  15:         self.__sentinel = Node(None)[0m
+[32m+  15:         pass[0m
+   16:         self.__head = self.__sentinel
+   17:         self.__size = 0
+   18:     
+   19:     def add(self, value: T) -> None:
+--------------------------------------------------------------------------------
+[0.17306 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+>       stack_0 = module_0.Stack()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack3:101: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e34a80d0>
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__sentinel'
+
+stack3:16: AttributeError
+[36m   -[0m [#  75] SDL stack3: 
+--------------------------------------------------------------------------------
+   12: 
+   13: class SinglyLinkedList:
+   14:     def __init__(self):
+   15:         self.__sentinel = Node(None)
+[34m-  16:         self.__head = self.__sentinel[0m
+[32m+  16:         pass[0m
+   17:         self.__size = 0
+   18:     
+   19:     def add(self, value: T) -> None:
+   20:         
+--------------------------------------------------------------------------------
+[0.22713 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e33eea70>
+value = <stack3.SinglyLinkedList object at 0x7f47e33eea70>
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__head'
+
+stack3:25: AttributeError
+[36m   -[0m [#  76] SDL stack3: 
+--------------------------------------------------------------------------------
+   13: class SinglyLinkedList:
+   14:     def __init__(self):
+   15:         self.__sentinel = Node(None)
+   16:         self.__head = self.__sentinel
+[34m-  17:         self.__size = 0[0m
+[32m+  17:         pass[0m
+   18:     
+   19:     def add(self, value: T) -> None:
+   20:         
+   21:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[0.21346 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e36929e0>
+value = <stack3.SinglyLinkedList object at 0x7f47e36929e0>
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__size'
+
+stack3:24: AttributeError
+[36m   -[0m [#  77] SDL stack3: 
+--------------------------------------------------------------------------------
+   19:     def add(self, value: T) -> None:
+   20:         
+   21:         '''Add element to linked list.'''
+   22:         
+[34m-  23:         newNode = Node(value)[0m
+[32m+  23:         pass[0m
+   24:         if self.__size == 0:
+   25:             self.__head.next = newNode
+   26:             self.__head = newNode
+   27:             self.__size += 1
+--------------------------------------------------------------------------------
+[0.17426 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e34a4df0>
+value = <stack3.SinglyLinkedList object at 0x7f47e34a4df0>
+
+>   ???
+E   NameError: name 'newNode' is not defined
+
+stack3:25: NameError
+[36m   -[0m [#  78] SDL stack3: 
+--------------------------------------------------------------------------------
+   21:         '''Add element to linked list.'''
+   22:         
+   23:         newNode = Node(value)
+   24:         if self.__size == 0:
+[34m-  25:             self.__head.next = newNode[0m
+[32m+  25:             pass[0m
+   26:             self.__head = newNode
+   27:             self.__size += 1
+   28:         else:
+   29:             self.__sentinel.next = newNode
+--------------------------------------------------------------------------------
+[0.15607 s] [31msurvived[0m
+[36m   -[0m [#  79] SDL stack3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         newNode = Node(value)
+   24:         if self.__size == 0:
+   25:             self.__head.next = newNode
+[34m-  26:             self.__head = newNode[0m
+[32m+  26:             pass[0m
+   27:             self.__size += 1
+   28:         else:
+   29:             self.__sentinel.next = newNode
+   30:             newNode.next = self.__head
+--------------------------------------------------------------------------------
+[0.17279 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+>       assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'stack3.SinglyLinkedList'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:13: AssertionError
+[36m   -[0m [#  80] SDL stack3: 
+--------------------------------------------------------------------------------
+   25:             self.__head.next = newNode
+   26:             self.__head = newNode
+   27:             self.__size += 1
+   28:         else:
+[34m-  29:             self.__sentinel.next = newNode[0m
+[32m+  29:             pass[0m
+   30:             newNode.next = self.__head
+   31:             self.__head = newNode
+   32:             self.__size += 1
+   33:     
+--------------------------------------------------------------------------------
+[0.15611 s] [31msurvived[0m
+[36m   -[0m [#  81] SDL stack3: 
+--------------------------------------------------------------------------------
+   26:             self.__head = newNode
+   27:             self.__size += 1
+   28:         else:
+   29:             self.__sentinel.next = newNode
+[34m-  30:             newNode.next = self.__head[0m
+[32m+  30:             pass[0m
+   31:             self.__head = newNode
+   32:             self.__size += 1
+   33:     
+   34:     def remove(self):
+--------------------------------------------------------------------------------
+[0.18058 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_15
+
+def test_case_15():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is False
+        none_type_1 = singly_linked_list_0.add(list_0)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is False
+        list_1 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+        assert var_0.value == [None]
+>       assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'stack3.Node'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:141: AssertionError
+[36m   -[0m [#  82] SDL stack3: 
+--------------------------------------------------------------------------------
+   27:             self.__size += 1
+   28:         else:
+   29:             self.__sentinel.next = newNode
+   30:             newNode.next = self.__head
+[34m-  31:             self.__head = newNode[0m
+[32m+  31:             pass[0m
+   32:             self.__size += 1
+   33:     
+   34:     def remove(self):
+   35:         
+--------------------------------------------------------------------------------
+[0.18934 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_15
+
+def test_case_15():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is False
+        none_type_1 = singly_linked_list_0.add(list_0)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is False
+        list_1 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+>       assert var_0.value == [None]
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:140: AssertionError
+[36m   -[0m [#  83] SDL stack3: 
+--------------------------------------------------------------------------------
+   35:         
+   36:         '''Remove node from linkedlist.'''
+   37:         
+   38:         if self.__size == 0:
+[34m-  39:             return None[0m
+[32m+  39:             pass[0m
+   40:         if self.__size >= 1:
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+   43:             self.__head = self.__sentinel
+--------------------------------------------------------------------------------
+[0.15147 s] [31msurvived[0m
+[36m   -[0m [#  84] SDL stack3: 
+--------------------------------------------------------------------------------
+   37:         
+   38:         if self.__size == 0:
+   39:             return None
+   40:         if self.__size >= 1:
+[34m-  41:             nodeToRemove = self.__head[0m
+[32m+  41:             pass[0m
+   42:             self.__sentinel.next = None
+   43:             self.__head = self.__sentinel
+   44:             self.__size -= 1
+   45:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.17684 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       var_0 = singly_linked_list_0.remove()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e34a6d70>
+
+>   ???
+E   UnboundLocalError: local variable 'nodeToRemove' referenced before assignment
+
+stack3:45: UnboundLocalError
+[36m   -[0m [#  85] SDL stack3: 
+--------------------------------------------------------------------------------
+   38:         if self.__size == 0:
+   39:             return None
+   40:         if self.__size >= 1:
+   41:             nodeToRemove = self.__head
+[34m-  42:             self.__sentinel.next = None[0m
+[32m+  42:             pass[0m
+   43:             self.__head = self.__sentinel
+   44:             self.__size -= 1
+   45:             return nodeToRemove
+   46:         else:
+--------------------------------------------------------------------------------
+[0.23170 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is False
+        var_0 = singly_linked_list_0.remove()
+>       assert node_0.next is None
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:37: AssertionError
+[36m   -[0m [#  86] SDL stack3: 
+--------------------------------------------------------------------------------
+   39:             return None
+   40:         if self.__size >= 1:
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+[34m-  43:             self.__head = self.__sentinel[0m
+[32m+  43:             pass[0m
+   44:             self.__size -= 1
+   45:             return nodeToRemove
+   46:         else:
+   47:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[0.22681 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_9
+
+def test_case_9():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        str_0 = singly_linked_list_0.__str__()
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'stack3.SinglyLinkedList'
+        assert var_0.next is None
+        node_0 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'stack3.Node'
+>       assert node_0.value is None
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:78: AssertionError
+[36m   -[0m [#  87] SDL stack3: 
+--------------------------------------------------------------------------------
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+   43:             self.__head = self.__sentinel
+   44:             self.__size -= 1
+[34m-  45:             return nodeToRemove[0m
+[32m+  45:             pass[0m
+   46:         else:
+   47:             nodeToRemove = self.__head
+   48:             self.__sentinel.next = self.__head.next
+   49:             self.__head = self.__sentinel.next
+--------------------------------------------------------------------------------
+[0.17339 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:12: AssertionError
+[36m   -[0m [#  88] SDL stack3: 
+--------------------------------------------------------------------------------
+   43:             self.__head = self.__sentinel
+   44:             self.__size -= 1
+   45:             return nodeToRemove
+   46:         else:
+[34m-  47:             nodeToRemove = self.__head[0m
+[32m+  47:             pass[0m
+   48:             self.__sentinel.next = self.__head.next
+   49:             self.__head = self.__sentinel.next
+   50:             self.__size -= 1
+   51:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.13786 s] [31msurvived[0m
+[36m   -[0m [#  89] SDL stack3: 
+--------------------------------------------------------------------------------
+   44:             self.__size -= 1
+   45:             return nodeToRemove
+   46:         else:
+   47:             nodeToRemove = self.__head
+[34m-  48:             self.__sentinel.next = self.__head.next[0m
+[32m+  48:             pass[0m
+   49:             self.__head = self.__sentinel.next
+   50:             self.__size -= 1
+   51:             return nodeToRemove
+   52:     
+--------------------------------------------------------------------------------
+[0.13746 s] [31msurvived[0m
+[36m   -[0m [#  90] SDL stack3: 
+--------------------------------------------------------------------------------
+   45:             return nodeToRemove
+   46:         else:
+   47:             nodeToRemove = self.__head
+   48:             self.__sentinel.next = self.__head.next
+[34m-  49:             self.__head = self.__sentinel.next[0m
+[32m+  49:             pass[0m
+   50:             self.__size -= 1
+   51:             return nodeToRemove
+   52:     
+   53:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[0.15000 s] [31msurvived[0m
+[36m   -[0m [#  91] SDL stack3: 
+--------------------------------------------------------------------------------
+   47:             nodeToRemove = self.__head
+   48:             self.__sentinel.next = self.__head.next
+   49:             self.__head = self.__sentinel.next
+   50:             self.__size -= 1
+[34m-  51:             return nodeToRemove[0m
+[32m+  51:             pass[0m
+   52:     
+   53:     def getHead(self) -> T:
+   54:         
+   55:         '''Get value of the linkedlist head node.'''
+--------------------------------------------------------------------------------
+[0.14268 s] [31msurvived[0m
+[36m   -[0m [#  92] SDL stack3: 
+--------------------------------------------------------------------------------
+   53:     def getHead(self) -> T:
+   54:         
+   55:         '''Get value of the linkedlist head node.'''
+   56:         
+[34m-  57:         return self.__head.value[0m
+[32m+  57:         pass[0m
+   58:     
+   59:     def getHeadNode(self) -> Node:
+   60:         
+   61:         '''Get head node referance.'''
+--------------------------------------------------------------------------------
+[0.18724 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_13
+
+def test_case_13():
+        stack_0 = module_0.Stack()
+        none_type_0 = stack_0.push(stack_0)
+        var_0 = stack_0.peek()
+>       bool_0 = var_0.isEmpty()
+E       AttributeError: 'NoneType' object has no attribute 'isEmpty'
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:107: AttributeError
+[36m   -[0m [#  93] SDL stack3: 
+--------------------------------------------------------------------------------
+   59:     def getHeadNode(self) -> Node:
+   60:         
+   61:         '''Get head node referance.'''
+   62:         
+[34m-  63:         return self.__head[0m
+[32m+  63:         pass[0m
+   64:     
+   65:     def getSize(self) -> int:
+   66:         
+   67:         '''Return size of the linkedlist.'''
+--------------------------------------------------------------------------------
+[0.17213 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is False
+        var_0 = singly_linked_list_0.remove()
+>       assert node_0.next is None
+E       AttributeError: 'NoneType' object has no attribute 'next'
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:37: AttributeError
+[36m   -[0m [#  94] SDL stack3: 
+--------------------------------------------------------------------------------
+   65:     def getSize(self) -> int:
+   66:         
+   67:         '''Return size of the linkedlist.'''
+   68:         
+[34m-  69:         return self.__size[0m
+[32m+  69:         pass[0m
+   70:     
+   71:     def isEmpty(self) -> bool:
+   72:         
+   73:         '''Checks if linkedlist is empty.'''
+--------------------------------------------------------------------------------
+[0.17392 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        stack_0 = module_0.Stack()
+        bool_0 = stack_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:59: AssertionError
+[36m   -[0m [#  95] SDL stack3: 
+--------------------------------------------------------------------------------
+   71:     def isEmpty(self) -> bool:
+   72:         
+   73:         '''Checks if linkedlist is empty.'''
+   74:         
+[34m-  75:         return True if self.__size == 0 else False[0m
+[32m+  75:         pass[0m
+   76:     
+   77:     def toArray(self) -> list:
+   78:         
+   79:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.22770 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:25: AssertionError
+[36m   -[0m [#  96] SDL stack3: 
+--------------------------------------------------------------------------------
+   77:     def toArray(self) -> list:
+   78:         
+   79:         '''Converts linkedlist to list.'''
+   80:         
+[34m-  81:         arr = [][0m
+[32m+  81:         pass[0m
+   82:         current = self.__head
+   83:         while current:
+   84:             arr.append(current.value)
+   85:             current = current.next
+--------------------------------------------------------------------------------
+[0.16070 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+>       list_0 = singly_linked_list_0.toArray()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e3691e70>
+
+>   ???
+E   NameError: name 'arr' is not defined
+
+stack3:84: NameError
+[36m   -[0m [#  97] SDL stack3: 
+--------------------------------------------------------------------------------
+   78:         
+   79:         '''Converts linkedlist to list.'''
+   80:         
+   81:         arr = []
+[34m-  82:         current = self.__head[0m
+[32m+  82:         pass[0m
+   83:         while current:
+   84:             arr.append(current.value)
+   85:             current = current.next
+   86:         return arr
+--------------------------------------------------------------------------------
+[0.16974 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+>       list_0 = singly_linked_list_0.toArray()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e3683a60>
+
+>   ???
+E   UnboundLocalError: local variable 'current' referenced before assignment
+
+stack3:83: UnboundLocalError
+[36m   -[0m [#  98] SDL stack3: 
+--------------------------------------------------------------------------------
+   80:         
+   81:         arr = []
+   82:         current = self.__head
+   83:         while current:
+[34m-  84:             arr.append(current.value)[0m
+[32m+  84:             pass[0m
+   85:             current = current.next
+   86:         return arr
+   87:     
+   88:     def __str__(self) -> str:
+--------------------------------------------------------------------------------
+[0.17576 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is False
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+>       assert var_0.value == [None]
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:39: AssertionError
+[36m   -[0m [#  99] SDL stack3: 
+--------------------------------------------------------------------------------
+   81:         arr = []
+   82:         current = self.__head
+   83:         while current:
+   84:             arr.append(current.value)
+[34m-  85:             current = current.next[0m
+[32m+  85:             pass[0m
+   86:         return arr
+   87:     
+   88:     def __str__(self) -> str:
+   89:         
+--------------------------------------------------------------------------------
+[5.00804 s] [33mtimeout[0m
+[36m   -[0m [# 100] SDL stack3: 
+--------------------------------------------------------------------------------
+   82:         current = self.__head
+   83:         while current:
+   84:             arr.append(current.value)
+   85:             current = current.next
+[34m-  86:         return arr[0m
+[32m+  86:         pass[0m
+   87:     
+   88:     def __str__(self) -> str:
+   89:         
+   90:         '''Return String representation of linkedlist values.'''
+--------------------------------------------------------------------------------
+[0.17395 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is False
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+>       assert var_0.value == [None]
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:39: AssertionError
+[36m   -[0m [# 101] SDL stack3: 
+--------------------------------------------------------------------------------
+   88:     def __str__(self) -> str:
+   89:         
+   90:         '''Return String representation of linkedlist values.'''
+   91:         
+[34m-  92:         arr = [][0m
+[32m+  92:         pass[0m
+   93:         current = self.__head
+   94:         while current:
+   95:             arr.append(current.value)
+   96:             current = current.next
+--------------------------------------------------------------------------------
+[0.17582 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       str_0 = singly_linked_list_0.__str__()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e3674550>
+
+>   ???
+E   NameError: name 'arr' is not defined
+
+stack3:95: NameError
+[36m   -[0m [# 102] SDL stack3: 
+--------------------------------------------------------------------------------
+   89:         
+   90:         '''Return String representation of linkedlist values.'''
+   91:         
+   92:         arr = []
+[34m-  93:         current = self.__head[0m
+[32m+  93:         pass[0m
+   94:         while current:
+   95:             arr.append(current.value)
+   96:             current = current.next
+   97:         return str(arr)
+--------------------------------------------------------------------------------
+[0.17530 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       str_0 = singly_linked_list_0.__str__()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e36755d0>
+
+>   ???
+E   UnboundLocalError: local variable 'current' referenced before assignment
+
+stack3:94: UnboundLocalError
+[36m   -[0m [# 103] SDL stack3: 
+--------------------------------------------------------------------------------
+   91:         
+   92:         arr = []
+   93:         current = self.__head
+   94:         while current:
+[34m-  95:             arr.append(current.value)[0m
+[32m+  95:             pass[0m
+   96:             current = current.next
+   97:         return str(arr)
+   98: 
+   99: class Stack:
+--------------------------------------------------------------------------------
+[0.17676 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:54: AssertionError
+[36m   -[0m [# 104] SDL stack3: 
+--------------------------------------------------------------------------------
+   92:         arr = []
+   93:         current = self.__head
+   94:         while current:
+   95:             arr.append(current.value)
+[34m-  96:             current = current.next[0m
+[32m+  96:             pass[0m
+   97:         return str(arr)
+   98: 
+   99: class Stack:
+  100:     def __init__(self):
+--------------------------------------------------------------------------------
+[5.00813 s] [33mtimeout[0m
+[36m   -[0m [# 105] SDL stack3: 
+--------------------------------------------------------------------------------
+   93:         current = self.__head
+   94:         while current:
+   95:             arr.append(current.value)
+   96:             current = current.next
+[34m-  97:         return str(arr)[0m
+[32m+  97:         pass[0m
+   98: 
+   99: class Stack:
+  100:     def __init__(self):
+  101:         self.__stack = SinglyLinkedList()
+--------------------------------------------------------------------------------
+[0.24244 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:54: AssertionError
+[36m   -[0m [# 106] SDL stack3: 
+--------------------------------------------------------------------------------
+   97:         return str(arr)
+   98: 
+   99: class Stack:
+  100:     def __init__(self):
+[34m- 101:         self.__stack = SinglyLinkedList()[0m
+[32m+ 101:         pass[0m
+  102:     
+  103:     def push(self, value: T) -> None:
+  104:         
+  105:         '''Add element to the top of the stack.'''
+--------------------------------------------------------------------------------
+[0.17768 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_5
+
+def test_case_5():
+        stack_0 = module_0.Stack()
+>       str_0 = stack_0.__str__()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.Stack object at 0x7f47e366fa00>
+
+>   ???
+E   AttributeError: 'Stack' object has no attribute '_Stack__stack'
+
+stack3:137: AttributeError
+[36m   -[0m [# 107] SDL stack3: 
+--------------------------------------------------------------------------------
+  103:     def push(self, value: T) -> None:
+  104:         
+  105:         '''Add element to the top of the stack.'''
+  106:         
+[34m- 107:         self.__stack.add(value)[0m
+[32m+ 107:         pass[0m
+  108:     
+  109:     def pop(self) -> T:
+  110:         
+  111:         '''Remove element from the top of the stack.'''
+--------------------------------------------------------------------------------
+[0.16771 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_13
+
+def test_case_13():
+        stack_0 = module_0.Stack()
+        none_type_0 = stack_0.push(stack_0)
+        var_0 = stack_0.peek()
+>       bool_0 = var_0.isEmpty()
+E       AttributeError: 'NoneType' object has no attribute 'isEmpty'
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:107: AttributeError
+[36m   -[0m [# 108] SDL stack3: 
+--------------------------------------------------------------------------------
+  109:     def pop(self) -> T:
+  110:         
+  111:         '''Remove element from the top of the stack.'''
+  112:         
+[34m- 113:         return self.__stack.remove()[0m
+[32m+ 113:         pass[0m
+  114:     
+  115:     def peek(self) -> T:
+  116:         
+  117:         '''View top element in the stack.'''
+--------------------------------------------------------------------------------
+[0.16757 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_13
+
+def test_case_13():
+        stack_0 = module_0.Stack()
+        none_type_0 = stack_0.push(stack_0)
+        var_0 = stack_0.peek()
+        bool_0 = var_0.isEmpty()
+        assert bool_0 is False
+        stack_1 = module_0.Stack()
+        var_1 = stack_0.pop()
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'stack3.Node'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:111: AssertionError
+[36m   -[0m [# 109] SDL stack3: 
+--------------------------------------------------------------------------------
+  115:     def peek(self) -> T:
+  116:         
+  117:         '''View top element in the stack.'''
+  118:         
+[34m- 119:         return self.__stack.getHead()[0m
+[32m+ 119:         pass[0m
+  120:     
+  121:     def isEmpty(self) -> bool:
+  122:         
+  123:         '''Check if stack is empty.'''
+--------------------------------------------------------------------------------
+[0.16851 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_13
+
+def test_case_13():
+        stack_0 = module_0.Stack()
+        none_type_0 = stack_0.push(stack_0)
+        var_0 = stack_0.peek()
+>       bool_0 = var_0.isEmpty()
+E       AttributeError: 'NoneType' object has no attribute 'isEmpty'
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:107: AttributeError
+[36m   -[0m [# 110] SDL stack3: 
+--------------------------------------------------------------------------------
+  121:     def isEmpty(self) -> bool:
+  122:         
+  123:         '''Check if stack is empty.'''
+  124:         
+[34m- 125:         return True if self.__stack.getSize() == 0 else False[0m
+[32m+ 125:         pass[0m
+  126:     
+  127:     def getSize(self) -> int:
+  128:         
+  129:         '''Get size of the stack.'''
+--------------------------------------------------------------------------------
+[0.17402 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        stack_0 = module_0.Stack()
+        bool_0 = stack_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:59: AssertionError
+[36m   -[0m [# 111] SDL stack3: 
+--------------------------------------------------------------------------------
+  127:     def getSize(self) -> int:
+  128:         
+  129:         '''Get size of the stack.'''
+  130:         
+[34m- 131:         return self.__stack.getSize()[0m
+[32m+ 131:         pass[0m
+  132:     
+  133:     def __str__(self) -> str:
+  134:         
+  135:         '''Get string representation of the stack.'''
+--------------------------------------------------------------------------------
+[0.15105 s] [31msurvived[0m
+[36m   -[0m [# 112] SDL stack3: 
+--------------------------------------------------------------------------------
+  133:     def __str__(self) -> str:
+  134:         
+  135:         '''Get string representation of the stack.'''
+  136:         
+[34m- 137:         return str(self.__stack.toArray()[::-1])[0m
+[32m+ 137:         pass[0m
+  138: 
+  139: 
+  140: if __name__ == '__main__':
+  141:     pass
+--------------------------------------------------------------------------------
+[0.16582 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_5
+
+def test_case_5():
+        stack_0 = module_0.Stack()
+        str_0 = stack_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:49: AssertionError
+[36m   -[0m [# 113] SIR stack3: 
+--------------------------------------------------------------------------------
+  133:     def __str__(self) -> str:
+  134:         
+  135:         '''Get string representation of the stack.'''
+  136:         
+[34m- 137:         return str(self.__stack.toArray()[::-1])[0m
+[32m+ 137:         return str(self.__stack.toArray()[:])[0m
+  138: 
+  139: 
+  140: if __name__ == '__main__':
+  141:     pass
+--------------------------------------------------------------------------------
+[0.15572 s] [31msurvived[0m
+[36m   -[0m [# 114] SVD stack3: 
+--------------------------------------------------------------------------------
+    5: T = TypeVar('T')
+    6: 
+    7: class Node:
+    8:     def __init__(self, value: T):
+[34m-   9:         self.value = value[0m
+[32m+   9:         value = value[0m
+   10:         self.next = None
+   11: 
+   12: 
+   13: class SinglyLinkedList:
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 115] SVD stack3: 
+--------------------------------------------------------------------------------
+    6: 
+    7: class Node:
+    8:     def __init__(self, value: T):
+    9:         self.value = value
+[34m-  10:         self.next = None[0m
+[32m+  10:         next = None[0m
+   11: 
+   12: 
+   13: class SinglyLinkedList:
+   14:     def __init__(self):
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 116] SVD stack3: 
+--------------------------------------------------------------------------------
+   11: 
+   12: 
+   13: class SinglyLinkedList:
+   14:     def __init__(self):
+[34m-  15:         self.__sentinel = Node(None)[0m
+[32m+  15:         __sentinel = Node(None)[0m
+   16:         self.__head = self.__sentinel
+   17:         self.__size = 0
+   18:     
+   19:     def add(self, value: T) -> None:
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 117] SVD stack3: 
+--------------------------------------------------------------------------------
+   12: 
+   13: class SinglyLinkedList:
+   14:     def __init__(self):
+   15:         self.__sentinel = Node(None)
+[34m-  16:         self.__head = self.__sentinel[0m
+[32m+  16:         __head = self.__sentinel[0m
+   17:         self.__size = 0
+   18:     
+   19:     def add(self, value: T) -> None:
+   20:         
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 118] SVD stack3: 
+--------------------------------------------------------------------------------
+   12: 
+   13: class SinglyLinkedList:
+   14:     def __init__(self):
+   15:         self.__sentinel = Node(None)
+[34m-  16:         self.__head = self.__sentinel[0m
+[32m+  16:         self.__head = __sentinel[0m
+   17:         self.__size = 0
+   18:     
+   19:     def add(self, value: T) -> None:
+   20:         
+--------------------------------------------------------------------------------
+[0.18062 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+>       stack_0 = module_0.Stack()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack3:101: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e36a82b0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+stack3:16: NameError
+[36m   -[0m [# 119] SVD stack3: 
+--------------------------------------------------------------------------------
+   13: class SinglyLinkedList:
+   14:     def __init__(self):
+   15:         self.__sentinel = Node(None)
+   16:         self.__head = self.__sentinel
+[34m-  17:         self.__size = 0[0m
+[32m+  17:         __size = 0[0m
+   18:     
+   19:     def add(self, value: T) -> None:
+   20:         
+   21:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 120] SVD stack3: 
+--------------------------------------------------------------------------------
+   20:         
+   21:         '''Add element to linked list.'''
+   22:         
+   23:         newNode = Node(value)
+[34m-  24:         if self.__size == 0:[0m
+[32m+  24:         if __size == 0:[0m
+   25:             self.__head.next = newNode
+   26:             self.__head = newNode
+   27:             self.__size += 1
+   28:         else:
+--------------------------------------------------------------------------------
+[0.17627 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e34a6dd0>
+value = <stack3.SinglyLinkedList object at 0x7f47e34a6dd0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+stack3:24: NameError
+[36m   -[0m [# 121] SVD stack3: 
+--------------------------------------------------------------------------------
+   21:         '''Add element to linked list.'''
+   22:         
+   23:         newNode = Node(value)
+   24:         if self.__size == 0:
+[34m-  25:             self.__head.next = newNode[0m
+[32m+  25:             __head.next = newNode[0m
+   26:             self.__head = newNode
+   27:             self.__size += 1
+   28:         else:
+   29:             self.__sentinel.next = newNode
+--------------------------------------------------------------------------------
+[0.17184 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e36925f0>
+value = <stack3.SinglyLinkedList object at 0x7f47e36925f0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+stack3:25: NameError
+[36m   -[0m [# 122] SVD stack3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         newNode = Node(value)
+   24:         if self.__size == 0:
+   25:             self.__head.next = newNode
+[34m-  26:             self.__head = newNode[0m
+[32m+  26:             __head = newNode[0m
+   27:             self.__size += 1
+   28:         else:
+   29:             self.__sentinel.next = newNode
+   30:             newNode.next = self.__head
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 123] SVD stack3: 
+--------------------------------------------------------------------------------
+   23:         newNode = Node(value)
+   24:         if self.__size == 0:
+   25:             self.__head.next = newNode
+   26:             self.__head = newNode
+[34m-  27:             self.__size += 1[0m
+[32m+  27:             __size += 1[0m
+   28:         else:
+   29:             self.__sentinel.next = newNode
+   30:             newNode.next = self.__head
+   31:             self.__head = newNode
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 124] SVD stack3: 
+--------------------------------------------------------------------------------
+   25:             self.__head.next = newNode
+   26:             self.__head = newNode
+   27:             self.__size += 1
+   28:         else:
+[34m-  29:             self.__sentinel.next = newNode[0m
+[32m+  29:             __sentinel.next = newNode[0m
+   30:             newNode.next = self.__head
+   31:             self.__head = newNode
+   32:             self.__size += 1
+   33:     
+--------------------------------------------------------------------------------
+[0.18191 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_14
+
+def test_case_14():
+        stack_0 = module_0.Stack()
+        int_0 = stack_0.peek()
+        none_type_0 = stack_0.push(stack_0)
+>       none_type_1 = stack_0.push(stack_0)
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack3:107: in push
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e34a94e0>
+value = <stack3.Stack object at 0x7f47e34aae30>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+stack3:29: NameError
+[36m   -[0m [# 125] SVD stack3: 
+--------------------------------------------------------------------------------
+   26:             self.__head = newNode
+   27:             self.__size += 1
+   28:         else:
+   29:             self.__sentinel.next = newNode
+[34m-  30:             newNode.next = self.__head[0m
+[32m+  30:             newNode.next = __head[0m
+   31:             self.__head = newNode
+   32:             self.__size += 1
+   33:     
+   34:     def remove(self):
+--------------------------------------------------------------------------------
+[0.23978 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_14
+
+def test_case_14():
+        stack_0 = module_0.Stack()
+        int_0 = stack_0.peek()
+        none_type_0 = stack_0.push(stack_0)
+>       none_type_1 = stack_0.push(stack_0)
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack3:107: in push
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e353ee30>
+value = <stack3.Stack object at 0x7f47e353e980>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+stack3:30: NameError
+[36m   -[0m [# 126] SVD stack3: 
+--------------------------------------------------------------------------------
+   27:             self.__size += 1
+   28:         else:
+   29:             self.__sentinel.next = newNode
+   30:             newNode.next = self.__head
+[34m-  31:             self.__head = newNode[0m
+[32m+  31:             __head = newNode[0m
+   32:             self.__size += 1
+   33:     
+   34:     def remove(self):
+   35:         
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 127] SVD stack3: 
+--------------------------------------------------------------------------------
+   28:         else:
+   29:             self.__sentinel.next = newNode
+   30:             newNode.next = self.__head
+   31:             self.__head = newNode
+[34m-  32:             self.__size += 1[0m
+[32m+  32:             __size += 1[0m
+   33:     
+   34:     def remove(self):
+   35:         
+   36:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 128] SVD stack3: 
+--------------------------------------------------------------------------------
+   34:     def remove(self):
+   35:         
+   36:         '''Remove node from linkedlist.'''
+   37:         
+[34m-  38:         if self.__size == 0:[0m
+[32m+  38:         if __size == 0:[0m
+   39:             return None
+   40:         if self.__size >= 1:
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.17579 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       var_0 = singly_linked_list_0.remove()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e353d930>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+stack3:38: NameError
+[36m   -[0m [# 129] SVD stack3: 
+--------------------------------------------------------------------------------
+   36:         '''Remove node from linkedlist.'''
+   37:         
+   38:         if self.__size == 0:
+   39:             return None
+[34m-  40:         if self.__size >= 1:[0m
+[32m+  40:         if __size >= 1:[0m
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+   43:             self.__head = self.__sentinel
+   44:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.15806 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       var_0 = singly_linked_list_0.remove()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e3357130>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+stack3:40: NameError
+[36m   -[0m [# 130] SVD stack3: 
+--------------------------------------------------------------------------------
+   37:         
+   38:         if self.__size == 0:
+   39:             return None
+   40:         if self.__size >= 1:
+[34m-  41:             nodeToRemove = self.__head[0m
+[32m+  41:             nodeToRemove = __head[0m
+   42:             self.__sentinel.next = None
+   43:             self.__head = self.__sentinel
+   44:             self.__size -= 1
+   45:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.15539 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       var_0 = singly_linked_list_0.remove()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e3583280>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+stack3:41: NameError
+[36m   -[0m [# 131] SVD stack3: 
+--------------------------------------------------------------------------------
+   38:         if self.__size == 0:
+   39:             return None
+   40:         if self.__size >= 1:
+   41:             nodeToRemove = self.__head
+[34m-  42:             self.__sentinel.next = None[0m
+[32m+  42:             __sentinel.next = None[0m
+   43:             self.__head = self.__sentinel
+   44:             self.__size -= 1
+   45:             return nodeToRemove
+   46:         else:
+--------------------------------------------------------------------------------
+[0.17355 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       var_0 = singly_linked_list_0.remove()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e34a9b40>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+stack3:42: NameError
+[36m   -[0m [# 132] SVD stack3: 
+--------------------------------------------------------------------------------
+   39:             return None
+   40:         if self.__size >= 1:
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+[34m-  43:             self.__head = self.__sentinel[0m
+[32m+  43:             __head = self.__sentinel[0m
+   44:             self.__size -= 1
+   45:             return nodeToRemove
+   46:         else:
+   47:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 133] SVD stack3: 
+--------------------------------------------------------------------------------
+   39:             return None
+   40:         if self.__size >= 1:
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+[34m-  43:             self.__head = self.__sentinel[0m
+[32m+  43:             self.__head = __sentinel[0m
+   44:             self.__size -= 1
+   45:             return nodeToRemove
+   46:         else:
+   47:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[0.17603 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       var_0 = singly_linked_list_0.remove()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e34a90c0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+stack3:43: NameError
+[36m   -[0m [# 134] SVD stack3: 
+--------------------------------------------------------------------------------
+   40:         if self.__size >= 1:
+   41:             nodeToRemove = self.__head
+   42:             self.__sentinel.next = None
+   43:             self.__head = self.__sentinel
+[34m-  44:             self.__size -= 1[0m
+[32m+  44:             __size -= 1[0m
+   45:             return nodeToRemove
+   46:         else:
+   47:             nodeToRemove = self.__head
+   48:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 135] SVD stack3: 
+--------------------------------------------------------------------------------
+   43:             self.__head = self.__sentinel
+   44:             self.__size -= 1
+   45:             return nodeToRemove
+   46:         else:
+[34m-  47:             nodeToRemove = self.__head[0m
+[32m+  47:             nodeToRemove = __head[0m
+   48:             self.__sentinel.next = self.__head.next
+   49:             self.__head = self.__sentinel.next
+   50:             self.__size -= 1
+   51:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.21041 s] [31msurvived[0m
+[36m   -[0m [# 136] SVD stack3: 
+--------------------------------------------------------------------------------
+   44:             self.__size -= 1
+   45:             return nodeToRemove
+   46:         else:
+   47:             nodeToRemove = self.__head
+[34m-  48:             self.__sentinel.next = self.__head.next[0m
+[32m+  48:             __sentinel.next = self.__head.next[0m
+   49:             self.__head = self.__sentinel.next
+   50:             self.__size -= 1
+   51:             return nodeToRemove
+   52:     
+--------------------------------------------------------------------------------
+[0.15703 s] [31msurvived[0m
+[36m   -[0m [# 137] SVD stack3: 
+--------------------------------------------------------------------------------
+   44:             self.__size -= 1
+   45:             return nodeToRemove
+   46:         else:
+   47:             nodeToRemove = self.__head
+[34m-  48:             self.__sentinel.next = self.__head.next[0m
+[32m+  48:             self.__sentinel.next = __head.next[0m
+   49:             self.__head = self.__sentinel.next
+   50:             self.__size -= 1
+   51:             return nodeToRemove
+   52:     
+--------------------------------------------------------------------------------
+[0.15767 s] [31msurvived[0m
+[36m   -[0m [# 138] SVD stack3: 
+--------------------------------------------------------------------------------
+   45:             return nodeToRemove
+   46:         else:
+   47:             nodeToRemove = self.__head
+   48:             self.__sentinel.next = self.__head.next
+[34m-  49:             self.__head = self.__sentinel.next[0m
+[32m+  49:             __head = self.__sentinel.next[0m
+   50:             self.__size -= 1
+   51:             return nodeToRemove
+   52:     
+   53:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 139] SVD stack3: 
+--------------------------------------------------------------------------------
+   45:             return nodeToRemove
+   46:         else:
+   47:             nodeToRemove = self.__head
+   48:             self.__sentinel.next = self.__head.next
+[34m-  49:             self.__head = self.__sentinel.next[0m
+[32m+  49:             self.__head = __sentinel.next[0m
+   50:             self.__size -= 1
+   51:             return nodeToRemove
+   52:     
+   53:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[0.15061 s] [31msurvived[0m
+[36m   -[0m [# 140] SVD stack3: 
+--------------------------------------------------------------------------------
+   46:         else:
+   47:             nodeToRemove = self.__head
+   48:             self.__sentinel.next = self.__head.next
+   49:             self.__head = self.__sentinel.next
+[34m-  50:             self.__size -= 1[0m
+[32m+  50:             __size -= 1[0m
+   51:             return nodeToRemove
+   52:     
+   53:     def getHead(self) -> T:
+   54:         
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 141] SVD stack3: 
+--------------------------------------------------------------------------------
+   53:     def getHead(self) -> T:
+   54:         
+   55:         '''Get value of the linkedlist head node.'''
+   56:         
+[34m-  57:         return self.__head.value[0m
+[32m+  57:         return __head.value[0m
+   58:     
+   59:     def getHeadNode(self) -> Node:
+   60:         
+   61:         '''Get head node referance.'''
+--------------------------------------------------------------------------------
+[0.16992 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        int_0 = 4462
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       var_0 = singly_linked_list_0.getHead()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e3631540>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+stack3:57: NameError
+[36m   -[0m [# 142] SVD stack3: 
+--------------------------------------------------------------------------------
+   59:     def getHeadNode(self) -> Node:
+   60:         
+   61:         '''Get head node referance.'''
+   62:         
+[34m-  63:         return self.__head[0m
+[32m+  63:         return __head[0m
+   64:     
+   65:     def getSize(self) -> int:
+   66:         
+   67:         '''Return size of the linkedlist.'''
+--------------------------------------------------------------------------------
+[0.17424 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       node_0 = singly_linked_list_0.getHeadNode()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e34ab370>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+stack3:63: NameError
+[36m   -[0m [# 143] SVD stack3: 
+--------------------------------------------------------------------------------
+   65:     def getSize(self) -> int:
+   66:         
+   67:         '''Return size of the linkedlist.'''
+   68:         
+[34m-  69:         return self.__size[0m
+[32m+  69:         return __size[0m
+   70:     
+   71:     def isEmpty(self) -> bool:
+   72:         
+   73:         '''Checks if linkedlist is empty.'''
+--------------------------------------------------------------------------------
+[0.17827 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       int_0 = singly_linked_list_0.getSize()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e32edf00>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+stack3:69: NameError
+[36m   -[0m [# 144] SVD stack3: 
+--------------------------------------------------------------------------------
+   71:     def isEmpty(self) -> bool:
+   72:         
+   73:         '''Checks if linkedlist is empty.'''
+   74:         
+[34m-  75:         return True if self.__size == 0 else False[0m
+[32m+  75:         return True if __size == 0 else False[0m
+   76:     
+   77:     def toArray(self) -> list:
+   78:         
+   79:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.23130 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       bool_0 = singly_linked_list_0.isEmpty()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e32efd60>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+stack3:75: NameError
+[36m   -[0m [# 145] SVD stack3: 
+--------------------------------------------------------------------------------
+   78:         
+   79:         '''Converts linkedlist to list.'''
+   80:         
+   81:         arr = []
+[34m-  82:         current = self.__head[0m
+[32m+  82:         current = __head[0m
+   83:         while current:
+   84:             arr.append(current.value)
+   85:             current = current.next
+   86:         return arr
+--------------------------------------------------------------------------------
+[0.22937 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+>       list_0 = singly_linked_list_0.toArray()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e36c26e0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+stack3:82: NameError
+[36m   -[0m [# 146] SVD stack3: 
+--------------------------------------------------------------------------------
+   89:         
+   90:         '''Return String representation of linkedlist values.'''
+   91:         
+   92:         arr = []
+[34m-  93:         current = self.__head[0m
+[32m+  93:         current = __head[0m
+   94:         while current:
+   95:             arr.append(current.value)
+   96:             current = current.next
+   97:         return str(arr)
+--------------------------------------------------------------------------------
+[0.18063 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       str_0 = singly_linked_list_0.__str__()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.SinglyLinkedList object at 0x7f47e34aa0b0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+stack3:93: NameError
+[36m   -[0m [# 147] SVD stack3: 
+--------------------------------------------------------------------------------
+   97:         return str(arr)
+   98: 
+   99: class Stack:
+  100:     def __init__(self):
+[34m- 101:         self.__stack = SinglyLinkedList()[0m
+[32m+ 101:         __stack = SinglyLinkedList()[0m
+  102:     
+  103:     def push(self, value: T) -> None:
+  104:         
+  105:         '''Add element to the top of the stack.'''
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 148] SVD stack3: 
+--------------------------------------------------------------------------------
+  103:     def push(self, value: T) -> None:
+  104:         
+  105:         '''Add element to the top of the stack.'''
+  106:         
+[34m- 107:         self.__stack.add(value)[0m
+[32m+ 107:         __stack.add(value)[0m
+  108:     
+  109:     def pop(self) -> T:
+  110:         
+  111:         '''Remove element from the top of the stack.'''
+--------------------------------------------------------------------------------
+[0.18013 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        stack_0 = module_0.Stack()
+        bool_0 = False
+        none_type_0 = singly_linked_list_0.add(bool_0)
+>       none_type_1 = stack_0.push(singly_linked_list_0)
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.Stack object at 0x7f47e346e6b0>
+value = <stack3.SinglyLinkedList object at 0x7f47e346fdf0>
+
+>   ???
+E   NameError: name '_Stack__stack' is not defined
+
+stack3:107: NameError
+[36m   -[0m [# 149] SVD stack3: 
+--------------------------------------------------------------------------------
+  109:     def pop(self) -> T:
+  110:         
+  111:         '''Remove element from the top of the stack.'''
+  112:         
+[34m- 113:         return self.__stack.remove()[0m
+[32m+ 113:         return __stack.remove()[0m
+  114:     
+  115:     def peek(self) -> T:
+  116:         
+  117:         '''View top element in the stack.'''
+--------------------------------------------------------------------------------
+[0.17964 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        stack_0 = module_0.Stack()
+        bool_0 = stack_0.isEmpty()
+        assert bool_0 is True
+>       var_0 = stack_0.pop()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.Stack object at 0x7f47e35d18a0>
+
+>   ???
+E   NameError: name '_Stack__stack' is not defined
+
+stack3:113: NameError
+[36m   -[0m [# 150] SVD stack3: 
+--------------------------------------------------------------------------------
+  115:     def peek(self) -> T:
+  116:         
+  117:         '''View top element in the stack.'''
+  118:         
+[34m- 119:         return self.__stack.getHead()[0m
+[32m+ 119:         return __stack.getHead()[0m
+  120:     
+  121:     def isEmpty(self) -> bool:
+  122:         
+  123:         '''Check if stack is empty.'''
+--------------------------------------------------------------------------------
+[0.18512 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_11
+
+def test_case_11():
+        stack_0 = module_0.Stack()
+>       var_0 = stack_0.peek()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.Stack object at 0x7f47e346f6d0>
+
+>   ???
+E   NameError: name '_Stack__stack' is not defined
+
+stack3:119: NameError
+[36m   -[0m [# 151] SVD stack3: 
+--------------------------------------------------------------------------------
+  121:     def isEmpty(self) -> bool:
+  122:         
+  123:         '''Check if stack is empty.'''
+  124:         
+[34m- 125:         return True if self.__stack.getSize() == 0 else False[0m
+[32m+ 125:         return True if __stack.getSize() == 0 else False[0m
+  126:     
+  127:     def getSize(self) -> int:
+  128:         
+  129:         '''Get size of the stack.'''
+--------------------------------------------------------------------------------
+[0.17883 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        stack_0 = module_0.Stack()
+>       bool_0 = stack_0.isEmpty()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.Stack object at 0x7f47e35d11e0>
+
+>   ???
+E   NameError: name '_Stack__stack' is not defined
+
+stack3:125: NameError
+[36m   -[0m [# 152] SVD stack3: 
+--------------------------------------------------------------------------------
+  127:     def getSize(self) -> int:
+  128:         
+  129:         '''Get size of the stack.'''
+  130:         
+[34m- 131:         return self.__stack.getSize()[0m
+[32m+ 131:         return __stack.getSize()[0m
+  132:     
+  133:     def __str__(self) -> str:
+  134:         
+  135:         '''Get string representation of the stack.'''
+--------------------------------------------------------------------------------
+[0.18626 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_12
+
+def test_case_12():
+        stack_0 = module_0.Stack()
+        str_0 = stack_0.__str__()
+        assert str_0 == '[None]'
+        var_0 = stack_0.peek()
+>       int_0 = stack_0.getSize()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.Stack object at 0x7f47e3530100>
+
+>   ???
+E   NameError: name '_Stack__stack' is not defined
+
+stack3:131: NameError
+[36m   -[0m [# 153] SVD stack3: 
+--------------------------------------------------------------------------------
+  133:     def __str__(self) -> str:
+  134:         
+  135:         '''Get string representation of the stack.'''
+  136:         
+[34m- 137:         return str(self.__stack.toArray()[::-1])[0m
+[32m+ 137:         return str(__stack.toArray()[::-1])[0m
+  138: 
+  139: 
+  140: if __name__ == '__main__':
+  141:     pass
+--------------------------------------------------------------------------------
+[0.16266 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_5
+
+def test_case_5():
+        stack_0 = module_0.Stack()
+>       str_0 = stack_0.__str__()
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack3.Stack object at 0x7f47e3594a90>
+
+>   ???
+E   NameError: name '_Stack__stack' is not defined
+
+stack3:137: NameError
+[36m   -[0m [# 154] ZIL stack3: 
+--------------------------------------------------------------------------------
+   80:         
+   81:         arr = []
+   82:         current = self.__head
+   83:         while current:
+[34m-  84:             arr.append(current.value)[0m
+[34m-  85:             current = current.next[0m
+[32m+  84:             break[0m
+[32m+  85:         [0m
+   86:         return arr
+   87:     
+   88:     def __str__(self) -> str:
+   89:         
+--------------------------------------------------------------------------------
+[0.21692 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is False
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack3.Node'
+>       assert var_0.value == [None]
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:39: AssertionError
+[36m   -[0m [# 155] ZIL stack3: 
+--------------------------------------------------------------------------------
+   91:         
+   92:         arr = []
+   93:         current = self.__head
+   94:         while current:
+[34m-  95:             arr.append(current.value)[0m
+[34m-  96:             current = current.next[0m
+[32m+  95:             break[0m
+[32m+  96:         [0m
+   97:         return str(arr)
+   98: 
+   99: class Stack:
+  100:     def __init__(self):
+--------------------------------------------------------------------------------
+[0.16281 s] [32mkilled[0m by DYNAMOSA/test_stack3_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+DYNAMOSA/test_stack3_DYNAMOSA.py:54: AssertionError
+[34m[*][0m Mutation score [47.81268 s]: [1m[34m75.6%[0m
+[36m   -[0m all: 155
+[36m   -[0m killed: 91 (58.7%)
+[36m   -[0m survived: 30 (19.4%)
+[36m   -[0m incompetent: 32 (20.6%)
+[36m   -[0m timeout: 2 (1.3%)

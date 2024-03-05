@@ -1,0 +1,309 @@
+<html><body><h1>stack1.py</h1>Killed 40 out of 68 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 4</h3><pre>--- stack1.py
++++ stack1.py
+@@ -12,7 +12,7 @@
+         return self.size
+ 
+     def push(self, item):
+-        if self.top is None:
++        if self.top is not None:
+             self.top = StackNode(item)
+         else:
+             #self.top->[item1]->None
+</pre><h3>Mutant 6</h3><pre>--- stack1.py
++++ stack1.py
+@@ -16,7 +16,7 @@
+             self.top = StackNode(item)
+         else:
+             #self.top->[item1]->None
+-            item1 = self.top
++            item1 = None
+             item2 = StackNode(item)
+ 
+             #self.top->[item2]->[item1]->None
+</pre><h3>Mutant 8</h3><pre>--- stack1.py
++++ stack1.py
+@@ -20,7 +20,7 @@
+             item2 = StackNode(item)
+ 
+             #self.top->[item2]->[item1]->None
+-            self.top = item2
++            self.top = None
+             item2.next = item1
+ 
+         self.size += 1
+</pre><h3>Mutant 9</h3><pre>--- stack1.py
++++ stack1.py
+@@ -21,7 +21,7 @@
+ 
+             #self.top->[item2]->[item1]->None
+             self.top = item2
+-            item2.next = item1
++            item2.next = None
+ 
+         self.size += 1
+ 
+</pre><h3>Mutant 15</h3><pre>--- stack1.py
++++ stack1.py
+@@ -31,7 +31,7 @@
+         else:
+             top_data = self.top.data
+             # Skip over the top and set the next to the top
+-            self.top = self.top.next
++            self.top = None
+             self.size -= 1
+             return top_data
+ 
+</pre><h3>Mutant 41</h3><pre>--- stack1.py
++++ stack1.py
+@@ -91,7 +91,7 @@
+         module.
+     '''
+     stack = Stack()
+-    ops = {'+': lambda a, b: a + b,
++    ops = {'XX+XX': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+</pre><h3>Mutant 42</h3><pre>--- stack1.py
++++ stack1.py
+@@ -91,7 +91,7 @@
+         module.
+     '''
+     stack = Stack()
+-    ops = {'+': lambda a, b: a + b,
++    ops = {'+': lambda a, b: a - b,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+</pre><h3>Mutant 43</h3><pre>--- stack1.py
++++ stack1.py
+@@ -91,7 +91,7 @@
+         module.
+     '''
+     stack = Stack()
+-    ops = {'+': lambda a, b: a + b,
++    ops = {'+': lambda a, b: None,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+</pre><h3>Mutant 44</h3><pre>--- stack1.py
++++ stack1.py
+@@ -92,7 +92,7 @@
+     '''
+     stack = Stack()
+     ops = {'+': lambda a, b: a + b,
+-           '-': lambda a, b: a - b,
++           'XX-XX': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+</pre><h3>Mutant 45</h3><pre>--- stack1.py
++++ stack1.py
+@@ -92,7 +92,7 @@
+     '''
+     stack = Stack()
+     ops = {'+': lambda a, b: a + b,
+-           '-': lambda a, b: a - b,
++           '-': lambda a, b: a + b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+</pre><h3>Mutant 46</h3><pre>--- stack1.py
++++ stack1.py
+@@ -92,7 +92,7 @@
+     '''
+     stack = Stack()
+     ops = {'+': lambda a, b: a + b,
+-           '-': lambda a, b: a - b,
++           '-': lambda a, b: None,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+</pre><h3>Mutant 47</h3><pre>--- stack1.py
++++ stack1.py
+@@ -93,7 +93,7 @@
+     stack = Stack()
+     ops = {'+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+-           '*': lambda a, b: a * b, 
++           'XX*XX': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+            '^': lambda a, b: a ** b,}
+</pre><h3>Mutant 48</h3><pre>--- stack1.py
++++ stack1.py
+@@ -93,7 +93,7 @@
+     stack = Stack()
+     ops = {'+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+-           '*': lambda a, b: a * b, 
++           '*': lambda a, b: a / b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+            '^': lambda a, b: a ** b,}
+</pre><h3>Mutant 49</h3><pre>--- stack1.py
++++ stack1.py
+@@ -93,7 +93,7 @@
+     stack = Stack()
+     ops = {'+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+-           '*': lambda a, b: a * b, 
++           '*': lambda a, b: None, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+            '^': lambda a, b: a ** b,}
+</pre><h3>Mutant 50</h3><pre>--- stack1.py
++++ stack1.py
+@@ -94,7 +94,7 @@
+     ops = {'+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+-           '/': lambda a, b: a / b,
++           'XX/XX': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+            '^': lambda a, b: a ** b,}
+ 
+</pre><h3>Mutant 51</h3><pre>--- stack1.py
++++ stack1.py
+@@ -94,7 +94,7 @@
+     ops = {'+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+-           '/': lambda a, b: a / b,
++           '/': lambda a, b: a * b,
+            '%': lambda a, b: a % b,
+            '^': lambda a, b: a ** b,}
+ 
+</pre><h3>Mutant 52</h3><pre>--- stack1.py
++++ stack1.py
+@@ -94,7 +94,7 @@
+     ops = {'+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+-           '/': lambda a, b: a / b,
++           '/': lambda a, b: None,
+            '%': lambda a, b: a % b,
+            '^': lambda a, b: a ** b,}
+ 
+</pre><h3>Mutant 53</h3><pre>--- stack1.py
++++ stack1.py
+@@ -95,7 +95,7 @@
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+-           '%': lambda a, b: a % b,
++           'XX%XX': lambda a, b: a % b,
+            '^': lambda a, b: a ** b,}
+ 
+     # Split the string into a list using spaces
+</pre><h3>Mutant 54</h3><pre>--- stack1.py
++++ stack1.py
+@@ -95,7 +95,7 @@
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+-           '%': lambda a, b: a % b,
++           '%': lambda a, b: a / b,
+            '^': lambda a, b: a ** b,}
+ 
+     # Split the string into a list using spaces
+</pre><h3>Mutant 55</h3><pre>--- stack1.py
++++ stack1.py
+@@ -95,7 +95,7 @@
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+-           '%': lambda a, b: a % b,
++           '%': lambda a, b: None,
+            '^': lambda a, b: a ** b,}
+ 
+     # Split the string into a list using spaces
+</pre><h3>Mutant 56</h3><pre>--- stack1.py
++++ stack1.py
+@@ -96,7 +96,7 @@
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+-           '^': lambda a, b: a ** b,}
++           'XX^XX': lambda a, b: a ** b,}
+ 
+     # Split the string into a list using spaces
+     tokens = string.split(' ') 
+</pre><h3>Mutant 57</h3><pre>--- stack1.py
++++ stack1.py
+@@ -96,7 +96,7 @@
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+-           '^': lambda a, b: a ** b,}
++           '^': lambda a, b: a * b,}
+ 
+     # Split the string into a list using spaces
+     tokens = string.split(' ') 
+</pre><h3>Mutant 58</h3><pre>--- stack1.py
++++ stack1.py
+@@ -96,7 +96,7 @@
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+-           '^': lambda a, b: a ** b,}
++           '^': lambda a, b: None,}
+ 
+     # Split the string into a list using spaces
+     tokens = string.split(' ') 
+</pre><h3>Mutant 60</h3><pre>--- stack1.py
++++ stack1.py
+@@ -99,7 +99,7 @@
+            '^': lambda a, b: a ** b,}
+ 
+     # Split the string into a list using spaces
+-    tokens = string.split(' ') 
++    tokens = string.split('XX XX') 
+ 
+     for character in tokens:
+         # Check if it's an operator
+</pre><h3>Mutant 63</h3><pre>--- stack1.py
++++ stack1.py
+@@ -106,7 +106,7 @@
+         if character in ops.keys():
+             try:
+                 # Get our last two values
+-                right = stack.pop()
++                right = None
+                 left = stack.pop()
+ 
+                 # Calculate and accumulate it
+</pre><h3>Mutant 64</h3><pre>--- stack1.py
++++ stack1.py
+@@ -107,7 +107,7 @@
+             try:
+                 # Get our last two values
+                 right = stack.pop()
+-                left = stack.pop()
++                left = None
+ 
+                 # Calculate and accumulate it
+                 result = ops[character](left, right)
+</pre><h3>Mutant 65</h3><pre>--- stack1.py
++++ stack1.py
+@@ -110,7 +110,7 @@
+                 left = stack.pop()
+ 
+                 # Calculate and accumulate it
+-                result = ops[character](left, right)
++                result = None
+                 stack.push(result)
+ 
+             # If there aren't enough operands, raise it.
+</pre><h3>Mutant 68</h3><pre>--- stack1.py
++++ stack1.py
+@@ -127,7 +127,7 @@
+                 raise e
+ 
+     # If we have too many operands or operators
+-    if stack.size > 1:
++    if stack.size > 2:
+         raise ValueError()
+ 
+     return stack.pop()
+</pre></body></html>

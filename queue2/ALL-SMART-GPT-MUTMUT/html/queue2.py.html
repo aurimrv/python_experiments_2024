@@ -1,0 +1,23 @@
+<html><body><h1>queue2.py</h1>Killed 71 out of 73 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 26</h3><pre>--- queue2.py
++++ queue2.py
+@@ -49,7 +49,7 @@
+                 if last == None:
+                     self.head = self.head.next
+                 else:
+-                    last.next = n.next
++                    last.next = None
+                 return True
+             n = n.next
+         return False
+</pre><h3>Mutant 57</h3><pre>--- queue2.py
++++ queue2.py
+@@ -104,7 +104,7 @@
+             raise Exception ("Queue is empty.")
+         val = self.head.value
+         self.head = self.head.next
+-        if self.head is None:
++        if self.head is not None:
+             self.tail = None
+         return val
+ 
+</pre></body></html>

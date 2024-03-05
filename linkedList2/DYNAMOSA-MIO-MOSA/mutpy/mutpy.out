@@ -1,0 +1,2787 @@
+[*] Start mutation process:
+   - targets: linkedList2.py
+   - tests: ./DYNAMOSA-MIO-MOSA
+[*] 52 tests passed:
+   - test_linkedList2_DYNAMOSA [0.05800 s]
+   - test_linkedList2_MIO [0.05071 s]
+   - test_linkedList2_MOSA [0.04599 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR linkedList2: 
+--------------------------------------------------------------------------------
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+  75:         while n != None:
+- 76:             count += 1
++ 76:             count -= 1
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[0.07977 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+E       ValueError: __len__() should return >= 0
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: ValueError
+   - [#   2] CDI linkedList2: 
+--------------------------------------------------------------------------------
+   3: 
+   4:     Author: George Heineman
+   5: '''
+   6: class LinkedNode:
+-  7:     def __init__(self, value, tail=None):
+-  8:         '''Node in a Linked List.'''
+-  9:         self.value = value
+- 10:         self.next = tail
+- 11:     
++  7:     @classmethod
++  8:     def __init__(self, value, tail=None):
++  9:         '''Node in a Linked List.'''
++ 10:         self.value = value
++ 11:         self.next = tail
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+--------------------------------------------------------------------------------
+[0.07749 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_2
+
+def test_case_2():
+        complex_0 = 1460.7871768642246 + 580.97j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_node_1 = module_0.LinkedNode(linked_node_0, linked_node_0)
+        var_0 = linked_node_1.checkInfinite()
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:20: AssertionError
+   - [#   3] CDI linkedList2: 
+--------------------------------------------------------------------------------
+   8:         '''Node in a Linked List.'''
+   9:         self.value = value
+  10:         self.next = tail
+  11:     
+- 12:     def checkInfinite(self):
+- 13:         '''Check whether infinite loop via next.'''
+- 14:         p1 = p2 = self
+- 15:         while (p1 != None and p2 != None):
+- 16:             if p2.next == None:
+- 17:                 return False
+- 18:             p1 = p1.next
+- 19:             p2 = p2.next.next
+- 20:             
+- 21:             if p1 == p2:
+- 22:                 return True
+- 23:         return False
+- 24: class LinkedList:
+- 25:     def __init__(self, *start):
+- 26:         '''Demonstrate linked lists in Python.'''
+- 27:         self.head = None
+- 28:         for _ in start:
+- 29:             self.prepend(_)
+- 30:     
++ 12:     @classmethod
++ 13:     def checkInfinite(self):
++ 14:         '''Check whether infinite loop via next.'''
++ 15:         p1 = p2 = self
++ 16:         while (p1 != None and p2 != None):
++ 17:             if p2.next == None:
++ 18:                 return False
++ 19:             p1 = p1.next
++ 20:             p2 = p2.next.next
++ 21:             
++ 22:             if p1 == p2:
++ 23:                 return True
++ 24:         return False
++ 25: class LinkedList:
++ 26:     def __init__(self, *start):
++ 27:         '''Demonstrate linked lists in Python.'''
++ 28:         self.head = None
++ 29:         for _ in start:
++ 30:             self.prepend(_)
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[0.07248 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = '4-?Fk.6R79JM\rhc'
+        linked_node_0 = module_0.LinkedNode(str_0)
+>       var_0 = linked_node_0.checkInfinite()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedNode'>
+
+>   ???
+E   AttributeError: type object 'LinkedNode' has no attribute 'next'
+
+linkedList2:17: AttributeError
+   - [#   4] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  21:             if p1 == p2:
+  22:                 return True
+  23:         return False
+  24: class LinkedList:
+- 25:     def __init__(self, *start):
+- 26:         '''Demonstrate linked lists in Python.'''
+- 27:         self.head = None
+- 28:         for _ in start:
+- 29:             self.prepend(_)
+- 30:     
++ 25:     @classmethod
++ 26:     def __init__(self, *start):
++ 27:         '''Demonstrate linked lists in Python.'''
++ 28:         self.head = None
++ 29:         for _ in start:
++ 30:             self.prepend(_)
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[0.07523 s] incompetent
+
+TypeError: linkedList2:30: TypeError: LinkedList.prepend() missing 1 required positional argument: 'value'
+
+   - [#   5] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  27:         self.head = None
+  28:         for _ in start:
+  29:             self.prepend(_)
+  30:     
+- 31:     def prepend(self, value):
+- 32:         '''Prepend element into list.'''
+- 33:         self.head = LinkedNode(value, self.head)
+- 34:     
++ 31:     @classmethod
++ 32:     def prepend(self, value):
++ 33:         '''Prepend element into list.'''
++ 34:         self.head = LinkedNode(value, self.head)
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+--------------------------------------------------------------------------------
+[0.07689 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+>       linked_list_0 = module_0.LinkedList(*str_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList2:29: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>, value = 'B'
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:34: AttributeError
+   - [#   6] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+- 35:     def pop(self):
+- 36:         '''Remove first value in list.'''
+- 37:         if self.head is None:
+- 38:             raise Exception('Linked list is empty.')
+- 39:         val = self.head.value
+- 40:         self.head = self.head.next
+- 41:         return val
+- 42:     
++ 35:     @classmethod
++ 36:     def pop(self):
++ 37:         '''Remove first value in list.'''
++ 38:         if self.head is None:
++ 39:             raise Exception('Linked list is empty.')
++ 40:         val = self.head.value
++ 41:         self.head = self.head.next
++ 42:         return val
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+--------------------------------------------------------------------------------
+[0.07697 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:38: AttributeError
+   - [#   7] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+- 43:     def remove(self, value):
+- 44:         '''Remove value from list.'''
+- 45:         n = self.head
+- 46:         last = None
+- 47:         while n != None:
+- 48:             if n.value == value:
+- 49:                 if last == None:
+- 50:                     self.head = self.head.next
+- 51:                 else:
+- 52:                     last.next = n.next
+- 53:                 return True
+- 54:             n = n.next
+- 55:         return False
+- 56:     
++ 43:     @classmethod
++ 44:     def remove(self, value):
++ 45:         '''Remove value from list.'''
++ 46:         n = self.head
++ 47:         last = None
++ 48:         while n != None:
++ 49:             if n.value == value:
++ 50:                 if last == None:
++ 51:                     self.head = self.head.next
++ 52:                 else:
++ 53:                     last.next = n.next
++ 54:                 return True
++ 55:             n = n.next
++ 56:         return False
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+--------------------------------------------------------------------------------
+[0.07798 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+value = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3b0042b90>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:46: AttributeError
+   - [#   8] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  53:                 return True
+  54:             n = n.next
+  55:         return False
+  56:     
+- 57:     def __iter__(self):
+- 58:         '''Iterator of values in the list.'''
+- 59:         n = self.head
+- 60:         while n != None:
+- 61:             yield n.value
+- 62:             n = n.next
+- 63:     
++ 57:     @classmethod
++ 58:     def __iter__(self):
++ 59:         '''Iterator of values in the list.'''
++ 60:         n = self.head
++ 61:         while n != None:
++ 62:             yield n.value
++ 63:             n = n.next
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+--------------------------------------------------------------------------------
+[0.08103 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+>       var_0 = linked_list_0.__repr__()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList2:69: in __repr__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:60: AttributeError
+   - [#   9] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+- 64:     def __repr__(self):
+- 65:         '''String representation of linked list.'''
+- 66:         if self.head is None:
+- 67:             return 'link:[]'
+- 68:         
+- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+- 70:     
++ 64:     @classmethod
++ 65:     def __repr__(self):
++ 66:         '''String representation of linked list.'''
++ 67:         if self.head is None:
++ 68:             return 'link:[]'
++ 69:         
++ 70:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+--------------------------------------------------------------------------------
+[0.08191 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+>       var_0 = linked_list_0.__repr__()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:67: AttributeError
+   - [#  10] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  67:             return 'link:[]'
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+- 71:     def __len__(self):
+- 72:         '''Count values in list.'''
+- 73:         n = self.head
+- 74:         count = 0
+- 75:         while n != None:
+- 76:             count += 1
+- 77:             n = n.next
+- 78:         return count
++ 71:     @classmethod
++ 72:     def __len__(self):
++ 73:         '''Count values in list.'''
++ 74:         n = self.head
++ 75:         count = 0
++ 76:         while n != None:
++ 77:             count += 1
++ 78:             n = n.next
++ 79:         return count
+--------------------------------------------------------------------------------
+[0.07983 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:74: AttributeError
+   - [#  11] COI linkedList2: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+- 15:         while (p1 != None and p2 != None):
++ 15:         while not ((p1 != None and p2 != None)):
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+--------------------------------------------------------------------------------
+[0.07774 s] survived
+   - [#  12] COI linkedList2: 
+--------------------------------------------------------------------------------
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+- 16:             if p2.next == None:
++ 16:             if not (p2.next == None):
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+--------------------------------------------------------------------------------
+[0.07339 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = '4-?Fk.6R79JM\rhc'
+        linked_node_0 = module_0.LinkedNode(str_0)
+>       var_0 = linked_node_0.checkInfinite()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7fc3b0002530>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:19: AttributeError
+   - [#  13] COI linkedList2: 
+--------------------------------------------------------------------------------
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+- 21:             if p1 == p2:
++ 21:             if not (p1 == p2):
+  22:                 return True
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+--------------------------------------------------------------------------------
+[0.07777 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_2
+
+def test_case_2():
+        complex_0 = 1460.7871768642246 + 580.97j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_node_1 = module_0.LinkedNode(linked_node_0, linked_node_0)
+        var_0 = linked_node_1.checkInfinite()
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:20: AssertionError
+   - [#  14] COI linkedList2: 
+--------------------------------------------------------------------------------
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+- 37:         if self.head is None:
++ 37:         if not (self.head is None):
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+--------------------------------------------------------------------------------
+[0.09239 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3afe841c0>
+
+>   ???
+E   Exception: Linked list is empty.
+
+linkedList2:38: Exception
+   - [#  15] COI linkedList2: 
+--------------------------------------------------------------------------------
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+- 47:         while n != None:
++ 47:         while not (n != None):
+  48:             if n.value == value:
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+--------------------------------------------------------------------------------
+[0.07687 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(linked_list_0)
+>       assert var_1 is True
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:58: AssertionError
+   - [#  16] COI linkedList2: 
+--------------------------------------------------------------------------------
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+- 48:             if n.value == value:
++ 48:             if not (n.value == value):
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+--------------------------------------------------------------------------------
+[0.07626 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(linked_list_0)
+>       assert var_1 is True
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:58: AssertionError
+   - [#  17] COI linkedList2: 
+--------------------------------------------------------------------------------
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+- 49:                 if last == None:
++ 49:                 if not (last == None):
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+--------------------------------------------------------------------------------
+[0.07858 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3affbf7c0>
+value = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3affbf7c0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:52: AttributeError
+   - [#  18] COI linkedList2: 
+--------------------------------------------------------------------------------
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+- 60:         while n != None:
++ 60:         while not (n != None):
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+--------------------------------------------------------------------------------
+[0.08275 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == 'link:[W,B,Q,z,d,n,i,d]'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:87: AssertionError
+   - [#  19] COI linkedList2: 
+--------------------------------------------------------------------------------
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+- 66:         if self.head is None:
++ 66:         if not (self.head is None):
+  67:             return 'link:[]'
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+--------------------------------------------------------------------------------
+[0.08218 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == 'link:[W,B,Q,z,d,n,i,d]'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:87: AssertionError
+   - [#  20] COI linkedList2: 
+--------------------------------------------------------------------------------
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+- 75:         while n != None:
++ 75:         while not (n != None):
+  76:             count += 1
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[0.07891 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: AssertionError
+   - [#  21] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+- 38:             raise Exception('Linked list is empty.')
++ 38:             raise Exception('mutpy')
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+--------------------------------------------------------------------------------
+[0.07864 s] survived
+   - [#  22] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+- 38:             raise Exception('Linked list is empty.')
++ 38:             raise Exception('')
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+--------------------------------------------------------------------------------
+[0.07706 s] survived
+   - [#  23] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+- 67:             return 'link:[]'
++ 67:             return 'mutpy'
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+--------------------------------------------------------------------------------
+[0.08360 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_15
+
+def test_case_15():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == 'link:[]'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:108: AssertionError
+   - [#  24] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+- 67:             return 'link:[]'
++ 67:             return ''
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+--------------------------------------------------------------------------------
+[0.08544 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_15
+
+def test_case_15():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == 'link:[]'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:108: AssertionError
+   - [#  25] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
++ 69:         return 'mutpy'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[0.08306 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == 'link:[W,B,Q,z,d,n,i,d]'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:87: AssertionError
+   - [#  26] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
++ 69:         return ''.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[0.08360 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == 'link:[W,B,Q,z,d,n,i,d]'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:87: AssertionError
+   - [#  27] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
++ 69:         return 'link:[{0:s}]'.format('mutpy'.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[0.08368 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == 'link:[W,B,Q,z,d,n,i,d]'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:87: AssertionError
+   - [#  28] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
++ 69:         return 'link:[{0:s}]'.format(''.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[0.08341 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == 'link:[W,B,Q,z,d,n,i,d]'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:87: AssertionError
+   - [#  29] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+- 74:         count = 0
++ 74:         count = 1
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[0.08039 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: AssertionError
+   - [#  30] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+  75:         while n != None:
+- 76:             count += 1
++ 76:             count += 2
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[0.09402 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: AssertionError
+   - [#  31] LCR linkedList2: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+- 15:         while (p1 != None and p2 != None):
++ 15:         while (p1 != None or p2 != None):
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+--------------------------------------------------------------------------------
+[0.07409 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_2
+
+def test_case_2():
+        complex_0 = 1460.7871768642246 + 580.97j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_node_1 = module_0.LinkedNode(linked_node_0, linked_node_0)
+>       var_0 = linked_node_1.checkInfinite()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7fc3b0025360>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:16: AttributeError
+   - [#  32] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+  22:                 return True
+- 23:         return False
+- 24: class LinkedList:
+- 25:     def __init__(self, *start):
+- 26:         '''Demonstrate linked lists in Python.'''
+- 27:         self.head = None
+- 28:         for _ in start:
+- 29:             self.prepend(_)
+- 30:     
++ 23:             break
++ 24:         return False
++ 25: class LinkedList:
++ 26:     def __init__(self, *start):
++ 27:         '''Demonstrate linked lists in Python.'''
++ 28:         self.head = None
++ 29:         for _ in start:
++ 30:             self.prepend(_)
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[0.07708 s] survived
+   - [#  33] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+  28:         for _ in start:
+  29:             self.prepend(_)
+- 30:     
++ 30:             break
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[0.07874 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: AssertionError
+   - [#  34] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+- 55:         return False
+- 56:     
++ 55:             break
++ 56:         return False
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+--------------------------------------------------------------------------------
+[0.07923 s] survived
+   - [#  35] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  59:         n = self.head
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+- 63:     
++ 63:             break
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+--------------------------------------------------------------------------------
+[0.08274 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == 'link:[W,B,Q,z,d,n,i,d]'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:87: AssertionError
+   - [#  36] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+- 78:         return count
++ 78:             break
++ 79:         return count
+--------------------------------------------------------------------------------
+[0.07722 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: AssertionError
+   - [#  37] RIL linkedList2: 
+--------------------------------------------------------------------------------
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+- 28:         for _ in start:
++ 28:         for _ in reversed(start):
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+--------------------------------------------------------------------------------
+[0.08332 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == 'link:[W,B,Q,z,d,n,i,d]'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:87: AssertionError
+   - [#  38] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+- 15:         while (p1 != None and p2 != None):
++ 15:         while (p1 == None and p2 != None):
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+--------------------------------------------------------------------------------
+[0.07876 s] survived
+   - [#  39] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+- 15:         while (p1 != None and p2 != None):
++ 15:         while (p1 != None and p2 == None):
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+--------------------------------------------------------------------------------
+[0.07745 s] survived
+   - [#  40] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+- 16:             if p2.next == None:
++ 16:             if p2.next != None:
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+--------------------------------------------------------------------------------
+[0.07473 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = '4-?Fk.6R79JM\rhc'
+        linked_node_0 = module_0.LinkedNode(str_0)
+>       var_0 = linked_node_0.checkInfinite()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7fc3b01b9510>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:19: AttributeError
+   - [#  41] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+- 21:             if p1 == p2:
++ 21:             if p1 != p2:
+  22:                 return True
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+--------------------------------------------------------------------------------
+[0.07835 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_2
+
+def test_case_2():
+        complex_0 = 1460.7871768642246 + 580.97j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_node_1 = module_0.LinkedNode(linked_node_0, linked_node_0)
+        var_0 = linked_node_1.checkInfinite()
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:20: AssertionError
+   - [#  42] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+- 47:         while n != None:
++ 47:         while n == None:
+  48:             if n.value == value:
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+--------------------------------------------------------------------------------
+[0.07730 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(linked_list_0)
+>       assert var_1 is True
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:58: AssertionError
+   - [#  43] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+- 48:             if n.value == value:
++ 48:             if n.value != value:
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+--------------------------------------------------------------------------------
+[0.07866 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(linked_list_0)
+>       assert var_1 is True
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:58: AssertionError
+   - [#  44] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+- 49:                 if last == None:
++ 49:                 if last != None:
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+--------------------------------------------------------------------------------
+[0.08047 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3aff45ab0>
+value = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3aff45ab0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:52: AttributeError
+   - [#  45] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+- 60:         while n != None:
++ 60:         while n == None:
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+--------------------------------------------------------------------------------
+[0.09844 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == 'link:[W,B,Q,z,d,n,i,d]'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:87: AssertionError
+   - [#  46] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+- 75:         while n != None:
++ 75:         while n == None:
+  76:             count += 1
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[0.09448 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: AssertionError
+   - [#  47] SDI linkedList2: 
+--------------------------------------------------------------------------------
+   3: 
+   4:     Author: George Heineman
+   5: '''
+   6: class LinkedNode:
+-  7:     def __init__(self, value, tail=None):
+-  8:         '''Node in a Linked List.'''
+-  9:         self.value = value
+- 10:         self.next = tail
+- 11:     
++  7:     @staticmethod
++  8:     def __init__(self, value, tail=None):
++  9:         '''Node in a Linked List.'''
++ 10:         self.value = value
++ 11:         self.next = tail
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+--------------------------------------------------------------------------------
+[0.07609 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:7: TypeError: LinkedNode.__init__() missing 1 required positional argument: 'value'
+
+   - [#  48] SDI linkedList2: 
+--------------------------------------------------------------------------------
+   8:         '''Node in a Linked List.'''
+   9:         self.value = value
+  10:         self.next = tail
+  11:     
+- 12:     def checkInfinite(self):
+- 13:         '''Check whether infinite loop via next.'''
+- 14:         p1 = p2 = self
+- 15:         while (p1 != None and p2 != None):
+- 16:             if p2.next == None:
+- 17:                 return False
+- 18:             p1 = p1.next
+- 19:             p2 = p2.next.next
+- 20:             
+- 21:             if p1 == p2:
+- 22:                 return True
+- 23:         return False
+- 24: class LinkedList:
+- 25:     def __init__(self, *start):
+- 26:         '''Demonstrate linked lists in Python.'''
+- 27:         self.head = None
+- 28:         for _ in start:
+- 29:             self.prepend(_)
+- 30:     
++ 12:     @staticmethod
++ 13:     def checkInfinite(self):
++ 14:         '''Check whether infinite loop via next.'''
++ 15:         p1 = p2 = self
++ 16:         while (p1 != None and p2 != None):
++ 17:             if p2.next == None:
++ 18:                 return False
++ 19:             p1 = p1.next
++ 20:             p2 = p2.next.next
++ 21:             
++ 22:             if p1 == p2:
++ 23:                 return True
++ 24:         return False
++ 25: class LinkedList:
++ 26:     def __init__(self, *start):
++ 27:         '''Demonstrate linked lists in Python.'''
++ 28:         self.head = None
++ 29:         for _ in start:
++ 30:             self.prepend(_)
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[0.07189 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:8: TypeError: LinkedNode.checkInfinite() missing 1 required positional argument: 'self'
+
+   - [#  49] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  21:             if p1 == p2:
+  22:                 return True
+  23:         return False
+  24: class LinkedList:
+- 25:     def __init__(self, *start):
+- 26:         '''Demonstrate linked lists in Python.'''
+- 27:         self.head = None
+- 28:         for _ in start:
+- 29:             self.prepend(_)
+- 30:     
++ 25:     @staticmethod
++ 26:     def __init__(self, *start):
++ 27:         '''Demonstrate linked lists in Python.'''
++ 28:         self.head = None
++ 29:         for _ in start:
++ 30:             self.prepend(_)
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[0.07480 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+>       linked_list_0 = module_0.LinkedList(*str_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = 'B', start = ('/', 'n', "'", 's', '!', 'T', ...)
+
+>   ???
+E   AttributeError: 'str' object has no attribute 'head'
+
+linkedList2:28: AttributeError
+   - [#  50] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  27:         self.head = None
+  28:         for _ in start:
+  29:             self.prepend(_)
+  30:     
+- 31:     def prepend(self, value):
+- 32:         '''Prepend element into list.'''
+- 33:         self.head = LinkedNode(value, self.head)
+- 34:     
++ 31:     @staticmethod
++ 32:     def prepend(self, value):
++ 33:         '''Prepend element into list.'''
++ 34:         self.head = LinkedNode(value, self.head)
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+--------------------------------------------------------------------------------
+[0.07450 s] incompetent
+
+TypeError: linkedList2:29: TypeError: LinkedList.prepend() missing 1 required positional argument: 'value'
+
+   - [#  51] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+- 35:     def pop(self):
+- 36:         '''Remove first value in list.'''
+- 37:         if self.head is None:
+- 38:             raise Exception('Linked list is empty.')
+- 39:         val = self.head.value
+- 40:         self.head = self.head.next
+- 41:         return val
+- 42:     
++ 35:     @staticmethod
++ 36:     def pop(self):
++ 37:         '''Remove first value in list.'''
++ 38:         if self.head is None:
++ 39:             raise Exception('Linked list is empty.')
++ 40:         val = self.head.value
++ 41:         self.head = self.head.next
++ 42:         return val
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+--------------------------------------------------------------------------------
+[0.07692 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:47: TypeError: LinkedList.pop() missing 1 required positional argument: 'self'
+
+   - [#  52] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+- 43:     def remove(self, value):
+- 44:         '''Remove value from list.'''
+- 45:         n = self.head
+- 46:         last = None
+- 47:         while n != None:
+- 48:             if n.value == value:
+- 49:                 if last == None:
+- 50:                     self.head = self.head.next
+- 51:                 else:
+- 52:                     last.next = n.next
+- 53:                 return True
+- 54:             n = n.next
+- 55:         return False
+- 56:     
++ 43:     @staticmethod
++ 44:     def remove(self, value):
++ 45:         '''Remove value from list.'''
++ 46:         n = self.head
++ 47:         last = None
++ 48:         while n != None:
++ 49:             if n.value == value:
++ 50:                 if last == None:
++ 51:                     self.head = self.head.next
++ 52:                 else:
++ 53:                     last.next = n.next
++ 54:                 return True
++ 55:             n = n.next
++ 56:         return False
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+--------------------------------------------------------------------------------
+[0.07721 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:57: TypeError: LinkedList.remove() missing 1 required positional argument: 'value'
+
+   - [#  53] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  53:                 return True
+  54:             n = n.next
+  55:         return False
+  56:     
+- 57:     def __iter__(self):
+- 58:         '''Iterator of values in the list.'''
+- 59:         n = self.head
+- 60:         while n != None:
+- 61:             yield n.value
+- 62:             n = n.next
+- 63:     
++ 57:     @staticmethod
++ 58:     def __iter__(self):
++ 59:         '''Iterator of values in the list.'''
++ 60:         n = self.head
++ 61:         while n != None:
++ 62:             yield n.value
++ 63:             n = n.next
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+--------------------------------------------------------------------------------
+[0.07954 s] incompetent
+
+TypeError: linkedList2:69: TypeError: LinkedList.__iter__() missing 1 required positional argument: 'self'
+
+   - [#  54] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+- 64:     def __repr__(self):
+- 65:         '''String representation of linked list.'''
+- 66:         if self.head is None:
+- 67:             return 'link:[]'
+- 68:         
+- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+- 70:     
++ 64:     @staticmethod
++ 65:     def __repr__(self):
++ 66:         '''String representation of linked list.'''
++ 67:         if self.head is None:
++ 68:             return 'link:[]'
++ 69:         
++ 70:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+--------------------------------------------------------------------------------
+[0.07935 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:86: TypeError: LinkedList.__repr__() missing 1 required positional argument: 'self'
+
+   - [#  55] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  67:             return 'link:[]'
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+- 71:     def __len__(self):
+- 72:         '''Count values in list.'''
+- 73:         n = self.head
+- 74:         count = 0
+- 75:         while n != None:
+- 76:             count += 1
+- 77:             n = n.next
+- 78:         return count
++ 71:     @staticmethod
++ 72:     def __len__(self):
++ 73:         '''Count values in list.'''
++ 74:         n = self.head
++ 75:         count = 0
++ 76:         while n != None:
++ 77:             count += 1
++ 78:             n = n.next
++ 79:         return count
+--------------------------------------------------------------------------------
+[0.07979 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: TypeError: LinkedList.__len__() missing 1 required positional argument: 'self'
+
+   - [#  56] SDL linkedList2: 
+--------------------------------------------------------------------------------
+   5: '''
+   6: class LinkedNode:
+   7:     def __init__(self, value, tail=None):
+   8:         '''Node in a Linked List.'''
+-  9:         self.value = value
++  9:         pass
+  10:         self.next = tail
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+--------------------------------------------------------------------------------
+[0.07740 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[AttributeError("'LinkedNode' object has no attribute 'value'") raised in repr()] LinkedList object at 0x7fc3b0026320>
+
+>   ???
+E   AttributeError: 'LinkedNode' object has no attribute 'value'
+
+linkedList2:39: AttributeError
+   - [#  57] SDL linkedList2: 
+--------------------------------------------------------------------------------
+   6: class LinkedNode:
+   7:     def __init__(self, value, tail=None):
+   8:         '''Node in a Linked List.'''
+   9:         self.value = value
+- 10:         self.next = tail
++ 10:         pass
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+--------------------------------------------------------------------------------
+[0.07393 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = '4-?Fk.6R79JM\rhc'
+        linked_node_0 = module_0.LinkedNode(str_0)
+>       var_0 = linked_node_0.checkInfinite()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7fc3b0292770>
+
+>   ???
+E   AttributeError: 'LinkedNode' object has no attribute 'next'
+
+linkedList2:16: AttributeError
+   - [#  58] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  10:         self.next = tail
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+- 14:         p1 = p2 = self
++ 14:         pass
+  15:         while (p1 != None and p2 != None):
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+--------------------------------------------------------------------------------
+[0.07484 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = '4-?Fk.6R79JM\rhc'
+        linked_node_0 = module_0.LinkedNode(str_0)
+>       var_0 = linked_node_0.checkInfinite()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7fc3b0000f70>
+
+>   ???
+E   UnboundLocalError: local variable 'p1' referenced before assignment
+
+linkedList2:15: UnboundLocalError
+   - [#  59] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+  16:             if p2.next == None:
+- 17:                 return False
++ 17:                 pass
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+--------------------------------------------------------------------------------
+[0.07338 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = '4-?Fk.6R79JM\rhc'
+        linked_node_0 = module_0.LinkedNode(str_0)
+>       var_0 = linked_node_0.checkInfinite()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7fc3afdb1a20>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:19: AttributeError
+   - [#  60] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+  16:             if p2.next == None:
+  17:                 return False
+- 18:             p1 = p1.next
++ 18:             pass
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+  22:                 return True
+--------------------------------------------------------------------------------
+[0.07870 s] survived
+   - [#  61] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  15:         while (p1 != None and p2 != None):
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+- 19:             p2 = p2.next.next
++ 19:             pass
+  20:             
+  21:             if p1 == p2:
+  22:                 return True
+  23:         return False
+--------------------------------------------------------------------------------
+[0.09718 s] survived
+   - [#  62] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+- 22:                 return True
++ 22:                 pass
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+--------------------------------------------------------------------------------
+[0.08041 s] survived
+   - [#  63] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+  22:                 return True
+- 23:         return False
++ 23:         pass
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+--------------------------------------------------------------------------------
+[0.07841 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_2
+
+def test_case_2():
+        complex_0 = 1460.7871768642246 + 580.97j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_node_1 = module_0.LinkedNode(linked_node_0, linked_node_0)
+        var_0 = linked_node_1.checkInfinite()
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:20: AssertionError
+   - [#  64] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+- 27:         self.head = None
++ 27:         pass
+  28:         for _ in start:
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+--------------------------------------------------------------------------------
+[0.07791 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+>       linked_list_0 = module_0.LinkedList(*str_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList2:29: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[AttributeError("'LinkedList' object has no attribute 'head'") raised in repr()] LinkedList object at 0x7fc3affe7f40>
+value = 'B'
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute 'head'
+
+linkedList2:33: AttributeError
+   - [#  65] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+  28:         for _ in start:
+- 29:             self.prepend(_)
++ 29:             pass
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+--------------------------------------------------------------------------------
+[0.08209 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: AssertionError
+   - [#  66] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+- 33:         self.head = LinkedNode(value, self.head)
++ 33:         pass
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.07793 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: AssertionError
+   - [#  67] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+- 39:         val = self.head.value
++ 39:         pass
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+--------------------------------------------------------------------------------
+[0.07910 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[]
+
+>   ???
+E   NameError: name 'val' is not defined
+
+linkedList2:41: NameError
+   - [#  68] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+- 40:         self.head = self.head.next
++ 40:         pass
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+--------------------------------------------------------------------------------
+[0.07785 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.pop()
+>       assert len(linked_list_0) == 0
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:48: AssertionError
+   - [#  69] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+- 41:         return val
++ 41:         pass
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+--------------------------------------------------------------------------------
+[0.07773 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.pop()
+        assert len(linked_list_0) == 0
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList2.LinkedList'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:49: AssertionError
+   - [#  70] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+- 45:         n = self.head
++ 45:         pass
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+--------------------------------------------------------------------------------
+[0.08235 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3affe4ee0>
+value = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3affe4ee0>
+
+>   ???
+E   UnboundLocalError: local variable 'n' referenced before assignment
+
+linkedList2:47: UnboundLocalError
+   - [#  71] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+- 46:         last = None
++ 46:         pass
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+--------------------------------------------------------------------------------
+[0.08467 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3aff3d5a0>
+value = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3aff3d5a0>
+
+>   ???
+E   NameError: name 'last' is not defined
+
+linkedList2:49: NameError
+   - [#  72] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+- 50:                     self.head = self.head.next
++ 50:                     pass
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+--------------------------------------------------------------------------------
+[0.08122 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(linked_list_0)
+        assert var_1 is True
+>       assert len(linked_list_0) == 0
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:59: AssertionError
+   - [#  73] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  48:             if n.value == value:
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+- 52:                     last.next = n.next
++ 52:                     pass
+  53:                 return True
+  54:             n = n.next
+  55:         return False
+  56:     
+--------------------------------------------------------------------------------
+[0.07929 s] survived
+   - [#  74] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+- 53:                 return True
++ 53:                 pass
+  54:             n = n.next
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+--------------------------------------------------------------------------------
+[0.07912 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(linked_list_0)
+>       assert var_1 is True
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:58: AssertionError
+   - [#  75] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+- 54:             n = n.next
++ 54:             pass
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+--------------------------------------------------------------------------------
+[5.00310 s] timeout
+   - [#  76] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+- 55:         return False
++ 55:         pass
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+--------------------------------------------------------------------------------
+[0.08213 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_9
+
+def test_case_9():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(var_0)
+>       assert var_1 is False
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:67: AssertionError
+   - [#  77] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+- 59:         n = self.head
++ 59:         pass
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+--------------------------------------------------------------------------------
+[0.09541 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+>       var_0 = linked_list_0.__repr__()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList2:69: in __repr__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[UnboundLocalError("local variable 'n' referenced before assignment") raised in repr()] LinkedList object at 0x7fc3afdf8e20>
+
+>   ???
+E   UnboundLocalError: local variable 'n' referenced before assignment
+
+linkedList2:60: UnboundLocalError
+   - [#  78] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+- 61:             yield n.value
++ 61:             pass
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+--------------------------------------------------------------------------------
+[0.08187 s] incompetent
+
+TypeError: linkedList2:69: TypeError: iter() returned non-iterator of type 'NoneType'
+
+   - [#  79] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+  61:             yield n.value
+- 62:             n = n.next
++ 62:             pass
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+--------------------------------------------------------------------------------
+[5.00631 s] timeout
+   - [#  80] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+- 67:             return 'link:[]'
++ 67:             pass
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+--------------------------------------------------------------------------------
+[0.08314 s] survived
+   - [#  81] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
++ 69:         pass
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[0.08597 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == 'link:[W,B,Q,z,d,n,i,d]'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:87: AssertionError
+   - [#  82] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+- 73:         n = self.head
++ 73:         pass
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+--------------------------------------------------------------------------------
+[0.08342 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[w,#,!,T,!,s,',n,/,B]
+
+>   ???
+E   UnboundLocalError: local variable 'n' referenced before assignment
+
+linkedList2:75: UnboundLocalError
+   - [#  83] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+- 74:         count = 0
++ 74:         pass
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[0.08378 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[w,#,!,T,!,s,',n,/,B]
+
+>   ???
+E   UnboundLocalError: local variable 'count' referenced before assignment
+
+linkedList2:76: UnboundLocalError
+   - [#  84] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  73:         n = self.head
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+- 77:             n = n.next
++ 77:             pass
+  78:         return count
+--------------------------------------------------------------------------------
+[5.00602 s] timeout
+   - [#  85] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+- 78:         return count
++ 78:         pass
+--------------------------------------------------------------------------------
+[0.08160 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: TypeError: 'NoneType' object cannot be interpreted as an integer
+
+   - [#  86] SVD linkedList2: 
+--------------------------------------------------------------------------------
+   5: '''
+   6: class LinkedNode:
+   7:     def __init__(self, value, tail=None):
+   8:         '''Node in a Linked List.'''
+-  9:         self.value = value
++  9:         value = value
+  10:         self.next = tail
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  87] SVD linkedList2: 
+--------------------------------------------------------------------------------
+   6: class LinkedNode:
+   7:     def __init__(self, value, tail=None):
+   8:         '''Node in a Linked List.'''
+   9:         self.value = value
+- 10:         self.next = tail
++ 10:         next = tail
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  88] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+- 27:         self.head = None
++ 27:         head = None
+  28:         for _ in start:
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  89] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+  28:         for _ in start:
+- 29:             self.prepend(_)
++ 29:             prepend(_)
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+--------------------------------------------------------------------------------
+[0.07541 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+>       linked_list_0 = module_0.LinkedList(*str_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[], start = ('B', '/', 'n', "'", 's', '!', ...), _ = 'B'
+
+>   ???
+E   NameError: name 'prepend' is not defined
+
+linkedList2:29: NameError
+   - [#  90] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+- 33:         self.head = LinkedNode(value, self.head)
++ 33:         head = LinkedNode(value, self.head)
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  91] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+- 33:         self.head = LinkedNode(value, self.head)
++ 33:         self.head = LinkedNode(value, head)
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.07722 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+>       linked_list_0 = module_0.LinkedList(*str_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList2:29: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[], value = 'B'
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:33: NameError
+   - [#  92] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+- 37:         if self.head is None:
++ 37:         if head is None:
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+--------------------------------------------------------------------------------
+[0.07803 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3affe7c10>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:37: NameError
+   - [#  93] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+- 39:         val = self.head.value
++ 39:         val = head.value
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+--------------------------------------------------------------------------------
+[0.09118 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3afe4d240>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:39: NameError
+   - [#  94] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+- 40:         self.head = self.head.next
++ 40:         head = self.head.next
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  95] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+- 40:         self.head = self.head.next
++ 40:         self.head = head.next
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+--------------------------------------------------------------------------------
+[0.08024 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3b02900a0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:40: NameError
+   - [#  96] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+- 45:         n = self.head
++ 45:         n = head
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+--------------------------------------------------------------------------------
+[0.07818 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3b002e6b0>
+value = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3b002e6b0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:45: NameError
+   - [#  97] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+- 50:                     self.head = self.head.next
++ 50:                     head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  98] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+- 50:                     self.head = self.head.next
++ 50:                     self.head = head.next
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+--------------------------------------------------------------------------------
+[0.07840 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3affbf100>
+value = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7fc3affbf100>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:50: NameError
+   - [#  99] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+- 59:         n = self.head
++ 59:         n = head
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+--------------------------------------------------------------------------------
+[0.08302 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+>       var_0 = linked_list_0.__repr__()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList2:69: in __repr__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[NameError("name 'head' is not defined") raised in repr()] LinkedList object at 0x7fc3b002f8b0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:59: NameError
+   - [# 100] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+- 66:         if self.head is None:
++ 66:         if head is None:
+  67:             return 'link:[]'
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+--------------------------------------------------------------------------------
+[0.08224 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_12
+
+def test_case_12():
+        str_0 = 'dindzQBW'
+        linked_list_0 = module_0.LinkedList(*str_0)
+        assert len(linked_list_0) == 8
+>       var_0 = linked_list_0.__repr__()
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[NameError("name 'head' is not defined") raised in repr()] LinkedList object at 0x7fc3afdb3af0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:66: NameError
+   - [# 101] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+- 73:         n = self.head
++ 73:         n = head
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+--------------------------------------------------------------------------------
+[0.07961 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[w,#,!,T,!,s,',n,/,B]
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:73: NameError
+   - [# 102] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+- 16:             if p2.next == None:
+- 17:                 return False
+- 18:             p1 = p1.next
+- 19:             p2 = p2.next.next
+- 20:             
+- 21:             if p1 == p2:
+- 22:                 return True
+- 23:         return False
++ 16:             break
++ 17:         
++ 18:         
++ 19:         
++ 20:         
++ 21:         
++ 22:         return False
++ 23: 
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+--------------------------------------------------------------------------------
+[0.07831 s] survived
+   - [# 103] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+  28:         for _ in start:
+- 29:             self.prepend(_)
++ 29:             break
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+--------------------------------------------------------------------------------
+[0.07863 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: AssertionError
+   - [# 104] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+- 48:             if n.value == value:
+- 49:                 if last == None:
+- 50:                     self.head = self.head.next
+- 51:                 else:
+- 52:                     last.next = n.next
+- 53:                 return True
+- 54:             n = n.next
++ 48:             break
++ 49:         
++ 50:         
++ 51:         
++ 52:         
++ 53:         
++ 54:         
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+--------------------------------------------------------------------------------
+[0.07971 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(linked_list_0)
+>       assert var_1 is True
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:58: AssertionError
+   - [# 105] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+- 61:             yield n.value
+- 62:             n = n.next
++ 61:             break
++ 62:     
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.08127 s] incompetent
+
+TypeError: linkedList2:69: TypeError: iter() returned non-iterator of type 'NoneType'
+
+   - [# 106] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+  75:         while n != None:
+- 76:             count += 1
+- 77:             n = n.next
++ 76:             break
++ 77:         
+  78:         return count
+--------------------------------------------------------------------------------
+[0.07937 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = "B/n's!T!#w"
+        linked_list_0 = module_0.LinkedList(*str_0)
+>       assert len(linked_list_0) == 10
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList2_MIO.py:30: AssertionError
+[*] Mutation score [26.41323 s]: 85.2%
+   - all: 106
+   - killed: 72 (67.9%)
+   - survived: 13 (12.3%)
+   - incompetent: 18 (17.0%)
+   - timeout: 3 (2.8%)

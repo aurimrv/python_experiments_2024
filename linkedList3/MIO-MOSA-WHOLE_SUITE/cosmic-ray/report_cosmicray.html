@@ -1,0 +1,1246 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 20/04/2023 20:04:53</p><p>Total jobs: 54</p><p>Complete: 54 (100.00%)</p><p>Surviving mutants: 16 (29.63%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID 2c8bf10c7ddb463f823f940aea9d50bf</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size != 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID 1a4dca868eaa45e6aebdd9c64465ee1c</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size != 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ...F..........              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py .FF........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ..FFF.FF            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_3 - AssertionE...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_1 - Assertion...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert &lt;l...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_6 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - As...
+========================= 8 failed, 25 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 67366fa7b94e4cf3a195f61b55ec5ac3</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size != 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py .....FF.......              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..F.F.....F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ....F..F            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_5 - assert Fal...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_6 - assert Tru...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert Tr...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_4 - assert Fa...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - assert F...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - as...
+========================= 7 failed, 26 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_4_1"><button class="btn btn-outline-danger"><span class="job_id">4 : Job ID 1a4048c4a08748e19de1e47f76f6738c</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ != "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+============================== 33 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID 2eed82ac5cf44d3cb2eb7a1556454797</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &lt; 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID 3212679229b8412bb6a3999f9fdfa86f</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt; 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..F........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ....F..F            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert &lt;l...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - As...
+========================= 3 failed, 30 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID b245150e596c4b5d9d80b1d585aee16d</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &lt; 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py .....F........              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..F.F.....F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ....F...            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_5 - assert Fal...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert Fa...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_4 - assert Fa...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - assert F...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4 - as...
+========================= 5 failed, 28 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_8_1"><button class="btn btn-outline-danger"><span class="job_id">8 : Job ID 7502f682dc2045b38177517d620fdd64</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &lt; "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+============================== 33 passed in 0.07s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_9_1"><button class="btn btn-outline-danger"><span class="job_id">9 : Job ID e2841cd843104214bb03e7598a87cf6c</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &lt;= 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+============================== 33 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_10_1"><button class="btn btn-outline-danger"><span class="job_id">10 : Job ID 121ad615dd4443ffb6c2ae9f65ae3ae4</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt;= 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+============================== 33 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_11_1"><button class="btn btn-outline-danger"><span class="job_id">11 : Job ID 1e9fd2040ff642fbb6ff6f9790039720</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &lt;= 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+============================== 33 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_12_1"><button class="btn btn-outline-danger"><span class="job_id">12 : Job ID b0d6d4f03cb547199373459a650d1c0e</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &lt;= "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+============================== 33 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID 2bf50c6d69f14571a5910080a2d156dd</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &gt; 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID 932a8192a775442fbba3eed21c245660</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt; 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ...F..........              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py .FF.......F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ..FFF.FF            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_3 - AssertionE...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_1 - Assertion...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert &lt;l...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - Attribut...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_6 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - As...
+========================= 9 failed, 24 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_15_1"><button class="btn btn-outline-success"><span class="job_id">15 : Job ID 224ab1b686594780958d792ed7d44681</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &gt; 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py .....FF.......              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..F.F.....F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ....F..F            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_5 - assert Fal...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_6 - assert Tru...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert Tr...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_4 - assert Fa...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - assert F...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - as...
+========================= 7 failed, 26 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_16_1"><button class="btn btn-outline-danger"><span class="job_id">16 : Job ID 81bc8f8770ea4b6c869084455c99896c</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &gt; "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+============================== 33 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_17_1"><button class="btn btn-outline-success"><span class="job_id">17 : Job ID 8c13b46b83574357b304a732a778939f</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &gt;= 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..F........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ...F..F.            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - Assertion...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_6 - As...
+========================= 3 failed, 30 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_18_1"><button class="btn btn-outline-success"><span class="job_id">18 : Job ID 0c698e209c4c4cde9766cf0d01873756</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt;= 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ...F..........              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py .F.........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ..FF..F.            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_3 - AssertionE...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_1 - Assertion...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_6 - As...
+========================= 5 failed, 28 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_19"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_19_1" aria-expanded="false" aria-controls="job_list___sub_collapse_19_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_19_1"><button class="btn btn-outline-success"><span class="job_id">19 : Job ID b040e2b34c514ead94a6ecc21fe67059</span></button></div></a><div aria-labelledby="job_list___sub_heading_19_1" data-parent="#job_list___sub_accordion_19" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_19_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &gt;= 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ......F.......              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..F.......F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py .......F            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_6 - assert Tru...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert Tr...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - assert T...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - as...
+========================= 4 failed, 29 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_20"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_20_1" aria-expanded="false" aria-controls="job_list___sub_collapse_20_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_20_1"><button class="btn btn-outline-danger"><span class="job_id">20 : Job ID 1560c3e82848495589d3a5f8bfff17d0</span></button></div></a><div aria-labelledby="job_list___sub_heading_20_1" data-parent="#job_list___sub_accordion_20" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_20_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &gt;= "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+============================== 33 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_21"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_21_1" aria-expanded="false" aria-controls="job_list___sub_collapse_21_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_21_1"><button class="btn btn-outline-danger"><span class="job_id">21 : Job ID 69553ab5babb4052a2cf17e9cbe76f9b</span></button></div></a><div aria-labelledby="job_list___sub_heading_21_1" data-parent="#job_list___sub_accordion_21" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_21_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ is "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+=============================== warnings summary ===============================
+linkedList3.py:102
+  /home/auri/temp/lucca/python_experiments/linkedList3/linkedList3.py:102: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if __name__ is "__main__":
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 33 passed, 1 warning in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_22"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_22_1" aria-expanded="false" aria-controls="job_list___sub_collapse_22_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_22_1"><button class="btn btn-outline-danger"><span class="job_id">22 : Job ID 757bb5a248db4f6087d242712b752650</span></button></div></a><div aria-labelledby="job_list___sub_heading_22_1" data-parent="#job_list___sub_accordion_22" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_22_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ is not "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+=============================== warnings summary ===============================
+linkedList3.py:102
+  /home/auri/temp/lucca/python_experiments/linkedList3/linkedList3.py:102: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+    if __name__ is not "__main__":
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 33 passed, 1 warning in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_23"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_23_1" aria-expanded="false" aria-controls="job_list___sub_collapse_23_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_23_1"><button class="btn btn-outline-success"><span class="job_id">23 : Job ID 590e36aefc124c9e9a03b6ba3bb8f8b9</span></button></div></a><div aria-labelledby="job_list___sub_heading_23_1" data-parent="#job_list___sub_accordion_23" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_23_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_Eq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size == 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ...F....            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - as...
+========================= 1 failed, 32 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_24"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_24_1" aria-expanded="false" aria-controls="job_list___sub_collapse_24_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_24_1"><button class="btn btn-outline-success"><span class="job_id">24 : Job ID 7a7b252c3e4642449e454b5360a2b6dc</span></button></div></a><div aria-labelledby="job_list___sub_heading_24_1" data-parent="#job_list___sub_accordion_24" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_24_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size != 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ...F....            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - As...
+========================= 1 failed, 32 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_25"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_25_1" aria-expanded="false" aria-controls="job_list___sub_collapse_25_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_25_1"><button class="btn btn-outline-success"><span class="job_id">25 : Job ID ea55e378b5e444d7bf2cf88d21877446</span></button></div></a><div aria-labelledby="job_list___sub_heading_25_1" data-parent="#job_list___sub_accordion_25" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_25_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &lt; 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ...F....            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - as...
+========================= 1 failed, 32 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_26"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_26_1" aria-expanded="false" aria-controls="job_list___sub_collapse_26_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_26_1"><button class="btn btn-outline-success"><span class="job_id">26 : Job ID 151476cc8f4041fcb402822536808999</span></button></div></a><div aria-labelledby="job_list___sub_heading_26_1" data-parent="#job_list___sub_accordion_26" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_26_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &lt;= 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ...F....            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - as...
+========================= 1 failed, 32 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_27"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_27_1" aria-expanded="false" aria-controls="job_list___sub_collapse_27_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_27_1"><button class="btn btn-outline-success"><span class="job_id">27 : Job ID 6b84db1af0b5449e84675041ab629c3a</span></button></div></a><div aria-labelledby="job_list___sub_heading_27_1" data-parent="#job_list___sub_accordion_27" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_27_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &gt; 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ...F....            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - As...
+========================= 1 failed, 32 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_28"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_28_1" aria-expanded="false" aria-controls="job_list___sub_collapse_28_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_28_1"><button class="btn btn-outline-success"><span class="job_id">28 : Job ID af2cc32aa6d5463296f41d2360025136</span></button></div></a><div aria-labelledby="job_list___sub_heading_28_1" data-parent="#job_list___sub_accordion_28" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_28_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 11), end pos: (26, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if not self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_29"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_29_1" aria-expanded="false" aria-controls="job_list___sub_collapse_29_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_29_1"><button class="btn btn-outline-success"><span class="job_id">29 : Job ID 8c34535cf9874936864ea22e35705e97</span></button></div></a><div aria-labelledby="job_list___sub_heading_29_1" data-parent="#job_list___sub_accordion_29" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_29_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 11), end pos: (40, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if not self.__size == 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ...F..........              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py .FF........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ..FFF.FF            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_3 - AssertionE...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_1 - Assertion...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert &lt;l...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_6 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - As...
+========================= 8 failed, 25 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_30"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_30_1" aria-expanded="false" aria-controls="job_list___sub_collapse_30_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_30_1"><button class="btn btn-outline-success"><span class="job_id">30 : Job ID 491cfd3999214d86b319b77af7bb1864</span></button></div></a><div aria-labelledby="job_list___sub_heading_30_1" data-parent="#job_list___sub_accordion_30" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_30_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 11), end pos: (42, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if not self.__size &gt;= 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ...F....            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - as...
+========================= 1 failed, 32 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_31"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_31_1" aria-expanded="false" aria-controls="job_list___sub_collapse_31_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_31_1"><button class="btn btn-outline-success"><span class="job_id">31 : Job ID 5ae07cf2cb26454ba836ddf826396903</span></button></div></a><div aria-labelledby="job_list___sub_heading_31_1" data-parent="#job_list___sub_accordion_31" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_31_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 23), end pos: (77, 39)</button></a></pre><pre>operator: core/AddNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if not self.__size == 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py .....FF.......              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..F.F.....F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ....F..F            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_5 - assert Fal...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_6 - assert Tru...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert Tr...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_4 - assert Fa...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - assert F...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - as...
+========================= 7 failed, 26 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_32"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_32_1" aria-expanded="false" aria-controls="job_list___sub_collapse_32_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_32_1"><button class="btn btn-outline-danger"><span class="job_id">32 : Job ID 776d779dee95423d99b42b8b85a62402</span></button></div></a><div aria-labelledby="job_list___sub_heading_32_1" data-parent="#job_list___sub_accordion_32" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_32_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=85" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (85, 14), end pos: (85, 21)</button></a></pre><pre>operator: core/AddNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -82,7 +82,7 @@
+ 
+         arr = []
+         current = self.__head
+-        while current:
++        while not current:
+             arr.append(current.value)
+             current = current.next
+         return arr</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+============================== 33 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_33"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_33_1" aria-expanded="false" aria-controls="job_list___sub_collapse_33_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_33_1"><button class="btn btn-outline-success"><span class="job_id">33 : Job ID 6fd5a086e00949b1a777c2d5b7e9bc2f</span></button></div></a><div aria-labelledby="job_list___sub_heading_33_1" data-parent="#job_list___sub_accordion_33" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_33_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=96" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (96, 14), end pos: (96, 21)</button></a></pre><pre>operator: core/AddNot, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -93,7 +93,7 @@
+ 
+         arr = []
+         current = self.__head
+-        while current:
++        while not current:
+             arr.append(current.value)
+             current = current.next
+         return str(arr)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..........F...              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..F.F.F....                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py .......F            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_10 - Assertion...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - Assertion...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_4 - Assertion...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_6 - Assertion...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - As...
+========================= 5 failed, 28 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_34"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_34_1" aria-expanded="false" aria-controls="job_list___sub_collapse_34_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_34_1"><button class="btn btn-outline-danger"><span class="job_id">34 : Job ID b03364c3da944a66b873b43655070c73</span></button></div></a><div aria-labelledby="job_list___sub_heading_34_1" data-parent="#job_list___sub_accordion_34" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_34_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 3), end pos: (102, 25)</button></a></pre><pre>operator: core/AddNot, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if not __name__ == "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+============================== 33 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_35"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_35_1" aria-expanded="false" aria-controls="job_list___sub_collapse_35_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_35_1"><button class="btn btn-outline-success"><span class="job_id">35 : Job ID 83080ace89754ae2956f275bf15ea69b</span></button></div></a><div aria-labelledby="job_list___sub_heading_35_1" data-parent="#job_list___sub_accordion_35" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_35_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 15), end pos: (77, 19)</button></a></pre><pre>operator: core/ReplaceTrueWithFalse, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return False if self.__size == 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py .....F........              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..F.F.....F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ....F...            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_5 - assert Fal...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert Fa...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_4 - assert Fa...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - assert F...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4 - as...
+========================= 5 failed, 28 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_36"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_36_1" aria-expanded="false" aria-controls="job_list___sub_collapse_36_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_36_1"><button class="btn btn-outline-success"><span class="job_id">36 : Job ID 8b1fd207723b475ca3e3854235d40295</span></button></div></a><div aria-labelledby="job_list___sub_heading_36_1" data-parent="#job_list___sub_accordion_36" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_36_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 45), end pos: (77, 50)</button></a></pre><pre>operator: core/ReplaceFalseWithTrue, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == 0 else True
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ......F.......              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..F.......F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py .......F            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_6 - assert Tru...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert Tr...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - assert T...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - as...
+========================= 4 failed, 29 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_37"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_37_1" aria-expanded="false" aria-controls="job_list___sub_collapse_37_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_37_1"><button class="btn btn-outline-success"><span class="job_id">37 : Job ID 2c5e93308a8245458b0c1fa2ebff529e</span></button></div></a><div aria-labelledby="job_list___sub_heading_37_1" data-parent="#job_list___sub_accordion_37" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_37_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (19, 22), end pos: (19, 23)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -16,7 +16,7 @@
+     def __init__(self):
+         self.__sentinel = Node(None)
+         self.__head = self.__sentinel
+-        self.__size = 0
++        self.__size = 1
+ 
+     def add(self, value: T) -&gt; None:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_38"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_38_1" aria-expanded="false" aria-controls="job_list___sub_collapse_38_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_38_1"><button class="btn btn-outline-success"><span class="job_id">38 : Job ID d4ed9895eac24d0a9a8da2024e779209</span></button></div></a><div aria-labelledby="job_list___sub_heading_38_1" data-parent="#job_list___sub_accordion_38" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_38_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (19, 22), end pos: (19, 23)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -16,7 +16,7 @@
+     def __init__(self):
+         self.__sentinel = Node(None)
+         self.__head = self.__sentinel
+-        self.__size = 0
++        self.__size = -1
+ 
+     def add(self, value: T) -&gt; None:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ...F.FF.......              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py .FF.F.....F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ..FFF.FF            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_3 - AssertionE...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_5 - assert Fal...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_6 - assert Tru...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_1 - Assertion...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert &lt;l...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_4 - assert Fa...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - assert F...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_6 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - as...
+======================== 12 failed, 21 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_39"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_39_1" aria-expanded="false" aria-controls="job_list___sub_collapse_39_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_39_1"><button class="btn btn-outline-success"><span class="job_id">39 : Job ID d2ebf94c75324e52a5f896fabb11d89c</span></button></div></a><div aria-labelledby="job_list___sub_heading_39_1" data-parent="#job_list___sub_accordion_39" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_39_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 26), end pos: (26, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size == 1:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_40"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_40_1" aria-expanded="false" aria-controls="job_list___sub_collapse_40_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_40_1"><button class="btn btn-outline-success"><span class="job_id">40 : Job ID fa22351d89df424abc5e722f89d5d8be</span></button></div></a><div aria-labelledby="job_list___sub_heading_40_1" data-parent="#job_list___sub_accordion_40" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_40_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 26), end pos: (26, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size == -1:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_41"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_41_1" aria-expanded="false" aria-controls="job_list___sub_collapse_41_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_41_1"><button class="btn btn-outline-success"><span class="job_id">41 : Job ID 5ce05de2676145829b53a65875895b86</span></button></div></a><div aria-labelledby="job_list___sub_heading_41_1" data-parent="#job_list___sub_accordion_41" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_41_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (29, 27), end pos: (29, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -26,7 +26,7 @@
+         if self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 2
+         else:
+             self.__sentinel.next = newNode
+             newNode.next = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..F.......F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ...F..FF            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert 2 ...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - assert 4...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_6 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - as...
+========================= 5 failed, 28 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_42"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_42_1" aria-expanded="false" aria-controls="job_list___sub_collapse_42_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_42_1"><button class="btn btn-outline-success"><span class="job_id">42 : Job ID 903c38334ed941c2a1507849a19de686</span></button></div></a><div aria-labelledby="job_list___sub_heading_42_1" data-parent="#job_list___sub_accordion_42" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_42_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (29, 27), end pos: (29, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -26,7 +26,7 @@
+         if self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 0
+         else:
+             self.__sentinel.next = newNode
+             newNode.next = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ...F..F.......              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py .FF.......F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ..FF..FF            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_3 - AssertionE...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_6 - assert Tru...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_1 - Assertion...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert 0 ...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - assert T...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_6 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - as...
+========================= 9 failed, 24 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_43"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_43_1" aria-expanded="false" aria-controls="job_list___sub_collapse_43_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_43_1"><button class="btn btn-outline-success"><span class="job_id">43 : Job ID 0728bf8bd01d4c4291b145e971b9b476</span></button></div></a><div aria-labelledby="job_list___sub_heading_43_1" data-parent="#job_list___sub_accordion_43" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_43_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=34" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (34, 27), end pos: (34, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -31,7 +31,7 @@
+             self.__sentinel.next = newNode
+             newNode.next = self.__head
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 2
+ 
+     def remove(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..........F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ...F..FF            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - assert 5...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_6 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - as...
+========================= 4 failed, 29 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_44"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_44_1" aria-expanded="false" aria-controls="job_list___sub_collapse_44_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_44_1"><button class="btn btn-outline-success"><span class="job_id">44 : Job ID d95ccce997024bdfa623c363566c4b33</span></button></div></a><div aria-labelledby="job_list___sub_heading_44_1" data-parent="#job_list___sub_accordion_44" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_44_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=34" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (34, 27), end pos: (34, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -31,7 +31,7 @@
+             self.__sentinel.next = newNode
+             newNode.next = self.__head
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 0
+ 
+     def remove(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..........F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ...F..FF            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - assert 1...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_6 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - as...
+========================= 4 failed, 29 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_45"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_45_1" aria-expanded="false" aria-controls="job_list___sub_collapse_45_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_45_1"><button class="btn btn-outline-success"><span class="job_id">45 : Job ID b3a4ed33267345de9c1cf82b4ac174dc</span></button></div></a><div aria-labelledby="job_list___sub_heading_45_1" data-parent="#job_list___sub_accordion_45" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_45_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 26), end pos: (40, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 8</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size == 1:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ...F..........              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py .FF.......F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ..FFF..F            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_3 - AssertionE...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_1 - Assertion...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert &lt;l...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - Attribut...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - As...
+========================= 8 failed, 25 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_46"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_46_1" aria-expanded="false" aria-controls="job_list___sub_collapse_46_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_46_1"><button class="btn btn-outline-success"><span class="job_id">46 : Job ID ffade285ecfa4cf58e844637b7ccfb13</span></button></div></a><div aria-labelledby="job_list___sub_heading_46_1" data-parent="#job_list___sub_accordion_46" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_46_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 26), end pos: (40, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 9</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size == -1:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..F........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ....F..F            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert &lt;l...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4 - As...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - As...
+========================= 3 failed, 30 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_47"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_47_1" aria-expanded="false" aria-controls="job_list___sub_collapse_47_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_47_1"><button class="btn btn-outline-success"><span class="job_id">47 : Job ID c16e5656d0e440d687f0a389ba293dd4</span></button></div></a><div aria-labelledby="job_list___sub_heading_47_1" data-parent="#job_list___sub_accordion_47" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_47_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 26), end pos: (42, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 10</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &gt;= 2:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ...F....            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - As...
+========================= 1 failed, 32 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_48"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_48_1" aria-expanded="false" aria-controls="job_list___sub_collapse_48_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_48_1"><button class="btn btn-outline-danger"><span class="job_id">48 : Job ID ad687450eb9c4849880e86af061ca4d9</span></button></div></a><div aria-labelledby="job_list___sub_heading_48_1" data-parent="#job_list___sub_accordion_48" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_48_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 26), end pos: (42, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 11</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &gt;= 0:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+============================== 33 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_49"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_49_1" aria-expanded="false" aria-controls="job_list___sub_collapse_49_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_49_1"><button class="btn btn-outline-success"><span class="job_id">49 : Job ID 495e1402c5154b00b3c8ecde9e71789d</span></button></div></a><div aria-labelledby="job_list___sub_heading_49_1" data-parent="#job_list___sub_accordion_49" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_49_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=46" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (46, 27), end pos: (46, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 12</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -43,7 +43,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ..FF....            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2 - At...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3 - As...
+========================= 2 failed, 31 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_50"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_50_1" aria-expanded="false" aria-controls="job_list___sub_collapse_50_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_50_1"><button class="btn btn-outline-danger"><span class="job_id">50 : Job ID 241eb2245dbc4a6f888a4f54310016f7</span></button></div></a><div aria-labelledby="job_list___sub_heading_50_1" data-parent="#job_list___sub_accordion_50" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_50_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=46" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (46, 27), end pos: (46, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 13</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -43,7 +43,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+-            self.__size -= 1
++            self.__size -= 0
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+============================== 33 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_51"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_51_1" aria-expanded="false" aria-controls="job_list___sub_collapse_51_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_51_1"><button class="btn btn-outline-danger"><span class="job_id">51 : Job ID 21a4f1063a264a0a996148f71f46dad3</span></button></div></a><div aria-labelledby="job_list___sub_heading_51_1" data-parent="#job_list___sub_accordion_51" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_51_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=52" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (52, 27), end pos: (52, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 14</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -49,7 +49,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+ 
+     def getHead(self) -&gt; T:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+============================== 33 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_52"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_52_1" aria-expanded="false" aria-controls="job_list___sub_collapse_52_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_52_1"><button class="btn btn-outline-danger"><span class="job_id">52 : Job ID 0dbe9107067046aa99b43e623c48734a</span></button></div></a><div aria-labelledby="job_list___sub_heading_52_1" data-parent="#job_list___sub_accordion_52" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_52_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=52" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (52, 27), end pos: (52, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 15</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -49,7 +49,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+-            self.__size -= 1
++            self.__size -= 0
+             return nodeToRemove
+ 
+     def getHead(self) -&gt; T:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........            [100%]
+
+============================== 33 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_53"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_53_1" aria-expanded="false" aria-controls="job_list___sub_collapse_53_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_53_1"><button class="btn btn-outline-success"><span class="job_id">53 : Job ID 6ff2c2a989ea4c95ab8c5ff34f6bc603</span></button></div></a><div aria-labelledby="job_list___sub_heading_53_1" data-parent="#job_list___sub_accordion_53" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_53_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 38), end pos: (77, 39)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 16</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == 1 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py .....FF.......              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..F.F.....F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ....F..F            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_5 - assert Fal...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_6 - assert Tru...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert Tr...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_4 - assert Fa...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - assert F...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4 - as...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7 - as...
+========================= 7 failed, 26 passed in 0.07s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_54"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_54_1" aria-expanded="false" aria-controls="job_list___sub_collapse_54_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_54_1"><button class="btn btn-outline-success"><span class="job_id">54 : Job ID f8d9878d201c467187c96a0261ea337d</span></button></div></a><div aria-labelledby="job_list___sub_heading_54_1" data-parent="#job_list___sub_accordion_54" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_54_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 38), end pos: (77, 39)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 17</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == -1 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 33 items
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py .....F........              [ 42%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ..F.F.....F                [ 75%]
+MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ....F...            [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py::test_case_5 - assert Fal...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_2 - assert Fa...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_4 - assert Fa...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py::test_case_10 - assert F...
+FAILED MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4 - as...
+========================= 5 failed, 28 passed in 0.06s =========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

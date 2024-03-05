@@ -1,0 +1,44 @@
+<html><body><h1>queue5.py</h1>Killed 16 out of 20 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 8</h3><pre>--- queue5.py
++++ queue5.py
+@@ -14,7 +14,7 @@
+     def enqueue(self, data):
+         node = Node(data)
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if self.head is None or self.tail is None:
+             self.head = node
+             self.tail = node
+         else:
+</pre><h3>Mutant 11</h3><pre>--- queue5.py
++++ queue5.py
+@@ -18,7 +18,7 @@
+             self.head = node
+             self.tail = node
+         else:
+-            self.tail.next = node
++            self.tail.next = None
+             self.tail = node
+ 
+     def dequeue(self):
+</pre><h3>Mutant 15</h3><pre>--- queue5.py
++++ queue5.py
+@@ -23,7 +23,7 @@
+ 
+     def dequeue(self):
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if self.head is None or self.tail is None:
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+</pre><h3>Mutant 20</h3><pre>--- queue5.py
++++ queue5.py
+@@ -31,6 +31,6 @@
+             self.head = None
+             self.tail = None
+         else:
+-            self.head = self.head.next
++            self.head = None
+         return data
+ 
+</pre></body></html>

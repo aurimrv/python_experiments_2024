@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MutPy mutation report - mutation #3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css" />
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPython.js" type="text/javascript"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.all();
+    window.setTimeout(function () {
+        
+        $('.line.number27').attr('title', 'ASR');
+        
+    }, 0);
+</script>
+
+</head>
+<body>
+    <div class="container">
+        
+<div class="page-header">
+    <h1>Mutation #3</h1>
+</div>
+<h3>Details</h3>
+<ul>
+    <li>module - <code><module 'stack3' from '/home/auri/temp/lucca/python_experiments/stack3/./stack3.py'></code></li>
+    <li><span class="label label-success">killed</span> by <code>RANDOM/test_stack3_RANDOM.py::test_case_17</code></li>
+    
+    <li>duration - 3.26 s</li>
+    
+    
+    <li>tests run - 18</li>
+    
+</ul>
+
+<h3>Exception traceback</h3>
+<pre>def test_case_17():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        int_0 = singly_linked_list_1.getSize()
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_2.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_4.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_5.add(singly_linked_list_5)
+        node_0 = module_0.Node(none_type_0)
+        bool_0 = singly_linked_list_5.isEmpty()
+        assert bool_0 is False
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        none_type_1 = singly_linked_list_6.add(singly_linked_list_6)
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_8.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        none_type_2 = singly_linked_list_9.add(singly_linked_list_9)
+        node_1 = module_0.Node(none_type_2)
+        str_3 = singly_linked_list_8.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.pop()
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        singly_linked_list_13 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_13.__str__()
+        assert str_4 == '[None]'
+        singly_linked_list_14 = module_0.SinglyLinkedList()
+        none_type_3 = singly_linked_list_14.add(singly_linked_list_14)
+        node_2 = module_0.Node(none_type_3)
+        int_1 = singly_linked_list_14.getSize()
+>       assert int_1 == 1
+E       AssertionError
+
+RANDOM/test_stack3_RANDOM.py:301: AssertionError</pre>
+
+<h3>Mutations</h3>
+<ul>
+    
+    <li>ASR - line 27</li>
+    
+</ul>
+<h3>Mutant</h3>
+<pre class="brush: python; first-line: 1; highlight: [27]; toolbar: false;">'''Stack is an abstract data type that serves as a collection of elements, with two main principal operations: Push, which adds an element to the collection, and Pop, which removes the most recently added element that was not yet removed.'''
+
+from typing import TypeVar
+
+T = TypeVar('T')
+
+class Node:
+    def __init__(self, value: T):
+        self.value = value
+        self.next = None
+
+
+class SinglyLinkedList:
+    def __init__(self):
+        self.__sentinel = Node(None)
+        self.__head = self.__sentinel
+        self.__size = 0
+    
+    def add(self, value: T) -> None:
+        
+        '''Add element to linked list.'''
+        
+        newNode = Node(value)
+        if self.__size == 0:
+            self.__head.next = newNode
+            self.__head = newNode
+            self.__size -= 1
+        else:
+            self.__sentinel.next = newNode
+            newNode.next = self.__head
+            self.__head = newNode
+            self.__size += 1
+    
+    def remove(self):
+        
+        '''Remove node from linkedlist.'''
+        
+        if self.__size == 0:
+            return None
+        if self.__size >= 1:
+            nodeToRemove = self.__head
+            self.__sentinel.next = None
+            self.__head = self.__sentinel
+            self.__size -= 1
+            return nodeToRemove
+        else:
+            nodeToRemove = self.__head
+            self.__sentinel.next = self.__head.next
+            self.__head = self.__sentinel.next
+            self.__size -= 1
+            return nodeToRemove
+    
+    def getHead(self) -> T:
+        
+        '''Get value of the linkedlist head node.'''
+        
+        return self.__head.value
+    
+    def getHeadNode(self) -> Node:
+        
+        '''Get head node referance.'''
+        
+        return self.__head
+    
+    def getSize(self) -> int:
+        
+        '''Return size of the linkedlist.'''
+        
+        return self.__size
+    
+    def isEmpty(self) -> bool:
+        
+        '''Checks if linkedlist is empty.'''
+        
+        return True if self.__size == 0 else False
+    
+    def toArray(self) -> list:
+        
+        '''Converts linkedlist to list.'''
+        
+        arr = []
+        current = self.__head
+        while current:
+            arr.append(current.value)
+            current = current.next
+        return arr
+    
+    def __str__(self) -> str:
+        
+        '''Return String representation of linkedlist values.'''
+        
+        arr = []
+        current = self.__head
+        while current:
+            arr.append(current.value)
+            current = current.next
+        return str(arr)
+
+class Stack:
+    def __init__(self):
+        self.__stack = SinglyLinkedList()
+    
+    def push(self, value: T) -> None:
+        
+        '''Add element to the top of the stack.'''
+        
+        self.__stack.add(value)
+    
+    def pop(self) -> T:
+        
+        '''Remove element from the top of the stack.'''
+        
+        return self.__stack.remove()
+    
+    def peek(self) -> T:
+        
+        '''View top element in the stack.'''
+        
+        return self.__stack.getHead()
+    
+    def isEmpty(self) -> bool:
+        
+        '''Check if stack is empty.'''
+        
+        return True if self.__stack.getSize() == 0 else False
+    
+    def getSize(self) -> int:
+        
+        '''Get size of the stack.'''
+        
+        return self.__stack.getSize()
+    
+    def __str__(self) -> str:
+        
+        '''Get string representation of the stack.'''
+        
+        return str(self.__stack.toArray()[::-1])
+
+
+if __name__ == '__main__':
+    pass</pre>
+
+    </div>
+</body>
+</html>

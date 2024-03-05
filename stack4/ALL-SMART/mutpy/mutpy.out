@@ -1,0 +1,3264 @@
+[*] Start mutation process:
+   - targets: stack4.py
+   - tests: ./DYNAMOSA-MIO-MOSA-WHOLE_SUITE
+[*] 62 tests passed:
+   - test_stack4_WHOLE_SUITE [0.07716 s]
+   - test_stack4_MIO [0.06187 s]
+   - test_stack4_DYNAMOSA [0.06119 s]
+   - test_stack4_MOSA [0.11331 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD stack4: 
+--------------------------------------------------------------------------------
+   82:         display = '('
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+-  86:         return display[:-2] + ')'
++  86:         return display[:2] + ')'
+   87: 
+   88: 
+   89: class Stack(object):
+   90:     '''Implementation of Stack.
+--------------------------------------------------------------------------------
+[0.10501 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(True)'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:70: AssertionError
+   - [#   2] AOR stack4: 
+--------------------------------------------------------------------------------
+   80:         '''Display list as a tuple.'''
+   81:         curr = self.head
+   82:         display = '('
+   83:         while curr:
+-  84:             display += str(curr.data) + ', '
++  84:             display += str(curr.data) - ', '
+   85:             curr = curr.next
+   86:         return display[:-2] + ')'
+   87: 
+   88: 
+--------------------------------------------------------------------------------
+[0.10095 s] incompetent
+
+TypeError: stack4:84: TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+   - [#   3] AOR stack4: 
+--------------------------------------------------------------------------------
+   82:         display = '('
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+-  86:         return display[:-2] + ')'
++  86:         return display[:+2] + ')'
+   87: 
+   88: 
+   89: class Stack(object):
+   90:     '''Implementation of Stack.
+--------------------------------------------------------------------------------
+[0.09259 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(True)'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:70: AssertionError
+   - [#   4] AOR stack4: 
+--------------------------------------------------------------------------------
+   82:         display = '('
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+-  86:         return display[:-2] + ')'
++  86:         return display[:-2] - ')'
+   87: 
+   88: 
+   89: class Stack(object):
+   90:     '''Implementation of Stack.
+--------------------------------------------------------------------------------
+[0.09087 s] incompetent
+
+TypeError: stack4:86: TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+   - [#   5] ASR stack4: 
+--------------------------------------------------------------------------------
+   40:     def push(self, val):
+   41:         '''Insert a value at the head of the list.'''
+   42:         old_head = self.head
+   43:         self.head = Node(val, old_head)
+-  44:         self._length += 1
++  44:         self._length -= 1
+   45:     
+   46:     def pop(self):
+   47:         '''Remove the first value and return it.'''
+   48:         if not (self.head):
+--------------------------------------------------------------------------------
+[0.09574 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12
+
+def test_case_12():
+        bool_0 = True
+        tuple_0 = (bool_0,)
+        list_0 = [tuple_0, bool_0, tuple_0]
+        linked_list_0 = module_0.LinkedList(list_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.size()
+>       assert var_0 == 3
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:116: AssertionError
+   - [#   6] ASR stack4: 
+--------------------------------------------------------------------------------
+   48:         if not (self.head):
+   49:             raise IndexError('Cannot pop from an empty list')
+   50:         to_return = self.head
+   51:         self.head = self.head.next
+-  52:         self._length -= 1
++  52:         self._length += 1
+   53:         return to_return.data
+   54:     
+   55:     def size(self):
+   56:         '''Return the length of the list.'''
+--------------------------------------------------------------------------------
+[0.10303 s] survived
+   - [#   7] ASR stack4: 
+--------------------------------------------------------------------------------
+   68:         '''Remove node from list if exists.'''
+   69:         curr = self.head
+   70:         if (curr and val is self.head.data):
+   71:             self.head = self.head.next
+-  72:             self._length -= 1
++  72:             self._length += 1
+   73:         while curr:
+   74:             if (curr.next and curr.next.data == val):
+   75:                 curr.next = curr.next.next
+   76:                 self._length -= 1
+--------------------------------------------------------------------------------
+[0.10619 s] survived
+   - [#   8] ASR stack4: 
+--------------------------------------------------------------------------------
+   72:             self._length -= 1
+   73:         while curr:
+   74:             if (curr.next and curr.next.data == val):
+   75:                 curr.next = curr.next.next
+-  76:                 self._length -= 1
++  76:                 self._length += 1
+   77:             curr = curr.next
+   78:     
+   79:     def display(self):
+   80:         '''Display list as a tuple.'''
+--------------------------------------------------------------------------------
+[0.10488 s] survived
+   - [#   9] ASR stack4: 
+--------------------------------------------------------------------------------
+   80:         '''Display list as a tuple.'''
+   81:         curr = self.head
+   82:         display = '('
+   83:         while curr:
+-  84:             display += str(curr.data) + ', '
++  84:             display -= str(curr.data) + ', '
+   85:             curr = curr.next
+   86:         return display[:-2] + ')'
+   87: 
+   88: 
+--------------------------------------------------------------------------------
+[0.18649 s] incompetent
+
+TypeError: stack4:84: TypeError: unsupported operand type(s) for -=: 'str' and 'str'
+
+   - [#  10] CDI stack4: 
+--------------------------------------------------------------------------------
+    5: 
+    6:     Data attribute for data storage and Next for pointer to next node.
+    7:     '''
+    8:     
+-   9:     def __init__(self, data, next_node=None):
+-  10:         '''Attribute data and next_node.'''
+-  11:         self.data = data
+-  12:         self.next = next_node
+-  13: 
++   9:     @classmethod
++  10:     def __init__(self, data, next_node=None):
++  11:         '''Attribute data and next_node.'''
++  12:         self.data = data
++  13:         self.next = next_node
+   14: 
+   15: class LinkedList(object):
+   16:     '''Method for linked list.
+   17: 
+--------------------------------------------------------------------------------
+[5.00480 s] timeout
+   - [#  11] CDI stack4: 
+--------------------------------------------------------------------------------
+   25:     display() - will return a unicode string representing the list as
+   26:     if it were a Python tuple literal: "(12, \'sam\', 37, \'tango\')"
+   27:     '''
+   28:     
+-  29:     def __init__(self, data=None):
+-  30:         '''Linked list initialized with head.'''
+-  31:         self._length = 0
+-  32:         self.head = None
+-  33:         try:
+-  34:             for val in data:
+-  35:                 self.push(val)
+-  36:         except TypeError:
+-  37:             if data:
+-  38:                 self.push(data)
+-  39:     
++  29:     @classmethod
++  30:     def __init__(self, data=None):
++  31:         '''Linked list initialized with head.'''
++  32:         self._length = 0
++  33:         self.head = None
++  34:         try:
++  35:             for val in data:
++  36:                 self.push(val)
++  37:         except TypeError:
++  38:             if data:
++  39:                 self.push(data)
+   40:     def push(self, val):
+   41:         '''Insert a value at the head of the list.'''
+   42:         old_head = self.head
+   43:         self.head = Node(val, old_head)
+--------------------------------------------------------------------------------
+[0.12759 s] incompetent
+
+TypeError: stack4:39: TypeError: LinkedList.push() missing 1 required positional argument: 'val'
+
+   - [#  12] CDI stack4: 
+--------------------------------------------------------------------------------
+   36:         except TypeError:
+   37:             if data:
+   38:                 self.push(data)
+   39:     
+-  40:     def push(self, val):
+-  41:         '''Insert a value at the head of the list.'''
+-  42:         old_head = self.head
+-  43:         self.head = Node(val, old_head)
+-  44:         self._length += 1
+-  45:     
++  40:     @classmethod
++  41:     def push(self, val):
++  42:         '''Insert a value at the head of the list.'''
++  43:         old_head = self.head
++  44:         self.head = Node(val, old_head)
++  45:         self._length += 1
+   46:     def pop(self):
+   47:         '''Remove the first value and return it.'''
+   48:         if not (self.head):
+   49:             raise IndexError('Cannot pop from an empty list')
+--------------------------------------------------------------------------------
+[0.19261 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        str_0 = '/A\n'
+>       stack_0 = module_0.Stack(str_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack4:103: in __init__
+    ???
+stack4:35: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack4.LinkedList'>, val = '/'
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+stack4:43: AttributeError
+   - [#  13] CDI stack4: 
+--------------------------------------------------------------------------------
+   42:         old_head = self.head
+   43:         self.head = Node(val, old_head)
+   44:         self._length += 1
+   45:     
+-  46:     def pop(self):
+-  47:         '''Remove the first value and return it.'''
+-  48:         if not (self.head):
+-  49:             raise IndexError('Cannot pop from an empty list')
+-  50:         to_return = self.head
+-  51:         self.head = self.head.next
+-  52:         self._length -= 1
+-  53:         return to_return.data
+-  54:     
++  46:     @classmethod
++  47:     def pop(self):
++  48:         '''Remove the first value and return it.'''
++  49:         if not (self.head):
++  50:             raise IndexError('Cannot pop from an empty list')
++  51:         to_return = self.head
++  52:         self.head = self.head.next
++  53:         self._length -= 1
++  54:         return to_return.data
+   55:     def size(self):
+   56:         '''Return the length of the list.'''
+   57:         return self._length
+   58:     
+--------------------------------------------------------------------------------
+[0.20157 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack4.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+stack4:49: AttributeError
+   - [#  14] CDI stack4: 
+--------------------------------------------------------------------------------
+   51:         self.head = self.head.next
+   52:         self._length -= 1
+   53:         return to_return.data
+   54:     
+-  55:     def size(self):
+-  56:         '''Return the length of the list.'''
+-  57:         return self._length
+-  58:     
++  55:     @classmethod
++  56:     def size(self):
++  57:         '''Return the length of the list.'''
++  58:         return self._length
+   59:     def search(self, val):
+   60:         '''Return the node containing val.'''
+   61:         curr = self.head
+   62:         while curr:
+--------------------------------------------------------------------------------
+[0.13402 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.remove(linked_list_0)
+>       var_1 = linked_list_0.size()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack4.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute '_length'
+
+stack4:58: AttributeError
+   - [#  15] CDI stack4: 
+--------------------------------------------------------------------------------
+   55:     def size(self):
+   56:         '''Return the length of the list.'''
+   57:         return self._length
+   58:     
+-  59:     def search(self, val):
+-  60:         '''Return the node containing val.'''
+-  61:         curr = self.head
+-  62:         while curr:
+-  63:             if curr.data == val:
+-  64:                 return curr
+-  65:             curr = curr.next
+-  66:     
++  59:     @classmethod
++  60:     def search(self, val):
++  61:         '''Return the node containing val.'''
++  62:         curr = self.head
++  63:         while curr:
++  64:             if curr.data == val:
++  65:                 return curr
++  66:             curr = curr.next
+   67:     def remove(self, val):
+   68:         '''Remove node from list if exists.'''
+   69:         curr = self.head
+   70:         if (curr and val is self.head.data):
+--------------------------------------------------------------------------------
+[0.11398 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_0.head is None
+        bool_0 = False
+        var_0 = linked_list_0.push(bool_0)
+>       node_0 = linked_list_0.search(bool_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack4.LinkedList'>, val = False
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+stack4:62: AttributeError
+   - [#  16] CDI stack4: 
+--------------------------------------------------------------------------------
+   63:             if curr.data == val:
+   64:                 return curr
+   65:             curr = curr.next
+   66:     
+-  67:     def remove(self, val):
+-  68:         '''Remove node from list if exists.'''
+-  69:         curr = self.head
+-  70:         if (curr and val is self.head.data):
+-  71:             self.head = self.head.next
+-  72:             self._length -= 1
+-  73:         while curr:
+-  74:             if (curr.next and curr.next.data == val):
+-  75:                 curr.next = curr.next.next
+-  76:                 self._length -= 1
+-  77:             curr = curr.next
+-  78:     
++  67:     @classmethod
++  68:     def remove(self, val):
++  69:         '''Remove node from list if exists.'''
++  70:         curr = self.head
++  71:         if (curr and val is self.head.data):
++  72:             self.head = self.head.next
++  73:             self._length -= 1
++  74:         while curr:
++  75:             if (curr.next and curr.next.data == val):
++  76:                 curr.next = curr.next.next
++  77:                 self._length -= 1
++  78:             curr = curr.next
+   79:     def display(self):
+   80:         '''Display list as a tuple.'''
+   81:         curr = self.head
+   82:         display = '('
+--------------------------------------------------------------------------------
+[0.10960 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.pop()
+        assert var_0 == -904
+        assert linked_list_0.head is None
+        linked_list_1 = module_0.LinkedList()
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_1.head is None
+>       var_1 = linked_list_1.remove(linked_list_1)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack4.LinkedList'>
+val = <stack4.LinkedList object at 0x7fa3c683e080>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+stack4:70: AttributeError
+   - [#  17] CDI stack4: 
+--------------------------------------------------------------------------------
+   75:                 curr.next = curr.next.next
+   76:                 self._length -= 1
+   77:             curr = curr.next
+   78:     
+-  79:     def display(self):
+-  80:         '''Display list as a tuple.'''
+-  81:         curr = self.head
+-  82:         display = '('
+-  83:         while curr:
+-  84:             display += str(curr.data) + ', '
+-  85:             curr = curr.next
+-  86:         return display[:-2] + ')'
+-  87: 
++  79:     @classmethod
++  80:     def display(self):
++  81:         '''Display list as a tuple.'''
++  82:         curr = self.head
++  83:         display = '('
++  84:         while curr:
++  85:             display += str(curr.data) + ', '
++  86:             curr = curr.next
++  87:         return display[:-2] + ')'
+   88: 
+   89: class Stack(object):
+   90:     '''Implementation of Stack.
+   91: 
+--------------------------------------------------------------------------------
+[0.18088 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.display()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack4.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+stack4:82: AttributeError
+   - [#  18] CDI stack4: 
+--------------------------------------------------------------------------------
+   97:     If the stack is empty, attempts to call pop should raise an exception.
+   98: 
+   99:     '''
+  100:     
+- 101:     def __init__(self, data=None):
+- 102:         '''Initialization.'''
+- 103:         self._stack = LinkedList(data)
+- 104:     
++ 101:     @classmethod
++ 102:     def __init__(self, data=None):
++ 103:         '''Initialization.'''
++ 104:         self._stack = LinkedList(data)
+  105:     def push(self, val):
+  106:         '''Add val to the stack.'''
+  107:         self._stack.push(val)
+  108:     
+--------------------------------------------------------------------------------
+[0.18992 s] survived
+   - [#  19] CDI stack4: 
+--------------------------------------------------------------------------------
+  101:     def __init__(self, data=None):
+  102:         '''Initialization.'''
+  103:         self._stack = LinkedList(data)
+  104:     
+- 105:     def push(self, val):
+- 106:         '''Add val to the stack.'''
+- 107:         self._stack.push(val)
+- 108:     
++ 105:     @classmethod
++ 106:     def push(self, val):
++ 107:         '''Add val to the stack.'''
++ 108:         self._stack.push(val)
+  109:     def pop(self):
+  110:         '''Remove item off the stack.'''
+  111:         self._stack.pop()
+--------------------------------------------------------------------------------
+[0.11136 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        str_0 = '/A\n'
+        stack_0 = module_0.Stack(str_0)
+>       var_0 = stack_0.push(bool_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack4.Stack'>, val = False
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute '_stack'
+
+stack4:108: AttributeError
+   - [#  20] CDI stack4: 
+--------------------------------------------------------------------------------
+  105:     def push(self, val):
+  106:         '''Add val to the stack.'''
+  107:         self._stack.push(val)
+  108:     
+- 109:     def pop(self):
+- 110:         '''Remove item off the stack.'''
+- 111:         self._stack.pop()
++ 109:     @classmethod
++ 110:     def pop(self):
++ 111:         '''Remove item off the stack.'''
++ 112:         self._stack.pop()
+--------------------------------------------------------------------------------
+[0.12686 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_MIO.py::test_case_4
+
+def test_case_4():
+        stack_0 = module_0.Stack()
+        assert f'{type(stack_0).__module__}.{type(stack_0).__qualname__}' == 'stack4.Stack'
+        var_0 = stack_0.push(stack_0)
+>       var_1 = stack_0.pop()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_MIO.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack4.Stack'>
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute '_stack'
+
+stack4:112: AttributeError
+   - [#  21] COD stack4: 
+--------------------------------------------------------------------------------
+   44:         self._length += 1
+   45:     
+   46:     def pop(self):
+   47:         '''Remove the first value and return it.'''
+-  48:         if not (self.head):
++  48:         if self.head:
+   49:             raise IndexError('Cannot pop from an empty list')
+   50:         to_return = self.head
+   51:         self.head = self.head.next
+   52:         self._length -= 1
+--------------------------------------------------------------------------------
+[0.10079 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c67caa70>
+
+>   ???
+E   IndexError: Cannot pop from an empty list
+
+stack4:49: IndexError
+   - [#  22] COI stack4: 
+--------------------------------------------------------------------------------
+   33:         try:
+   34:             for val in data:
+   35:                 self.push(val)
+   36:         except TypeError:
+-  37:             if data:
++  37:             if not data:
+   38:                 self.push(data)
+   39:     
+   40:     def push(self, val):
+   41:         '''Insert a value at the head of the list.'''
+--------------------------------------------------------------------------------
+[0.09743 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        str_0 = '/A\n'
+        stack_0 = module_0.Stack(str_0)
+        var_0 = stack_0.push(bool_0)
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+>       assert linked_list_0.head is None
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:12: AssertionError
+   - [#  23] COI stack4: 
+--------------------------------------------------------------------------------
+   44:         self._length += 1
+   45:     
+   46:     def pop(self):
+   47:         '''Remove the first value and return it.'''
+-  48:         if not (self.head):
++  48:         if not ((not (self.head))):
+   49:             raise IndexError('Cannot pop from an empty list')
+   50:         to_return = self.head
+   51:         self.head = self.head.next
+   52:         self._length -= 1
+--------------------------------------------------------------------------------
+[0.09700 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c687d090>
+
+>   ???
+E   IndexError: Cannot pop from an empty list
+
+stack4:49: IndexError
+   - [#  24] COI stack4: 
+--------------------------------------------------------------------------------
+   58:     
+   59:     def search(self, val):
+   60:         '''Return the node containing val.'''
+   61:         curr = self.head
+-  62:         while curr:
++  62:         while not curr:
+   63:             if curr.data == val:
+   64:                 return curr
+   65:             curr = curr.next
+   66:     
+--------------------------------------------------------------------------------
+[0.09904 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_0.head is None
+        bool_0 = False
+        var_0 = linked_list_0.push(bool_0)
+        node_0 = linked_list_0.search(bool_0)
+>       assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'stack4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:46: AssertionError
+   - [#  25] COI stack4: 
+--------------------------------------------------------------------------------
+   59:     def search(self, val):
+   60:         '''Return the node containing val.'''
+   61:         curr = self.head
+   62:         while curr:
+-  63:             if curr.data == val:
++  63:             if not (curr.data == val):
+   64:                 return curr
+   65:             curr = curr.next
+   66:     
+   67:     def remove(self, val):
+--------------------------------------------------------------------------------
+[0.10323 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_0.head is None
+        bool_0 = False
+        var_0 = linked_list_0.push(bool_0)
+        node_0 = linked_list_0.search(bool_0)
+>       assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'stack4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:46: AssertionError
+   - [#  26] COI stack4: 
+--------------------------------------------------------------------------------
+   66:     
+   67:     def remove(self, val):
+   68:         '''Remove node from list if exists.'''
+   69:         curr = self.head
+-  70:         if (curr and val is self.head.data):
++  70:         if not ((curr and val is self.head.data)):
+   71:             self.head = self.head.next
+   72:             self._length -= 1
+   73:         while curr:
+   74:             if (curr.next and curr.next.data == val):
+--------------------------------------------------------------------------------
+[0.13967 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.pop()
+        assert var_0 == -904
+        assert linked_list_0.head is None
+        linked_list_1 = module_0.LinkedList()
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_1.head is None
+>       var_1 = linked_list_1.remove(linked_list_1)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c687e200>
+val = <stack4.LinkedList object at 0x7fa3c687e200>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+stack4:71: AttributeError
+   - [#  27] COI stack4: 
+--------------------------------------------------------------------------------
+   69:         curr = self.head
+   70:         if (curr and val is self.head.data):
+   71:             self.head = self.head.next
+   72:             self._length -= 1
+-  73:         while curr:
++  73:         while not curr:
+   74:             if (curr.next and curr.next.data == val):
+   75:                 curr.next = curr.next.next
+   76:                 self._length -= 1
+   77:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.13325 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.pop()
+        assert var_0 == -904
+        assert linked_list_0.head is None
+        linked_list_1 = module_0.LinkedList()
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_1.head is None
+>       var_1 = linked_list_1.remove(linked_list_1)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c6c1b160>
+val = <stack4.LinkedList object at 0x7fa3c6c1b160>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+stack4:74: AttributeError
+   - [#  28] COI stack4: 
+--------------------------------------------------------------------------------
+   70:         if (curr and val is self.head.data):
+   71:             self.head = self.head.next
+   72:             self._length -= 1
+   73:         while curr:
+-  74:             if (curr.next and curr.next.data == val):
++  74:             if not ((curr.next and curr.next.data == val)):
+   75:                 curr.next = curr.next.next
+   76:                 self._length -= 1
+   77:             curr = curr.next
+   78:     
+--------------------------------------------------------------------------------
+[0.18822 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        list_0 = []
+        stack_0 = module_0.Stack()
+        assert f'{type(stack_0).__module__}.{type(stack_0).__qualname__}' == 'stack4.Stack'
+        linked_list_0 = module_0.LinkedList(stack_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.remove(list_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:95: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c6853010>, val = []
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+stack4:75: AttributeError
+   - [#  29] COI stack4: 
+--------------------------------------------------------------------------------
+   79:     def display(self):
+   80:         '''Display list as a tuple.'''
+   81:         curr = self.head
+   82:         display = '('
+-  83:         while curr:
++  83:         while not curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+   86:         return display[:-2] + ')'
+   87: 
+--------------------------------------------------------------------------------
+[0.10355 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(True)'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:70: AssertionError
+   - [#  30] CRP stack4: 
+--------------------------------------------------------------------------------
+   27:     '''
+   28:     
+   29:     def __init__(self, data=None):
+   30:         '''Linked list initialized with head.'''
+-  31:         self._length = 0
++  31:         self._length = 1
+   32:         self.head = None
+   33:         try:
+   34:             for val in data:
+   35:                 self.push(val)
+--------------------------------------------------------------------------------
+[0.10453 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.remove(linked_list_0)
+        var_1 = linked_list_0.size()
+>       assert var_1 == 0
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:62: AssertionError
+   - [#  31] CRP stack4: 
+--------------------------------------------------------------------------------
+   40:     def push(self, val):
+   41:         '''Insert a value at the head of the list.'''
+   42:         old_head = self.head
+   43:         self.head = Node(val, old_head)
+-  44:         self._length += 1
++  44:         self._length += 2
+   45:     
+   46:     def pop(self):
+   47:         '''Remove the first value and return it.'''
+   48:         if not (self.head):
+--------------------------------------------------------------------------------
+[0.12421 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12
+
+def test_case_12():
+        bool_0 = True
+        tuple_0 = (bool_0,)
+        list_0 = [tuple_0, bool_0, tuple_0]
+        linked_list_0 = module_0.LinkedList(list_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.size()
+>       assert var_0 == 3
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:116: AssertionError
+   - [#  32] CRP stack4: 
+--------------------------------------------------------------------------------
+   45:     
+   46:     def pop(self):
+   47:         '''Remove the first value and return it.'''
+   48:         if not (self.head):
+-  49:             raise IndexError('Cannot pop from an empty list')
++  49:             raise IndexError('mutpy')
+   50:         to_return = self.head
+   51:         self.head = self.head.next
+   52:         self._length -= 1
+   53:         return to_return.data
+--------------------------------------------------------------------------------
+[0.10645 s] survived
+   - [#  33] CRP stack4: 
+--------------------------------------------------------------------------------
+   45:     
+   46:     def pop(self):
+   47:         '''Remove the first value and return it.'''
+   48:         if not (self.head):
+-  49:             raise IndexError('Cannot pop from an empty list')
++  49:             raise IndexError('')
+   50:         to_return = self.head
+   51:         self.head = self.head.next
+   52:         self._length -= 1
+   53:         return to_return.data
+--------------------------------------------------------------------------------
+[0.10219 s] survived
+   - [#  34] CRP stack4: 
+--------------------------------------------------------------------------------
+   48:         if not (self.head):
+   49:             raise IndexError('Cannot pop from an empty list')
+   50:         to_return = self.head
+   51:         self.head = self.head.next
+-  52:         self._length -= 1
++  52:         self._length -= 2
+   53:         return to_return.data
+   54:     
+   55:     def size(self):
+   56:         '''Return the length of the list.'''
+--------------------------------------------------------------------------------
+[0.10913 s] survived
+   - [#  35] CRP stack4: 
+--------------------------------------------------------------------------------
+   68:         '''Remove node from list if exists.'''
+   69:         curr = self.head
+   70:         if (curr and val is self.head.data):
+   71:             self.head = self.head.next
+-  72:             self._length -= 1
++  72:             self._length -= 2
+   73:         while curr:
+   74:             if (curr.next and curr.next.data == val):
+   75:                 curr.next = curr.next.next
+   76:                 self._length -= 1
+--------------------------------------------------------------------------------
+[0.11345 s] survived
+   - [#  36] CRP stack4: 
+--------------------------------------------------------------------------------
+   72:             self._length -= 1
+   73:         while curr:
+   74:             if (curr.next and curr.next.data == val):
+   75:                 curr.next = curr.next.next
+-  76:                 self._length -= 1
++  76:                 self._length -= 2
+   77:             curr = curr.next
+   78:     
+   79:     def display(self):
+   80:         '''Display list as a tuple.'''
+--------------------------------------------------------------------------------
+[0.10460 s] survived
+   - [#  37] CRP stack4: 
+--------------------------------------------------------------------------------
+   78:     
+   79:     def display(self):
+   80:         '''Display list as a tuple.'''
+   81:         curr = self.head
+-  82:         display = '('
++  82:         display = 'mutpy'
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+   86:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.09772 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(True)'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:70: AssertionError
+   - [#  38] CRP stack4: 
+--------------------------------------------------------------------------------
+   78:     
+   79:     def display(self):
+   80:         '''Display list as a tuple.'''
+   81:         curr = self.head
+-  82:         display = '('
++  82:         display = ''
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+   86:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.10998 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(True)'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:70: AssertionError
+   - [#  39] CRP stack4: 
+--------------------------------------------------------------------------------
+   80:         '''Display list as a tuple.'''
+   81:         curr = self.head
+   82:         display = '('
+   83:         while curr:
+-  84:             display += str(curr.data) + ', '
++  84:             display += str(curr.data) + 'mutpy'
+   85:             curr = curr.next
+   86:         return display[:-2] + ')'
+   87: 
+   88: 
+--------------------------------------------------------------------------------
+[0.14307 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(True)'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:70: AssertionError
+   - [#  40] CRP stack4: 
+--------------------------------------------------------------------------------
+   80:         '''Display list as a tuple.'''
+   81:         curr = self.head
+   82:         display = '('
+   83:         while curr:
+-  84:             display += str(curr.data) + ', '
++  84:             display += str(curr.data) + ''
+   85:             curr = curr.next
+   86:         return display[:-2] + ')'
+   87: 
+   88: 
+--------------------------------------------------------------------------------
+[0.11262 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(True)'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:70: AssertionError
+   - [#  41] CRP stack4: 
+--------------------------------------------------------------------------------
+   82:         display = '('
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+-  86:         return display[:-2] + ')'
++  86:         return display[:-3] + ')'
+   87: 
+   88: 
+   89: class Stack(object):
+   90:     '''Implementation of Stack.
+--------------------------------------------------------------------------------
+[0.10200 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(True)'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:70: AssertionError
+   - [#  42] CRP stack4: 
+--------------------------------------------------------------------------------
+   82:         display = '('
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+-  86:         return display[:-2] + ')'
++  86:         return display[:-2] + 'mutpy'
+   87: 
+   88: 
+   89: class Stack(object):
+   90:     '''Implementation of Stack.
+--------------------------------------------------------------------------------
+[0.09787 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(True)'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:70: AssertionError
+   - [#  43] CRP stack4: 
+--------------------------------------------------------------------------------
+   82:         display = '('
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+-  86:         return display[:-2] + ')'
++  86:         return display[:-2] + ''
+   87: 
+   88: 
+   89: class Stack(object):
+   90:     '''Implementation of Stack.
+--------------------------------------------------------------------------------
+[0.09982 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(True)'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:70: AssertionError
+   - [#  44] EHD stack4: 
+--------------------------------------------------------------------------------
+   33:         try:
+   34:             for val in data:
+   35:                 self.push(val)
+   36:         except TypeError:
+-  37:             if data:
+-  38:                 self.push(data)
++  37:             raise
++  38:     
+   39:     
+   40:     def push(self, val):
+   41:         '''Insert a value at the head of the list.'''
+   42:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.08830 s] incompetent
+
+TypeError: stack4:34: TypeError: 'NoneType' object is not iterable
+
+   - [#  45] EXS stack4: 
+--------------------------------------------------------------------------------
+   33:         try:
+   34:             for val in data:
+   35:                 self.push(val)
+   36:         except TypeError:
+-  37:             if data:
+-  38:                 self.push(data)
++  37:             pass
++  38:     
+   39:     
+   40:     def push(self, val):
+   41:         '''Insert a value at the head of the list.'''
+   42:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.09238 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:68: AssertionError
+   - [#  46] LCR stack4: 
+--------------------------------------------------------------------------------
+   66:     
+   67:     def remove(self, val):
+   68:         '''Remove node from list if exists.'''
+   69:         curr = self.head
+-  70:         if (curr and val is self.head.data):
++  70:         if (curr or val is self.head.data):
+   71:             self.head = self.head.next
+   72:             self._length -= 1
+   73:         while curr:
+   74:             if (curr.next and curr.next.data == val):
+--------------------------------------------------------------------------------
+[0.09039 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.pop()
+        assert var_0 == -904
+        assert linked_list_0.head is None
+        linked_list_1 = module_0.LinkedList()
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_1.head is None
+>       var_1 = linked_list_1.remove(linked_list_1)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c664b4c0>
+val = <stack4.LinkedList object at 0x7fa3c664b4c0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+stack4:70: AttributeError
+   - [#  47] LCR stack4: 
+--------------------------------------------------------------------------------
+   70:         if (curr and val is self.head.data):
+   71:             self.head = self.head.next
+   72:             self._length -= 1
+   73:         while curr:
+-  74:             if (curr.next and curr.next.data == val):
++  74:             if (curr.next or curr.next.data == val):
+   75:                 curr.next = curr.next.next
+   76:                 self._length -= 1
+   77:             curr = curr.next
+   78:     
+--------------------------------------------------------------------------------
+[0.09734 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        list_0 = []
+        stack_0 = module_0.Stack()
+        assert f'{type(stack_0).__module__}.{type(stack_0).__qualname__}' == 'stack4.Stack'
+        linked_list_0 = module_0.LinkedList(stack_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.remove(list_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:95: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c664a890>, val = []
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+stack4:74: AttributeError
+   - [#  48] OIL stack4: 
+--------------------------------------------------------------------------------
+   32:         self.head = None
+   33:         try:
+   34:             for val in data:
+   35:                 self.push(val)
+-  36:         except TypeError:
++  36:                 breakexcept TypeError:
+   37:             if data:
+   38:                 self.push(data)
+   39:     
+   40:     def push(self, val):
+--------------------------------------------------------------------------------
+[0.09461 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12
+
+def test_case_12():
+        bool_0 = True
+        tuple_0 = (bool_0,)
+        list_0 = [tuple_0, bool_0, tuple_0]
+        linked_list_0 = module_0.LinkedList(list_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.size()
+>       assert var_0 == 3
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:116: AssertionError
+   - [#  49] OIL stack4: 
+--------------------------------------------------------------------------------
+   62:         while curr:
+   63:             if curr.data == val:
+   64:                 return curr
+   65:             curr = curr.next
+-  66:     
++  66:             break
+   67:     def remove(self, val):
+   68:         '''Remove node from list if exists.'''
+   69:         curr = self.head
+   70:         if (curr and val is self.head.data):
+--------------------------------------------------------------------------------
+[0.09766 s] survived
+   - [#  50] OIL stack4: 
+--------------------------------------------------------------------------------
+   74:             if (curr.next and curr.next.data == val):
+   75:                 curr.next = curr.next.next
+   76:                 self._length -= 1
+   77:             curr = curr.next
+-  78:     
++  78:             break
+   79:     def display(self):
+   80:         '''Display list as a tuple.'''
+   81:         curr = self.head
+   82:         display = '('
+--------------------------------------------------------------------------------
+[0.09787 s] survived
+   - [#  51] OIL stack4: 
+--------------------------------------------------------------------------------
+   82:         display = '('
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+-  86:         return display[:-2] + ')'
+-  87: 
++  86:             break
++  87:         return display[:-2] + ')'
+   88: 
+   89: class Stack(object):
+   90:     '''Implementation of Stack.
+   91: 
+--------------------------------------------------------------------------------
+[0.09723 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_12
+
+def test_case_12():
+        bool_0 = True
+        tuple_0 = (bool_0,)
+        list_0 = [tuple_0, bool_0, tuple_0]
+        linked_list_0 = module_0.LinkedList(list_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.size()
+        assert var_0 == 3
+        var_1 = linked_list_0.display()
+>       assert var_1 == '((True,), True, (True,))'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:118: AssertionError
+   - [#  52] RIL stack4: 
+--------------------------------------------------------------------------------
+   30:         '''Linked list initialized with head.'''
+   31:         self._length = 0
+   32:         self.head = None
+   33:         try:
+-  34:             for val in data:
++  34:             for val in reversed(data):
+   35:                 self.push(val)
+   36:         except TypeError:
+   37:             if data:
+   38:                 self.push(data)
+--------------------------------------------------------------------------------
+[0.09032 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.pop()
+>       assert var_0 == -904
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:25: AssertionError
+   - [#  53] ROR stack4: 
+--------------------------------------------------------------------------------
+   59:     def search(self, val):
+   60:         '''Return the node containing val.'''
+   61:         curr = self.head
+   62:         while curr:
+-  63:             if curr.data == val:
++  63:             if curr.data != val:
+   64:                 return curr
+   65:             curr = curr.next
+   66:     
+   67:     def remove(self, val):
+--------------------------------------------------------------------------------
+[0.11317 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_0.head is None
+        bool_0 = False
+        var_0 = linked_list_0.push(bool_0)
+        node_0 = linked_list_0.search(bool_0)
+>       assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'stack4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:46: AssertionError
+   - [#  54] ROR stack4: 
+--------------------------------------------------------------------------------
+   70:         if (curr and val is self.head.data):
+   71:             self.head = self.head.next
+   72:             self._length -= 1
+   73:         while curr:
+-  74:             if (curr.next and curr.next.data == val):
++  74:             if (curr.next and curr.next.data != val):
+   75:                 curr.next = curr.next.next
+   76:                 self._length -= 1
+   77:             curr = curr.next
+   78:     
+--------------------------------------------------------------------------------
+[0.10100 s] survived
+   - [#  55] SDI stack4: 
+--------------------------------------------------------------------------------
+    5: 
+    6:     Data attribute for data storage and Next for pointer to next node.
+    7:     '''
+    8:     
+-   9:     def __init__(self, data, next_node=None):
+-  10:         '''Attribute data and next_node.'''
+-  11:         self.data = data
+-  12:         self.next = next_node
+-  13: 
++   9:     @staticmethod
++  10:     def __init__(self, data, next_node=None):
++  11:         '''Attribute data and next_node.'''
++  12:         self.data = data
++  13:         self.next = next_node
+   14: 
+   15: class LinkedList(object):
+   16:     '''Method for linked list.
+   17: 
+--------------------------------------------------------------------------------
+[0.09079 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        str_0 = '/A\n'
+>       stack_0 = module_0.Stack(str_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack4:103: in __init__
+    ???
+stack4:35: in __init__
+    ???
+stack4:43: in push
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = '/', data = None, next_node = None
+
+>   ???
+E   AttributeError: 'str' object has no attribute 'data'
+
+stack4:12: AttributeError
+   - [#  56] SDI stack4: 
+--------------------------------------------------------------------------------
+   25:     display() - will return a unicode string representing the list as
+   26:     if it were a Python tuple literal: "(12, \'sam\', 37, \'tango\')"
+   27:     '''
+   28:     
+-  29:     def __init__(self, data=None):
+-  30:         '''Linked list initialized with head.'''
+-  31:         self._length = 0
+-  32:         self.head = None
+-  33:         try:
+-  34:             for val in data:
+-  35:                 self.push(val)
+-  36:         except TypeError:
+-  37:             if data:
+-  38:                 self.push(data)
+-  39:     
++  29:     @staticmethod
++  30:     def __init__(self, data=None):
++  31:         '''Linked list initialized with head.'''
++  32:         self._length = 0
++  33:         self.head = None
++  34:         try:
++  35:             for val in data:
++  36:                 self.push(val)
++  37:         except TypeError:
++  38:             if data:
++  39:                 self.push(data)
+   40:     def push(self, val):
+   41:         '''Insert a value at the head of the list.'''
+   42:         old_head = self.head
+   43:         self.head = Node(val, old_head)
+--------------------------------------------------------------------------------
+[0.08867 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        str_0 = '/A\n'
+>       stack_0 = module_0.Stack(str_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack4:103: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = '/A\n', data = None
+
+>   ???
+E   AttributeError: 'str' object has no attribute '_length'
+
+stack4:32: AttributeError
+   - [#  57] SDI stack4: 
+--------------------------------------------------------------------------------
+   36:         except TypeError:
+   37:             if data:
+   38:                 self.push(data)
+   39:     
+-  40:     def push(self, val):
+-  41:         '''Insert a value at the head of the list.'''
+-  42:         old_head = self.head
+-  43:         self.head = Node(val, old_head)
+-  44:         self._length += 1
+-  45:     
++  40:     @staticmethod
++  41:     def push(self, val):
++  42:         '''Insert a value at the head of the list.'''
++  43:         old_head = self.head
++  44:         self.head = Node(val, old_head)
++  45:         self._length += 1
+   46:     def pop(self):
+   47:         '''Remove the first value and return it.'''
+   48:         if not (self.head):
+   49:             raise IndexError('Cannot pop from an empty list')
+--------------------------------------------------------------------------------
+[0.10174 s] incompetent
+
+TypeError: stack4:38: TypeError: LinkedList.push() missing 1 required positional argument: 'val'
+
+   - [#  58] SDI stack4: 
+--------------------------------------------------------------------------------
+   42:         old_head = self.head
+   43:         self.head = Node(val, old_head)
+   44:         self._length += 1
+   45:     
+-  46:     def pop(self):
+-  47:         '''Remove the first value and return it.'''
+-  48:         if not (self.head):
+-  49:             raise IndexError('Cannot pop from an empty list')
+-  50:         to_return = self.head
+-  51:         self.head = self.head.next
+-  52:         self._length -= 1
+-  53:         return to_return.data
+-  54:     
++  46:     @staticmethod
++  47:     def pop(self):
++  48:         '''Remove the first value and return it.'''
++  49:         if not (self.head):
++  50:             raise IndexError('Cannot pop from an empty list')
++  51:         to_return = self.head
++  52:         self.head = self.head.next
++  53:         self._length -= 1
++  54:         return to_return.data
+   55:     def size(self):
+   56:         '''Return the length of the list.'''
+   57:         return self._length
+   58:     
+--------------------------------------------------------------------------------
+[0.09224 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack4/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:24: TypeError: LinkedList.pop() missing 1 required positional argument: 'self'
+
+   - [#  59] SDI stack4: 
+--------------------------------------------------------------------------------
+   51:         self.head = self.head.next
+   52:         self._length -= 1
+   53:         return to_return.data
+   54:     
+-  55:     def size(self):
+-  56:         '''Return the length of the list.'''
+-  57:         return self._length
+-  58:     
++  55:     @staticmethod
++  56:     def size(self):
++  57:         '''Return the length of the list.'''
++  58:         return self._length
+   59:     def search(self, val):
+   60:         '''Return the node containing val.'''
+   61:         curr = self.head
+   62:         while curr:
+--------------------------------------------------------------------------------
+[0.14554 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack4/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:61: TypeError: LinkedList.size() missing 1 required positional argument: 'self'
+
+   - [#  60] SDI stack4: 
+--------------------------------------------------------------------------------
+   55:     def size(self):
+   56:         '''Return the length of the list.'''
+   57:         return self._length
+   58:     
+-  59:     def search(self, val):
+-  60:         '''Return the node containing val.'''
+-  61:         curr = self.head
+-  62:         while curr:
+-  63:             if curr.data == val:
+-  64:                 return curr
+-  65:             curr = curr.next
+-  66:     
++  59:     @staticmethod
++  60:     def search(self, val):
++  61:         '''Return the node containing val.'''
++  62:         curr = self.head
++  63:         while curr:
++  64:             if curr.data == val:
++  65:                 return curr
++  66:             curr = curr.next
+   67:     def remove(self, val):
+   68:         '''Remove node from list if exists.'''
+   69:         curr = self.head
+   70:         if (curr and val is self.head.data):
+--------------------------------------------------------------------------------
+[0.10720 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack4/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:45: TypeError: LinkedList.search() missing 1 required positional argument: 'val'
+
+   - [#  61] SDI stack4: 
+--------------------------------------------------------------------------------
+   63:             if curr.data == val:
+   64:                 return curr
+   65:             curr = curr.next
+   66:     
+-  67:     def remove(self, val):
+-  68:         '''Remove node from list if exists.'''
+-  69:         curr = self.head
+-  70:         if (curr and val is self.head.data):
+-  71:             self.head = self.head.next
+-  72:             self._length -= 1
+-  73:         while curr:
+-  74:             if (curr.next and curr.next.data == val):
+-  75:                 curr.next = curr.next.next
+-  76:                 self._length -= 1
+-  77:             curr = curr.next
+-  78:     
++  67:     @staticmethod
++  68:     def remove(self, val):
++  69:         '''Remove node from list if exists.'''
++  70:         curr = self.head
++  71:         if (curr and val is self.head.data):
++  72:             self.head = self.head.next
++  73:             self._length -= 1
++  74:         while curr:
++  75:             if (curr.next and curr.next.data == val):
++  76:                 curr.next = curr.next.next
++  77:                 self._length -= 1
++  78:             curr = curr.next
+   79:     def display(self):
+   80:         '''Display list as a tuple.'''
+   81:         curr = self.head
+   82:         display = '('
+--------------------------------------------------------------------------------
+[0.10418 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack4/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:30: TypeError: LinkedList.remove() missing 1 required positional argument: 'val'
+
+   - [#  62] SDI stack4: 
+--------------------------------------------------------------------------------
+   75:                 curr.next = curr.next.next
+   76:                 self._length -= 1
+   77:             curr = curr.next
+   78:     
+-  79:     def display(self):
+-  80:         '''Display list as a tuple.'''
+-  81:         curr = self.head
+-  82:         display = '('
+-  83:         while curr:
+-  84:             display += str(curr.data) + ', '
+-  85:             curr = curr.next
+-  86:         return display[:-2] + ')'
+-  87: 
++  79:     @staticmethod
++  80:     def display(self):
++  81:         '''Display list as a tuple.'''
++  82:         curr = self.head
++  83:         display = '('
++  84:         while curr:
++  85:             display += str(curr.data) + ', '
++  86:             curr = curr.next
++  87:         return display[:-2] + ')'
+   88: 
+   89: class Stack(object):
+   90:     '''Implementation of Stack.
+   91: 
+--------------------------------------------------------------------------------
+[0.10281 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack4/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:69: TypeError: LinkedList.display() missing 1 required positional argument: 'self'
+
+   - [#  63] SDI stack4: 
+--------------------------------------------------------------------------------
+   97:     If the stack is empty, attempts to call pop should raise an exception.
+   98: 
+   99:     '''
+  100:     
+- 101:     def __init__(self, data=None):
+- 102:         '''Initialization.'''
+- 103:         self._stack = LinkedList(data)
+- 104:     
++ 101:     @staticmethod
++ 102:     def __init__(self, data=None):
++ 103:         '''Initialization.'''
++ 104:         self._stack = LinkedList(data)
+  105:     def push(self, val):
+  106:         '''Add val to the stack.'''
+  107:         self._stack.push(val)
+  108:     
+--------------------------------------------------------------------------------
+[0.08854 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        str_0 = '/A\n'
+>       stack_0 = module_0.Stack(str_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = '/A\n', data = None
+
+>   ???
+E   AttributeError: 'str' object has no attribute '_stack'
+
+stack4:104: AttributeError
+   - [#  64] SDI stack4: 
+--------------------------------------------------------------------------------
+  101:     def __init__(self, data=None):
+  102:         '''Initialization.'''
+  103:         self._stack = LinkedList(data)
+  104:     
+- 105:     def push(self, val):
+- 106:         '''Add val to the stack.'''
+- 107:         self._stack.push(val)
+- 108:     
++ 105:     @staticmethod
++ 106:     def push(self, val):
++ 107:         '''Add val to the stack.'''
++ 108:         self._stack.push(val)
+  109:     def pop(self):
+  110:         '''Remove item off the stack.'''
+  111:         self._stack.pop()
+--------------------------------------------------------------------------------
+[0.14637 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack4/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:9: TypeError: Stack.push() missing 1 required positional argument: 'val'
+
+   - [#  65] SDI stack4: 
+--------------------------------------------------------------------------------
+  105:     def push(self, val):
+  106:         '''Add val to the stack.'''
+  107:         self._stack.push(val)
+  108:     
+- 109:     def pop(self):
+- 110:         '''Remove item off the stack.'''
+- 111:         self._stack.pop()
++ 109:     @staticmethod
++ 110:     def pop(self):
++ 111:         '''Remove item off the stack.'''
++ 112:         self._stack.pop()
+--------------------------------------------------------------------------------
+[0.13985 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack4/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_MIO.py:27: TypeError: Stack.pop() missing 1 required positional argument: 'self'
+
+   - [#  66] SDL stack4: 
+--------------------------------------------------------------------------------
+    7:     '''
+    8:     
+    9:     def __init__(self, data, next_node=None):
+   10:         '''Attribute data and next_node.'''
+-  11:         self.data = data
++  11:         pass
+   12:         self.next = next_node
+   13: 
+   14: 
+   15: class LinkedList(object):
+--------------------------------------------------------------------------------
+[0.13144 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c67c1ea0>
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'data'
+
+stack4:53: AttributeError
+   - [#  67] SDL stack4: 
+--------------------------------------------------------------------------------
+    8:     
+    9:     def __init__(self, data, next_node=None):
+   10:         '''Attribute data and next_node.'''
+   11:         self.data = data
+-  12:         self.next = next_node
++  12:         pass
+   13: 
+   14: 
+   15: class LinkedList(object):
+   16:     '''Method for linked list.
+--------------------------------------------------------------------------------
+[0.09497 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c6758a00>
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'next'
+
+stack4:51: AttributeError
+   - [#  68] SDL stack4: 
+--------------------------------------------------------------------------------
+   27:     '''
+   28:     
+   29:     def __init__(self, data=None):
+   30:         '''Linked list initialized with head.'''
+-  31:         self._length = 0
++  31:         pass
+   32:         self.head = None
+   33:         try:
+   34:             for val in data:
+   35:                 self.push(val)
+--------------------------------------------------------------------------------
+[0.08937 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        str_0 = '/A\n'
+>       stack_0 = module_0.Stack(str_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack4:103: in __init__
+    ???
+stack4:35: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c68a9270>, val = '/'
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute '_length'
+
+stack4:44: AttributeError
+   - [#  69] SDL stack4: 
+--------------------------------------------------------------------------------
+   28:     
+   29:     def __init__(self, data=None):
+   30:         '''Linked list initialized with head.'''
+   31:         self._length = 0
+-  32:         self.head = None
++  32:         pass
+   33:         try:
+   34:             for val in data:
+   35:                 self.push(val)
+   36:         except TypeError:
+--------------------------------------------------------------------------------
+[0.09107 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        str_0 = '/A\n'
+>       stack_0 = module_0.Stack(str_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack4:103: in __init__
+    ???
+stack4:35: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c67c2b00>, val = '/'
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute 'head'
+
+stack4:42: AttributeError
+   - [#  70] SDL stack4: 
+--------------------------------------------------------------------------------
+   31:         self._length = 0
+   32:         self.head = None
+   33:         try:
+   34:             for val in data:
+-  35:                 self.push(val)
++  35:                 pass
+   36:         except TypeError:
+   37:             if data:
+   38:                 self.push(data)
+   39:     
+--------------------------------------------------------------------------------
+[0.09139 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:23: AssertionError
+   - [#  71] SDL stack4: 
+--------------------------------------------------------------------------------
+   34:             for val in data:
+   35:                 self.push(val)
+   36:         except TypeError:
+   37:             if data:
+-  38:                 self.push(data)
++  38:                 pass
+   39:     
+   40:     def push(self, val):
+   41:         '''Insert a value at the head of the list.'''
+   42:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.09299 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:68: AssertionError
+   - [#  72] SDL stack4: 
+--------------------------------------------------------------------------------
+   38:                 self.push(data)
+   39:     
+   40:     def push(self, val):
+   41:         '''Insert a value at the head of the list.'''
+-  42:         old_head = self.head
++  42:         pass
+   43:         self.head = Node(val, old_head)
+   44:         self._length += 1
+   45:     
+   46:     def pop(self):
+--------------------------------------------------------------------------------
+[0.09382 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        str_0 = '/A\n'
+>       stack_0 = module_0.Stack(str_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack4:103: in __init__
+    ???
+stack4:35: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c6853640>, val = '/'
+
+>   ???
+E   NameError: name 'old_head' is not defined
+
+stack4:43: NameError
+   - [#  73] SDL stack4: 
+--------------------------------------------------------------------------------
+   39:     
+   40:     def push(self, val):
+   41:         '''Insert a value at the head of the list.'''
+   42:         old_head = self.head
+-  43:         self.head = Node(val, old_head)
++  43:         pass
+   44:         self._length += 1
+   45:     
+   46:     def pop(self):
+   47:         '''Remove the first value and return it.'''
+--------------------------------------------------------------------------------
+[0.09099 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:23: AssertionError
+   - [#  74] SDL stack4: 
+--------------------------------------------------------------------------------
+   46:     def pop(self):
+   47:         '''Remove the first value and return it.'''
+   48:         if not (self.head):
+   49:             raise IndexError('Cannot pop from an empty list')
+-  50:         to_return = self.head
++  50:         pass
+   51:         self.head = self.head.next
+   52:         self._length -= 1
+   53:         return to_return.data
+   54:     
+--------------------------------------------------------------------------------
+[0.08924 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c6c1dae0>
+
+>   ???
+E   NameError: name 'to_return' is not defined
+
+stack4:53: NameError
+   - [#  75] SDL stack4: 
+--------------------------------------------------------------------------------
+   47:         '''Remove the first value and return it.'''
+   48:         if not (self.head):
+   49:             raise IndexError('Cannot pop from an empty list')
+   50:         to_return = self.head
+-  51:         self.head = self.head.next
++  51:         pass
+   52:         self._length -= 1
+   53:         return to_return.data
+   54:     
+   55:     def size(self):
+--------------------------------------------------------------------------------
+[0.08455 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.pop()
+        assert var_0 == -904
+>       assert linked_list_0.head is None
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:26: AssertionError
+   - [#  76] SDL stack4: 
+--------------------------------------------------------------------------------
+   49:             raise IndexError('Cannot pop from an empty list')
+   50:         to_return = self.head
+   51:         self.head = self.head.next
+   52:         self._length -= 1
+-  53:         return to_return.data
++  53:         pass
+   54:     
+   55:     def size(self):
+   56:         '''Return the length of the list.'''
+   57:         return self._length
+--------------------------------------------------------------------------------
+[0.08639 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.pop()
+>       assert var_0 == -904
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:25: AssertionError
+   - [#  77] SDL stack4: 
+--------------------------------------------------------------------------------
+   53:         return to_return.data
+   54:     
+   55:     def size(self):
+   56:         '''Return the length of the list.'''
+-  57:         return self._length
++  57:         pass
+   58:     
+   59:     def search(self, val):
+   60:         '''Return the node containing val.'''
+   61:         curr = self.head
+--------------------------------------------------------------------------------
+[0.09142 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.remove(linked_list_0)
+        var_1 = linked_list_0.size()
+>       assert var_1 == 0
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:62: AssertionError
+   - [#  78] SDL stack4: 
+--------------------------------------------------------------------------------
+   57:         return self._length
+   58:     
+   59:     def search(self, val):
+   60:         '''Return the node containing val.'''
+-  61:         curr = self.head
++  61:         pass
+   62:         while curr:
+   63:             if curr.data == val:
+   64:                 return curr
+   65:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.08895 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_0.head is None
+        bool_0 = False
+        var_0 = linked_list_0.push(bool_0)
+>       node_0 = linked_list_0.search(bool_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c67cf940>, val = False
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+stack4:62: UnboundLocalError
+   - [#  79] SDL stack4: 
+--------------------------------------------------------------------------------
+   60:         '''Return the node containing val.'''
+   61:         curr = self.head
+   62:         while curr:
+   63:             if curr.data == val:
+-  64:                 return curr
++  64:                 pass
+   65:             curr = curr.next
+   66:     
+   67:     def remove(self, val):
+   68:         '''Remove node from list if exists.'''
+--------------------------------------------------------------------------------
+[0.10492 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_0.head is None
+        bool_0 = False
+        var_0 = linked_list_0.push(bool_0)
+        node_0 = linked_list_0.search(bool_0)
+>       assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'stack4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:46: AssertionError
+   - [#  80] SDL stack4: 
+--------------------------------------------------------------------------------
+   61:         curr = self.head
+   62:         while curr:
+   63:             if curr.data == val:
+   64:                 return curr
+-  65:             curr = curr.next
++  65:             pass
+   66:     
+   67:     def remove(self, val):
+   68:         '''Remove node from list if exists.'''
+   69:         curr = self.head
+--------------------------------------------------------------------------------
+[5.00318 s] timeout
+   - [#  81] SDL stack4: 
+--------------------------------------------------------------------------------
+   65:             curr = curr.next
+   66:     
+   67:     def remove(self, val):
+   68:         '''Remove node from list if exists.'''
+-  69:         curr = self.head
++  69:         pass
+   70:         if (curr and val is self.head.data):
+   71:             self.head = self.head.next
+   72:             self._length -= 1
+   73:         while curr:
+--------------------------------------------------------------------------------
+[0.09796 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.pop()
+        assert var_0 == -904
+        assert linked_list_0.head is None
+        linked_list_1 = module_0.LinkedList()
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_1.head is None
+>       var_1 = linked_list_1.remove(linked_list_1)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c683d360>
+val = <stack4.LinkedList object at 0x7fa3c683d360>
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+stack4:70: UnboundLocalError
+   - [#  82] SDL stack4: 
+--------------------------------------------------------------------------------
+   67:     def remove(self, val):
+   68:         '''Remove node from list if exists.'''
+   69:         curr = self.head
+   70:         if (curr and val is self.head.data):
+-  71:             self.head = self.head.next
++  71:             pass
+   72:             self._length -= 1
+   73:         while curr:
+   74:             if (curr.next and curr.next.data == val):
+   75:                 curr.next = curr.next.next
+--------------------------------------------------------------------------------
+[0.09843 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14
+
+def test_case_14():
+        bool_0 = True
+        bool_1 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.search(bool_0)
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack4.Node'
+        assert var_0.data is True
+        assert var_0.next is None
+        var_1 = linked_list_0.remove(bool_1)
+>       assert linked_list_0.head is None
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:143: AssertionError
+   - [#  83] SDL stack4: 
+--------------------------------------------------------------------------------
+   71:             self.head = self.head.next
+   72:             self._length -= 1
+   73:         while curr:
+   74:             if (curr.next and curr.next.data == val):
+-  75:                 curr.next = curr.next.next
++  75:                 pass
+   76:                 self._length -= 1
+   77:             curr = curr.next
+   78:     
+   79:     def display(self):
+--------------------------------------------------------------------------------
+[0.10191 s] survived
+   - [#  84] SDL stack4: 
+--------------------------------------------------------------------------------
+   73:         while curr:
+   74:             if (curr.next and curr.next.data == val):
+   75:                 curr.next = curr.next.next
+   76:                 self._length -= 1
+-  77:             curr = curr.next
++  77:             pass
+   78:     
+   79:     def display(self):
+   80:         '''Display list as a tuple.'''
+   81:         curr = self.head
+--------------------------------------------------------------------------------
+[5.00669 s] timeout
+   - [#  85] SDL stack4: 
+--------------------------------------------------------------------------------
+   77:             curr = curr.next
+   78:     
+   79:     def display(self):
+   80:         '''Display list as a tuple.'''
+-  81:         curr = self.head
++  81:         pass
+   82:         display = '('
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.11428 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.display()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c6784910>
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+stack4:83: UnboundLocalError
+   - [#  86] SDL stack4: 
+--------------------------------------------------------------------------------
+   78:     
+   79:     def display(self):
+   80:         '''Display list as a tuple.'''
+   81:         curr = self.head
+-  82:         display = '('
++  82:         pass
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+   86:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.12077 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.display()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c67c8eb0>
+
+>   ???
+E   UnboundLocalError: local variable 'display' referenced before assignment
+
+stack4:84: UnboundLocalError
+   - [#  87] SDL stack4: 
+--------------------------------------------------------------------------------
+   81:         curr = self.head
+   82:         display = '('
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+-  85:             curr = curr.next
++  85:             pass
+   86:         return display[:-2] + ')'
+   87: 
+   88: 
+   89: class Stack(object):
+--------------------------------------------------------------------------------
+[5.00389 s] timeout
+   - [#  88] SDL stack4: 
+--------------------------------------------------------------------------------
+   82:         display = '('
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+-  86:         return display[:-2] + ')'
++  86:         pass
+   87: 
+   88: 
+   89: class Stack(object):
+   90:     '''Implementation of Stack.
+--------------------------------------------------------------------------------
+[0.16514 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(True)'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:70: AssertionError
+   - [#  89] SDL stack4: 
+--------------------------------------------------------------------------------
+   99:     '''
+  100:     
+  101:     def __init__(self, data=None):
+  102:         '''Initialization.'''
+- 103:         self._stack = LinkedList(data)
++ 103:         pass
+  104:     
+  105:     def push(self, val):
+  106:         '''Add val to the stack.'''
+  107:         self._stack.push(val)
+--------------------------------------------------------------------------------
+[0.18610 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        str_0 = '/A\n'
+        stack_0 = module_0.Stack(str_0)
+>       var_0 = stack_0.push(bool_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.Stack object at 0x7fa3c67c0c10>, val = False
+
+>   ???
+E   AttributeError: 'Stack' object has no attribute '_stack'
+
+stack4:107: AttributeError
+   - [#  90] SDL stack4: 
+--------------------------------------------------------------------------------
+  103:         self._stack = LinkedList(data)
+  104:     
+  105:     def push(self, val):
+  106:         '''Add val to the stack.'''
+- 107:         self._stack.push(val)
++ 107:         pass
+  108:     
+  109:     def pop(self):
+  110:         '''Remove item off the stack.'''
+  111:         self._stack.pop()
+--------------------------------------------------------------------------------
+[0.15752 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_MIO.py::test_case_4
+
+def test_case_4():
+        stack_0 = module_0.Stack()
+        assert f'{type(stack_0).__module__}.{type(stack_0).__qualname__}' == 'stack4.Stack'
+        var_0 = stack_0.push(stack_0)
+>       var_1 = stack_0.pop()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_MIO.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack4:111: in pop
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c67c89d0>
+
+>   ???
+E   IndexError: Cannot pop from an empty list
+
+stack4:49: IndexError
+   - [#  91] SDL stack4: 
+--------------------------------------------------------------------------------
+  107:         self._stack.push(val)
+  108:     
+  109:     def pop(self):
+  110:         '''Remove item off the stack.'''
+- 111:         self._stack.pop()
++ 111:         pass
+--------------------------------------------------------------------------------
+[0.17015 s] survived
+   - [#  92] SIR stack4: 
+--------------------------------------------------------------------------------
+   82:         display = '('
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+-  86:         return display[:-2] + ')'
++  86:         return display[:] + ')'
+   87: 
+   88: 
+   89: class Stack(object):
+   90:     '''Implementation of Stack.
+--------------------------------------------------------------------------------
+[0.14338 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(True)'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:70: AssertionError
+   - [#  93] SVD stack4: 
+--------------------------------------------------------------------------------
+    7:     '''
+    8:     
+    9:     def __init__(self, data, next_node=None):
+   10:         '''Attribute data and next_node.'''
+-  11:         self.data = data
++  11:         data = data
+   12:         self.next = next_node
+   13: 
+   14: 
+   15: class LinkedList(object):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  94] SVD stack4: 
+--------------------------------------------------------------------------------
+    8:     
+    9:     def __init__(self, data, next_node=None):
+   10:         '''Attribute data and next_node.'''
+   11:         self.data = data
+-  12:         self.next = next_node
++  12:         next = next_node
+   13: 
+   14: 
+   15: class LinkedList(object):
+   16:     '''Method for linked list.
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  95] SVD stack4: 
+--------------------------------------------------------------------------------
+   27:     '''
+   28:     
+   29:     def __init__(self, data=None):
+   30:         '''Linked list initialized with head.'''
+-  31:         self._length = 0
++  31:         _length = 0
+   32:         self.head = None
+   33:         try:
+   34:             for val in data:
+   35:                 self.push(val)
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  96] SVD stack4: 
+--------------------------------------------------------------------------------
+   28:     
+   29:     def __init__(self, data=None):
+   30:         '''Linked list initialized with head.'''
+   31:         self._length = 0
+-  32:         self.head = None
++  32:         head = None
+   33:         try:
+   34:             for val in data:
+   35:                 self.push(val)
+   36:         except TypeError:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  97] SVD stack4: 
+--------------------------------------------------------------------------------
+   31:         self._length = 0
+   32:         self.head = None
+   33:         try:
+   34:             for val in data:
+-  35:                 self.push(val)
++  35:                 push(val)
+   36:         except TypeError:
+   37:             if data:
+   38:                 self.push(data)
+   39:     
+--------------------------------------------------------------------------------
+[0.13637 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        str_0 = '/A\n'
+>       stack_0 = module_0.Stack(str_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack4:103: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c6850190>, data = '/A\n'
+
+>   ???
+E   NameError: name 'push' is not defined
+
+stack4:35: NameError
+   - [#  98] SVD stack4: 
+--------------------------------------------------------------------------------
+   34:             for val in data:
+   35:                 self.push(val)
+   36:         except TypeError:
+   37:             if data:
+-  38:                 self.push(data)
++  38:                 push(data)
+   39:     
+   40:     def push(self, val):
+   41:         '''Insert a value at the head of the list.'''
+   42:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.09468 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+self = <stack4.LinkedList object at 0x7fa3c67c1ea0>, data = True
+
+>   ???
+E   TypeError: 'bool' object is not iterable
+
+stack4:34: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    def test_case_6():
+        bool_0 = True
+>       linked_list_0 = module_0.LinkedList(bool_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c67c1ea0>, data = True
+
+>   ???
+E   NameError: name 'push' is not defined
+
+stack4:38: NameError
+   - [#  99] SVD stack4: 
+--------------------------------------------------------------------------------
+   38:                 self.push(data)
+   39:     
+   40:     def push(self, val):
+   41:         '''Insert a value at the head of the list.'''
+-  42:         old_head = self.head
++  42:         old_head = head
+   43:         self.head = Node(val, old_head)
+   44:         self._length += 1
+   45:     
+   46:     def pop(self):
+--------------------------------------------------------------------------------
+[0.09587 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        str_0 = '/A\n'
+>       stack_0 = module_0.Stack(str_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack4:103: in __init__
+    ???
+stack4:35: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c67c0cd0>, val = '/'
+
+>   ???
+E   NameError: name 'head' is not defined
+
+stack4:42: NameError
+   - [# 100] SVD stack4: 
+--------------------------------------------------------------------------------
+   39:     
+   40:     def push(self, val):
+   41:         '''Insert a value at the head of the list.'''
+   42:         old_head = self.head
+-  43:         self.head = Node(val, old_head)
++  43:         head = Node(val, old_head)
+   44:         self._length += 1
+   45:     
+   46:     def pop(self):
+   47:         '''Remove the first value and return it.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 101] SVD stack4: 
+--------------------------------------------------------------------------------
+   40:     def push(self, val):
+   41:         '''Insert a value at the head of the list.'''
+   42:         old_head = self.head
+   43:         self.head = Node(val, old_head)
+-  44:         self._length += 1
++  44:         _length += 1
+   45:     
+   46:     def pop(self):
+   47:         '''Remove the first value and return it.'''
+   48:         if not (self.head):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 102] SVD stack4: 
+--------------------------------------------------------------------------------
+   44:         self._length += 1
+   45:     
+   46:     def pop(self):
+   47:         '''Remove the first value and return it.'''
+-  48:         if not (self.head):
++  48:         if not head:
+   49:             raise IndexError('Cannot pop from an empty list')
+   50:         to_return = self.head
+   51:         self.head = self.head.next
+   52:         self._length -= 1
+--------------------------------------------------------------------------------
+[0.09872 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c6c3b250>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+stack4:48: NameError
+   - [# 103] SVD stack4: 
+--------------------------------------------------------------------------------
+   46:     def pop(self):
+   47:         '''Remove the first value and return it.'''
+   48:         if not (self.head):
+   49:             raise IndexError('Cannot pop from an empty list')
+-  50:         to_return = self.head
++  50:         to_return = head
+   51:         self.head = self.head.next
+   52:         self._length -= 1
+   53:         return to_return.data
+   54:     
+--------------------------------------------------------------------------------
+[0.11798 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c68f8bb0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+stack4:50: NameError
+   - [# 104] SVD stack4: 
+--------------------------------------------------------------------------------
+   47:         '''Remove the first value and return it.'''
+   48:         if not (self.head):
+   49:             raise IndexError('Cannot pop from an empty list')
+   50:         to_return = self.head
+-  51:         self.head = self.head.next
++  51:         head = self.head.next
+   52:         self._length -= 1
+   53:         return to_return.data
+   54:     
+   55:     def size(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 105] SVD stack4: 
+--------------------------------------------------------------------------------
+   47:         '''Remove the first value and return it.'''
+   48:         if not (self.head):
+   49:             raise IndexError('Cannot pop from an empty list')
+   50:         to_return = self.head
+-  51:         self.head = self.head.next
++  51:         self.head = head.next
+   52:         self._length -= 1
+   53:         return to_return.data
+   54:     
+   55:     def size(self):
+--------------------------------------------------------------------------------
+[0.09445 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c685d7b0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+stack4:51: NameError
+   - [# 106] SVD stack4: 
+--------------------------------------------------------------------------------
+   48:         if not (self.head):
+   49:             raise IndexError('Cannot pop from an empty list')
+   50:         to_return = self.head
+   51:         self.head = self.head.next
+-  52:         self._length -= 1
++  52:         _length -= 1
+   53:         return to_return.data
+   54:     
+   55:     def size(self):
+   56:         '''Return the length of the list.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 107] SVD stack4: 
+--------------------------------------------------------------------------------
+   53:         return to_return.data
+   54:     
+   55:     def size(self):
+   56:         '''Return the length of the list.'''
+-  57:         return self._length
++  57:         return _length
+   58:     
+   59:     def search(self, val):
+   60:         '''Return the node containing val.'''
+   61:         curr = self.head
+--------------------------------------------------------------------------------
+[0.12901 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.remove(linked_list_0)
+>       var_1 = linked_list_0.size()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c6870c10>
+
+>   ???
+E   NameError: name '_length' is not defined
+
+stack4:57: NameError
+   - [# 108] SVD stack4: 
+--------------------------------------------------------------------------------
+   57:         return self._length
+   58:     
+   59:     def search(self, val):
+   60:         '''Return the node containing val.'''
+-  61:         curr = self.head
++  61:         curr = head
+   62:         while curr:
+   63:             if curr.data == val:
+   64:                 return curr
+   65:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.09611 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_0.head is None
+        bool_0 = False
+        var_0 = linked_list_0.push(bool_0)
+>       node_0 = linked_list_0.search(bool_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c6850e20>, val = False
+
+>   ???
+E   NameError: name 'head' is not defined
+
+stack4:61: NameError
+   - [# 109] SVD stack4: 
+--------------------------------------------------------------------------------
+   65:             curr = curr.next
+   66:     
+   67:     def remove(self, val):
+   68:         '''Remove node from list if exists.'''
+-  69:         curr = self.head
++  69:         curr = head
+   70:         if (curr and val is self.head.data):
+   71:             self.head = self.head.next
+   72:             self._length -= 1
+   73:         while curr:
+--------------------------------------------------------------------------------
+[0.09865 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.pop()
+        assert var_0 == -904
+        assert linked_list_0.head is None
+        linked_list_1 = module_0.LinkedList()
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_1.head is None
+>       var_1 = linked_list_1.remove(linked_list_1)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c67cbcd0>
+val = <stack4.LinkedList object at 0x7fa3c67cbcd0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+stack4:69: NameError
+   - [# 110] SVD stack4: 
+--------------------------------------------------------------------------------
+   66:     
+   67:     def remove(self, val):
+   68:         '''Remove node from list if exists.'''
+   69:         curr = self.head
+-  70:         if (curr and val is self.head.data):
++  70:         if (curr and val is head.data):
+   71:             self.head = self.head.next
+   72:             self._length -= 1
+   73:         while curr:
+   74:             if (curr.next and curr.next.data == val):
+--------------------------------------------------------------------------------
+[0.17511 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        list_0 = []
+        stack_0 = module_0.Stack()
+        assert f'{type(stack_0).__module__}.{type(stack_0).__qualname__}' == 'stack4.Stack'
+        linked_list_0 = module_0.LinkedList(stack_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.remove(list_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:95: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c6bdb5e0>, val = []
+
+>   ???
+E   NameError: name 'head' is not defined
+
+stack4:70: NameError
+   - [# 111] SVD stack4: 
+--------------------------------------------------------------------------------
+   67:     def remove(self, val):
+   68:         '''Remove node from list if exists.'''
+   69:         curr = self.head
+   70:         if (curr and val is self.head.data):
+-  71:             self.head = self.head.next
++  71:             head = self.head.next
+   72:             self._length -= 1
+   73:         while curr:
+   74:             if (curr.next and curr.next.data == val):
+   75:                 curr.next = curr.next.next
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 112] SVD stack4: 
+--------------------------------------------------------------------------------
+   67:     def remove(self, val):
+   68:         '''Remove node from list if exists.'''
+   69:         curr = self.head
+   70:         if (curr and val is self.head.data):
+-  71:             self.head = self.head.next
++  71:             self.head = head.next
+   72:             self._length -= 1
+   73:         while curr:
+   74:             if (curr.next and curr.next.data == val):
+   75:                 curr.next = curr.next.next
+--------------------------------------------------------------------------------
+[0.09999 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_14
+
+def test_case_14():
+        bool_0 = True
+        bool_1 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.search(bool_0)
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'stack4.Node'
+        assert var_0.data is True
+        assert var_0.next is None
+>       var_1 = linked_list_0.remove(bool_1)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:142: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c6c36140>, val = True
+
+>   ???
+E   NameError: name 'head' is not defined
+
+stack4:71: NameError
+   - [# 113] SVD stack4: 
+--------------------------------------------------------------------------------
+   68:         '''Remove node from list if exists.'''
+   69:         curr = self.head
+   70:         if (curr and val is self.head.data):
+   71:             self.head = self.head.next
+-  72:             self._length -= 1
++  72:             _length -= 1
+   73:         while curr:
+   74:             if (curr.next and curr.next.data == val):
+   75:                 curr.next = curr.next.next
+   76:                 self._length -= 1
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 114] SVD stack4: 
+--------------------------------------------------------------------------------
+   72:             self._length -= 1
+   73:         while curr:
+   74:             if (curr.next and curr.next.data == val):
+   75:                 curr.next = curr.next.next
+-  76:                 self._length -= 1
++  76:                 _length -= 1
+   77:             curr = curr.next
+   78:     
+   79:     def display(self):
+   80:         '''Display list as a tuple.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 115] SVD stack4: 
+--------------------------------------------------------------------------------
+   77:             curr = curr.next
+   78:     
+   79:     def display(self):
+   80:         '''Display list as a tuple.'''
+-  81:         curr = self.head
++  81:         curr = head
+   82:         display = '('
+   83:         while curr:
+   84:             display += str(curr.data) + ', '
+   85:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.18405 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+>       var_0 = linked_list_0.display()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.LinkedList object at 0x7fa3c6851660>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+stack4:81: NameError
+   - [# 116] SVD stack4: 
+--------------------------------------------------------------------------------
+   99:     '''
+  100:     
+  101:     def __init__(self, data=None):
+  102:         '''Initialization.'''
+- 103:         self._stack = LinkedList(data)
++ 103:         _stack = LinkedList(data)
+  104:     
+  105:     def push(self, val):
+  106:         '''Add val to the stack.'''
+  107:         self._stack.push(val)
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 117] SVD stack4: 
+--------------------------------------------------------------------------------
+  103:         self._stack = LinkedList(data)
+  104:     
+  105:     def push(self, val):
+  106:         '''Add val to the stack.'''
+- 107:         self._stack.push(val)
++ 107:         _stack.push(val)
+  108:     
+  109:     def pop(self):
+  110:         '''Remove item off the stack.'''
+  111:         self._stack.pop()
+--------------------------------------------------------------------------------
+[0.22341 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        str_0 = '/A\n'
+        stack_0 = module_0.Stack(str_0)
+>       var_0 = stack_0.push(bool_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.Stack object at 0x7fa3c69fcf70>, val = False
+
+>   ???
+E   NameError: name '_stack' is not defined
+
+stack4:107: NameError
+   - [# 118] SVD stack4: 
+--------------------------------------------------------------------------------
+  107:         self._stack.push(val)
+  108:     
+  109:     def pop(self):
+  110:         '''Remove item off the stack.'''
+- 111:         self._stack.pop()
++ 111:         _stack.pop()
+--------------------------------------------------------------------------------
+[0.22471 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_MIO.py::test_case_4
+
+def test_case_4():
+        stack_0 = module_0.Stack()
+        assert f'{type(stack_0).__module__}.{type(stack_0).__qualname__}' == 'stack4.Stack'
+        var_0 = stack_0.push(stack_0)
+>       var_1 = stack_0.pop()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_MIO.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack4.Stack object at 0x7fa3c6891030>
+
+>   ???
+E   NameError: name '_stack' is not defined
+
+stack4:111: NameError
+   - [# 119] ZIL stack4: 
+--------------------------------------------------------------------------------
+   31:         self._length = 0
+   32:         self.head = None
+   33:         try:
+   34:             for val in data:
+-  35:                 self.push(val)
++  35:                 break
+   36:         except TypeError:
+   37:             if data:
+   38:                 self.push(data)
+   39:     
+--------------------------------------------------------------------------------
+[0.19182 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        int_0 = -904
+        set_0 = {int_0, int_0, int_0, int_0}
+        linked_list_0 = module_0.LinkedList(set_0)
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:23: AssertionError
+   - [# 120] ZIL stack4: 
+--------------------------------------------------------------------------------
+   59:     def search(self, val):
+   60:         '''Return the node containing val.'''
+   61:         curr = self.head
+   62:         while curr:
+-  63:             if curr.data == val:
+-  64:                 return curr
+-  65:             curr = curr.next
++  63:             break
++  64:     
++  65:     
+   66:     
+   67:     def remove(self, val):
+   68:         '''Remove node from list if exists.'''
+   69:         curr = self.head
+--------------------------------------------------------------------------------
+[0.13902 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert linked_list_0.head is None
+        bool_0 = False
+        var_0 = linked_list_0.push(bool_0)
+        node_0 = linked_list_0.search(bool_0)
+>       assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'stack4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:46: AssertionError
+   - [# 121] ZIL stack4: 
+--------------------------------------------------------------------------------
+   70:         if (curr and val is self.head.data):
+   71:             self.head = self.head.next
+   72:             self._length -= 1
+   73:         while curr:
+-  74:             if (curr.next and curr.next.data == val):
+-  75:                 curr.next = curr.next.next
+-  76:                 self._length -= 1
+-  77:             curr = curr.next
++  74:             break
++  75:     
++  76:     
++  77:     
+   78:     
+   79:     def display(self):
+   80:         '''Display list as a tuple.'''
+   81:         curr = self.head
+--------------------------------------------------------------------------------
+[0.16013 s] survived
+   - [# 122] ZIL stack4: 
+--------------------------------------------------------------------------------
+   80:         '''Display list as a tuple.'''
+   81:         curr = self.head
+   82:         display = '('
+   83:         while curr:
+-  84:             display += str(curr.data) + ', '
+-  85:             curr = curr.next
++  84:             break
++  85:         
+   86:         return display[:-2] + ')'
+   87: 
+   88: 
+   89: class Stack(object):
+--------------------------------------------------------------------------------
+[0.11071 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'stack4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'stack4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(True)'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack4_DYNAMOSA.py:70: AssertionError
+[*] Mutation score [39.55816 s]: 84.5%
+   - all: 122
+   - killed: 78 (63.9%)
+   - survived: 15 (12.3%)
+   - incompetent: 25 (20.5%)
+   - timeout: 4 (3.3%)

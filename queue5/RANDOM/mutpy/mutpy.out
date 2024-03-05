@@ -1,0 +1,1503 @@
+[*] Start mutation process:
+   - targets: queue5.py
+   - tests: ./RANDOM
+[*] 1870 tests passed:
+   - test_queue5_RANDOM [2.30125 s]
+[*] Start mutants generation and execution:
+   - [#   1] CDI queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data):
+-  4:         self.data = data
+-  5:         self.next = None
+-  6: 
++  3:     @classmethod
++  4:     def __init__(self, data):
++  5:         self.data = data
++  6:         self.next = None
+   7: 
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+--------------------------------------------------------------------------------
+[3.39332 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_91
+
+def test_case_91():
+        str_0 = 'T;\x0c2OWbraI?GJNJ`c3gh'
+        node_0 = module_0.Node(str_0)
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_1 = module_0.Node(list_0)
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        queue_2 = module_0.Queue()
+        str_1 = '~%25QZ3{'
+        queue_3 = module_0.Queue()
+        var_1 = queue_3.enqueue(str_1)
+        none_type_1 = None
+        node_2 = module_0.Node(none_type_1)
+        queue_4 = module_0.Queue()
+        var_2 = queue_4.enqueue(node_2)
+        none_type_2 = None
+        queue_5 = module_0.Queue()
+        var_3 = queue_5.enqueue(none_type_2)
+        queue_6 = module_0.Queue()
+        queue_7 = module_0.Queue()
+        var_4 = queue_4.dequeue()
+        assert queue_4.head is None
+        assert queue_4.tail is None
+>       assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'queue5.Node'
+E       AssertionError
+
+RANDOM/test_queue5_RANDOM.py:2652: AssertionError
+   - [#   2] CDI queue5: 
+--------------------------------------------------------------------------------
+   6: 
+   7: 
+   8: class Queue(object):
+   9:     
+- 10:     def __init__(self):
+- 11:         self.head = None
+- 12:         self.tail = None
+- 13:     
++ 10:     @classmethod
++ 11:     def __init__(self):
++ 12:         self.head = None
++ 13:         self.tail = None
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+--------------------------------------------------------------------------------
+[2.27183 s] survived
+   - [#   3] CDI queue5: 
+--------------------------------------------------------------------------------
+  10:     def __init__(self):
+  11:         self.head = None
+  12:         self.tail = None
+  13:     
+- 14:     def enqueue(self, data):
+- 15:         node = Node(data)
+- 16:         
+- 17:         if (self.head is None and self.tail is None):
+- 18:             self.head = node
+- 19:             self.tail = node
+- 20:         else:
+- 21:             self.tail.next = node
+- 22:             self.tail = node
+- 23:     
++ 14:     @classmethod
++ 15:     def enqueue(self, data):
++ 16:         node = Node(data)
++ 17:         
++ 18:         if (self.head is None and self.tail is None):
++ 19:             self.head = node
++ 20:             self.tail = node
++ 21:         else:
++ 22:             self.tail.next = node
++ 23:             self.tail = node
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+--------------------------------------------------------------------------------
+[3.31893 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(none_type_0)
+
+RANDOM/test_queue5_RANDOM.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'queue5.Queue'>, data = None
+
+>   ???
+E   AttributeError: type object 'Queue' has no attribute 'head'
+
+queue5:18: AttributeError
+   - [#   4] CDI queue5: 
+--------------------------------------------------------------------------------
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+  23:     
+- 24:     def dequeue(self):
+- 25:         
+- 26:         if (self.head is None and self.tail is None):
+- 27:             return None
+- 28:         data = self.head.data
+- 29:         
+- 30:         if self.head == self.tail:
+- 31:             self.head = None
+- 32:             self.tail = None
+- 33:         else:
+- 34:             self.head = self.head.next
+- 35:         return data
++ 24:     @classmethod
++ 25:     def dequeue(self):
++ 26:         
++ 27:         if (self.head is None and self.tail is None):
++ 28:             return None
++ 29:         data = self.head.data
++ 30:         
++ 31:         if self.head == self.tail:
++ 32:             self.head = None
++ 33:             self.tail = None
++ 34:         else:
++ 35:             self.head = self.head.next
++ 36:         return data
+--------------------------------------------------------------------------------
+[3.32255 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_4
+
+def test_case_4():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_1 = module_0.Node(list_0)
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.dequeue()
+
+RANDOM/test_queue5_RANDOM.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'queue5.Queue'>
+
+>   ???
+E   AttributeError: type object 'Queue' has no attribute 'head'
+
+queue5:27: AttributeError
+   - [#   5] COI queue5: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+- 17:         if (self.head is None and self.tail is None):
++ 17:         if not ((self.head is None and self.tail is None)):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+--------------------------------------------------------------------------------
+[3.29878 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(none_type_0)
+
+RANDOM/test_queue5_RANDOM.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3dfe31c0>, data = None
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5:21: AttributeError
+   - [#   6] COI queue5: 
+--------------------------------------------------------------------------------
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+- 26:         if (self.head is None and self.tail is None):
++ 26:         if not ((self.head is None and self.tail is None)):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+--------------------------------------------------------------------------------
+[3.31415 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_4
+
+def test_case_4():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_1 = module_0.Node(list_0)
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.dequeue()
+
+RANDOM/test_queue5_RANDOM.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3e087eb0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5:28: AttributeError
+   - [#   7] COI queue5: 
+--------------------------------------------------------------------------------
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+- 30:         if self.head == self.tail:
++ 30:         if not (self.head == self.tail):
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[3.27759 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_22
+
+def test_case_22():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        none_type_1 = None
+        queue_2 = module_0.Queue()
+        var_1 = queue_2.enqueue(none_type_1)
+        queue_3 = module_0.Queue()
+        queue_4 = module_0.Queue()
+        none_type_2 = None
+        queue_5 = module_0.Queue()
+        var_2 = queue_5.enqueue(none_type_2)
+        var_3 = queue_3.dequeue()
+        none_type_3 = None
+        queue_6 = module_0.Queue()
+        var_4 = queue_6.enqueue(none_type_3)
+        queue_7 = module_0.Queue()
+        queue_8 = module_0.Queue()
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_0 = module_0.Node(list_0)
+        var_5 = queue_0.dequeue()
+>       assert queue_0.tail is None
+E       AssertionError
+
+RANDOM/test_queue5_RANDOM.py:439: AssertionError
+   - [#   8] LCR queue5: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+- 17:         if (self.head is None and self.tail is None):
++ 17:         if (self.head is None or self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+--------------------------------------------------------------------------------
+[2.29553 s] survived
+   - [#   9] LCR queue5: 
+--------------------------------------------------------------------------------
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+- 26:         if (self.head is None and self.tail is None):
++ 26:         if (self.head is None or self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+--------------------------------------------------------------------------------
+[2.29004 s] survived
+   - [#  10] ROR queue5: 
+--------------------------------------------------------------------------------
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+- 30:         if self.head == self.tail:
++ 30:         if self.head != self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[3.36537 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_22
+
+def test_case_22():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        none_type_1 = None
+        queue_2 = module_0.Queue()
+        var_1 = queue_2.enqueue(none_type_1)
+        queue_3 = module_0.Queue()
+        queue_4 = module_0.Queue()
+        none_type_2 = None
+        queue_5 = module_0.Queue()
+        var_2 = queue_5.enqueue(none_type_2)
+        var_3 = queue_3.dequeue()
+        none_type_3 = None
+        queue_6 = module_0.Queue()
+        var_4 = queue_6.enqueue(none_type_3)
+        queue_7 = module_0.Queue()
+        queue_8 = module_0.Queue()
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_0 = module_0.Node(list_0)
+        var_5 = queue_0.dequeue()
+>       assert queue_0.tail is None
+E       AssertionError
+
+RANDOM/test_queue5_RANDOM.py:439: AssertionError
+   - [#  11] SDI queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data):
+-  4:         self.data = data
+-  5:         self.next = None
+-  6: 
++  3:     @staticmethod
++  4:     def __init__(self, data):
++  5:         self.data = data
++  6:         self.next = None
+   7: 
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+--------------------------------------------------------------------------------
+[3.39404 s] incompetent
+
+TypeError: queue5:15: TypeError: Node.__init__() missing 1 required positional argument: 'data'
+
+   - [#  12] SDI queue5: 
+--------------------------------------------------------------------------------
+   6: 
+   7: 
+   8: class Queue(object):
+   9:     
+- 10:     def __init__(self):
+- 11:         self.head = None
+- 12:         self.tail = None
+- 13:     
++ 10:     @staticmethod
++ 11:     def __init__(self):
++ 12:         self.head = None
++ 13:         self.tail = None
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+--------------------------------------------------------------------------------
+[3.38475 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue5/RANDOM/test_queue5_RANDOM.py:8: TypeError: Queue.__init__() missing 1 required positional argument: 'self'
+
+   - [#  13] SDI queue5: 
+--------------------------------------------------------------------------------
+  10:     def __init__(self):
+  11:         self.head = None
+  12:         self.tail = None
+  13:     
+- 14:     def enqueue(self, data):
+- 15:         node = Node(data)
+- 16:         
+- 17:         if (self.head is None and self.tail is None):
+- 18:             self.head = node
+- 19:             self.tail = node
+- 20:         else:
+- 21:             self.tail.next = node
+- 22:             self.tail = node
+- 23:     
++ 14:     @staticmethod
++ 15:     def enqueue(self, data):
++ 16:         node = Node(data)
++ 17:         
++ 18:         if (self.head is None and self.tail is None):
++ 19:             self.head = node
++ 20:             self.tail = node
++ 21:         else:
++ 22:             self.tail.next = node
++ 23:             self.tail = node
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+--------------------------------------------------------------------------------
+[3.32826 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue5/RANDOM/test_queue5_RANDOM.py:9: TypeError: Queue.enqueue() missing 1 required positional argument: 'data'
+
+   - [#  14] SDI queue5: 
+--------------------------------------------------------------------------------
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+  23:     
+- 24:     def dequeue(self):
+- 25:         
+- 26:         if (self.head is None and self.tail is None):
+- 27:             return None
+- 28:         data = self.head.data
+- 29:         
+- 30:         if self.head == self.tail:
+- 31:             self.head = None
+- 32:             self.tail = None
+- 33:         else:
+- 34:             self.head = self.head.next
+- 35:         return data
++ 24:     @staticmethod
++ 25:     def dequeue(self):
++ 26:         
++ 27:         if (self.head is None and self.tail is None):
++ 28:             return None
++ 29:         data = self.head.data
++ 30:         
++ 31:         if self.head == self.tail:
++ 32:             self.head = None
++ 33:             self.tail = None
++ 34:         else:
++ 35:             self.head = self.head.next
++ 36:         return data
+--------------------------------------------------------------------------------
+[3.36634 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue5/RANDOM/test_queue5_RANDOM.py:42: TypeError: Queue.dequeue() missing 1 required positional argument: 'self'
+
+   - [#  15] SDL queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+-  4:         self.data = data
++  4:         pass
+   5:         self.next = None
+   6: 
+   7: 
+   8: class Queue(object):
+--------------------------------------------------------------------------------
+[3.39268 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_22
+
+def test_case_22():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        none_type_1 = None
+        queue_2 = module_0.Queue()
+        var_1 = queue_2.enqueue(none_type_1)
+        queue_3 = module_0.Queue()
+        queue_4 = module_0.Queue()
+        none_type_2 = None
+        queue_5 = module_0.Queue()
+        var_2 = queue_5.enqueue(none_type_2)
+        var_3 = queue_3.dequeue()
+        none_type_3 = None
+        queue_6 = module_0.Queue()
+        var_4 = queue_6.enqueue(none_type_3)
+        queue_7 = module_0.Queue()
+        queue_8 = module_0.Queue()
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_0 = module_0.Node(list_0)
+>       var_5 = queue_0.dequeue()
+
+RANDOM/test_queue5_RANDOM.py:438: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3e026230>
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'data'
+
+queue5:28: AttributeError
+   - [#  16] SDL queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+-  5:         self.next = None
++  5:         pass
+   6: 
+   7: 
+   8: class Queue(object):
+   9:     
+--------------------------------------------------------------------------------
+[3.49580 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_91
+
+def test_case_91():
+        str_0 = 'T;\x0c2OWbraI?GJNJ`c3gh'
+        node_0 = module_0.Node(str_0)
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_1 = module_0.Node(list_0)
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        queue_2 = module_0.Queue()
+        str_1 = '~%25QZ3{'
+        queue_3 = module_0.Queue()
+        var_1 = queue_3.enqueue(str_1)
+        none_type_1 = None
+        node_2 = module_0.Node(none_type_1)
+        queue_4 = module_0.Queue()
+        var_2 = queue_4.enqueue(node_2)
+        none_type_2 = None
+        queue_5 = module_0.Queue()
+        var_3 = queue_5.enqueue(none_type_2)
+        queue_6 = module_0.Queue()
+        queue_7 = module_0.Queue()
+        var_4 = queue_4.dequeue()
+        assert queue_4.head is None
+        assert queue_4.tail is None
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'queue5.Node'
+        assert var_4.data is None
+>       assert var_4.next is None
+E       AttributeError: 'Node' object has no attribute 'next'
+
+RANDOM/test_queue5_RANDOM.py:2654: AttributeError
+   - [#  17] SDL queue5: 
+--------------------------------------------------------------------------------
+   7: 
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+- 11:         self.head = None
++ 11:         pass
+  12:         self.tail = None
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+--------------------------------------------------------------------------------
+[3.38367 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(none_type_0)
+
+RANDOM/test_queue5_RANDOM.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3cd0aa10>, data = None
+
+>   ???
+E   AttributeError: 'Queue' object has no attribute 'head'
+
+queue5:17: AttributeError
+   - [#  18] SDL queue5: 
+--------------------------------------------------------------------------------
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+  11:         self.head = None
+- 12:         self.tail = None
++ 12:         pass
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+--------------------------------------------------------------------------------
+[3.34791 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(none_type_0)
+
+RANDOM/test_queue5_RANDOM.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3e065570>, data = None
+
+>   ???
+E   AttributeError: 'Queue' object has no attribute 'tail'
+
+queue5:17: AttributeError
+   - [#  19] SDL queue5: 
+--------------------------------------------------------------------------------
+  11:         self.head = None
+  12:         self.tail = None
+  13:     
+  14:     def enqueue(self, data):
+- 15:         node = Node(data)
++ 15:         pass
+  16:         
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+--------------------------------------------------------------------------------
+[3.39344 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(none_type_0)
+
+RANDOM/test_queue5_RANDOM.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3cdc6050>, data = None
+
+>   ???
+E   NameError: name 'node' is not defined
+
+queue5:18: NameError
+   - [#  20] SDL queue5: 
+--------------------------------------------------------------------------------
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+- 18:             self.head = node
++ 18:             pass
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+--------------------------------------------------------------------------------
+[3.40274 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+>       assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+E       AssertionError
+
+RANDOM/test_queue5_RANDOM.py:10: AssertionError
+   - [#  21] SDL queue5: 
+--------------------------------------------------------------------------------
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+- 19:             self.tail = node
++ 19:             pass
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+  23:     
+--------------------------------------------------------------------------------
+[3.36292 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+>       assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+E       AssertionError
+
+RANDOM/test_queue5_RANDOM.py:11: AssertionError
+   - [#  22] SDL queue5: 
+--------------------------------------------------------------------------------
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+- 21:             self.tail.next = node
++ 21:             pass
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+--------------------------------------------------------------------------------
+[2.31600 s] survived
+   - [#  23] SDL queue5: 
+--------------------------------------------------------------------------------
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+- 22:             self.tail = node
++ 22:             pass
+  23:     
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+--------------------------------------------------------------------------------
+[2.33444 s] survived
+   - [#  24] SDL queue5: 
+--------------------------------------------------------------------------------
+  23:     
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+- 27:             return None
++ 27:             pass
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+--------------------------------------------------------------------------------
+[3.33040 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_4
+
+def test_case_4():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_1 = module_0.Node(list_0)
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.dequeue()
+
+RANDOM/test_queue5_RANDOM.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3dd53ee0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5:28: AttributeError
+   - [#  25] SDL queue5: 
+--------------------------------------------------------------------------------
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+- 28:         data = self.head.data
++ 28:         pass
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+--------------------------------------------------------------------------------
+[3.33384 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_22
+
+def test_case_22():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        none_type_1 = None
+        queue_2 = module_0.Queue()
+        var_1 = queue_2.enqueue(none_type_1)
+        queue_3 = module_0.Queue()
+        queue_4 = module_0.Queue()
+        none_type_2 = None
+        queue_5 = module_0.Queue()
+        var_2 = queue_5.enqueue(none_type_2)
+        var_3 = queue_3.dequeue()
+        none_type_3 = None
+        queue_6 = module_0.Queue()
+        var_4 = queue_6.enqueue(none_type_3)
+        queue_7 = module_0.Queue()
+        queue_8 = module_0.Queue()
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_0 = module_0.Node(list_0)
+>       var_5 = queue_0.dequeue()
+
+RANDOM/test_queue5_RANDOM.py:438: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3dd50400>
+
+>   ???
+E   NameError: name 'data' is not defined
+
+queue5:35: NameError
+   - [#  26] SDL queue5: 
+--------------------------------------------------------------------------------
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+- 31:             self.head = None
++ 31:             pass
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[3.39527 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_74
+
+def test_case_74():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_0 = module_0.Node(list_0)
+        queue_0 = module_0.Queue()
+        str_0 = 'T|,^lMO1B//A{E;vjo'
+        node_1 = module_0.Node(str_0)
+        none_type_0 = None
+        node_2 = module_0.Node(none_type_0)
+        queue_1 = module_0.Queue()
+        var_0 = queue_1.enqueue(node_2)
+        assert f'{type(queue_1.head).__module__}.{type(queue_1.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_1.tail).__module__}.{type(queue_1.tail).__qualname__}' == 'queue5.Node'
+        queue_2 = module_0.Queue()
+        none_type_1 = None
+        queue_3 = module_0.Queue()
+        var_1 = queue_3.enqueue(none_type_1)
+        queue_4 = module_0.Queue()
+        queue_5 = module_0.Queue()
+        none_type_2 = None
+        node_3 = module_0.Node(none_type_2)
+        var_2 = queue_3.dequeue()
+>       assert queue_3.head is None
+E       AssertionError
+
+RANDOM/test_queue5_RANDOM.py:2038: AssertionError
+   - [#  27] SDL queue5: 
+--------------------------------------------------------------------------------
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+- 32:             self.tail = None
++ 32:             pass
+  33:         else:
+  34:             self.head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[3.40751 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_22
+
+def test_case_22():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        none_type_1 = None
+        queue_2 = module_0.Queue()
+        var_1 = queue_2.enqueue(none_type_1)
+        queue_3 = module_0.Queue()
+        queue_4 = module_0.Queue()
+        none_type_2 = None
+        queue_5 = module_0.Queue()
+        var_2 = queue_5.enqueue(none_type_2)
+        var_3 = queue_3.dequeue()
+        none_type_3 = None
+        queue_6 = module_0.Queue()
+        var_4 = queue_6.enqueue(none_type_3)
+        queue_7 = module_0.Queue()
+        queue_8 = module_0.Queue()
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_0 = module_0.Node(list_0)
+        var_5 = queue_0.dequeue()
+>       assert queue_0.tail is None
+E       AssertionError
+
+RANDOM/test_queue5_RANDOM.py:439: AssertionError
+   - [#  28] SDL queue5: 
+--------------------------------------------------------------------------------
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+- 34:             self.head = self.head.next
++ 34:             pass
+  35:         return data
+--------------------------------------------------------------------------------
+[2.35474 s] survived
+   - [#  29] SDL queue5: 
+--------------------------------------------------------------------------------
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+- 35:         return data
++ 35:         pass
+--------------------------------------------------------------------------------
+[3.40957 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_91
+
+def test_case_91():
+        str_0 = 'T;\x0c2OWbraI?GJNJ`c3gh'
+        node_0 = module_0.Node(str_0)
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_1 = module_0.Node(list_0)
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        queue_2 = module_0.Queue()
+        str_1 = '~%25QZ3{'
+        queue_3 = module_0.Queue()
+        var_1 = queue_3.enqueue(str_1)
+        none_type_1 = None
+        node_2 = module_0.Node(none_type_1)
+        queue_4 = module_0.Queue()
+        var_2 = queue_4.enqueue(node_2)
+        none_type_2 = None
+        queue_5 = module_0.Queue()
+        var_3 = queue_5.enqueue(none_type_2)
+        queue_6 = module_0.Queue()
+        queue_7 = module_0.Queue()
+        var_4 = queue_4.dequeue()
+        assert queue_4.head is None
+        assert queue_4.tail is None
+>       assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'queue5.Node'
+E       AssertionError
+
+RANDOM/test_queue5_RANDOM.py:2652: AssertionError
+   - [#  30] SVD queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+-  4:         self.data = data
++  4:         data = data
+   5:         self.next = None
+   6: 
+   7: 
+   8: class Queue(object):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  31] SVD queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+-  5:         self.next = None
++  5:         next = None
+   6: 
+   7: 
+   8: class Queue(object):
+   9:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  32] SVD queue5: 
+--------------------------------------------------------------------------------
+   7: 
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+- 11:         self.head = None
++ 11:         head = None
+  12:         self.tail = None
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  33] SVD queue5: 
+--------------------------------------------------------------------------------
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+  11:         self.head = None
+- 12:         self.tail = None
++ 12:         tail = None
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  34] SVD queue5: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+- 17:         if (self.head is None and self.tail is None):
++ 17:         if (head is None and self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+--------------------------------------------------------------------------------
+[3.30574 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(none_type_0)
+
+RANDOM/test_queue5_RANDOM.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3dd50760>, data = None
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:17: NameError
+   - [#  35] SVD queue5: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+- 17:         if (self.head is None and self.tail is None):
++ 17:         if (self.head is None and tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+--------------------------------------------------------------------------------
+[3.31168 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(none_type_0)
+
+RANDOM/test_queue5_RANDOM.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3dd50ee0>, data = None
+
+>   ???
+E   NameError: name 'tail' is not defined
+
+queue5:17: NameError
+   - [#  36] SVD queue5: 
+--------------------------------------------------------------------------------
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+- 18:             self.head = node
++ 18:             head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  37] SVD queue5: 
+--------------------------------------------------------------------------------
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+- 19:             self.tail = node
++ 19:             tail = node
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+  23:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  38] SVD queue5: 
+--------------------------------------------------------------------------------
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+- 21:             self.tail.next = node
++ 21:             tail.next = node
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+--------------------------------------------------------------------------------
+[3.28734 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_14
+
+def test_case_14():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        queue_2 = module_0.Queue()
+        none_type_1 = None
+        node_0 = module_0.Node(none_type_1)
+        none_type_2 = None
+        queue_3 = module_0.Queue()
+        var_1 = queue_3.enqueue(none_type_2)
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_1 = module_0.Node(list_0)
+        none_type_3 = None
+        node_2 = module_0.Node(none_type_3)
+        node_3 = module_0.Node(node_2)
+>       var_2 = queue_0.enqueue(node_3)
+
+RANDOM/test_queue5_RANDOM.py:233: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3e059b70>
+data = <queue5.Node object at 0x7f4b3e059a20>
+
+>   ???
+E   NameError: name 'tail' is not defined
+
+queue5:21: NameError
+   - [#  39] SVD queue5: 
+--------------------------------------------------------------------------------
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+- 22:             self.tail = node
++ 22:             tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  40] SVD queue5: 
+--------------------------------------------------------------------------------
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+- 26:         if (self.head is None and self.tail is None):
++ 26:         if (head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+--------------------------------------------------------------------------------
+[3.32130 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_4
+
+def test_case_4():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_1 = module_0.Node(list_0)
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.dequeue()
+
+RANDOM/test_queue5_RANDOM.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3e007400>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:26: NameError
+   - [#  41] SVD queue5: 
+--------------------------------------------------------------------------------
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+- 26:         if (self.head is None and self.tail is None):
++ 26:         if (self.head is None and tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+--------------------------------------------------------------------------------
+[3.20488 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_4
+
+def test_case_4():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_1 = module_0.Node(list_0)
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.dequeue()
+
+RANDOM/test_queue5_RANDOM.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3e007400>
+
+>   ???
+E   NameError: name 'tail' is not defined
+
+queue5:26: NameError
+   - [#  42] SVD queue5: 
+--------------------------------------------------------------------------------
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+- 28:         data = self.head.data
++ 28:         data = head.data
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+--------------------------------------------------------------------------------
+[3.40271 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_22
+
+def test_case_22():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        none_type_1 = None
+        queue_2 = module_0.Queue()
+        var_1 = queue_2.enqueue(none_type_1)
+        queue_3 = module_0.Queue()
+        queue_4 = module_0.Queue()
+        none_type_2 = None
+        queue_5 = module_0.Queue()
+        var_2 = queue_5.enqueue(none_type_2)
+        var_3 = queue_3.dequeue()
+        none_type_3 = None
+        queue_6 = module_0.Queue()
+        var_4 = queue_6.enqueue(none_type_3)
+        queue_7 = module_0.Queue()
+        queue_8 = module_0.Queue()
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_0 = module_0.Node(list_0)
+>       var_5 = queue_0.dequeue()
+
+RANDOM/test_queue5_RANDOM.py:438: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3e016950>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:28: NameError
+   - [#  43] SVD queue5: 
+--------------------------------------------------------------------------------
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+- 30:         if self.head == self.tail:
++ 30:         if head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[3.39168 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_22
+
+def test_case_22():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        none_type_1 = None
+        queue_2 = module_0.Queue()
+        var_1 = queue_2.enqueue(none_type_1)
+        queue_3 = module_0.Queue()
+        queue_4 = module_0.Queue()
+        none_type_2 = None
+        queue_5 = module_0.Queue()
+        var_2 = queue_5.enqueue(none_type_2)
+        var_3 = queue_3.dequeue()
+        none_type_3 = None
+        queue_6 = module_0.Queue()
+        var_4 = queue_6.enqueue(none_type_3)
+        queue_7 = module_0.Queue()
+        queue_8 = module_0.Queue()
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_0 = module_0.Node(list_0)
+>       var_5 = queue_0.dequeue()
+
+RANDOM/test_queue5_RANDOM.py:438: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3e017bb0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:30: NameError
+   - [#  44] SVD queue5: 
+--------------------------------------------------------------------------------
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+- 30:         if self.head == self.tail:
++ 30:         if self.head == tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[3.37854 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_22
+
+def test_case_22():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        none_type_1 = None
+        queue_2 = module_0.Queue()
+        var_1 = queue_2.enqueue(none_type_1)
+        queue_3 = module_0.Queue()
+        queue_4 = module_0.Queue()
+        none_type_2 = None
+        queue_5 = module_0.Queue()
+        var_2 = queue_5.enqueue(none_type_2)
+        var_3 = queue_3.dequeue()
+        none_type_3 = None
+        queue_6 = module_0.Queue()
+        var_4 = queue_6.enqueue(none_type_3)
+        queue_7 = module_0.Queue()
+        queue_8 = module_0.Queue()
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        node_0 = module_0.Node(list_0)
+>       var_5 = queue_0.dequeue()
+
+RANDOM/test_queue5_RANDOM.py:438: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3e017610>
+
+>   ???
+E   NameError: name 'tail' is not defined
+
+queue5:30: NameError
+   - [#  45] SVD queue5: 
+--------------------------------------------------------------------------------
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+- 31:             self.head = None
++ 31:             head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  46] SVD queue5: 
+--------------------------------------------------------------------------------
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+- 32:             self.tail = None
++ 32:             tail = None
+  33:         else:
+  34:             self.head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  47] SVD queue5: 
+--------------------------------------------------------------------------------
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+- 34:             self.head = self.head.next
++ 34:             head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  48] SVD queue5: 
+--------------------------------------------------------------------------------
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+- 34:             self.head = self.head.next
++ 34:             self.head = head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[4.75245 s] killed by RANDOM/test_queue5_RANDOM.py::test_case_1461
+
+def test_case_1461():
+        complex_0 = -2503.2 - 384.3391j
+        node_0 = module_0.Node(complex_0)
+        queue_0 = module_0.Queue()
+        queue_1 = module_0.Queue()
+        complex_1 = -2503.2 - 384.3391j
+        node_1 = module_0.Node(complex_1)
+        queue_2 = module_0.Queue()
+        none_type_0 = None
+        queue_3 = module_0.Queue()
+        var_0 = queue_3.enqueue(none_type_0)
+        assert f'{type(queue_3.head).__module__}.{type(queue_3.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_3.tail).__module__}.{type(queue_3.tail).__qualname__}' == 'queue5.Node'
+        queue_4 = module_0.Queue()
+        node_2 = module_0.Node(var_0)
+        queue_5 = module_0.Queue()
+        str_0 = '1Yd=9eK W+Bj:'
+        node_3 = module_0.Node(str_0)
+        str_1 = '~%25QZ3{'
+        queue_6 = module_0.Queue()
+        var_1 = queue_6.enqueue(str_1)
+        queue_7 = module_0.Queue()
+        var_2 = queue_7.enqueue(var_1)
+        queue_8 = module_0.Queue()
+        var_3 = queue_6.enqueue(str_1)
+        str_2 = 'T;\x0c2OWbraI?GJNJ`c3gh'
+        node_4 = module_0.Node(str_2)
+        queue_9 = module_0.Queue()
+        queue_10 = module_0.Queue()
+        var_4 = queue_10.enqueue(node_4)
+        var_5 = queue_9.dequeue()
+        none_type_1 = None
+        queue_11 = module_0.Queue()
+        var_6 = queue_11.enqueue(none_type_1)
+        queue_12 = module_0.Queue()
+        queue_13 = module_0.Queue()
+        node_5 = module_0.Node(queue_12)
+        node_6 = module_0.Node(none_type_1)
+        var_7 = queue_11.enqueue(none_type_1)
+>       var_8 = queue_6.dequeue()
+
+RANDOM/test_queue5_RANDOM.py:49823: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7f4b3deb0e80>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:34: NameError
+[*] Mutation score [127.49739 s]: 82.4%
+   - all: 48
+   - killed: 28 (58.3%)
+   - survived: 6 (12.5%)
+   - incompetent: 14 (29.2%)
+   - timeout: 0 (0.0%)

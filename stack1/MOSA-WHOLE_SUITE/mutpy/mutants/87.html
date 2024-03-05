@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MutPy mutation report - mutation #87</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css" />
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPython.js" type="text/javascript"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.all();
+    window.setTimeout(function () {
+        
+        $('.line.number32').attr('title', 'SDL');
+        
+    }, 0);
+</script>
+
+</head>
+<body>
+    <div class="container">
+        
+<div class="page-header">
+    <h1>Mutation #87</h1>
+</div>
+<h3>Details</h3>
+<ul>
+    <li>module - <code><module 'stack1' from '/home/auri/temp/lucca/python_experiments/stack1/./stack1.py'></code></li>
+    <li><span class="label label-success">killed</span> by <code>MOSA-WHOLE_SUITE/test_stack1_MOSA.py::test_case_0</code></li>
+    
+    <li>duration - 0.069 s</li>
+    
+    
+    <li>tests run - 1</li>
+    
+</ul>
+
+<h3>Exception traceback</h3>
+<pre>def test_case_0():
+        str_0 = '0'
+>       var_0 = module_0.postfix_eval(str_0)
+
+MOSA-WHOLE_SUITE/test_stack1_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7fc6bbb4e110>
+
+>   ???
+E   NameError: name 'top_data' is not defined
+
+stack1:36: NameError</pre>
+
+<h3>Mutations</h3>
+<ul>
+    
+    <li>SDL - line 32</li>
+    
+</ul>
+<h3>Mutant</h3>
+<pre class="brush: python; first-line: 1; highlight: [32]; toolbar: false;">''' Stack
+
+    thomas moll 2015
+'''
+
+class Stack(object):
+    def __init__(self):
+        self.size = 0
+        self.top = None
+    
+    def __len__(self):
+        return self.size
+    
+    def push(self, item):
+        if self.top is None:
+            self.top = StackNode(item)
+        else:
+            
+            item1 = self.top
+            item2 = StackNode(item)
+            
+            
+            self.top = item2
+            item2.next = item1
+        
+        self.size += 1
+    
+    def pop(self):
+        if self.top is None:
+            raise ValueError()
+        else:
+            pass
+            
+            self.top = self.top.next
+            self.size -= 1
+            return top_data
+    
+    def peek(self):
+        if self.top is None:
+            raise ValueError()
+        else:
+            return self.top.data
+
+class StackNode(object):
+    ''' Look familiar? '''
+    def __init__(self, item):
+        self.data = item
+        self.next = None
+
+def check_parenthesis(string):
+    stack = Stack()
+    
+    brackets = {'{': '}', '[': ']', '(': ')'}
+    
+    for character in string:
+        
+        if character in brackets.keys():
+            stack.push(character)
+        
+        
+        if character in brackets.values():
+            try:
+                other = stack.pop()
+                
+                
+                if brackets[other] != character:
+                    return False
+            
+            except ValueError:
+                return False
+    
+    if stack.size != 0:
+        return False
+    else:
+        
+        return True
+
+def postfix_eval(string):
+    """ Here we setup a dictionary relating the characters of 
+        operations to lambda functions. It's similar to saying:
+        
+        def add(a,b):
+            return a + b
+
+        and then doing:
+
+        print add(4,5)
+        >>> 9
+
+        The add function can also be accessed via the ``operator``
+        module.
+    """
+    stack = Stack()
+    ops = {'+': lambda a, b: (a + b), \
+        '-': lambda a, b: (a - b), \
+        '*': lambda a, b: (a * b), \
+        '/': lambda a, b: (a / b), \
+        '%': lambda a, b: (a % b), \
+        '^': lambda a, b: (a ** b)}
+    
+    
+    tokens = string.split(' ')
+    
+    for character in tokens:
+        
+        if character in ops.keys():
+            try:
+                
+                right = stack.pop()
+                left = stack.pop()
+                
+                
+                result = ops[character](left, right)
+                stack.push(result)
+            
+            
+            except ValueError as e:
+                raise e
+        else:
+            
+            try:
+                
+                value = int(character)
+                stack.push(value)
+            
+            except ValueError as e:
+                raise e
+    
+    
+    if stack.size > 1:
+        raise ValueError()
+    
+    return stack.pop()</pre>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+Exemplos dados para o módulo a ser mutacionado = Identifier.py
+
+---------------------------------------------------------------------------------------
+
+Pynguin 0.27.0
+
+Primeiramente, setar variavel de segurança
+    export PYNGUIN_DANGER_AWARE=1
+
+Gerar testes, mutações e relatórios
+    pynguin --project-path ./ --output-path ./output --module name Identifier -v
+parametros extras
+    --create-coverage-report True --algorithm=DYNAMOSA --seed 1234
+algoritmos válidos
+    DYNAMOSA(default),MIO, MOSA, RANDOM, WHOLE_SUITE
+
+---------------------------------------------------------------------------------------
+
+Parser tc_transformer.py
+
+Função: remover marcas de xfail e última linha dos códigos marcados
+
+Executar parser em código e gerar output
+    python3 tc_transformer.py test_Identifier.py > test_Identifier_parsed.py
+
+---------------------------------------------------------------------------------------
+
+Gerar mutantes
+
+Python3 3.10.6 (Inclui pytest)
+
+Para pytest
+	python3 -m pytest test_Identifier_parsed.py
+
+-------------------------------------------------------------------------------------
+
+Coverage.py 5.5
+
+Para testes no formato unittest
+		coverage run --source=Identifier --branch -m pytest test_Identifier_parsed.py
+
+Para a geração dos relatórios
+	coverage report
+	coverage html -d coverage
+
+-------------------------------------------------------------------------------------
+
+Mut.py 0.6.1
+
+Executar Mutpy e gerar relatorio
+    time mut.py -t Identifier.py -u test_Identifier_parsed.py --runner pytest --report-html mutpy
+
+-------------------------------------------------------------------------------------
+
+Mutmut 2.4.1
+
+Executar Mutmut
+    time mutmut run --paths-to-mutate Identifier.py --tests-dir test_Identifier_parsed.py --runner   'python3 -m pytest test_validate.py'
+
+Para a geração dos relatórios
+    mutmut html
+
+-------------------------------------------------------------------------------------
+
+Mutatest 3.1.0
+
+Executar Mutatest e gerar relatório 
+    time mutatest -s Identifier.py -t pytest -m f -o mutatest/nome-report.rst
+(executa todos os arquivos com test_ da pasta)
+
+-------------------------------------------------------------------------------------
+
+Cosmic-ray 8.3.5
+
+Criar nova config
+    cosmic-ray new-config testes.toml
+    
+    [?] Top-level module path: Identifier.py
+    [?] Test execution timeout (seconds): 20
+    [?] Test command: python -m pytest test_Identifier_parsed.py
+    -- MENU: Distributor --
+      (0) http
+      (1) local
+    [?] Enter menu selection: 1
+
+Inicializar sessão
+    cosmic-ray init testes.toml testes.sqlite
+
+Executar sessão
+    cosmic-ray exec testes.toml testes.sqlite
+
+Criar relatório
+    cr-report testes.sqlite > report.html

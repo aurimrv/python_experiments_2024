@@ -1,0 +1,1714 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 20/04/2023 20:32:12</p><p>Total jobs: 44</p><p>Complete: 44 (100.00%)</p><p>Surviving mutants: 5 (11.36%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID a49a8df019ca4677ae0f8d2ecafa64cf</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (21, 18), end pos: (21, 20)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 != p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+FF                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ..F............... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ........F....FF.  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ..F....... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_2 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+========================= 7 failed, 56 passed in 0.20s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID cbaf3fee18354e86b580d854515ff3b3</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (48, 23), end pos: (48, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if n.value != value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .....F..F..F. [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ........FFF....... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ......F..F.FF...  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ....F..... [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_9 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 12 failed, 51 passed in 0.20s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 9c242bba54f14e18a392d8b8622a62f0</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (21, 18), end pos: (21, 20)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 &lt; p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+FF                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ..F............... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ........F....FF.  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ..F....... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_2 - T...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+========================= 7 failed, 56 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID 53bb967de59f4c0795b28a0f385bbda1</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (48, 23), end pos: (48, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if n.value &lt; value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .....F..F..F. [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ........FFF....... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ......F.FF.FF...  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .F..F..... [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - T...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_9 - T...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 15 failed, 48 passed in 0.20s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID 5420008a528e4630a9042fd2cf8c4adc</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (21, 18), end pos: (21, 20)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 &lt;= p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+FF                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ..F............... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ........F....FF.  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ..F....... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_2 - T...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+========================= 7 failed, 56 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID 812b47f656454be79766755cdb185165</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (48, 23), end pos: (48, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if n.value &lt;= value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .....F..F..F. [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ........FFF....... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ......F.....F...  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .F..F..... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - T...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_9 - T...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+======================== 11 failed, 52 passed in 0.19s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID 9da6ee2526f34f6a81ac8059a8d7704d</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (21, 18), end pos: (21, 20)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 &gt; p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+FF                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ..F............... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ........F....FF.  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ..F....... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_2 - T...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+========================= 7 failed, 56 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID c1d0b8fd3912463d80aef796eb13cf3a</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (48, 23), end pos: (48, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if n.value &gt; value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .....F..F..F. [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ........FFF....... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ......F.FF.FF...  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .F..F..... [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - T...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_9 - T...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 15 failed, 48 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID f672aa432e99482091d4699b0570987d</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (21, 18), end pos: (21, 20)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 &gt;= p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+FF                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ..F............... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ........F....FF.  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ..F....... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_2 - T...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+========================= 7 failed, 56 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID 95abd4eed7ec4607a9d0aa95560589c8</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (48, 23), end pos: (48, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if n.value &gt;= value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .....F..F..F. [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ........FFF....... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ......F.....F...  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .F..F..... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - T...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_9 - T...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+======================== 11 failed, 52 passed in 0.19s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_11_1"><button class="btn btn-outline-danger"><span class="job_id">11 : Job ID 210d27a0f6fb4c1abe166be83e371ec9</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (21, 18), end pos: (21, 20)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 is p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py .................. [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ................  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .......... [ 98%]
+.                                                                        [100%]
+
+============================== 63 passed in 0.19s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID 8eddea82576a42a485106a8593ead025</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (48, 23), end pos: (48, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if n.value is value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py .................. [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ........F.......  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .......... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+========================= 1 failed, 62 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID d23894af18f9479da09260515d7264c8</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=16" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (16, 23), end pos: (16, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -13,7 +13,7 @@
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+         while p1 != None and p2 != None:
+-            if p2.next == None: return False
++            if p2.next is not None: return False
+ 
+             p1 = p1.next
+             p2 = p2.next.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py F............ [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py F................. [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py F...............  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .FF....... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_0 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_0 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+========================= 6 failed, 57 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID 6f426cd6d14c4ca787dd75a647b1317e</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (21, 18), end pos: (21, 20)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 is not p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+FF                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ..F............... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ........F....FF.  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ..F....... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_2 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+========================= 7 failed, 56 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_15_1"><button class="btn btn-outline-success"><span class="job_id">15 : Job ID 66bdaadc8cdc443189a4391574ccce25</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (48, 23), end pos: (48, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if n.value is not value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .....F..F..F. [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ........FFF....... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ......F..F.FF...  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ....F..... [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_9 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 12 failed, 51 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_16_1"><button class="btn btn-outline-success"><span class="job_id">16 : Job ID 97d0f487f4ed4d559a976e3457860106</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (49, 24), end pos: (49, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -46,7 +46,7 @@
+         last = None
+         while n != None:
+             if n.value == value:
+-                if last == None:
++                if last is not None:
+                     self.head = self.head.next
+                 else:
+                     last.next = n.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .....F..F.... [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ........F......... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ......F.FF.F....  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .F........ [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 10 failed, 53 passed in 0.19s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_17_1"><button class="btn btn-outline-danger"><span class="job_id">17 : Job ID 59b05c68693949779a4ce6ff34385e19</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=15" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (15, 17), end pos: (15, 19)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_NotEq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -12,7 +12,7 @@
+     def checkInfinite(self):
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+-        while p1 != None and p2 != None:
++        while p1 is None and p2 != None:
+             if p2.next == None: return False
+ 
+             p1 = p1.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py .................. [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ................  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .......... [ 98%]
+.                                                                        [100%]
+
+============================== 63 passed in 0.19s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_18_1"><button class="btn btn-outline-danger"><span class="job_id">18 : Job ID 646b06774d1245b79c6a2387cfe2ff5e</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=15" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (15, 32), end pos: (15, 34)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_NotEq_Is, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -12,7 +12,7 @@
+     def checkInfinite(self):
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+-        while p1 != None and p2 != None:
++        while p1 != None and p2 is None:
+             if p2.next == None: return False
+ 
+             p1 = p1.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py .................. [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ................  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .......... [ 98%]
+.                                                                        [100%]
+
+============================== 63 passed in 0.18s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_19"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_19_1" aria-expanded="false" aria-controls="job_list___sub_collapse_19_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_19_1"><button class="btn btn-outline-success"><span class="job_id">19 : Job ID b9bb6c387a9d4ff6b6c1a1342bbecea8</span></button></div></a><div aria-labelledby="job_list___sub_heading_19_1" data-parent="#job_list___sub_accordion_19" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_19_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=47" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (47, 16), end pos: (47, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_NotEq_Is, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -44,7 +44,7 @@
+         """Remove value from list."""
+         n = self.head
+         last = None
+-        while n != None:
++        while n is None:
+             if n.value == value:
+                 if last == None:
+                     self.head = self.head.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ...F.F..F.... [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ........F..F...... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ......FFFF.F....  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .F........ [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_11 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_7 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 13 failed, 50 passed in 0.19s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_20"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_20_1" aria-expanded="false" aria-controls="job_list___sub_collapse_20_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_20_1"><button class="btn btn-outline-success"><span class="job_id">20 : Job ID ed58784b1c524763ae4426026804b251</span></button></div></a><div aria-labelledby="job_list___sub_heading_20_1" data-parent="#job_list___sub_accordion_20" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_20_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=60" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (60, 16), end pos: (60, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_NotEq_Is, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -57,7 +57,7 @@
+     def __iter__(self):
+         """Iterator of values in the list."""
+         n = self.head
+-        while n != None:
++        while n is None:
+             yield n.value
+             n = n.next
+         </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ......F.....F [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ............FFF... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ........FF.F.F..  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ....F.F..F [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_12 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_13 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_14 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_9
+======================== 12 failed, 51 passed in 0.19s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_21"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_21_1" aria-expanded="false" aria-controls="job_list___sub_collapse_21_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_21_1"><button class="btn btn-outline-success"><span class="job_id">21 : Job ID b96d49eaf6734aac8f493b212e63495c</span></button></div></a><div aria-labelledby="job_list___sub_heading_21_1" data-parent="#job_list___sub_accordion_21" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_21_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=75" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (75, 16), end pos: (75, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_NotEq_Is, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -72,7 +72,7 @@
+         """Count values in list."""
+         n = self.head
+         count = 0
+-        while n != None:
++        while n is None:
+             count += 1
+             n = n.next
+         return count</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .FFFFFFFFF.FF [ 20%]
+FF                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ....FFFFFFFFFFFFFF [ 52%]
+F.F                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ..FFFFFFFFFFFFFF  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .FFFFFFFFF [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_4 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_5 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_6 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_7 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_9 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_11 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_12 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_13 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_14 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_15 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_16 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_17 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_18 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_20 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_2 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_3 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_4 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_5 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_7 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_10
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_15
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 53 failed, 10 passed in 0.23s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_22"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_22_1" aria-expanded="false" aria-controls="job_list___sub_collapse_22_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_22_1"><button class="btn btn-outline-success"><span class="job_id">22 : Job ID e68eaaf8a3444912bf62fd8ba9e732a0</span></button></div></a><div aria-labelledby="job_list___sub_heading_22_1" data-parent="#job_list___sub_accordion_22" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_22_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=37" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (37, 21), end pos: (37, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -34,7 +34,7 @@
+ 
+     def pop(self):
+         """Remove first value in list."""
+-        if self.head is None:
++        if self.head is not None:
+             raise Exception ("Linked list is empty.")
+         val = self.head.value
+         self.head = self.head.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ....F........ [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py .......F.......... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py .....F..........  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .......... [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_7 - E...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_5 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+========================= 4 failed, 59 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_23"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_23_1" aria-expanded="false" aria-controls="job_list___sub_collapse_23_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_23_1"><button class="btn btn-outline-success"><span class="job_id">23 : Job ID c007cd5423da4bfbbbbb4557138a89dd</span></button></div></a><div aria-labelledby="job_list___sub_heading_23_1" data-parent="#job_list___sub_accordion_23" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_23_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=66" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (66, 21), end pos: (66, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -63,7 +63,7 @@
+         
+     def __repr__(self):
+         """String representation of linked list."""
+-        if self.head is None:
++        if self.head is not None:
+             return 'link:[]'
+ 
+         return 'link:[{0:s}]'.format(','.join(map(str,self)))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ......F...... [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ............FF.... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ...........F....  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ....F..... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_12 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_13 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+========================= 5 failed, 58 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_24"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_24_1" aria-expanded="false" aria-controls="job_list___sub_collapse_24_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_24_1"><button class="btn btn-outline-danger"><span class="job_id">24 : Job ID 26d6a70cac6e4a389a0d712142f6d54f</span></button></div></a><div aria-labelledby="job_list___sub_heading_24_1" data-parent="#job_list___sub_accordion_24" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_24_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=15" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (15, 14), end pos: (15, 39)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -12,7 +12,7 @@
+     def checkInfinite(self):
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+-        while p1 != None and p2 != None:
++        while not p1 != None and p2 != None:
+             if p2.next == None: return False
+ 
+             p1 = p1.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py .................. [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ................  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .......... [ 98%]
+.                                                                        [100%]
+
+============================== 63 passed in 0.19s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_25"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_25_1" aria-expanded="false" aria-controls="job_list___sub_collapse_25_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_25_1"><button class="btn btn-outline-success"><span class="job_id">25 : Job ID e29588254a5646d5ae41469faf1a46cf</span></button></div></a><div aria-labelledby="job_list___sub_heading_25_1" data-parent="#job_list___sub_accordion_25" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_25_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=16" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (16, 15), end pos: (16, 30)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -13,7 +13,7 @@
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+         while p1 != None and p2 != None:
+-            if p2.next == None: return False
++            if not p2.next == None: return False
+ 
+             p1 = p1.next
+             p2 = p2.next.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py F............ [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py F................. [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py F...............  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .FF....... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_0 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_0 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+========================= 6 failed, 57 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_26"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_26_1" aria-expanded="false" aria-controls="job_list___sub_collapse_26_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_26_1"><button class="btn btn-outline-success"><span class="job_id">26 : Job ID 0044292aadbd4212976af9c4a5ac6418</span></button></div></a><div aria-labelledby="job_list___sub_heading_26_1" data-parent="#job_list___sub_accordion_26" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_26_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (21, 15), end pos: (21, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if not p1 == p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+FF                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ..F............... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ........F....FF.  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ..F....... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_2 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+========================= 7 failed, 56 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_27"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_27_1" aria-expanded="false" aria-controls="job_list___sub_collapse_27_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_27_1"><button class="btn btn-outline-success"><span class="job_id">27 : Job ID 7cafe068b8074a7cafa1273eaf4fae92</span></button></div></a><div aria-labelledby="job_list___sub_heading_27_1" data-parent="#job_list___sub_accordion_27" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_27_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=37" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (37, 11), end pos: (37, 28)</button></a></pre><pre>operator: core/AddNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -34,7 +34,7 @@
+ 
+     def pop(self):
+         """Remove first value in list."""
+-        if self.head is None:
++        if not self.head is None:
+             raise Exception ("Linked list is empty.")
+         val = self.head.value
+         self.head = self.head.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ....F........ [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py .......F.......... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py .....F..........  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .......... [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_7 - E...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_5 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+========================= 4 failed, 59 passed in 0.20s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_28"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_28_1" aria-expanded="false" aria-controls="job_list___sub_collapse_28_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_28_1"><button class="btn btn-outline-success"><span class="job_id">28 : Job ID 9c9e087d9d574570b99b39b4f060b6c9</span></button></div></a><div aria-labelledby="job_list___sub_heading_28_1" data-parent="#job_list___sub_accordion_28" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_28_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=47" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (47, 14), end pos: (47, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -44,7 +44,7 @@
+         """Remove value from list."""
+         n = self.head
+         last = None
+-        while n != None:
++        while not n != None:
+             if n.value == value:
+                 if last == None:
+                     self.head = self.head.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ...F.F..F.... [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ........F..F...... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ......FFFF.F....  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .F........ [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_11 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_7 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 13 failed, 50 passed in 0.19s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_29"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_29_1" aria-expanded="false" aria-controls="job_list___sub_collapse_29_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_29_1"><button class="btn btn-outline-success"><span class="job_id">29 : Job ID 536515cc74fc448f8a53cd9d35e8ea08</span></button></div></a><div aria-labelledby="job_list___sub_heading_29_1" data-parent="#job_list___sub_accordion_29" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_29_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (48, 15), end pos: (48, 31)</button></a></pre><pre>operator: core/AddNot, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if not n.value == value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .....F..F..F. [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ........FFF....... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ......F..F.FF...  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ....F..... [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_9 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 12 failed, 51 passed in 0.19s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_30"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_30_1" aria-expanded="false" aria-controls="job_list___sub_collapse_30_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_30_1"><button class="btn btn-outline-success"><span class="job_id">30 : Job ID fb545cb33a1b40a38d1094b39e6c8d22</span></button></div></a><div aria-labelledby="job_list___sub_heading_30_1" data-parent="#job_list___sub_accordion_30" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_30_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (49, 19), end pos: (49, 31)</button></a></pre><pre>operator: core/AddNot, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -46,7 +46,7 @@
+         last = None
+         while n != None:
+             if n.value == value:
+-                if last == None:
++                if not last == None:
+                     self.head = self.head.next
+                 else:
+                     last.next = n.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .....F..F.... [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ........F......... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ......F.FF.F....  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .F........ [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 10 failed, 53 passed in 0.20s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_31"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_31_1" aria-expanded="false" aria-controls="job_list___sub_collapse_31_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_31_1"><button class="btn btn-outline-success"><span class="job_id">31 : Job ID 3cb37722781b4473aa4942f73adbab34</span></button></div></a><div aria-labelledby="job_list___sub_heading_31_1" data-parent="#job_list___sub_accordion_31" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_31_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=60" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (60, 14), end pos: (60, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -57,7 +57,7 @@
+     def __iter__(self):
+         """Iterator of values in the list."""
+         n = self.head
+-        while n != None:
++        while not n != None:
+             yield n.value
+             n = n.next
+         </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ......F.....F [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ............FFF... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ........FF.F.F..  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ....F.F..F [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_12 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_13 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_14 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_9
+======================== 12 failed, 51 passed in 0.19s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_32"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_32_1" aria-expanded="false" aria-controls="job_list___sub_collapse_32_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_32_1"><button class="btn btn-outline-success"><span class="job_id">32 : Job ID 17fbef6c76654168bb1b4eb4cad51f0f</span></button></div></a><div aria-labelledby="job_list___sub_heading_32_1" data-parent="#job_list___sub_accordion_32" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_32_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=66" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (66, 11), end pos: (66, 28)</button></a></pre><pre>operator: core/AddNot, occurrence: 8</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -63,7 +63,7 @@
+         
+     def __repr__(self):
+         """String representation of linked list."""
+-        if self.head is None:
++        if not self.head is None:
+             return 'link:[]'
+ 
+         return 'link:[{0:s}]'.format(','.join(map(str,self)))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ......F...... [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ............FF.... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ...........F....  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ....F..... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_12 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_13 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+========================= 5 failed, 58 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_33"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_33_1" aria-expanded="false" aria-controls="job_list___sub_collapse_33_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_33_1"><button class="btn btn-outline-success"><span class="job_id">33 : Job ID 09e34a45191c48efa1a4c44e89ed6bd7</span></button></div></a><div aria-labelledby="job_list___sub_heading_33_1" data-parent="#job_list___sub_accordion_33" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_33_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=75" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (75, 14), end pos: (75, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 9</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -72,7 +72,7 @@
+         """Count values in list."""
+         n = self.head
+         count = 0
+-        while n != None:
++        while not n != None:
+             count += 1
+             n = n.next
+         return count</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .FFFFFFFFF.FF [ 20%]
+FF                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ....FFFFFFFFFFFFFF [ 52%]
+F.F                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ..FFFFFFFFFFFFFF  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .FFFFFFFFF [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_4 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_5 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_6 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_7 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_9 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_11 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_12 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_13 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_14 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_15 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_16 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_17 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_18 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_20 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_2 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_3 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_4 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_5 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_7 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_10
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_15
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 53 failed, 10 passed in 0.21s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_34"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_34_1" aria-expanded="false" aria-controls="job_list___sub_collapse_34_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_34_1"><button class="btn btn-outline-danger"><span class="job_id">34 : Job ID 6af3caf8c684462a89487604ce9bd6e6</span></button></div></a><div aria-labelledby="job_list___sub_heading_34_1" data-parent="#job_list___sub_accordion_34" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_34_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (21, 32), end pos: (21, 36)</button></a></pre><pre>operator: core/ReplaceTrueWithFalse, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 == p2: return False
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py .................. [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ................  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .......... [ 98%]
+.                                                                        [100%]
+
+============================== 63 passed in 0.18s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_35"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_35_1" aria-expanded="false" aria-controls="job_list___sub_collapse_35_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_35_1"><button class="btn btn-outline-success"><span class="job_id">35 : Job ID 538780faec1643f1988e19b751c1f271</span></button></div></a><div aria-labelledby="job_list___sub_heading_35_1" data-parent="#job_list___sub_accordion_35" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_35_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=53" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (53, 23), end pos: (53, 27)</button></a></pre><pre>operator: core/ReplaceTrueWithFalse, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -50,7 +50,7 @@
+                     self.head = self.head.next
+                 else:
+                     last.next = n.next
+-                return True
++                return False
+             n = n.next
+         return False
+         </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .....F..F.... [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ........F......... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ......F.FF.F....  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .F........ [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 10 failed, 53 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_36"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_36_1" aria-expanded="false" aria-controls="job_list___sub_collapse_36_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_36_1"><button class="btn btn-outline-success"><span class="job_id">36 : Job ID 201ca604da344e8db85acfa8ca52c1e0</span></button></div></a><div aria-labelledby="job_list___sub_heading_36_1" data-parent="#job_list___sub_accordion_36" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_36_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=16" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (16, 39), end pos: (16, 44)</button></a></pre><pre>operator: core/ReplaceFalseWithTrue, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -13,7 +13,7 @@
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+         while p1 != None and p2 != None:
+-            if p2.next == None: return False
++            if p2.next == None: return True
+ 
+             p1 = p1.next
+             p2 = p2.next.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py F............ [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py F................. [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py F...............  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .FF....... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_0 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_0 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+========================= 6 failed, 57 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_37"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_37_1" aria-expanded="false" aria-controls="job_list___sub_collapse_37_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_37_1"><button class="btn btn-outline-success"><span class="job_id">37 : Job ID 362927e060c6480fa6ea94aa3d258a19</span></button></div></a><div aria-labelledby="job_list___sub_heading_37_1" data-parent="#job_list___sub_accordion_37" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_37_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=22" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (22, 15), end pos: (22, 20)</button></a></pre><pre>operator: core/ReplaceFalseWithTrue, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -19,7 +19,7 @@
+             p2 = p2.next.next
+             
+             if p1 == p2: return True
+-        return False
++        return True
+ 
+ class LinkedList:
+     def __init__(self, *start):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+FF                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ..F............... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ........F....FF.  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ..F....... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_2 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+========================= 7 failed, 56 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_38"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_38_1" aria-expanded="false" aria-controls="job_list___sub_collapse_38_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_38_1"><button class="btn btn-outline-success"><span class="job_id">38 : Job ID 0c9df115d90b4705a7dd87ece01fb5a1</span></button></div></a><div aria-labelledby="job_list___sub_heading_38_1" data-parent="#job_list___sub_accordion_38" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_38_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=55" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (55, 15), end pos: (55, 20)</button></a></pre><pre>operator: core/ReplaceFalseWithTrue, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -52,7 +52,7 @@
+                     last.next = n.next
+                 return True
+             n = n.next
+-        return False
++        return True
+         
+     def __iter__(self):
+         """Iterator of values in the list."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ...F.......F. [ 20%]
+..                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py .........FFF...... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py .......FF...F...  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .F..F..... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_9 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_11 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_7 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+======================== 10 failed, 53 passed in 0.18s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_39"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_39_1" aria-expanded="false" aria-controls="job_list___sub_collapse_39_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_39_1"><button class="btn btn-outline-success"><span class="job_id">39 : Job ID 559c610a7ded4b2da0d02034cf432c17</span></button></div></a><div aria-labelledby="job_list___sub_heading_39_1" data-parent="#job_list___sub_accordion_39" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_39_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=15" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (15, 25), end pos: (15, 28)</button></a></pre><pre>operator: core/ReplaceAndWithOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -12,7 +12,7 @@
+     def checkInfinite(self):
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+-        while p1 != None and p2 != None:
++        while p1 != None or p2 != None:
+             if p2.next == None: return False
+ 
+             p1 = p1.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py ............. [ 20%]
+FF                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ..F............... [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ........F....FF.  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py ..F....... [ 98%]
+.                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_2 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+========================= 7 failed, 56 passed in 0.19s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_40"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_40_1" aria-expanded="false" aria-controls="job_list___sub_collapse_40_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_40_1"><button class="btn btn-outline-success"><span class="job_id">40 : Job ID 6955d7c9eb7b4f578e7b106b972cda39</span></button></div></a><div aria-labelledby="job_list___sub_heading_40_1" data-parent="#job_list___sub_accordion_40" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_40_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (74, 16), end pos: (74, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -71,7 +71,7 @@
+     def __len__(self):
+         """Count values in list."""
+         n = self.head
+-        count = 0
++        count = 1
+         while n != None:
+             count += 1
+             n = n.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .FFFFFFFFF.FF [ 20%]
+FF                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ....FFFFFFFFFFFFFF [ 52%]
+F.F                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ..FFFFFFFFFFFFFF  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .FFFFFFFFF [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_4 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_5 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_6 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_7 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_9 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_11 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_12 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_13 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_14 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_15 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_16 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_17 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_18 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_20 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_2 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_3 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_4 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_5 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_7 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_10
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_15
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 53 failed, 10 passed in 0.21s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_41"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_41_1" aria-expanded="false" aria-controls="job_list___sub_collapse_41_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_41_1"><button class="btn btn-outline-success"><span class="job_id">41 : Job ID 1725a6c39cb24dc9953ba97a1cf01ea5</span></button></div></a><div aria-labelledby="job_list___sub_heading_41_1" data-parent="#job_list___sub_accordion_41" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_41_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (74, 16), end pos: (74, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -71,7 +71,7 @@
+     def __len__(self):
+         """Count values in list."""
+         n = self.head
+-        count = 0
++        count = -1
+         while n != None:
+             count += 1
+             n = n.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .FFFFFFFFF.FF [ 20%]
+FF                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ....FFFFFFFFFFFFFF [ 52%]
+F.F                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ..FFFFFFFFFFFFFF  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .FFFFFFFFF [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_4 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_5 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_6 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_7 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_9 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_11 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_12 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_13 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_14 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_15 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_16 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_17 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_18 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_20 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_2 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_3 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_4 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_5 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_7 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_10
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_13
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_15
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 53 failed, 10 passed in 0.23s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_42"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_42_1" aria-expanded="false" aria-controls="job_list___sub_collapse_42_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_42_1"><button class="btn btn-outline-success"><span class="job_id">42 : Job ID 403b59e4ceaf4cb7bc5453a31fcbecf7</span></button></div></a><div aria-labelledby="job_list___sub_heading_42_1" data-parent="#job_list___sub_accordion_42" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_42_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=76" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (76, 21), end pos: (76, 22)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -73,7 +73,7 @@
+         n = self.head
+         count = 0
+         while n != None:
+-            count += 1
++            count += 2
+             n = n.next
+         return count
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .FF.FFF.FF.F. [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ....F..FFFF.FF..FF [ 52%]
+..F                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ..FF.FF.FF.FF...  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .F..F...FF [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_4 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_7 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_9 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_12 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_13 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_16 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_17 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_20 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_2 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_3 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_5 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 32 failed, 31 passed in 0.20s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_43"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_43_1" aria-expanded="false" aria-controls="job_list___sub_collapse_43_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_43_1"><button class="btn btn-outline-success"><span class="job_id">43 : Job ID 25593150743c46b0a2a2c36e4493a02d</span></button></div></a><div aria-labelledby="job_list___sub_heading_43_1" data-parent="#job_list___sub_accordion_43" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_43_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=76" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (76, 21), end pos: (76, 22)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -73,7 +73,7 @@
+         n = self.head
+         count = 0
+         while n != None:
+-            count += 1
++            count += 0
+             n = n.next
+         return count
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .FF.FFF.FF.F. [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ....F..FFFF.FF..FF [ 52%]
+..F                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ..FF.FF.FF.FF...  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .F..F...FF [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_4 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_7 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_8 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_9 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_12 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_13 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_16 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_17 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_20 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_2 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_3 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_5 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_6 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 32 failed, 31 passed in 0.20s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_44"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_44_1" aria-expanded="false" aria-controls="job_list___sub_collapse_44_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_44_1"><button class="btn btn-outline-success"><span class="job_id">44 : Job ID da0ab8c8d00c4ef38197c341c2fd64c3</span></button></div></a><div aria-labelledby="job_list___sub_heading_44_1" data-parent="#job_list___sub_accordion_44" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_44_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList2.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">linkedList2.py, start pos: (28, 17), end pos: (28, 22)</button></a></pre><pre>operator: core/ZeroIterationForLoop, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList2.py
++++ blinkedList2.py
+@@ -25,7 +25,7 @@
+     def __init__(self, *start):
+         """Demonstrate linked lists in Python."""
+         self.head  = None
+-        for _ in start:
++        for _ in []:
+             self.prepend(_)
+ 
+     def prepend(self, value):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 63 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py .F..F.F..F.F. [ 20%]
+.F                                                                       [ 23%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py ....F.....F.FF..F. [ 52%]
+...                                                                      [ 57%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py ..F..F..FF.FF...  [ 82%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py .F..F..... [ 98%]
+F                                                                        [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_DYNAMOSA.py::test_case_14
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_4 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_10 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_12 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_13 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MIO.py::test_case_16 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_2 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_5 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_8 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_9 - ...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_11
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_MOSA.py::test_case_12
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList2_WHOLE_SUITE.py::test_case_10
+======================== 20 failed, 43 passed in 0.19s =========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

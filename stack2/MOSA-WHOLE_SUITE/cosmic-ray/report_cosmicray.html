@@ -1,0 +1,441 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 20/04/2023 18:21:01</p><p>Total jobs: 19</p><p>Complete: 19 (100.00%)</p><p>Surviving mutants: 1 (5.26%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID 3c61b95e0eee4f7f844084acc6c1e084</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Sub, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" - str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py ....F                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_4 - TypeError: unsuppo...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeError: ...
+========================= 4 failed, 8 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID f6972d1ad62d4383a8d51065f60bf768</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mul, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" * str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py ....F                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_4 - TypeError: can't m...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeError: ...
+========================= 4 failed, 8 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID aa175d2af97c4c30830e133bb61f70db</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Div, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" / str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py ....F                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_4 - TypeError: unsuppo...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeError: ...
+========================= 4 failed, 8 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID 9753216fd30945d88864295c04d4970b</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_FloorDiv, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" // str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py ....F                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_4 - TypeError: unsuppo...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeError: ...
+========================= 4 failed, 8 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID ccdb2bdf2913485a8d7e7d2ca349d222</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mod, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" % str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py ....F                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_4 - TypeError: not all...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeError: ...
+========================= 4 failed, 8 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID 9a788548477c48d19269802e840cd267</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Pow, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" ** str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py ....F                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_4 - TypeError: unsuppo...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeError: ...
+========================= 4 failed, 8 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID b2e47ceecadf463098cf70f0a4c2fd70</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_RShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" &gt;&gt; str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py ....F                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_4 - TypeError: unsuppo...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeError: ...
+========================= 4 failed, 8 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID a86ad24e1eba40ad95168462d0fe6c7b</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_LShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" &lt;&lt; str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py ....F                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_4 - TypeError: unsuppo...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeError: ...
+========================= 4 failed, 8 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID 2d8dbda69785448d9b94523c55a5c5bc</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" | str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py ....F                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_4 - TypeError: unsuppo...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeError: ...
+========================= 4 failed, 8 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID 62caf6e5f41b4247aaefa254a7ce858c</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitAnd, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" &amp; str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py ....F                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_4 - TypeError: unsuppo...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeError: ...
+========================= 4 failed, 8 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID 88fdf09431d446e78bb12f8a10ddbbde</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitXor, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" ^ str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py ....F                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_4 - TypeError: unsuppo...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeError: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeError: ...
+========================= 4 failed, 8 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID b3f4d5879c21407c8b63b0eb25dddeaa</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) != 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py .F.F.                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F....F.                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_1 - Exception: Stack i...
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_3 - assert False is True
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - Exception: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_5 - assert Fals...
+========================= 4 failed, 8 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID 5eb4c1e47f9048e79d3111ad70ba2a45</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) &lt; 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py ...F.                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py .....F.                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_3 - assert False is True
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_5 - assert Fals...
+========================= 2 failed, 10 passed in 0.02s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_14_1"><button class="btn btn-outline-danger"><span class="job_id">14 : Job ID c1d1bba1764d49cab7b50a8b8337d533</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) &lt;= 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py .....                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py .......                      [100%]
+
+============================== 12 passed in 0.02s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_15_1"><button class="btn btn-outline-success"><span class="job_id">15 : Job ID d045564c1f264903bbd0c32ea3c3d8cc</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) &gt; 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py .F.F.                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F....F.                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_1 - Exception: Stack i...
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_3 - assert False is True
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - Exception: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_5 - assert Fals...
+========================= 4 failed, 8 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_16_1"><button class="btn btn-outline-success"><span class="job_id">16 : Job ID 79166cfb46724e5bb9bff43a90aeab52</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) &gt;= 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py .F...                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F......                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_1 - Exception: Stack i...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - Exception: ...
+========================= 2 failed, 10 passed in 0.02s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_17_1"><button class="btn btn-outline-success"><span class="job_id">17 : Job ID d1875de99bd945cba4111656db24aaf4</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (21, 11), end pos: (21, 25)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -18,7 +18,7 @@
+ 
+     def pop(self):
+         """Remove topmost element and return it. O(1) performance."""
+-        if self.isEmpty():
++        if not self.isEmpty():
+             raise Exception('Stack is empty.')
+         return self.stack.pop()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py .F...                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F......                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_1 - Exception: Stack i...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - Exception: ...
+========================= 2 failed, 10 passed in 0.02s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_18_1"><button class="btn btn-outline-success"><span class="job_id">18 : Job ID 08d3cb8f85e24376b481aa332e243d20</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 34), end pos: (13, 35)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) == 1
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py .F.F.                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F....F.                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_1 - Exception: Stack i...
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_3 - assert False is True
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - Exception: ...
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_5 - assert Fals...
+========================= 4 failed, 8 passed in 0.02s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_19"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_19_1" aria-expanded="false" aria-controls="job_list___sub_collapse_19_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_19_1"><button class="btn btn-outline-success"><span class="job_id">19 : Job ID 0e09550b3a684ae5b7b94314fa96b998</span></button></div></a><div aria-labelledby="job_list___sub_heading_19_1" data-parent="#job_list___sub_accordion_19" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_19_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 34), end pos: (13, 35)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) == -1
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+MOSA-WHOLE_SUITE/test_stack2_MOSA.py ...F.                               [ 41%]
+MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py .....F.                      [100%]
+
+=========================== short test summary info ============================
+FAILED MOSA-WHOLE_SUITE/test_stack2_MOSA.py::test_case_3 - assert False is True
+FAILED MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_5 - assert Fals...
+========================= 2 failed, 10 passed in 0.02s =========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

@@ -1,0 +1,67 @@
+<html><body><h1>queue4.py</h1>Killed 68 out of 74 mutants<h2>Timeouts</h2>Mutants that made the test suite take a lot longer so the tests were killed.<h3>Mutant 72</h3><pre>--- queue4.py
++++ queue4.py
+@@ -113,7 +113,7 @@
+         l = []
+         while True:
+             try:
+-                popped_data = self.pop()
++                popped_data = None
+                 l.append(popped_data)
+             except IndexError:
+                 break
+</pre><h3>Mutant 73</h3><pre>--- queue4.py
++++ queue4.py
+@@ -116,7 +116,7 @@
+                 popped_data = self.pop()
+                 l.append(popped_data)
+             except IndexError:
+-                break
++                continue
+         return l
+ 
+ 
+</pre><h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 20</h3><pre>--- queue4.py
++++ queue4.py
+@@ -53,7 +53,7 @@
+         """Remove the val from the head of the list."""
+         to_return = self.head
+         if self._length < 1:
+-            raise IndexError('Cannot pop from an empty list.')
++            raise IndexError('XXCannot pop from an empty list.XX')
+ 
+         new_head = self.head.next
+         if new_head:
+</pre><h3>Mutant 42</h3><pre>--- queue4.py
++++ queue4.py
+@@ -78,7 +78,7 @@
+         """Remove the val from the tail of the list."""
+         to_return = self.tail
+         if self._length < 1:
+-            raise IndexError('Cannot shift from an empty list.')
++            raise IndexError('XXCannot shift from an empty list.XX')
+ 
+         new_tail = self.tail.prev
+         if new_tail:
+</pre><h3>Mutant 44</h3><pre>--- queue4.py
++++ queue4.py
+@@ -82,7 +82,7 @@
+ 
+         new_tail = self.tail.prev
+         if new_tail:
+-            new_tail.next = None
++            new_tail.next = ""
+         self.tail = new_tail
+         self._length -= 1
+         if self._length < 1:
+</pre><h3>Mutant 69</h3><pre>--- queue4.py
++++ queue4.py
+@@ -106,7 +106,7 @@
+                 return
+             curr = curr.next
+ 
+-        raise ValueError('{} is not in the list'.format(val))
++        raise ValueError('XX{} is not in the listXX'.format(val))
+ 
+     def _repr(self):
+         """Return list representation of dll."""
+</pre></body></html>

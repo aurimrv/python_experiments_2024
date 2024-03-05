@@ -1,0 +1,188 @@
+<html><body><h1>queue2.py</h1>Killed 56 out of 73 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 3</h3><pre>--- queue2.py
++++ queue2.py
+@@ -11,7 +11,7 @@
+ 
+     def checkInfinite(self):
+         """Check whether infinite loop via next."""
+-        p1 = p2 = self
++        p1 = p2 = None
+         while p1 != None and p2 != None:
+             if p2.next == None: return False
+ 
+</pre><h3>Mutant 4</h3><pre>--- queue2.py
++++ queue2.py
+@@ -12,7 +12,7 @@
+     def checkInfinite(self):
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+-        while p1 != None and p2 != None:
++        while p1 == None and p2 != None:
+             if p2.next == None: return False
+ 
+             p1 = p1.next
+</pre><h3>Mutant 5</h3><pre>--- queue2.py
++++ queue2.py
+@@ -12,7 +12,7 @@
+     def checkInfinite(self):
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+-        while p1 != None and p2 != None:
++        while p1 != None and p2 == None:
+             if p2.next == None: return False
+ 
+             p1 = p1.next
+</pre><h3>Mutant 10</h3><pre>--- queue2.py
++++ queue2.py
+@@ -16,7 +16,7 @@
+             if p2.next == None: return False
+ 
+             p1 = p1.next
+-            p2 = p2.next.next
++            p2 = None
+             
+             if p1 == p2: return True
+         return False
+</pre><h3>Mutant 12</h3><pre>--- queue2.py
++++ queue2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 == p2: return False
+         return False
+ 
+ class LinkedList:
+</pre><h3>Mutant 17</h3><pre>--- queue2.py
++++ queue2.py
+@@ -35,7 +35,7 @@
+     def pop(self):
+         """Remove first value in list."""
+         if self.head is None:
+-            raise Exception ("Linked list is empty.")
++            raise Exception ("XXLinked list is empty.XX")
+         val = self.head.value
+         self.head = self.head.next
+         return val
+</pre><h3>Mutant 19</h3><pre>--- queue2.py
++++ queue2.py
+@@ -37,7 +37,7 @@
+         if self.head is None:
+             raise Exception ("Linked list is empty.")
+         val = self.head.value
+-        self.head = self.head.next
++        self.head = None
+         return val
+ 
+     def remove(self, value):
+</pre><h3>Mutant 25</h3><pre>--- queue2.py
++++ queue2.py
+@@ -47,7 +47,7 @@
+         while n != None:
+             if n.value == value:
+                 if last == None:
+-                    self.head = self.head.next
++                    self.head = None
+                 else:
+                     last.next = n.next
+                 return True
+</pre><h3>Mutant 26</h3><pre>--- queue2.py
++++ queue2.py
+@@ -49,7 +49,7 @@
+                 if last == None:
+                     self.head = self.head.next
+                 else:
+-                    last.next = n.next
++                    last.next = None
+                 return True
+             n = n.next
+         return False
+</pre><h3>Mutant 28</h3><pre>--- queue2.py
++++ queue2.py
+@@ -51,7 +51,7 @@
+                 else:
+                     last.next = n.next
+                 return True
+-            n = n.next
++            n = None
+         return False
+         
+     def __iter__(self):
+</pre><h3>Mutant 46</h3><pre>--- queue2.py
++++ queue2.py
+@@ -81,7 +81,7 @@
+     def __init__(self, *start):
+         """Demonstrate queue using linked list in Python."""
+         self.head = None
+-        self.tail = None
++        self.tail = ""
+         for _ in start:
+             self.add(_)
+ 
+</pre><h3>Mutant 51</h3><pre>--- queue2.py
++++ queue2.py
+@@ -92,7 +92,7 @@
+             self.head = self.tail = newNode
+         else:
+             self.tail.next = newNode
+-            self.tail = newNode
++            self.tail = None
+ 
+     def isEmpty(self):
+         """Determine if queue is empty."""
+</pre><h3>Mutant 54</h3><pre>--- queue2.py
++++ queue2.py
+@@ -101,7 +101,7 @@
+     def pop(self):
+         """Remove first value from queue."""
+         if self.head is None:
+-            raise Exception ("Queue is empty.")
++            raise Exception ("XXQueue is empty.XX")
+         val = self.head.value
+         self.head = self.head.next
+         if self.head is None:
+</pre><h3>Mutant 57</h3><pre>--- queue2.py
++++ queue2.py
+@@ -104,7 +104,7 @@
+             raise Exception ("Queue is empty.")
+         val = self.head.value
+         self.head = self.head.next
+-        if self.head is None:
++        if self.head is not None:
+             self.tail = None
+         return val
+ 
+</pre><h3>Mutant 58</h3><pre>--- queue2.py
++++ queue2.py
+@@ -105,7 +105,7 @@
+         val = self.head.value
+         self.head = self.head.next
+         if self.head is None:
+-            self.tail = None
++            self.tail = ""
+         return val
+ 
+     def __iter__(self):
+</pre><h3>Mutant 61</h3><pre>--- queue2.py
++++ queue2.py
+@@ -113,7 +113,7 @@
+         n = self.head
+         while n != None:
+             yield n.value
+-            n = n.next
++            n = None
+         
+     def __repr__(self):
+         """String representation of queue."""
+</pre><h3>Mutant 65</h3><pre>--- queue2.py
++++ queue2.py
+@@ -120,7 +120,7 @@
+         if self.head is None:
+             return 'queue:[]'
+ 
+-        return 'queue:[{0:s}]'.format(','.join(map(str,self)))
++        return 'queue:[{0:s}]'.format('XX,XX'.join(map(str,self)))
+ 
+     def __len__(self):
+         """Count values in queue."""
+</pre></body></html>

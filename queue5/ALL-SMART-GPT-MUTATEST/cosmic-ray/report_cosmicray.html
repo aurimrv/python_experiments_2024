@@ -1,0 +1,562 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 24/02/2024 00:20:02</p><p>Total jobs: 16</p><p>Complete: 16 (100.00%)</p><p>Surviving mutants: 3 (18.75%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID aa4308b961a94d25baf0877163080d17</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 21), end pos: (30, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if self.head != self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py .F.FF                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py ...FF.                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py ...FF                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py F                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py ....FFF.               [100%]
+
+=========================== short test summary info ============================
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_1 - assert &lt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_3 - assert &lt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_4 - assert &lt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_3 - assert &lt;queue...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_4 - AssertionErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_3 - assert &lt;queu...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_4 - AssertionErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py::test_enqueue_empty_queue
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_4 - asser...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_5 - Asser...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_6 - asser...
+======================== 11 failed, 14 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID 4e63734d2c05487e8a7a83dbcaff96be</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 21), end pos: (30, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if self.head &lt; self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py .F.FF                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py ...FF.                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py ...FF                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py F                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py ....FFF.               [100%]
+
+=========================== short test summary info ============================
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_1 - TypeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_3 - TypeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_4 - TypeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_3 - TypeError: '&lt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_4 - TypeError: '&lt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_3 - TypeError: '...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_4 - TypeError: '...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py::test_enqueue_empty_queue
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_4 - TypeE...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_5 - TypeE...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_6 - TypeE...
+======================== 11 failed, 14 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 9f4a9ae4b7ac49cfaff84d1537803026</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 21), end pos: (30, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if self.head &lt;= self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py .F.FF                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py ...FF.                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py ...FF                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py F                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py ....FFF.               [100%]
+
+=========================== short test summary info ============================
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_1 - TypeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_3 - TypeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_4 - TypeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_3 - TypeError: '&lt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_4 - TypeError: '&lt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_3 - TypeError: '...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_4 - TypeError: '...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py::test_enqueue_empty_queue
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_4 - TypeE...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_5 - TypeE...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_6 - TypeE...
+======================== 11 failed, 14 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID 45b1a106a7284a07aa25893482868985</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 21), end pos: (30, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if self.head &gt; self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py .F.FF                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py ...FF.                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py ...FF                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py F                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py ....FFF.               [100%]
+
+=========================== short test summary info ============================
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_1 - TypeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_3 - TypeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_4 - TypeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_3 - TypeError: '&gt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_4 - TypeError: '&gt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_3 - TypeError: '...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_4 - TypeError: '...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py::test_enqueue_empty_queue
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_4 - TypeE...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_5 - TypeE...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_6 - TypeE...
+======================== 11 failed, 14 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID 9394da32ba884a97b69eba4004c5c3d4</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 21), end pos: (30, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if self.head &gt;= self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py .F.FF                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py ...FF.                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py ...FF                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py F                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py ....FFF.               [100%]
+
+=========================== short test summary info ============================
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_1 - TypeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_3 - TypeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_4 - TypeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_3 - TypeError: '&gt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_4 - TypeError: '&gt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_3 - TypeError: '...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_4 - TypeError: '...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py::test_enqueue_empty_queue
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_4 - TypeE...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_5 - TypeE...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_6 - TypeE...
+======================== 11 failed, 14 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_6_1"><button class="btn btn-outline-danger"><span class="job_id">6 : Job ID 02d01b7201984263adbc2121dce17753</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 21), end pos: (30, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if self.head is self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py .....                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py ......                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py .....                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py .                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py ........               [100%]
+
+============================== 25 passed in 0.12s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID d54c1443117b459980f660f1f55ff8f3</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 21), end pos: (30, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if self.head is not self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py .F.FF                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py ...FF.                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py ...FF                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py F                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py ....FFF.               [100%]
+
+=========================== short test summary info ============================
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_1 - assert &lt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_3 - assert &lt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_4 - assert &lt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_3 - assert &lt;queue...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_4 - AssertionErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_3 - assert &lt;queu...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_4 - AssertionErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py::test_enqueue_empty_queue
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_4 - asser...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_5 - Asser...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_6 - asser...
+======================== 11 failed, 14 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID 6e84a0f2f70f4d49b99ae036426083e6</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=17" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (17, 21), end pos: (17, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -14,7 +14,7 @@
+     def enqueue(self, data):
+         node = Node(data)
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if self.head is not None and self.tail is None:
+             self.head = node
+             self.tail = node
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py FF.FF                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py FF.FF.                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py FF.FF                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py F                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py F.F.FFF.               [100%]
+
+=========================== short test summary info ============================
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_0 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_1 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_3 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_4 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_0 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_1 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_3 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_4 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_0 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_1 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_3 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_4 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py::test_enqueue_empty_queue
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_0 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_2 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_4 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_5 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_6 - Attri...
+========================= 18 failed, 7 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID d32d9da71a104e008e04683fc55aafe1</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=17" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (17, 43), end pos: (17, 45)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -14,7 +14,7 @@
+     def enqueue(self, data):
+         node = Node(data)
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if self.head is None and self.tail is not None:
+             self.head = node
+             self.tail = node
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py FF.FF                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py FF.FF.                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py FF.FF                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py F                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py F.F.FFF.               [100%]
+
+=========================== short test summary info ============================
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_0 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_1 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_3 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_4 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_0 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_1 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_3 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_4 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_0 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_1 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_3 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_4 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py::test_enqueue_empty_queue
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_0 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_2 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_4 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_5 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_6 - Attri...
+========================= 18 failed, 7 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID badca6f05f464e8a94a47a28a887773b</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (26, 21), end pos: (26, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -23,7 +23,7 @@
+ 
+     def dequeue(self):
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if self.head is not None and self.tail is None:
+             return None
+         data = self.head.data
+         # Remove only element from a one element list</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py .FF.F                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py ..F...                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py .FF..                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py F                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py ...FF.FF               [100%]
+
+=========================== short test summary info ============================
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_1 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_2 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_4 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_2 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_1 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_2 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py::test_enqueue_empty_queue
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_3 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_4 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_6 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_7 - Attri...
+======================== 11 failed, 14 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID 7833a754e25c4132a797a8731324186c</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (26, 43), end pos: (26, 45)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -23,7 +23,7 @@
+ 
+     def dequeue(self):
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if self.head is None and self.tail is not None:
+             return None
+         data = self.head.data
+         # Remove only element from a one element list</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py .FF.F                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py ..F...                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py .FF..                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py F                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py ...FF.FF               [100%]
+
+=========================== short test summary info ============================
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_1 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_2 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_4 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_2 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_1 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_2 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py::test_enqueue_empty_queue
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_3 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_4 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_6 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_7 - Attri...
+======================== 11 failed, 14 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID e8f20f5263c848f68b25722608e67679</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=17" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (17, 11), end pos: (17, 50)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -14,7 +14,7 @@
+     def enqueue(self, data):
+         node = Node(data)
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if not self.head is None and self.tail is None:
+             self.head = node
+             self.tail = node
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py FF.FF                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py FF.FF.                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py FF.FF                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py F                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py F.F.FFF.               [100%]
+
+=========================== short test summary info ============================
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_0 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_1 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_3 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_4 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_0 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_1 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_3 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_4 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_0 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_1 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_3 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_4 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py::test_enqueue_empty_queue
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_0 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_2 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_4 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_5 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_6 - Attri...
+========================= 18 failed, 7 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID 755d4e1447df4605b69f633a9d817171</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (26, 11), end pos: (26, 50)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -23,7 +23,7 @@
+ 
+     def dequeue(self):
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if not self.head is None and self.tail is None:
+             return None
+         data = self.head.data
+         # Remove only element from a one element list</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py .FF.F                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py ..F...                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py .FF..                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py F                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py ...FF.FF               [100%]
+
+=========================== short test summary info ============================
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_1 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_2 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_4 - Attribut...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_2 - AttributeErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_1 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_2 - AttributeErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py::test_enqueue_empty_queue
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_3 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_4 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_6 - Attri...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_7 - Attri...
+======================== 11 failed, 14 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID ce1b8d4b88b8426f898319b755d0b1e2</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 11), end pos: (30, 33)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if not self.head == self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py .F.FF                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py ...FF.                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py ...FF                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py F                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py ....FFF.               [100%]
+
+=========================== short test summary info ============================
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_1 - assert &lt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_3 - assert &lt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py::test_case_4 - assert &lt;...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_3 - assert &lt;queue...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py::test_case_4 - AssertionErro...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_3 - assert &lt;queu...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py::test_case_4 - AssertionErr...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py::test_enqueue_empty_queue
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_4 - asser...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_5 - Asser...
+FAILED ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py::test_case_6 - asser...
+======================== 11 failed, 14 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_15_1"><button class="btn btn-outline-danger"><span class="job_id">15 : Job ID 16dcc963f3b7452f82608aa4b21641c3</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=17" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (17, 29), end pos: (17, 32)</button></a></pre><pre>operator: core/ReplaceAndWithOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -14,7 +14,7 @@
+     def enqueue(self, data):
+         node = Node(data)
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if self.head is None or self.tail is None:
+             self.head = node
+             self.tail = node
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py .....                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py ......                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py .....                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py .                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py ........               [100%]
+
+============================== 25 passed in 0.12s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_16_1"><button class="btn btn-outline-danger"><span class="job_id">16 : Job ID 1de257fee5f940ffa7feff804115afcf</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (26, 29), end pos: (26, 32)</button></a></pre><pre>operator: core/ReplaceAndWithOr, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -23,7 +23,7 @@
+ 
+     def dequeue(self):
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if self.head is None or self.tail is None:
+             return None
+         data = self.head.data
+         # Remove only element from a one element list</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/queue5
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 25 items
+
+ALL-SMART-GPT-MUTATEST/test_queue5_DYNAMOSA.py .....                     [ 20%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MIO.py ......                         [ 44%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MOSA.py .....                         [ 64%]
+ALL-SMART-GPT-MUTATEST/test_queue5_MUTATEST.py .                         [ 68%]
+ALL-SMART-GPT-MUTATEST/test_queue5_WHOLE_SUITE.py ........               [100%]
+
+============================== 25 passed in 0.12s ==============================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

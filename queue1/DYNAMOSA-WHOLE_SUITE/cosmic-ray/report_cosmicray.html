@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 20/04/2023 15:11:24</p><p>Total jobs: 14</p><p>Complete: 14 (100.00%)</p><p>Surviving mutants: 0 (0.00%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID fe2cff599e67401abc781e25eae7398a</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=23" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (23, 16), end pos: (23, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -20,7 +20,7 @@
+ 
+ 	def enqueue(self, item):
+ 
+-		if self.front is None:
++		if self.front is not None:
+ 			new_node = QueueNode(item)
+ 			self.front = new_node
+ 			self.back = new_node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 18 items
+
+DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py F..F..FF                    [ 44%]
+DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F.FFF               [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_0 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_7 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - Attribu...
+========================= 8 failed, 10 passed in 0.04s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID bc07b5cda4c648d4a3ee78a8f51d044b</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (35, 16), end pos: (35, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -32,7 +32,7 @@
+ 		self.size += 1
+ 
+ 	def dequeue(self):
+-		if self.front is None:
++		if self.front is not None:
+ 			raise ValueError()
+ 		else:
+ 			front_node = self.front</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 18 items
+
+DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py .F.F..F.                    [ 44%]
+DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .F...F....               [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_1 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - ValueError
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - ValueError
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_1 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - ValueError
+========================= 5 failed, 13 passed in 0.04s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 3ff609ca96a748e6b4d5f43a177d1b71</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (44, 16), end pos: (44, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -41,7 +41,7 @@
+ 			return front_node.data
+ 
+ 	def peek(self):
+-		if self.front is None:
++		if self.front is not None:
+ 			return None
+ 		return self.front.data
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 18 items
+
+DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py ..F.....                    [ 44%]
+DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py F....F...F               [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_2 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_0 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - Asserti...
+========================= 4 failed, 14 passed in 0.04s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID 32220567545a45949d68ad411cca314d</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=23" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (23, 5), end pos: (23, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -20,7 +20,7 @@
+ 
+ 	def enqueue(self, item):
+ 
+-		if self.front is None:
++		if not self.front is None:
+ 			new_node = QueueNode(item)
+ 			self.front = new_node
+ 			self.back = new_node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 18 items
+
+DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py F..F..FF                    [ 44%]
+DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F.FFF               [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_0 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_7 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - Attribu...
+========================= 8 failed, 10 passed in 0.04s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID b4b7965d83c14e8b8ea351578d075574</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (35, 5), end pos: (35, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -32,7 +32,7 @@
+ 		self.size += 1
+ 
+ 	def dequeue(self):
+-		if self.front is None:
++		if not self.front is None:
+ 			raise ValueError()
+ 		else:
+ 			front_node = self.front</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 18 items
+
+DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py .F.F..F.                    [ 44%]
+DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .F...F....               [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_1 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - ValueError
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - ValueError
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_1 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - ValueError
+========================= 5 failed, 13 passed in 0.04s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID 7c94c19e4fd4458c93f3aad1271d7953</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (44, 5), end pos: (44, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -41,7 +41,7 @@
+ 			return front_node.data
+ 
+ 	def peek(self):
+-		if self.front is None:
++		if not self.front is None:
+ 			return None
+ 		return self.front.data
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 18 items
+
+DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py ..F.....                    [ 44%]
+DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py F....F...F               [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_2 - AttributeE...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_0 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - Attribu...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - Asserti...
+========================= 4 failed, 14 passed in 0.04s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID 14ecc2b1fe6046918e1b13d99b1b9b7a</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=12" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (12, 14), end pos: (12, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -9,7 +9,7 @@
+ 	def __init__(self):
+ 		self.front = None
+ 		self.back = None
+-		self.size = 0
++		self.size = 1
+ 
+ 	def __str__(self):
+ 		# TODO implement this later</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 18 items
+
+DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py FFFFFFFF                    [ 44%]
+DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py FFFFFFFFFF               [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_0 - assert 1 == 0
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_1 - assert 1 == 0
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_2 - assert 1 == 0
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - assert 1 == 0
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_4 - assert 1 == 0
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_5 - assert 1 == 0
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - assert 1 == 0
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_7 - assert 1 == 0
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_0 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_1 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_2 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_3 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_4 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_6 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - assert ...
+============================== 18 failed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID 34c565b6cf5b4cafb87edd5302934963</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=12" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (12, 14), end pos: (12, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -9,7 +9,7 @@
+ 	def __init__(self):
+ 		self.front = None
+ 		self.back = None
+-		self.size = 0
++		self.size = -1
+ 
+ 	def __str__(self):
+ 		# TODO implement this later</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 18 items
+
+DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py FFFFFFFF                    [ 44%]
+DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py FFFFFFFFFF               [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_0 - ValueError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_1 - ValueError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_2 - ValueError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - ValueError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_4 - ValueError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_5 - ValueError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - ValueError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_7 - ValueError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_0 - ValueEr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_1 - ValueEr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_2 - ValueEr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_3 - ValueEr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_4 - ValueEr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - ValueEr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_6 - ValueEr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7 - ValueEr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8 - ValueEr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - ValueEr...
+============================== 18 failed in 0.05s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID 0c804e58d7bf40209872074c340771cb</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=32" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (32, 15), end pos: (32, 16)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -29,7 +29,7 @@
+ 			self.back.next = new_back
+ 			self.back = new_back
+ 
+-		self.size += 1
++		self.size += 2
+ 
+ 	def dequeue(self):
+ 		if self.front is None:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 18 items
+
+DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py F..F..FF                    [ 44%]
+DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F.FFF               [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_0 - assert 2 == 1
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - assert 2 == 1
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - assert 2 == 1
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_7 - assert 2 == 1
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - assert ...
+========================= 8 failed, 10 passed in 0.04s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID aa30e4b31fb04e4e914269eacc90a5b3</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=32" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (32, 15), end pos: (32, 16)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -29,7 +29,7 @@
+ 			self.back.next = new_back
+ 			self.back = new_back
+ 
+-		self.size += 1
++		self.size += 0
+ 
+ 	def dequeue(self):
+ 		if self.front is None:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 18 items
+
+DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py F..F..FF                    [ 44%]
+DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F.FFF               [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_0 - assert 0 == 1
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - assert 0 == 1
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - assert 0 == 1
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_7 - assert 0 == 1
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8 - assert ...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - assert ...
+========================= 8 failed, 10 passed in 0.04s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID afcdc8e7962f4e86a144cf96650cdc6f</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (40, 16), end pos: (40, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -37,7 +37,7 @@
+ 		else:
+ 			front_node = self.front
+ 			self.front = self.front.next
+-			self.size -= 1
++			self.size -= 2
+ 			return front_node.data
+ 
+ 	def peek(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 18 items
+
+DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py ...F..F.                    [ 44%]
+DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F....               [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - ValueError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - ValueError...
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - ValueEr...
+========================= 3 failed, 15 passed in 0.04s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID f6e726b8f4224bf59168da7c5d948433</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (40, 16), end pos: (40, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -37,7 +37,7 @@
+ 		else:
+ 			front_node = self.front
+ 			self.front = self.front.next
+-			self.size -= 1
++			self.size -= 0
+ 			return front_node.data
+ 
+ 	def peek(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 18 items
+
+DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py ...F..F.                    [ 44%]
+DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F....               [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - assert 1 == 0
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - assert 1 == 0
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - assert ...
+========================= 3 failed, 15 passed in 0.04s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID e8926e963a824c3896b469d4a7cdd5cc</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (49, 14), end pos: (49, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -46,7 +46,7 @@
+ 		return self.front.data
+ 
+ 	def clear(self):
+-		self.size = 0 
++		self.size = 1 
+ 		self.front = None
+ 		self.back = None
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 18 items
+
+DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py ........                    [ 44%]
+DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F....               [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - assert ...
+========================= 1 failed, 17 passed in 0.03s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID 7697dc0e09f7497cbe90e1644f67a9cf</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (49, 14), end pos: (49, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -46,7 +46,7 @@
+ 		return self.front.data
+ 
+ 	def clear(self):
+-		self.size = 0 
++		self.size = -1 
+ 		self.front = None
+ 		self.back = None
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 18 items
+
+DYNAMOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py ........                    [ 44%]
+DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F....               [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - assert ...
+========================= 1 failed, 17 passed in 0.03s =========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

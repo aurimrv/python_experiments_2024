@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MutPy mutation report - mutation #194</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css" />
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPython.js" type="text/javascript"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.all();
+    window.setTimeout(function () {
+        
+        $('.line.number99').attr('title', 'SVD');
+        
+    }, 0);
+</script>
+
+</head>
+<body>
+    <div class="container">
+        
+<div class="page-header">
+    <h1>Mutation #194</h1>
+</div>
+<h3>Details</h3>
+<ul>
+    <li>module - <code><module 'linkedList1' from '/home/auri/temp/lucca/python_experiments/linkedList1/./linkedList1.py'></code></li>
+    <li><span class="label label-success">killed</span> by <code>DYNAMOSA-MOSA-WHOLE_SUITE/test_linkedList1_DYNAMOSA.py::test_case_23</code></li>
+    
+    <li>duration - 0.12 s</li>
+    
+    
+    <li>tests run - 44</li>
+    
+</ul>
+
+<h3>Exception traceback</h3>
+<pre>def test_case_23():
+        bytes_0 = b'}\xd9\xff\xe7\xea\xfbPJk\x0328\x8b\xd4`'
+        bool_0 = False
+        singly_linked_node_0 = module_0.SinglyLinkedNode(bool_0)
+        doubly_linked_list_0 = module_0.DoublyLinkedList()
+        assert len(doubly_linked_list_0) == 0
+        var_0 = doubly_linked_list_0.append(bool_0)
+        assert len(doubly_linked_list_0) == 1
+        var_1 = doubly_linked_list_0.__contains__(bytes_0)
+        assert var_1 is False
+        var_2 = doubly_linked_list_0.insert(bytes_0, bool_0)
+        assert len(doubly_linked_list_0) == 3
+        object_0 = module_1.object()
+        var_3 = doubly_linked_list_0.append(object_0)
+        assert len(doubly_linked_list_0) == 4
+        var_4 = doubly_linked_list_0.__iter__()
+        assert len(var_4) == 4
+        var_5 = var_4.__contains__(object_0)
+        assert var_5 is True
+        var_6 = doubly_linked_list_0.next()
+        assert var_6 is False
+>       var_7 = var_4.previous()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_linkedList1_DYNAMOSA.py:357: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList1.DoublyLinkedList object at 0x7fc52d95ea70>
+
+>   ???
+E   NameError: name 'cursor' is not defined
+
+linkedList1:99: NameError</pre>
+
+<h3>Mutations</h3>
+<ul>
+    
+    <li>SVD - line 99</li>
+    
+</ul>
+<h3>Mutant</h3>
+<pre class="brush: python; first-line: 1; highlight: [99]; toolbar: false;">''' Collections
+
+    thomas moll 2015
+'''
+
+class SinglyLinkedList(object):
+    __next__ = next
+    
+    def __init__(self):
+        self.head = None
+        self.size = 0
+        self.cursor = None
+    
+    def __len__(self):
+        return self.size
+    
+    def __iter__(self):
+        return self
+    
+    def __contains__(self, item):
+        if self.head is not None:
+            cur = self.head
+            while cur is not None:
+                if cur.data is item:
+                    return True
+                cur = cur.next
+        return False
+    
+    ''' Both getitem and setitem represent the magic methods
+        for the object[index] and object[index] = other operations
+        for linked lists they run in O(n) time making them less
+        efficient than a list() for lookups
+    '''
+    def __getitem__(self, index):
+        if (index >= self.size or index < 0):
+            raise IndexError()
+        else:
+            cur = self.head
+            for x in range(index):
+                cur = cur.next
+            return cur.data
+    
+    def __setitem__(self, index, value):
+        if (index >= self.size or index < 0):
+            raise IndexError()
+        else:
+            cur = self.head
+            for x in range(index):
+                cur = cur.next
+            cur.data = value
+    
+    def next(self):
+        if self.cursor is None:
+            raise StopIteration()
+        else:
+            node = self.cursor.data
+            self.cursor = self.cursor.next
+            return node
+    
+    def append(self, data):
+        ''' Note: The average time for append is O(n)
+            however, insertion is O(1), giving it an
+            advantage over arrays.
+        '''
+        if self.head is None:
+            self.head = SinglyLinkedNode(data)
+            self.cursor = self.head
+        else:
+            node = self.head
+            
+            while node.next is not None:
+                node = node.next
+            
+            
+            new_node = SinglyLinkedNode(data)
+            
+            
+            node.next = new_node
+        
+        self.size += 1
+
+
+class SinglyLinkedNode(object):
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class DoublyLinkedList(SinglyLinkedList):
+    def __init__(self):
+        
+        super(DoublyLinkedList, self).__init__()
+    
+    def previous(self):
+        if self.cursor.prev is None:
+            raise StopIteration()
+        else:
+            self.cursor.prev
+            self.cursor = cursor.prev
+            return self.cursor.data
+    
+    def append(self, data):
+        ''' Note: The average time for append is O(n)
+            however, insertion is O(1), giving it an
+            advantage over arrays.
+        '''
+        if self.head is None:
+            self.head = DoublyLinkedNode(data)
+            self.cursor = self.head
+        else:
+            node = self.head
+            
+            while node.next is not None:
+                node = node.next
+            
+            
+            new_node = DoublyLinkedNode(data)
+            node.next = new_node
+            new_node.prev = node
+        self.size += 1
+    
+    def insert(self, data, index):
+        if index >= self.size:
+            raise IndexError()
+        if self.head is None:
+            self.head = DoublyLinkedNode(data)
+            self.cursor = self.head
+        
+        
+        elif index == self.size - 1:
+            
+            self.append(data)
+        
+        elif index == 0:
+            
+            
+            
+            a = self.head
+            c = DoublyLinkedNode(data)
+            
+            
+            
+            
+            self.head = c
+            c.next = a
+            a.prev = c
+            self.cursor = self.head
+        else:
+            
+            a = self.head
+            for x in range(index - 1):
+                a = a.next
+            
+            
+            
+            b = a.next
+            c = DoublyLinkedNode(data)
+            
+            
+            
+            
+            b.prev = c
+            c.next = b
+            
+            
+            
+            
+            a.next = c
+            c.prev = a
+        
+        self.size += 1
+
+
+class DoublyLinkedNode(SinglyLinkedNode):
+    def __init__(self, data):
+        
+        super(DoublyLinkedNode, self).__init__(data)
+        self.prev = None
+
+if __name__ == '__main__':
+    test = SinglyLinkedList()
+    test.append(2)
+    test.append(3)
+    test.append(4)
+    
+    print(test[0])
+    print(test[1])
+    print(test[2])
+    print(test[-1])</pre>
+
+    </div>
+</body>
+</html>

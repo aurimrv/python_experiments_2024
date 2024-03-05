@@ -1,0 +1,3384 @@
+[*] Start mutation process:
+   - targets: linkedList4.py
+   - tests: ./MIO-MOSA-WHOLE_SUITE
+[*] 42 tests passed:
+   - test_linkedList4_WHOLE_SUITE [0.05684 s]
+   - test_linkedList4_MIO [0.04535 s]
+   - test_linkedList4_MOSA [0.04341 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOD linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+- 87:         return display[:-2] + ')'
++ 87:         return display[:2] + ')'
+--------------------------------------------------------------------------------
+[0.07460 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+>       assert var_3 == ')'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:68: AssertionError
+   - [#   2] AOR linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+- 85:             display += str(curr.data) + ', '
++ 85:             display += str(curr.data) - ', '
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.07333 s] incompetent
+
+TypeError: linkedList4:85: TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+   - [#   3] AOR linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+- 87:         return display[:-2] + ')'
++ 87:         return display[:+2] + ')'
+--------------------------------------------------------------------------------
+[0.07615 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+>       assert var_3 == ')'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:68: AssertionError
+   - [#   4] AOR linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+- 87:         return display[:-2] + ')'
++ 87:         return display[:-2] - ')'
+--------------------------------------------------------------------------------
+[0.07553 s] incompetent
+
+TypeError: linkedList4:87: TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+   - [#   5] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+- 45:         self._length += 1
++ 45:         self._length -= 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+--------------------------------------------------------------------------------
+[0.07884 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+        assert var_3 == ')'
+        var_4 = linked_list_0.remove(var_2)
+        var_5 = linked_list_3.push(linked_list_1)
+        var_6 = linked_list_3.size()
+>       assert var_6 == 1
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:72: AssertionError
+   - [#   6] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+- 53:         self._length -= 1
++ 53:         self._length += 1
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+--------------------------------------------------------------------------------
+[0.07939 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+        assert var_3 == ')'
+        var_4 = linked_list_0.remove(var_2)
+        var_5 = linked_list_3.push(linked_list_1)
+        var_6 = linked_list_3.size()
+>       assert var_6 == 1
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:72: AssertionError
+   - [#   7] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+- 73:             self._length -= 1
++ 73:             self._length += 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+--------------------------------------------------------------------------------
+[0.07411 s] survived
+   - [#   8] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+- 77:                 self._length -= 1
++ 77:                 self._length += 1
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+--------------------------------------------------------------------------------
+[0.07230 s] survived
+   - [#   9] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+- 85:             display += str(curr.data) + ', '
++ 85:             display -= str(curr.data) + ', '
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.07669 s] incompetent
+
+TypeError: linkedList4:85: TypeError: unsupported operand type(s) for -=: 'str' and 'str'
+
+   - [#  10] CDI linkedList4: 
+--------------------------------------------------------------------------------
+   6: 
+   7:     Data attribute for data storage and Next for pointer to next node.
+   8:     '''
+   9:     
+- 10:     def __init__(self, data, next_node=None):
+- 11:         '''Attribute data and next_node.'''
+- 12:         self.data = data
+- 13:         self.next = next_node
+- 14: 
++ 10:     @classmethod
++ 11:     def __init__(self, data, next_node=None):
++ 12:         '''Attribute data and next_node.'''
++ 13:         self.data = data
++ 14:         self.next = next_node
+  15: 
+  16: class LinkedList(object):
+  17:     '''Method for linked list.
+  18: 
+--------------------------------------------------------------------------------
+[5.00636 s] timeout
+   - [#  11] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  26:     display() - will return a unicode string representing the list as
+  27:     if it were a Python tuple literal: "(12, \'sam\', 37, \'tango\')"
+  28:     '''
+  29:     
+- 30:     def __init__(self, data=None):
+- 31:         '''Linked list initialized with head.'''
+- 32:         self._length = 0
+- 33:         self.head = None
+- 34:         try:
+- 35:             for val in data:
+- 36:                 self.push(val)
+- 37:         except TypeError:
+- 38:             if data:
+- 39:                 self.push(data)
+- 40:     
++ 30:     @classmethod
++ 31:     def __init__(self, data=None):
++ 32:         '''Linked list initialized with head.'''
++ 33:         self._length = 0
++ 34:         self.head = None
++ 35:         try:
++ 36:             for val in data:
++ 37:                 self.push(val)
++ 38:         except TypeError:
++ 39:             if data:
++ 40:                 self.push(data)
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+--------------------------------------------------------------------------------
+[0.07193 s] incompetent
+
+TypeError: linkedList4:40: TypeError: LinkedList.push() missing 1 required positional argument: 'val'
+
+   - [#  12] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+- 41:     def push(self, val):
+- 42:         '''Insert a value at the head of the list.'''
+- 43:         old_head = self.head
+- 44:         self.head = Node(val, old_head)
+- 45:         self._length += 1
+- 46:     
++ 41:     @classmethod
++ 42:     def push(self, val):
++ 43:         '''Insert a value at the head of the list.'''
++ 44:         old_head = self.head
++ 45:         self.head = Node(val, old_head)
++ 46:         self._length += 1
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+--------------------------------------------------------------------------------
+[0.07249 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>, val = '/'
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList4:44: AttributeError
+   - [#  13] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+  45:         self._length += 1
+  46:     
+- 47:     def pop(self):
+- 48:         '''Remove the first value and return it.'''
+- 49:         if not (self.head):
+- 50:             raise IndexError('Cannot pop from an empty list')
+- 51:         to_return = self.head
+- 52:         self.head = self.head.next
+- 53:         self._length -= 1
+- 54:         return to_return.data
+- 55:     
++ 47:     @classmethod
++ 48:     def pop(self):
++ 49:         '''Remove the first value and return it.'''
++ 50:         if not (self.head):
++ 51:             raise IndexError('Cannot pop from an empty list')
++ 52:         to_return = self.head
++ 53:         self.head = self.head.next
++ 54:         self._length -= 1
++ 55:         return to_return.data
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+  59:     
+--------------------------------------------------------------------------------
+[0.07750 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.push(linked_list_0)
+        int_0 = -1574
+        var_1 = linked_list_0.remove(linked_list_0)
+        assert linked_list_0.head is None
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        linked_list_2 = module_0.LinkedList(int_0)
+        assert f'{type(linked_list_2.head).__module__}.{type(linked_list_2.head).__qualname__}' == 'linkedList4.Node'
+        with pytest.raises(IndexError):
+>           linked_list_0.pop()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList4:50: AttributeError
+   - [#  14] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+- 56:     def size(self):
+- 57:         '''Return the length of the list.'''
+- 58:         return self._length
+- 59:     
++ 56:     @classmethod
++ 57:     def size(self):
++ 58:         '''Return the length of the list.'''
++ 59:         return self._length
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+--------------------------------------------------------------------------------
+[0.07743 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+        assert var_3 == ')'
+        var_4 = linked_list_0.remove(var_2)
+        var_5 = linked_list_3.push(linked_list_1)
+>       var_6 = linked_list_3.size()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute '_length'
+
+linkedList4:59: AttributeError
+   - [#  15] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+  59:     
+- 60:     def search(self, val):
+- 61:         '''Return the node containing val.'''
+- 62:         curr = self.head
+- 63:         while curr:
+- 64:             if curr.data == val:
+- 65:                 return curr
+- 66:             curr = curr.next
+- 67:     
++ 60:     @classmethod
++ 61:     def search(self, val):
++ 62:         '''Return the node containing val.'''
++ 63:         curr = self.head
++ 64:         while curr:
++ 65:             if curr.data == val:
++ 66:                 return curr
++ 67:             curr = curr.next
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+--------------------------------------------------------------------------------
+[0.09104 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+>       var_1 = linked_list_0.search(bool_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>, val = True
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList4:63: AttributeError
+   - [#  16] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+- 68:     def remove(self, val):
+- 69:         '''Remove node from list if exists.'''
+- 70:         curr = self.head
+- 71:         if (curr and val is self.head.data):
+- 72:             self.head = self.head.next
+- 73:             self._length -= 1
+- 74:         while curr:
+- 75:             if (curr.next and curr.next.data == val):
+- 76:                 curr.next = curr.next.next
+- 77:                 self._length -= 1
+- 78:             curr = curr.next
+- 79:     
++ 68:     @classmethod
++ 69:     def remove(self, val):
++ 70:         '''Remove node from list if exists.'''
++ 71:         curr = self.head
++ 72:         if (curr and val is self.head.data):
++ 73:             self.head = self.head.next
++ 74:             self._length -= 1
++ 75:         while curr:
++ 76:             if (curr.next and curr.next.data == val):
++ 77:                 curr.next = curr.next.next
++ 78:                 self._length -= 1
++ 79:             curr = curr.next
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+--------------------------------------------------------------------------------
+[0.07366 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.push(linked_list_0)
+        int_0 = -1574
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>
+val = <linkedList4.LinkedList object at 0x7f3445b1ff40>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList4:71: AttributeError
+   - [#  17] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+- 80:     def display(self):
+- 81:         '''Display list as a tuple.'''
+- 82:         curr = self.head
+- 83:         display = '('
+- 84:         while curr:
+- 85:             display += str(curr.data) + ', '
+- 86:             curr = curr.next
+- 87:         return display[:-2] + ')'
++ 80:     @classmethod
++ 81:     def display(self):
++ 82:         '''Display list as a tuple.'''
++ 83:         curr = self.head
++ 84:         display = '('
++ 85:         while curr:
++ 86:             display += str(curr.data) + ', '
++ 87:             curr = curr.next
++ 88:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.07701 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        dict_0 = {str_0: linked_list_0}
+        bytes_0 = b'O\xfb\x03'
+        str_1 = 'E'
+        node_0 = module_0.Node(str_1)
+        var_0 = linked_list_0.push(dict_0)
+        linked_list_1 = module_0.LinkedList(node_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_1.head).__module__}.{type(linked_list_1.head).__qualname__}' == 'linkedList4.Node'
+        linked_list_2 = module_0.LinkedList()
+        assert linked_list_2.head is None
+>       var_1 = linked_list_1.display()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList4:83: AttributeError
+   - [#  18] COD linkedList4: 
+--------------------------------------------------------------------------------
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+- 49:         if not (self.head):
++ 49:         if self.head:
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+--------------------------------------------------------------------------------
+[0.07772 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.push(linked_list_0)
+        int_0 = -1574
+        var_1 = linked_list_0.remove(linked_list_0)
+        assert linked_list_0.head is None
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        linked_list_2 = module_0.LinkedList(int_0)
+        assert f'{type(linked_list_2.head).__module__}.{type(linked_list_2.head).__qualname__}' == 'linkedList4.Node'
+        with pytest.raises(IndexError):
+>           linked_list_0.pop()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445b1ce80>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList4:52: AttributeError
+   - [#  19] COI linkedList4: 
+--------------------------------------------------------------------------------
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+- 38:             if data:
++ 38:             if not data:
+  39:                 self.push(data)
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+--------------------------------------------------------------------------------
+[0.07349 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        dict_0 = {str_0: linked_list_0}
+        bytes_0 = b'O\xfb\x03'
+        str_1 = 'E'
+        node_0 = module_0.Node(str_1)
+        var_0 = linked_list_0.push(dict_0)
+        linked_list_1 = module_0.LinkedList(node_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList4.LinkedList'
+>       assert f'{type(linked_list_1.head).__module__}.{type(linked_list_1.head).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:16: AssertionError
+   - [#  20] COI linkedList4: 
+--------------------------------------------------------------------------------
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+- 49:         if not (self.head):
++ 49:         if not ((not (self.head))):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+--------------------------------------------------------------------------------
+[0.07717 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.push(linked_list_0)
+        int_0 = -1574
+        var_1 = linked_list_0.remove(linked_list_0)
+        assert linked_list_0.head is None
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        linked_list_2 = module_0.LinkedList(int_0)
+        assert f'{type(linked_list_2.head).__module__}.{type(linked_list_2.head).__qualname__}' == 'linkedList4.Node'
+        with pytest.raises(IndexError):
+>           linked_list_0.pop()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f34459e2110>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList4:52: AttributeError
+   - [#  21] COI linkedList4: 
+--------------------------------------------------------------------------------
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+- 63:         while curr:
++ 63:         while not curr:
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+--------------------------------------------------------------------------------
+[0.07656 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:57: AssertionError
+   - [#  22] COI linkedList4: 
+--------------------------------------------------------------------------------
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+- 64:             if curr.data == val:
++ 64:             if not (curr.data == val):
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+--------------------------------------------------------------------------------
+[0.07749 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+>       assert var_1.data is True
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:58: AssertionError
+   - [#  23] COI linkedList4: 
+--------------------------------------------------------------------------------
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+- 71:         if (curr and val is self.head.data):
++ 71:         if not ((curr and val is self.head.data)):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+--------------------------------------------------------------------------------
+[0.07345 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.push(linked_list_0)
+        int_0 = -1574
+        var_1 = linked_list_0.remove(linked_list_0)
+>       assert linked_list_0.head is None
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:31: AssertionError
+   - [#  24] COI linkedList4: 
+--------------------------------------------------------------------------------
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+- 74:         while curr:
++ 74:         while not curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.07683 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        bool_0 = False
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+>       var_0 = linked_list_0.remove(bool_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445b1f910>, val = False
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList4:75: AttributeError
+   - [#  25] COI linkedList4: 
+--------------------------------------------------------------------------------
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+- 75:             if (curr.next and curr.next.data == val):
++ 75:             if not ((curr.next and curr.next.data == val)):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+--------------------------------------------------------------------------------
+[0.07299 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.push(linked_list_0)
+        int_0 = -1574
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445b1d120>
+val = <linkedList4.LinkedList object at 0x7f3445b1d120>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList4:76: AttributeError
+   - [#  26] COI linkedList4: 
+--------------------------------------------------------------------------------
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+- 84:         while curr:
++ 84:         while not curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.07388 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+>       var_3 = linked_list_1.display()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445c4dc00>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList4:85: AttributeError
+   - [#  27] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  28:     '''
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+- 32:         self._length = 0
++ 32:         self._length = 1
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+--------------------------------------------------------------------------------
+[0.07595 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+        assert var_3 == ')'
+        var_4 = linked_list_0.remove(var_2)
+        var_5 = linked_list_3.push(linked_list_1)
+        var_6 = linked_list_3.size()
+>       assert var_6 == 1
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:72: AssertionError
+   - [#  28] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+- 45:         self._length += 1
++ 45:         self._length += 2
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+--------------------------------------------------------------------------------
+[0.07857 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+        assert var_3 == ')'
+        var_4 = linked_list_0.remove(var_2)
+        var_5 = linked_list_3.push(linked_list_1)
+        var_6 = linked_list_3.size()
+>       assert var_6 == 1
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:72: AssertionError
+   - [#  29] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+- 50:             raise IndexError('Cannot pop from an empty list')
++ 50:             raise IndexError('mutpy')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+--------------------------------------------------------------------------------
+[0.07116 s] survived
+   - [#  30] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+- 50:             raise IndexError('Cannot pop from an empty list')
++ 50:             raise IndexError('')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+--------------------------------------------------------------------------------
+[0.07069 s] survived
+   - [#  31] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+- 53:         self._length -= 1
++ 53:         self._length -= 2
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+--------------------------------------------------------------------------------
+[0.09175 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+        assert var_3 == ')'
+        var_4 = linked_list_0.remove(var_2)
+        var_5 = linked_list_3.push(linked_list_1)
+        var_6 = linked_list_3.size()
+>       assert var_6 == 1
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:72: AssertionError
+   - [#  32] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+- 73:             self._length -= 1
++ 73:             self._length -= 2
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+--------------------------------------------------------------------------------
+[0.07165 s] survived
+   - [#  33] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+- 77:                 self._length -= 1
++ 77:                 self._length -= 2
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+--------------------------------------------------------------------------------
+[0.07294 s] survived
+   - [#  34] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+- 83:         display = '('
++ 83:         display = 'mutpy'
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.07638 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+>       assert var_3 == ')'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:68: AssertionError
+   - [#  35] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+- 83:         display = '('
++ 83:         display = ''
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.07652 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = '/\t}4,ZL@'
+        bytes_0 = b'\xc8\x83]\xdf\xc1t\x84\x0e\xe0\xe8\t\xf5\xf0=a'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(97, 61, 240, 245, 9, 232, 224, 14, 132, 116, 193, 223, 93, 131, 200)'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:80: AssertionError
+   - [#  36] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+- 85:             display += str(curr.data) + ', '
++ 85:             display += str(curr.data) + 'mutpy'
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.07667 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = '/\t}4,ZL@'
+        bytes_0 = b'\xc8\x83]\xdf\xc1t\x84\x0e\xe0\xe8\t\xf5\xf0=a'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(97, 61, 240, 245, 9, 232, 224, 14, 132, 116, 193, 223, 93, 131, 200)'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:80: AssertionError
+   - [#  37] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+- 85:             display += str(curr.data) + ', '
++ 85:             display += str(curr.data) + ''
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.07638 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = '/\t}4,ZL@'
+        bytes_0 = b'\xc8\x83]\xdf\xc1t\x84\x0e\xe0\xe8\t\xf5\xf0=a'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(97, 61, 240, 245, 9, 232, 224, 14, 132, 116, 193, 223, 93, 131, 200)'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:80: AssertionError
+   - [#  38] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+- 87:         return display[:-2] + ')'
++ 87:         return display[:-3] + ')'
+--------------------------------------------------------------------------------
+[0.07702 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = '/\t}4,ZL@'
+        bytes_0 = b'\xc8\x83]\xdf\xc1t\x84\x0e\xe0\xe8\t\xf5\xf0=a'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(97, 61, 240, 245, 9, 232, 224, 14, 132, 116, 193, 223, 93, 131, 200)'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:80: AssertionError
+   - [#  39] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+- 87:         return display[:-2] + ')'
++ 87:         return display[:-2] + 'mutpy'
+--------------------------------------------------------------------------------
+[0.07776 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+>       assert var_3 == ')'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:68: AssertionError
+   - [#  40] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+- 87:         return display[:-2] + ')'
++ 87:         return display[:-2] + ''
+--------------------------------------------------------------------------------
+[0.07744 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+>       assert var_3 == ')'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:68: AssertionError
+   - [#  41] EHD linkedList4: 
+--------------------------------------------------------------------------------
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+- 38:             if data:
+- 39:                 self.push(data)
++ 38:             raise
++ 39:     
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.07367 s] incompetent
+
+TypeError: linkedList4:35: TypeError: 'Node' object is not iterable
+
+   - [#  42] EXS linkedList4: 
+--------------------------------------------------------------------------------
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+- 38:             if data:
+- 39:                 self.push(data)
++ 38:             pass
++ 39:     
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.07265 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        dict_0 = {str_0: linked_list_0}
+        bytes_0 = b'O\xfb\x03'
+        str_1 = 'E'
+        node_0 = module_0.Node(str_1)
+        var_0 = linked_list_0.push(dict_0)
+        linked_list_1 = module_0.LinkedList(node_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList4.LinkedList'
+>       assert f'{type(linked_list_1.head).__module__}.{type(linked_list_1.head).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:16: AssertionError
+   - [#  43] LCR linkedList4: 
+--------------------------------------------------------------------------------
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+- 71:         if (curr and val is self.head.data):
++ 71:         if (curr or val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+--------------------------------------------------------------------------------
+[0.07872 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        bool_0 = False
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+>       var_0 = linked_list_0.remove(bool_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445c03670>, val = False
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList4:71: AttributeError
+   - [#  44] LCR linkedList4: 
+--------------------------------------------------------------------------------
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+- 75:             if (curr.next and curr.next.data == val):
++ 75:             if (curr.next or curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+--------------------------------------------------------------------------------
+[0.07536 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.push(linked_list_0)
+        int_0 = -1574
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445c4ff10>
+val = <linkedList4.LinkedList object at 0x7f3445c4ff10>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList4:75: AttributeError
+   - [#  45] OIL linkedList4: 
+--------------------------------------------------------------------------------
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+- 37:         except TypeError:
++ 37:                 breakexcept TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+  41:     def push(self, val):
+--------------------------------------------------------------------------------
+[0.07643 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = '/\t}4,ZL@'
+        bytes_0 = b'\xc8\x83]\xdf\xc1t\x84\x0e\xe0\xe8\t\xf5\xf0=a'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(97, 61, 240, 245, 9, 232, 224, 14, 132, 116, 193, 223, 93, 131, 200)'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:80: AssertionError
+   - [#  46] OIL linkedList4: 
+--------------------------------------------------------------------------------
+  63:         while curr:
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+- 67:     
++ 67:             break
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+--------------------------------------------------------------------------------
+[0.07581 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:57: AssertionError
+   - [#  47] OIL linkedList4: 
+--------------------------------------------------------------------------------
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+- 79:     
++ 79:             break
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+--------------------------------------------------------------------------------
+[0.09004 s] survived
+   - [#  48] OIL linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+- 87:         return display[:-2] + ')'
++ 87:             break
++ 88:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.07461 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = '/\t}4,ZL@'
+        bytes_0 = b'\xc8\x83]\xdf\xc1t\x84\x0e\xe0\xe8\t\xf5\xf0=a'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(97, 61, 240, 245, 9, 232, 224, 14, 132, 116, 193, 223, 93, 131, 200)'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:80: AssertionError
+   - [#  49] RIL linkedList4: 
+--------------------------------------------------------------------------------
+  31:         '''Linked list initialized with head.'''
+  32:         self._length = 0
+  33:         self.head = None
+  34:         try:
+- 35:             for val in data:
++ 35:             for val in reversed(data):
+  36:                 self.push(val)
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+--------------------------------------------------------------------------------
+[0.07480 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = '/\t}4,ZL@'
+        bytes_0 = b'\xc8\x83]\xdf\xc1t\x84\x0e\xe0\xe8\t\xf5\xf0=a'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(97, 61, 240, 245, 9, 232, 224, 14, 132, 116, 193, 223, 93, 131, 200)'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:80: AssertionError
+   - [#  50] ROR linkedList4: 
+--------------------------------------------------------------------------------
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+- 64:             if curr.data == val:
++ 64:             if curr.data != val:
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+--------------------------------------------------------------------------------
+[0.07657 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+>       assert var_1.data is True
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:58: AssertionError
+   - [#  51] ROR linkedList4: 
+--------------------------------------------------------------------------------
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+- 75:             if (curr.next and curr.next.data == val):
++ 75:             if (curr.next and curr.next.data != val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+--------------------------------------------------------------------------------
+[0.09179 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_MOSA.py::test_case_13
+
+def test_case_13():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        bool_0 = False
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        int_0 = 437
+        var_0 = linked_list_1.push(linked_list_1)
+        var_1 = linked_list_1.push(var_0)
+        bytes_0 = b's\x96I<\xb4\xd1'
+        var_2 = linked_list_0.remove(bytes_0)
+        linked_list_2 = module_0.LinkedList()
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_3 = linked_list_3.remove(int_0)
+        var_4 = linked_list_1.search(bytes_0)
+        node_0 = module_0.Node(linked_list_2)
+        node_1 = module_0.Node(bool_0)
+        var_5 = linked_list_1.search(node_0)
+        var_6 = linked_list_1.display()
+        var_7 = linked_list_3.size()
+>       assert var_7 == 6
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_MOSA.py:154: AssertionError
+   - [#  52] SDI linkedList4: 
+--------------------------------------------------------------------------------
+   6: 
+   7:     Data attribute for data storage and Next for pointer to next node.
+   8:     '''
+   9:     
+- 10:     def __init__(self, data, next_node=None):
+- 11:         '''Attribute data and next_node.'''
+- 12:         self.data = data
+- 13:         self.next = next_node
+- 14: 
++ 10:     @staticmethod
++ 11:     def __init__(self, data, next_node=None):
++ 12:         '''Attribute data and next_node.'''
++ 13:         self.data = data
++ 14:         self.next = next_node
+  15: 
+  16: class LinkedList(object):
+  17:     '''Method for linked list.
+  18: 
+--------------------------------------------------------------------------------
+[0.07460 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+linkedList4:44: in push
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = '/', data = None, next_node = None
+
+>   ???
+E   AttributeError: 'str' object has no attribute 'data'
+
+linkedList4:13: AttributeError
+   - [#  53] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  26:     display() - will return a unicode string representing the list as
+  27:     if it were a Python tuple literal: "(12, \'sam\', 37, \'tango\')"
+  28:     '''
+  29:     
+- 30:     def __init__(self, data=None):
+- 31:         '''Linked list initialized with head.'''
+- 32:         self._length = 0
+- 33:         self.head = None
+- 34:         try:
+- 35:             for val in data:
+- 36:                 self.push(val)
+- 37:         except TypeError:
+- 38:             if data:
+- 39:                 self.push(data)
+- 40:     
++ 30:     @staticmethod
++ 31:     def __init__(self, data=None):
++ 32:         '''Linked list initialized with head.'''
++ 33:         self._length = 0
++ 34:         self.head = None
++ 35:         try:
++ 36:             for val in data:
++ 37:                 self.push(val)
++ 38:         except TypeError:
++ 39:             if data:
++ 40:                 self.push(data)
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+--------------------------------------------------------------------------------
+[0.07288 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = '/lG%TC', data = None
+
+>   ???
+E   AttributeError: 'str' object has no attribute '_length'
+
+linkedList4:33: AttributeError
+   - [#  54] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+- 41:     def push(self, val):
+- 42:         '''Insert a value at the head of the list.'''
+- 43:         old_head = self.head
+- 44:         self.head = Node(val, old_head)
+- 45:         self._length += 1
+- 46:     
++ 41:     @staticmethod
++ 42:     def push(self, val):
++ 43:         '''Insert a value at the head of the list.'''
++ 44:         old_head = self.head
++ 45:         self.head = Node(val, old_head)
++ 46:         self._length += 1
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+--------------------------------------------------------------------------------
+[0.07448 s] incompetent
+
+TypeError: linkedList4:39: TypeError: LinkedList.push() missing 1 required positional argument: 'val'
+
+   - [#  55] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+  45:         self._length += 1
+  46:     
+- 47:     def pop(self):
+- 48:         '''Remove the first value and return it.'''
+- 49:         if not (self.head):
+- 50:             raise IndexError('Cannot pop from an empty list')
+- 51:         to_return = self.head
+- 52:         self.head = self.head.next
+- 53:         self._length -= 1
+- 54:         return to_return.data
+- 55:     
++ 47:     @staticmethod
++ 48:     def pop(self):
++ 49:         '''Remove the first value and return it.'''
++ 50:         if not (self.head):
++ 51:             raise IndexError('Cannot pop from an empty list')
++ 52:         to_return = self.head
++ 53:         self.head = self.head.next
++ 54:         self._length -= 1
++ 55:         return to_return.data
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+  59:     
+--------------------------------------------------------------------------------
+[0.07808 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList4/MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:37: TypeError: LinkedList.pop() missing 1 required positional argument: 'self'
+
+   - [#  56] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+- 56:     def size(self):
+- 57:         '''Return the length of the list.'''
+- 58:         return self._length
+- 59:     
++ 56:     @staticmethod
++ 57:     def size(self):
++ 58:         '''Return the length of the list.'''
++ 59:         return self._length
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+--------------------------------------------------------------------------------
+[0.07719 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList4/MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:71: TypeError: LinkedList.size() missing 1 required positional argument: 'self'
+
+   - [#  57] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+  59:     
+- 60:     def search(self, val):
+- 61:         '''Return the node containing val.'''
+- 62:         curr = self.head
+- 63:         while curr:
+- 64:             if curr.data == val:
+- 65:                 return curr
+- 66:             curr = curr.next
+- 67:     
++ 60:     @staticmethod
++ 61:     def search(self, val):
++ 62:         '''Return the node containing val.'''
++ 63:         curr = self.head
++ 64:         while curr:
++ 65:             if curr.data == val:
++ 66:                 return curr
++ 67:             curr = curr.next
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+--------------------------------------------------------------------------------
+[0.07541 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList4/MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:56: TypeError: LinkedList.search() missing 1 required positional argument: 'val'
+
+   - [#  58] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+- 68:     def remove(self, val):
+- 69:         '''Remove node from list if exists.'''
+- 70:         curr = self.head
+- 71:         if (curr and val is self.head.data):
+- 72:             self.head = self.head.next
+- 73:             self._length -= 1
+- 74:         while curr:
+- 75:             if (curr.next and curr.next.data == val):
+- 76:                 curr.next = curr.next.next
+- 77:                 self._length -= 1
+- 78:             curr = curr.next
+- 79:     
++ 68:     @staticmethod
++ 69:     def remove(self, val):
++ 70:         '''Remove node from list if exists.'''
++ 71:         curr = self.head
++ 72:         if (curr and val is self.head.data):
++ 73:             self.head = self.head.next
++ 74:             self._length -= 1
++ 75:         while curr:
++ 76:             if (curr.next and curr.next.data == val):
++ 77:                 curr.next = curr.next.next
++ 78:                 self._length -= 1
++ 79:             curr = curr.next
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+--------------------------------------------------------------------------------
+[0.07574 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList4/MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:30: TypeError: LinkedList.remove() missing 1 required positional argument: 'val'
+
+   - [#  59] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+- 80:     def display(self):
+- 81:         '''Display list as a tuple.'''
+- 82:         curr = self.head
+- 83:         display = '('
+- 84:         while curr:
+- 85:             display += str(curr.data) + ', '
+- 86:             curr = curr.next
+- 87:         return display[:-2] + ')'
++ 80:     @staticmethod
++ 81:     def display(self):
++ 82:         '''Display list as a tuple.'''
++ 83:         curr = self.head
++ 84:         display = '('
++ 85:         while curr:
++ 86:             display += str(curr.data) + ', '
++ 87:             curr = curr.next
++ 88:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.07709 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList4/MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:19: TypeError: LinkedList.display() missing 1 required positional argument: 'self'
+
+   - [#  60] SDL linkedList4: 
+--------------------------------------------------------------------------------
+   8:     '''
+   9:     
+  10:     def __init__(self, data, next_node=None):
+  11:         '''Attribute data and next_node.'''
+- 12:         self.data = data
++ 12:         pass
+  13:         self.next = next_node
+  14: 
+  15: 
+  16: class LinkedList(object):
+--------------------------------------------------------------------------------
+[0.07724 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        dict_0 = {str_0: linked_list_0}
+        bytes_0 = b'O\xfb\x03'
+        str_1 = 'E'
+        node_0 = module_0.Node(str_1)
+        var_0 = linked_list_0.push(dict_0)
+        linked_list_1 = module_0.LinkedList(node_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_1.head).__module__}.{type(linked_list_1.head).__qualname__}' == 'linkedList4.Node'
+        linked_list_2 = module_0.LinkedList()
+        assert linked_list_2.head is None
+>       var_1 = linked_list_1.display()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445bc89d0>
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'data'
+
+linkedList4:85: AttributeError
+   - [#  61] SDL linkedList4: 
+--------------------------------------------------------------------------------
+   9:     
+  10:     def __init__(self, data, next_node=None):
+  11:         '''Attribute data and next_node.'''
+  12:         self.data = data
+- 13:         self.next = next_node
++ 13:         pass
+  14: 
+  15: 
+  16: class LinkedList(object):
+  17:     '''Method for linked list.
+--------------------------------------------------------------------------------
+[0.07825 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        dict_0 = {str_0: linked_list_0}
+        bytes_0 = b'O\xfb\x03'
+        str_1 = 'E'
+        node_0 = module_0.Node(str_1)
+        var_0 = linked_list_0.push(dict_0)
+        linked_list_1 = module_0.LinkedList(node_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_1.head).__module__}.{type(linked_list_1.head).__qualname__}' == 'linkedList4.Node'
+        linked_list_2 = module_0.LinkedList()
+        assert linked_list_2.head is None
+>       var_1 = linked_list_1.display()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445e3a9b0>
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'next'
+
+linkedList4:86: AttributeError
+   - [#  62] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  28:     '''
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+- 32:         self._length = 0
++ 32:         pass
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+--------------------------------------------------------------------------------
+[0.08889 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445d5cd90>, val = '/'
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute '_length'
+
+linkedList4:45: AttributeError
+   - [#  63] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+  32:         self._length = 0
+- 33:         self.head = None
++ 33:         pass
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+--------------------------------------------------------------------------------
+[0.07387 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445a49060>, val = '/'
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute 'head'
+
+linkedList4:43: AttributeError
+   - [#  64] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  32:         self._length = 0
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+- 36:                 self.push(val)
++ 36:                 pass
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+--------------------------------------------------------------------------------
+[0.07443 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+        linked_list_0 = module_0.LinkedList(str_0)
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:8: AssertionError
+   - [#  65] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+  38:             if data:
+- 39:                 self.push(data)
++ 39:                 pass
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.07400 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        dict_0 = {str_0: linked_list_0}
+        bytes_0 = b'O\xfb\x03'
+        str_1 = 'E'
+        node_0 = module_0.Node(str_1)
+        var_0 = linked_list_0.push(dict_0)
+        linked_list_1 = module_0.LinkedList(node_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList4.LinkedList'
+>       assert f'{type(linked_list_1.head).__module__}.{type(linked_list_1.head).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:16: AssertionError
+   - [#  66] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  39:                 self.push(data)
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+- 43:         old_head = self.head
++ 43:         pass
+  44:         self.head = Node(val, old_head)
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+--------------------------------------------------------------------------------
+[0.07379 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445a4b610>, val = '/'
+
+>   ???
+E   NameError: name 'old_head' is not defined
+
+linkedList4:44: NameError
+   - [#  67] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+- 44:         self.head = Node(val, old_head)
++ 44:         pass
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+--------------------------------------------------------------------------------
+[0.07381 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+        linked_list_0 = module_0.LinkedList(str_0)
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:8: AssertionError
+   - [#  68] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+- 51:         to_return = self.head
++ 51:         pass
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+--------------------------------------------------------------------------------
+[0.07644 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+>       var_2 = linked_list_3.pop()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445c4ccd0>
+
+>   ???
+E   NameError: name 'to_return' is not defined
+
+linkedList4:54: NameError
+   - [#  69] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+- 52:         self.head = self.head.next
++ 52:         pass
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+--------------------------------------------------------------------------------
+[0.07631 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+>       assert linked_list_3.head is None
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:66: AssertionError
+   - [#  70] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+- 54:         return to_return.data
++ 54:         pass
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+--------------------------------------------------------------------------------
+[0.07774 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+>       assert var_2 is True
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:65: AssertionError
+   - [#  71] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+- 58:         return self._length
++ 58:         pass
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+--------------------------------------------------------------------------------
+[0.08043 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+        assert var_3 == ')'
+        var_4 = linked_list_0.remove(var_2)
+        var_5 = linked_list_3.push(linked_list_1)
+        var_6 = linked_list_3.size()
+>       assert var_6 == 1
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:72: AssertionError
+   - [#  72] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  58:         return self._length
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+- 62:         curr = self.head
++ 62:         pass
+  63:         while curr:
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.07594 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+>       var_1 = linked_list_0.search(bool_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445a48af0>, val = True
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+linkedList4:63: UnboundLocalError
+   - [#  73] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+  64:             if curr.data == val:
+- 65:                 return curr
++ 65:                 pass
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+--------------------------------------------------------------------------------
+[0.07674 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:57: AssertionError
+   - [#  74] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  62:         curr = self.head
+  63:         while curr:
+  64:             if curr.data == val:
+  65:                 return curr
+- 66:             curr = curr.next
++ 66:             pass
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+--------------------------------------------------------------------------------
+[5.00631 s] timeout
+   - [#  75] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+- 70:         curr = self.head
++ 70:         pass
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+--------------------------------------------------------------------------------
+[0.07445 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.push(linked_list_0)
+        int_0 = -1574
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445a48ac0>
+val = <linkedList4.LinkedList object at 0x7f3445a48ac0>
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+linkedList4:71: UnboundLocalError
+   - [#  76] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+- 72:             self.head = self.head.next
++ 72:             pass
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+--------------------------------------------------------------------------------
+[0.07397 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.push(linked_list_0)
+        int_0 = -1574
+        var_1 = linked_list_0.remove(linked_list_0)
+>       assert linked_list_0.head is None
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:31: AssertionError
+   - [#  77] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+- 76:                 curr.next = curr.next.next
++ 76:                 pass
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+--------------------------------------------------------------------------------
+[0.07260 s] survived
+   - [#  78] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+- 78:             curr = curr.next
++ 78:             pass
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+--------------------------------------------------------------------------------
+[5.00640 s] timeout
+   - [#  79] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+- 82:         curr = self.head
++ 82:         pass
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.09203 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        dict_0 = {str_0: linked_list_0}
+        bytes_0 = b'O\xfb\x03'
+        str_1 = 'E'
+        node_0 = module_0.Node(str_1)
+        var_0 = linked_list_0.push(dict_0)
+        linked_list_1 = module_0.LinkedList(node_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_1.head).__module__}.{type(linked_list_1.head).__qualname__}' == 'linkedList4.Node'
+        linked_list_2 = module_0.LinkedList()
+        assert linked_list_2.head is None
+>       var_1 = linked_list_1.display()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445e38670>
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+linkedList4:84: UnboundLocalError
+   - [#  80] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+- 83:         display = '('
++ 83:         pass
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.07671 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        dict_0 = {str_0: linked_list_0}
+        bytes_0 = b'O\xfb\x03'
+        str_1 = 'E'
+        node_0 = module_0.Node(str_1)
+        var_0 = linked_list_0.push(dict_0)
+        linked_list_1 = module_0.LinkedList(node_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_1.head).__module__}.{type(linked_list_1.head).__qualname__}' == 'linkedList4.Node'
+        linked_list_2 = module_0.LinkedList()
+        assert linked_list_2.head is None
+>       var_1 = linked_list_1.display()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445d5e410>
+
+>   ???
+E   UnboundLocalError: local variable 'display' referenced before assignment
+
+linkedList4:85: UnboundLocalError
+   - [#  81] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+- 86:             curr = curr.next
++ 86:             pass
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[5.00628 s] timeout
+   - [#  82] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+- 87:         return display[:-2] + ')'
++ 87:         pass
+--------------------------------------------------------------------------------
+[0.07552 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+>       assert var_3 == ')'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:68: AssertionError
+   - [#  83] SIR linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+- 87:         return display[:-2] + ')'
++ 87:         return display[:] + ')'
+--------------------------------------------------------------------------------
+[0.07611 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+>       assert var_3 == ')'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:68: AssertionError
+   - [#  84] SVD linkedList4: 
+--------------------------------------------------------------------------------
+   8:     '''
+   9:     
+  10:     def __init__(self, data, next_node=None):
+  11:         '''Attribute data and next_node.'''
+- 12:         self.data = data
++ 12:         data = data
+  13:         self.next = next_node
+  14: 
+  15: 
+  16: class LinkedList(object):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  85] SVD linkedList4: 
+--------------------------------------------------------------------------------
+   9:     
+  10:     def __init__(self, data, next_node=None):
+  11:         '''Attribute data and next_node.'''
+  12:         self.data = data
+- 13:         self.next = next_node
++ 13:         next = next_node
+  14: 
+  15: 
+  16: class LinkedList(object):
+  17:     '''Method for linked list.
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  86] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  28:     '''
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+- 32:         self._length = 0
++ 32:         _length = 0
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  87] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+  32:         self._length = 0
+- 33:         self.head = None
++ 33:         head = None
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  88] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  32:         self._length = 0
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+- 36:                 self.push(val)
++ 36:                 push(val)
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+--------------------------------------------------------------------------------
+[0.07388 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445e23370>, data = '/lG%TC'
+
+>   ???
+E   NameError: name 'push' is not defined
+
+linkedList4:36: NameError
+   - [#  89] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+  38:             if data:
+- 39:                 self.push(data)
++ 39:                 push(data)
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.07462 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+self = <linkedList4.LinkedList object at 0x7f3445895990>
+data = <linkedList4.Node object at 0x7f3445896710>
+
+>   ???
+E   TypeError: 'Node' object is not iterable
+
+linkedList4:35: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    def test_case_0():
+        str_0 = '/lG%TC'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        dict_0 = {str_0: linked_list_0}
+        bytes_0 = b'O\xfb\x03'
+        str_1 = 'E'
+        node_0 = module_0.Node(str_1)
+        var_0 = linked_list_0.push(dict_0)
+>       linked_list_1 = module_0.LinkedList(node_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445895990>
+data = <linkedList4.Node object at 0x7f3445896710>
+
+>   ???
+E   NameError: name 'push' is not defined
+
+linkedList4:39: NameError
+   - [#  90] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  39:                 self.push(data)
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+- 43:         old_head = self.head
++ 43:         old_head = head
+  44:         self.head = Node(val, old_head)
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+--------------------------------------------------------------------------------
+[0.07315 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445e21e70>, val = '/'
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:43: NameError
+   - [#  91] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+- 44:         self.head = Node(val, old_head)
++ 44:         head = Node(val, old_head)
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  92] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+- 45:         self._length += 1
++ 45:         _length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  93] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+- 49:         if not (self.head):
++ 49:         if not head:
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+--------------------------------------------------------------------------------
+[0.07681 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.push(linked_list_0)
+        int_0 = -1574
+        var_1 = linked_list_0.remove(linked_list_0)
+        assert linked_list_0.head is None
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        linked_list_2 = module_0.LinkedList(int_0)
+        assert f'{type(linked_list_2.head).__module__}.{type(linked_list_2.head).__qualname__}' == 'linkedList4.Node'
+        with pytest.raises(IndexError):
+>           linked_list_0.pop()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445e22a70>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:49: NameError
+   - [#  94] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+- 51:         to_return = self.head
++ 51:         to_return = head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+--------------------------------------------------------------------------------
+[0.07723 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+>       var_2 = linked_list_3.pop()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445e22770>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:51: NameError
+   - [#  95] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+- 52:         self.head = self.head.next
++ 52:         head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  96] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+- 52:         self.head = self.head.next
++ 52:         self.head = head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+--------------------------------------------------------------------------------
+[0.07535 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+>       var_2 = linked_list_3.pop()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445b31ff0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:52: NameError
+   - [#  97] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+- 53:         self._length -= 1
++ 53:         _length -= 1
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  98] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+- 58:         return self._length
++ 58:         return _length
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+--------------------------------------------------------------------------------
+[0.07633 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+        assert var_1.data is True
+        assert var_1.next is None
+        linked_list_2 = module_0.LinkedList(bool_1)
+        assert linked_list_2.head is None
+        linked_list_3 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_3.head).__module__}.{type(linked_list_3.head).__qualname__}' == 'linkedList4.Node'
+        var_2 = linked_list_3.pop()
+        assert var_2 is True
+        assert linked_list_3.head is None
+        var_3 = linked_list_1.display()
+        assert var_3 == ')'
+        var_4 = linked_list_0.remove(var_2)
+        var_5 = linked_list_3.push(linked_list_1)
+>       var_6 = linked_list_3.size()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445d5e740>
+
+>   ???
+E   NameError: name '_length' is not defined
+
+linkedList4:58: NameError
+   - [#  99] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  58:         return self._length
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+- 62:         curr = self.head
++ 62:         curr = head
+  63:         while curr:
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.07513 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+>       var_1 = linked_list_0.search(bool_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f344597c610>, val = True
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:62: NameError
+   - [# 100] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+- 70:         curr = self.head
++ 70:         curr = head
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+--------------------------------------------------------------------------------
+[0.07517 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.push(linked_list_0)
+        int_0 = -1574
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445e376a0>
+val = <linkedList4.LinkedList object at 0x7f3445e376a0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:70: NameError
+   - [# 101] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+- 71:         if (curr and val is self.head.data):
++ 71:         if (curr and val is head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+--------------------------------------------------------------------------------
+[0.07540 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.push(linked_list_0)
+        int_0 = -1574
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f34459e1930>
+val = <linkedList4.LinkedList object at 0x7f34459e1930>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:71: NameError
+   - [# 102] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+- 72:             self.head = self.head.next
++ 72:             head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 103] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+- 72:             self.head = self.head.next
++ 72:             self.head = head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+--------------------------------------------------------------------------------
+[0.07363 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.push(linked_list_0)
+        int_0 = -1574
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f3445a484f0>
+val = <linkedList4.LinkedList object at 0x7f3445a484f0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:72: NameError
+   - [# 104] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+- 73:             self._length -= 1
++ 73:             _length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 105] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+- 77:                 self._length -= 1
++ 77:                 _length -= 1
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 106] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+- 82:         curr = self.head
++ 82:         curr = head
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.07484 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        dict_0 = {str_0: linked_list_0}
+        bytes_0 = b'O\xfb\x03'
+        str_1 = 'E'
+        node_0 = module_0.Node(str_1)
+        var_0 = linked_list_0.push(dict_0)
+        linked_list_1 = module_0.LinkedList(node_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_1.head).__module__}.{type(linked_list_1.head).__qualname__}' == 'linkedList4.Node'
+        linked_list_2 = module_0.LinkedList()
+        assert linked_list_2.head is None
+>       var_1 = linked_list_1.display()
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f344597c910>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:82: NameError
+   - [# 107] ZIL linkedList4: 
+--------------------------------------------------------------------------------
+  32:         self._length = 0
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+- 36:                 self.push(val)
++ 36:                 break
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+--------------------------------------------------------------------------------
+[0.07327 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        str_0 = '/lG%TC'
+        linked_list_0 = module_0.LinkedList(str_0)
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:8: AssertionError
+   - [# 108] ZIL linkedList4: 
+--------------------------------------------------------------------------------
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+- 64:             if curr.data == val:
+- 65:                 return curr
+- 66:             curr = curr.next
++ 64:             break
++ 65:     
++ 66:     
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+--------------------------------------------------------------------------------
+[0.07569 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:57: AssertionError
+   - [# 109] ZIL linkedList4: 
+--------------------------------------------------------------------------------
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+- 75:             if (curr.next and curr.next.data == val):
+- 76:                 curr.next = curr.next.next
+- 77:                 self._length -= 1
+- 78:             curr = curr.next
++ 75:             break
++ 76:     
++ 77:     
++ 78:     
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+--------------------------------------------------------------------------------
+[0.07504 s] survived
+   - [# 110] ZIL linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+- 85:             display += str(curr.data) + ', '
+- 86:             curr = curr.next
++ 85:             break
++ 86:         
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.07497 s] killed by MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = '/\t}4,ZL@'
+        bytes_0 = b'\xc8\x83]\xdf\xc1t\x84\x0e\xe0\xe8\t\xf5\xf0=a'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(97, 61, 240, 245, 9, 232, 224, 14, 132, 116, 193, 223, 93, 131, 200)'
+E       AssertionError
+
+MIO-MOSA-WHOLE_SUITE/test_linkedList4_WHOLE_SUITE.py:80: AssertionError
+[*] Mutation score [30.92690 s]: 89.8%
+   - all: 110
+   - killed: 75 (68.2%)
+   - survived: 9 (8.2%)
+   - incompetent: 22 (20.0%)
+   - timeout: 4 (3.6%)

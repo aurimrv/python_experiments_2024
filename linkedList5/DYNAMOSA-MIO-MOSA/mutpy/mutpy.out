@@ -1,0 +1,4599 @@
+[*] Start mutation process:
+   - targets: linkedList5.py
+   - tests: ./DYNAMOSA-MIO-MOSA
+[*] 105 tests passed:
+   - test_linkedList5_MOSA [0.06743 s]
+   - test_linkedList5_MIO [0.05837 s]
+   - test_linkedList5_DYNAMOSA [0.06511 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR linkedList5: 
+--------------------------------------------------------------------------------
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+- 20:             counter += 1
++ 20:             counter -= 1
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+--------------------------------------------------------------------------------
+[0.09268 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+>       assert len(linked_list_1) == 1
+E       ValueError: __len__() should return >= 0
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:13: ValueError
+   - [#   2] CDI linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data, next=None):
+-  4:         self.next = next
+-  5:         self.data = data
+-  6:     
++  3:     @classmethod
++  4:     def __init__(self, data, next=None):
++  5:         self.next = next
++  6:         self.data = data
+   7:     def __str__(self):
+   8:         return self.data
+   9: 
+  10: 
+--------------------------------------------------------------------------------
+[0.09962 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.delete(linked_list_1)
+        var_3 = linked_list_0.__len__()
+        assert var_3 == 1
+        linked_list_2 = module_0.LinkedList(var_3)
+        assert linked_list_2.head == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_4 = linked_list_1.find(var_2)
+        node_1 = module_0.Node(linked_list_2, linked_list_0)
+>       assert len(node_1.next) == 1
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:122: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824611330>
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute 'next'
+
+linkedList5:21: AttributeError
+   - [#   3] CDI linkedList5: 
+--------------------------------------------------------------------------------
+   3:     def __init__(self, data, next=None):
+   4:         self.next = next
+   5:         self.data = data
+   6:     
+-  7:     def __str__(self):
+-  8:         return self.data
+-  9: 
++  7:     @classmethod
++  8:     def __str__(self):
++  9:         return self.data
+  10: 
+  11: class LinkedList(object):
+  12:     
+  13:     def __init__(self, head=None):
+--------------------------------------------------------------------------------
+[0.09469 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_1.delete(var_1)
+        var_3 = linked_list_1.__len__()
+        assert var_3 == 1
+>       var_4 = node_0.__str__()
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.Node'>
+
+>   ???
+E   AttributeError: type object 'Node' has no attribute 'data'
+
+linkedList5:9: AttributeError
+   - [#   4] CDI linkedList5: 
+--------------------------------------------------------------------------------
+   9: 
+  10: 
+  11: class LinkedList(object):
+  12:     
+- 13:     def __init__(self, head=None):
+- 14:         self.head = head
+- 15:     
++ 13:     @classmethod
++ 14:     def __init__(self, head=None):
++ 15:         self.head = head
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+--------------------------------------------------------------------------------
+[0.09908 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.delete_alt(linked_list_0)
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        linked_list_1 = module_0.LinkedList(linked_list_0)
+>       assert len(linked_list_1.head) == 0
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f582435a110>
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute 'next'
+
+linkedList5:21: AttributeError
+   - [#   5] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  12:     
+  13:     def __init__(self, head=None):
+  14:         self.head = head
+  15:     
+- 16:     def __len__(self):
+- 17:         curr = self.head
+- 18:         counter = 0
+- 19:         while curr is not None:
+- 20:             counter += 1
+- 21:             curr = curr.next
+- 22:         return counter
+- 23:     
++ 16:     @classmethod
++ 17:     def __len__(self):
++ 18:         curr = self.head
++ 19:         counter = 0
++ 20:         while curr is not None:
++ 21:             counter += 1
++ 22:             curr = curr.next
++ 23:         return counter
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+--------------------------------------------------------------------------------
+[0.09422 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:18: AttributeError
+   - [#   6] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+- 24:     def insert_to_front(self, data):
+- 25:         if data is None:
+- 26:             return None
+- 27:         node = Node(data, self.head)
+- 28:         self.head = node
+- 29:         return node
+- 30:     
++ 24:     @classmethod
++ 25:     def insert_to_front(self, data):
++ 26:         if data is None:
++ 27:             return None
++ 28:         node = Node(data, self.head)
++ 29:         self.head = node
++ 30:         return node
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+--------------------------------------------------------------------------------
+[0.09569 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+>       var_1 = linked_list_1.insert_to_front(node_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+data = <linkedList5.Node object at 0x7f5824519030>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:28: AttributeError
+   - [#   7] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+  29:         return node
+  30:     
+- 31:     def append(self, data):
+- 32:         if data is None:
+- 33:             return None
+- 34:         node = Node(data)
+- 35:         if self.head is None:
+- 36:             self.head = node
+- 37:             return node
+- 38:         curr_node = self.head
+- 39:         while curr_node.next is not None:
+- 40:             curr_node = curr_node.next
+- 41:         curr_node.next = node
+- 42:         return node
+- 43:     
++ 31:     @classmethod
++ 32:     def append(self, data):
++ 33:         if data is None:
++ 34:             return None
++ 35:         node = Node(data)
++ 36:         if self.head is None:
++ 37:             self.head = node
++ 38:             return node
++ 39:         curr_node = self.head
++ 40:         while curr_node.next is not None:
++ 41:             curr_node = curr_node.next
++ 42:         curr_node.next = node
++ 43:         return node
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.10172 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.append(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+data = <linkedList5.LinkedList object at 0x7f58243a09d0>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:36: AttributeError
+   - [#   8] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+- 44:     def find(self, data):
+- 45:         if data is None:
+- 46:             return None
+- 47:         curr_node = self.head
+- 48:         while curr_node is not None:
+- 49:             if curr_node.data == data:
+- 50:                 return curr_node
+- 51:             curr_node = curr_node.next
+- 52:         return None
+- 53:     
++ 44:     @classmethod
++ 45:     def find(self, data):
++ 46:         if data is None:
++ 47:             return None
++ 48:         curr_node = self.head
++ 49:         while curr_node is not None:
++ 50:             if curr_node.data == data:
++ 51:                 return curr_node
++ 52:             curr_node = curr_node.next
++ 53:         return None
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.11508 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_3
+
+def test_case_3():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.print_list()
+>       var_1 = linked_list_0.find(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+data = <linkedList5.LinkedList object at 0x7f58243ead10>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:48: AttributeError
+   - [#   9] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+- 54:     def delete(self, data):
+- 55:         if data is None:
+- 56:             return
+- 57:         if self.head is None:
+- 58:             return
+- 59:         if self.head.data == data:
+- 60:             self.head = self.head.next
+- 61:             return
+- 62:         prev_node = self.head
+- 63:         curr_node = self.head.next
+- 64:         while curr_node is not None:
+- 65:             if curr_node.data == data:
+- 66:                 prev_node.next = curr_node.next
+- 67:                 return
+- 68:             prev_node = curr_node
+- 69:             curr_node = curr_node.next
+- 70:     
++ 54:     @classmethod
++ 55:     def delete(self, data):
++ 56:         if data is None:
++ 57:             return
++ 58:         if self.head is None:
++ 59:             return
++ 60:         if self.head.data == data:
++ 61:             self.head = self.head.next
++ 62:             return
++ 63:         prev_node = self.head
++ 64:         curr_node = self.head.next
++ 65:         while curr_node is not None:
++ 66:             if curr_node.data == data:
++ 67:                 prev_node.next = curr_node.next
++ 68:                 return
++ 69:             prev_node = curr_node
++ 70:             curr_node = curr_node.next
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.10950 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+>       var_2 = linked_list_1.delete(var_1)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+data = <linkedList5.Node object at 0x7f582444aad0>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:58: AttributeError
+   - [#  10] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+- 71:     def delete_alt(self, data):
+- 72:         if data is None:
+- 73:             return
+- 74:         if self.head is None:
+- 75:             return
+- 76:         curr_node = self.head
+- 77:         if curr_node.data == data:
+- 78:             curr_node = curr_node.next
+- 79:             return
+- 80:         while curr_node.next is not None:
+- 81:             if curr_node.next.data == data:
+- 82:                 curr_node.next = curr_node.next.next
+- 83:                 return
+- 84:             curr_node = curr_node.next
+- 85:     
++ 71:     @classmethod
++ 72:     def delete_alt(self, data):
++ 73:         if data is None:
++ 74:             return
++ 75:         if self.head is None:
++ 76:             return
++ 77:         curr_node = self.head
++ 78:         if curr_node.data == data:
++ 79:             curr_node = curr_node.next
++ 80:             return
++ 81:         while curr_node.next is not None:
++ 82:             if curr_node.next.data == data:
++ 83:                 curr_node.next = curr_node.next.next
++ 84:                 return
++ 85:             curr_node = curr_node.next
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+--------------------------------------------------------------------------------
+[0.09921 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+>       var_2 = linked_list_0.delete_alt(var_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>, data = []
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:75: AttributeError
+   - [#  11] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+- 86:     def print_list(self):
+- 87:         curr_node = self.head
+- 88:         while curr_node is not None:
+- 89:             print(curr_node.data)
+- 90:             curr_node = curr_node.next
+- 91:     
++ 86:     @classmethod
++ 87:     def print_list(self):
++ 88:         curr_node = self.head
++ 89:         while curr_node is not None:
++ 90:             print(curr_node.data)
++ 91:             curr_node = curr_node.next
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.09974 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.delete_alt(var_0)
+>       var_3 = linked_list_1.print_list()
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:88: AttributeError
+   - [#  12] CDI linkedList5: 
+--------------------------------------------------------------------------------
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+- 92:     def get_all_data(self):
+- 93:         data = []
+- 94:         curr_node = self.head
+- 95:         while curr_node is not None:
+- 96:             data.append(curr_node.data)
+- 97:             curr_node = curr_node.next
+- 98:         return data
++ 92:     @classmethod
++ 93:     def get_all_data(self):
++ 94:         data = []
++ 95:         curr_node = self.head
++ 96:         while curr_node is not None:
++ 97:             data.append(curr_node.data)
++ 98:             curr_node = curr_node.next
++ 99:         return data
+--------------------------------------------------------------------------------
+[0.09919 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.get_all_data()
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList5.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList5:95: AttributeError
+   - [#  13] COI linkedList5: 
+--------------------------------------------------------------------------------
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+- 19:         while curr is not None:
++ 19:         while not (curr is not None):
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+--------------------------------------------------------------------------------
+[0.09984 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824562200>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:21: AttributeError
+   - [#  14] COI linkedList5: 
+--------------------------------------------------------------------------------
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+- 25:         if data is None:
++ 25:         if not (data is None):
+  26:             return None
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+  29:         return node
+--------------------------------------------------------------------------------
+[0.10083 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:13: AssertionError
+   - [#  15] COI linkedList5: 
+--------------------------------------------------------------------------------
+  28:         self.head = node
+  29:         return node
+  30:     
+  31:     def append(self, data):
+- 32:         if data is None:
++ 32:         if not (data is None):
+  33:             return None
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+--------------------------------------------------------------------------------
+[0.09788 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:101: AssertionError
+   - [#  16] COI linkedList5: 
+--------------------------------------------------------------------------------
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+- 35:         if self.head is None:
++ 35:         if not (self.head is None):
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+--------------------------------------------------------------------------------
+[0.09828 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.append(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58244a5450>
+data = <linkedList5.LinkedList object at 0x7f58244a5450>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:39: AttributeError
+   - [#  17] COI linkedList5: 
+--------------------------------------------------------------------------------
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+- 39:         while curr_node.next is not None:
++ 39:         while not (curr_node.next is not None):
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+--------------------------------------------------------------------------------
+[0.10272 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = var_1.__str__()
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.__len__()
+        assert var_5 == 1
+        linked_list_2 = module_0.LinkedList(var_5)
+        assert linked_list_2.head == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_6 = linked_list_1.find(var_4)
+>       var_7 = linked_list_1.append(var_1)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824873490>
+data = <linkedList5.Node object at 0x7f58248722f0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:39: AttributeError
+   - [#  18] COI linkedList5: 
+--------------------------------------------------------------------------------
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+  44:     def find(self, data):
+- 45:         if data is None:
++ 45:         if not (data is None):
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+--------------------------------------------------------------------------------
+[0.12248 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_21
+
+def test_case_21():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = module_0.Node(linked_list_0, linked_list_0)
+        assert len(var_0.next) == 0
+        assert len(var_0.data) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert len(var_0.next) == 1
+        assert len(var_0.data) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete_alt(var_0)
+        var_4 = linked_list_0.__len__()
+        assert var_4 == 1
+        linked_list_2 = module_0.LinkedList(var_4)
+        assert linked_list_2.head == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_5 = linked_list_1.find(var_0)
+>       assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:369: AssertionError
+   - [#  19] COI linkedList5: 
+--------------------------------------------------------------------------------
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+- 48:         while curr_node is not None:
++ 48:         while not (curr_node is not None):
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+--------------------------------------------------------------------------------
+[0.11203 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_3
+
+def test_case_3():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.print_list()
+>       var_1 = linked_list_0.find(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58244a30a0>
+data = <linkedList5.LinkedList object at 0x7f58244a30a0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:49: AttributeError
+   - [#  20] COI linkedList5: 
+--------------------------------------------------------------------------------
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+- 49:             if curr_node.data == data:
++ 49:             if not (curr_node.data == data):
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+--------------------------------------------------------------------------------
+[0.11342 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_21
+
+def test_case_21():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = module_0.Node(linked_list_0, linked_list_0)
+        assert len(var_0.next) == 0
+        assert len(var_0.data) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert len(var_0.next) == 1
+        assert len(var_0.data) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete_alt(var_0)
+        var_4 = linked_list_0.__len__()
+        assert var_4 == 1
+        linked_list_2 = module_0.LinkedList(var_4)
+        assert linked_list_2.head == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_5 = linked_list_1.find(var_0)
+>       assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:369: AssertionError
+   - [#  21] COI linkedList5: 
+--------------------------------------------------------------------------------
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+- 55:         if data is None:
++ 55:         if not (data is None):
+  56:             return
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+--------------------------------------------------------------------------------
+[0.10874 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_20
+
+def test_case_20():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete_alt(var_0)
+        var_4 = linked_list_1.delete(var_0)
+>       assert len(linked_list_1) == 0
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:341: AssertionError
+   - [#  22] COI linkedList5: 
+--------------------------------------------------------------------------------
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+- 57:         if self.head is None:
++ 57:         if not (self.head is None):
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+--------------------------------------------------------------------------------
+[0.09802 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.delete_alt(linked_list_0)
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        linked_list_1 = module_0.LinkedList(linked_list_0)
+        assert len(linked_list_1.head) == 0
+        var_1 = linked_list_0.print_list()
+>       var_2 = linked_list_0.delete(dict_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58242855a0>
+data = {<linkedList5.LinkedList object at 0x7f58242855a0>: <linkedList5.LinkedList object at 0x7f58242855a0>}
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:59: AttributeError
+   - [#  23] COI linkedList5: 
+--------------------------------------------------------------------------------
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+  58:             return
+- 59:         if self.head.data == data:
++ 59:         if not (self.head.data == data):
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+--------------------------------------------------------------------------------
+[0.09520 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_1.delete(var_1)
+        var_3 = linked_list_1.__len__()
+>       assert var_3 == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:19: AssertionError
+   - [#  24] COI linkedList5: 
+--------------------------------------------------------------------------------
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+- 64:         while curr_node is not None:
++ 64:         while not (curr_node is not None):
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+--------------------------------------------------------------------------------
+[0.09892 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+>       var_2 = linked_list_1.delete(var_1)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824430400>
+data = <linkedList5.Node object at 0x7f58244328c0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:65: AttributeError
+   - [#  25] COI linkedList5: 
+--------------------------------------------------------------------------------
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+- 65:             if curr_node.data == data:
++ 65:             if not (curr_node.data == data):
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.12020 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_24
+
+def test_case_24():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.insert_to_front(linked_list_1)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.delete_alt(linked_list_0)
+        var_3 = linked_list_0.delete(var_2)
+        var_4 = linked_list_0.__len__()
+        assert var_4 == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_5 = linked_list_1.find(var_3)
+        var_6 = linked_list_1.append(linked_list_1)
+        assert len(linked_list_1) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert len(node_0.data) == 2
+        assert f'{type(var_6).__module__}.{type(var_6).__qualname__}' == 'linkedList5.Node'
+        assert var_6.next is None
+        assert f'{type(var_6.data).__module__}.{type(var_6.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_6.data) == 2
+        node_1 = module_0.Node(linked_list_1, var_4)
+        assert node_1.next == 1
+        assert len(node_1.data) == 2
+        var_7 = linked_list_1.delete(linked_list_0)
+        var_8 = linked_list_1.delete_alt(var_4)
+        var_9 = linked_list_1.append(var_6)
+>       assert len(linked_list_1) == 3
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:473: AssertionError
+   - [#  26] COI linkedList5: 
+--------------------------------------------------------------------------------
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+  71:     def delete_alt(self, data):
+- 72:         if data is None:
++ 72:         if not (data is None):
+  73:             return
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.10870 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_23
+
+def test_case_23():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.delete_alt(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:427: AssertionError
+   - [#  27] COI linkedList5: 
+--------------------------------------------------------------------------------
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+- 74:         if self.head is None:
++ 74:         if not (self.head is None):
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.09614 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+>       var_2 = linked_list_0.delete_alt(var_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824430910>, data = []
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:77: AttributeError
+   - [#  28] COI linkedList5: 
+--------------------------------------------------------------------------------
+  73:             return
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+- 77:         if curr_node.data == data:
++ 77:         if not (curr_node.data == data):
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+--------------------------------------------------------------------------------
+[0.13137 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_23
+
+def test_case_23():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.delete_alt(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:427: AssertionError
+   - [#  29] COI linkedList5: 
+--------------------------------------------------------------------------------
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+- 80:         while curr_node.next is not None:
++ 80:         while not (curr_node.next is not None):
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.11583 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_9
+
+def test_case_9():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+>       var_2 = linked_list_1.delete_alt(linked_list_1)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:190: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824433c10>
+data = <linkedList5.LinkedList object at 0x7f5824433c10>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:81: AttributeError
+   - [#  30] COI linkedList5: 
+--------------------------------------------------------------------------------
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+- 81:             if curr_node.next.data == data:
++ 81:             if not (curr_node.next.data == data):
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+--------------------------------------------------------------------------------
+[0.10601 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_18
+
+def test_case_18():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete_alt(var_0)
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.__len__()
+>       assert var_5 == 2
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:284: AssertionError
+   - [#  31] COI linkedList5: 
+--------------------------------------------------------------------------------
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+- 88:         while curr_node is not None:
++ 88:         while not (curr_node is not None):
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+--------------------------------------------------------------------------------
+[0.09608 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.delete_alt(var_0)
+        var_3 = linked_list_1.print_list()
+>       var_4 = linked_list_0.print_list()
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824645f00>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:89: AttributeError
+   - [#  32] COI linkedList5: 
+--------------------------------------------------------------------------------
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+- 95:         while curr_node is not None:
++ 95:         while not (curr_node is not None):
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+  98:         return data
+--------------------------------------------------------------------------------
+[0.09878 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.get_all_data()
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824870700>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:96: AttributeError
+   - [#  33] CRP linkedList5: 
+--------------------------------------------------------------------------------
+  14:         self.head = head
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+- 18:         counter = 0
++ 18:         counter = 1
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+--------------------------------------------------------------------------------
+[0.09958 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:7: AssertionError
+   - [#  34] CRP linkedList5: 
+--------------------------------------------------------------------------------
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+- 20:             counter += 1
++ 20:             counter += 2
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+--------------------------------------------------------------------------------
+[0.09492 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:13: AssertionError
+   - [#  35] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+- 22:         return counter
+- 23:     
++ 22:             break
++ 23:         return counter
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+--------------------------------------------------------------------------------
+[0.09935 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = var_1.__str__()
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.__len__()
+        assert var_5 == 1
+        linked_list_2 = module_0.LinkedList(var_5)
+        assert linked_list_2.head == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_6 = linked_list_1.find(var_4)
+        var_7 = linked_list_1.append(var_1)
+>       assert len(linked_list_1) == 2
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:153: AssertionError
+   - [#  36] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+- 41:         curr_node.next = node
+- 42:         return node
+- 43:     
++ 41:             break
++ 42:         curr_node.next = node
++ 43:         return node
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.11302 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_31
+
+def test_case_31():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = var_0.__str__()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1) == 1
+        float_0 = -317.38661
+        var_2 = linked_list_0.append(float_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert len(var_1) == 2
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert var_2.data == pytest.approx(-317.38661, abs=0.01, rel=0.01)
+        var_3 = linked_list_0.__len__()
+        assert var_3 == 2
+        var_4 = linked_list_0.append(var_3)
+        assert len(linked_list_0) == 3
+        assert len(var_0.data) == 3
+        assert len(var_1) == 3
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList5.Node'
+        assert var_4.next is None
+        assert var_4.data == 2
+        var_5 = linked_list_0.get_all_data()
+        var_6 = linked_list_0.print_list()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_7 = linked_list_1.insert_to_front(var_5)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_7).__module__}.{type(var_7).__qualname__}' == 'linkedList5.Node'
+        assert var_7.next is None
+        assert f'{type(var_7.data).__module__}.{type(var_7.data).__qualname__}' == 'builtins.list'
+        assert len(var_7.data) == 3
+        var_8 = linked_list_0.append(var_3)
+>       assert len(linked_list_0) == 4
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:753: AssertionError
+   - [#  37] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+- 52:         return None
+- 53:     
++ 52:             break
++ 53:         return None
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.11312 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MIO.py::test_case_12
+
+def test_case_12():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.find(var_0)
+>       assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MIO.py:191: AssertionError
+   - [#  38] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+- 70:     
++ 70:             break
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.11610 s] survived
+   - [#  39] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+- 85:     
++ 85:             break
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+--------------------------------------------------------------------------------
+[0.12550 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MIO.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.append(var_0)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.append(var_1)
+        assert len(linked_list_0) == 3
+        assert len(var_0.data) == 3
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete_alt(var_1)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MIO.py:110: AssertionError
+   - [#  40] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+- 91:     
++ 91:             break
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.11660 s] survived
+   - [#  41] OIL linkedList5: 
+--------------------------------------------------------------------------------
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+- 98:         return data
++ 98:             break
++ 99:         return data
+--------------------------------------------------------------------------------
+[0.11243 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_29
+
+def test_case_29():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = var_0.__str__()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1) == 1
+        var_2 = linked_list_0.__len__()
+        assert var_2 == 1
+        var_3 = linked_list_0.append(var_2)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert len(var_1) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert var_3.next is None
+        assert var_3.data == 1
+        var_4 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.insert_to_front(var_4)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+        assert var_5.next is None
+        assert f'{type(var_5.data).__module__}.{type(var_5.data).__qualname__}' == 'builtins.list'
+>       assert len(var_5.data) == 2
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:652: AssertionError
+   - [#  42] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+- 49:             if curr_node.data == data:
++ 49:             if curr_node.data != data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+--------------------------------------------------------------------------------
+[0.11252 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_21
+
+def test_case_21():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = module_0.Node(linked_list_0, linked_list_0)
+        assert len(var_0.next) == 0
+        assert len(var_0.data) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert len(var_0.next) == 1
+        assert len(var_0.data) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete_alt(var_0)
+        var_4 = linked_list_0.__len__()
+        assert var_4 == 1
+        linked_list_2 = module_0.LinkedList(var_4)
+        assert linked_list_2.head == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_5 = linked_list_1.find(var_0)
+>       assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:369: AssertionError
+   - [#  43] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+  58:             return
+- 59:         if self.head.data == data:
++ 59:         if self.head.data != data:
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+--------------------------------------------------------------------------------
+[0.09506 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_1.delete(var_1)
+        var_3 = linked_list_1.__len__()
+>       assert var_3 == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:19: AssertionError
+   - [#  44] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+- 65:             if curr_node.data == data:
++ 65:             if curr_node.data != data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.11015 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_24
+
+def test_case_24():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.insert_to_front(linked_list_1)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.delete_alt(linked_list_0)
+        var_3 = linked_list_0.delete(var_2)
+        var_4 = linked_list_0.__len__()
+        assert var_4 == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_5 = linked_list_1.find(var_3)
+        var_6 = linked_list_1.append(linked_list_1)
+        assert len(linked_list_1) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert len(node_0.data) == 2
+        assert f'{type(var_6).__module__}.{type(var_6).__qualname__}' == 'linkedList5.Node'
+        assert var_6.next is None
+        assert f'{type(var_6.data).__module__}.{type(var_6.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_6.data) == 2
+        node_1 = module_0.Node(linked_list_1, var_4)
+        assert node_1.next == 1
+        assert len(node_1.data) == 2
+        var_7 = linked_list_1.delete(linked_list_0)
+        var_8 = linked_list_1.delete_alt(var_4)
+        var_9 = linked_list_1.append(var_6)
+>       assert len(linked_list_1) == 3
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:473: AssertionError
+   - [#  45] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  73:             return
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+- 77:         if curr_node.data == data:
++ 77:         if curr_node.data != data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+--------------------------------------------------------------------------------
+[0.10825 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_23
+
+def test_case_23():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.delete_alt(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:427: AssertionError
+   - [#  46] ROR linkedList5: 
+--------------------------------------------------------------------------------
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+- 81:             if curr_node.next.data == data:
++ 81:             if curr_node.next.data != data:
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+--------------------------------------------------------------------------------
+[0.10685 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_18
+
+def test_case_18():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete_alt(var_0)
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.__len__()
+>       assert var_5 == 2
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:284: AssertionError
+   - [#  47] SDI linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data, next=None):
+-  4:         self.next = next
+-  5:         self.data = data
+-  6:     
++  3:     @staticmethod
++  4:     def __init__(self, data, next=None):
++  5:         self.next = next
++  6:         self.data = data
+   7:     def __str__(self):
+   8:         return self.data
+   9: 
+  10: 
+--------------------------------------------------------------------------------
+[0.09445 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:11: TypeError: Node.__init__() missing 1 required positional argument: 'data'
+
+   - [#  48] SDI linkedList5: 
+--------------------------------------------------------------------------------
+   3:     def __init__(self, data, next=None):
+   4:         self.next = next
+   5:         self.data = data
+   6:     
+-  7:     def __str__(self):
+-  8:         return self.data
+-  9: 
++  7:     @staticmethod
++  8:     def __str__(self):
++  9:         return self.data
+  10: 
+  11: class LinkedList(object):
+  12:     
+  13:     def __init__(self, head=None):
+--------------------------------------------------------------------------------
+[0.11133 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:20: TypeError: Node.__str__() missing 1 required positional argument: 'self'
+
+   - [#  49] SDI linkedList5: 
+--------------------------------------------------------------------------------
+   9: 
+  10: 
+  11: class LinkedList(object):
+  12:     
+- 13:     def __init__(self, head=None):
+- 14:         self.head = head
+- 15:     
++ 13:     @staticmethod
++ 14:     def __init__(self, head=None):
++ 15:         self.head = head
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+--------------------------------------------------------------------------------
+[0.11000 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:6: TypeError: LinkedList.__init__() missing 1 required positional argument: 'self'
+
+   - [#  50] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  12:     
+  13:     def __init__(self, head=None):
+  14:         self.head = head
+  15:     
+- 16:     def __len__(self):
+- 17:         curr = self.head
+- 18:         counter = 0
+- 19:         while curr is not None:
+- 20:             counter += 1
+- 21:             curr = curr.next
+- 22:         return counter
+- 23:     
++ 16:     @staticmethod
++ 17:     def __len__(self):
++ 18:         curr = self.head
++ 19:         counter = 0
++ 20:         while curr is not None:
++ 21:             counter += 1
++ 22:             curr = curr.next
++ 23:         return counter
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+--------------------------------------------------------------------------------
+[0.09986 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:7: TypeError: LinkedList.__len__() missing 1 required positional argument: 'self'
+
+   - [#  51] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+  23:     
+- 24:     def insert_to_front(self, data):
+- 25:         if data is None:
+- 26:             return None
+- 27:         node = Node(data, self.head)
+- 28:         self.head = node
+- 29:         return node
+- 30:     
++ 24:     @staticmethod
++ 25:     def insert_to_front(self, data):
++ 26:         if data is None:
++ 27:             return None
++ 28:         node = Node(data, self.head)
++ 29:         self.head = node
++ 30:         return node
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+--------------------------------------------------------------------------------
+[0.09448 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:12: TypeError: LinkedList.insert_to_front() missing 1 required positional argument: 'data'
+
+   - [#  52] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+  29:         return node
+  30:     
+- 31:     def append(self, data):
+- 32:         if data is None:
+- 33:             return None
+- 34:         node = Node(data)
+- 35:         if self.head is None:
+- 36:             self.head = node
+- 37:             return node
+- 38:         curr_node = self.head
+- 39:         while curr_node.next is not None:
+- 40:             curr_node = curr_node.next
+- 41:         curr_node.next = node
+- 42:         return node
+- 43:     
++ 31:     @staticmethod
++ 32:     def append(self, data):
++ 33:         if data is None:
++ 34:             return None
++ 35:         node = Node(data)
++ 36:         if self.head is None:
++ 37:             self.head = node
++ 38:             return node
++ 39:         curr_node = self.head
++ 40:         while curr_node.next is not None:
++ 41:             curr_node = curr_node.next
++ 42:         curr_node.next = node
++ 43:         return node
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.09843 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:100: TypeError: LinkedList.append() missing 1 required positional argument: 'data'
+
+   - [#  53] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+- 44:     def find(self, data):
+- 45:         if data is None:
+- 46:             return None
+- 47:         curr_node = self.head
+- 48:         while curr_node is not None:
+- 49:             if curr_node.data == data:
+- 50:                 return curr_node
+- 51:             curr_node = curr_node.next
+- 52:         return None
+- 53:     
++ 44:     @staticmethod
++ 45:     def find(self, data):
++ 46:         if data is None:
++ 47:             return None
++ 48:         curr_node = self.head
++ 49:         while curr_node is not None:
++ 50:             if curr_node.data == data:
++ 51:                 return curr_node
++ 52:             curr_node = curr_node.next
++ 53:         return None
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.09916 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:45: TypeError: LinkedList.find() missing 1 required positional argument: 'data'
+
+   - [#  54] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+- 54:     def delete(self, data):
+- 55:         if data is None:
+- 56:             return
+- 57:         if self.head is None:
+- 58:             return
+- 59:         if self.head.data == data:
+- 60:             self.head = self.head.next
+- 61:             return
+- 62:         prev_node = self.head
+- 63:         curr_node = self.head.next
+- 64:         while curr_node is not None:
+- 65:             if curr_node.data == data:
+- 66:                 prev_node.next = curr_node.next
+- 67:                 return
+- 68:             prev_node = curr_node
+- 69:             curr_node = curr_node.next
+- 70:     
++ 54:     @staticmethod
++ 55:     def delete(self, data):
++ 56:         if data is None:
++ 57:             return
++ 58:         if self.head is None:
++ 59:             return
++ 60:         if self.head.data == data:
++ 61:             self.head = self.head.next
++ 62:             return
++ 63:         prev_node = self.head
++ 64:         curr_node = self.head.next
++ 65:         while curr_node is not None:
++ 66:             if curr_node.data == data:
++ 67:                 prev_node.next = curr_node.next
++ 68:                 return
++ 69:             prev_node = curr_node
++ 70:             curr_node = curr_node.next
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.09600 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:17: TypeError: LinkedList.delete() missing 1 required positional argument: 'data'
+
+   - [#  55] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+- 71:     def delete_alt(self, data):
+- 72:         if data is None:
+- 73:             return
+- 74:         if self.head is None:
+- 75:             return
+- 76:         curr_node = self.head
+- 77:         if curr_node.data == data:
+- 78:             curr_node = curr_node.next
+- 79:             return
+- 80:         while curr_node.next is not None:
+- 81:             if curr_node.next.data == data:
+- 82:                 curr_node.next = curr_node.next.next
+- 83:                 return
+- 84:             curr_node = curr_node.next
+- 85:     
++ 71:     @staticmethod
++ 72:     def delete_alt(self, data):
++ 73:         if data is None:
++ 74:             return
++ 75:         if self.head is None:
++ 76:             return
++ 77:         curr_node = self.head
++ 78:         if curr_node.data == data:
++ 79:             curr_node = curr_node.next
++ 80:             return
++ 81:         while curr_node.next is not None:
++ 82:             if curr_node.next.data == data:
++ 83:                 curr_node.next = curr_node.next.next
++ 84:                 return
++ 85:             curr_node = curr_node.next
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+--------------------------------------------------------------------------------
+[0.09605 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:36: TypeError: LinkedList.delete_alt() missing 1 required positional argument: 'data'
+
+   - [#  56] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+- 86:     def print_list(self):
+- 87:         curr_node = self.head
+- 88:         while curr_node is not None:
+- 89:             print(curr_node.data)
+- 90:             curr_node = curr_node.next
+- 91:     
++ 86:     @staticmethod
++ 87:     def print_list(self):
++ 88:         curr_node = self.head
++ 89:         while curr_node is not None:
++ 90:             print(curr_node.data)
++ 91:             curr_node = curr_node.next
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.09536 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:37: TypeError: LinkedList.print_list() missing 1 required positional argument: 'self'
+
+   - [#  57] SDI linkedList5: 
+--------------------------------------------------------------------------------
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+- 92:     def get_all_data(self):
+- 93:         data = []
+- 94:         curr_node = self.head
+- 95:         while curr_node is not None:
+- 96:             data.append(curr_node.data)
+- 97:             curr_node = curr_node.next
+- 98:         return data
++ 92:     @staticmethod
++ 93:     def get_all_data(self):
++ 94:         data = []
++ 95:         curr_node = self.head
++ 96:         while curr_node is not None:
++ 97:             data.append(curr_node.data)
++ 98:             curr_node = curr_node.next
++ 99:         return data
+--------------------------------------------------------------------------------
+[0.09544 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:8: TypeError: LinkedList.get_all_data() missing 1 required positional argument: 'self'
+
+   - [#  58] SDL linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data, next=None):
+-  4:         self.next = next
++  4:         pass
+   5:         self.data = data
+   6:     
+   7:     def __str__(self):
+   8:         return self.data
+--------------------------------------------------------------------------------
+[0.11232 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+>       assert len(linked_list_1) == 1
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58242aa560>
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'next'
+
+linkedList5:21: AttributeError
+   - [#  59] SDL linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data, next=None):
+   4:         self.next = next
+-  5:         self.data = data
++  5:         pass
+   6:     
+   7:     def __str__(self):
+   8:         return self.data
+   9: 
+--------------------------------------------------------------------------------
+[0.11140 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+>       assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+E       AttributeError: 'Node' object has no attribute 'data'
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:16: AttributeError
+   - [#  60] SDL linkedList5: 
+--------------------------------------------------------------------------------
+   4:         self.next = next
+   5:         self.data = data
+   6:     
+   7:     def __str__(self):
+-  8:         return self.data
++  8:         pass
+   9: 
+  10: 
+  11: class LinkedList(object):
+  12:     
+--------------------------------------------------------------------------------
+[0.10277 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = var_1.__str__()
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.__len__()
+        assert var_5 == 1
+        linked_list_2 = module_0.LinkedList(var_5)
+        assert linked_list_2.head == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_6 = linked_list_1.find(var_4)
+        var_7 = linked_list_1.append(var_1)
+        assert len(linked_list_1) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert len(node_0.data) == 2
+        assert f'{type(var_7).__module__}.{type(var_7).__qualname__}' == 'linkedList5.Node'
+        assert var_7.next is None
+        assert f'{type(var_7.data).__module__}.{type(var_7.data).__qualname__}' == 'linkedList5.Node'
+        node_1 = module_0.Node(linked_list_2, var_3)
+>       assert node_1.next == []
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:160: AssertionError
+   - [#  61] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  10: 
+  11: class LinkedList(object):
+  12:     
+  13:     def __init__(self, head=None):
+- 14:         self.head = head
++ 14:         pass
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+--------------------------------------------------------------------------------
+[0.09620 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58244a6aa0>
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute 'head'
+
+linkedList5:17: AttributeError
+   - [#  62] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  13:     def __init__(self, head=None):
+  14:         self.head = head
+  15:     
+  16:     def __len__(self):
+- 17:         curr = self.head
++ 17:         pass
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.09592 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824873cd0>
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+linkedList5:19: UnboundLocalError
+   - [#  63] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  14:         self.head = head
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+- 18:         counter = 0
++ 18:         pass
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+  22:         return counter
+--------------------------------------------------------------------------------
+[0.09762 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824433a90>
+
+>   ???
+E   UnboundLocalError: local variable 'counter' referenced before assignment
+
+linkedList5:22: UnboundLocalError
+   - [#  64] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+- 21:             curr = curr.next
++ 21:             pass
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+--------------------------------------------------------------------------------
+[5.00635 s] timeout
+   - [#  65] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+- 22:         return counter
++ 22:         pass
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+--------------------------------------------------------------------------------
+[0.09586 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList5/DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:7: TypeError: 'NoneType' object cannot be interpreted as an integer
+
+   - [#  66] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+- 26:             return None
++ 26:             pass
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+  29:         return node
+  30:     
+--------------------------------------------------------------------------------
+[0.11653 s] survived
+   - [#  67] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+- 27:         node = Node(data, self.head)
++ 27:         pass
+  28:         self.head = node
+  29:         return node
+  30:     
+  31:     def append(self, data):
+--------------------------------------------------------------------------------
+[0.09551 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+>       var_1 = linked_list_1.insert_to_front(node_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58245e0e20>
+data = <linkedList5.Node object at 0x7f58245e08e0>
+
+>   ???
+E   NameError: name 'node' is not defined
+
+linkedList5:28: NameError
+   - [#  68] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+- 28:         self.head = node
++ 28:         pass
+  29:         return node
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+--------------------------------------------------------------------------------
+[0.11073 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:13: AssertionError
+   - [#  69] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+  28:         self.head = node
+- 29:         return node
++ 29:         pass
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+--------------------------------------------------------------------------------
+[0.11109 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+        assert len(linked_list_1) == 1
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:14: AssertionError
+   - [#  70] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  29:         return node
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+- 33:             return None
++ 33:             pass
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+--------------------------------------------------------------------------------
+[0.11629 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = linked_list_0.delete_alt(linked_list_0)
+        linked_list_2 = module_0.LinkedList(linked_list_0)
+        assert len(linked_list_2.head) == 0
+>       var_0 = linked_list_2.append(linked_list_1)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:168: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58247e3700>, data = None
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute 'next'
+
+linkedList5:39: AttributeError
+   - [#  71] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+- 34:         node = Node(data)
++ 34:         pass
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.09850 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.append(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824825990>
+data = <linkedList5.LinkedList object at 0x7f5824825990>
+
+>   ???
+E   NameError: name 'node' is not defined
+
+linkedList5:36: NameError
+   - [#  72] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+  35:         if self.head is None:
+- 36:             self.head = node
++ 36:             pass
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.09857 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.append(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:101: AssertionError
+   - [#  73] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  33:             return None
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+- 37:             return node
++ 37:             pass
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+--------------------------------------------------------------------------------
+[5.00631 s] timeout
+   - [#  74] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+- 38:         curr_node = self.head
++ 38:         pass
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+--------------------------------------------------------------------------------
+[0.10690 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = var_1.__str__()
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.__len__()
+        assert var_5 == 1
+        linked_list_2 = module_0.LinkedList(var_5)
+        assert linked_list_2.head == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_6 = linked_list_1.find(var_4)
+>       var_7 = linked_list_1.append(var_1)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58243ece20>
+data = <linkedList5.Node object at 0x7f58243ec8b0>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:39: UnboundLocalError
+   - [#  75] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+- 40:             curr_node = curr_node.next
++ 40:             pass
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+  44:     def find(self, data):
+--------------------------------------------------------------------------------
+[5.00637 s] timeout
+   - [#  76] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+- 41:         curr_node.next = node
++ 41:         pass
+  42:         return node
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+--------------------------------------------------------------------------------
+[0.10073 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = var_1.__str__()
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.__len__()
+        assert var_5 == 1
+        linked_list_2 = module_0.LinkedList(var_5)
+        assert linked_list_2.head == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_6 = linked_list_1.find(var_4)
+        var_7 = linked_list_1.append(var_1)
+>       assert len(linked_list_1) == 2
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:153: AssertionError
+   - [#  77] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+- 42:         return node
++ 42:         pass
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+--------------------------------------------------------------------------------
+[0.10262 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = var_1.__str__()
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.__len__()
+        assert var_5 == 1
+        linked_list_2 = module_0.LinkedList(var_5)
+        assert linked_list_2.head == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_6 = linked_list_1.find(var_4)
+        var_7 = linked_list_1.append(var_1)
+        assert len(linked_list_1) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert len(node_0.data) == 2
+>       assert f'{type(var_7).__module__}.{type(var_7).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:156: AssertionError
+   - [#  78] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  42:         return node
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+- 46:             return None
++ 46:             pass
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+--------------------------------------------------------------------------------
+[0.11464 s] survived
+   - [#  79] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+- 47:         curr_node = self.head
++ 47:         pass
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.11269 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_3
+
+def test_case_3():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.print_list()
+>       var_1 = linked_list_0.find(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f582442f160>
+data = <linkedList5.LinkedList object at 0x7f582442f160>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:48: UnboundLocalError
+   - [#  80] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+- 50:                 return curr_node
++ 50:                 pass
+  51:             curr_node = curr_node.next
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+--------------------------------------------------------------------------------
+[0.12194 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_21
+
+def test_case_21():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = module_0.Node(linked_list_0, linked_list_0)
+        assert len(var_0.next) == 0
+        assert len(var_0.data) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert len(var_0.next) == 1
+        assert len(var_0.data) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete_alt(var_0)
+        var_4 = linked_list_0.__len__()
+        assert var_4 == 1
+        linked_list_2 = module_0.LinkedList(var_4)
+        assert linked_list_2.head == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_5 = linked_list_1.find(var_0)
+>       assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:369: AssertionError
+   - [#  81] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+- 51:             curr_node = curr_node.next
++ 51:             pass
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+--------------------------------------------------------------------------------
+[5.00634 s] timeout
+   - [#  82] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+- 52:         return None
++ 52:         pass
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+--------------------------------------------------------------------------------
+[0.11662 s] survived
+   - [#  83] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+- 56:             return
++ 56:             pass
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[0.11384 s] survived
+   - [#  84] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+- 58:             return
++ 58:             pass
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+--------------------------------------------------------------------------------
+[0.09780 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_2
+
+def test_case_2():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.delete_alt(linked_list_0)
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        linked_list_1 = module_0.LinkedList(linked_list_0)
+        assert len(linked_list_1.head) == 0
+        var_1 = linked_list_0.print_list()
+>       var_2 = linked_list_0.delete(dict_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58244a4850>
+data = {<linkedList5.LinkedList object at 0x7f58244a4850>: <linkedList5.LinkedList object at 0x7f58244a4850>}
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:59: AttributeError
+   - [#  85] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  56:             return
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+- 60:             self.head = self.head.next
++ 60:             pass
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.10991 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_20
+
+def test_case_20():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete_alt(var_0)
+        var_4 = linked_list_1.delete(var_0)
+>       assert len(linked_list_1) == 0
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:341: AssertionError
+   - [#  86] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+- 61:             return
++ 61:             pass
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+--------------------------------------------------------------------------------
+[0.10746 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_20
+
+def test_case_20():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete_alt(var_0)
+>       var_4 = linked_list_1.delete(var_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:340: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58244a44f0>, data = []
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:63: AttributeError
+   - [#  87] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+- 62:         prev_node = self.head
++ 62:         pass
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+--------------------------------------------------------------------------------
+[0.11212 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_30
+
+def test_case_30():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = var_0.__str__()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1) == 1
+        var_2 = linked_list_0.__len__()
+        assert var_2 == 1
+        var_3 = linked_list_0.append(var_2)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert len(var_1) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert var_3.next is None
+        assert var_3.data == 1
+        var_4 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.insert_to_front(var_4)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+        assert var_5.next is None
+        assert f'{type(var_5.data).__module__}.{type(var_5.data).__qualname__}' == 'builtins.list'
+        assert len(var_5.data) == 2
+        var_6 = linked_list_0.find(var_4)
+        var_7 = linked_list_1.delete_alt(linked_list_1)
+        var_8 = linked_list_0.delete_alt(var_4)
+        var_9 = linked_list_1.print_list()
+>       var_10 = var_1.delete(var_2)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:705: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824644a90>, data = 1
+
+>   ???
+E   UnboundLocalError: local variable 'prev_node' referenced before assignment
+
+linkedList5:66: UnboundLocalError
+   - [#  88] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+- 63:         curr_node = self.head.next
++ 63:         pass
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+--------------------------------------------------------------------------------
+[0.09603 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+>       var_2 = linked_list_1.delete(var_1)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58244a74f0>
+data = <linkedList5.Node object at 0x7f58244a6650>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:64: UnboundLocalError
+   - [#  89] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+- 66:                 prev_node.next = curr_node.next
++ 66:                 pass
+  67:                 return
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+--------------------------------------------------------------------------------
+[0.12312 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_30
+
+def test_case_30():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = var_0.__str__()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1) == 1
+        var_2 = linked_list_0.__len__()
+        assert var_2 == 1
+        var_3 = linked_list_0.append(var_2)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert len(var_1) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert var_3.next is None
+        assert var_3.data == 1
+        var_4 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.insert_to_front(var_4)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+        assert var_5.next is None
+        assert f'{type(var_5.data).__module__}.{type(var_5.data).__qualname__}' == 'builtins.list'
+        assert len(var_5.data) == 2
+        var_6 = linked_list_0.find(var_4)
+        var_7 = linked_list_1.delete_alt(linked_list_1)
+        var_8 = linked_list_0.delete_alt(var_4)
+        var_9 = linked_list_1.print_list()
+        var_10 = var_1.delete(var_2)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:706: AssertionError
+   - [#  90] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+- 67:                 return
++ 67:                 pass
+  68:             prev_node = curr_node
+  69:             curr_node = curr_node.next
+  70:     
+  71:     def delete_alt(self, data):
+--------------------------------------------------------------------------------
+[0.11467 s] survived
+   - [#  91] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+- 68:             prev_node = curr_node
++ 68:             pass
+  69:             curr_node = curr_node.next
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+--------------------------------------------------------------------------------
+[0.11402 s] survived
+   - [#  92] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+  68:             prev_node = curr_node
+- 69:             curr_node = curr_node.next
++ 69:             pass
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+--------------------------------------------------------------------------------
+[5.00637 s] timeout
+   - [#  93] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  69:             curr_node = curr_node.next
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+- 73:             return
++ 73:             pass
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+--------------------------------------------------------------------------------
+[0.11295 s] survived
+   - [#  94] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+- 75:             return
++ 75:             pass
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+--------------------------------------------------------------------------------
+[0.09546 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+>       var_2 = linked_list_0.delete_alt(var_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58244cf430>, data = []
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:77: AttributeError
+   - [#  95] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+  75:             return
+- 76:         curr_node = self.head
++ 76:         pass
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+--------------------------------------------------------------------------------
+[0.09932 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_9
+
+def test_case_9():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+>       var_2 = linked_list_1.delete_alt(linked_list_1)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:190: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58244a6860>
+data = <linkedList5.LinkedList object at 0x7f58244a6860>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:77: UnboundLocalError
+   - [#  96] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  74:         if self.head is None:
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+- 78:             curr_node = curr_node.next
++ 78:             pass
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+--------------------------------------------------------------------------------
+[0.11695 s] survived
+   - [#  97] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+- 79:             return
++ 79:             pass
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+--------------------------------------------------------------------------------
+[0.10293 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_12
+
+def test_case_12():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+>       var_1 = linked_list_0.delete_alt(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:219: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f582442d900>
+data = <linkedList5.LinkedList object at 0x7f582442d900>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:80: AttributeError
+   - [#  98] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+- 82:                 curr_node.next = curr_node.next.next
++ 82:                 pass
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+--------------------------------------------------------------------------------
+[0.10913 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_23
+
+def test_case_23():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.delete_alt(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:427: AssertionError
+   - [#  99] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  79:             return
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+- 83:                 return
++ 83:                 pass
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.10743 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_23
+
+def test_case_23():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+>       var_2 = linked_list_0.delete_alt(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:426: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f582438b370>
+data = <linkedList5.LinkedList object at 0x7f582438b370>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList5:80: AttributeError
+   - [# 100] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  80:         while curr_node.next is not None:
+  81:             if curr_node.next.data == data:
+  82:                 curr_node.next = curr_node.next.next
+  83:                 return
+- 84:             curr_node = curr_node.next
++ 84:             pass
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[5.00636 s] timeout
+   - [# 101] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+- 87:         curr_node = self.head
++ 87:         pass
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+--------------------------------------------------------------------------------
+[0.11146 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.delete_alt(var_0)
+>       var_3 = linked_list_1.print_list()
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58246137c0>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:88: UnboundLocalError
+   - [# 102] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+- 89:             print(curr_node.data)
++ 89:             pass
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+--------------------------------------------------------------------------------
+[0.13026 s] survived
+   - [# 103] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+- 90:             curr_node = curr_node.next
++ 90:             pass
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+--------------------------------------------------------------------------------
+[5.00637 s] timeout
+   - [# 104] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+- 93:         data = []
++ 93:         pass
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.10005 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.get_all_data()
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58244ce500>
+
+>   ???
+E   NameError: name 'data' is not defined
+
+linkedList5:98: NameError
+   - [# 105] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+- 94:         curr_node = self.head
++ 94:         pass
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+  98:         return data
+--------------------------------------------------------------------------------
+[0.09936 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.get_all_data()
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58245e28f0>
+
+>   ???
+E   UnboundLocalError: local variable 'curr_node' referenced before assignment
+
+linkedList5:95: UnboundLocalError
+   - [# 106] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+- 96:             data.append(curr_node.data)
++ 96:             pass
+  97:             curr_node = curr_node.next
+  98:         return data
+--------------------------------------------------------------------------------
+[0.11772 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_29
+
+def test_case_29():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = var_0.__str__()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1) == 1
+        var_2 = linked_list_0.__len__()
+        assert var_2 == 1
+        var_3 = linked_list_0.append(var_2)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert len(var_1) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert var_3.next is None
+        assert var_3.data == 1
+        var_4 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.insert_to_front(var_4)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+        assert var_5.next is None
+        assert f'{type(var_5.data).__module__}.{type(var_5.data).__qualname__}' == 'builtins.list'
+>       assert len(var_5.data) == 2
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:652: AssertionError
+   - [# 107] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+- 97:             curr_node = curr_node.next
++ 97:             pass
+  98:         return data
+--------------------------------------------------------------------------------
+[5.00632 s] timeout
+   - [# 108] SDL linkedList5: 
+--------------------------------------------------------------------------------
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+- 98:         return data
++ 98:         pass
+--------------------------------------------------------------------------------
+[0.09690 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:32: AssertionError
+   - [# 109] SVD linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data, next=None):
+-  4:         self.next = next
++  4:         next = next
+   5:         self.data = data
+   6:     
+   7:     def __str__(self):
+   8:         return self.data
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 110] SVD linkedList5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data, next=None):
+   4:         self.next = next
+-  5:         self.data = data
++  5:         data = data
+   6:     
+   7:     def __str__(self):
+   8:         return self.data
+   9: 
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 111] SVD linkedList5: 
+--------------------------------------------------------------------------------
+   4:         self.next = next
+   5:         self.data = data
+   6:     
+   7:     def __str__(self):
+-  8:         return self.data
++  8:         return data
+   9: 
+  10: 
+  11: class LinkedList(object):
+  12:     
+--------------------------------------------------------------------------------
+[0.10125 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_1.delete(var_1)
+        var_3 = linked_list_1.__len__()
+        assert var_3 == 1
+>       var_4 = node_0.__str__()
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.Node object at 0x7f582444b2e0>
+
+>   ???
+E   NameError: name 'data' is not defined
+
+linkedList5:8: NameError
+   - [# 112] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  10: 
+  11: class LinkedList(object):
+  12:     
+  13:     def __init__(self, head=None):
+- 14:         self.head = head
++ 14:         head = head
+  15:     
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 113] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  13:     def __init__(self, head=None):
+  14:         self.head = head
+  15:     
+  16:     def __len__(self):
+- 17:         curr = self.head
++ 17:         curr = head
+  18:         counter = 0
+  19:         while curr is not None:
+  20:             counter += 1
+  21:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.10912 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58244a6800>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:17: NameError
+   - [# 114] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+- 27:         node = Node(data, self.head)
++ 27:         node = Node(data, head)
+  28:         self.head = node
+  29:         return node
+  30:     
+  31:     def append(self, data):
+--------------------------------------------------------------------------------
+[0.09891 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+>       var_1 = linked_list_1.insert_to_front(node_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58244a45e0>
+data = <linkedList5.Node object at 0x7f58244a6f20>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:27: NameError
+   - [# 115] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+  26:             return None
+  27:         node = Node(data, self.head)
+- 28:         self.head = node
++ 28:         head = node
+  29:         return node
+  30:     
+  31:     def append(self, data):
+  32:         if data is None:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 116] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  31:     def append(self, data):
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+- 35:         if self.head is None:
++ 35:         if head is None:
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+--------------------------------------------------------------------------------
+[0.10256 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.append(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f582428c100>
+data = <linkedList5.LinkedList object at 0x7f582428c100>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:35: NameError
+   - [# 117] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  32:         if data is None:
+  33:             return None
+  34:         node = Node(data)
+  35:         if self.head is None:
+- 36:             self.head = node
++ 36:             head = node
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 118] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  34:         node = Node(data)
+  35:         if self.head is None:
+  36:             self.head = node
+  37:             return node
+- 38:         curr_node = self.head
++ 38:         curr_node = head
+  39:         while curr_node.next is not None:
+  40:             curr_node = curr_node.next
+  41:         curr_node.next = node
+  42:         return node
+--------------------------------------------------------------------------------
+[0.10636 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = var_1.__str__()
+        var_4 = linked_list_0.delete(var_3)
+        var_5 = linked_list_0.__len__()
+        assert var_5 == 1
+        linked_list_2 = module_0.LinkedList(var_5)
+        assert linked_list_2.head == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_6 = linked_list_1.find(var_4)
+>       var_7 = linked_list_1.append(var_1)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f582428c9a0>
+data = <linkedList5.Node object at 0x7f582428c2b0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:38: NameError
+   - [# 119] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  43:     
+  44:     def find(self, data):
+  45:         if data is None:
+  46:             return None
+- 47:         curr_node = self.head
++ 47:         curr_node = head
+  48:         while curr_node is not None:
+  49:             if curr_node.data == data:
+  50:                 return curr_node
+  51:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.09739 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_3
+
+def test_case_3():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.print_list()
+>       var_1 = linked_list_0.find(linked_list_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58244a5810>
+data = <linkedList5.LinkedList object at 0x7f58244a5810>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:47: NameError
+   - [# 120] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+  56:             return
+- 57:         if self.head is None:
++ 57:         if head is None:
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+--------------------------------------------------------------------------------
+[0.09924 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+>       var_2 = linked_list_1.delete(var_1)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f582428ef80>
+data = <linkedList5.Node object at 0x7f582428e380>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:57: NameError
+   - [# 121] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  55:         if data is None:
+  56:             return
+  57:         if self.head is None:
+  58:             return
+- 59:         if self.head.data == data:
++ 59:         if head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+--------------------------------------------------------------------------------
+[0.09946 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+>       var_2 = linked_list_1.delete(var_1)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824592ad0>
+data = <linkedList5.Node object at 0x7f58245936a0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:59: NameError
+   - [# 122] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  56:             return
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+- 60:             self.head = self.head.next
++ 60:             head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 123] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  56:             return
+  57:         if self.head is None:
+  58:             return
+  59:         if self.head.data == data:
+- 60:             self.head = self.head.next
++ 60:             self.head = head.next
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.12221 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_20
+
+def test_case_20():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete_alt(var_0)
+>       var_4 = linked_list_1.delete(var_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:340: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824593a90>, data = []
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:60: NameError
+   - [# 124] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  58:             return
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+- 62:         prev_node = self.head
++ 62:         prev_node = head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+--------------------------------------------------------------------------------
+[0.10996 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+>       var_2 = linked_list_1.delete(var_1)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f582445ad40>
+data = <linkedList5.Node object at 0x7f5824458370>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:62: NameError
+   - [# 125] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  59:         if self.head.data == data:
+  60:             self.head = self.head.next
+  61:             return
+  62:         prev_node = self.head
+- 63:         curr_node = self.head.next
++ 63:         curr_node = head.next
+  64:         while curr_node is not None:
+  65:             if curr_node.data == data:
+  66:                 prev_node.next = curr_node.next
+  67:                 return
+--------------------------------------------------------------------------------
+[0.09965 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+>       var_2 = linked_list_1.delete(var_1)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f582445ba60>
+data = <linkedList5.Node object at 0x7f582445b6d0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:63: NameError
+   - [# 126] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+- 74:         if self.head is None:
++ 74:         if head is None:
+  75:             return
+  76:         curr_node = self.head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+--------------------------------------------------------------------------------
+[0.10100 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+>       var_2 = linked_list_0.delete_alt(var_0)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58246114b0>, data = []
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:74: NameError
+   - [# 127] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  72:         if data is None:
+  73:             return
+  74:         if self.head is None:
+  75:             return
+- 76:         curr_node = self.head
++ 76:         curr_node = head
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+--------------------------------------------------------------------------------
+[0.10593 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_9
+
+def test_case_9():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+>       var_2 = linked_list_1.delete_alt(linked_list_1)
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:190: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824647ca0>
+data = <linkedList5.LinkedList object at 0x7f5824647ca0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:76: NameError
+   - [# 128] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  83:                 return
+  84:             curr_node = curr_node.next
+  85:     
+  86:     def print_list(self):
+- 87:         curr_node = self.head
++ 87:         curr_node = head
+  88:         while curr_node is not None:
+  89:             print(curr_node.data)
+  90:             curr_node = curr_node.next
+  91:     
+--------------------------------------------------------------------------------
+[0.10036 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert var_1.data == []
+        var_2 = linked_list_0.delete_alt(var_0)
+>       var_3 = linked_list_1.print_list()
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f5824646a40>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:87: NameError
+   - [# 129] SVD linkedList5: 
+--------------------------------------------------------------------------------
+  90:             curr_node = curr_node.next
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+- 94:         curr_node = self.head
++ 94:         curr_node = head
+  95:         while curr_node is not None:
+  96:             data.append(curr_node.data)
+  97:             curr_node = curr_node.next
+  98:         return data
+--------------------------------------------------------------------------------
+[0.09998 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.get_all_data()
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f58244a5a20>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList5:94: NameError
+   - [# 130] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  16:     def __len__(self):
+  17:         curr = self.head
+  18:         counter = 0
+  19:         while curr is not None:
+- 20:             counter += 1
+- 21:             curr = curr.next
++ 20:             break
++ 21:         
+  22:         return counter
+  23:     
+  24:     def insert_to_front(self, data):
+  25:         if data is None:
+--------------------------------------------------------------------------------
+[0.09960 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        node_0 = module_0.Node(var_0)
+        var_1 = linked_list_1.insert_to_front(node_0)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:13: AssertionError
+   - [# 131] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  36:             self.head = node
+  37:             return node
+  38:         curr_node = self.head
+  39:         while curr_node.next is not None:
+- 40:             curr_node = curr_node.next
++ 40:             break
+  41:         curr_node.next = node
+  42:         return node
+  43:     
+  44:     def find(self, data):
+--------------------------------------------------------------------------------
+[0.11346 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_24
+
+def test_case_24():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_0 = linked_list_1.insert_to_front(linked_list_1)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.delete_alt(linked_list_0)
+        var_3 = linked_list_0.delete(var_2)
+        var_4 = linked_list_0.__len__()
+        assert var_4 == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_5 = linked_list_1.find(var_3)
+        var_6 = linked_list_1.append(linked_list_1)
+        assert len(linked_list_1) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert len(node_0.data) == 2
+        assert f'{type(var_6).__module__}.{type(var_6).__qualname__}' == 'linkedList5.Node'
+        assert var_6.next is None
+        assert f'{type(var_6.data).__module__}.{type(var_6.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_6.data) == 2
+        node_1 = module_0.Node(linked_list_1, var_4)
+        assert node_1.next == 1
+        assert len(node_1.data) == 2
+        var_7 = linked_list_1.delete(linked_list_0)
+        var_8 = linked_list_1.delete_alt(var_4)
+        var_9 = linked_list_1.append(var_6)
+>       assert len(linked_list_1) == 3
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:473: AssertionError
+   - [# 132] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  45:         if data is None:
+  46:             return None
+  47:         curr_node = self.head
+  48:         while curr_node is not None:
+- 49:             if curr_node.data == data:
+- 50:                 return curr_node
+- 51:             curr_node = curr_node.next
++ 49:             break
++ 50:         
++ 51:         
+  52:         return None
+  53:     
+  54:     def delete(self, data):
+  55:         if data is None:
+--------------------------------------------------------------------------------
+[0.11204 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_21
+
+def test_case_21():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = module_0.Node(linked_list_0, linked_list_0)
+        assert len(var_0.next) == 0
+        assert len(var_0.data) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.insert_to_front(var_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.insert_to_front(var_1)
+        assert len(linked_list_0) == 1
+        assert len(var_0.next) == 1
+        assert len(var_0.data) == 1
+        assert f'{type(var_2.data).__module__}.{type(var_2.data).__qualname__}' == 'linkedList5.Node'
+        var_3 = linked_list_0.delete_alt(var_0)
+        var_4 = linked_list_0.__len__()
+        assert var_4 == 1
+        linked_list_2 = module_0.LinkedList(var_4)
+        assert linked_list_2.head == 1
+        node_0 = module_0.Node(linked_list_1)
+        assert len(node_0.data) == 1
+        var_5 = linked_list_1.find(var_0)
+>       assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:369: AssertionError
+   - [# 133] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  61:             return
+  62:         prev_node = self.head
+  63:         curr_node = self.head.next
+  64:         while curr_node is not None:
+- 65:             if curr_node.data == data:
+- 66:                 prev_node.next = curr_node.next
+- 67:                 return
+- 68:             prev_node = curr_node
+- 69:             curr_node = curr_node.next
++ 65:             break
++ 66:     
++ 67:     
++ 68:     
++ 69:     
+  70:     
+  71:     def delete_alt(self, data):
+  72:         if data is None:
+  73:             return
+--------------------------------------------------------------------------------
+[0.13240 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_30
+
+def test_case_30():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = var_0.__str__()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1) == 1
+        var_2 = linked_list_0.__len__()
+        assert var_2 == 1
+        var_3 = linked_list_0.append(var_2)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert len(var_1) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert var_3.next is None
+        assert var_3.data == 1
+        var_4 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.insert_to_front(var_4)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+        assert var_5.next is None
+        assert f'{type(var_5.data).__module__}.{type(var_5.data).__qualname__}' == 'builtins.list'
+        assert len(var_5.data) == 2
+        var_6 = linked_list_0.find(var_4)
+        var_7 = linked_list_1.delete_alt(linked_list_1)
+        var_8 = linked_list_0.delete_alt(var_4)
+        var_9 = linked_list_1.print_list()
+        var_10 = var_1.delete(var_2)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:706: AssertionError
+   - [# 134] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  77:         if curr_node.data == data:
+  78:             curr_node = curr_node.next
+  79:             return
+  80:         while curr_node.next is not None:
+- 81:             if curr_node.next.data == data:
+- 82:                 curr_node.next = curr_node.next.next
+- 83:                 return
+- 84:             curr_node = curr_node.next
++ 81:             break
++ 82:     
++ 83:     
++ 84:     
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+--------------------------------------------------------------------------------
+[0.12717 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_23
+
+def test_case_23():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = linked_list_0.insert_to_front(var_0)
+        assert len(linked_list_0) == 2
+        assert len(var_0.data) == 2
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList5.Node'
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = linked_list_0.delete_alt(linked_list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:427: AssertionError
+   - [# 135] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  85:     
+  86:     def print_list(self):
+  87:         curr_node = self.head
+  88:         while curr_node is not None:
+- 89:             print(curr_node.data)
+- 90:             curr_node = curr_node.next
++ 89:             break
++ 90:     
+  91:     
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+--------------------------------------------------------------------------------
+[0.11825 s] survived
+   - [# 136] ZIL linkedList5: 
+--------------------------------------------------------------------------------
+  92:     def get_all_data(self):
+  93:         data = []
+  94:         curr_node = self.head
+  95:         while curr_node is not None:
+- 96:             data.append(curr_node.data)
+- 97:             curr_node = curr_node.next
++ 96:             break
++ 97:         
+  98:         return data
+--------------------------------------------------------------------------------
+[0.11699 s] killed by DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py::test_case_29
+
+def test_case_29():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.insert_to_front(linked_list_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList5.Node'
+        assert var_0.next is None
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_0.data) == 1
+        var_1 = var_0.__str__()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.LinkedList'
+        assert len(var_1) == 1
+        var_2 = linked_list_0.__len__()
+        assert var_2 == 1
+        var_3 = linked_list_0.append(var_2)
+        assert len(linked_list_0) == 2
+        assert f'{type(var_0.next).__module__}.{type(var_0.next).__qualname__}' == 'linkedList5.Node'
+        assert len(var_0.data) == 2
+        assert len(var_1) == 2
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert var_3.next is None
+        assert var_3.data == 1
+        var_4 = linked_list_0.get_all_data()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_5 = linked_list_1.insert_to_front(var_4)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+        assert var_5.next is None
+        assert f'{type(var_5.data).__module__}.{type(var_5.data).__qualname__}' == 'builtins.list'
+>       assert len(var_5.data) == 2
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA/test_linkedList5_MOSA.py:652: AssertionError
+[*] Mutation score [58.90938 s]: 89.8%
+   - all: 136
+   - killed: 98 (72.1%)
+   - survived: 12 (8.8%)
+   - incompetent: 18 (13.2%)
+   - timeout: 8 (5.9%)

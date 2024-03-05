@@ -1,0 +1,1464 @@
+[*] Start mutation process:
+   - targets: binarySearchTree4.py
+   - tests: ./RANDOM
+[*] 1925 tests passed:
+   - test_binarySearchTree4_RANDOM [2.58433 s]
+[*] Start mutants generation and execution:
+   - [#   1] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data):
+-  4:         self.data = data
+-  5:         self.left = None
+-  6:         self.right = None
+-  7:         self.parent = None
+-  8:     
++  3:     @classmethod
++  4:     def __init__(self, data):
++  5:         self.data = data
++  6:         self.left = None
++  7:         self.right = None
++  8:         self.parent = None
+   9:     def __repr__(self):
+  10:         return str(self.data)
+  11: 
+  12: class Bst(object):
+--------------------------------------------------------------------------------
+[4.89330 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_55
+
+def test_case_55():
+        bst_0 = module_0.Bst()
+        node_0 = module_0.Node(bst_0)
+        var_0 = bst_0.insert(node_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        var_1 = bst_1.insert(bst_1)
+        assert f'{type(bst_1.root).__module__}.{type(bst_1.root).__qualname__}' == 'binarySearchTree4.Node'
+        var_2 = var_1.__repr__()
+        bst_2 = module_0.Bst()
+        var_3 = var_1.__repr__()
+        bst_3 = module_0.Bst()
+        var_4 = bst_3.insert(bst_3)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        var_5 = var_4.__repr__()
+        var_6 = var_5.__repr__()
+        bst_4 = module_0.Bst()
+        node_1 = module_0.Node(bst_4)
+        bst_5 = module_0.Bst()
+        var_7 = bst_5.insert(bst_5)
+        assert f'{type(bst_5.root).__module__}.{type(bst_5.root).__qualname__}' == 'binarySearchTree4.Node'
+        var_8 = node_1.__repr__()
+        var_9 = node_1.__repr__()
+        bst_6 = module_0.Bst()
+        var_10 = bst_6.insert(bst_6)
+        assert f'{type(bst_6.root).__module__}.{type(bst_6.root).__qualname__}' == 'binarySearchTree4.Node'
+        var_11 = var_10.__repr__()
+        node_2 = module_0.Node(var_10)
+        node_3 = module_0.Node(var_0)
+>       var_12 = node_3.__repr__()
+
+RANDOM/test_binarySearchTree4_RANDOM.py:1845: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:10: in __repr__
+    ???
+binarySearchTree4:10: in __repr__
+    ???
+binarySearchTree4:10: in __repr__
+    ???
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+   - [#   2] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+   5:         self.left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+-  9:     def __repr__(self):
+- 10:         return str(self.data)
+- 11: 
++  9:     @classmethod
++ 10:     def __repr__(self):
++ 11:         return str(self.data)
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+--------------------------------------------------------------------------------
+[4.89052 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'binarySearchTree4.Bst'
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+>       var_1 = var_0.__repr__()
+
+RANDOM/test_binarySearchTree4_RANDOM.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'binarySearchTree4.Node'>
+
+>   ???
+E   AttributeError: type object 'Node' has no attribute 'data'
+
+binarySearchTree4:11: AttributeError
+   - [#   3] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  10:         return str(self.data)
+  11: 
+  12: class Bst(object):
+  13:     
+- 14:     def __init__(self, root=None):
+- 15:         self.root = root
+- 16:     
++ 14:     @classmethod
++ 15:     def __init__(self, root=None):
++ 16:         self.root = root
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+--------------------------------------------------------------------------------
+[5.09340 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_313
+
+def test_case_313():
+        bst_0 = module_0.Bst()
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bool_0 = False
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        node_1 = module_0.Node(bst_1)
+        var_1 = bst_1.insert(node_1)
+        assert f'{type(bst_1.root).__module__}.{type(bst_1.root).__qualname__}' == 'binarySearchTree4.Node'
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        var_2 = bst_3.insert(bst_3)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        var_3 = var_2.__repr__()
+        bst_4 = module_0.Bst()
+        bst_5 = module_0.Bst()
+        var_4 = bst_5.insert(bst_5)
+        assert f'{type(bst_5.root).__module__}.{type(bst_5.root).__qualname__}' == 'binarySearchTree4.Node'
+        var_5 = var_4.__repr__()
+        bst_6 = module_0.Bst(var_3)
+>       var_6 = bst_2.insert(bst_5)
+
+RANDOM/test_binarySearchTree4_RANDOM.py:12115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f6d929799c0>
+node = '<binarySearchTree4.Bst object at 0x7f6d929793c0>'
+data = <binarySearchTree4.Bst object at 0x7f6d92979c00>
+
+>   ???
+E   AttributeError: 'str' object has no attribute 'data'
+
+binarySearchTree4:29: AttributeError
+   - [#   4] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+  16:     
+- 17:     def insert(self, data):
+- 18:         if data is None:
+- 19:             raise TypeError('data cannot be None')
+- 20:         if self.root is None:
+- 21:             self.root = Node(data)
+- 22:             return self.root
+- 23:         else:
+- 24:             return self._insert(self.root, data)
+- 25:     
++ 17:     @classmethod
++ 18:     def insert(self, data):
++ 19:         if data is None:
++ 20:             raise TypeError('data cannot be None')
++ 21:         if self.root is None:
++ 22:             self.root = Node(data)
++ 23:             return self.root
++ 24:         else:
++ 25:             return self._insert(self.root, data)
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+--------------------------------------------------------------------------------
+[4.83463 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+>       var_0 = bst_0.insert(bst_0)
+
+RANDOM/test_binarySearchTree4_RANDOM.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'binarySearchTree4.Bst'>
+data = <binarySearchTree4.Bst object at 0x7f6d9294ded0>
+
+>   ???
+E   AttributeError: type object 'Bst' has no attribute 'root'
+
+binarySearchTree4:21: AttributeError
+   - [#   5] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+- 26:     def _insert(self, node, data):
+- 27:         if node is None:
+- 28:             return Node(data)
+- 29:         if data <= node.data:
+- 30:             if node.left is None:
+- 31:                 node.left = self._insert(node.left, data)
+- 32:                 node.left.parent = node
+- 33:                 return node.left
+- 34:             else:
+- 35:                 return self._insert(node.left, data)
+- 36:         
+- 37:         elif node.right is None:
+- 38:             node.right = self._insert(node.right, data)
+- 39:             node.right.parent = node
+- 40:             return node.right
+- 41:         else:
+- 42:             return self._insert(node.right, data)
++ 26:     @classmethod
++ 27:     def _insert(self, node, data):
++ 28:         if node is None:
++ 29:             return Node(data)
++ 30:         if data <= node.data:
++ 31:             if node.left is None:
++ 32:                 node.left = self._insert(node.left, data)
++ 33:                 node.left.parent = node
++ 34:                 return node.left
++ 35:             else:
++ 36:                 return self._insert(node.left, data)
++ 37:         
++ 38:         elif node.right is None:
++ 39:             node.right = self._insert(node.right, data)
++ 40:             node.right.parent = node
++ 41:             return node.right
++ 42:         else:
++ 43:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[2.43679 s] survived
+   - [#   6] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+  16:     
+  17:     def insert(self, data):
+- 18:         if data is None:
++ 18:         if not (data is None):
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+--------------------------------------------------------------------------------
+[4.91988 s] incompetent
+
+TypeError: binarySearchTree4:19: TypeError: data cannot be None
+
+   - [#   7] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+- 20:         if self.root is None:
++ 20:         if not (self.root is None):
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+--------------------------------------------------------------------------------
+[4.74854 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+>       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+RANDOM/test_binarySearchTree4_RANDOM.py:16: AssertionError
+   - [#   8] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+- 27:         if node is None:
++ 27:         if not (node is None):
+  28:             return Node(data)
+  29:         if data <= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+--------------------------------------------------------------------------------
+[6.26432 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_1231
+
+def test_case_1231():
+        int_0 = 2029
+        node_0 = module_0.Node(int_0)
+        bst_0 = module_0.Bst()
+        list_0 = [bst_0, bst_0, bst_0]
+        bool_0 = True
+        tuple_0 = (bst_0, list_0, bool_0, bst_0)
+        node_1 = module_0.Node(tuple_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(bool_0)
+>       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+RANDOM/test_binarySearchTree4_RANDOM.py:49082: AssertionError
+   - [#   9] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+- 29:         if data <= node.data:
++ 29:         if not (data <= node.data):
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+--------------------------------------------------------------------------------
+[6.11215 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_1231
+
+def test_case_1231():
+        int_0 = 2029
+        node_0 = module_0.Node(int_0)
+        bst_0 = module_0.Bst()
+        list_0 = [bst_0, bst_0, bst_0]
+        bool_0 = True
+        tuple_0 = (bst_0, list_0, bool_0, bst_0)
+        node_1 = module_0.Node(tuple_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(bool_0)
+>       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+RANDOM/test_binarySearchTree4_RANDOM.py:49082: AssertionError
+   - [#  10] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+- 30:             if node.left is None:
++ 30:             if not (node.left is None):
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+--------------------------------------------------------------------------------
+[6.17341 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_1231
+
+def test_case_1231():
+        int_0 = 2029
+        node_0 = module_0.Node(int_0)
+        bst_0 = module_0.Bst()
+        list_0 = [bst_0, bst_0, bst_0]
+        bool_0 = True
+        tuple_0 = (bst_0, list_0, bool_0, bst_0)
+        node_1 = module_0.Node(tuple_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(bool_0)
+>       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+RANDOM/test_binarySearchTree4_RANDOM.py:49082: AssertionError
+   - [#  11] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  33:                 return node.left
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+- 37:         elif node.right is None:
++ 37:         elif not (node.right is None):
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+--------------------------------------------------------------------------------
+[2.38018 s] survived
+   - [#  12] CRP binarySearchTree4: 
+--------------------------------------------------------------------------------
+  15:         self.root = root
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+- 19:             raise TypeError('data cannot be None')
++ 19:             raise TypeError('mutpy')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+--------------------------------------------------------------------------------
+[2.37762 s] survived
+   - [#  13] CRP binarySearchTree4: 
+--------------------------------------------------------------------------------
+  15:         self.root = root
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+- 19:             raise TypeError('data cannot be None')
++ 19:             raise TypeError('')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+--------------------------------------------------------------------------------
+[2.36648 s] survived
+   - [#  14] ROR binarySearchTree4: 
+--------------------------------------------------------------------------------
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+- 29:         if data <= node.data:
++ 29:         if data >= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+--------------------------------------------------------------------------------
+[2.47748 s] survived
+   - [#  15] ROR binarySearchTree4: 
+--------------------------------------------------------------------------------
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+- 29:         if data <= node.data:
++ 29:         if data < node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+--------------------------------------------------------------------------------
+[6.01685 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_1231
+
+def test_case_1231():
+        int_0 = 2029
+        node_0 = module_0.Node(int_0)
+        bst_0 = module_0.Bst()
+        list_0 = [bst_0, bst_0, bst_0]
+        bool_0 = True
+        tuple_0 = (bst_0, list_0, bool_0, bst_0)
+        node_1 = module_0.Node(tuple_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(bool_0)
+>       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+RANDOM/test_binarySearchTree4_RANDOM.py:49082: AssertionError
+   - [#  16] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data):
+-  4:         self.data = data
+-  5:         self.left = None
+-  6:         self.right = None
+-  7:         self.parent = None
+-  8:     
++  3:     @staticmethod
++  4:     def __init__(self, data):
++  5:         self.data = data
++  6:         self.left = None
++  7:         self.right = None
++  8:         self.parent = None
+   9:     def __repr__(self):
+  10:         return str(self.data)
+  11: 
+  12: class Bst(object):
+--------------------------------------------------------------------------------
+[5.06211 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/binarySearchTree4/RANDOM/test_binarySearchTree4_RANDOM.py:11: TypeError: Node.__init__() missing 1 required positional argument: 'data'
+
+   - [#  17] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+   5:         self.left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+-  9:     def __repr__(self):
+- 10:         return str(self.data)
+- 11: 
++  9:     @staticmethod
++ 10:     def __repr__(self):
++ 11:         return str(self.data)
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+--------------------------------------------------------------------------------
+[4.91635 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/binarySearchTree4/RANDOM/test_binarySearchTree4_RANDOM.py:22: TypeError: Node.__repr__() missing 1 required positional argument: 'self'
+
+   - [#  18] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  10:         return str(self.data)
+  11: 
+  12: class Bst(object):
+  13:     
+- 14:     def __init__(self, root=None):
+- 15:         self.root = root
+- 16:     
++ 14:     @staticmethod
++ 15:     def __init__(self, root=None):
++ 16:         self.root = root
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+--------------------------------------------------------------------------------
+[4.79646 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/binarySearchTree4/RANDOM/test_binarySearchTree4_RANDOM.py:7: TypeError: Bst.__init__() missing 1 required positional argument: 'self'
+
+   - [#  19] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+  16:     
+- 17:     def insert(self, data):
+- 18:         if data is None:
+- 19:             raise TypeError('data cannot be None')
+- 20:         if self.root is None:
+- 21:             self.root = Node(data)
+- 22:             return self.root
+- 23:         else:
+- 24:             return self._insert(self.root, data)
+- 25:     
++ 17:     @staticmethod
++ 18:     def insert(self, data):
++ 19:         if data is None:
++ 20:             raise TypeError('data cannot be None')
++ 21:         if self.root is None:
++ 22:             self.root = Node(data)
++ 23:             return self.root
++ 24:         else:
++ 25:             return self._insert(self.root, data)
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+--------------------------------------------------------------------------------
+[4.89916 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/binarySearchTree4/RANDOM/test_binarySearchTree4_RANDOM.py:15: TypeError: Bst.insert() missing 1 required positional argument: 'data'
+
+   - [#  20] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+- 26:     def _insert(self, node, data):
+- 27:         if node is None:
+- 28:             return Node(data)
+- 29:         if data <= node.data:
+- 30:             if node.left is None:
+- 31:                 node.left = self._insert(node.left, data)
+- 32:                 node.left.parent = node
+- 33:                 return node.left
+- 34:             else:
+- 35:                 return self._insert(node.left, data)
+- 36:         
+- 37:         elif node.right is None:
+- 38:             node.right = self._insert(node.right, data)
+- 39:             node.right.parent = node
+- 40:             return node.right
+- 41:         else:
+- 42:             return self._insert(node.right, data)
++ 26:     @staticmethod
++ 27:     def _insert(self, node, data):
++ 28:         if node is None:
++ 29:             return Node(data)
++ 30:         if data <= node.data:
++ 31:             if node.left is None:
++ 32:                 node.left = self._insert(node.left, data)
++ 33:                 node.left.parent = node
++ 34:                 return node.left
++ 35:             else:
++ 36:                 return self._insert(node.left, data)
++ 37:         
++ 38:         elif node.right is None:
++ 39:             node.right = self._insert(node.right, data)
++ 40:             node.right.parent = node
++ 41:             return node.right
++ 42:         else:
++ 43:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[6.04875 s] incompetent
+
+TypeError: binarySearchTree4:24: TypeError: Bst._insert() missing 1 required positional argument: 'data'
+
+   - [#  21] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+-  4:         self.data = data
++  4:         pass
+   5:         self.left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+--------------------------------------------------------------------------------
+[4.83103 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'binarySearchTree4.Bst'
+E       AttributeError: 'Node' object has no attribute 'data'
+
+RANDOM/test_binarySearchTree4_RANDOM.py:18: AttributeError
+   - [#  22] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+-  5:         self.left = None
++  5:         pass
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+--------------------------------------------------------------------------------
+[4.91759 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'binarySearchTree4.Bst'
+>       assert var_0.left is None
+E       AttributeError: 'Node' object has no attribute 'left'
+
+RANDOM/test_binarySearchTree4_RANDOM.py:19: AttributeError
+   - [#  23] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+   5:         self.left = None
+-  6:         self.right = None
++  6:         pass
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+  10:         return str(self.data)
+--------------------------------------------------------------------------------
+[4.73626 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'binarySearchTree4.Bst'
+        assert var_0.left is None
+>       assert var_0.right is None
+E       AttributeError: 'Node' object has no attribute 'right'
+
+RANDOM/test_binarySearchTree4_RANDOM.py:20: AttributeError
+   - [#  24] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   3:     def __init__(self, data):
+   4:         self.data = data
+   5:         self.left = None
+   6:         self.right = None
+-  7:         self.parent = None
++  7:         pass
+   8:     
+   9:     def __repr__(self):
+  10:         return str(self.data)
+  11: 
+--------------------------------------------------------------------------------
+[4.76928 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'binarySearchTree4.Bst'
+        assert var_0.left is None
+        assert var_0.right is None
+>       assert var_0.parent is None
+E       AttributeError: 'Node' object has no attribute 'parent'
+
+RANDOM/test_binarySearchTree4_RANDOM.py:21: AttributeError
+   - [#  25] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+- 10:         return str(self.data)
++ 10:         pass
+  11: 
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+--------------------------------------------------------------------------------
+[5.03147 s] incompetent
+
+TypeError: binarySearchTree4:19: TypeError: data cannot be None
+
+   - [#  26] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  11: 
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+- 15:         self.root = root
++ 15:         pass
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+--------------------------------------------------------------------------------
+[4.85165 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+>       var_0 = bst_0.insert(bst_0)
+
+RANDOM/test_binarySearchTree4_RANDOM.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f6d90c30130>
+data = <binarySearchTree4.Bst object at 0x7f6d90c30130>
+
+>   ???
+E   AttributeError: 'Bst' object has no attribute 'root'
+
+binarySearchTree4:20: AttributeError
+   - [#  27] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+- 21:             self.root = Node(data)
++ 21:             pass
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+--------------------------------------------------------------------------------
+[4.72479 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+>       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+RANDOM/test_binarySearchTree4_RANDOM.py:16: AssertionError
+   - [#  28] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+- 22:             return self.root
++ 22:             pass
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+--------------------------------------------------------------------------------
+[4.99863 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+RANDOM/test_binarySearchTree4_RANDOM.py:17: AssertionError
+   - [#  29] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+- 24:             return self._insert(self.root, data)
++ 24:             pass
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+--------------------------------------------------------------------------------
+[6.32806 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_1231
+
+def test_case_1231():
+        int_0 = 2029
+        node_0 = module_0.Node(int_0)
+        bst_0 = module_0.Bst()
+        list_0 = [bst_0, bst_0, bst_0]
+        bool_0 = True
+        tuple_0 = (bst_0, list_0, bool_0, bst_0)
+        node_1 = module_0.Node(tuple_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(bool_0)
+>       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+RANDOM/test_binarySearchTree4_RANDOM.py:49082: AssertionError
+   - [#  30] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  24:             return self._insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+- 28:             return Node(data)
++ 28:             pass
+  29:         if data <= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+--------------------------------------------------------------------------------
+[6.13652 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_1231
+
+def test_case_1231():
+        int_0 = 2029
+        node_0 = module_0.Node(int_0)
+        bst_0 = module_0.Bst()
+        list_0 = [bst_0, bst_0, bst_0]
+        bool_0 = True
+        tuple_0 = (bst_0, list_0, bool_0, bst_0)
+        node_1 = module_0.Node(tuple_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+>       var_1 = bst_0.insert(bool_0)
+
+RANDOM/test_binarySearchTree4_RANDOM.py:49081: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+binarySearchTree4:31: in _insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f6d90df10c0>, node = None
+data = True
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+binarySearchTree4:29: AttributeError
+   - [#  31] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+  30:             if node.left is None:
+- 31:                 node.left = self._insert(node.left, data)
++ 31:                 pass
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+  35:                 return self._insert(node.left, data)
+--------------------------------------------------------------------------------
+[6.13823 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_1231
+
+def test_case_1231():
+        int_0 = 2029
+        node_0 = module_0.Node(int_0)
+        bst_0 = module_0.Bst()
+        list_0 = [bst_0, bst_0, bst_0]
+        bool_0 = True
+        tuple_0 = (bst_0, list_0, bool_0, bst_0)
+        node_1 = module_0.Node(tuple_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+>       var_1 = bst_0.insert(bool_0)
+
+RANDOM/test_binarySearchTree4_RANDOM.py:49081: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f6d90d7dba0>, node = True
+data = True
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'parent'
+
+binarySearchTree4:32: AttributeError
+   - [#  32] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  28:             return Node(data)
+  29:         if data <= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+- 32:                 node.left.parent = node
++ 32:                 pass
+  33:                 return node.left
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+--------------------------------------------------------------------------------
+[6.38605 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_1231
+
+def test_case_1231():
+        int_0 = 2029
+        node_0 = module_0.Node(int_0)
+        bst_0 = module_0.Bst()
+        list_0 = [bst_0, bst_0, bst_0]
+        bool_0 = True
+        tuple_0 = (bst_0, list_0, bool_0, bst_0)
+        node_1 = module_0.Node(tuple_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+RANDOM/test_binarySearchTree4_RANDOM.py:49083: AssertionError
+   - [#  33] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  29:         if data <= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+- 33:                 return node.left
++ 33:                 pass
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+--------------------------------------------------------------------------------
+[6.35596 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_1231
+
+def test_case_1231():
+        int_0 = 2029
+        node_0 = module_0.Node(int_0)
+        bst_0 = module_0.Bst()
+        list_0 = [bst_0, bst_0, bst_0]
+        bool_0 = True
+        tuple_0 = (bst_0, list_0, bool_0, bst_0)
+        node_1 = module_0.Node(tuple_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+E       AttributeError: 'NoneType' object has no attribute 'parent'
+
+RANDOM/test_binarySearchTree4_RANDOM.py:49083: AttributeError
+   - [#  34] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+- 35:                 return self._insert(node.left, data)
++ 35:                 pass
+  36:         
+  37:         elif node.right is None:
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+--------------------------------------------------------------------------------
+[2.50538 s] survived
+   - [#  35] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+- 38:             node.right = self._insert(node.right, data)
++ 38:             pass
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+  42:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[2.53731 s] survived
+   - [#  36] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  35:                 return self._insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+  38:             node.right = self._insert(node.right, data)
+- 39:             node.right.parent = node
++ 39:             pass
+  40:             return node.right
+  41:         else:
+  42:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[2.55391 s] survived
+   - [#  37] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  36:         
+  37:         elif node.right is None:
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+- 40:             return node.right
++ 40:             pass
+  41:         else:
+  42:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[2.47441 s] survived
+   - [#  38] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+- 42:             return self._insert(node.right, data)
++ 42:             pass
+--------------------------------------------------------------------------------
+[2.56620 s] survived
+   - [#  39] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+-  4:         self.data = data
++  4:         data = data
+   5:         self.left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  40] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+-  5:         self.left = None
++  5:         left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  41] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+   5:         self.left = None
+-  6:         self.right = None
++  6:         right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+  10:         return str(self.data)
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  42] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   3:     def __init__(self, data):
+   4:         self.data = data
+   5:         self.left = None
+   6:         self.right = None
+-  7:         self.parent = None
++  7:         parent = None
+   8:     
+   9:     def __repr__(self):
+  10:         return str(self.data)
+  11: 
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  43] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+- 10:         return str(self.data)
++ 10:         return str(data)
+  11: 
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+--------------------------------------------------------------------------------
+[5.14937 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'binarySearchTree4.Bst'
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+>       var_1 = var_0.__repr__()
+
+RANDOM/test_binarySearchTree4_RANDOM.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[NameError("name 'data' is not defined") raised in repr()] Node object at 0x7f6d90c5b670>
+
+>   ???
+E   NameError: name 'data' is not defined
+
+binarySearchTree4:10: NameError
+   - [#  44] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  11: 
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+- 15:         self.root = root
++ 15:         root = root
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  45] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+- 20:         if self.root is None:
++ 20:         if root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+--------------------------------------------------------------------------------
+[5.17921 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+>       var_0 = bst_0.insert(bst_0)
+
+RANDOM/test_binarySearchTree4_RANDOM.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f6d90c58610>
+data = <binarySearchTree4.Bst object at 0x7f6d90c58610>
+
+>   ???
+E   NameError: name 'root' is not defined
+
+binarySearchTree4:20: NameError
+   - [#  46] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+- 21:             self.root = Node(data)
++ 21:             root = Node(data)
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  47] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+- 22:             return self.root
++ 22:             return root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+--------------------------------------------------------------------------------
+[5.00155 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+>       var_0 = bst_0.insert(bst_0)
+
+RANDOM/test_binarySearchTree4_RANDOM.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f6d90c32c80>
+data = <binarySearchTree4.Bst object at 0x7f6d90c32c80>
+
+>   ???
+E   NameError: name 'root' is not defined
+
+binarySearchTree4:22: NameError
+   - [#  48] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+- 24:             return self._insert(self.root, data)
++ 24:             return _insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+--------------------------------------------------------------------------------
+[6.39278 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_1231
+
+def test_case_1231():
+        int_0 = 2029
+        node_0 = module_0.Node(int_0)
+        bst_0 = module_0.Bst()
+        list_0 = [bst_0, bst_0, bst_0]
+        bool_0 = True
+        tuple_0 = (bst_0, list_0, bool_0, bst_0)
+        node_1 = module_0.Node(tuple_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+>       var_1 = bst_0.insert(bool_0)
+
+RANDOM/test_binarySearchTree4_RANDOM.py:49081: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f6d91b9e620>, data = True
+
+>   ???
+E   NameError: name '_insert' is not defined
+
+binarySearchTree4:24: NameError
+   - [#  49] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+- 24:             return self._insert(self.root, data)
++ 24:             return self._insert(root, data)
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+--------------------------------------------------------------------------------
+[6.01994 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_1231
+
+def test_case_1231():
+        int_0 = 2029
+        node_0 = module_0.Node(int_0)
+        bst_0 = module_0.Bst()
+        list_0 = [bst_0, bst_0, bst_0]
+        bool_0 = True
+        tuple_0 = (bst_0, list_0, bool_0, bst_0)
+        node_1 = module_0.Node(tuple_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+>       var_1 = bst_0.insert(bool_0)
+
+RANDOM/test_binarySearchTree4_RANDOM.py:49081: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f6d8e277820>, data = True
+
+>   ???
+E   NameError: name 'root' is not defined
+
+binarySearchTree4:24: NameError
+   - [#  50] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+  30:             if node.left is None:
+- 31:                 node.left = self._insert(node.left, data)
++ 31:                 node.left = _insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+  35:                 return self._insert(node.left, data)
+--------------------------------------------------------------------------------
+[6.16473 s] killed by RANDOM/test_binarySearchTree4_RANDOM.py::test_case_1231
+
+def test_case_1231():
+        int_0 = 2029
+        node_0 = module_0.Node(int_0)
+        bst_0 = module_0.Bst()
+        list_0 = [bst_0, bst_0, bst_0]
+        bool_0 = True
+        tuple_0 = (bst_0, list_0, bool_0, bst_0)
+        node_1 = module_0.Node(tuple_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+>       var_1 = bst_0.insert(bool_0)
+
+RANDOM/test_binarySearchTree4_RANDOM.py:49081: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f6d92a14640>, node = True
+data = True
+
+>   ???
+E   NameError: name '_insert' is not defined
+
+binarySearchTree4:31: NameError
+   - [#  51] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+- 35:                 return self._insert(node.left, data)
++ 35:                 return _insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+--------------------------------------------------------------------------------
+[2.48080 s] survived
+   - [#  52] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+- 38:             node.right = self._insert(node.right, data)
++ 38:             node.right = _insert(node.right, data)
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+  42:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[2.47482 s] survived
+   - [#  53] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+- 42:             return self._insert(node.right, data)
++ 42:             return _insert(node.right, data)
+--------------------------------------------------------------------------------
+[2.48276 s] survived
+[*] Mutation score [222.55944 s]: 67.5%
+   - all: 53
+   - killed: 27 (50.9%)
+   - survived: 13 (24.5%)
+   - incompetent: 13 (24.5%)
+   - timeout: 0 (0.0%)

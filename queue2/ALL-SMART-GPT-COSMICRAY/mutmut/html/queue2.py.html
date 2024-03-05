@@ -1,0 +1,56 @@
+<html><body><h1>queue2.py</h1>Killed 69 out of 74 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 17</h3><pre>--- queue2.py
++++ queue2.py
+@@ -35,7 +35,7 @@
+     def pop(self):
+         """Remove first value in list."""
+         if self.head is None:
+-            raise Exception ("Linked list is empty.")
++            raise Exception ("XXLinked list is empty.XX")
+         val = self.head.value
+         self.head = self.head.next
+         return val
+</pre><h3>Mutant 28</h3><pre>--- queue2.py
++++ queue2.py
+@@ -51,7 +51,7 @@
+                 else:
+                     last.next = n.next
+                 return True
+-            last = n # Added line for correct behavior of function
++            last = None # Added line for correct behavior of function
+             n = n.next
+         return False
+         
+</pre><h3>Mutant 47</h3><pre>--- queue2.py
++++ queue2.py
+@@ -82,7 +82,7 @@
+     def __init__(self, *start):
+         """Demonstrate queue using linked list in Python."""
+         self.head = None
+-        self.tail = None
++        self.tail = ""
+         for _ in start:
+             self.append(_) # Line changed from add (nonexistant) to append
+ 
+</pre><h3>Mutant 55</h3><pre>--- queue2.py
++++ queue2.py
+@@ -102,7 +102,7 @@
+     def pop(self):
+         """Remove first value from queue."""
+         if self.head is None:
+-            raise Exception ("Queue is empty.")
++            raise Exception ("XXQueue is empty.XX")
+         val = self.head.value
+         self.head = self.head.next
+         if self.head is None:
+</pre><h3>Mutant 59</h3><pre>--- queue2.py
++++ queue2.py
+@@ -106,7 +106,7 @@
+         val = self.head.value
+         self.head = self.head.next
+         if self.head is None:
+-            self.tail = None
++            self.tail = ""
+         return val
+ 
+     def __iter__(self):
+</pre></body></html>

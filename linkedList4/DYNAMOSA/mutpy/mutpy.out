@@ -1,0 +1,2790 @@
+[34m[*][0m Start mutation process:
+[36m   -[0m targets: linkedList4.py
+[36m   -[0m tests: ./DYNAMOSA
+[34m[*][0m 14 tests passed:
+[36m   -[0m test_linkedList4_DYNAMOSA [0.27555 s]
+[34m[*][0m Start mutants generation and execution:
+[36m   -[0m [#   1] AOD linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         return display[:2] + ')'[0m
+--------------------------------------------------------------------------------
+[0.16338 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#   2] AOR linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+[34m- 85:             display += str(curr.data) + ', '[0m
+[32m+ 85:             display += str(curr.data) - ', '[0m
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.15986 s] [36mincompetent[0m
+
+TypeError: linkedList4:85: TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+[36m   -[0m [#   3] AOR linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         return display[:+2] + ')'[0m
+--------------------------------------------------------------------------------
+[0.16561 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#   4] AOR linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         return display[:-2] - ')'[0m
+--------------------------------------------------------------------------------
+[0.16040 s] [36mincompetent[0m
+
+TypeError: linkedList4:87: TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+[36m   -[0m [#   5] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+[34m- 45:         self._length += 1[0m
+[32m+ 45:         self._length -= 1[0m
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+--------------------------------------------------------------------------------
+[0.15323 s] [31msurvived[0m
+[36m   -[0m [#   6] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+[34m- 53:         self._length -= 1[0m
+[32m+ 53:         self._length += 1[0m
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+--------------------------------------------------------------------------------
+[0.15055 s] [31msurvived[0m
+[36m   -[0m [#   7] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+[34m- 73:             self._length -= 1[0m
+[32m+ 73:             self._length += 1[0m
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+--------------------------------------------------------------------------------
+[0.14955 s] [31msurvived[0m
+[36m   -[0m [#   8] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+[34m- 77:                 self._length -= 1[0m
+[32m+ 77:                 self._length += 1[0m
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+--------------------------------------------------------------------------------
+[0.15627 s] [31msurvived[0m
+[36m   -[0m [#   9] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+[34m- 85:             display += str(curr.data) + ', '[0m
+[32m+ 85:             display -= str(curr.data) + ', '[0m
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.18087 s] [36mincompetent[0m
+
+TypeError: linkedList4:85: TypeError: unsupported operand type(s) for -=: 'str' and 'str'
+
+[36m   -[0m [#  10] CDI linkedList4: 
+--------------------------------------------------------------------------------
+   6: 
+   7:     Data attribute for data storage and Next for pointer to next node.
+   8:     '''
+   9:     
+[34m- 10:     def __init__(self, data, next_node=None):[0m
+[34m- 11:         '''Attribute data and next_node.'''[0m
+[34m- 12:         self.data = data[0m
+[34m- 13:         self.next = next_node[0m
+[34m- 14: [0m
+[32m+ 10:     @classmethod[0m
+[32m+ 11:     def __init__(self, data, next_node=None):[0m
+[32m+ 12:         '''Attribute data and next_node.'''[0m
+[32m+ 13:         self.data = data[0m
+[32m+ 14:         self.next = next_node[0m
+  15: 
+  16: class LinkedList(object):
+  17:     '''Method for linked list.
+  18: 
+--------------------------------------------------------------------------------
+[5.00783 s] [33mtimeout[0m
+[36m   -[0m [#  11] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  26:     display() - will return a unicode string representing the list as
+  27:     if it were a Python tuple literal: "(12, \'sam\', 37, \'tango\')"
+  28:     '''
+  29:     
+[34m- 30:     def __init__(self, data=None):[0m
+[34m- 31:         '''Linked list initialized with head.'''[0m
+[34m- 32:         self._length = 0[0m
+[34m- 33:         self.head = None[0m
+[34m- 34:         try:[0m
+[34m- 35:             for val in data:[0m
+[34m- 36:                 self.push(val)[0m
+[34m- 37:         except TypeError:[0m
+[34m- 38:             if data:[0m
+[34m- 39:                 self.push(data)[0m
+[34m- 40:     [0m
+[32m+ 30:     @classmethod[0m
+[32m+ 31:     def __init__(self, data=None):[0m
+[32m+ 32:         '''Linked list initialized with head.'''[0m
+[32m+ 33:         self._length = 0[0m
+[32m+ 34:         self.head = None[0m
+[32m+ 35:         try:[0m
+[32m+ 36:             for val in data:[0m
+[32m+ 37:                 self.push(val)[0m
+[32m+ 38:         except TypeError:[0m
+[32m+ 39:             if data:[0m
+[32m+ 40:                 self.push(data)[0m
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+--------------------------------------------------------------------------------
+[0.17694 s] [36mincompetent[0m
+
+TypeError: linkedList4:40: TypeError: LinkedList.push() missing 1 required positional argument: 'val'
+
+[36m   -[0m [#  12] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+[34m- 41:     def push(self, val):[0m
+[34m- 42:         '''Insert a value at the head of the list.'''[0m
+[34m- 43:         old_head = self.head[0m
+[34m- 44:         self.head = Node(val, old_head)[0m
+[34m- 45:         self._length += 1[0m
+[34m- 46:     [0m
+[32m+ 41:     @classmethod[0m
+[32m+ 42:     def push(self, val):[0m
+[32m+ 43:         '''Insert a value at the head of the list.'''[0m
+[32m+ 44:         old_head = self.head[0m
+[32m+ 45:         self.head = Node(val, old_head)[0m
+[32m+ 46:         self._length += 1[0m
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+--------------------------------------------------------------------------------
+[0.15556 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>, val = 'r'
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList4:44: AttributeError
+[36m   -[0m [#  13] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+  45:         self._length += 1
+  46:     
+[34m- 47:     def pop(self):[0m
+[34m- 48:         '''Remove the first value and return it.'''[0m
+[34m- 49:         if not (self.head):[0m
+[34m- 50:             raise IndexError('Cannot pop from an empty list')[0m
+[34m- 51:         to_return = self.head[0m
+[34m- 52:         self.head = self.head.next[0m
+[34m- 53:         self._length -= 1[0m
+[34m- 54:         return to_return.data[0m
+[34m- 55:     [0m
+[32m+ 47:     @classmethod[0m
+[32m+ 48:     def pop(self):[0m
+[32m+ 49:         '''Remove the first value and return it.'''[0m
+[32m+ 50:         if not (self.head):[0m
+[32m+ 51:             raise IndexError('Cannot pop from an empty list')[0m
+[32m+ 52:         to_return = self.head[0m
+[32m+ 53:         self.head = self.head.next[0m
+[32m+ 54:         self._length -= 1[0m
+[32m+ 55:         return to_return.data[0m
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+  59:     
+--------------------------------------------------------------------------------
+[0.17048 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        list_0 = []
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList4:50: AttributeError
+[36m   -[0m [#  14] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+[34m- 56:     def size(self):[0m
+[34m- 57:         '''Return the length of the list.'''[0m
+[34m- 58:         return self._length[0m
+[34m- 59:     [0m
+[32m+ 56:     @classmethod[0m
+[32m+ 57:     def size(self):[0m
+[32m+ 58:         '''Return the length of the list.'''[0m
+[32m+ 59:         return self._length[0m
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+--------------------------------------------------------------------------------
+[0.18049 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+>       var_0 = linked_list_0.size()
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute '_length'
+
+linkedList4:59: AttributeError
+[36m   -[0m [#  15] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+  59:     
+[34m- 60:     def search(self, val):[0m
+[34m- 61:         '''Return the node containing val.'''[0m
+[34m- 62:         curr = self.head[0m
+[34m- 63:         while curr:[0m
+[34m- 64:             if curr.data == val:[0m
+[34m- 65:                 return curr[0m
+[34m- 66:             curr = curr.next[0m
+[34m- 67:     [0m
+[32m+ 60:     @classmethod[0m
+[32m+ 61:     def search(self, val):[0m
+[32m+ 62:         '''Return the node containing val.'''[0m
+[32m+ 63:         curr = self.head[0m
+[32m+ 64:         while curr:[0m
+[32m+ 65:             if curr.data == val:[0m
+[32m+ 66:                 return curr[0m
+[32m+ 67:             curr = curr.next[0m
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+--------------------------------------------------------------------------------
+[0.20626 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.search(bool_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>, val = True
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList4:63: AttributeError
+[36m   -[0m [#  16] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+[34m- 68:     def remove(self, val):[0m
+[34m- 69:         '''Remove node from list if exists.'''[0m
+[34m- 70:         curr = self.head[0m
+[34m- 71:         if (curr and val is self.head.data):[0m
+[34m- 72:             self.head = self.head.next[0m
+[34m- 73:             self._length -= 1[0m
+[34m- 74:         while curr:[0m
+[34m- 75:             if (curr.next and curr.next.data == val):[0m
+[34m- 76:                 curr.next = curr.next.next[0m
+[34m- 77:                 self._length -= 1[0m
+[34m- 78:             curr = curr.next[0m
+[34m- 79:     [0m
+[32m+ 68:     @classmethod[0m
+[32m+ 69:     def remove(self, val):[0m
+[32m+ 70:         '''Remove node from list if exists.'''[0m
+[32m+ 71:         curr = self.head[0m
+[32m+ 72:         if (curr and val is self.head.data):[0m
+[32m+ 73:             self.head = self.head.next[0m
+[32m+ 74:             self._length -= 1[0m
+[32m+ 75:         while curr:[0m
+[32m+ 76:             if (curr.next and curr.next.data == val):[0m
+[32m+ 77:                 curr.next = curr.next.next[0m
+[32m+ 78:                 self._length -= 1[0m
+[32m+ 79:             curr = curr.next[0m
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+--------------------------------------------------------------------------------
+[0.18284 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_5
+
+def test_case_5():
+        set_0 = set()
+        str_0 = 'rF,-'
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+>       var_0 = linked_list_0.remove(str_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>, val = 'rF,-'
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList4:71: AttributeError
+[36m   -[0m [#  17] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+[34m- 80:     def display(self):[0m
+[34m- 81:         '''Display list as a tuple.'''[0m
+[34m- 82:         curr = self.head[0m
+[34m- 83:         display = '('[0m
+[34m- 84:         while curr:[0m
+[34m- 85:             display += str(curr.data) + ', '[0m
+[34m- 86:             curr = curr.next[0m
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 80:     @classmethod[0m
+[32m+ 81:     def display(self):[0m
+[32m+ 82:         '''Display list as a tuple.'''[0m
+[32m+ 83:         curr = self.head[0m
+[32m+ 84:         display = '('[0m
+[32m+ 85:         while curr:[0m
+[32m+ 86:             display += str(curr.data) + ', '[0m
+[32m+ 87:             curr = curr.next[0m
+[32m+ 88:         return display[:-2] + ')'[0m
+--------------------------------------------------------------------------------
+[0.17994 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.display()
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList4:83: AttributeError
+[36m   -[0m [#  18] COD linkedList4: 
+--------------------------------------------------------------------------------
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+[34m- 49:         if not (self.head):[0m
+[32m+ 49:         if self.head:[0m
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+--------------------------------------------------------------------------------
+[0.17088 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        list_0 = []
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135f803d0>
+
+>   ???
+E   IndexError: Cannot pop from an empty list
+
+linkedList4:50: IndexError
+[36m   -[0m [#  19] COI linkedList4: 
+--------------------------------------------------------------------------------
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+[34m- 38:             if data:[0m
+[32m+ 38:             if not data:[0m
+  39:                 self.push(data)
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+--------------------------------------------------------------------------------
+[0.17374 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+>       assert linked_list_0.head is None
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:15: AssertionError
+[36m   -[0m [#  20] COI linkedList4: 
+--------------------------------------------------------------------------------
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+[34m- 49:         if not (self.head):[0m
+[32m+ 49:         if not ((not (self.head))):[0m
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+--------------------------------------------------------------------------------
+[0.17484 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        list_0 = []
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135e6eaa0>
+
+>   ???
+E   IndexError: Cannot pop from an empty list
+
+linkedList4:50: IndexError
+[36m   -[0m [#  21] COI linkedList4: 
+--------------------------------------------------------------------------------
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+[34m- 63:         while curr:[0m
+[32m+ 63:         while not curr:[0m
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+--------------------------------------------------------------------------------
+[0.16326 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        list_0 = []
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+>       var_0 = linked_list_0.search(list_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135f81150>, val = []
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList4:64: AttributeError
+[36m   -[0m [#  22] COI linkedList4: 
+--------------------------------------------------------------------------------
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+[34m- 64:             if curr.data == val:[0m
+[32m+ 64:             if not (curr.data == val):[0m
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+--------------------------------------------------------------------------------
+[0.16543 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_9
+
+def test_case_9():
+        int_0 = -1014
+        linked_list_0 = module_0.LinkedList(int_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.search(int_0)
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:84: AssertionError
+[36m   -[0m [#  23] COI linkedList4: 
+--------------------------------------------------------------------------------
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+[34m- 71:         if (curr and val is self.head.data):[0m
+[32m+ 71:         if not ((curr and val is self.head.data)):[0m
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+--------------------------------------------------------------------------------
+[0.16585 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_5
+
+def test_case_5():
+        set_0 = set()
+        str_0 = 'rF,-'
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+>       var_0 = linked_list_0.remove(str_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135f69240>, val = 'rF,-'
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList4:72: AttributeError
+[36m   -[0m [#  24] COI linkedList4: 
+--------------------------------------------------------------------------------
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+[34m- 74:         while curr:[0m
+[32m+ 74:         while not curr:[0m
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.16770 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_5
+
+def test_case_5():
+        set_0 = set()
+        str_0 = 'rF,-'
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+>       var_0 = linked_list_0.remove(str_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb1360fea70>, val = 'rF,-'
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList4:75: AttributeError
+[36m   -[0m [#  25] COI linkedList4: 
+--------------------------------------------------------------------------------
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+[34m- 75:             if (curr.next and curr.next.data == val):[0m
+[32m+ 75:             if not ((curr.next and curr.next.data == val)):[0m
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+--------------------------------------------------------------------------------
+[0.16783 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        node_0 = linked_list_0.push(linked_list_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        complex_0 = -1718.4 - 1928.75728j
+>       var_0 = linked_list_0.remove(complex_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135f80b80>
+val = (-1718.4-1928.75728j)
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList4:76: AttributeError
+[36m   -[0m [#  26] COI linkedList4: 
+--------------------------------------------------------------------------------
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+[34m- 84:         while curr:[0m
+[32m+ 84:         while not curr:[0m
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.16695 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#  27] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  28:     '''
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+[34m- 32:         self._length = 0[0m
+[32m+ 32:         self._length = 1[0m
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+--------------------------------------------------------------------------------
+[0.18402 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.size()
+>       assert var_0 == 0
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:76: AssertionError
+[36m   -[0m [#  28] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+[34m- 45:         self._length += 1[0m
+[32m+ 45:         self._length += 2[0m
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+--------------------------------------------------------------------------------
+[0.15486 s] [31msurvived[0m
+[36m   -[0m [#  29] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+[34m- 50:             raise IndexError('Cannot pop from an empty list')[0m
+[32m+ 50:             raise IndexError('mutpy')[0m
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+--------------------------------------------------------------------------------
+[0.13694 s] [31msurvived[0m
+[36m   -[0m [#  30] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+[34m- 50:             raise IndexError('Cannot pop from an empty list')[0m
+[32m+ 50:             raise IndexError('')[0m
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+--------------------------------------------------------------------------------
+[0.20034 s] [31msurvived[0m
+[36m   -[0m [#  31] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+[34m- 53:         self._length -= 1[0m
+[32m+ 53:         self._length -= 2[0m
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+--------------------------------------------------------------------------------
+[0.19269 s] [31msurvived[0m
+[36m   -[0m [#  32] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+[34m- 73:             self._length -= 1[0m
+[32m+ 73:             self._length -= 2[0m
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+--------------------------------------------------------------------------------
+[0.14832 s] [31msurvived[0m
+[36m   -[0m [#  33] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+[34m- 77:                 self._length -= 1[0m
+[32m+ 77:                 self._length -= 2[0m
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+--------------------------------------------------------------------------------
+[0.14155 s] [31msurvived[0m
+[36m   -[0m [#  34] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+[34m- 83:         display = '('[0m
+[32m+ 83:         display = 'mutpy'[0m
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.17946 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#  35] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+[34m- 83:         display = '('[0m
+[32m+ 83:         display = ''[0m
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.17419 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#  36] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+[34m- 85:             display += str(curr.data) + ', '[0m
+[32m+ 85:             display += str(curr.data) + 'mutpy'[0m
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.18430 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#  37] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+[34m- 85:             display += str(curr.data) + ', '[0m
+[32m+ 85:             display += str(curr.data) + ''[0m
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.17814 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#  38] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         return display[:-3] + ')'[0m
+--------------------------------------------------------------------------------
+[0.17789 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#  39] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         return display[:-2] + 'mutpy'[0m
+--------------------------------------------------------------------------------
+[0.16813 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#  40] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         return display[:-2] + ''[0m
+--------------------------------------------------------------------------------
+[0.17839 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#  41] EHD linkedList4: 
+--------------------------------------------------------------------------------
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+[34m- 38:             if data:[0m
+[34m- 39:                 self.push(data)[0m
+[32m+ 38:             raise[0m
+[32m+ 39:     [0m
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.17623 s] [36mincompetent[0m
+
+TypeError: linkedList4:35: TypeError: 'NoneType' object is not iterable
+
+[36m   -[0m [#  42] EXS linkedList4: 
+--------------------------------------------------------------------------------
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+[34m- 38:             if data:[0m
+[34m- 39:                 self.push(data)[0m
+[32m+ 38:             pass[0m
+[32m+ 39:     [0m
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.16793 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        list_0 = []
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:22: AssertionError
+[36m   -[0m [#  43] LCR linkedList4: 
+--------------------------------------------------------------------------------
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+[34m- 71:         if (curr and val is self.head.data):[0m
+[32m+ 71:         if (curr or val is self.head.data):[0m
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+--------------------------------------------------------------------------------
+[0.16807 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_5
+
+def test_case_5():
+        set_0 = set()
+        str_0 = 'rF,-'
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+>       var_0 = linked_list_0.remove(str_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb136048550>, val = 'rF,-'
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList4:71: AttributeError
+[36m   -[0m [#  44] LCR linkedList4: 
+--------------------------------------------------------------------------------
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+[34m- 75:             if (curr.next and curr.next.data == val):[0m
+[32m+ 75:             if (curr.next or curr.next.data == val):[0m
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+--------------------------------------------------------------------------------
+[0.18662 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        node_0 = linked_list_0.push(linked_list_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        complex_0 = -1718.4 - 1928.75728j
+>       var_0 = linked_list_0.remove(complex_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135e05930>
+val = (-1718.4-1928.75728j)
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList4:75: AttributeError
+[36m   -[0m [#  45] OIL linkedList4: 
+--------------------------------------------------------------------------------
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+[34m- 37:         except TypeError:[0m
+[32m+ 37:                 breakexcept TypeError:[0m
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+  41:     def push(self, val):
+--------------------------------------------------------------------------------
+[0.18094 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#  46] OIL linkedList4: 
+--------------------------------------------------------------------------------
+  63:         while curr:
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+[34m- 67:     [0m
+[32m+ 67:             break[0m
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+--------------------------------------------------------------------------------
+[0.20178 s] [31msurvived[0m
+[36m   -[0m [#  47] OIL linkedList4: 
+--------------------------------------------------------------------------------
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+[34m- 79:     [0m
+[32m+ 79:             break[0m
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+--------------------------------------------------------------------------------
+[0.19901 s] [31msurvived[0m
+[36m   -[0m [#  48] OIL linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:             break[0m
+[32m+ 88:         return display[:-2] + ')'[0m
+--------------------------------------------------------------------------------
+[0.18607 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#  49] RIL linkedList4: 
+--------------------------------------------------------------------------------
+  31:         '''Linked list initialized with head.'''
+  32:         self._length = 0
+  33:         self.head = None
+  34:         try:
+[34m- 35:             for val in data:[0m
+[32m+ 35:             for val in reversed(data):[0m
+  36:                 self.push(val)
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+--------------------------------------------------------------------------------
+[0.17813 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#  50] ROR linkedList4: 
+--------------------------------------------------------------------------------
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+[34m- 64:             if curr.data == val:[0m
+[32m+ 64:             if curr.data != val:[0m
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+--------------------------------------------------------------------------------
+[0.17865 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_9
+
+def test_case_9():
+        int_0 = -1014
+        linked_list_0 = module_0.LinkedList(int_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.search(int_0)
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:84: AssertionError
+[36m   -[0m [#  51] ROR linkedList4: 
+--------------------------------------------------------------------------------
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+[34m- 75:             if (curr.next and curr.next.data == val):[0m
+[32m+ 75:             if (curr.next and curr.next.data != val):[0m
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+--------------------------------------------------------------------------------
+[0.14890 s] [31msurvived[0m
+[36m   -[0m [#  52] SDI linkedList4: 
+--------------------------------------------------------------------------------
+   6: 
+   7:     Data attribute for data storage and Next for pointer to next node.
+   8:     '''
+   9:     
+[34m- 10:     def __init__(self, data, next_node=None):[0m
+[34m- 11:         '''Attribute data and next_node.'''[0m
+[34m- 12:         self.data = data[0m
+[34m- 13:         self.next = next_node[0m
+[34m- 14: [0m
+[32m+ 10:     @staticmethod[0m
+[32m+ 11:     def __init__(self, data, next_node=None):[0m
+[32m+ 12:         '''Attribute data and next_node.'''[0m
+[32m+ 13:         self.data = data[0m
+[32m+ 14:         self.next = next_node[0m
+  15: 
+  16: class LinkedList(object):
+  17:     '''Method for linked list.
+  18: 
+--------------------------------------------------------------------------------
+[0.17647 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+linkedList4:44: in push
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = 'r', data = None, next_node = None
+
+>   ???
+E   AttributeError: 'str' object has no attribute 'data'
+
+linkedList4:13: AttributeError
+[36m   -[0m [#  53] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  26:     display() - will return a unicode string representing the list as
+  27:     if it were a Python tuple literal: "(12, \'sam\', 37, \'tango\')"
+  28:     '''
+  29:     
+[34m- 30:     def __init__(self, data=None):[0m
+[34m- 31:         '''Linked list initialized with head.'''[0m
+[34m- 32:         self._length = 0[0m
+[34m- 33:         self.head = None[0m
+[34m- 34:         try:[0m
+[34m- 35:             for val in data:[0m
+[34m- 36:                 self.push(val)[0m
+[34m- 37:         except TypeError:[0m
+[34m- 38:             if data:[0m
+[34m- 39:                 self.push(data)[0m
+[34m- 40:     [0m
+[32m+ 30:     @staticmethod[0m
+[32m+ 31:     def __init__(self, data=None):[0m
+[32m+ 32:         '''Linked list initialized with head.'''[0m
+[32m+ 33:         self._length = 0[0m
+[32m+ 34:         self.head = None[0m
+[32m+ 35:         try:[0m
+[32m+ 36:             for val in data:[0m
+[32m+ 37:                 self.push(val)[0m
+[32m+ 38:         except TypeError:[0m
+[32m+ 39:             if data:[0m
+[32m+ 40:                 self.push(data)[0m
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+--------------------------------------------------------------------------------
+[0.16843 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = 'r*tmGzmF T', data = None
+
+>   ???
+E   AttributeError: 'str' object has no attribute '_length'
+
+linkedList4:33: AttributeError
+[36m   -[0m [#  54] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+[34m- 41:     def push(self, val):[0m
+[34m- 42:         '''Insert a value at the head of the list.'''[0m
+[34m- 43:         old_head = self.head[0m
+[34m- 44:         self.head = Node(val, old_head)[0m
+[34m- 45:         self._length += 1[0m
+[34m- 46:     [0m
+[32m+ 41:     @staticmethod[0m
+[32m+ 42:     def push(self, val):[0m
+[32m+ 43:         '''Insert a value at the head of the list.'''[0m
+[32m+ 44:         old_head = self.head[0m
+[32m+ 45:         self.head = Node(val, old_head)[0m
+[32m+ 46:         self._length += 1[0m
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+--------------------------------------------------------------------------------
+[0.17620 s] [36mincompetent[0m
+
+TypeError: linkedList4:39: TypeError: LinkedList.push() missing 1 required positional argument: 'val'
+
+[36m   -[0m [#  55] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+  45:         self._length += 1
+  46:     
+[34m- 47:     def pop(self):[0m
+[34m- 48:         '''Remove the first value and return it.'''[0m
+[34m- 49:         if not (self.head):[0m
+[34m- 50:             raise IndexError('Cannot pop from an empty list')[0m
+[34m- 51:         to_return = self.head[0m
+[34m- 52:         self.head = self.head.next[0m
+[34m- 53:         self._length -= 1[0m
+[34m- 54:         return to_return.data[0m
+[34m- 55:     [0m
+[32m+ 47:     @staticmethod[0m
+[32m+ 48:     def pop(self):[0m
+[32m+ 49:         '''Remove the first value and return it.'''[0m
+[32m+ 50:         if not (self.head):[0m
+[32m+ 51:             raise IndexError('Cannot pop from an empty list')[0m
+[32m+ 52:         to_return = self.head[0m
+[32m+ 53:         self.head = self.head.next[0m
+[32m+ 54:         self._length -= 1[0m
+[32m+ 55:         return to_return.data[0m
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+  59:     
+--------------------------------------------------------------------------------
+[0.17075 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList4/DYNAMOSA/test_linkedList4_DYNAMOSA.py:23: TypeError: LinkedList.pop() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  56] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+[34m- 56:     def size(self):[0m
+[34m- 57:         '''Return the length of the list.'''[0m
+[34m- 58:         return self._length[0m
+[34m- 59:     [0m
+[32m+ 56:     @staticmethod[0m
+[32m+ 57:     def size(self):[0m
+[32m+ 58:         '''Return the length of the list.'''[0m
+[32m+ 59:         return self._length[0m
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+--------------------------------------------------------------------------------
+[0.17741 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList4/DYNAMOSA/test_linkedList4_DYNAMOSA.py:75: TypeError: LinkedList.size() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  57] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+  59:     
+[34m- 60:     def search(self, val):[0m
+[34m- 61:         '''Return the node containing val.'''[0m
+[34m- 62:         curr = self.head[0m
+[34m- 63:         while curr:[0m
+[34m- 64:             if curr.data == val:[0m
+[34m- 65:                 return curr[0m
+[34m- 66:             curr = curr.next[0m
+[34m- 67:     [0m
+[32m+ 60:     @staticmethod[0m
+[32m+ 61:     def search(self, val):[0m
+[32m+ 62:         '''Return the node containing val.'''[0m
+[32m+ 63:         curr = self.head[0m
+[32m+ 64:         while curr:[0m
+[32m+ 65:             if curr.data == val:[0m
+[32m+ 66:                 return curr[0m
+[32m+ 67:             curr = curr.next[0m
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+--------------------------------------------------------------------------------
+[0.17090 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList4/DYNAMOSA/test_linkedList4_DYNAMOSA.py:10: TypeError: LinkedList.search() missing 1 required positional argument: 'val'
+
+[36m   -[0m [#  58] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+[34m- 68:     def remove(self, val):[0m
+[34m- 69:         '''Remove node from list if exists.'''[0m
+[34m- 70:         curr = self.head[0m
+[34m- 71:         if (curr and val is self.head.data):[0m
+[34m- 72:             self.head = self.head.next[0m
+[34m- 73:             self._length -= 1[0m
+[34m- 74:         while curr:[0m
+[34m- 75:             if (curr.next and curr.next.data == val):[0m
+[34m- 76:                 curr.next = curr.next.next[0m
+[34m- 77:                 self._length -= 1[0m
+[34m- 78:             curr = curr.next[0m
+[34m- 79:     [0m
+[32m+ 68:     @staticmethod[0m
+[32m+ 69:     def remove(self, val):[0m
+[32m+ 70:         '''Remove node from list if exists.'''[0m
+[32m+ 71:         curr = self.head[0m
+[32m+ 72:         if (curr and val is self.head.data):[0m
+[32m+ 73:             self.head = self.head.next[0m
+[32m+ 74:             self._length -= 1[0m
+[32m+ 75:         while curr:[0m
+[32m+ 76:             if (curr.next and curr.next.data == val):[0m
+[32m+ 77:                 curr.next = curr.next.next[0m
+[32m+ 78:                 self._length -= 1[0m
+[32m+ 79:             curr = curr.next[0m
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+--------------------------------------------------------------------------------
+[0.17808 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList4/DYNAMOSA/test_linkedList4_DYNAMOSA.py:48: TypeError: LinkedList.remove() missing 1 required positional argument: 'val'
+
+[36m   -[0m [#  59] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+[34m- 80:     def display(self):[0m
+[34m- 81:         '''Display list as a tuple.'''[0m
+[34m- 82:         curr = self.head[0m
+[34m- 83:         display = '('[0m
+[34m- 84:         while curr:[0m
+[34m- 85:             display += str(curr.data) + ', '[0m
+[34m- 86:             curr = curr.next[0m
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 80:     @staticmethod[0m
+[32m+ 81:     def display(self):[0m
+[32m+ 82:         '''Display list as a tuple.'''[0m
+[32m+ 83:         curr = self.head[0m
+[32m+ 84:         display = '('[0m
+[32m+ 85:         while curr:[0m
+[32m+ 86:             display += str(curr.data) + ', '[0m
+[32m+ 87:             curr = curr.next[0m
+[32m+ 88:         return display[:-2] + ')'[0m
+--------------------------------------------------------------------------------
+[0.18180 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList4/DYNAMOSA/test_linkedList4_DYNAMOSA.py:54: TypeError: LinkedList.display() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  60] SDL linkedList4: 
+--------------------------------------------------------------------------------
+   8:     '''
+   9:     
+  10:     def __init__(self, data, next_node=None):
+  11:         '''Attribute data and next_node.'''
+[34m- 12:         self.data = data[0m
+[32m+ 12:         pass[0m
+  13:         self.next = next_node
+  14: 
+  15: 
+  16: class LinkedList(object):
+--------------------------------------------------------------------------------
+[0.18107 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.search(bool_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135ebf130>, val = True
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'data'
+
+linkedList4:64: AttributeError
+[36m   -[0m [#  61] SDL linkedList4: 
+--------------------------------------------------------------------------------
+   9:     
+  10:     def __init__(self, data, next_node=None):
+  11:         '''Attribute data and next_node.'''
+  12:         self.data = data
+[34m- 13:         self.next = next_node[0m
+[32m+ 13:         pass[0m
+  14: 
+  15: 
+  16: class LinkedList(object):
+  17:     '''Method for linked list.
+--------------------------------------------------------------------------------
+[0.22906 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.search(bool_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135f89180>, val = True
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'next'
+
+linkedList4:66: AttributeError
+[36m   -[0m [#  62] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  28:     '''
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+[34m- 32:         self._length = 0[0m
+[32m+ 32:         pass[0m
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+--------------------------------------------------------------------------------
+[0.20679 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135f896c0>, val = 'r'
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute '_length'
+
+linkedList4:45: AttributeError
+[36m   -[0m [#  63] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+  32:         self._length = 0
+[34m- 33:         self.head = None[0m
+[32m+ 33:         pass[0m
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+--------------------------------------------------------------------------------
+[0.15709 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135f82b30>, val = 'r'
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute 'head'
+
+linkedList4:43: AttributeError
+[36m   -[0m [#  64] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  32:         self._length = 0
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+[34m- 36:                 self.push(val)[0m
+[32m+ 36:                 pass[0m
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+--------------------------------------------------------------------------------
+[0.17474 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+        linked_list_0 = module_0.LinkedList(str_0)
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:9: AssertionError
+[36m   -[0m [#  65] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+  38:             if data:
+[34m- 39:                 self.push(data)[0m
+[32m+ 39:                 pass[0m
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.17030 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        list_0 = []
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:22: AssertionError
+[36m   -[0m [#  66] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  39:                 self.push(data)
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+[34m- 43:         old_head = self.head[0m
+[32m+ 43:         pass[0m
+  44:         self.head = Node(val, old_head)
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+--------------------------------------------------------------------------------
+[0.16997 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135e06dd0>, val = 'r'
+
+>   ???
+E   NameError: name 'old_head' is not defined
+
+linkedList4:44: NameError
+[36m   -[0m [#  67] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+[34m- 44:         self.head = Node(val, old_head)[0m
+[32m+ 44:         pass[0m
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+--------------------------------------------------------------------------------
+[0.16917 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+        linked_list_0 = module_0.LinkedList(str_0)
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:9: AssertionError
+[36m   -[0m [#  68] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+[34m- 51:         to_return = self.head[0m
+[32m+ 51:         pass[0m
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+--------------------------------------------------------------------------------
+[0.17187 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        list_0 = []
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135eb37f0>
+
+>   ???
+E   NameError: name 'to_return' is not defined
+
+linkedList4:54: NameError
+[36m   -[0m [#  69] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+[34m- 52:         self.head = self.head.next[0m
+[32m+ 52:         pass[0m
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+--------------------------------------------------------------------------------
+[0.17383 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        list_0 = []
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.pop()
+        assert var_0 is True
+>       assert linked_list_0.head is None
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:25: AssertionError
+[36m   -[0m [#  70] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+[34m- 54:         return to_return.data[0m
+[32m+ 54:         pass[0m
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+--------------------------------------------------------------------------------
+[0.17107 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        list_0 = []
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.pop()
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:24: AssertionError
+[36m   -[0m [#  71] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+[34m- 58:         return self._length[0m
+[32m+ 58:         pass[0m
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+--------------------------------------------------------------------------------
+[0.18107 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        var_0 = linked_list_0.size()
+>       assert var_0 == 0
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:76: AssertionError
+[36m   -[0m [#  72] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  58:         return self._length
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+[34m- 62:         curr = self.head[0m
+[32m+ 62:         pass[0m
+  63:         while curr:
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.17521 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.search(bool_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135ed12a0>, val = True
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+linkedList4:63: UnboundLocalError
+[36m   -[0m [#  73] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+  64:             if curr.data == val:
+[34m- 65:                 return curr[0m
+[32m+ 65:                 pass[0m
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+--------------------------------------------------------------------------------
+[0.18581 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_9
+
+def test_case_9():
+        int_0 = -1014
+        linked_list_0 = module_0.LinkedList(int_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.search(int_0)
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:84: AssertionError
+[36m   -[0m [#  74] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  62:         curr = self.head
+  63:         while curr:
+  64:             if curr.data == val:
+  65:                 return curr
+[34m- 66:             curr = curr.next[0m
+[32m+ 66:             pass[0m
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+--------------------------------------------------------------------------------
+[5.00798 s] [33mtimeout[0m
+[36m   -[0m [#  75] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+[34m- 70:         curr = self.head[0m
+[32m+ 70:         pass[0m
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+--------------------------------------------------------------------------------
+[0.17889 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_5
+
+def test_case_5():
+        set_0 = set()
+        str_0 = 'rF,-'
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+>       var_0 = linked_list_0.remove(str_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135f80d00>, val = 'rF,-'
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+linkedList4:71: UnboundLocalError
+[36m   -[0m [#  76] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+[34m- 72:             self.head = self.head.next[0m
+[32m+ 72:             pass[0m
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+--------------------------------------------------------------------------------
+[0.17309 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_12
+
+def test_case_12():
+        complex_0 = 4727.02 - 1515.24033j
+        linked_list_0 = module_0.LinkedList(complex_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.remove(complex_0)
+>       assert linked_list_0.head is None
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:121: AssertionError
+[36m   -[0m [#  77] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+[34m- 76:                 curr.next = curr.next.next[0m
+[32m+ 76:                 pass[0m
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+--------------------------------------------------------------------------------
+[0.15243 s] [31msurvived[0m
+[36m   -[0m [#  78] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+[34m- 78:             curr = curr.next[0m
+[32m+ 78:             pass[0m
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+--------------------------------------------------------------------------------
+[5.00792 s] [33mtimeout[0m
+[36m   -[0m [#  79] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+[34m- 82:         curr = self.head[0m
+[32m+ 82:         pass[0m
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.23572 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.display()
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135ed1d80>
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+linkedList4:84: UnboundLocalError
+[36m   -[0m [#  80] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+[34m- 83:         display = '('[0m
+[32m+ 83:         pass[0m
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.17519 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.display()
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135ed0820>
+
+>   ???
+E   UnboundLocalError: local variable 'display' referenced before assignment
+
+linkedList4:85: UnboundLocalError
+[36m   -[0m [#  81] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+[34m- 86:             curr = curr.next[0m
+[32m+ 86:             pass[0m
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[5.00796 s] [33mtimeout[0m
+[36m   -[0m [#  82] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         pass[0m
+--------------------------------------------------------------------------------
+[0.14359 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#  83] SIR linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         return display[:] + ')'[0m
+--------------------------------------------------------------------------------
+[0.12206 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[36m   -[0m [#  84] SVD linkedList4: 
+--------------------------------------------------------------------------------
+   8:     '''
+   9:     
+  10:     def __init__(self, data, next_node=None):
+  11:         '''Attribute data and next_node.'''
+[34m- 12:         self.data = data[0m
+[32m+ 12:         data = data[0m
+  13:         self.next = next_node
+  14: 
+  15: 
+  16: class LinkedList(object):
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  85] SVD linkedList4: 
+--------------------------------------------------------------------------------
+   9:     
+  10:     def __init__(self, data, next_node=None):
+  11:         '''Attribute data and next_node.'''
+  12:         self.data = data
+[34m- 13:         self.next = next_node[0m
+[32m+ 13:         next = next_node[0m
+  14: 
+  15: 
+  16: class LinkedList(object):
+  17:     '''Method for linked list.
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  86] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  28:     '''
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+[34m- 32:         self._length = 0[0m
+[32m+ 32:         _length = 0[0m
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  87] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+  32:         self._length = 0
+[34m- 33:         self.head = None[0m
+[32m+ 33:         head = None[0m
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  88] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  32:         self._length = 0
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+[34m- 36:                 self.push(val)[0m
+[32m+ 36:                 push(val)[0m
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+--------------------------------------------------------------------------------
+[0.13861 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135e05570>, data = 'r*tmGzmF T'
+
+>   ???
+E   NameError: name 'push' is not defined
+
+linkedList4:36: NameError
+[36m   -[0m [#  89] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+  38:             if data:
+[34m- 39:                 self.push(data)[0m
+[32m+ 39:                 push(data)[0m
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.16271 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_2
+
+self = <linkedList4.LinkedList object at 0x7fb135e2ee30>, data = True
+
+>   ???
+E   TypeError: 'bool' object is not iterable
+
+linkedList4:35: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    def test_case_2():
+        list_0 = []
+        bool_0 = True
+>       linked_list_0 = module_0.LinkedList(bool_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135e2ee30>, data = True
+
+>   ???
+E   NameError: name 'push' is not defined
+
+linkedList4:39: NameError
+[36m   -[0m [#  90] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  39:                 self.push(data)
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+[34m- 43:         old_head = self.head[0m
+[32m+ 43:         old_head = head[0m
+  44:         self.head = Node(val, old_head)
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+--------------------------------------------------------------------------------
+[0.16886 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+>       linked_list_0 = module_0.LinkedList(str_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135e06e60>, val = 'r'
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:43: NameError
+[36m   -[0m [#  91] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+[34m- 44:         self.head = Node(val, old_head)[0m
+[32m+ 44:         head = Node(val, old_head)[0m
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  92] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+[34m- 45:         self._length += 1[0m
+[32m+ 45:         _length += 1[0m
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  93] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+[34m- 49:         if not (self.head):[0m
+[32m+ 49:         if not head:[0m
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+--------------------------------------------------------------------------------
+[0.17703 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        list_0 = []
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135e06380>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:49: NameError
+[36m   -[0m [#  94] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+[34m- 51:         to_return = self.head[0m
+[32m+ 51:         to_return = head[0m
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+--------------------------------------------------------------------------------
+[0.22587 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        list_0 = []
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135f82380>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:51: NameError
+[36m   -[0m [#  95] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+[34m- 52:         self.head = self.head.next[0m
+[32m+ 52:         head = self.head.next[0m
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  96] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+[34m- 52:         self.head = self.head.next[0m
+[32m+ 52:         self.head = head.next[0m
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+--------------------------------------------------------------------------------
+[0.15754 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        list_0 = []
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.pop()
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135e6f460>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:52: NameError
+[36m   -[0m [#  97] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+[34m- 53:         self._length -= 1[0m
+[32m+ 53:         _length -= 1[0m
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  98] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+[34m- 58:         return self._length[0m
+[32m+ 58:         return _length[0m
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+--------------------------------------------------------------------------------
+[0.16475 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+>       var_0 = linked_list_0.size()
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135e2f820>
+
+>   ???
+E   NameError: name '_length' is not defined
+
+linkedList4:58: NameError
+[36m   -[0m [#  99] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  58:         return self._length
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+[34m- 62:         curr = self.head[0m
+[32m+ 62:         curr = head[0m
+  63:         while curr:
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.16786 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+        linked_list_0 = module_0.LinkedList(str_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.search(bool_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135ed11b0>, val = True
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:62: NameError
+[36m   -[0m [# 100] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+[34m- 70:         curr = self.head[0m
+[32m+ 70:         curr = head[0m
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+--------------------------------------------------------------------------------
+[0.18799 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_5
+
+def test_case_5():
+        set_0 = set()
+        str_0 = 'rF,-'
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+>       var_0 = linked_list_0.remove(str_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb136727d00>, val = 'rF,-'
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:70: NameError
+[36m   -[0m [# 101] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+[34m- 71:         if (curr and val is self.head.data):[0m
+[32m+ 71:         if (curr and val is head.data):[0m
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+--------------------------------------------------------------------------------
+[0.17987 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        linked_list_0 = module_0.LinkedList()
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert linked_list_0.head is None
+        node_0 = linked_list_0.push(linked_list_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        complex_0 = -1718.4 - 1928.75728j
+>       var_0 = linked_list_0.remove(complex_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb135ed2da0>
+val = (-1718.4-1928.75728j)
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:71: NameError
+[36m   -[0m [# 102] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+[34m- 72:             self.head = self.head.next[0m
+[32m+ 72:             head = self.head.next[0m
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 103] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+[34m- 72:             self.head = self.head.next[0m
+[32m+ 72:             self.head = head.next[0m
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+--------------------------------------------------------------------------------
+[0.18382 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_12
+
+def test_case_12():
+        complex_0 = 4727.02 - 1515.24033j
+        linked_list_0 = module_0.LinkedList(complex_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.remove(complex_0)
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb1360038e0>
+val = (4727.02-1515.24033j)
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:72: NameError
+[36m   -[0m [# 104] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+[34m- 73:             self._length -= 1[0m
+[32m+ 73:             _length -= 1[0m
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 105] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+[34m- 77:                 self._length -= 1[0m
+[32m+ 77:                 _length -= 1[0m
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 106] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+[34m- 82:         curr = self.head[0m
+[32m+ 82:         curr = head[0m
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.17935 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+>       var_0 = linked_list_0.display()
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7fb1360db400>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:82: NameError
+[36m   -[0m [# 107] ZIL linkedList4: 
+--------------------------------------------------------------------------------
+  32:         self._length = 0
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+[34m- 36:                 self.push(val)[0m
+[32m+ 36:                 break[0m
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+--------------------------------------------------------------------------------
+[0.16675 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = True
+        str_0 = 'r*tmGzmF T'
+        linked_list_0 = module_0.LinkedList(str_0)
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:9: AssertionError
+[36m   -[0m [# 108] ZIL linkedList4: 
+--------------------------------------------------------------------------------
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+[34m- 64:             if curr.data == val:[0m
+[34m- 65:                 return curr[0m
+[34m- 66:             curr = curr.next[0m
+[32m+ 64:             break[0m
+[32m+ 65:     [0m
+[32m+ 66:     [0m
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+--------------------------------------------------------------------------------
+[0.16847 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_9
+
+def test_case_9():
+        int_0 = -1014
+        linked_list_0 = module_0.LinkedList(int_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.search(int_0)
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:84: AssertionError
+[36m   -[0m [# 109] ZIL linkedList4: 
+--------------------------------------------------------------------------------
+  71:         if (curr and val is self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+[34m- 75:             if (curr.next and curr.next.data == val):[0m
+[34m- 76:                 curr.next = curr.next.next[0m
+[34m- 77:                 self._length -= 1[0m
+[34m- 78:             curr = curr.next[0m
+[32m+ 75:             break[0m
+[32m+ 76:     [0m
+[32m+ 77:     [0m
+[32m+ 78:     [0m
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+--------------------------------------------------------------------------------
+[0.15010 s] [31msurvived[0m
+[36m   -[0m [# 110] ZIL linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+[34m- 85:             display += str(curr.data) + ', '[0m
+[34m- 86:             curr = curr.next[0m
+[32m+ 85:             break[0m
+[32m+ 86:         [0m
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.18172 s] [32mkilled[0m by DYNAMOSA/test_linkedList4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bytes_0 = b'\x1a8\xa3\x01x\x91\xc6'
+        linked_list_0 = module_0.LinkedList(bytes_0)
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.display()
+>       assert var_0 == '(198, 145, 120, 1, 163, 56, 26)'
+E       AssertionError
+
+DYNAMOSA/test_linkedList4_DYNAMOSA.py:55: AssertionError
+[34m[*][0m Mutation score [43.54337 s]: [1m[34m83.0%[0m
+[36m   -[0m all: 110
+[36m   -[0m killed: 69 (62.7%)
+[36m   -[0m survived: 15 (13.6%)
+[36m   -[0m incompetent: 22 (20.0%)
+[36m   -[0m timeout: 4 (3.6%)

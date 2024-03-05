@@ -1,0 +1,209 @@
+<html><body><h1>linkedList5.py</h1>Killed 35 out of 54 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 21</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -37,7 +37,7 @@
+             return node
+         curr_node = self.head
+         while curr_node.next is not None:
+-            curr_node = curr_node.next
++            curr_node = None
+         curr_node.next = node
+         return node
+ 
+</pre><h3>Mutant 24</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -44,7 +44,7 @@
+     def find(self, data):
+         if data is None:
+             return None
+-        curr_node = self.head
++        curr_node = None
+         while curr_node is not None:
+             if curr_node.data == data:
+                 return curr_node
+</pre><h3>Mutant 27</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -48,7 +48,7 @@
+         while curr_node is not None:
+             if curr_node.data == data:
+                 return curr_node
+-            curr_node = curr_node.next
++            curr_node = None
+         return None
+ 
+     def delete(self, data):
+</pre><h3>Mutant 31</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -57,7 +57,7 @@
+         if self.head is None:
+             return
+         if self.head.data == data:
+-            self.head = self.head.next
++            self.head = None
+             return
+         prev_node = self.head
+         curr_node = self.head.next
+</pre><h3>Mutant 32</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -59,7 +59,7 @@
+         if self.head.data == data:
+             self.head = self.head.next
+             return
+-        prev_node = self.head
++        prev_node = None
+         curr_node = self.head.next
+         while curr_node is not None:
+             if curr_node.data == data:
+</pre><h3>Mutant 33</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -60,7 +60,7 @@
+             self.head = self.head.next
+             return
+         prev_node = self.head
+-        curr_node = self.head.next
++        curr_node = None
+         while curr_node is not None:
+             if curr_node.data == data:
+                 prev_node.next = curr_node.next
+</pre><h3>Mutant 35</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -62,7 +62,7 @@
+         prev_node = self.head
+         curr_node = self.head.next
+         while curr_node is not None:
+-            if curr_node.data == data:
++            if curr_node.data != data:
+                 prev_node.next = curr_node.next
+                 return
+             prev_node = curr_node
+</pre><h3>Mutant 36</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -63,7 +63,7 @@
+         curr_node = self.head.next
+         while curr_node is not None:
+             if curr_node.data == data:
+-                prev_node.next = curr_node.next
++                prev_node.next = None
+                 return
+             prev_node = curr_node
+             curr_node = curr_node.next
+</pre><h3>Mutant 37</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -65,7 +65,7 @@
+             if curr_node.data == data:
+                 prev_node.next = curr_node.next
+                 return
+-            prev_node = curr_node
++            prev_node = None
+             curr_node = curr_node.next
+ 
+     def delete_alt(self, data):
+</pre><h3>Mutant 38</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -66,7 +66,7 @@
+                 prev_node.next = curr_node.next
+                 return
+             prev_node = curr_node
+-            curr_node = curr_node.next
++            curr_node = None
+ 
+     def delete_alt(self, data):
+         if data is None:
+</pre><h3>Mutant 39</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -69,7 +69,7 @@
+             curr_node = curr_node.next
+ 
+     def delete_alt(self, data):
+-        if data is None:
++        if data is not None:
+             return
+         if self.head is None:
+             return
+</pre><h3>Mutant 42</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -74,7 +74,7 @@
+         if self.head is None:
+             return
+         curr_node = self.head
+-        if curr_node.data == data:
++        if curr_node.data != data:
+             curr_node = curr_node.next
+             return
+         while curr_node.next is not None:
+</pre><h3>Mutant 43</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -75,7 +75,7 @@
+             return
+         curr_node = self.head
+         if curr_node.data == data:
+-            curr_node = curr_node.next
++            curr_node = None
+             return
+         while curr_node.next is not None:
+             if curr_node.next.data == data:
+</pre><h3>Mutant 45</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -78,7 +78,7 @@
+             curr_node = curr_node.next
+             return
+         while curr_node.next is not None:
+-            if curr_node.next.data == data:
++            if curr_node.next.data != data:
+                 curr_node.next = curr_node.next.next
+                 return
+             curr_node = curr_node.next
+</pre><h3>Mutant 46</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -79,7 +79,7 @@
+             return
+         while curr_node.next is not None:
+             if curr_node.next.data == data:
+-                curr_node.next = curr_node.next.next
++                curr_node.next = None
+                 return
+             curr_node = curr_node.next
+ 
+</pre><h3>Mutant 47</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -81,7 +81,7 @@
+             if curr_node.next.data == data:
+                 curr_node.next = curr_node.next.next
+                 return
+-            curr_node = curr_node.next
++            curr_node = None
+ 
+     def print_list(self):
+         curr_node = self.head
+</pre><h3>Mutant 48</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -84,7 +84,7 @@
+             curr_node = curr_node.next
+ 
+     def print_list(self):
+-        curr_node = self.head
++        curr_node = None
+         while curr_node is not None:
+             print(curr_node.data)
+             curr_node = curr_node.next
+</pre><h3>Mutant 50</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -87,7 +87,7 @@
+         curr_node = self.head
+         while curr_node is not None:
+             print(curr_node.data)
+-            curr_node = curr_node.next
++            curr_node = None
+ 
+     def get_all_data(self):
+         data = []
+</pre><h3>Mutant 54</h3><pre>--- linkedList5.py
++++ linkedList5.py
+@@ -94,6 +94,6 @@
+         curr_node = self.head
+         while curr_node is not None:
+             data.append(curr_node.data)
+-            curr_node = curr_node.next
++            curr_node = None
+         return data
+ 
+</pre></body></html>

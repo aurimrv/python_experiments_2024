@@ -1,0 +1,103 @@
+2023-03-12 12:48:47,817: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 17 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py .....                  [ 29%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack2_MOSA.py .....                      [ 58%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py .......             [100%]
+
+============================== 17 passed in 0.03s ==============================
+2023-03-12 12:48:48,031: [92m3 mutation targets found in stack2.py AST.[0m
+2023-03-12 12:48:48,031: Setting random.seed to: None
+2023-03-12 12:48:48,036: Total sample space size: 3
+2023-03-12 12:48:48,036: [93m10 exceeds sample space, using full sample: 3.[0m
+2023-03-12 12:48:48,036: Starting individual mutation trials!
+2023-03-12 12:48:48,036: Running serial (single processor) dispatch mode.
+2023-03-12 12:48:48,036: Current target location: stack2.py, LocIndex(ast_class='Compare', lineno=13, col_offset=15, op_type=<class 'ast.Eq'>, end_lineno=13, end_col_offset=35)
+2023-03-12 12:48:48,269: [92mResult: Detected at stack2.py: (13, 15)[0m
+2023-03-12 12:48:48,499: [92mResult: Detected at stack2.py: (13, 15)[0m
+2023-03-12 12:48:48,707: [91mResult: Survived at stack2.py: (13, 15)[0m
+2023-03-12 12:48:48,938: [92mResult: Detected at stack2.py: (13, 15)[0m
+2023-03-12 12:48:49,172: [92mResult: Detected at stack2.py: (13, 15)[0m
+2023-03-12 12:48:49,172: Current target location: stack2.py, LocIndex(ast_class='If', lineno=21, col_offset=8, op_type='If_Statement', end_lineno=22, end_col_offset=46)
+2023-03-12 12:48:49,408: [92mResult: Detected at stack2.py: (21, 8)[0m
+2023-03-12 12:48:49,620: [91mResult: Survived at stack2.py: (21, 8)[0m
+2023-03-12 12:48:49,620: Current target location: stack2.py, LocIndex(ast_class='BinOp', lineno=27, col_offset=15, op_type=<class 'ast.Add'>, end_lineno=27, end_col_offset=41)
+2023-03-12 12:48:49,849: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-03-12 12:48:50,086: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-03-12 12:48:50,327: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-03-12 12:48:50,568: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-03-12 12:48:50,803: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-03-12 12:48:51,041: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-03-12 12:48:51,041: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 17 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py .....                  [ 29%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack2_MOSA.py .....                      [ 58%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py .......             [100%]
+
+============================== 17 passed in 0.03s ==============================
+2023-03-12 12:48:51,247: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/stack2/stack2.py
+ - Test commands: ['python', '-m', 'pytest', './DYNAMOSA-MOSA-WHOLE_SUITE']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 3
+ - Total locations identified: 3
+ - Location sample coverage: 100.00 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:00.213870
+ - Clean trial 2 run time: 0:00:00.206164
+ - Mutation trials total run time: 0:00:03.010176
+
+2023-03-12 12:48:51,248: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - DETECTED: 11
+ - SURVIVED: 2
+ - TOTAL RUNS: 13
+ - RUN DATETIME: 2023-03-12 12:48:51.247806
+
+2023-03-12 12:48:51,248: Detected mutations:[92m
+
+DETECTED
+--------
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - stack2.py: (l: 21, c: 8) - mutation from If_Statement to If_True
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>[0m
+
+2023-03-12 12:48:51,248: Timedout mutations:
+
+2023-03-12 12:48:51,248: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - stack2.py: (l: 21, c: 8) - mutation from If_Statement to If_False[0m
+
+2023-03-12 12:48:51,248: Writing output report to: /home/auri/temp/lucca/python_experiments/stack2/DYNAMOSA-MOSA-WHOLE_SUITE/mutatest/DYNAMOSA-MOSA-WHOLE_SUITE-report.rst

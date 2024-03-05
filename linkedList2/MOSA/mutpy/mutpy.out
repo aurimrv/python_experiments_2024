@@ -1,0 +1,2982 @@
+[34m[*][0m Start mutation process:
+[36m   -[0m targets: linkedList2.py
+[36m   -[0m tests: ./MOSA
+[34m[*][0m 16 tests passed:
+[36m   -[0m test_linkedList2_MOSA [0.28025 s]
+[34m[*][0m Start mutants generation and execution:
+[36m   -[0m [#   1] ASR linkedList2: 
+--------------------------------------------------------------------------------
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+  75:         while n != None:
+[34m- 76:             count += 1[0m
+[32m+ 76:             count -= 1[0m
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[0.17595 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 1
+E       ValueError: __len__() should return >= 0
+
+MOSA/test_linkedList2_MOSA.py:19: ValueError
+[36m   -[0m [#   2] CDI linkedList2: 
+--------------------------------------------------------------------------------
+   3: 
+   4:     Author: George Heineman
+   5: '''
+   6: class LinkedNode:
+[34m-  7:     def __init__(self, value, tail=None):[0m
+[34m-  8:         '''Node in a Linked List.'''[0m
+[34m-  9:         self.value = value[0m
+[34m- 10:         self.next = tail[0m
+[34m- 11:     [0m
+[32m+  7:     @classmethod[0m
+[32m+  8:     def __init__(self, value, tail=None):[0m
+[32m+  9:         '''Node in a Linked List.'''[0m
+[32m+ 10:         self.value = value[0m
+[32m+ 11:         self.next = tail[0m
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+--------------------------------------------------------------------------------
+[5.00792 s] [33mtimeout[0m
+[36m   -[0m [#   3] CDI linkedList2: 
+--------------------------------------------------------------------------------
+   8:         '''Node in a Linked List.'''
+   9:         self.value = value
+  10:         self.next = tail
+  11:     
+[34m- 12:     def checkInfinite(self):[0m
+[34m- 13:         '''Check whether infinite loop via next.'''[0m
+[34m- 14:         p1 = p2 = self[0m
+[34m- 15:         while (p1 != None and p2 != None):[0m
+[34m- 16:             if p2.next == None:[0m
+[34m- 17:                 return False[0m
+[34m- 18:             p1 = p1.next[0m
+[34m- 19:             p2 = p2.next.next[0m
+[34m- 20:             [0m
+[34m- 21:             if p1 == p2:[0m
+[34m- 22:                 return True[0m
+[34m- 23:         return False[0m
+[34m- 24: class LinkedList:[0m
+[34m- 25:     def __init__(self, *start):[0m
+[34m- 26:         '''Demonstrate linked lists in Python.'''[0m
+[34m- 27:         self.head = None[0m
+[34m- 28:         for _ in start:[0m
+[34m- 29:             self.prepend(_)[0m
+[34m- 30:     [0m
+[32m+ 12:     @classmethod[0m
+[32m+ 13:     def checkInfinite(self):[0m
+[32m+ 14:         '''Check whether infinite loop via next.'''[0m
+[32m+ 15:         p1 = p2 = self[0m
+[32m+ 16:         while (p1 != None and p2 != None):[0m
+[32m+ 17:             if p2.next == None:[0m
+[32m+ 18:                 return False[0m
+[32m+ 19:             p1 = p1.next[0m
+[32m+ 20:             p2 = p2.next.next[0m
+[32m+ 21:             [0m
+[32m+ 22:             if p1 == p2:[0m
+[32m+ 23:                 return True[0m
+[32m+ 24:         return False[0m
+[32m+ 25: class LinkedList:[0m
+[32m+ 26:     def __init__(self, *start):[0m
+[32m+ 27:         '''Demonstrate linked lists in Python.'''[0m
+[32m+ 28:         self.head = None[0m
+[32m+ 29:         for _ in start:[0m
+[32m+ 30:             self.prepend(_)[0m
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[0.17390 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_0
+
+def test_case_0():
+        int_0 = -1270
+        linked_node_0 = module_0.LinkedNode(int_0)
+>       var_0 = linked_node_0.checkInfinite()
+
+MOSA/test_linkedList2_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedNode'>
+
+>   ???
+E   AttributeError: type object 'LinkedNode' has no attribute 'next'
+
+linkedList2:17: AttributeError
+[36m   -[0m [#   4] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  21:             if p1 == p2:
+  22:                 return True
+  23:         return False
+  24: class LinkedList:
+[34m- 25:     def __init__(self, *start):[0m
+[34m- 26:         '''Demonstrate linked lists in Python.'''[0m
+[34m- 27:         self.head = None[0m
+[34m- 28:         for _ in start:[0m
+[34m- 29:             self.prepend(_)[0m
+[34m- 30:     [0m
+[32m+ 25:     @classmethod[0m
+[32m+ 26:     def __init__(self, *start):[0m
+[32m+ 27:         '''Demonstrate linked lists in Python.'''[0m
+[32m+ 28:         self.head = None[0m
+[32m+ 29:         for _ in start:[0m
+[32m+ 30:             self.prepend(_)[0m
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[0.17426 s] [36mincompetent[0m
+
+TypeError: linkedList2:30: TypeError: LinkedList.prepend() missing 1 required positional argument: 'value'
+
+[36m   -[0m [#   5] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  27:         self.head = None
+  28:         for _ in start:
+  29:             self.prepend(_)
+  30:     
+[34m- 31:     def prepend(self, value):[0m
+[34m- 32:         '''Prepend element into list.'''[0m
+[34m- 33:         self.head = LinkedNode(value, self.head)[0m
+[34m- 34:     [0m
+[32m+ 31:     @classmethod[0m
+[32m+ 32:     def prepend(self, value):[0m
+[32m+ 33:         '''Prepend element into list.'''[0m
+[32m+ 34:         self.head = LinkedNode(value, self.head)[0m
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+--------------------------------------------------------------------------------
+[0.17678 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+>       linked_list_0 = module_0.LinkedList(*list_0)
+
+MOSA/test_linkedList2_MOSA.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList2:29: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>, value = None
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:34: AttributeError
+[36m   -[0m [#   6] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+[34m- 35:     def pop(self):[0m
+[34m- 36:         '''Remove first value in list.'''[0m
+[34m- 37:         if self.head is None:[0m
+[34m- 38:             raise Exception('Linked list is empty.')[0m
+[34m- 39:         val = self.head.value[0m
+[34m- 40:         self.head = self.head.next[0m
+[34m- 41:         return val[0m
+[34m- 42:     [0m
+[32m+ 35:     @classmethod[0m
+[32m+ 36:     def pop(self):[0m
+[32m+ 37:         '''Remove first value in list.'''[0m
+[32m+ 38:         if self.head is None:[0m
+[32m+ 39:             raise Exception('Linked list is empty.')[0m
+[32m+ 40:         val = self.head.value[0m
+[32m+ 41:         self.head = self.head.next[0m
+[32m+ 42:         return val[0m
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+--------------------------------------------------------------------------------
+[0.18192 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_5
+
+def test_case_5():
+        bytes_0 = b'\x14\x0f\xf4'
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+        assert len(linked_list_0) == 4
+        str_0 = "'_*"
+        list_1 = [str_0]
+        linked_list_1 = module_0.LinkedList(*list_1)
+        assert len(linked_list_1) == 1
+>       var_0 = linked_list_1.pop()
+
+MOSA/test_linkedList2_MOSA.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:38: AttributeError
+[36m   -[0m [#   7] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+[34m- 43:     def remove(self, value):[0m
+[34m- 44:         '''Remove value from list.'''[0m
+[34m- 45:         n = self.head[0m
+[34m- 46:         last = None[0m
+[34m- 47:         while n != None:[0m
+[34m- 48:             if n.value == value:[0m
+[34m- 49:                 if last == None:[0m
+[34m- 50:                     self.head = self.head.next[0m
+[34m- 51:                 else:[0m
+[34m- 52:                     last.next = n.next[0m
+[34m- 53:                 return True[0m
+[34m- 54:             n = n.next[0m
+[34m- 55:         return False[0m
+[34m- 56:     [0m
+[32m+ 43:     @classmethod[0m
+[32m+ 44:     def remove(self, value):[0m
+[32m+ 45:         '''Remove value from list.'''[0m
+[32m+ 46:         n = self.head[0m
+[32m+ 47:         last = None[0m
+[32m+ 48:         while n != None:[0m
+[32m+ 49:             if n.value == value:[0m
+[32m+ 50:                 if last == None:[0m
+[32m+ 51:                     self.head = self.head.next[0m
+[32m+ 52:                 else:[0m
+[32m+ 53:                     last.next = n.next[0m
+[32m+ 54:                 return True[0m
+[32m+ 55:             n = n.next[0m
+[32m+ 56:         return False[0m
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+--------------------------------------------------------------------------------
+[0.16447 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_6
+
+def test_case_6():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+MOSA/test_linkedList2_MOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+value = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7faca2923640>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:46: AttributeError
+[36m   -[0m [#   8] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  53:                 return True
+  54:             n = n.next
+  55:         return False
+  56:     
+[34m- 57:     def __iter__(self):[0m
+[34m- 58:         '''Iterator of values in the list.'''[0m
+[34m- 59:         n = self.head[0m
+[34m- 60:         while n != None:[0m
+[34m- 61:             yield n.value[0m
+[34m- 62:             n = n.next[0m
+[34m- 63:     [0m
+[32m+ 57:     @classmethod[0m
+[32m+ 58:     def __iter__(self):[0m
+[32m+ 59:         '''Iterator of values in the list.'''[0m
+[32m+ 60:         n = self.head[0m
+[32m+ 61:         while n != None:[0m
+[32m+ 62:             yield n.value[0m
+[32m+ 63:             n = n.next[0m
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+--------------------------------------------------------------------------------
+[0.18330 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        none_type_0 = None
+        var_0 = linked_list_0.remove(none_type_0)
+        assert var_0 is False
+        var_1 = linked_list_0.__len__()
+        assert var_1 == 0
+        var_2 = linked_list_0.prepend(none_type_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_0.value) == 1
+        var_3 = linked_list_0.prepend(var_1)
+        assert len(linked_list_0) == 2
+        assert len(linked_node_0.value) == 2
+        linked_node_1 = module_0.LinkedNode(linked_list_0, linked_node_0)
+        assert len(linked_node_1.value) == 2
+        var_4 = linked_node_1.checkInfinite()
+        assert var_4 is False
+>       linked_list_1 = module_0.LinkedList(*linked_list_0)
+
+MOSA/test_linkedList2_MOSA.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:60: AttributeError
+[36m   -[0m [#   9] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+[34m- 64:     def __repr__(self):[0m
+[34m- 65:         '''String representation of linked list.'''[0m
+[34m- 66:         if self.head is None:[0m
+[34m- 67:             return 'link:[]'[0m
+[34m- 68:         [0m
+[34m- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))[0m
+[34m- 70:     [0m
+[32m+ 64:     @classmethod[0m
+[32m+ 65:     def __repr__(self):[0m
+[32m+ 66:         '''String representation of linked list.'''[0m
+[32m+ 67:         if self.head is None:[0m
+[32m+ 68:             return 'link:[]'[0m
+[32m+ 69:         [0m
+[32m+ 70:         return 'link:[{0:s}]'.format(','.join(map(str, self)))[0m
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+--------------------------------------------------------------------------------
+[0.17173 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.__repr__()
+
+MOSA/test_linkedList2_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:67: AttributeError
+[36m   -[0m [#  10] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  67:             return 'link:[]'
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+[34m- 71:     def __len__(self):[0m
+[34m- 72:         '''Count values in list.'''[0m
+[34m- 73:         n = self.head[0m
+[34m- 74:         count = 0[0m
+[34m- 75:         while n != None:[0m
+[34m- 76:             count += 1[0m
+[34m- 77:             n = n.next[0m
+[34m- 78:         return count[0m
+[32m+ 71:     @classmethod[0m
+[32m+ 72:     def __len__(self):[0m
+[32m+ 73:         '''Count values in list.'''[0m
+[32m+ 74:         n = self.head[0m
+[32m+ 75:         count = 0[0m
+[32m+ 76:         while n != None:[0m
+[32m+ 77:             count += 1[0m
+[32m+ 78:             n = n.next[0m
+[32m+ 79:         return count[0m
+--------------------------------------------------------------------------------
+[0.18183 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 1
+
+MOSA/test_linkedList2_MOSA.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:74: AttributeError
+[36m   -[0m [#  11] COI linkedList2: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+[34m- 15:         while (p1 != None and p2 != None):[0m
+[32m+ 15:         while not ((p1 != None and p2 != None)):[0m
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+--------------------------------------------------------------------------------
+[0.13859 s] [31msurvived[0m
+[36m   -[0m [#  12] COI linkedList2: 
+--------------------------------------------------------------------------------
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+[34m- 16:             if p2.next == None:[0m
+[32m+ 16:             if not (p2.next == None):[0m
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+--------------------------------------------------------------------------------
+[0.16746 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_0
+
+def test_case_0():
+        int_0 = -1270
+        linked_node_0 = module_0.LinkedNode(int_0)
+>       var_0 = linked_node_0.checkInfinite()
+
+MOSA/test_linkedList2_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7faca26a9540>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:19: AttributeError
+[36m   -[0m [#  13] COI linkedList2: 
+--------------------------------------------------------------------------------
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+[34m- 21:             if p1 == p2:[0m
+[32m+ 21:             if not (p1 == p2):[0m
+  22:                 return True
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+--------------------------------------------------------------------------------
+[0.23080 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        none_type_0 = None
+        var_0 = linked_list_0.remove(none_type_0)
+        assert var_0 is False
+        var_1 = linked_list_0.__len__()
+        assert var_1 == 0
+        var_2 = linked_list_0.prepend(none_type_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_0.value) == 1
+        var_3 = linked_list_0.prepend(var_1)
+        assert len(linked_list_0) == 2
+        assert len(linked_node_0.value) == 2
+        linked_node_1 = module_0.LinkedNode(linked_list_0, linked_node_0)
+        assert len(linked_node_1.value) == 2
+        var_4 = linked_node_1.checkInfinite()
+>       assert var_4 is False
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:88: AssertionError
+[36m   -[0m [#  14] COI linkedList2: 
+--------------------------------------------------------------------------------
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+[34m- 37:         if self.head is None:[0m
+[32m+ 37:         if not (self.head is None):[0m
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+--------------------------------------------------------------------------------
+[0.22719 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_5
+
+def test_case_5():
+        bytes_0 = b'\x14\x0f\xf4'
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+        assert len(linked_list_0) == 4
+        str_0 = "'_*"
+        list_1 = [str_0]
+        linked_list_1 = module_0.LinkedList(*list_1)
+        assert len(linked_list_1) == 1
+>       var_0 = linked_list_1.pop()
+
+MOSA/test_linkedList2_MOSA.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:['_*]
+
+>   ???
+E   Exception: Linked list is empty.
+
+linkedList2:38: Exception
+[36m   -[0m [#  15] COI linkedList2: 
+--------------------------------------------------------------------------------
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+[34m- 47:         while n != None:[0m
+[32m+ 47:         while not (n != None):[0m
+  48:             if n.value == value:
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+--------------------------------------------------------------------------------
+[0.16225 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_6
+
+def test_case_6():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(linked_list_0)
+>       assert var_1 is True
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:57: AssertionError
+[36m   -[0m [#  16] COI linkedList2: 
+--------------------------------------------------------------------------------
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+[34m- 48:             if n.value == value:[0m
+[32m+ 48:             if not (n.value == value):[0m
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+--------------------------------------------------------------------------------
+[0.16073 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_6
+
+def test_case_6():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(linked_list_0)
+>       assert var_1 is True
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:57: AssertionError
+[36m   -[0m [#  17] COI linkedList2: 
+--------------------------------------------------------------------------------
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+[34m- 49:                 if last == None:[0m
+[32m+ 49:                 if not (last == None):[0m
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+--------------------------------------------------------------------------------
+[0.16779 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_6
+
+def test_case_6():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+MOSA/test_linkedList2_MOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7faca2639150>
+value = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7faca2639150>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:52: AttributeError
+[36m   -[0m [#  18] COI linkedList2: 
+--------------------------------------------------------------------------------
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+[34m- 60:         while n != None:[0m
+[32m+ 60:         while not (n != None):[0m
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+--------------------------------------------------------------------------------
+[0.18273 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        none_type_0 = None
+        var_0 = linked_list_0.remove(none_type_0)
+        assert var_0 is False
+        var_1 = linked_list_0.__len__()
+        assert var_1 == 0
+        var_2 = linked_list_0.prepend(none_type_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_0.value) == 1
+        var_3 = linked_list_0.prepend(var_1)
+        assert len(linked_list_0) == 2
+        assert len(linked_node_0.value) == 2
+        linked_node_1 = module_0.LinkedNode(linked_list_0, linked_node_0)
+        assert len(linked_node_1.value) == 2
+        var_4 = linked_node_1.checkInfinite()
+        assert var_4 is False
+        linked_list_1 = module_0.LinkedList(*linked_list_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList2.LinkedList'
+>       assert len(linked_list_1) == 2
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:91: AssertionError
+[36m   -[0m [#  19] COI linkedList2: 
+--------------------------------------------------------------------------------
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+[34m- 66:         if self.head is None:[0m
+[32m+ 66:         if not (self.head is None):[0m
+  67:             return 'link:[]'
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+--------------------------------------------------------------------------------
+[0.16692 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_11
+
+def test_case_11():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_list_0.__len__()
+        assert var_0 == 0
+        var_1 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_0.value) == 1
+        linked_list_1 = module_0.LinkedList(*linked_list_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList2.LinkedList'
+        assert len(linked_list_1) == 1
+        var_2 = linked_list_1.__repr__()
+>       assert var_2 == 'link:[0]'
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:139: AssertionError
+[36m   -[0m [#  20] COI linkedList2: 
+--------------------------------------------------------------------------------
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+[34m- 75:         while n != None:[0m
+[32m+ 75:         while not (n != None):[0m
+  76:             count += 1
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[0.16451 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:19: AssertionError
+[36m   -[0m [#  21] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+[34m- 38:             raise Exception('Linked list is empty.')[0m
+[32m+ 38:             raise Exception('mutpy')[0m
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+--------------------------------------------------------------------------------
+[0.15756 s] [31msurvived[0m
+[36m   -[0m [#  22] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+[34m- 38:             raise Exception('Linked list is empty.')[0m
+[32m+ 38:             raise Exception('')[0m
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+--------------------------------------------------------------------------------
+[0.15501 s] [31msurvived[0m
+[36m   -[0m [#  23] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+[34m- 67:             return 'link:[]'[0m
+[32m+ 67:             return 'mutpy'[0m
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+--------------------------------------------------------------------------------
+[0.16293 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == 'link:[]'
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:33: AssertionError
+[36m   -[0m [#  24] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+[34m- 67:             return 'link:[]'[0m
+[32m+ 67:             return ''[0m
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+--------------------------------------------------------------------------------
+[0.17050 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == 'link:[]'
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:33: AssertionError
+[36m   -[0m [#  25] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+[34m- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))[0m
+[32m+ 69:         return 'mutpy'.format(','.join(map(str, self)))[0m
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[0.18619 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_11
+
+def test_case_11():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_list_0.__len__()
+        assert var_0 == 0
+        var_1 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_0.value) == 1
+        linked_list_1 = module_0.LinkedList(*linked_list_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList2.LinkedList'
+        assert len(linked_list_1) == 1
+        var_2 = linked_list_1.__repr__()
+>       assert var_2 == 'link:[0]'
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:139: AssertionError
+[36m   -[0m [#  26] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+[34m- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))[0m
+[32m+ 69:         return ''.format(','.join(map(str, self)))[0m
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[0.17295 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_11
+
+def test_case_11():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_list_0.__len__()
+        assert var_0 == 0
+        var_1 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_0.value) == 1
+        linked_list_1 = module_0.LinkedList(*linked_list_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList2.LinkedList'
+        assert len(linked_list_1) == 1
+        var_2 = linked_list_1.__repr__()
+>       assert var_2 == 'link:[0]'
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:139: AssertionError
+[36m   -[0m [#  27] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+[34m- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))[0m
+[32m+ 69:         return 'link:[{0:s}]'.format('mutpy'.join(map(str, self)))[0m
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[0.15766 s] [31msurvived[0m
+[36m   -[0m [#  28] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+[34m- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))[0m
+[32m+ 69:         return 'link:[{0:s}]'.format(''.join(map(str, self)))[0m
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[0.14668 s] [31msurvived[0m
+[36m   -[0m [#  29] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+[34m- 74:         count = 0[0m
+[32m+ 74:         count = 1[0m
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[0.21467 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:19: AssertionError
+[36m   -[0m [#  30] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+  75:         while n != None:
+[34m- 76:             count += 1[0m
+[32m+ 76:             count += 2[0m
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[0.23173 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:19: AssertionError
+[36m   -[0m [#  31] LCR linkedList2: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+[34m- 15:         while (p1 != None and p2 != None):[0m
+[32m+ 15:         while (p1 != None or p2 != None):[0m
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+--------------------------------------------------------------------------------
+[0.16566 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        none_type_0 = None
+        var_0 = linked_list_0.remove(none_type_0)
+        assert var_0 is False
+        var_1 = linked_list_0.__len__()
+        assert var_1 == 0
+        var_2 = linked_list_0.prepend(none_type_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_0.value) == 1
+        var_3 = linked_list_0.prepend(var_1)
+        assert len(linked_list_0) == 2
+        assert len(linked_node_0.value) == 2
+        linked_node_1 = module_0.LinkedNode(linked_list_0, linked_node_0)
+        assert len(linked_node_1.value) == 2
+>       var_4 = linked_node_1.checkInfinite()
+
+MOSA/test_linkedList2_MOSA.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7faca2773310>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:16: AttributeError
+[36m   -[0m [#  32] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+  22:                 return True
+[34m- 23:         return False[0m
+[34m- 24: class LinkedList:[0m
+[34m- 25:     def __init__(self, *start):[0m
+[34m- 26:         '''Demonstrate linked lists in Python.'''[0m
+[34m- 27:         self.head = None[0m
+[34m- 28:         for _ in start:[0m
+[34m- 29:             self.prepend(_)[0m
+[34m- 30:     [0m
+[32m+ 23:             break[0m
+[32m+ 24:         return False[0m
+[32m+ 25: class LinkedList:[0m
+[32m+ 26:     def __init__(self, *start):[0m
+[32m+ 27:         '''Demonstrate linked lists in Python.'''[0m
+[32m+ 28:         self.head = None[0m
+[32m+ 29:         for _ in start:[0m
+[32m+ 30:             self.prepend(_)[0m
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[0.13851 s] [31msurvived[0m
+[36m   -[0m [#  33] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+  28:         for _ in start:
+  29:             self.prepend(_)
+[34m- 30:     [0m
+[32m+ 30:             break[0m
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[0.17982 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_5
+
+def test_case_5():
+        bytes_0 = b'\x14\x0f\xf4'
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 4
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:41: AssertionError
+[36m   -[0m [#  34] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+[34m- 55:         return False[0m
+[34m- 56:     [0m
+[32m+ 55:             break[0m
+[32m+ 56:         return False[0m
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+--------------------------------------------------------------------------------
+[0.15760 s] [31msurvived[0m
+[36m   -[0m [#  35] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  59:         n = self.head
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+[34m- 63:     [0m
+[32m+ 63:             break[0m
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+--------------------------------------------------------------------------------
+[0.16630 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        none_type_0 = None
+        var_0 = linked_list_0.remove(none_type_0)
+        assert var_0 is False
+        var_1 = linked_list_0.__len__()
+        assert var_1 == 0
+        var_2 = linked_list_0.prepend(none_type_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_0.value) == 1
+        var_3 = linked_list_0.prepend(var_1)
+        assert len(linked_list_0) == 2
+        assert len(linked_node_0.value) == 2
+        linked_node_1 = module_0.LinkedNode(linked_list_0, linked_node_0)
+        assert len(linked_node_1.value) == 2
+        var_4 = linked_node_1.checkInfinite()
+        assert var_4 is False
+        linked_list_1 = module_0.LinkedList(*linked_list_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList2.LinkedList'
+>       assert len(linked_list_1) == 2
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:91: AssertionError
+[36m   -[0m [#  36] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+[34m- 78:         return count[0m
+[32m+ 78:             break[0m
+[32m+ 79:         return count[0m
+--------------------------------------------------------------------------------
+[0.15987 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_5
+
+def test_case_5():
+        bytes_0 = b'\x14\x0f\xf4'
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 4
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:41: AssertionError
+[36m   -[0m [#  37] RIL linkedList2: 
+--------------------------------------------------------------------------------
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+[34m- 28:         for _ in start:[0m
+[32m+ 28:         for _ in reversed(start):[0m
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+--------------------------------------------------------------------------------
+[0.14652 s] [31msurvived[0m
+[36m   -[0m [#  38] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+[34m- 15:         while (p1 != None and p2 != None):[0m
+[32m+ 15:         while (p1 == None and p2 != None):[0m
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+--------------------------------------------------------------------------------
+[0.15756 s] [31msurvived[0m
+[36m   -[0m [#  39] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+[34m- 15:         while (p1 != None and p2 != None):[0m
+[32m+ 15:         while (p1 != None and p2 == None):[0m
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+--------------------------------------------------------------------------------
+[0.14180 s] [31msurvived[0m
+[36m   -[0m [#  40] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+[34m- 16:             if p2.next == None:[0m
+[32m+ 16:             if p2.next != None:[0m
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+--------------------------------------------------------------------------------
+[0.15922 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_0
+
+def test_case_0():
+        int_0 = -1270
+        linked_node_0 = module_0.LinkedNode(int_0)
+>       var_0 = linked_node_0.checkInfinite()
+
+MOSA/test_linkedList2_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7faca281ec50>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:19: AttributeError
+[36m   -[0m [#  41] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+[34m- 21:             if p1 == p2:[0m
+[32m+ 21:             if p1 != p2:[0m
+  22:                 return True
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+--------------------------------------------------------------------------------
+[0.18493 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        none_type_0 = None
+        var_0 = linked_list_0.remove(none_type_0)
+        assert var_0 is False
+        var_1 = linked_list_0.__len__()
+        assert var_1 == 0
+        var_2 = linked_list_0.prepend(none_type_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_0.value) == 1
+        var_3 = linked_list_0.prepend(var_1)
+        assert len(linked_list_0) == 2
+        assert len(linked_node_0.value) == 2
+        linked_node_1 = module_0.LinkedNode(linked_list_0, linked_node_0)
+        assert len(linked_node_1.value) == 2
+        var_4 = linked_node_1.checkInfinite()
+>       assert var_4 is False
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:88: AssertionError
+[36m   -[0m [#  42] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+[34m- 47:         while n != None:[0m
+[32m+ 47:         while n == None:[0m
+  48:             if n.value == value:
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+--------------------------------------------------------------------------------
+[0.17048 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_6
+
+def test_case_6():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(linked_list_0)
+>       assert var_1 is True
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:57: AssertionError
+[36m   -[0m [#  43] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+[34m- 48:             if n.value == value:[0m
+[32m+ 48:             if n.value != value:[0m
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+--------------------------------------------------------------------------------
+[0.18301 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_6
+
+def test_case_6():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(linked_list_0)
+>       assert var_1 is True
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:57: AssertionError
+[36m   -[0m [#  44] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+[34m- 49:                 if last == None:[0m
+[32m+ 49:                 if last != None:[0m
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+--------------------------------------------------------------------------------
+[0.23731 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_6
+
+def test_case_6():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+MOSA/test_linkedList2_MOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7faca27e16c0>
+value = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7faca27e16c0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:52: AttributeError
+[36m   -[0m [#  45] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+[34m- 60:         while n != None:[0m
+[32m+ 60:         while n == None:[0m
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+--------------------------------------------------------------------------------
+[0.22411 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        none_type_0 = None
+        var_0 = linked_list_0.remove(none_type_0)
+        assert var_0 is False
+        var_1 = linked_list_0.__len__()
+        assert var_1 == 0
+        var_2 = linked_list_0.prepend(none_type_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_0.value) == 1
+        var_3 = linked_list_0.prepend(var_1)
+        assert len(linked_list_0) == 2
+        assert len(linked_node_0.value) == 2
+        linked_node_1 = module_0.LinkedNode(linked_list_0, linked_node_0)
+        assert len(linked_node_1.value) == 2
+        var_4 = linked_node_1.checkInfinite()
+        assert var_4 is False
+        linked_list_1 = module_0.LinkedList(*linked_list_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList2.LinkedList'
+>       assert len(linked_list_1) == 2
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:91: AssertionError
+[36m   -[0m [#  46] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+[34m- 75:         while n != None:[0m
+[32m+ 75:         while n == None:[0m
+  76:             count += 1
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[0.21515 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:19: AssertionError
+[36m   -[0m [#  47] SDI linkedList2: 
+--------------------------------------------------------------------------------
+   3: 
+   4:     Author: George Heineman
+   5: '''
+   6: class LinkedNode:
+[34m-  7:     def __init__(self, value, tail=None):[0m
+[34m-  8:         '''Node in a Linked List.'''[0m
+[34m-  9:         self.value = value[0m
+[34m- 10:         self.next = tail[0m
+[34m- 11:     [0m
+[32m+  7:     @staticmethod[0m
+[32m+  8:     def __init__(self, value, tail=None):[0m
+[32m+  9:         '''Node in a Linked List.'''[0m
+[32m+ 10:         self.value = value[0m
+[32m+ 11:         self.next = tail[0m
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+--------------------------------------------------------------------------------
+[0.15836 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList2/MOSA/test_linkedList2_MOSA.py:7: TypeError: LinkedNode.__init__() missing 1 required positional argument: 'value'
+
+[36m   -[0m [#  48] SDI linkedList2: 
+--------------------------------------------------------------------------------
+   8:         '''Node in a Linked List.'''
+   9:         self.value = value
+  10:         self.next = tail
+  11:     
+[34m- 12:     def checkInfinite(self):[0m
+[34m- 13:         '''Check whether infinite loop via next.'''[0m
+[34m- 14:         p1 = p2 = self[0m
+[34m- 15:         while (p1 != None and p2 != None):[0m
+[34m- 16:             if p2.next == None:[0m
+[34m- 17:                 return False[0m
+[34m- 18:             p1 = p1.next[0m
+[34m- 19:             p2 = p2.next.next[0m
+[34m- 20:             [0m
+[34m- 21:             if p1 == p2:[0m
+[34m- 22:                 return True[0m
+[34m- 23:         return False[0m
+[34m- 24: class LinkedList:[0m
+[34m- 25:     def __init__(self, *start):[0m
+[34m- 26:         '''Demonstrate linked lists in Python.'''[0m
+[34m- 27:         self.head = None[0m
+[34m- 28:         for _ in start:[0m
+[34m- 29:             self.prepend(_)[0m
+[34m- 30:     [0m
+[32m+ 12:     @staticmethod[0m
+[32m+ 13:     def checkInfinite(self):[0m
+[32m+ 14:         '''Check whether infinite loop via next.'''[0m
+[32m+ 15:         p1 = p2 = self[0m
+[32m+ 16:         while (p1 != None and p2 != None):[0m
+[32m+ 17:             if p2.next == None:[0m
+[32m+ 18:                 return False[0m
+[32m+ 19:             p1 = p1.next[0m
+[32m+ 20:             p2 = p2.next.next[0m
+[32m+ 21:             [0m
+[32m+ 22:             if p1 == p2:[0m
+[32m+ 23:                 return True[0m
+[32m+ 24:         return False[0m
+[32m+ 25: class LinkedList:[0m
+[32m+ 26:     def __init__(self, *start):[0m
+[32m+ 27:         '''Demonstrate linked lists in Python.'''[0m
+[32m+ 28:         self.head = None[0m
+[32m+ 29:         for _ in start:[0m
+[32m+ 30:             self.prepend(_)[0m
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[0.17388 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList2/MOSA/test_linkedList2_MOSA.py:8: TypeError: LinkedNode.checkInfinite() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  49] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  21:             if p1 == p2:
+  22:                 return True
+  23:         return False
+  24: class LinkedList:
+[34m- 25:     def __init__(self, *start):[0m
+[34m- 26:         '''Demonstrate linked lists in Python.'''[0m
+[34m- 27:         self.head = None[0m
+[34m- 28:         for _ in start:[0m
+[34m- 29:             self.prepend(_)[0m
+[34m- 30:     [0m
+[32m+ 25:     @staticmethod[0m
+[32m+ 26:     def __init__(self, *start):[0m
+[32m+ 27:         '''Demonstrate linked lists in Python.'''[0m
+[32m+ 28:         self.head = None[0m
+[32m+ 29:         for _ in start:[0m
+[32m+ 30:             self.prepend(_)[0m
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[0.15802 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+>       linked_list_0 = module_0.LinkedList(*list_0)
+
+MOSA/test_linkedList2_MOSA.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = None, start = ()
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'head'
+
+linkedList2:28: AttributeError
+[36m   -[0m [#  50] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  27:         self.head = None
+  28:         for _ in start:
+  29:             self.prepend(_)
+  30:     
+[34m- 31:     def prepend(self, value):[0m
+[34m- 32:         '''Prepend element into list.'''[0m
+[34m- 33:         self.head = LinkedNode(value, self.head)[0m
+[34m- 34:     [0m
+[32m+ 31:     @staticmethod[0m
+[32m+ 32:     def prepend(self, value):[0m
+[32m+ 33:         '''Prepend element into list.'''[0m
+[32m+ 34:         self.head = LinkedNode(value, self.head)[0m
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+--------------------------------------------------------------------------------
+[0.15884 s] [36mincompetent[0m
+
+TypeError: linkedList2:29: TypeError: LinkedList.prepend() missing 1 required positional argument: 'value'
+
+[36m   -[0m [#  51] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+[34m- 35:     def pop(self):[0m
+[34m- 36:         '''Remove first value in list.'''[0m
+[34m- 37:         if self.head is None:[0m
+[34m- 38:             raise Exception('Linked list is empty.')[0m
+[34m- 39:         val = self.head.value[0m
+[34m- 40:         self.head = self.head.next[0m
+[34m- 41:         return val[0m
+[34m- 42:     [0m
+[32m+ 35:     @staticmethod[0m
+[32m+ 36:     def pop(self):[0m
+[32m+ 37:         '''Remove first value in list.'''[0m
+[32m+ 38:         if self.head is None:[0m
+[32m+ 39:             raise Exception('Linked list is empty.')[0m
+[32m+ 40:         val = self.head.value[0m
+[32m+ 41:         self.head = self.head.next[0m
+[32m+ 42:         return val[0m
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+--------------------------------------------------------------------------------
+[0.17373 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList2/MOSA/test_linkedList2_MOSA.py:46: TypeError: LinkedList.pop() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  52] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+[34m- 43:     def remove(self, value):[0m
+[34m- 44:         '''Remove value from list.'''[0m
+[34m- 45:         n = self.head[0m
+[34m- 46:         last = None[0m
+[34m- 47:         while n != None:[0m
+[34m- 48:             if n.value == value:[0m
+[34m- 49:                 if last == None:[0m
+[34m- 50:                     self.head = self.head.next[0m
+[34m- 51:                 else:[0m
+[34m- 52:                     last.next = n.next[0m
+[34m- 53:                 return True[0m
+[34m- 54:             n = n.next[0m
+[34m- 55:         return False[0m
+[34m- 56:     [0m
+[32m+ 43:     @staticmethod[0m
+[32m+ 44:     def remove(self, value):[0m
+[32m+ 45:         '''Remove value from list.'''[0m
+[32m+ 46:         n = self.head[0m
+[32m+ 47:         last = None[0m
+[32m+ 48:         while n != None:[0m
+[32m+ 49:             if n.value == value:[0m
+[32m+ 50:                 if last == None:[0m
+[32m+ 51:                     self.head = self.head.next[0m
+[32m+ 52:                 else:[0m
+[32m+ 53:                     last.next = n.next[0m
+[32m+ 54:                 return True[0m
+[32m+ 55:             n = n.next[0m
+[32m+ 56:         return False[0m
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+--------------------------------------------------------------------------------
+[0.18187 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList2/MOSA/test_linkedList2_MOSA.py:56: TypeError: LinkedList.remove() missing 1 required positional argument: 'value'
+
+[36m   -[0m [#  53] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  53:                 return True
+  54:             n = n.next
+  55:         return False
+  56:     
+[34m- 57:     def __iter__(self):[0m
+[34m- 58:         '''Iterator of values in the list.'''[0m
+[34m- 59:         n = self.head[0m
+[34m- 60:         while n != None:[0m
+[34m- 61:             yield n.value[0m
+[34m- 62:             n = n.next[0m
+[34m- 63:     [0m
+[32m+ 57:     @staticmethod[0m
+[32m+ 58:     def __iter__(self):[0m
+[32m+ 59:         '''Iterator of values in the list.'''[0m
+[32m+ 60:         n = self.head[0m
+[32m+ 61:         while n != None:[0m
+[32m+ 62:             yield n.value[0m
+[32m+ 63:             n = n.next[0m
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+--------------------------------------------------------------------------------
+[0.16224 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList2/MOSA/test_linkedList2_MOSA.py:63: TypeError: LinkedList.__iter__() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  54] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+[34m- 64:     def __repr__(self):[0m
+[34m- 65:         '''String representation of linked list.'''[0m
+[34m- 66:         if self.head is None:[0m
+[34m- 67:             return 'link:[]'[0m
+[34m- 68:         [0m
+[34m- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))[0m
+[34m- 70:     [0m
+[32m+ 64:     @staticmethod[0m
+[32m+ 65:     def __repr__(self):[0m
+[32m+ 66:         '''String representation of linked list.'''[0m
+[32m+ 67:         if self.head is None:[0m
+[32m+ 68:             return 'link:[]'[0m
+[32m+ 69:         [0m
+[32m+ 70:         return 'link:[{0:s}]'.format(','.join(map(str, self)))[0m
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+--------------------------------------------------------------------------------
+[0.15925 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList2/MOSA/test_linkedList2_MOSA.py:32: TypeError: LinkedList.__repr__() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  55] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  67:             return 'link:[]'
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+[34m- 71:     def __len__(self):[0m
+[34m- 72:         '''Count values in list.'''[0m
+[34m- 73:         n = self.head[0m
+[34m- 74:         count = 0[0m
+[34m- 75:         while n != None:[0m
+[34m- 76:             count += 1[0m
+[34m- 77:             n = n.next[0m
+[34m- 78:         return count[0m
+[32m+ 71:     @staticmethod[0m
+[32m+ 72:     def __len__(self):[0m
+[32m+ 73:         '''Count values in list.'''[0m
+[32m+ 74:         n = self.head[0m
+[32m+ 75:         count = 0[0m
+[32m+ 76:         while n != None:[0m
+[32m+ 77:             count += 1[0m
+[32m+ 78:             n = n.next[0m
+[32m+ 79:         return count[0m
+--------------------------------------------------------------------------------
+[0.17764 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList2/MOSA/test_linkedList2_MOSA.py:19: TypeError: LinkedList.__len__() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  56] SDL linkedList2: 
+--------------------------------------------------------------------------------
+   5: '''
+   6: class LinkedNode:
+   7:     def __init__(self, value, tail=None):
+   8:         '''Node in a Linked List.'''
+[34m-  9:         self.value = value[0m
+[32m+  9:         pass[0m
+  10:         self.next = tail
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+--------------------------------------------------------------------------------
+[0.17606 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_5
+
+def test_case_5():
+        bytes_0 = b'\x14\x0f\xf4'
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+        assert len(linked_list_0) == 4
+        str_0 = "'_*"
+        list_1 = [str_0]
+        linked_list_1 = module_0.LinkedList(*list_1)
+        assert len(linked_list_1) == 1
+>       var_0 = linked_list_1.pop()
+
+MOSA/test_linkedList2_MOSA.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[AttributeError("'LinkedNode' object has no attribute 'value'") raised in repr()] LinkedList object at 0x7faca2772d10>
+
+>   ???
+E   AttributeError: 'LinkedNode' object has no attribute 'value'
+
+linkedList2:39: AttributeError
+[36m   -[0m [#  57] SDL linkedList2: 
+--------------------------------------------------------------------------------
+   6: class LinkedNode:
+   7:     def __init__(self, value, tail=None):
+   8:         '''Node in a Linked List.'''
+   9:         self.value = value
+[34m- 10:         self.next = tail[0m
+[32m+ 10:         pass[0m
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+--------------------------------------------------------------------------------
+[0.17014 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_0
+
+def test_case_0():
+        int_0 = -1270
+        linked_node_0 = module_0.LinkedNode(int_0)
+>       var_0 = linked_node_0.checkInfinite()
+
+MOSA/test_linkedList2_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7faca2751c00>
+
+>   ???
+E   AttributeError: 'LinkedNode' object has no attribute 'next'
+
+linkedList2:16: AttributeError
+[36m   -[0m [#  58] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  10:         self.next = tail
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+[34m- 14:         p1 = p2 = self[0m
+[32m+ 14:         pass[0m
+  15:         while (p1 != None and p2 != None):
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+--------------------------------------------------------------------------------
+[0.17777 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_0
+
+def test_case_0():
+        int_0 = -1270
+        linked_node_0 = module_0.LinkedNode(int_0)
+>       var_0 = linked_node_0.checkInfinite()
+
+MOSA/test_linkedList2_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7faca278f2e0>
+
+>   ???
+E   UnboundLocalError: local variable 'p1' referenced before assignment
+
+linkedList2:15: UnboundLocalError
+[36m   -[0m [#  59] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+  16:             if p2.next == None:
+[34m- 17:                 return False[0m
+[32m+ 17:                 pass[0m
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+--------------------------------------------------------------------------------
+[0.16984 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_0
+
+def test_case_0():
+        int_0 = -1270
+        linked_node_0 = module_0.LinkedNode(int_0)
+>       var_0 = linked_node_0.checkInfinite()
+
+MOSA/test_linkedList2_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7faca2778a00>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:19: AttributeError
+[36m   -[0m [#  60] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+  16:             if p2.next == None:
+  17:                 return False
+[34m- 18:             p1 = p1.next[0m
+[32m+ 18:             pass[0m
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+  22:                 return True
+--------------------------------------------------------------------------------
+[0.18924 s] [31msurvived[0m
+[36m   -[0m [#  61] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  15:         while (p1 != None and p2 != None):
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+[34m- 19:             p2 = p2.next.next[0m
+[32m+ 19:             pass[0m
+  20:             
+  21:             if p1 == p2:
+  22:                 return True
+  23:         return False
+--------------------------------------------------------------------------------
+[0.18903 s] [31msurvived[0m
+[36m   -[0m [#  62] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+[34m- 22:                 return True[0m
+[32m+ 22:                 pass[0m
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+--------------------------------------------------------------------------------
+[0.15763 s] [31msurvived[0m
+[36m   -[0m [#  63] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+  22:                 return True
+[34m- 23:         return False[0m
+[32m+ 23:         pass[0m
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+--------------------------------------------------------------------------------
+[0.18239 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        none_type_0 = None
+        var_0 = linked_list_0.remove(none_type_0)
+        assert var_0 is False
+        var_1 = linked_list_0.__len__()
+        assert var_1 == 0
+        var_2 = linked_list_0.prepend(none_type_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_0.value) == 1
+        var_3 = linked_list_0.prepend(var_1)
+        assert len(linked_list_0) == 2
+        assert len(linked_node_0.value) == 2
+        linked_node_1 = module_0.LinkedNode(linked_list_0, linked_node_0)
+        assert len(linked_node_1.value) == 2
+        var_4 = linked_node_1.checkInfinite()
+>       assert var_4 is False
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:88: AssertionError
+[36m   -[0m [#  64] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+[34m- 27:         self.head = None[0m
+[32m+ 27:         pass[0m
+  28:         for _ in start:
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+--------------------------------------------------------------------------------
+[0.17862 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+>       linked_list_0 = module_0.LinkedList(*list_0)
+
+MOSA/test_linkedList2_MOSA.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList2:29: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[AttributeError("'LinkedList' object has no attribute 'head'") raised in repr()] LinkedList object at 0x7faca28665c0>
+value = None
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute 'head'
+
+linkedList2:33: AttributeError
+[36m   -[0m [#  65] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+  28:         for _ in start:
+[34m- 29:             self.prepend(_)[0m
+[32m+ 29:             pass[0m
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+--------------------------------------------------------------------------------
+[0.18277 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:19: AssertionError
+[36m   -[0m [#  66] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+[34m- 33:         self.head = LinkedNode(value, self.head)[0m
+[32m+ 33:         pass[0m
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.16245 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:19: AssertionError
+[36m   -[0m [#  67] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+[34m- 39:         val = self.head.value[0m
+[32m+ 39:         pass[0m
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+--------------------------------------------------------------------------------
+[0.16458 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_5
+
+def test_case_5():
+        bytes_0 = b'\x14\x0f\xf4'
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+        assert len(linked_list_0) == 4
+        str_0 = "'_*"
+        list_1 = [str_0]
+        linked_list_1 = module_0.LinkedList(*list_1)
+        assert len(linked_list_1) == 1
+>       var_0 = linked_list_1.pop()
+
+MOSA/test_linkedList2_MOSA.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[]
+
+>   ???
+E   NameError: name 'val' is not defined
+
+linkedList2:41: NameError
+[36m   -[0m [#  68] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+[34m- 40:         self.head = self.head.next[0m
+[32m+ 40:         pass[0m
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+--------------------------------------------------------------------------------
+[0.17409 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_5
+
+def test_case_5():
+        bytes_0 = b'\x14\x0f\xf4'
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+        assert len(linked_list_0) == 4
+        str_0 = "'_*"
+        list_1 = [str_0]
+        linked_list_1 = module_0.LinkedList(*list_1)
+        assert len(linked_list_1) == 1
+        var_0 = linked_list_1.pop()
+        assert var_0 == "'_*"
+>       assert len(linked_list_1) == 0
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:48: AssertionError
+[36m   -[0m [#  69] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+[34m- 41:         return val[0m
+[32m+ 41:         pass[0m
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+--------------------------------------------------------------------------------
+[0.17940 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_5
+
+def test_case_5():
+        bytes_0 = b'\x14\x0f\xf4'
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+        assert len(linked_list_0) == 4
+        str_0 = "'_*"
+        list_1 = [str_0]
+        linked_list_1 = module_0.LinkedList(*list_1)
+        assert len(linked_list_1) == 1
+        var_0 = linked_list_1.pop()
+>       assert var_0 == "'_*"
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:47: AssertionError
+[36m   -[0m [#  70] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+[34m- 45:         n = self.head[0m
+[32m+ 45:         pass[0m
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+--------------------------------------------------------------------------------
+[0.16842 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_6
+
+def test_case_6():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+MOSA/test_linkedList2_MOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7faca26cd240>
+value = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7faca26cd240>
+
+>   ???
+E   UnboundLocalError: local variable 'n' referenced before assignment
+
+linkedList2:47: UnboundLocalError
+[36m   -[0m [#  71] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+[34m- 46:         last = None[0m
+[32m+ 46:         pass[0m
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+--------------------------------------------------------------------------------
+[0.17804 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_6
+
+def test_case_6():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+MOSA/test_linkedList2_MOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7faca282a200>
+value = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7faca282a200>
+
+>   ???
+E   NameError: name 'last' is not defined
+
+linkedList2:49: NameError
+[36m   -[0m [#  72] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+[34m- 50:                     self.head = self.head.next[0m
+[32m+ 50:                     pass[0m
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+--------------------------------------------------------------------------------
+[0.17915 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_6
+
+def test_case_6():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(linked_list_0)
+        assert var_1 is True
+>       assert len(linked_list_0) == 0
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:58: AssertionError
+[36m   -[0m [#  73] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  48:             if n.value == value:
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+[34m- 52:                     last.next = n.next[0m
+[32m+ 52:                     pass[0m
+  53:                 return True
+  54:             n = n.next
+  55:         return False
+  56:     
+--------------------------------------------------------------------------------
+[0.14043 s] [31msurvived[0m
+[36m   -[0m [#  74] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+[34m- 53:                 return True[0m
+[32m+ 53:                 pass[0m
+  54:             n = n.next
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+--------------------------------------------------------------------------------
+[0.18082 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_6
+
+def test_case_6():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(linked_list_0)
+>       assert var_1 is True
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:57: AssertionError
+[36m   -[0m [#  75] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+[34m- 54:             n = n.next[0m
+[32m+ 54:             pass[0m
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+--------------------------------------------------------------------------------
+[5.00419 s] [33mtimeout[0m
+[36m   -[0m [#  76] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+[34m- 55:         return False[0m
+[32m+ 55:         pass[0m
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+--------------------------------------------------------------------------------
+[0.23205 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_7
+
+def test_case_7():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.__iter__()
+        var_1 = var_0.__repr__()
+        var_2 = var_1.__repr__()
+        var_3 = linked_list_0.remove(var_0)
+>       assert var_3 is False
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:67: AssertionError
+[36m   -[0m [#  77] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+[34m- 59:         n = self.head[0m
+[32m+ 59:         pass[0m
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+--------------------------------------------------------------------------------
+[0.22760 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        none_type_0 = None
+        var_0 = linked_list_0.remove(none_type_0)
+        assert var_0 is False
+        var_1 = linked_list_0.__len__()
+        assert var_1 == 0
+        var_2 = linked_list_0.prepend(none_type_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_0.value) == 1
+        var_3 = linked_list_0.prepend(var_1)
+        assert len(linked_list_0) == 2
+        assert len(linked_node_0.value) == 2
+        linked_node_1 = module_0.LinkedNode(linked_list_0, linked_node_0)
+        assert len(linked_node_1.value) == 2
+        var_4 = linked_node_1.checkInfinite()
+        assert var_4 is False
+>       linked_list_1 = module_0.LinkedList(*linked_list_0)
+
+MOSA/test_linkedList2_MOSA.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[UnboundLocalError("local variable 'n' referenced before assignment") raised in repr()] LinkedList object at 0x7faca286e470>
+
+>   ???
+E   UnboundLocalError: local variable 'n' referenced before assignment
+
+linkedList2:60: UnboundLocalError
+[36m   -[0m [#  78] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+[34m- 61:             yield n.value[0m
+[32m+ 61:             pass[0m
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+--------------------------------------------------------------------------------
+[0.18160 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList2/MOSA/test_linkedList2_MOSA.py:89: TypeError: iter() returned non-iterator of type 'NoneType'
+
+[36m   -[0m [#  79] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+  61:             yield n.value
+[34m- 62:             n = n.next[0m
+[32m+ 62:             pass[0m
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+--------------------------------------------------------------------------------
+[5.00803 s] [33mtimeout[0m
+[36m   -[0m [#  80] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+[34m- 67:             return 'link:[]'[0m
+[32m+ 67:             pass[0m
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+--------------------------------------------------------------------------------
+[0.13836 s] [31msurvived[0m
+[36m   -[0m [#  81] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+[34m- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))[0m
+[32m+ 69:         pass[0m
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[0.17938 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_11
+
+def test_case_11():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_list_0.__len__()
+        assert var_0 == 0
+        var_1 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_0.value) == 1
+        linked_list_1 = module_0.LinkedList(*linked_list_0)
+        assert f'{type(linked_list_1).__module__}.{type(linked_list_1).__qualname__}' == 'linkedList2.LinkedList'
+        assert len(linked_list_1) == 1
+        var_2 = linked_list_1.__repr__()
+>       assert var_2 == 'link:[0]'
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:139: AssertionError
+[36m   -[0m [#  82] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+[34m- 73:         n = self.head[0m
+[32m+ 73:         pass[0m
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+--------------------------------------------------------------------------------
+[0.17614 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 1
+
+MOSA/test_linkedList2_MOSA.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[None]
+
+>   ???
+E   UnboundLocalError: local variable 'n' referenced before assignment
+
+linkedList2:75: UnboundLocalError
+[36m   -[0m [#  83] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+[34m- 74:         count = 0[0m
+[32m+ 74:         pass[0m
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[0.18324 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 1
+
+MOSA/test_linkedList2_MOSA.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[None]
+
+>   ???
+E   UnboundLocalError: local variable 'count' referenced before assignment
+
+linkedList2:76: UnboundLocalError
+[36m   -[0m [#  84] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  73:         n = self.head
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+[34m- 77:             n = n.next[0m
+[32m+ 77:             pass[0m
+  78:         return count
+--------------------------------------------------------------------------------
+[5.00790 s] [33mtimeout[0m
+[36m   -[0m [#  85] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+[34m- 78:         return count[0m
+[32m+ 78:         pass[0m
+--------------------------------------------------------------------------------
+[0.11505 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList2/MOSA/test_linkedList2_MOSA.py:19: TypeError: 'NoneType' object cannot be interpreted as an integer
+
+[36m   -[0m [#  86] SVD linkedList2: 
+--------------------------------------------------------------------------------
+   5: '''
+   6: class LinkedNode:
+   7:     def __init__(self, value, tail=None):
+   8:         '''Node in a Linked List.'''
+[34m-  9:         self.value = value[0m
+[32m+  9:         value = value[0m
+  10:         self.next = tail
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  87] SVD linkedList2: 
+--------------------------------------------------------------------------------
+   6: class LinkedNode:
+   7:     def __init__(self, value, tail=None):
+   8:         '''Node in a Linked List.'''
+   9:         self.value = value
+[34m- 10:         self.next = tail[0m
+[32m+ 10:         next = tail[0m
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  88] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+[34m- 27:         self.head = None[0m
+[32m+ 27:         head = None[0m
+  28:         for _ in start:
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  89] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+  28:         for _ in start:
+[34m- 29:             self.prepend(_)[0m
+[32m+ 29:             prepend(_)[0m
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+--------------------------------------------------------------------------------
+[0.11255 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+>       linked_list_0 = module_0.LinkedList(*list_0)
+
+MOSA/test_linkedList2_MOSA.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[], start = (None,), _ = None
+
+>   ???
+E   NameError: name 'prepend' is not defined
+
+linkedList2:29: NameError
+[36m   -[0m [#  90] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+[34m- 33:         self.head = LinkedNode(value, self.head)[0m
+[32m+ 33:         head = LinkedNode(value, self.head)[0m
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  91] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+[34m- 33:         self.head = LinkedNode(value, self.head)[0m
+[32m+ 33:         self.head = LinkedNode(value, head)[0m
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.12933 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+>       linked_list_0 = module_0.LinkedList(*list_0)
+
+MOSA/test_linkedList2_MOSA.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList2:29: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[], value = None
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:33: NameError
+[36m   -[0m [#  92] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+[34m- 37:         if self.head is None:[0m
+[32m+ 37:         if head is None:[0m
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+--------------------------------------------------------------------------------
+[0.15216 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_5
+
+def test_case_5():
+        bytes_0 = b'\x14\x0f\xf4'
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+        assert len(linked_list_0) == 4
+        str_0 = "'_*"
+        list_1 = [str_0]
+        linked_list_1 = module_0.LinkedList(*list_1)
+        assert len(linked_list_1) == 1
+>       var_0 = linked_list_1.pop()
+
+MOSA/test_linkedList2_MOSA.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:['_*]
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:37: NameError
+[36m   -[0m [#  93] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+[34m- 39:         val = self.head.value[0m
+[32m+ 39:         val = head.value[0m
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+--------------------------------------------------------------------------------
+[0.21356 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_5
+
+def test_case_5():
+        bytes_0 = b'\x14\x0f\xf4'
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+        assert len(linked_list_0) == 4
+        str_0 = "'_*"
+        list_1 = [str_0]
+        linked_list_1 = module_0.LinkedList(*list_1)
+        assert len(linked_list_1) == 1
+>       var_0 = linked_list_1.pop()
+
+MOSA/test_linkedList2_MOSA.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:['_*]
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:39: NameError
+[36m   -[0m [#  94] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+[34m- 40:         self.head = self.head.next[0m
+[32m+ 40:         head = self.head.next[0m
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  95] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+[34m- 40:         self.head = self.head.next[0m
+[32m+ 40:         self.head = head.next[0m
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+--------------------------------------------------------------------------------
+[0.18013 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_5
+
+def test_case_5():
+        bytes_0 = b'\x14\x0f\xf4'
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+        assert len(linked_list_0) == 4
+        str_0 = "'_*"
+        list_1 = [str_0]
+        linked_list_1 = module_0.LinkedList(*list_1)
+        assert len(linked_list_1) == 1
+>       var_0 = linked_list_1.pop()
+
+MOSA/test_linkedList2_MOSA.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:['_*]
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:40: NameError
+[36m   -[0m [#  96] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+[34m- 45:         n = self.head[0m
+[32m+ 45:         n = head[0m
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+--------------------------------------------------------------------------------
+[0.17415 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_6
+
+def test_case_6():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+MOSA/test_linkedList2_MOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7faca26e6590>
+value = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7faca26e6590>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:45: NameError
+[36m   -[0m [#  97] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+[34m- 50:                     self.head = self.head.next[0m
+[32m+ 50:                     head = self.head.next[0m
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  98] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+[34m- 50:                     self.head = self.head.next[0m
+[32m+ 50:                     self.head = head.next[0m
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+--------------------------------------------------------------------------------
+[0.16703 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_6
+
+def test_case_6():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+>       var_1 = linked_list_0.remove(linked_list_0)
+
+MOSA/test_linkedList2_MOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7faca2751fc0>
+value = <[RecursionError('maximum recursion depth exceeded while calling a Python object') raised in repr()] LinkedList object at 0x7faca2751fc0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:50: NameError
+[36m   -[0m [#  99] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+[34m- 59:         n = self.head[0m
+[32m+ 59:         n = head[0m
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+--------------------------------------------------------------------------------
+[0.17522 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        none_type_0 = None
+        var_0 = linked_list_0.remove(none_type_0)
+        assert var_0 is False
+        var_1 = linked_list_0.__len__()
+        assert var_1 == 0
+        var_2 = linked_list_0.prepend(none_type_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_0.value) == 1
+        var_3 = linked_list_0.prepend(var_1)
+        assert len(linked_list_0) == 2
+        assert len(linked_node_0.value) == 2
+        linked_node_1 = module_0.LinkedNode(linked_list_0, linked_node_0)
+        assert len(linked_node_1.value) == 2
+        var_4 = linked_node_1.checkInfinite()
+        assert var_4 is False
+>       linked_list_1 = module_0.LinkedList(*linked_list_0)
+
+MOSA/test_linkedList2_MOSA.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[NameError("name 'head' is not defined") raised in repr()] LinkedList object at 0x7faca2773dc0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:59: NameError
+[36m   -[0m [# 100] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+[34m- 66:         if self.head is None:[0m
+[32m+ 66:         if head is None:[0m
+  67:             return 'link:[]'
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+--------------------------------------------------------------------------------
+[0.18210 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_4
+
+def test_case_4():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+>       var_0 = linked_list_0.__repr__()
+
+MOSA/test_linkedList2_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[NameError("name 'head' is not defined") raised in repr()] LinkedList object at 0x7faca26e5f30>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:66: NameError
+[36m   -[0m [# 101] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+[34m- 73:         n = self.head[0m
+[32m+ 73:         n = head[0m
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+--------------------------------------------------------------------------------
+[0.16679 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 1
+
+MOSA/test_linkedList2_MOSA.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[None]
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:73: NameError
+[36m   -[0m [# 102] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+[34m- 16:             if p2.next == None:[0m
+[34m- 17:                 return False[0m
+[34m- 18:             p1 = p1.next[0m
+[34m- 19:             p2 = p2.next.next[0m
+[34m- 20:             [0m
+[34m- 21:             if p1 == p2:[0m
+[34m- 22:                 return True[0m
+[34m- 23:         return False[0m
+[32m+ 16:             break[0m
+[32m+ 17:         [0m
+[32m+ 18:         [0m
+[32m+ 19:         [0m
+[32m+ 20:         [0m
+[32m+ 21:         [0m
+[32m+ 22:         return False[0m
+[32m+ 23: [0m
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+--------------------------------------------------------------------------------
+[0.14007 s] [31msurvived[0m
+[36m   -[0m [# 103] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+  28:         for _ in start:
+[34m- 29:             self.prepend(_)[0m
+[32m+ 29:             break[0m
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+--------------------------------------------------------------------------------
+[0.17287 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:19: AssertionError
+[36m   -[0m [# 104] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+[34m- 48:             if n.value == value:[0m
+[34m- 49:                 if last == None:[0m
+[34m- 50:                     self.head = self.head.next[0m
+[34m- 51:                 else:[0m
+[34m- 52:                     last.next = n.next[0m
+[34m- 53:                 return True[0m
+[34m- 54:             n = n.next[0m
+[32m+ 48:             break[0m
+[32m+ 49:         [0m
+[32m+ 50:         [0m
+[32m+ 51:         [0m
+[32m+ 52:         [0m
+[32m+ 53:         [0m
+[32m+ 54:         [0m
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+--------------------------------------------------------------------------------
+[0.16551 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_6
+
+def test_case_6():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.prepend(linked_list_0)
+        assert len(linked_list_0) == 1
+        var_1 = linked_list_0.remove(linked_list_0)
+>       assert var_1 is True
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:57: AssertionError
+[36m   -[0m [# 105] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+[34m- 61:             yield n.value[0m
+[34m- 62:             n = n.next[0m
+[32m+ 61:             break[0m
+[32m+ 62:     [0m
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.16746 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList2/MOSA/test_linkedList2_MOSA.py:89: TypeError: iter() returned non-iterator of type 'NoneType'
+
+[36m   -[0m [# 106] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+  75:         while n != None:
+[34m- 76:             count += 1[0m
+[34m- 77:             n = n.next[0m
+[32m+ 76:             break[0m
+[32m+ 77:         [0m
+  78:         return count
+--------------------------------------------------------------------------------
+[0.18308 s] [32mkilled[0m by MOSA/test_linkedList2_MOSA.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        list_0 = [none_type_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 1
+E       AssertionError
+
+MOSA/test_linkedList2_MOSA.py:19: AssertionError
+[34m[*][0m Mutation score [43.81784 s]: [1m[34m81.8%[0m
+[36m   -[0m all: 106
+[36m   -[0m killed: 68 (64.2%)
+[36m   -[0m survived: 16 (15.1%)
+[36m   -[0m incompetent: 18 (17.0%)
+[36m   -[0m timeout: 4 (3.8%)

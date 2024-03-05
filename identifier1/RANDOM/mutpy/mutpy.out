@@ -1,0 +1,4335 @@
+[*] Start mutation process:
+   - targets: identifier1.py
+   - tests: ./RANDOM
+[*] 3680 tests passed:
+   - test_identifier1_RANDOM [4.74304 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR identifier1: 
+--------------------------------------------------------------------------------
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+- 33:                     i += 1
++ 33:                     i -= 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[6.20737 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+>       var_6 = identifier_31.validateIdentifier(str_0)
+
+RANDOM/test_identifier1_RANDOM.py:8833: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fe8fd266140>, s = 'vc?$B]'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:30: IndexError
+   - [#   2] CDI identifier1: 
+--------------------------------------------------------------------------------
+   1: 
+   2: class Identifier(object):
+   3:     ''' generated source for class Identifier '''
+   4:     
+-  5:     def valid_s(self, ch):
+-  6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+-  8:             return True
+-  9:         else:
+- 10:             return False
+- 11:     
++  5:     @classmethod
++  6:     def valid_s(self, ch):
++  7:         ''' generated source for method valid_s '''
++  8:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  9:             return True
++ 10:         else:
++ 11:             return False
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+--------------------------------------------------------------------------------
+[4.56313 s] survived
+   - [#   3] CDI identifier1: 
+--------------------------------------------------------------------------------
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+- 12:     def valid_f(self, ch):
+- 13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+- 15:             return True
+- 16:         else:
+- 17:             return False
+- 18:     
++ 12:     @classmethod
++ 13:     def valid_f(self, ch):
++ 14:         ''' generated source for method valid_f '''
++ 15:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 16:             return True
++ 17:         else:
++ 18:             return False
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+--------------------------------------------------------------------------------
+[4.44890 s] survived
+   - [#   4] CDI identifier1: 
+--------------------------------------------------------------------------------
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+- 19:     def validateIdentifier(self, s):
+- 20:         ''' generated source for method validateIdentifier '''
+- 21:         achar = str()
+- 22:         valid_id = False
+- 23:         if len(s) > 0:
+- 24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
+- 27:                 achar = s[1]
+- 28:                 i = 1
+- 29:                 while i < len(s):
+- 30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
+- 33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
+- 36:             else:
+- 37:                 return False
+- 38:         else:
+- 39:             return False
++ 19:     @classmethod
++ 20:     def validateIdentifier(self, s):
++ 21:         ''' generated source for method validateIdentifier '''
++ 22:         achar = str()
++ 23:         valid_id = False
++ 24:         if len(s) > 0:
++ 25:             achar = s[0]
++ 26:             valid_id = self.valid_s(achar)
++ 27:             if len(s) > 1:
++ 28:                 achar = s[1]
++ 29:                 i = 1
++ 30:                 while i < len(s):
++ 31:                     achar = s[i]
++ 32:                     if not (self.valid_f(achar)):
++ 33:                         valid_id = False
++ 34:                     i += 1
++ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 36:                 return True
++ 37:             else:
++ 38:                 return False
++ 39:         else:
++ 40:             return False
+--------------------------------------------------------------------------------
+[6.24548 s] incompetent
+
+TypeError: identifier1:26: TypeError: Identifier.valid_s() missing 1 required positional argument: 'ch'
+
+   - [#   5] COD identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
++ 31:                     if self.valid_f(achar):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[4.59912 s] survived
+   - [#   6] COI identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if not (((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z'))):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[6.52587 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_596
+
+def test_case_596():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier(**dict_0)
+        identifier_2 = module_0.Identifier()
+        dict_1 = {}
+        identifier_3 = module_0.Identifier()
+        var_0 = identifier_3.validateIdentifier(dict_1)
+        assert var_0 is False
+        var_1 = identifier_3.validateIdentifier(dict_1)
+        list_0 = []
+        identifier_4 = module_0.Identifier(*list_0)
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        identifier_8 = module_0.Identifier()
+        dict_3 = {}
+        identifier_9 = module_0.Identifier()
+        var_2 = identifier_9.validateIdentifier(dict_3)
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier(**dict_3)
+        var_3 = identifier_13.validateIdentifier(dict_3)
+        str_0 = 'hv!T#0!bs0Mg;K&_aqC'
+        identifier_14 = module_0.Identifier()
+        var_4 = identifier_14.validateIdentifier(str_0)
+        assert var_4 is False
+        identifier_15 = module_0.Identifier()
+        dict_4 = {}
+        identifier_16 = module_0.Identifier(**dict_4)
+        identifier_17 = module_0.Identifier()
+        identifier_18 = module_0.Identifier(**dict_4)
+        var_5 = identifier_17.valid_s(str_0)
+>       assert var_5 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:21940: AssertionError
+   - [#   7] COI identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if not (((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9'))):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.20283 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_301
+
+def test_case_301():
+        dict_0 = {}
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_1 = module_0.Identifier()
+        var_1 = identifier_1.validateIdentifier(dict_1)
+        identifier_2 = module_0.Identifier()
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        dict_2 = {}
+        identifier_6 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_7 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_8 = module_0.Identifier(*list_0)
+        identifier_9 = module_0.Identifier()
+        identifier_10 = module_0.Identifier()
+        dict_4 = {}
+        identifier_11 = module_0.Identifier()
+        var_2 = identifier_11.validateIdentifier(dict_4)
+        identifier_12 = module_0.Identifier()
+        var_3 = identifier_11.validateIdentifier(dict_4)
+        identifier_13 = module_0.Identifier()
+        identifier_14 = module_0.Identifier()
+        identifier_15 = module_0.Identifier()
+        dict_5 = {}
+        identifier_16 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_17 = module_0.Identifier(**dict_6)
+        identifier_18 = module_0.Identifier()
+        identifier_19 = module_0.Identifier()
+        dict_7 = {}
+        identifier_20 = module_0.Identifier()
+        var_4 = identifier_20.validateIdentifier(dict_7)
+        identifier_21 = module_0.Identifier()
+        var_5 = identifier_20.validateIdentifier(dict_7)
+        identifier_22 = module_0.Identifier()
+        identifier_23 = module_0.Identifier()
+        identifier_24 = module_0.Identifier()
+        dict_8 = {}
+        identifier_25 = module_0.Identifier(**dict_8)
+        identifier_26 = module_0.Identifier()
+        identifier_27 = module_0.Identifier(**dict_8)
+        dict_9 = {}
+        identifier_28 = module_0.Identifier()
+        var_6 = identifier_28.validateIdentifier(dict_9)
+        str_0 = 'gRtoJkt/)\nb+:&"?'
+        var_7 = identifier_22.valid_f(str_0)
+>       assert var_7 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:10285: AssertionError
+   - [#   8] COI identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if not (len(s) > 0):
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[5.91454 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_0
+
+def test_case_0():
+        dict_0 = {}
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(dict_0)
+
+RANDOM/test_identifier1_RANDOM.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fe8fdab5d20>, s = {}
+
+>   ???
+E   KeyError: 0
+
+identifier1:24: KeyError
+   - [#   9] COI identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if not (len(s) > 1):
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[6.54079 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+   - [#  10] COI identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+- 29:                 while i < len(s):
++ 29:                 while not (i < len(s)):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[6.33534 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+   - [#  11] COI identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
++ 31:                     if not ((not (self.valid_f(achar)))):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[4.56048 s] survived
+   - [#  12] COI identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if not ((valid_id and len(s) >= 1 and len(s) <= 6)):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[6.04685 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+   - [#  13] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'mutpy' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[6.65230 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_987
+
+def test_case_987():
+        dict_0 = {}
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(dict_0)
+        assert var_0 is False
+        identifier_1 = module_0.Identifier()
+        var_1 = identifier_0.validateIdentifier(dict_0)
+        identifier_2 = module_0.Identifier()
+        dict_1 = {}
+        identifier_3 = module_0.Identifier()
+        var_2 = identifier_3.validateIdentifier(dict_1)
+        dict_2 = {}
+        identifier_4 = module_0.Identifier()
+        var_3 = identifier_4.validateIdentifier(dict_2)
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_3 = {}
+        identifier_7 = module_0.Identifier()
+        var_4 = identifier_7.validateIdentifier(dict_3)
+        dict_4 = {}
+        identifier_8 = module_0.Identifier()
+        var_5 = identifier_8.validateIdentifier(dict_4)
+        identifier_9 = module_0.Identifier()
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        dict_5 = {}
+        identifier_13 = module_0.Identifier()
+        var_6 = identifier_13.validateIdentifier(dict_5)
+        dict_6 = {}
+        identifier_14 = module_0.Identifier()
+        var_7 = identifier_14.validateIdentifier(dict_6)
+        identifier_15 = module_0.Identifier()
+        identifier_16 = module_0.Identifier()
+        dict_7 = {}
+        identifier_17 = module_0.Identifier()
+        var_8 = identifier_17.validateIdentifier(dict_7)
+        identifier_18 = module_0.Identifier()
+        identifier_19 = module_0.Identifier()
+        dict_8 = {}
+        identifier_20 = module_0.Identifier(**dict_8)
+        dict_9 = {}
+        identifier_21 = module_0.Identifier(**dict_9)
+        str_0 = 'Pa>\x0c#F1^I7E}'
+        var_9 = identifier_20.valid_s(str_0)
+>       assert var_9 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:33204: AssertionError
+   - [#  14] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= '' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[7.19997 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_1615
+
+def test_case_1615():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        dict_1 = {}
+        identifier_5 = module_0.Identifier(**dict_1)
+        dict_2 = {}
+        identifier_6 = module_0.Identifier()
+        var_0 = identifier_6.validateIdentifier(dict_2)
+        assert var_0 is False
+        identifier_7 = module_0.Identifier()
+        var_1 = identifier_6.validateIdentifier(dict_2)
+        identifier_8 = module_0.Identifier()
+        identifier_9 = module_0.Identifier()
+        dict_3 = {}
+        identifier_10 = module_0.Identifier()
+        var_2 = identifier_10.validateIdentifier(dict_3)
+        identifier_11 = module_0.Identifier()
+        var_3 = identifier_10.validateIdentifier(dict_3)
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        identifier_14 = module_0.Identifier()
+        str_0 = '\tvRe%@W`}+&$(#R'
+        var_4 = identifier_1.valid_s(str_0)
+>       assert var_4 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:54058: AssertionError
+   - [#  15] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'mutpy') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[6.73014 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_1031
+
+def test_case_1031():
+        float_0 = 292.892
+        str_0 = '^uY -}H+:9~'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:34637: AssertionError
+   - [#  16] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= '') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[6.85799 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_987
+
+def test_case_987():
+        dict_0 = {}
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(dict_0)
+        assert var_0 is False
+        identifier_1 = module_0.Identifier()
+        var_1 = identifier_0.validateIdentifier(dict_0)
+        identifier_2 = module_0.Identifier()
+        dict_1 = {}
+        identifier_3 = module_0.Identifier()
+        var_2 = identifier_3.validateIdentifier(dict_1)
+        dict_2 = {}
+        identifier_4 = module_0.Identifier()
+        var_3 = identifier_4.validateIdentifier(dict_2)
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_3 = {}
+        identifier_7 = module_0.Identifier()
+        var_4 = identifier_7.validateIdentifier(dict_3)
+        dict_4 = {}
+        identifier_8 = module_0.Identifier()
+        var_5 = identifier_8.validateIdentifier(dict_4)
+        identifier_9 = module_0.Identifier()
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        dict_5 = {}
+        identifier_13 = module_0.Identifier()
+        var_6 = identifier_13.validateIdentifier(dict_5)
+        dict_6 = {}
+        identifier_14 = module_0.Identifier()
+        var_7 = identifier_14.validateIdentifier(dict_6)
+        identifier_15 = module_0.Identifier()
+        identifier_16 = module_0.Identifier()
+        dict_7 = {}
+        identifier_17 = module_0.Identifier()
+        var_8 = identifier_17.validateIdentifier(dict_7)
+        identifier_18 = module_0.Identifier()
+        identifier_19 = module_0.Identifier()
+        dict_8 = {}
+        identifier_20 = module_0.Identifier(**dict_8)
+        dict_9 = {}
+        identifier_21 = module_0.Identifier(**dict_9)
+        str_0 = 'Pa>\x0c#F1^I7E}'
+        var_9 = identifier_20.valid_s(str_0)
+>       assert var_9 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:33204: AssertionError
+   - [#  17] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'mutpy' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[6.49925 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_596
+
+def test_case_596():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier(**dict_0)
+        identifier_2 = module_0.Identifier()
+        dict_1 = {}
+        identifier_3 = module_0.Identifier()
+        var_0 = identifier_3.validateIdentifier(dict_1)
+        assert var_0 is False
+        var_1 = identifier_3.validateIdentifier(dict_1)
+        list_0 = []
+        identifier_4 = module_0.Identifier(*list_0)
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        identifier_8 = module_0.Identifier()
+        dict_3 = {}
+        identifier_9 = module_0.Identifier()
+        var_2 = identifier_9.validateIdentifier(dict_3)
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier(**dict_3)
+        var_3 = identifier_13.validateIdentifier(dict_3)
+        str_0 = 'hv!T#0!bs0Mg;K&_aqC'
+        identifier_14 = module_0.Identifier()
+        var_4 = identifier_14.validateIdentifier(str_0)
+        assert var_4 is False
+        identifier_15 = module_0.Identifier()
+        dict_4 = {}
+        identifier_16 = module_0.Identifier(**dict_4)
+        identifier_17 = module_0.Identifier()
+        identifier_18 = module_0.Identifier(**dict_4)
+        var_5 = identifier_17.valid_s(str_0)
+>       assert var_5 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:21940: AssertionError
+   - [#  18] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= '' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[6.95862 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_1031
+
+def test_case_1031():
+        float_0 = 292.892
+        str_0 = '^uY -}H+:9~'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:34637: AssertionError
+   - [#  19] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'mutpy')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[4.76276 s] survived
+   - [#  20] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= '')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[6.84249 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_596
+
+def test_case_596():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier(**dict_0)
+        identifier_2 = module_0.Identifier()
+        dict_1 = {}
+        identifier_3 = module_0.Identifier()
+        var_0 = identifier_3.validateIdentifier(dict_1)
+        assert var_0 is False
+        var_1 = identifier_3.validateIdentifier(dict_1)
+        list_0 = []
+        identifier_4 = module_0.Identifier(*list_0)
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        identifier_8 = module_0.Identifier()
+        dict_3 = {}
+        identifier_9 = module_0.Identifier()
+        var_2 = identifier_9.validateIdentifier(dict_3)
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier(**dict_3)
+        var_3 = identifier_13.validateIdentifier(dict_3)
+        str_0 = 'hv!T#0!bs0Mg;K&_aqC'
+        identifier_14 = module_0.Identifier()
+        var_4 = identifier_14.validateIdentifier(str_0)
+        assert var_4 is False
+        identifier_15 = module_0.Identifier()
+        dict_4 = {}
+        identifier_16 = module_0.Identifier(**dict_4)
+        identifier_17 = module_0.Identifier()
+        identifier_18 = module_0.Identifier(**dict_4)
+        var_5 = identifier_17.valid_s(str_0)
+>       assert var_5 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:21940: AssertionError
+   - [#  21] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'mutpy' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.49839 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_475
+
+def test_case_475():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier()
+        var_0 = identifier_1.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_2 = module_0.Identifier()
+        var_1 = identifier_2.validateIdentifier(dict_1)
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        dict_2 = {}
+        identifier_5 = module_0.Identifier()
+        var_2 = identifier_5.validateIdentifier(dict_2)
+        identifier_6 = module_0.Identifier()
+        var_3 = identifier_5.validateIdentifier(dict_2)
+        str_0 = 'C'
+        var_4 = identifier_1.valid_f(str_0)
+>       assert var_4 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:16954: AssertionError
+   - [#  22] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= '' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.45039 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_427
+
+def test_case_427():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier()
+        var_0 = identifier_1.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_2 = module_0.Identifier()
+        var_1 = identifier_2.validateIdentifier(dict_1)
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        dict_2 = {}
+        identifier_6 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_7 = module_0.Identifier(**dict_3)
+        var_2 = identifier_5.validateIdentifier(dict_2)
+        identifier_8 = module_0.Identifier()
+        dict_4 = {}
+        identifier_9 = module_0.Identifier()
+        var_3 = identifier_9.validateIdentifier(dict_4)
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        dict_5 = {}
+        identifier_13 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_14 = module_0.Identifier()
+        var_4 = identifier_14.validateIdentifier(dict_6)
+        identifier_15 = module_0.Identifier()
+        var_5 = identifier_14.validateIdentifier(dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        dict_8 = {}
+        identifier_20 = module_0.Identifier()
+        var_6 = identifier_20.validateIdentifier(dict_8)
+        var_7 = identifier_20.validateIdentifier(dict_8)
+        identifier_21 = module_0.Identifier()
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier(**dict_9)
+        dict_10 = {}
+        identifier_24 = module_0.Identifier(**dict_10)
+        var_8 = identifier_22.validateIdentifier(dict_9)
+        identifier_25 = module_0.Identifier()
+        dict_11 = {}
+        identifier_26 = module_0.Identifier()
+        var_9 = identifier_26.validateIdentifier(dict_11)
+        dict_12 = {}
+        identifier_27 = module_0.Identifier()
+        var_10 = identifier_27.validateIdentifier(dict_12)
+        identifier_28 = module_0.Identifier()
+        identifier_29 = module_0.Identifier()
+        dict_13 = {}
+        identifier_30 = module_0.Identifier()
+        var_11 = identifier_30.validateIdentifier(dict_13)
+        identifier_31 = module_0.Identifier()
+        identifier_32 = module_0.Identifier()
+        identifier_33 = module_0.Identifier()
+        str_0 = "'g[u3+4Vr_"
+        var_12 = identifier_23.valid_f(str_0)
+>       assert var_12 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:15027: AssertionError
+   - [#  23] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'mutpy') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[4.81923 s] survived
+   - [#  24] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= '') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.80840 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_475
+
+def test_case_475():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier()
+        var_0 = identifier_1.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_2 = module_0.Identifier()
+        var_1 = identifier_2.validateIdentifier(dict_1)
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        dict_2 = {}
+        identifier_5 = module_0.Identifier()
+        var_2 = identifier_5.validateIdentifier(dict_2)
+        identifier_6 = module_0.Identifier()
+        var_3 = identifier_5.validateIdentifier(dict_2)
+        str_0 = 'C'
+        var_4 = identifier_1.valid_f(str_0)
+>       assert var_4 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:16954: AssertionError
+   - [#  25] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'mutpy' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.39996 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_301
+
+def test_case_301():
+        dict_0 = {}
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_1 = module_0.Identifier()
+        var_1 = identifier_1.validateIdentifier(dict_1)
+        identifier_2 = module_0.Identifier()
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        dict_2 = {}
+        identifier_6 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_7 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_8 = module_0.Identifier(*list_0)
+        identifier_9 = module_0.Identifier()
+        identifier_10 = module_0.Identifier()
+        dict_4 = {}
+        identifier_11 = module_0.Identifier()
+        var_2 = identifier_11.validateIdentifier(dict_4)
+        identifier_12 = module_0.Identifier()
+        var_3 = identifier_11.validateIdentifier(dict_4)
+        identifier_13 = module_0.Identifier()
+        identifier_14 = module_0.Identifier()
+        identifier_15 = module_0.Identifier()
+        dict_5 = {}
+        identifier_16 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_17 = module_0.Identifier(**dict_6)
+        identifier_18 = module_0.Identifier()
+        identifier_19 = module_0.Identifier()
+        dict_7 = {}
+        identifier_20 = module_0.Identifier()
+        var_4 = identifier_20.validateIdentifier(dict_7)
+        identifier_21 = module_0.Identifier()
+        var_5 = identifier_20.validateIdentifier(dict_7)
+        identifier_22 = module_0.Identifier()
+        identifier_23 = module_0.Identifier()
+        identifier_24 = module_0.Identifier()
+        dict_8 = {}
+        identifier_25 = module_0.Identifier(**dict_8)
+        identifier_26 = module_0.Identifier()
+        identifier_27 = module_0.Identifier(**dict_8)
+        dict_9 = {}
+        identifier_28 = module_0.Identifier()
+        var_6 = identifier_28.validateIdentifier(dict_9)
+        str_0 = 'gRtoJkt/)\nb+:&"?'
+        var_7 = identifier_22.valid_f(str_0)
+>       assert var_7 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:10285: AssertionError
+   - [#  26] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= '' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.34726 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+   - [#  27] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'mutpy') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[4.68602 s] survived
+   - [#  28] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= '') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.52052 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_301
+
+def test_case_301():
+        dict_0 = {}
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_1 = module_0.Identifier()
+        var_1 = identifier_1.validateIdentifier(dict_1)
+        identifier_2 = module_0.Identifier()
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        dict_2 = {}
+        identifier_6 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_7 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_8 = module_0.Identifier(*list_0)
+        identifier_9 = module_0.Identifier()
+        identifier_10 = module_0.Identifier()
+        dict_4 = {}
+        identifier_11 = module_0.Identifier()
+        var_2 = identifier_11.validateIdentifier(dict_4)
+        identifier_12 = module_0.Identifier()
+        var_3 = identifier_11.validateIdentifier(dict_4)
+        identifier_13 = module_0.Identifier()
+        identifier_14 = module_0.Identifier()
+        identifier_15 = module_0.Identifier()
+        dict_5 = {}
+        identifier_16 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_17 = module_0.Identifier(**dict_6)
+        identifier_18 = module_0.Identifier()
+        identifier_19 = module_0.Identifier()
+        dict_7 = {}
+        identifier_20 = module_0.Identifier()
+        var_4 = identifier_20.validateIdentifier(dict_7)
+        identifier_21 = module_0.Identifier()
+        var_5 = identifier_20.validateIdentifier(dict_7)
+        identifier_22 = module_0.Identifier()
+        identifier_23 = module_0.Identifier()
+        identifier_24 = module_0.Identifier()
+        dict_8 = {}
+        identifier_25 = module_0.Identifier(**dict_8)
+        identifier_26 = module_0.Identifier()
+        identifier_27 = module_0.Identifier(**dict_8)
+        dict_9 = {}
+        identifier_28 = module_0.Identifier()
+        var_6 = identifier_28.validateIdentifier(dict_9)
+        str_0 = 'gRtoJkt/)\nb+:&"?'
+        var_7 = identifier_22.valid_f(str_0)
+>       assert var_7 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:10285: AssertionError
+   - [#  29] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= 'mutpy' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.82418 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_744
+
+def test_case_744():
+        float_0 = -4906.0
+        dict_0 = {float_0: float_0, float_0: float_0}
+        int_0 = 6
+        list_0 = [float_0, int_0, float_0]
+        list_1 = [dict_0, float_0, list_0, list_0]
+        tuple_0 = (dict_0, int_0, list_0, list_1)
+        list_2 = [tuple_0, list_0]
+        str_0 = '8lt{.~FW/ 3*-Ju.]'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:25927: AssertionError
+   - [#  30] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.71988 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_427
+
+def test_case_427():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier()
+        var_0 = identifier_1.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_2 = module_0.Identifier()
+        var_1 = identifier_2.validateIdentifier(dict_1)
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        dict_2 = {}
+        identifier_6 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_7 = module_0.Identifier(**dict_3)
+        var_2 = identifier_5.validateIdentifier(dict_2)
+        identifier_8 = module_0.Identifier()
+        dict_4 = {}
+        identifier_9 = module_0.Identifier()
+        var_3 = identifier_9.validateIdentifier(dict_4)
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        dict_5 = {}
+        identifier_13 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_14 = module_0.Identifier()
+        var_4 = identifier_14.validateIdentifier(dict_6)
+        identifier_15 = module_0.Identifier()
+        var_5 = identifier_14.validateIdentifier(dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        dict_8 = {}
+        identifier_20 = module_0.Identifier()
+        var_6 = identifier_20.validateIdentifier(dict_8)
+        var_7 = identifier_20.validateIdentifier(dict_8)
+        identifier_21 = module_0.Identifier()
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier(**dict_9)
+        dict_10 = {}
+        identifier_24 = module_0.Identifier(**dict_10)
+        var_8 = identifier_22.validateIdentifier(dict_9)
+        identifier_25 = module_0.Identifier()
+        dict_11 = {}
+        identifier_26 = module_0.Identifier()
+        var_9 = identifier_26.validateIdentifier(dict_11)
+        dict_12 = {}
+        identifier_27 = module_0.Identifier()
+        var_10 = identifier_27.validateIdentifier(dict_12)
+        identifier_28 = module_0.Identifier()
+        identifier_29 = module_0.Identifier()
+        dict_13 = {}
+        identifier_30 = module_0.Identifier()
+        var_11 = identifier_30.validateIdentifier(dict_13)
+        identifier_31 = module_0.Identifier()
+        identifier_32 = module_0.Identifier()
+        identifier_33 = module_0.Identifier()
+        str_0 = "'g[u3+4Vr_"
+        var_12 = identifier_23.valid_f(str_0)
+>       assert var_12 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:15027: AssertionError
+   - [#  31] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= 'mutpy')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[4.83102 s] survived
+   - [#  32] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.96065 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_744
+
+def test_case_744():
+        float_0 = -4906.0
+        dict_0 = {float_0: float_0, float_0: float_0}
+        int_0 = 6
+        list_0 = [float_0, int_0, float_0]
+        list_1 = [dict_0, float_0, list_0, list_0]
+        tuple_0 = (dict_0, int_0, list_0, list_1)
+        list_2 = [tuple_0, list_0]
+        str_0 = '8lt{.~FW/ 3*-Ju.]'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:25927: AssertionError
+   - [#  33] CRP identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if len(s) > 1:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[4.46429 s] survived
+   - [#  34] CRP identifier1: 
+--------------------------------------------------------------------------------
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+- 24:             achar = s[0]
++ 24:             achar = s[1]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+--------------------------------------------------------------------------------
+[4.39048 s] survived
+   - [#  35] CRP identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if len(s) > 2:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[4.45787 s] survived
+   - [#  36] CRP identifier1: 
+--------------------------------------------------------------------------------
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+- 27:                 achar = s[1]
++ 27:                 achar = s[2]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+--------------------------------------------------------------------------------
+[4.50562 s] survived
+   - [#  37] CRP identifier1: 
+--------------------------------------------------------------------------------
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+- 28:                 i = 1
++ 28:                 i = 2
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+--------------------------------------------------------------------------------
+[4.37755 s] survived
+   - [#  38] CRP identifier1: 
+--------------------------------------------------------------------------------
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+- 33:                     i += 1
++ 33:                     i += 2
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[4.38343 s] survived
+   - [#  39] CRP identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 2 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[4.59782 s] survived
+   - [#  40] CRP identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 1 and len(s) <= 7):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[4.79348 s] survived
+   - [#  41] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') and (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[6.72057 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_596
+
+def test_case_596():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier(**dict_0)
+        identifier_2 = module_0.Identifier()
+        dict_1 = {}
+        identifier_3 = module_0.Identifier()
+        var_0 = identifier_3.validateIdentifier(dict_1)
+        assert var_0 is False
+        var_1 = identifier_3.validateIdentifier(dict_1)
+        list_0 = []
+        identifier_4 = module_0.Identifier(*list_0)
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        identifier_8 = module_0.Identifier()
+        dict_3 = {}
+        identifier_9 = module_0.Identifier()
+        var_2 = identifier_9.validateIdentifier(dict_3)
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier(**dict_3)
+        var_3 = identifier_13.validateIdentifier(dict_3)
+        str_0 = 'hv!T#0!bs0Mg;K&_aqC'
+        identifier_14 = module_0.Identifier()
+        var_4 = identifier_14.validateIdentifier(str_0)
+        assert var_4 is False
+        identifier_15 = module_0.Identifier()
+        dict_4 = {}
+        identifier_16 = module_0.Identifier(**dict_4)
+        identifier_17 = module_0.Identifier()
+        identifier_18 = module_0.Identifier(**dict_4)
+        var_5 = identifier_17.valid_s(str_0)
+>       assert var_5 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:21940: AssertionError
+   - [#  42] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' or ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[7.16105 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_1031
+
+def test_case_1031():
+        float_0 = 292.892
+        str_0 = '^uY -}H+:9~'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:34637: AssertionError
+   - [#  43] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' or ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[7.03295 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_1031
+
+def test_case_1031():
+        float_0 = 292.892
+        str_0 = '^uY -}H+:9~'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:34637: AssertionError
+   - [#  44] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') and (ch >= 'a' and ch <= 'z') and (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.29286 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_301
+
+def test_case_301():
+        dict_0 = {}
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_1 = module_0.Identifier()
+        var_1 = identifier_1.validateIdentifier(dict_1)
+        identifier_2 = module_0.Identifier()
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        dict_2 = {}
+        identifier_6 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_7 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_8 = module_0.Identifier(*list_0)
+        identifier_9 = module_0.Identifier()
+        identifier_10 = module_0.Identifier()
+        dict_4 = {}
+        identifier_11 = module_0.Identifier()
+        var_2 = identifier_11.validateIdentifier(dict_4)
+        identifier_12 = module_0.Identifier()
+        var_3 = identifier_11.validateIdentifier(dict_4)
+        identifier_13 = module_0.Identifier()
+        identifier_14 = module_0.Identifier()
+        identifier_15 = module_0.Identifier()
+        dict_5 = {}
+        identifier_16 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_17 = module_0.Identifier(**dict_6)
+        identifier_18 = module_0.Identifier()
+        identifier_19 = module_0.Identifier()
+        dict_7 = {}
+        identifier_20 = module_0.Identifier()
+        var_4 = identifier_20.validateIdentifier(dict_7)
+        identifier_21 = module_0.Identifier()
+        var_5 = identifier_20.validateIdentifier(dict_7)
+        identifier_22 = module_0.Identifier()
+        identifier_23 = module_0.Identifier()
+        identifier_24 = module_0.Identifier()
+        dict_8 = {}
+        identifier_25 = module_0.Identifier(**dict_8)
+        identifier_26 = module_0.Identifier()
+        identifier_27 = module_0.Identifier(**dict_8)
+        dict_9 = {}
+        identifier_28 = module_0.Identifier()
+        var_6 = identifier_28.validateIdentifier(dict_9)
+        str_0 = 'gRtoJkt/)\nb+:&"?'
+        var_7 = identifier_22.valid_f(str_0)
+>       assert var_7 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:10285: AssertionError
+   - [#  45] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' or ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.23984 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+   - [#  46] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' or ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.27267 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+   - [#  47] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' or ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.54350 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+   - [#  48] LCR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id or len(s) >= 1 or len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[6.53584 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+   - [#  49] OIL identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
+- 36:             else:
+- 37:                 return False
++ 34:                     break
++ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 36:                 return True
++ 37:             else:return False
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[6.34465 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+   - [#  50] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch <= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[6.96294 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_987
+
+def test_case_987():
+        dict_0 = {}
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(dict_0)
+        assert var_0 is False
+        identifier_1 = module_0.Identifier()
+        var_1 = identifier_0.validateIdentifier(dict_0)
+        identifier_2 = module_0.Identifier()
+        dict_1 = {}
+        identifier_3 = module_0.Identifier()
+        var_2 = identifier_3.validateIdentifier(dict_1)
+        dict_2 = {}
+        identifier_4 = module_0.Identifier()
+        var_3 = identifier_4.validateIdentifier(dict_2)
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_3 = {}
+        identifier_7 = module_0.Identifier()
+        var_4 = identifier_7.validateIdentifier(dict_3)
+        dict_4 = {}
+        identifier_8 = module_0.Identifier()
+        var_5 = identifier_8.validateIdentifier(dict_4)
+        identifier_9 = module_0.Identifier()
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        dict_5 = {}
+        identifier_13 = module_0.Identifier()
+        var_6 = identifier_13.validateIdentifier(dict_5)
+        dict_6 = {}
+        identifier_14 = module_0.Identifier()
+        var_7 = identifier_14.validateIdentifier(dict_6)
+        identifier_15 = module_0.Identifier()
+        identifier_16 = module_0.Identifier()
+        dict_7 = {}
+        identifier_17 = module_0.Identifier()
+        var_8 = identifier_17.validateIdentifier(dict_7)
+        identifier_18 = module_0.Identifier()
+        identifier_19 = module_0.Identifier()
+        dict_8 = {}
+        identifier_20 = module_0.Identifier(**dict_8)
+        dict_9 = {}
+        identifier_21 = module_0.Identifier(**dict_9)
+        str_0 = 'Pa>\x0c#F1^I7E}'
+        var_9 = identifier_20.valid_s(str_0)
+>       assert var_9 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:33204: AssertionError
+   - [#  51] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch > 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[4.55578 s] survived
+   - [#  52] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch >= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[7.11532 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_987
+
+def test_case_987():
+        dict_0 = {}
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(dict_0)
+        assert var_0 is False
+        identifier_1 = module_0.Identifier()
+        var_1 = identifier_0.validateIdentifier(dict_0)
+        identifier_2 = module_0.Identifier()
+        dict_1 = {}
+        identifier_3 = module_0.Identifier()
+        var_2 = identifier_3.validateIdentifier(dict_1)
+        dict_2 = {}
+        identifier_4 = module_0.Identifier()
+        var_3 = identifier_4.validateIdentifier(dict_2)
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_3 = {}
+        identifier_7 = module_0.Identifier()
+        var_4 = identifier_7.validateIdentifier(dict_3)
+        dict_4 = {}
+        identifier_8 = module_0.Identifier()
+        var_5 = identifier_8.validateIdentifier(dict_4)
+        identifier_9 = module_0.Identifier()
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        dict_5 = {}
+        identifier_13 = module_0.Identifier()
+        var_6 = identifier_13.validateIdentifier(dict_5)
+        dict_6 = {}
+        identifier_14 = module_0.Identifier()
+        var_7 = identifier_14.validateIdentifier(dict_6)
+        identifier_15 = module_0.Identifier()
+        identifier_16 = module_0.Identifier()
+        dict_7 = {}
+        identifier_17 = module_0.Identifier()
+        var_8 = identifier_17.validateIdentifier(dict_7)
+        identifier_18 = module_0.Identifier()
+        identifier_19 = module_0.Identifier()
+        dict_8 = {}
+        identifier_20 = module_0.Identifier(**dict_8)
+        dict_9 = {}
+        identifier_21 = module_0.Identifier(**dict_9)
+        str_0 = 'Pa>\x0c#F1^I7E}'
+        var_9 = identifier_20.valid_s(str_0)
+>       assert var_9 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:33204: AssertionError
+   - [#  53] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch < 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[4.70351 s] survived
+   - [#  54] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch <= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[6.46984 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_596
+
+def test_case_596():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier(**dict_0)
+        identifier_2 = module_0.Identifier()
+        dict_1 = {}
+        identifier_3 = module_0.Identifier()
+        var_0 = identifier_3.validateIdentifier(dict_1)
+        assert var_0 is False
+        var_1 = identifier_3.validateIdentifier(dict_1)
+        list_0 = []
+        identifier_4 = module_0.Identifier(*list_0)
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        identifier_8 = module_0.Identifier()
+        dict_3 = {}
+        identifier_9 = module_0.Identifier()
+        var_2 = identifier_9.validateIdentifier(dict_3)
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier(**dict_3)
+        var_3 = identifier_13.validateIdentifier(dict_3)
+        str_0 = 'hv!T#0!bs0Mg;K&_aqC'
+        identifier_14 = module_0.Identifier()
+        var_4 = identifier_14.validateIdentifier(str_0)
+        assert var_4 is False
+        identifier_15 = module_0.Identifier()
+        dict_4 = {}
+        identifier_16 = module_0.Identifier(**dict_4)
+        identifier_17 = module_0.Identifier()
+        identifier_18 = module_0.Identifier(**dict_4)
+        var_5 = identifier_17.valid_s(str_0)
+>       assert var_5 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:21940: AssertionError
+   - [#  55] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch > 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[4.65228 s] survived
+   - [#  56] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch >= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[6.50690 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_596
+
+def test_case_596():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier(**dict_0)
+        identifier_2 = module_0.Identifier()
+        dict_1 = {}
+        identifier_3 = module_0.Identifier()
+        var_0 = identifier_3.validateIdentifier(dict_1)
+        assert var_0 is False
+        var_1 = identifier_3.validateIdentifier(dict_1)
+        list_0 = []
+        identifier_4 = module_0.Identifier(*list_0)
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        identifier_8 = module_0.Identifier()
+        dict_3 = {}
+        identifier_9 = module_0.Identifier()
+        var_2 = identifier_9.validateIdentifier(dict_3)
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier(**dict_3)
+        var_3 = identifier_13.validateIdentifier(dict_3)
+        str_0 = 'hv!T#0!bs0Mg;K&_aqC'
+        identifier_14 = module_0.Identifier()
+        var_4 = identifier_14.validateIdentifier(str_0)
+        assert var_4 is False
+        identifier_15 = module_0.Identifier()
+        dict_4 = {}
+        identifier_16 = module_0.Identifier(**dict_4)
+        identifier_17 = module_0.Identifier()
+        identifier_18 = module_0.Identifier(**dict_4)
+        var_5 = identifier_17.valid_s(str_0)
+>       assert var_5 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:21940: AssertionError
+   - [#  57] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch < 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[4.53649 s] survived
+   - [#  58] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch <= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.53581 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_427
+
+def test_case_427():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier()
+        var_0 = identifier_1.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_2 = module_0.Identifier()
+        var_1 = identifier_2.validateIdentifier(dict_1)
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        dict_2 = {}
+        identifier_6 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_7 = module_0.Identifier(**dict_3)
+        var_2 = identifier_5.validateIdentifier(dict_2)
+        identifier_8 = module_0.Identifier()
+        dict_4 = {}
+        identifier_9 = module_0.Identifier()
+        var_3 = identifier_9.validateIdentifier(dict_4)
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        dict_5 = {}
+        identifier_13 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_14 = module_0.Identifier()
+        var_4 = identifier_14.validateIdentifier(dict_6)
+        identifier_15 = module_0.Identifier()
+        var_5 = identifier_14.validateIdentifier(dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        dict_8 = {}
+        identifier_20 = module_0.Identifier()
+        var_6 = identifier_20.validateIdentifier(dict_8)
+        var_7 = identifier_20.validateIdentifier(dict_8)
+        identifier_21 = module_0.Identifier()
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier(**dict_9)
+        dict_10 = {}
+        identifier_24 = module_0.Identifier(**dict_10)
+        var_8 = identifier_22.validateIdentifier(dict_9)
+        identifier_25 = module_0.Identifier()
+        dict_11 = {}
+        identifier_26 = module_0.Identifier()
+        var_9 = identifier_26.validateIdentifier(dict_11)
+        dict_12 = {}
+        identifier_27 = module_0.Identifier()
+        var_10 = identifier_27.validateIdentifier(dict_12)
+        identifier_28 = module_0.Identifier()
+        identifier_29 = module_0.Identifier()
+        dict_13 = {}
+        identifier_30 = module_0.Identifier()
+        var_11 = identifier_30.validateIdentifier(dict_13)
+        identifier_31 = module_0.Identifier()
+        identifier_32 = module_0.Identifier()
+        identifier_33 = module_0.Identifier()
+        str_0 = "'g[u3+4Vr_"
+        var_12 = identifier_23.valid_f(str_0)
+>       assert var_12 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:15027: AssertionError
+   - [#  59] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch > 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[4.69331 s] survived
+   - [#  60] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch >= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.65442 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_475
+
+def test_case_475():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier()
+        var_0 = identifier_1.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_2 = module_0.Identifier()
+        var_1 = identifier_2.validateIdentifier(dict_1)
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        dict_2 = {}
+        identifier_5 = module_0.Identifier()
+        var_2 = identifier_5.validateIdentifier(dict_2)
+        identifier_6 = module_0.Identifier()
+        var_3 = identifier_5.validateIdentifier(dict_2)
+        str_0 = 'C'
+        var_4 = identifier_1.valid_f(str_0)
+>       assert var_4 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:16954: AssertionError
+   - [#  61] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch < 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[4.65482 s] survived
+   - [#  62] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch <= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.41929 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_301
+
+def test_case_301():
+        dict_0 = {}
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_1 = module_0.Identifier()
+        var_1 = identifier_1.validateIdentifier(dict_1)
+        identifier_2 = module_0.Identifier()
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        dict_2 = {}
+        identifier_6 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_7 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_8 = module_0.Identifier(*list_0)
+        identifier_9 = module_0.Identifier()
+        identifier_10 = module_0.Identifier()
+        dict_4 = {}
+        identifier_11 = module_0.Identifier()
+        var_2 = identifier_11.validateIdentifier(dict_4)
+        identifier_12 = module_0.Identifier()
+        var_3 = identifier_11.validateIdentifier(dict_4)
+        identifier_13 = module_0.Identifier()
+        identifier_14 = module_0.Identifier()
+        identifier_15 = module_0.Identifier()
+        dict_5 = {}
+        identifier_16 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_17 = module_0.Identifier(**dict_6)
+        identifier_18 = module_0.Identifier()
+        identifier_19 = module_0.Identifier()
+        dict_7 = {}
+        identifier_20 = module_0.Identifier()
+        var_4 = identifier_20.validateIdentifier(dict_7)
+        identifier_21 = module_0.Identifier()
+        var_5 = identifier_20.validateIdentifier(dict_7)
+        identifier_22 = module_0.Identifier()
+        identifier_23 = module_0.Identifier()
+        identifier_24 = module_0.Identifier()
+        dict_8 = {}
+        identifier_25 = module_0.Identifier(**dict_8)
+        identifier_26 = module_0.Identifier()
+        identifier_27 = module_0.Identifier(**dict_8)
+        dict_9 = {}
+        identifier_28 = module_0.Identifier()
+        var_6 = identifier_28.validateIdentifier(dict_9)
+        str_0 = 'gRtoJkt/)\nb+:&"?'
+        var_7 = identifier_22.valid_f(str_0)
+>       assert var_7 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:10285: AssertionError
+   - [#  63] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch > 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[4.65741 s] survived
+   - [#  64] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch >= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.38896 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_301
+
+def test_case_301():
+        dict_0 = {}
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_1 = module_0.Identifier()
+        var_1 = identifier_1.validateIdentifier(dict_1)
+        identifier_2 = module_0.Identifier()
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        dict_2 = {}
+        identifier_6 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_7 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_8 = module_0.Identifier(*list_0)
+        identifier_9 = module_0.Identifier()
+        identifier_10 = module_0.Identifier()
+        dict_4 = {}
+        identifier_11 = module_0.Identifier()
+        var_2 = identifier_11.validateIdentifier(dict_4)
+        identifier_12 = module_0.Identifier()
+        var_3 = identifier_11.validateIdentifier(dict_4)
+        identifier_13 = module_0.Identifier()
+        identifier_14 = module_0.Identifier()
+        identifier_15 = module_0.Identifier()
+        dict_5 = {}
+        identifier_16 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_17 = module_0.Identifier(**dict_6)
+        identifier_18 = module_0.Identifier()
+        identifier_19 = module_0.Identifier()
+        dict_7 = {}
+        identifier_20 = module_0.Identifier()
+        var_4 = identifier_20.validateIdentifier(dict_7)
+        identifier_21 = module_0.Identifier()
+        var_5 = identifier_20.validateIdentifier(dict_7)
+        identifier_22 = module_0.Identifier()
+        identifier_23 = module_0.Identifier()
+        identifier_24 = module_0.Identifier()
+        dict_8 = {}
+        identifier_25 = module_0.Identifier(**dict_8)
+        identifier_26 = module_0.Identifier()
+        identifier_27 = module_0.Identifier(**dict_8)
+        dict_9 = {}
+        identifier_28 = module_0.Identifier()
+        var_6 = identifier_28.validateIdentifier(dict_9)
+        str_0 = 'gRtoJkt/)\nb+:&"?'
+        var_7 = identifier_22.valid_f(str_0)
+>       assert var_7 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:10285: AssertionError
+   - [#  65] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch < 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[4.66587 s] survived
+   - [#  66] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch <= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.46320 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_427
+
+def test_case_427():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier()
+        var_0 = identifier_1.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_2 = module_0.Identifier()
+        var_1 = identifier_2.validateIdentifier(dict_1)
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        dict_2 = {}
+        identifier_6 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_7 = module_0.Identifier(**dict_3)
+        var_2 = identifier_5.validateIdentifier(dict_2)
+        identifier_8 = module_0.Identifier()
+        dict_4 = {}
+        identifier_9 = module_0.Identifier()
+        var_3 = identifier_9.validateIdentifier(dict_4)
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        dict_5 = {}
+        identifier_13 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_14 = module_0.Identifier()
+        var_4 = identifier_14.validateIdentifier(dict_6)
+        identifier_15 = module_0.Identifier()
+        var_5 = identifier_14.validateIdentifier(dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        dict_8 = {}
+        identifier_20 = module_0.Identifier()
+        var_6 = identifier_20.validateIdentifier(dict_8)
+        var_7 = identifier_20.validateIdentifier(dict_8)
+        identifier_21 = module_0.Identifier()
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier(**dict_9)
+        dict_10 = {}
+        identifier_24 = module_0.Identifier(**dict_10)
+        var_8 = identifier_22.validateIdentifier(dict_9)
+        identifier_25 = module_0.Identifier()
+        dict_11 = {}
+        identifier_26 = module_0.Identifier()
+        var_9 = identifier_26.validateIdentifier(dict_11)
+        dict_12 = {}
+        identifier_27 = module_0.Identifier()
+        var_10 = identifier_27.validateIdentifier(dict_12)
+        identifier_28 = module_0.Identifier()
+        identifier_29 = module_0.Identifier()
+        dict_13 = {}
+        identifier_30 = module_0.Identifier()
+        var_11 = identifier_30.validateIdentifier(dict_13)
+        identifier_31 = module_0.Identifier()
+        identifier_32 = module_0.Identifier()
+        identifier_33 = module_0.Identifier()
+        str_0 = "'g[u3+4Vr_"
+        var_12 = identifier_23.valid_f(str_0)
+>       assert var_12 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:15027: AssertionError
+   - [#  67] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch > '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[4.56016 s] survived
+   - [#  68] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch >= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[6.90458 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_744
+
+def test_case_744():
+        float_0 = -4906.0
+        dict_0 = {float_0: float_0, float_0: float_0}
+        int_0 = 6
+        list_0 = [float_0, int_0, float_0]
+        list_1 = [dict_0, float_0, list_0, list_0]
+        tuple_0 = (dict_0, int_0, list_0, list_1)
+        list_2 = [tuple_0, list_0]
+        str_0 = '8lt{.~FW/ 3*-Ju.]'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:25927: AssertionError
+   - [#  69] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch < '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[4.53324 s] survived
+   - [#  70] ROR identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if len(s) < 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[4.53965 s] survived
+   - [#  71] ROR identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if len(s) >= 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[6.19208 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_0
+
+def test_case_0():
+        dict_0 = {}
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(dict_0)
+
+RANDOM/test_identifier1_RANDOM.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fe8fdca4100>, s = {}
+
+>   ???
+E   KeyError: 0
+
+identifier1:24: KeyError
+   - [#  72] ROR identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if len(s) < 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[6.55648 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+   - [#  73] ROR identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if len(s) >= 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[4.78591 s] survived
+   - [#  74] ROR identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+- 29:                 while i < len(s):
++ 29:                 while i > len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[6.29986 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+   - [#  75] ROR identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+- 29:                 while i < len(s):
++ 29:                 while i <= len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[6.17217 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+>       var_6 = identifier_31.validateIdentifier(str_0)
+
+RANDOM/test_identifier1_RANDOM.py:8833: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fe8fd4475e0>, s = 'vc?$B]'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:30: IndexError
+   - [#  76] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) <= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[4.64742 s] survived
+   - [#  77] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) > 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[4.67402 s] survived
+   - [#  78] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 1 and len(s) >= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[4.67036 s] survived
+   - [#  79] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 1 and len(s) < 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[4.68692 s] survived
+   - [#  80] SDI identifier1: 
+--------------------------------------------------------------------------------
+   1: 
+   2: class Identifier(object):
+   3:     ''' generated source for class Identifier '''
+   4:     
+-  5:     def valid_s(self, ch):
+-  6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+-  8:             return True
+-  9:         else:
+- 10:             return False
+- 11:     
++  5:     @staticmethod
++  6:     def valid_s(self, ch):
++  7:         ''' generated source for method valid_s '''
++  8:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  9:             return True
++ 10:         else:
++ 11:             return False
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+--------------------------------------------------------------------------------
+[6.42914 s] incompetent
+
+TypeError: identifier1:25: TypeError: Identifier.valid_s() missing 1 required positional argument: 'ch'
+
+   - [#  81] SDI identifier1: 
+--------------------------------------------------------------------------------
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+- 12:     def valid_f(self, ch):
+- 13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+- 15:             return True
+- 16:         else:
+- 17:             return False
+- 18:     
++ 12:     @staticmethod
++ 13:     def valid_f(self, ch):
++ 14:         ''' generated source for method valid_f '''
++ 15:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 16:             return True
++ 17:         else:
++ 18:             return False
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+--------------------------------------------------------------------------------
+[6.51758 s] incompetent
+
+TypeError: identifier1:31: TypeError: Identifier.valid_f() missing 1 required positional argument: 'ch'
+
+   - [#  82] SDI identifier1: 
+--------------------------------------------------------------------------------
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+- 19:     def validateIdentifier(self, s):
+- 20:         ''' generated source for method validateIdentifier '''
+- 21:         achar = str()
+- 22:         valid_id = False
+- 23:         if len(s) > 0:
+- 24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
+- 27:                 achar = s[1]
+- 28:                 i = 1
+- 29:                 while i < len(s):
+- 30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
+- 33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
+- 36:             else:
+- 37:                 return False
+- 38:         else:
+- 39:             return False
++ 19:     @staticmethod
++ 20:     def validateIdentifier(self, s):
++ 21:         ''' generated source for method validateIdentifier '''
++ 22:         achar = str()
++ 23:         valid_id = False
++ 24:         if len(s) > 0:
++ 25:             achar = s[0]
++ 26:             valid_id = self.valid_s(achar)
++ 27:             if len(s) > 1:
++ 28:                 achar = s[1]
++ 29:                 i = 1
++ 30:                 while i < len(s):
++ 31:                     achar = s[i]
++ 32:                     if not (self.valid_f(achar)):
++ 33:                         valid_id = False
++ 34:                     i += 1
++ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 36:                 return True
++ 37:             else:
++ 38:                 return False
++ 39:         else:
++ 40:             return False
+--------------------------------------------------------------------------------
+[5.98247 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/identifier1/RANDOM/test_identifier1_RANDOM.py:9: TypeError: Identifier.validateIdentifier() missing 1 required positional argument: 's'
+
+   - [#  83] SDL identifier1: 
+--------------------------------------------------------------------------------
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+   7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+-  8:             return True
++  8:             pass
+   9:         else:
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+--------------------------------------------------------------------------------
+[6.73167 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_596
+
+def test_case_596():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier(**dict_0)
+        identifier_2 = module_0.Identifier()
+        dict_1 = {}
+        identifier_3 = module_0.Identifier()
+        var_0 = identifier_3.validateIdentifier(dict_1)
+        assert var_0 is False
+        var_1 = identifier_3.validateIdentifier(dict_1)
+        list_0 = []
+        identifier_4 = module_0.Identifier(*list_0)
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        identifier_8 = module_0.Identifier()
+        dict_3 = {}
+        identifier_9 = module_0.Identifier()
+        var_2 = identifier_9.validateIdentifier(dict_3)
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier(**dict_3)
+        var_3 = identifier_13.validateIdentifier(dict_3)
+        str_0 = 'hv!T#0!bs0Mg;K&_aqC'
+        identifier_14 = module_0.Identifier()
+        var_4 = identifier_14.validateIdentifier(str_0)
+        assert var_4 is False
+        identifier_15 = module_0.Identifier()
+        dict_4 = {}
+        identifier_16 = module_0.Identifier(**dict_4)
+        identifier_17 = module_0.Identifier()
+        identifier_18 = module_0.Identifier(**dict_4)
+        var_5 = identifier_17.valid_s(str_0)
+>       assert var_5 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:21940: AssertionError
+   - [#  84] SDL identifier1: 
+--------------------------------------------------------------------------------
+   6:         ''' generated source for method valid_s '''
+   7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+- 10:             return False
++ 10:             pass
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+--------------------------------------------------------------------------------
+[7.13607 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_1031
+
+def test_case_1031():
+        float_0 = 292.892
+        str_0 = '^uY -}H+:9~'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:34637: AssertionError
+   - [#  85] SDL identifier1: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+- 15:             return True
++ 15:             pass
+  16:         else:
+  17:             return False
+  18:     
+  19:     def validateIdentifier(self, s):
+--------------------------------------------------------------------------------
+[6.48855 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_301
+
+def test_case_301():
+        dict_0 = {}
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_1 = module_0.Identifier()
+        var_1 = identifier_1.validateIdentifier(dict_1)
+        identifier_2 = module_0.Identifier()
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        dict_2 = {}
+        identifier_6 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_7 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_8 = module_0.Identifier(*list_0)
+        identifier_9 = module_0.Identifier()
+        identifier_10 = module_0.Identifier()
+        dict_4 = {}
+        identifier_11 = module_0.Identifier()
+        var_2 = identifier_11.validateIdentifier(dict_4)
+        identifier_12 = module_0.Identifier()
+        var_3 = identifier_11.validateIdentifier(dict_4)
+        identifier_13 = module_0.Identifier()
+        identifier_14 = module_0.Identifier()
+        identifier_15 = module_0.Identifier()
+        dict_5 = {}
+        identifier_16 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_17 = module_0.Identifier(**dict_6)
+        identifier_18 = module_0.Identifier()
+        identifier_19 = module_0.Identifier()
+        dict_7 = {}
+        identifier_20 = module_0.Identifier()
+        var_4 = identifier_20.validateIdentifier(dict_7)
+        identifier_21 = module_0.Identifier()
+        var_5 = identifier_20.validateIdentifier(dict_7)
+        identifier_22 = module_0.Identifier()
+        identifier_23 = module_0.Identifier()
+        identifier_24 = module_0.Identifier()
+        dict_8 = {}
+        identifier_25 = module_0.Identifier(**dict_8)
+        identifier_26 = module_0.Identifier()
+        identifier_27 = module_0.Identifier(**dict_8)
+        dict_9 = {}
+        identifier_28 = module_0.Identifier()
+        var_6 = identifier_28.validateIdentifier(dict_9)
+        str_0 = 'gRtoJkt/)\nb+:&"?'
+        var_7 = identifier_22.valid_f(str_0)
+>       assert var_7 is True
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:10285: AssertionError
+   - [#  86] SDL identifier1: 
+--------------------------------------------------------------------------------
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+- 17:             return False
++ 17:             pass
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+--------------------------------------------------------------------------------
+[6.31089 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_427
+
+def test_case_427():
+        identifier_0 = module_0.Identifier()
+        dict_0 = {}
+        identifier_1 = module_0.Identifier()
+        var_0 = identifier_1.validateIdentifier(dict_0)
+        assert var_0 is False
+        dict_1 = {}
+        identifier_2 = module_0.Identifier()
+        var_1 = identifier_2.validateIdentifier(dict_1)
+        identifier_3 = module_0.Identifier()
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        dict_2 = {}
+        identifier_6 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_7 = module_0.Identifier(**dict_3)
+        var_2 = identifier_5.validateIdentifier(dict_2)
+        identifier_8 = module_0.Identifier()
+        dict_4 = {}
+        identifier_9 = module_0.Identifier()
+        var_3 = identifier_9.validateIdentifier(dict_4)
+        identifier_10 = module_0.Identifier()
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        dict_5 = {}
+        identifier_13 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_14 = module_0.Identifier()
+        var_4 = identifier_14.validateIdentifier(dict_6)
+        identifier_15 = module_0.Identifier()
+        var_5 = identifier_14.validateIdentifier(dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        dict_8 = {}
+        identifier_20 = module_0.Identifier()
+        var_6 = identifier_20.validateIdentifier(dict_8)
+        var_7 = identifier_20.validateIdentifier(dict_8)
+        identifier_21 = module_0.Identifier()
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier(**dict_9)
+        dict_10 = {}
+        identifier_24 = module_0.Identifier(**dict_10)
+        var_8 = identifier_22.validateIdentifier(dict_9)
+        identifier_25 = module_0.Identifier()
+        dict_11 = {}
+        identifier_26 = module_0.Identifier()
+        var_9 = identifier_26.validateIdentifier(dict_11)
+        dict_12 = {}
+        identifier_27 = module_0.Identifier()
+        var_10 = identifier_27.validateIdentifier(dict_12)
+        identifier_28 = module_0.Identifier()
+        identifier_29 = module_0.Identifier()
+        dict_13 = {}
+        identifier_30 = module_0.Identifier()
+        var_11 = identifier_30.validateIdentifier(dict_13)
+        identifier_31 = module_0.Identifier()
+        identifier_32 = module_0.Identifier()
+        identifier_33 = module_0.Identifier()
+        str_0 = "'g[u3+4Vr_"
+        var_12 = identifier_23.valid_f(str_0)
+>       assert var_12 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:15027: AssertionError
+   - [#  87] SDL identifier1: 
+--------------------------------------------------------------------------------
+  17:             return False
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+- 21:         achar = str()
++ 21:         pass
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+--------------------------------------------------------------------------------
+[4.40292 s] survived
+   - [#  88] SDL identifier1: 
+--------------------------------------------------------------------------------
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+- 22:         valid_id = False
++ 22:         pass
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+--------------------------------------------------------------------------------
+[4.52193 s] survived
+   - [#  89] SDL identifier1: 
+--------------------------------------------------------------------------------
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+- 24:             achar = s[0]
++ 24:             pass
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+--------------------------------------------------------------------------------
+[4.40152 s] survived
+   - [#  90] SDL identifier1: 
+--------------------------------------------------------------------------------
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
++ 25:             pass
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+--------------------------------------------------------------------------------
+[4.49236 s] survived
+   - [#  91] SDL identifier1: 
+--------------------------------------------------------------------------------
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+- 27:                 achar = s[1]
++ 27:                 pass
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+--------------------------------------------------------------------------------
+[4.41134 s] survived
+   - [#  92] SDL identifier1: 
+--------------------------------------------------------------------------------
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+- 28:                 i = 1
++ 28:                 pass
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+--------------------------------------------------------------------------------
+[6.02053 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+>       var_6 = identifier_31.validateIdentifier(str_0)
+
+RANDOM/test_identifier1_RANDOM.py:8833: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fe8fd447e80>, s = 'vc?$B]'
+
+>   ???
+E   UnboundLocalError: local variable 'i' referenced before assignment
+
+identifier1:29: UnboundLocalError
+   - [#  93] SDL identifier1: 
+--------------------------------------------------------------------------------
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+- 30:                     achar = s[i]
++ 30:                     pass
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+--------------------------------------------------------------------------------
+[6.48679 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+   - [#  94] SDL identifier1: 
+--------------------------------------------------------------------------------
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
++ 32:                         pass
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+--------------------------------------------------------------------------------
+[6.21924 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+   - [#  95] SDL identifier1: 
+--------------------------------------------------------------------------------
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
++ 35:                 pass
+  36:             else:
+  37:                 return False
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[4.52935 s] survived
+   - [#  96] SDL identifier1: 
+--------------------------------------------------------------------------------
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+- 37:                 return False
++ 37:                 pass
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[6.45790 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+   - [#  97] SDL identifier1: 
+--------------------------------------------------------------------------------
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+- 39:             return False
++ 39:             pass
+--------------------------------------------------------------------------------
+[6.09035 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_0
+
+def test_case_0():
+        dict_0 = {}
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(dict_0)
+>       assert var_0 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:10: AssertionError
+   - [#  98] SVD identifier1: 
+--------------------------------------------------------------------------------
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
++ 25:             valid_id = valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+--------------------------------------------------------------------------------
+[6.39520 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+>       var_6 = identifier_31.validateIdentifier(str_0)
+
+RANDOM/test_identifier1_RANDOM.py:8833: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fe8fd4473a0>, s = 'vc?$B]'
+
+>   ???
+E   NameError: name 'valid_s' is not defined
+
+identifier1:25: NameError
+   - [#  99] SVD identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
++ 31:                     if not (valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[6.52361 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+>       var_6 = identifier_31.validateIdentifier(str_0)
+
+RANDOM/test_identifier1_RANDOM.py:8833: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fe8fd447970>, s = 'vc?$B]'
+
+>   ???
+E   NameError: name 'valid_f' is not defined
+
+identifier1:31: NameError
+   - [# 100] ZIL identifier1: 
+--------------------------------------------------------------------------------
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+- 30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
+- 33:                     i += 1
++ 30:                     break
++ 31:             
++ 32:             
++ 33:             
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[6.48321 s] killed by RANDOM/test_identifier1_RANDOM.py::test_case_262
+
+def test_case_262():
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        dict_0 = {}
+        identifier_2 = module_0.Identifier(**dict_0)
+        dict_1 = {}
+        identifier_3 = module_0.Identifier(**dict_1)
+        identifier_4 = module_0.Identifier()
+        identifier_5 = module_0.Identifier()
+        identifier_6 = module_0.Identifier()
+        dict_2 = {}
+        identifier_7 = module_0.Identifier(**dict_2)
+        dict_3 = {}
+        identifier_8 = module_0.Identifier(**dict_3)
+        list_0 = []
+        identifier_9 = module_0.Identifier(*list_0)
+        dict_4 = {}
+        identifier_10 = module_0.Identifier()
+        var_0 = identifier_10.validateIdentifier(dict_4)
+        assert var_0 is False
+        identifier_11 = module_0.Identifier()
+        identifier_12 = module_0.Identifier()
+        identifier_13 = module_0.Identifier()
+        dict_5 = {}
+        identifier_14 = module_0.Identifier(**dict_5)
+        dict_6 = {}
+        identifier_15 = module_0.Identifier(**dict_6)
+        identifier_16 = module_0.Identifier()
+        identifier_17 = module_0.Identifier()
+        dict_7 = {}
+        identifier_18 = module_0.Identifier(**dict_7)
+        identifier_19 = module_0.Identifier()
+        var_1 = identifier_17.validateIdentifier(dict_7)
+        identifier_20 = module_0.Identifier()
+        dict_8 = {}
+        identifier_21 = module_0.Identifier(**dict_8)
+        identifier_22 = module_0.Identifier()
+        dict_9 = {}
+        identifier_23 = module_0.Identifier()
+        var_2 = identifier_23.validateIdentifier(dict_9)
+        var_3 = identifier_23.validateIdentifier(dict_9)
+        identifier_24 = module_0.Identifier()
+        dict_10 = {}
+        identifier_25 = module_0.Identifier(**dict_10)
+        identifier_26 = module_0.Identifier()
+        list_1 = []
+        identifier_27 = module_0.Identifier(*list_1)
+        identifier_28 = module_0.Identifier()
+        dict_11 = {}
+        identifier_29 = module_0.Identifier()
+        var_4 = identifier_29.validateIdentifier(dict_11)
+        identifier_30 = module_0.Identifier()
+        var_5 = identifier_29.validateIdentifier(dict_11)
+        identifier_31 = module_0.Identifier()
+        dict_12 = {}
+        identifier_32 = module_0.Identifier(**dict_12)
+        dict_13 = {}
+        identifier_33 = module_0.Identifier(**dict_13)
+        str_0 = 'vc?$B]'
+        var_6 = identifier_31.validateIdentifier(str_0)
+>       assert var_6 is False
+E       AssertionError
+
+RANDOM/test_identifier1_RANDOM.py:8834: AssertionError
+[*] Mutation score [590.50559 s]: 60.4%
+   - all: 100
+   - killed: 58 (58.0%)
+   - survived: 38 (38.0%)
+   - incompetent: 4 (4.0%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,240 @@
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/lucca/desktop/ic/experimento/testes/python_experiments/binarySearchTree1/binarySearchTree1.py
+ - Test commands: ['python', '-m', 'pytest', '--tb=no', './ALL-SMART-GPT-MUTPY']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10000
+ - Random seed: 2023
+
+Random sample details
+---------------------
+ - Total locations mutated: 67
+ - Total locations identified: 67
+ - Location sample coverage: 100.00 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:01.293782
+ - Clean trial 2 run time: 0:00:00.978017
+ - Mutation trials total run time: 0:03:16.687265
+
+Overall mutation trial summary
+==============================
+ - DETECTED: 189
+ - SURVIVED: 11
+ - TOTAL RUNS: 200
+ - RUN DATETIME: 2024-02-23 17:47:29.075625
+
+
+Mutations by result status
+==========================
+
+
+SURVIVED
+--------
+ - binarySearchTree1.py: (l: 20, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 20, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.GtE'>
+ - binarySearchTree1.py: (l: 20, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.NotEq'>
+ - binarySearchTree1.py: (l: 37, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.NotEq'>
+ - binarySearchTree1.py: (l: 124, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.NotEq'>
+ - binarySearchTree1.py: (l: 140, c: 23) - mutation from <class 'ast.Sub'> to <class 'ast.Add'>
+ - binarySearchTree1.py: (l: 140, c: 23) - mutation from <class 'ast.Sub'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 145, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 147, c: 12) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.NotEq'>
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.GtE'>
+
+
+DETECTED
+--------
+ - binarySearchTree1.py: (l: 11, c: 23) - mutation from None to True
+ - binarySearchTree1.py: (l: 11, c: 23) - mutation from None to False
+ - binarySearchTree1.py: (l: 12, c: 23) - mutation from None to True
+ - binarySearchTree1.py: (l: 12, c: 23) - mutation from None to False
+ - binarySearchTree1.py: (l: 18, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 18, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 18, c: 11) - mutation from <class 'ast.LtE'> to <class 'ast.Lt'>
+ - binarySearchTree1.py: (l: 18, c: 11) - mutation from <class 'ast.LtE'> to <class 'ast.GtE'>
+ - binarySearchTree1.py: (l: 18, c: 11) - mutation from <class 'ast.LtE'> to <class 'ast.Gt'>
+ - binarySearchTree1.py: (l: 18, c: 11) - mutation from <class 'ast.LtE'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 18, c: 11) - mutation from <class 'ast.LtE'> to <class 'ast.NotEq'>
+ - binarySearchTree1.py: (l: 20, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 20, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.Lt'>
+ - binarySearchTree1.py: (l: 20, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 20, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 25, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 25, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 25, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - binarySearchTree1.py: (l: 25, c: 21) - mutation from None to True
+ - binarySearchTree1.py: (l: 25, c: 21) - mutation from None to False
+ - binarySearchTree1.py: (l: 35, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 35, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 35, c: 11) - mutation from <class 'ast.Lt'> to <class 'ast.NotEq'>
+ - binarySearchTree1.py: (l: 35, c: 11) - mutation from <class 'ast.Lt'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 35, c: 11) - mutation from <class 'ast.Lt'> to <class 'ast.GtE'>
+ - binarySearchTree1.py: (l: 35, c: 11) - mutation from <class 'ast.Lt'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 35, c: 11) - mutation from <class 'ast.Lt'> to <class 'ast.Gt'>
+ - binarySearchTree1.py: (l: 37, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 37, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 37, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 37, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.Lt'>
+ - binarySearchTree1.py: (l: 37, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 37, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.GtE'>
+ - binarySearchTree1.py: (l: 40, c: 12) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 40, c: 12) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 40, c: 15) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - binarySearchTree1.py: (l: 40, c: 28) - mutation from None to False
+ - binarySearchTree1.py: (l: 40, c: 28) - mutation from None to True
+ - binarySearchTree1.py: (l: 56, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 56, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 58, c: 15) - mutation from None to False
+ - binarySearchTree1.py: (l: 58, c: 15) - mutation from None to True
+ - binarySearchTree1.py: (l: 64, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 64, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 66, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 66, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 72, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 72, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 78, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 78, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 86, c: 20) - mutation from None to True
+ - binarySearchTree1.py: (l: 86, c: 20) - mutation from None to False
+ - binarySearchTree1.py: (l: 90, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 90, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 90, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - binarySearchTree1.py: (l: 90, c: 24) - mutation from None to True
+ - binarySearchTree1.py: (l: 90, c: 24) - mutation from None to False
+ - binarySearchTree1.py: (l: 97, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 97, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 102, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 102, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 102, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - binarySearchTree1.py: (l: 102, c: 24) - mutation from None to True
+ - binarySearchTree1.py: (l: 102, c: 24) - mutation from None to False
+ - binarySearchTree1.py: (l: 105, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.GtE'>
+ - binarySearchTree1.py: (l: 105, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 105, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 105, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Lt'>
+ - binarySearchTree1.py: (l: 105, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Gt'>
+ - binarySearchTree1.py: (l: 105, c: 24) - mutation from None to False
+ - binarySearchTree1.py: (l: 105, c: 24) - mutation from None to True
+ - binarySearchTree1.py: (l: 111, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 111, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 111, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - binarySearchTree1.py: (l: 111, c: 24) - mutation from None to True
+ - binarySearchTree1.py: (l: 111, c: 24) - mutation from None to False
+ - binarySearchTree1.py: (l: 114, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Lt'>
+ - binarySearchTree1.py: (l: 114, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Gt'>
+ - binarySearchTree1.py: (l: 114, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 114, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 114, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.GtE'>
+ - binarySearchTree1.py: (l: 114, c: 25) - mutation from None to True
+ - binarySearchTree1.py: (l: 114, c: 25) - mutation from None to False
+ - binarySearchTree1.py: (l: 122, c: 12) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 122, c: 12) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 122, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.GtE'>
+ - binarySearchTree1.py: (l: 122, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.Gt'>
+ - binarySearchTree1.py: (l: 122, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.NotEq'>
+ - binarySearchTree1.py: (l: 122, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 122, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 124, c: 12) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 124, c: 12) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 124, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 124, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 124, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.Lt'>
+ - binarySearchTree1.py: (l: 124, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.GtE'>
+ - binarySearchTree1.py: (l: 127, c: 23) - mutation from True to False
+ - binarySearchTree1.py: (l: 127, c: 23) - mutation from True to None
+ - binarySearchTree1.py: (l: 129, c: 15) - mutation from False to True
+ - binarySearchTree1.py: (l: 129, c: 15) - mutation from False to None
+ - binarySearchTree1.py: (l: 136, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 136, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 136, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - binarySearchTree1.py: (l: 136, c: 24) - mutation from None to True
+ - binarySearchTree1.py: (l: 136, c: 24) - mutation from None to False
+ - binarySearchTree1.py: (l: 137, c: 19) - mutation from None to False
+ - binarySearchTree1.py: (l: 137, c: 19) - mutation from None to True
+ - binarySearchTree1.py: (l: 140, c: 23) - mutation from <class 'ast.Sub'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 140, c: 23) - mutation from <class 'ast.Sub'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 140, c: 23) - mutation from <class 'ast.Sub'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 140, c: 23) - mutation from <class 'ast.Sub'> to <class 'ast.Div'>
+ - binarySearchTree1.py: (l: 142, c: 12) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 142, c: 12) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 142, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.Gt'>
+ - binarySearchTree1.py: (l: 142, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.GtE'>
+ - binarySearchTree1.py: (l: 142, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 142, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 142, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.NotEq'>
+ - binarySearchTree1.py: (l: 142, c: 19) - mutation from <class 'ast.Sub'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 142, c: 19) - mutation from <class 'ast.Sub'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 142, c: 19) - mutation from <class 'ast.Sub'> to <class 'ast.Div'>
+ - binarySearchTree1.py: (l: 142, c: 19) - mutation from <class 'ast.Sub'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 142, c: 19) - mutation from <class 'ast.Sub'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 142, c: 19) - mutation from <class 'ast.Sub'> to <class 'ast.Add'>
+ - binarySearchTree1.py: (l: 143, c: 31) - mutation from <class 'ast.Sub'> to <class 'ast.Add'>
+ - binarySearchTree1.py: (l: 143, c: 31) - mutation from <class 'ast.Sub'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 143, c: 31) - mutation from <class 'ast.Sub'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 143, c: 31) - mutation from <class 'ast.Sub'> to <class 'ast.Div'>
+ - binarySearchTree1.py: (l: 143, c: 31) - mutation from <class 'ast.Sub'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 143, c: 31) - mutation from <class 'ast.Sub'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 145, c: 12) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 145, c: 12) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 145, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.NotEq'>
+ - binarySearchTree1.py: (l: 145, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.GtE'>
+ - binarySearchTree1.py: (l: 145, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.Gt'>
+ - binarySearchTree1.py: (l: 145, c: 15) - mutation from <class 'ast.Lt'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 147, c: 12) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.Lt'>
+ - binarySearchTree1.py: (l: 156, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 156, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 161, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 161, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 161, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - binarySearchTree1.py: (l: 161, c: 24) - mutation from None to True
+ - binarySearchTree1.py: (l: 161, c: 24) - mutation from None to False
+ - binarySearchTree1.py: (l: 163, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 163, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 163, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 163, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 163, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - binarySearchTree1.py: (l: 163, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>

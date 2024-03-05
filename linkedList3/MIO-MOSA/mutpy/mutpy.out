@@ -1,0 +1,3017 @@
+[*] Start mutation process:
+   - targets: linkedList3.py
+   - tests: ./MIO-MOSA
+[*] 25 tests passed:
+   - test_linkedList3_MIO [0.05853 s]
+   - test_linkedList3_MOSA [0.04364 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+-  29:             self.__size += 1
++  29:             self.__size -= 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+--------------------------------------------------------------------------------
+[0.08575 s] killed by MIO-MOSA/test_linkedList3_MOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+>       assert int_0 == 1
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MOSA.py:25: AssertionError
+   - [#   2] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+-  34:             self.__size += 1
++  34:             self.__size -= 1
+   35:     
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[0.08182 s] killed by MIO-MOSA/test_linkedList3_MOSA.py::test_case_10
+
+def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+        assert bool_2 is False
+        node_0 = module_0.Node(singly_linked_list_0)
+        node_1 = module_0.Node(node_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_1 = []
+        bool_3 = singly_linked_list_0.isEmpty()
+>       assert bool_3 is False
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MOSA.py:106: AssertionError
+   - [#   3] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
++  46:             self.__size += 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[0.06085 s] survived
+   - [#   4] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
++  52:             self.__size += 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+--------------------------------------------------------------------------------
+[0.06015 s] survived
+   - [#   5] CDI linkedList3: 
+--------------------------------------------------------------------------------
+    6: T = TypeVar('T')
+    7: 
+    8: 
+    9: class Node:
+-  10:     def __init__(self, value: T):
+-  11:         self.value = value
+-  12:         self.next = None
+-  13: 
++  10:     @classmethod
++  11:     def __init__(self, value: T):
++  12:         self.value = value
++  13:         self.next = None
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+--------------------------------------------------------------------------------
+[0.07968 s] killed by MIO-MOSA/test_linkedList3_MOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+>       assert node_1.value is None
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MOSA.py:32: AssertionError
+   - [#   6] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+-  16:     def __init__(self):
+-  17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
+-  20:     
++  16:     @classmethod
++  17:     def __init__(self):
++  18:         self.__sentinel = Node(None)
++  19:         self.__head = self.__sentinel
++  20:         self.__size = 0
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+--------------------------------------------------------------------------------
+[0.07782 s] killed by MIO-MOSA/test_linkedList3_MOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+>       assert node_1.next is None
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MOSA.py:33: AssertionError
+   - [#   7] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+-  21:     def add(self, value: T) -> None:
+-  22:         
+-  23:         '''Add element to linked list.'''
+-  24:         
+-  25:         newNode = Node(value)
+-  26:         if self.__size == 0:
+-  27:             self.__head.next = newNode
+-  28:             self.__head = newNode
+-  29:             self.__size += 1
+-  30:         else:
+-  31:             self.__sentinel.next = newNode
+-  32:             newNode.next = self.__head
+-  33:             self.__head = newNode
+-  34:             self.__size += 1
+-  35:     
++  21:     @classmethod
++  22:     def add(self, value: T) -> None:
++  23:         
++  24:         '''Add element to linked list.'''
++  25:         
++  26:         newNode = Node(value)
++  27:         if self.__size == 0:
++  28:             self.__head.next = newNode
++  29:             self.__head = newNode
++  30:             self.__size += 1
++  31:         else:
++  32:             self.__sentinel.next = newNode
++  33:             newNode.next = self.__head
++  34:             self.__head = newNode
++  35:             self.__size += 1
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+--------------------------------------------------------------------------------
+[0.07417 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+MIO-MOSA/test_linkedList3_MIO.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+value = <linkedList3.SinglyLinkedList object at 0x7f4613e9c970>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:27: AttributeError
+   - [#   8] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+-  36:     def remove(self):
+-  37:         
+-  38:         '''Remove node from linkedlist.'''
+-  39:         
+-  40:         if self.__size == 0:
+-  41:             return None
+-  42:         if self.__size >= 1:
+-  43:             nodeToRemove = self.__head
+-  44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
+-  47:             return nodeToRemove
+-  48:         else:
+-  49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
+-  53:             return nodeToRemove
+-  54:     
++  36:     @classmethod
++  37:     def remove(self):
++  38:         
++  39:         '''Remove node from linkedlist.'''
++  40:         
++  41:         if self.__size == 0:
++  42:             return None
++  43:         if self.__size >= 1:
++  44:             nodeToRemove = self.__head
++  45:             self.__sentinel.next = None
++  46:             self.__head = self.__sentinel
++  47:             self.__size -= 1
++  48:             return nodeToRemove
++  49:         else:
++  50:             nodeToRemove = self.__head
++  51:             self.__sentinel.next = self.__head.next
++  52:             self.__head = self.__sentinel.next
++  53:             self.__size -= 1
++  54:             return nodeToRemove
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+--------------------------------------------------------------------------------
+[0.07399 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       var_0 = singly_linked_list_0.remove()
+
+MIO-MOSA/test_linkedList3_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:41: AttributeError
+   - [#   9] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+-  55:     def getHead(self) -> T:
+-  56:         
+-  57:         '''Get value of the linkedlist head node.'''
+-  58:         
+-  59:         return self.__head.value
+-  60:     
++  55:     @classmethod
++  56:     def getHead(self) -> T:
++  57:         
++  58:         '''Get value of the linkedlist head node.'''
++  59:         
++  60:         return self.__head.value
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+--------------------------------------------------------------------------------
+[0.08048 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_11
+
+def test_case_11():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       var_0 = singly_linked_list_0.getHead()
+
+MIO-MOSA/test_linkedList3_MIO.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:60: AttributeError
+   - [#  10] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+   59:         return self.__head.value
+   60:     
+-  61:     def getHeadNode(self) -> Node:
+-  62:         
+-  63:         '''Get head node referance.'''
+-  64:         
+-  65:         return self.__head
+-  66:     
++  61:     @classmethod
++  62:     def getHeadNode(self) -> Node:
++  63:         
++  64:         '''Get head node referance.'''
++  65:         
++  66:         return self.__head
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+--------------------------------------------------------------------------------
+[0.08122 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_12
+
+def test_case_12():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       node_0 = singly_linked_list_0.getHeadNode()
+
+MIO-MOSA/test_linkedList3_MIO.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:66: AttributeError
+   - [#  11] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   63:         '''Get head node referance.'''
+   64:         
+   65:         return self.__head
+   66:     
+-  67:     def getSize(self) -> int:
+-  68:         
+-  69:         '''Return size of the linkedlist.'''
+-  70:         
+-  71:         return self.__size
+-  72:     
++  67:     @classmethod
++  68:     def getSize(self) -> int:
++  69:         
++  70:         '''Return size of the linkedlist.'''
++  71:         
++  72:         return self.__size
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+--------------------------------------------------------------------------------
+[0.07775 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_13
+
+def test_case_13():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       int_0 = singly_linked_list_0.getSize()
+
+MIO-MOSA/test_linkedList3_MIO.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:72: AttributeError
+   - [#  12] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   69:         '''Return size of the linkedlist.'''
+   70:         
+   71:         return self.__size
+   72:     
+-  73:     def isEmpty(self) -> bool:
+-  74:         
+-  75:         '''Checks if linkedlist is empty.'''
+-  76:         
+-  77:         return True if self.__size == 0 else False
+-  78:     
++  73:     @classmethod
++  74:     def isEmpty(self) -> bool:
++  75:         
++  76:         '''Checks if linkedlist is empty.'''
++  77:         
++  78:         return True if self.__size == 0 else False
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+--------------------------------------------------------------------------------
+[0.07477 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_5
+
+def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       bool_0 = singly_linked_list_0.isEmpty()
+
+MIO-MOSA/test_linkedList3_MIO.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:78: AttributeError
+   - [#  13] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+   77:         return True if self.__size == 0 else False
+   78:     
+-  79:     def toArray(self) -> list:
+-  80:         
+-  81:         '''Converts linkedlist to list.'''
+-  82:         
+-  83:         arr = []
+-  84:         current = self.__head
+-  85:         while current:
+-  86:             arr.append(current.value)
+-  87:             current = current.next
+-  88:         return arr
+-  89:     
++  79:     @classmethod
++  80:     def toArray(self) -> list:
++  81:         
++  82:         '''Converts linkedlist to list.'''
++  83:         
++  84:         arr = []
++  85:         current = self.__head
++  86:         while current:
++  87:             arr.append(current.value)
++  88:             current = current.next
++  89:         return arr
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+--------------------------------------------------------------------------------
+[0.07835 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_7
+
+def test_case_7():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = None
+        none_type_1 = singly_linked_list_0.add(none_type_0)
+        none_type_2 = singly_linked_list_0.add(none_type_0)
+>       list_0 = singly_linked_list_0.toArray()
+
+MIO-MOSA/test_linkedList3_MIO.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:85: AttributeError
+   - [#  14] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+   89:     
+-  90:     def __str__(self) -> str:
+-  91:         
+-  92:         '''Return String representation of linkedlist values.'''
+-  93:         
+-  94:         arr = []
+-  95:         current = self.__head
+-  96:         while current:
+-  97:             arr.append(current.value)
+-  98:             current = current.next
+-  99:         return str(arr)
+- 100: 
++  90:     @classmethod
++  91:     def __str__(self) -> str:
++  92:         
++  93:         '''Return String representation of linkedlist values.'''
++  94:         
++  95:         arr = []
++  96:         current = self.__head
++  97:         while current:
++  98:             arr.append(current.value)
++  99:             current = current.next
++ 100:         return str(arr)
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.09253 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_9
+
+def test_case_9():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(none_type_0)
+>       str_0 = singly_linked_list_0.__str__()
+
+MIO-MOSA/test_linkedList3_MIO.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:96: AttributeError
+   - [#  15] COI linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+-  26:         if self.__size == 0:
++  26:         if not (self.__size == 0):
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[0.07249 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+>       assert var_0.next is None
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:22: AssertionError
+   - [#  16] COI linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+-  40:         if self.__size == 0:
++  40:         if not (self.__size == 0):
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.06884 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:20: AssertionError
+   - [#  17] COI linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if not (self.__size >= 1):
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.06302 s] survived
+   - [#  18] COI linkedList3: 
+--------------------------------------------------------------------------------
+   81:         '''Converts linkedlist to list.'''
+   82:         
+   83:         arr = []
+   84:         current = self.__head
+-  85:         while current:
++  85:         while not current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+   89:     
+--------------------------------------------------------------------------------
+[0.06206 s] survived
+   - [#  19] COI linkedList3: 
+--------------------------------------------------------------------------------
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+   94:         arr = []
+   95:         current = self.__head
+-  96:         while current:
++  96:         while not current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+--------------------------------------------------------------------------------
+[0.07722 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_10
+
+def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:59: AssertionError
+   - [#  20] COI linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+- 102: if __name__ == '__main__':
++ 102: if not (__name__ == '__main__'):
+  103:     pass
+--------------------------------------------------------------------------------
+[0.05842 s] survived
+   - [#  21] CRP linkedList3: 
+--------------------------------------------------------------------------------
+    2: 
+    3: from typing import TypeVar
+    4: 
+    5: 
+-   6: T = TypeVar('T')
++   6: T = TypeVar('mutpy')
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+--------------------------------------------------------------------------------
+[0.05913 s] survived
+   - [#  22] CRP linkedList3: 
+--------------------------------------------------------------------------------
+    2: 
+    3: from typing import TypeVar
+    4: 
+    5: 
+-   6: T = TypeVar('T')
++   6: T = TypeVar('')
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+--------------------------------------------------------------------------------
+[0.06095 s] survived
+   - [#  23] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
++  19:         self.__size = 1
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[0.07304 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+>       assert var_0.next is None
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:22: AssertionError
+   - [#  24] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+-  26:         if self.__size == 0:
++  26:         if self.__size == 1:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[0.07229 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+>       assert var_0.next is None
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:22: AssertionError
+   - [#  25] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+-  29:             self.__size += 1
++  29:             self.__size += 2
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+--------------------------------------------------------------------------------
+[0.07830 s] killed by MIO-MOSA/test_linkedList3_MOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+>       assert int_0 == 1
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MOSA.py:25: AssertionError
+   - [#  26] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+-  34:             self.__size += 1
++  34:             self.__size += 2
+   35:     
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[0.08410 s] killed by MIO-MOSA/test_linkedList3_MOSA.py::test_case_10
+
+def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+        assert bool_2 is False
+        node_0 = module_0.Node(singly_linked_list_0)
+        node_1 = module_0.Node(node_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_1 = []
+        bool_3 = singly_linked_list_0.isEmpty()
+        assert bool_3 is False
+        none_type_2 = singly_linked_list_0.add(list_1)
+        list_2 = singly_linked_list_0.toArray()
+        int_0 = singly_linked_list_0.getSize()
+>       assert int_0 == 3
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MOSA.py:110: AssertionError
+   - [#  27] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+-  40:         if self.__size == 0:
++  40:         if self.__size == 1:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.07151 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:20: AssertionError
+   - [#  28] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if self.__size >= 2:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.05947 s] survived
+   - [#  29] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
++  46:             self.__size -= 2
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[0.07547 s] survived
+   - [#  30] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
++  52:             self.__size -= 2
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+--------------------------------------------------------------------------------
+[0.06053 s] survived
+   - [#  31] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+-  77:         return True if self.__size == 0 else False
++  77:         return True if self.__size == 1 else False
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.07331 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_5
+
+def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:31: AssertionError
+   - [#  32] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+- 102: if __name__ == '__main__':
++ 102: if __name__ == 'mutpy':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.05982 s] survived
+   - [#  33] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+- 102: if __name__ == '__main__':
++ 102: if __name__ == '':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.06071 s] survived
+   - [#  34] OIL linkedList3: 
+--------------------------------------------------------------------------------
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+-  88:         return arr
+-  89:     
++  88:             break
++  89:         return arr
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+--------------------------------------------------------------------------------
+[0.06022 s] survived
+   - [#  35] OIL linkedList3: 
+--------------------------------------------------------------------------------
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+-  99:         return str(arr)
+- 100: 
++  99:             break
++ 100:         return str(arr)
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.06014 s] survived
+   - [#  36] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+-  26:         if self.__size == 0:
++  26:         if self.__size != 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[0.07296 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+>       assert var_0.next is None
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:22: AssertionError
+   - [#  37] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+-  40:         if self.__size == 0:
++  40:         if self.__size != 0:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.06926 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:20: AssertionError
+   - [#  38] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if self.__size <= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.05957 s] survived
+   - [#  39] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if self.__size > 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.06100 s] survived
+   - [#  40] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+-  77:         return True if self.__size == 0 else False
++  77:         return True if self.__size != 0 else False
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.07396 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_5
+
+def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:31: AssertionError
+   - [#  41] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+- 102: if __name__ == '__main__':
++ 102: if __name__ != '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.05955 s] survived
+   - [#  42] SDI linkedList3: 
+--------------------------------------------------------------------------------
+    6: T = TypeVar('T')
+    7: 
+    8: 
+    9: class Node:
+-  10:     def __init__(self, value: T):
+-  11:         self.value = value
+-  12:         self.next = None
+-  13: 
++  10:     @staticmethod
++  11:     def __init__(self, value: T):
++  12:         self.value = value
++  13:         self.next = None
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+--------------------------------------------------------------------------------
+[0.07171 s] incompetent
+
+TypeError: linkedList3:17: TypeError: Node.__init__() missing 1 required positional argument: 'value'
+
+   - [#  43] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+-  16:     def __init__(self):
+-  17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
+-  20:     
++  16:     @staticmethod
++  17:     def __init__(self):
++  18:         self.__sentinel = Node(None)
++  19:         self.__head = self.__sentinel
++  20:         self.__size = 0
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+--------------------------------------------------------------------------------
+[0.07051 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/MIO-MOSA/test_linkedList3_MIO.py:5: TypeError: SinglyLinkedList.__init__() missing 1 required positional argument: 'self'
+
+   - [#  44] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+-  21:     def add(self, value: T) -> None:
+-  22:         
+-  23:         '''Add element to linked list.'''
+-  24:         
+-  25:         newNode = Node(value)
+-  26:         if self.__size == 0:
+-  27:             self.__head.next = newNode
+-  28:             self.__head = newNode
+-  29:             self.__size += 1
+-  30:         else:
+-  31:             self.__sentinel.next = newNode
+-  32:             newNode.next = self.__head
+-  33:             self.__head = newNode
+-  34:             self.__size += 1
+-  35:     
++  21:     @staticmethod
++  22:     def add(self, value: T) -> None:
++  23:         
++  24:         '''Add element to linked list.'''
++  25:         
++  26:         newNode = Node(value)
++  27:         if self.__size == 0:
++  28:             self.__head.next = newNode
++  29:             self.__head = newNode
++  30:             self.__size += 1
++  31:         else:
++  32:             self.__sentinel.next = newNode
++  33:             newNode.next = self.__head
++  34:             self.__head = newNode
++  35:             self.__size += 1
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+--------------------------------------------------------------------------------
+[0.07176 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/MIO-MOSA/test_linkedList3_MIO.py:9: TypeError: SinglyLinkedList.add() missing 1 required positional argument: 'value'
+
+   - [#  45] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+-  36:     def remove(self):
+-  37:         
+-  38:         '''Remove node from linkedlist.'''
+-  39:         
+-  40:         if self.__size == 0:
+-  41:             return None
+-  42:         if self.__size >= 1:
+-  43:             nodeToRemove = self.__head
+-  44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
+-  47:             return nodeToRemove
+-  48:         else:
+-  49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
+-  53:             return nodeToRemove
+-  54:     
++  36:     @staticmethod
++  37:     def remove(self):
++  38:         
++  39:         '''Remove node from linkedlist.'''
++  40:         
++  41:         if self.__size == 0:
++  42:             return None
++  43:         if self.__size >= 1:
++  44:             nodeToRemove = self.__head
++  45:             self.__sentinel.next = None
++  46:             self.__head = self.__sentinel
++  47:             self.__size -= 1
++  48:             return nodeToRemove
++  49:         else:
++  50:             nodeToRemove = self.__head
++  51:             self.__sentinel.next = self.__head.next
++  52:             self.__head = self.__sentinel.next
++  53:             self.__size -= 1
++  54:             return nodeToRemove
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+--------------------------------------------------------------------------------
+[0.07021 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/MIO-MOSA/test_linkedList3_MIO.py:19: TypeError: SinglyLinkedList.remove() missing 1 required positional argument: 'self'
+
+   - [#  46] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+-  55:     def getHead(self) -> T:
+-  56:         
+-  57:         '''Get value of the linkedlist head node.'''
+-  58:         
+-  59:         return self.__head.value
+-  60:     
++  55:     @staticmethod
++  56:     def getHead(self) -> T:
++  57:         
++  58:         '''Get value of the linkedlist head node.'''
++  59:         
++  60:         return self.__head.value
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+--------------------------------------------------------------------------------
+[0.07713 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/MIO-MOSA/test_linkedList3_MIO.py:63: TypeError: SinglyLinkedList.getHead() missing 1 required positional argument: 'self'
+
+   - [#  47] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+   59:         return self.__head.value
+   60:     
+-  61:     def getHeadNode(self) -> Node:
+-  62:         
+-  63:         '''Get head node referance.'''
+-  64:         
+-  65:         return self.__head
+-  66:     
++  61:     @staticmethod
++  62:     def getHeadNode(self) -> Node:
++  63:         
++  64:         '''Get head node referance.'''
++  65:         
++  66:         return self.__head
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+--------------------------------------------------------------------------------
+[0.07783 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/MIO-MOSA/test_linkedList3_MIO.py:67: TypeError: SinglyLinkedList.getHeadNode() missing 1 required positional argument: 'self'
+
+   - [#  48] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   63:         '''Get head node referance.'''
+   64:         
+   65:         return self.__head
+   66:     
+-  67:     def getSize(self) -> int:
+-  68:         
+-  69:         '''Return size of the linkedlist.'''
+-  70:         
+-  71:         return self.__size
+-  72:     
++  67:     @staticmethod
++  68:     def getSize(self) -> int:
++  69:         
++  70:         '''Return size of the linkedlist.'''
++  71:         
++  72:         return self.__size
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+--------------------------------------------------------------------------------
+[0.07526 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/MIO-MOSA/test_linkedList3_MIO.py:71: TypeError: SinglyLinkedList.getSize() missing 1 required positional argument: 'self'
+
+   - [#  49] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   69:         '''Return size of the linkedlist.'''
+   70:         
+   71:         return self.__size
+   72:     
+-  73:     def isEmpty(self) -> bool:
+-  74:         
+-  75:         '''Checks if linkedlist is empty.'''
+-  76:         
+-  77:         return True if self.__size == 0 else False
+-  78:     
++  73:     @staticmethod
++  74:     def isEmpty(self) -> bool:
++  75:         
++  76:         '''Checks if linkedlist is empty.'''
++  77:         
++  78:         return True if self.__size == 0 else False
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+--------------------------------------------------------------------------------
+[0.07200 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/MIO-MOSA/test_linkedList3_MIO.py:30: TypeError: SinglyLinkedList.isEmpty() missing 1 required positional argument: 'self'
+
+   - [#  50] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+   77:         return True if self.__size == 0 else False
+   78:     
+-  79:     def toArray(self) -> list:
+-  80:         
+-  81:         '''Converts linkedlist to list.'''
+-  82:         
+-  83:         arr = []
+-  84:         current = self.__head
+-  85:         while current:
+-  86:             arr.append(current.value)
+-  87:             current = current.next
+-  88:         return arr
+-  89:     
++  79:     @staticmethod
++  80:     def toArray(self) -> list:
++  81:         
++  82:         '''Converts linkedlist to list.'''
++  83:         
++  84:         arr = []
++  85:         current = self.__head
++  86:         while current:
++  87:             arr.append(current.value)
++  88:             current = current.next
++  89:         return arr
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+--------------------------------------------------------------------------------
+[0.07513 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/MIO-MOSA/test_linkedList3_MIO.py:44: TypeError: SinglyLinkedList.toArray() missing 1 required positional argument: 'self'
+
+   - [#  51] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+   89:     
+-  90:     def __str__(self) -> str:
+-  91:         
+-  92:         '''Return String representation of linkedlist values.'''
+-  93:         
+-  94:         arr = []
+-  95:         current = self.__head
+-  96:         while current:
+-  97:             arr.append(current.value)
+-  98:             current = current.next
+-  99:         return str(arr)
+- 100: 
++  90:     @staticmethod
++  91:     def __str__(self) -> str:
++  92:         
++  93:         '''Return String representation of linkedlist values.'''
++  94:         
++  95:         arr = []
++  96:         current = self.__head
++  97:         while current:
++  98:             arr.append(current.value)
++  99:             current = current.next
++ 100:         return str(arr)
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.07657 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/MIO-MOSA/test_linkedList3_MIO.py:54: TypeError: SinglyLinkedList.__str__() missing 1 required positional argument: 'self'
+
+   - [#  52] SDL linkedList3: 
+--------------------------------------------------------------------------------
+    2: 
+    3: from typing import TypeVar
+    4: 
+    5: 
+-   6: T = TypeVar('T')
++   6: pass
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+NameError: name 'T' is not defined
+
+   - [#  53] SDL linkedList3: 
+--------------------------------------------------------------------------------
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+-  11:         self.value = value
++  11:         pass
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+--------------------------------------------------------------------------------
+[0.07022 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+>       assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+E       AttributeError: 'Node' object has no attribute 'value'
+
+MIO-MOSA/test_linkedList3_MIO.py:21: AttributeError
+   - [#  54] SDL linkedList3: 
+--------------------------------------------------------------------------------
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+   11:         self.value = value
+-  12:         self.next = None
++  12:         pass
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+--------------------------------------------------------------------------------
+[0.07360 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+>       assert var_0.next is None
+E       AttributeError: 'Node' object has no attribute 'next'
+
+MIO-MOSA/test_linkedList3_MIO.py:22: AttributeError
+   - [#  55] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+-  17:         self.__sentinel = Node(None)
++  17:         pass
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+--------------------------------------------------------------------------------
+[0.07202 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_0
+
+def test_case_0():
+>       singly_linked_list_0 = module_0.SinglyLinkedList()
+
+MIO-MOSA/test_linkedList3_MIO.py:5: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4614064f40>
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__sentinel'
+
+linkedList3:18: AttributeError
+   - [#  56] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
++  18:         pass
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+--------------------------------------------------------------------------------
+[0.08666 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+MIO-MOSA/test_linkedList3_MIO.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613e911b0>
+value = <linkedList3.SinglyLinkedList object at 0x7f4613e911b0>
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__head'. Did you mean: '_SinglyLinkedList__size'?
+
+linkedList3:27: AttributeError
+   - [#  57] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
++  19:         pass
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[0.07164 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+MIO-MOSA/test_linkedList3_MIO.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f46141f89d0>
+value = <linkedList3.SinglyLinkedList object at 0x7f46141f89d0>
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__size'. Did you mean: '_SinglyLinkedList__head'?
+
+linkedList3:26: AttributeError
+   - [#  58] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+-  25:         newNode = Node(value)
++  25:         pass
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+--------------------------------------------------------------------------------
+[0.07278 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+MIO-MOSA/test_linkedList3_MIO.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613ff9db0>
+value = <linkedList3.SinglyLinkedList object at 0x7f4613ff9db0>
+
+>   ???
+E   NameError: name 'newNode' is not defined
+
+linkedList3:27: NameError
+   - [#  59] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+-  27:             self.__head.next = newNode
++  27:             pass
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+--------------------------------------------------------------------------------
+[0.06030 s] survived
+   - [#  60] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+-  28:             self.__head = newNode
++  28:             pass
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+--------------------------------------------------------------------------------
+[0.06941 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+>       assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:21: AssertionError
+   - [#  61] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+-  31:             self.__sentinel.next = newNode
++  31:             pass
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+--------------------------------------------------------------------------------
+[0.05918 s] survived
+   - [#  62] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+-  32:             newNode.next = self.__head
++  32:             pass
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+--------------------------------------------------------------------------------
+[0.07982 s] killed by MIO-MOSA/test_linkedList3_MOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+>       assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MOSA.py:51: AssertionError
+   - [#  63] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+-  33:             self.__head = newNode
++  33:             pass
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+   37:         
+--------------------------------------------------------------------------------
+[0.07917 s] killed by MIO-MOSA/test_linkedList3_MOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+>       assert node_3.value == 1
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MOSA.py:50: AssertionError
+   - [#  64] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+-  41:             return None
++  41:             pass
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+--------------------------------------------------------------------------------
+[0.07814 s] killed by MIO-MOSA/test_linkedList3_MOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+>       assert node_0.value is None
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MOSA.py:21: AssertionError
+   - [#  65] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+-  43:             nodeToRemove = self.__head
++  43:             pass
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.07079 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       var_0 = singly_linked_list_0.remove()
+
+MIO-MOSA/test_linkedList3_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613d9b100>
+
+>   ???
+E   UnboundLocalError: local variable 'nodeToRemove' referenced before assignment
+
+linkedList3:47: UnboundLocalError
+   - [#  66] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+-  44:             self.__sentinel.next = None
++  44:             pass
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+--------------------------------------------------------------------------------
+[0.06134 s] survived
+   - [#  67] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
++  45:             pass
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[0.06061 s] survived
+   - [#  68] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+-  47:             return nodeToRemove
++  47:             pass
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+--------------------------------------------------------------------------------
+[0.06995 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:20: AssertionError
+   - [#  69] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+-  49:             nodeToRemove = self.__head
++  49:             pass
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.05946 s] survived
+   - [#  70] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
++  50:             pass
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+--------------------------------------------------------------------------------
+[0.06138 s] survived
+   - [#  71] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
++  51:             pass
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[0.07592 s] survived
+   - [#  72] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+-  53:             return nodeToRemove
++  53:             pass
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+--------------------------------------------------------------------------------
+[0.05937 s] survived
+   - [#  73] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+-  59:         return self.__head.value
++  59:         pass
+   60:     
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+--------------------------------------------------------------------------------
+[0.08003 s] killed by MIO-MOSA/test_linkedList3_MOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+>       none_type_1 = var_2.add(int_3)
+E       AttributeError: 'NoneType' object has no attribute 'add'
+
+MIO-MOSA/test_linkedList3_MOSA.py:46: AttributeError
+   - [#  74] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+-  65:         return self.__head
++  65:         pass
+   66:     
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+--------------------------------------------------------------------------------
+[0.07918 s] killed by MIO-MOSA/test_linkedList3_MOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+>       assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MOSA.py:31: AssertionError
+   - [#  75] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+-  71:         return self.__size
++  71:         pass
+   72:     
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+--------------------------------------------------------------------------------
+[0.07846 s] killed by MIO-MOSA/test_linkedList3_MOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+>       assert int_0 == 1
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MOSA.py:25: AssertionError
+   - [#  76] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+-  77:         return True if self.__size == 0 else False
++  77:         pass
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.07301 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_5
+
+def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:31: AssertionError
+   - [#  77] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+-  83:         arr = []
++  83:         pass
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+--------------------------------------------------------------------------------
+[0.07546 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_7
+
+def test_case_7():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = None
+        none_type_1 = singly_linked_list_0.add(none_type_0)
+        none_type_2 = singly_linked_list_0.add(none_type_0)
+>       list_0 = singly_linked_list_0.toArray()
+
+MIO-MOSA/test_linkedList3_MIO.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613ee2aa0>
+
+>   ???
+E   NameError: name 'arr' is not defined
+
+linkedList3:86: NameError
+   - [#  78] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+   83:         arr = []
+-  84:         current = self.__head
++  84:         pass
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+--------------------------------------------------------------------------------
+[0.07550 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_7
+
+def test_case_7():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = None
+        none_type_1 = singly_linked_list_0.add(none_type_0)
+        none_type_2 = singly_linked_list_0.add(none_type_0)
+>       list_0 = singly_linked_list_0.toArray()
+
+MIO-MOSA/test_linkedList3_MIO.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613e81780>
+
+>   ???
+E   UnboundLocalError: local variable 'current' referenced before assignment
+
+linkedList3:85: UnboundLocalError
+   - [#  79] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   82:         
+   83:         arr = []
+   84:         current = self.__head
+   85:         while current:
+-  86:             arr.append(current.value)
++  86:             pass
+   87:             current = current.next
+   88:         return arr
+   89:     
+   90:     def __str__(self) -> str:
+--------------------------------------------------------------------------------
+[0.06062 s] survived
+   - [#  80] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   83:         arr = []
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+-  87:             current = current.next
++  87:             pass
+   88:         return arr
+   89:     
+   90:     def __str__(self) -> str:
+   91:         
+--------------------------------------------------------------------------------
+[5.00639 s] timeout
+   - [#  81] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+-  88:         return arr
++  88:         pass
+   89:     
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+--------------------------------------------------------------------------------
+[0.06158 s] survived
+   - [#  82] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+-  94:         arr = []
++  94:         pass
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+--------------------------------------------------------------------------------
+[0.07648 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_9
+
+def test_case_9():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(none_type_0)
+>       str_0 = singly_linked_list_0.__str__()
+
+MIO-MOSA/test_linkedList3_MIO.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613fc0ca0>
+
+>   ???
+E   NameError: name 'arr' is not defined
+
+linkedList3:97: NameError
+   - [#  83] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+   94:         arr = []
+-  95:         current = self.__head
++  95:         pass
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+   99:         return str(arr)
+--------------------------------------------------------------------------------
+[0.07680 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_9
+
+def test_case_9():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(none_type_0)
+>       str_0 = singly_linked_list_0.__str__()
+
+MIO-MOSA/test_linkedList3_MIO.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613f91f90>
+
+>   ???
+E   UnboundLocalError: local variable 'current' referenced before assignment
+
+linkedList3:96: UnboundLocalError
+   - [#  84] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   93:         
+   94:         arr = []
+   95:         current = self.__head
+   96:         while current:
+-  97:             arr.append(current.value)
++  97:             pass
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+--------------------------------------------------------------------------------
+[0.07565 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_10
+
+def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:59: AssertionError
+   - [#  85] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   94:         arr = []
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+-  98:             current = current.next
++  98:             pass
+   99:         return str(arr)
+  100: 
+  101: 
+  102: if __name__ == '__main__':
+--------------------------------------------------------------------------------
+[5.00625 s] timeout
+   - [#  86] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+-  99:         return str(arr)
++  99:         pass
+  100: 
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.09188 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_10
+
+def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:59: AssertionError
+   - [#  87] SVD linkedList3: 
+--------------------------------------------------------------------------------
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+-  11:         self.value = value
++  11:         value = value
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  88] SVD linkedList3: 
+--------------------------------------------------------------------------------
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+   11:         self.value = value
+-  12:         self.next = None
++  12:         next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  89] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+-  17:         self.__sentinel = Node(None)
++  17:         __sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  90] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
++  18:         __head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  91] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
++  18:         self.__head = __sentinel
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+--------------------------------------------------------------------------------
+[0.07134 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_0
+
+def test_case_0():
+>       singly_linked_list_0 = module_0.SinglyLinkedList()
+
+MIO-MOSA/test_linkedList3_MIO.py:5: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613fc3cd0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:18: NameError
+   - [#  92] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
++  19:         __size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  93] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+-  26:         if self.__size == 0:
++  26:         if __size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[0.07203 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+MIO-MOSA/test_linkedList3_MIO.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613c6d300>
+value = <linkedList3.SinglyLinkedList object at 0x7f4613c6d300>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:26: NameError
+   - [#  94] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+-  27:             self.__head.next = newNode
++  27:             __head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+--------------------------------------------------------------------------------
+[0.07223 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+MIO-MOSA/test_linkedList3_MIO.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613ffbca0>
+value = <linkedList3.SinglyLinkedList object at 0x7f4613ffbca0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:27: NameError
+   - [#  95] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+-  28:             self.__head = newNode
++  28:             __head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  96] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+-  29:             self.__size += 1
++  29:             __size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  97] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+-  31:             self.__sentinel.next = newNode
++  31:             __sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+--------------------------------------------------------------------------------
+[0.07323 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+
+MIO-MOSA/test_linkedList3_MIO.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613e82830>
+value = <linkedList3.SinglyLinkedList object at 0x7f4613e82830>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:31: NameError
+   - [#  98] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+-  32:             newNode.next = self.__head
++  32:             newNode.next = __head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+--------------------------------------------------------------------------------
+[0.07218 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+
+MIO-MOSA/test_linkedList3_MIO.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613f320e0>
+value = <linkedList3.SinglyLinkedList object at 0x7f4613f320e0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:32: NameError
+   - [#  99] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+-  33:             self.__head = newNode
++  33:             __head = newNode
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+   37:         
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 100] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+-  34:             self.__size += 1
++  34:             __size += 1
+   35:     
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 101] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+-  40:         if self.__size == 0:
++  40:         if __size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.08608 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       var_0 = singly_linked_list_0.remove()
+
+MIO-MOSA/test_linkedList3_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613d79210>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:40: NameError
+   - [# 102] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if __size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.07138 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       var_0 = singly_linked_list_0.remove()
+
+MIO-MOSA/test_linkedList3_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613da7700>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:42: NameError
+   - [# 103] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+-  43:             nodeToRemove = self.__head
++  43:             nodeToRemove = __head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.06919 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       var_0 = singly_linked_list_0.remove()
+
+MIO-MOSA/test_linkedList3_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613d7a290>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:43: NameError
+   - [# 104] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+-  44:             self.__sentinel.next = None
++  44:             __sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+--------------------------------------------------------------------------------
+[0.06986 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       var_0 = singly_linked_list_0.remove()
+
+MIO-MOSA/test_linkedList3_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613d9b610>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:44: NameError
+   - [# 105] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
++  45:             __head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 106] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
++  45:             self.__head = __sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[0.07037 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       var_0 = singly_linked_list_0.remove()
+
+MIO-MOSA/test_linkedList3_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613fce650>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:45: NameError
+   - [# 107] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
++  46:             __size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 108] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+-  49:             nodeToRemove = self.__head
++  49:             nodeToRemove = __head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.05983 s] survived
+   - [# 109] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
++  50:             __sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+--------------------------------------------------------------------------------
+[0.06126 s] survived
+   - [# 110] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
++  50:             self.__sentinel.next = __head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+--------------------------------------------------------------------------------
+[0.06041 s] survived
+   - [# 111] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
++  51:             __head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 112] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
++  51:             self.__head = __sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[0.05938 s] survived
+   - [# 113] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
++  52:             __size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 114] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+-  59:         return self.__head.value
++  59:         return __head.value
+   60:     
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+--------------------------------------------------------------------------------
+[0.07711 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_11
+
+def test_case_11():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       var_0 = singly_linked_list_0.getHead()
+
+MIO-MOSA/test_linkedList3_MIO.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613fc3be0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:59: NameError
+   - [# 115] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+-  65:         return self.__head
++  65:         return __head
+   66:     
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+--------------------------------------------------------------------------------
+[0.07793 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_12
+
+def test_case_12():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       node_0 = singly_linked_list_0.getHeadNode()
+
+MIO-MOSA/test_linkedList3_MIO.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613f913c0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:65: NameError
+   - [# 116] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+-  71:         return self.__size
++  71:         return __size
+   72:     
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+--------------------------------------------------------------------------------
+[0.08866 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_13
+
+def test_case_13():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       int_0 = singly_linked_list_0.getSize()
+
+MIO-MOSA/test_linkedList3_MIO.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613c6c2e0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:71: NameError
+   - [# 117] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+-  77:         return True if self.__size == 0 else False
++  77:         return True if __size == 0 else False
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.07189 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_5
+
+def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       bool_0 = singly_linked_list_0.isEmpty()
+
+MIO-MOSA/test_linkedList3_MIO.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613ee3700>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:77: NameError
+   - [# 118] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+   83:         arr = []
+-  84:         current = self.__head
++  84:         current = __head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+--------------------------------------------------------------------------------
+[0.07533 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_7
+
+def test_case_7():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = None
+        none_type_1 = singly_linked_list_0.add(none_type_0)
+        none_type_2 = singly_linked_list_0.add(none_type_0)
+>       list_0 = singly_linked_list_0.toArray()
+
+MIO-MOSA/test_linkedList3_MIO.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f46140f0910>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:84: NameError
+   - [# 119] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+   94:         arr = []
+-  95:         current = self.__head
++  95:         current = __head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+   99:         return str(arr)
+--------------------------------------------------------------------------------
+[0.07538 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_9
+
+def test_case_9():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(none_type_0)
+>       str_0 = singly_linked_list_0.__str__()
+
+MIO-MOSA/test_linkedList3_MIO.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f4613f33c40>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:95: NameError
+   - [# 120] ZIL linkedList3: 
+--------------------------------------------------------------------------------
+   82:         
+   83:         arr = []
+   84:         current = self.__head
+   85:         while current:
+-  86:             arr.append(current.value)
+-  87:             current = current.next
++  86:             break
++  87:         
+   88:         return arr
+   89:     
+   90:     def __str__(self) -> str:
+   91:         
+--------------------------------------------------------------------------------
+[0.05903 s] survived
+   - [# 121] ZIL linkedList3: 
+--------------------------------------------------------------------------------
+   93:         
+   94:         arr = []
+   95:         current = self.__head
+   96:         while current:
+-  97:             arr.append(current.value)
+-  98:             current = current.next
++  97:             break
++  98:         
+   99:         return str(arr)
+  100: 
+  101: 
+  102: if __name__ == '__main__':
+--------------------------------------------------------------------------------
+[0.07701 s] killed by MIO-MOSA/test_linkedList3_MIO.py::test_case_10
+
+def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+MIO-MOSA/test_linkedList3_MIO.py:59: AssertionError
+[*] Mutation score [21.92580 s]: 67.0%
+   - all: 121
+   - killed: 63 (52.1%)
+   - survived: 32 (26.4%)
+   - incompetent: 24 (19.8%)
+   - timeout: 2 (1.7%)

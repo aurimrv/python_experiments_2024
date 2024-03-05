@@ -1,0 +1,1704 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 20/04/2023 19:52:09</p><p>Total jobs: 70</p><p>Complete: 70 (100.00%)</p><p>Surviving mutants: 21 (30.00%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID be48401d413d413b9ac5ba73165bdfad</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=24" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (24, 23), end pos: (24, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -21,7 +21,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size != 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID 6eee9aa3626247ca8bed19782269a8a2</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=38" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (38, 23), end pos: (38, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -35,7 +35,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size != 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .F..F....FF..F.FF      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .F..F....FF..F.FF          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F..FF..F           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_1 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_4 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_9 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_10 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_15 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_1 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_4 - assert &lt;s...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_9 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_10 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_15 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - As...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_4 - As...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_5 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_8 - as...
+======================== 18 failed, 25 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 542b6bf1c2c345b48080cbafb70c5620</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=75" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (75, 35), end pos: (75, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -72,7 +72,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size != 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ...FF..........FF      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ...FF..........FF          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F.....F.           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_3 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_4 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_15 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_3 - assert Fa...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_4 - assert Tr...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_15 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_7 - as...
+======================== 10 failed, 33 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID c88d03797bb14bc48b4e712e2f4bce2d</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=125" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (125, 46), end pos: (125, 48)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -122,7 +122,7 @@
+ 
+         """Check if stack is empty."""
+ 
+-        return True if self.__stack.getSize() == 0 else False
++        return True if self.__stack.getSize() != 0 else False
+ 
+     def getSize(self) -&gt; int:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .......F.....F...      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .......F.....F...          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py ..FF.....           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_7 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_7 - assert Fa...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_2 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_3 - as...
+========================= 6 failed, 37 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_5_1"><button class="btn btn-outline-danger"><span class="job_id">5 : Job ID bc500865998b40cbab21deb96ce49adb</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=140" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (140, 12), end pos: (140, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -137,6 +137,6 @@
+         return str(self.__stack.toArray()[::-1])
+ 
+ 
+-if __name__ == "__main__":
++if __name__ != "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.10s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID 58393e6280fe4fb7b56acee2d13e66ce</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=24" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (24, 23), end pos: (24, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -21,7 +21,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &lt; 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID a4f295c5ff5540dab2a7e1ebda808e36</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=38" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (38, 23), end pos: (38, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -35,7 +35,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt; 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .....F..F           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_5 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_8 - as...
+========================= 2 failed, 41 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID 7f9d2a2990734f6ead4b1d8f8743338d</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=75" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (75, 35), end pos: (75, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -72,7 +72,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &lt; 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ...F.............      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ...F.............          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .......F.           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_3 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_3 - assert Fa...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_7 - as...
+========================= 3 failed, 40 passed in 0.16s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID 0275234baa374885913881f0f382cb23</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=125" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (125, 46), end pos: (125, 48)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -122,7 +122,7 @@
+ 
+         """Check if stack is empty."""
+ 
+-        return True if self.__stack.getSize() == 0 else False
++        return True if self.__stack.getSize() &lt; 0 else False
+ 
+     def getSize(self) -&gt; int:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .......F.........      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .......F.........          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py ..F......           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_7 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_7 - assert Fa...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_2 - as...
+========================= 3 failed, 40 passed in 0.15s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_10_1"><button class="btn btn-outline-danger"><span class="job_id">10 : Job ID c9eeb4b0591040c7b8e2bc2e6c4335f2</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=140" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (140, 12), end pos: (140, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -137,6 +137,6 @@
+         return str(self.__stack.toArray()[::-1])
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &lt; "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_11_1"><button class="btn btn-outline-danger"><span class="job_id">11 : Job ID d6528fcb892a499e8bf50143fc75894c</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=24" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (24, 23), end pos: (24, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -21,7 +21,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &lt;= 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_12_1"><button class="btn btn-outline-danger"><span class="job_id">12 : Job ID 429041cfa82c49f19bea88507f660f27</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=38" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (38, 23), end pos: (38, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -35,7 +35,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt;= 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_13_1"><button class="btn btn-outline-danger"><span class="job_id">13 : Job ID 7f8f7017420042699198c4da22098a9d</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=75" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (75, 35), end pos: (75, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -72,7 +72,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &lt;= 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_14_1"><button class="btn btn-outline-danger"><span class="job_id">14 : Job ID e93565b7f1d34b4b8dad5d92de4cd638</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=125" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (125, 46), end pos: (125, 48)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -122,7 +122,7 @@
+ 
+         """Check if stack is empty."""
+ 
+-        return True if self.__stack.getSize() == 0 else False
++        return True if self.__stack.getSize() &lt;= 0 else False
+ 
+     def getSize(self) -&gt; int:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_15_1"><button class="btn btn-outline-danger"><span class="job_id">15 : Job ID 03180d05df094507bd844d5c9f37e68b</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=140" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (140, 12), end pos: (140, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -137,6 +137,6 @@
+         return str(self.__stack.toArray()[::-1])
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &lt;= "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_16_1"><button class="btn btn-outline-success"><span class="job_id">16 : Job ID f915f247634046009f666ecaf8351d02</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=24" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (24, 23), end pos: (24, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -21,7 +21,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &gt; 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_17_1"><button class="btn btn-outline-success"><span class="job_id">17 : Job ID eaec9a0751e746408e4cfc4aa0003ead</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=38" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (38, 23), end pos: (38, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -35,7 +35,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt; 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .F..F....FF..F.FF      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .F..F....FF..F.FF          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F..FF..F           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_1 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_4 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_9 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_10 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_15 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_1 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_4 - assert &lt;s...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_9 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_10 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_15 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - As...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_4 - As...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_5 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_8 - as...
+======================== 18 failed, 25 passed in 0.14s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_18_1"><button class="btn btn-outline-success"><span class="job_id">18 : Job ID c22e637b2c3346d59e474ed35b5d4c2c</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=75" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (75, 35), end pos: (75, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -72,7 +72,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &gt; 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ...FF..........FF      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ...FF..........FF          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F.....F.           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_3 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_4 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_15 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_3 - assert Fa...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_4 - assert Tr...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_15 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_7 - as...
+======================== 10 failed, 33 passed in 0.12s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_19"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_19_1" aria-expanded="false" aria-controls="job_list___sub_collapse_19_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_19_1"><button class="btn btn-outline-success"><span class="job_id">19 : Job ID 5d9eb6d728f744518763f3cbe9a49d9c</span></button></div></a><div aria-labelledby="job_list___sub_heading_19_1" data-parent="#job_list___sub_accordion_19" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_19_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=125" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (125, 46), end pos: (125, 48)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -122,7 +122,7 @@
+ 
+         """Check if stack is empty."""
+ 
+-        return True if self.__stack.getSize() == 0 else False
++        return True if self.__stack.getSize() &gt; 0 else False
+ 
+     def getSize(self) -&gt; int:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .......F.....F...      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .......F.....F...          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py ..FF.....           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_7 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_7 - assert Fa...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_2 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_3 - as...
+========================= 6 failed, 37 passed in 0.12s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_20"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_20_1" aria-expanded="false" aria-controls="job_list___sub_collapse_20_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_20_1"><button class="btn btn-outline-danger"><span class="job_id">20 : Job ID ce6620b333e944538ad9d6380c259d1d</span></button></div></a><div aria-labelledby="job_list___sub_heading_20_1" data-parent="#job_list___sub_accordion_20" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_20_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=140" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (140, 12), end pos: (140, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -137,6 +137,6 @@
+         return str(self.__stack.toArray()[::-1])
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &gt; "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_21"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_21_1" aria-expanded="false" aria-controls="job_list___sub_collapse_21_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_21_1"><button class="btn btn-outline-success"><span class="job_id">21 : Job ID bb4d01bde49d4984b4d044cf4fab9e4a</span></button></div></a><div aria-labelledby="job_list___sub_heading_21_1" data-parent="#job_list___sub_accordion_21" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_21_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=24" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (24, 23), end pos: (24, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -21,7 +21,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &gt;= 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ...............FF      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ...............FF          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F.......           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_15 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_15 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - As...
+========================= 5 failed, 38 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_22"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_22_1" aria-expanded="false" aria-controls="job_list___sub_collapse_22_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_22_1"><button class="btn btn-outline-success"><span class="job_id">22 : Job ID af4fa573eca449d58560e939eff88292</span></button></div></a><div aria-labelledby="job_list___sub_heading_22_1" data-parent="#job_list___sub_accordion_22" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_22_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=38" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (38, 23), end pos: (38, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -35,7 +35,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt;= 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .F..F....FF..F.FF      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .F..F....FF..F.FF          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F..F....           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_1 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_4 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_9 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_10 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_15 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_1 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_4 - assert &lt;s...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_9 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_10 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_15 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - As...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_4 - As...
+======================== 16 failed, 27 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_23"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_23_1" aria-expanded="false" aria-controls="job_list___sub_collapse_23_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_23_1"><button class="btn btn-outline-success"><span class="job_id">23 : Job ID b51f24ee411e42f9974edc4bc8b77c9f</span></button></div></a><div aria-labelledby="job_list___sub_heading_23_1" data-parent="#job_list___sub_accordion_23" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_23_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=75" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (75, 35), end pos: (75, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -72,7 +72,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &gt;= 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ....F..........FF      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ....F..........FF          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F.......           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_4 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_15 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_4 - assert Tr...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_15 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - as...
+========================= 7 failed, 36 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_24"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_24_1" aria-expanded="false" aria-controls="job_list___sub_collapse_24_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_24_1"><button class="btn btn-outline-success"><span class="job_id">24 : Job ID 984851d759d345329f56b9189f0107bf</span></button></div></a><div aria-labelledby="job_list___sub_heading_24_1" data-parent="#job_list___sub_accordion_24" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_24_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=125" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (125, 46), end pos: (125, 48)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -122,7 +122,7 @@
+ 
+         """Check if stack is empty."""
+ 
+-        return True if self.__stack.getSize() == 0 else False
++        return True if self.__stack.getSize() &gt;= 0 else False
+ 
+     def getSize(self) -&gt; int:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .............F...      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .............F...          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py ...F.....           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_3 - as...
+========================= 3 failed, 40 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_25"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_25_1" aria-expanded="false" aria-controls="job_list___sub_collapse_25_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_25_1"><button class="btn btn-outline-danger"><span class="job_id">25 : Job ID d7ed13bee0b3478a8cf4fcaf7c942aea</span></button></div></a><div aria-labelledby="job_list___sub_heading_25_1" data-parent="#job_list___sub_accordion_25" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_25_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=140" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (140, 12), end pos: (140, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -137,6 +137,6 @@
+         return str(self.__stack.toArray()[::-1])
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &gt;= "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_26"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_26_1" aria-expanded="false" aria-controls="job_list___sub_collapse_26_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_26_1"><button class="btn btn-outline-danger"><span class="job_id">26 : Job ID 36aa82b8c3d8455e8c23548696869974</span></button></div></a><div aria-labelledby="job_list___sub_heading_26_1" data-parent="#job_list___sub_accordion_26" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_26_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=140" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (140, 12), end pos: (140, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -137,6 +137,6 @@
+         return str(self.__stack.toArray()[::-1])
+ 
+ 
+-if __name__ == "__main__":
++if __name__ is "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+=============================== warnings summary ===============================
+stack3.py:140
+  /home/auri/temp/lucca/python_experiments/stack3/stack3.py:140: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if __name__ is "__main__":
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 43 passed, 1 warning in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_27"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_27_1" aria-expanded="false" aria-controls="job_list___sub_collapse_27_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_27_1"><button class="btn btn-outline-danger"><span class="job_id">27 : Job ID 2fbcba10cb0c4940865756c587108d82</span></button></div></a><div aria-labelledby="job_list___sub_heading_27_1" data-parent="#job_list___sub_accordion_27" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_27_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=140" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (140, 12), end pos: (140, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -137,6 +137,6 @@
+         return str(self.__stack.toArray()[::-1])
+ 
+ 
+-if __name__ == "__main__":
++if __name__ is not "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+=============================== warnings summary ===============================
+stack3.py:140
+  /home/auri/temp/lucca/python_experiments/stack3/stack3.py:140: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+    if __name__ is not "__main__":
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 43 passed, 1 warning in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_28"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_28_1" aria-expanded="false" aria-controls="job_list___sub_collapse_28_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_28_1"><button class="btn btn-outline-danger"><span class="job_id">28 : Job ID d973c425fa6d4fecbbc942bb642bb109</span></button></div></a><div aria-labelledby="job_list___sub_heading_28_1" data-parent="#job_list___sub_accordion_28" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_28_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_Eq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -37,7 +37,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size == 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_29"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_29_1" aria-expanded="false" aria-controls="job_list___sub_collapse_29_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_29_1"><button class="btn btn-outline-success"><span class="job_id">29 : Job ID 35390fb681a44b1eb6a5587ca3a11e09</span></button></div></a><div aria-labelledby="job_list___sub_heading_29_1" data-parent="#job_list___sub_accordion_29" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_29_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -37,7 +37,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size != 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .........F...F...      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .........F...F...          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_9 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - Attr...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_9 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - Attribut...
+========================= 4 failed, 39 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_30"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_30_1" aria-expanded="false" aria-controls="job_list___sub_collapse_30_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_30_1"><button class="btn btn-outline-success"><span class="job_id">30 : Job ID 1c889b775be14aea8b8f055477b46a04</span></button></div></a><div aria-labelledby="job_list___sub_heading_30_1" data-parent="#job_list___sub_accordion_30" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_30_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -37,7 +37,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &lt; 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .........F...F...      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .........F...F...          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_9 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - Attr...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_9 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - Attribut...
+========================= 4 failed, 39 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_31"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_31_1" aria-expanded="false" aria-controls="job_list___sub_collapse_31_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_31_1"><button class="btn btn-outline-danger"><span class="job_id">31 : Job ID 2deca3ca78c84d34bcabd4fea01dd987</span></button></div></a><div aria-labelledby="job_list___sub_heading_31_1" data-parent="#job_list___sub_accordion_31" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_31_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -37,7 +37,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &lt;= 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_32"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_32_1" aria-expanded="false" aria-controls="job_list___sub_collapse_32_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_32_1"><button class="btn btn-outline-success"><span class="job_id">32 : Job ID e2d8596194c3458c81f6d0842dbf6e74</span></button></div></a><div aria-labelledby="job_list___sub_heading_32_1" data-parent="#job_list___sub_accordion_32" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_32_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -37,7 +37,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &gt; 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .........F...F...      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .........F...F...          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_9 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - Attr...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_9 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - Attribut...
+========================= 4 failed, 39 passed in 0.12s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_33"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_33_1" aria-expanded="false" aria-controls="job_list___sub_collapse_33_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_33_1"><button class="btn btn-outline-danger"><span class="job_id">33 : Job ID 05f8fe5ad10543868b00b75cb51d961c</span></button></div></a><div aria-labelledby="job_list___sub_heading_33_1" data-parent="#job_list___sub_accordion_33" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_33_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=137" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (137, 44), end pos: (137, 45)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_USub_UAdd, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -134,7 +134,7 @@
+ 
+         """Get string representation of the stack."""
+ 
+-        return str(self.__stack.toArray()[::-1])
++        return str(self.__stack.toArray()[::+1])
+ 
+ 
+ if __name__ == "__main__":</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_34"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_34_1" aria-expanded="false" aria-controls="job_list___sub_collapse_34_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_34_1"><button class="btn btn-outline-danger"><span class="job_id">34 : Job ID 7cb632b5b38149e78ec7c949d240fd6e</span></button></div></a><div aria-labelledby="job_list___sub_heading_34_1" data-parent="#job_list___sub_accordion_34" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_34_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=137" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (137, 44), end pos: (137, 45)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_USub_Invert, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -134,7 +134,7 @@
+ 
+         """Get string representation of the stack."""
+ 
+-        return str(self.__stack.toArray()[::-1])
++        return str(self.__stack.toArray()[::~1])
+ 
+ 
+ if __name__ == "__main__":</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_35"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_35_1" aria-expanded="false" aria-controls="job_list___sub_collapse_35_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_35_1"><button class="btn btn-outline-success"><span class="job_id">35 : Job ID 835532d2a52847d08fbfd39d8952156b</span></button></div></a><div aria-labelledby="job_list___sub_heading_35_1" data-parent="#job_list___sub_accordion_35" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_35_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=137" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (137, 44), end pos: (137, 45)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_USub_Not, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -134,7 +134,7 @@
+ 
+         """Get string representation of the stack."""
+ 
+-        return str(self.__stack.toArray()[::-1])
++        return str(self.__stack.toArray()[::not 1])
+ 
+ 
+ if __name__ == "__main__":</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .....F......F....      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .....F......F....          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py ...F.....           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_5 - Value...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_12 - Valu...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_5 - ValueErro...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_12 - ValueErr...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_3 - Va...
+========================= 5 failed, 38 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_36"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_36_1" aria-expanded="false" aria-controls="job_list___sub_collapse_36_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_36_1"><button class="btn btn-outline-danger"><span class="job_id">36 : Job ID 87bb5a746b4040e2bf5da9212bc9d468</span></button></div></a><div aria-labelledby="job_list___sub_heading_36_1" data-parent="#job_list___sub_accordion_36" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_36_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=137" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (137, 44), end pos: (137, 45)</button></a></pre><pre>operator: core/ReplaceUnaryOperator_Delete_USub, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -134,7 +134,7 @@
+ 
+         """Get string representation of the stack."""
+ 
+-        return str(self.__stack.toArray()[::-1])
++        return str(self.__stack.toArray()[::1])
+ 
+ 
+ if __name__ == "__main__":</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_37"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_37_1" aria-expanded="false" aria-controls="job_list___sub_collapse_37_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_37_1"><button class="btn btn-outline-success"><span class="job_id">37 : Job ID d336ad4f83ba4f639e2c2b812585ca87</span></button></div></a><div aria-labelledby="job_list___sub_heading_37_1" data-parent="#job_list___sub_accordion_37" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_37_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=24" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (24, 11), end pos: (24, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -21,7 +21,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if not self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_38"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_38_1" aria-expanded="false" aria-controls="job_list___sub_collapse_38_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_38_1"><button class="btn btn-outline-success"><span class="job_id">38 : Job ID f0798b15072144c2b72bf87148be177c</span></button></div></a><div aria-labelledby="job_list___sub_heading_38_1" data-parent="#job_list___sub_accordion_38" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_38_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=38" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (38, 11), end pos: (38, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -35,7 +35,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if not self.__size == 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .F..F....FF..F.FF      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .F..F....FF..F.FF          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F..FF..F           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_1 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_4 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_9 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_10 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_15 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_1 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_4 - assert &lt;s...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_9 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_10 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_15 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - As...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_4 - As...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_5 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_8 - as...
+======================== 18 failed, 25 passed in 0.14s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_39"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_39_1" aria-expanded="false" aria-controls="job_list___sub_collapse_39_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_39_1"><button class="btn btn-outline-success"><span class="job_id">39 : Job ID 30bd7ad53dc743cfa7f101c80aeaa249</span></button></div></a><div aria-labelledby="job_list___sub_heading_39_1" data-parent="#job_list___sub_accordion_39" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_39_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (40, 11), end pos: (40, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -37,7 +37,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if not self.__size &gt;= 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .........F...F...      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .........F...F...          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_9 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - Attr...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_9 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - Attribut...
+========================= 4 failed, 39 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_40"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_40_1" aria-expanded="false" aria-controls="job_list___sub_collapse_40_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_40_1"><button class="btn btn-outline-success"><span class="job_id">40 : Job ID c2ac9c6b167548f199134ad36bd9824e</span></button></div></a><div aria-labelledby="job_list___sub_heading_40_1" data-parent="#job_list___sub_accordion_40" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_40_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=75" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (75, 23), end pos: (75, 39)</button></a></pre><pre>operator: core/AddNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -72,7 +72,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if not self.__size == 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ...FF..........FF      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ...FF..........FF          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F.....F.           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_3 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_4 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_15 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_3 - assert Fa...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_4 - assert Tr...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_15 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_7 - as...
+======================== 10 failed, 33 passed in 0.12s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_41"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_41_1" aria-expanded="false" aria-controls="job_list___sub_collapse_41_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_41_1"><button class="btn btn-outline-success"><span class="job_id">41 : Job ID 90a1ab08017b449f9ee8ce0d567ecacd</span></button></div></a><div aria-labelledby="job_list___sub_heading_41_1" data-parent="#job_list___sub_accordion_41" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_41_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=83" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (83, 14), end pos: (83, 21)</button></a></pre><pre>operator: core/AddNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -80,7 +80,7 @@
+ 
+         arr = []
+         current = self.__head
+-        while current:
++        while not current:
+             arr.append(current.value)
+             current = current.next
+         return arr</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ....FF......F..F.      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ....FF......F..F.          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py ...F.....           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_4 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_5 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_12 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_15 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_4 - assert []...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_5 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_12 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_15 - assert [...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_3 - As...
+========================= 9 failed, 34 passed in 0.12s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_42"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_42_1" aria-expanded="false" aria-controls="job_list___sub_collapse_42_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_42_1"><button class="btn btn-outline-success"><span class="job_id">42 : Job ID 488a2c2d14a2428897b88680028992c3</span></button></div></a><div aria-labelledby="job_list___sub_heading_42_1" data-parent="#job_list___sub_accordion_42" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_42_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=94" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (94, 14), end pos: (94, 21)</button></a></pre><pre>operator: core/AddNot, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -91,7 +91,7 @@
+ 
+         arr = []
+         current = self.__head
+-        while current:
++        while not current:
+             arr.append(current.value)
+             current = current.next
+         return str(arr)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ......F........FF      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ......F........FF          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .....F...           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_6 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_15 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_6 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_15 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_5 - As...
+========================= 7 failed, 36 passed in 0.12s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_43"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_43_1" aria-expanded="false" aria-controls="job_list___sub_collapse_43_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_43_1"><button class="btn btn-outline-success"><span class="job_id">43 : Job ID 1b2c3cbb75df45e78cd60830128bae58</span></button></div></a><div aria-labelledby="job_list___sub_heading_43_1" data-parent="#job_list___sub_accordion_43" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_43_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=125" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (125, 23), end pos: (125, 50)</button></a></pre><pre>operator: core/AddNot, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -122,7 +122,7 @@
+ 
+         """Check if stack is empty."""
+ 
+-        return True if self.__stack.getSize() == 0 else False
++        return True if not self.__stack.getSize() == 0 else False
+ 
+     def getSize(self) -&gt; int:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .......F.....F...      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .......F.....F...          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py ..FF.....           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_7 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_7 - assert Fa...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_2 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_3 - as...
+========================= 6 failed, 37 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_44"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_44_1" aria-expanded="false" aria-controls="job_list___sub_collapse_44_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_44_1"><button class="btn btn-outline-danger"><span class="job_id">44 : Job ID 2d0ab3dfbb9449019e4eaaf7423fe3f1</span></button></div></a><div aria-labelledby="job_list___sub_heading_44_1" data-parent="#job_list___sub_accordion_44" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_44_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=140" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (140, 3), end pos: (140, 25)</button></a></pre><pre>operator: core/AddNot, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -137,6 +137,6 @@
+         return str(self.__stack.toArray()[::-1])
+ 
+ 
+-if __name__ == "__main__":
++if not __name__ == "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_45"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_45_1" aria-expanded="false" aria-controls="job_list___sub_collapse_45_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_45_1"><button class="btn btn-outline-success"><span class="job_id">45 : Job ID af56120f735f41c1a8125da7a1601fc2</span></button></div></a><div aria-labelledby="job_list___sub_heading_45_1" data-parent="#job_list___sub_accordion_45" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_45_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=75" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (75, 15), end pos: (75, 19)</button></a></pre><pre>operator: core/ReplaceTrueWithFalse, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -72,7 +72,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return False if self.__size == 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ...F.............      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ...F.............          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .......F.           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_3 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_3 - assert Fa...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_7 - as...
+========================= 3 failed, 40 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_46"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_46_1" aria-expanded="false" aria-controls="job_list___sub_collapse_46_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_46_1"><button class="btn btn-outline-success"><span class="job_id">46 : Job ID f70e47a278eb4a81a9278d4b0364d91a</span></button></div></a><div aria-labelledby="job_list___sub_heading_46_1" data-parent="#job_list___sub_accordion_46" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_46_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=125" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (125, 15), end pos: (125, 19)</button></a></pre><pre>operator: core/ReplaceTrueWithFalse, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -122,7 +122,7 @@
+ 
+         """Check if stack is empty."""
+ 
+-        return True if self.__stack.getSize() == 0 else False
++        return False if self.__stack.getSize() == 0 else False
+ 
+     def getSize(self) -&gt; int:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .......F.........      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .......F.........          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py ..F......           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_7 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_7 - assert Fa...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_2 - as...
+========================= 3 failed, 40 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_47"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_47_1" aria-expanded="false" aria-controls="job_list___sub_collapse_47_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_47_1"><button class="btn btn-outline-success"><span class="job_id">47 : Job ID 1c1fa8c8b62a41a3bf173339b6a5dad2</span></button></div></a><div aria-labelledby="job_list___sub_heading_47_1" data-parent="#job_list___sub_accordion_47" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_47_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=75" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (75, 45), end pos: (75, 50)</button></a></pre><pre>operator: core/ReplaceFalseWithTrue, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -72,7 +72,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == 0 else True
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ....F..........FF      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ....F..........FF          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F.......           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_4 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_15 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_4 - assert Tr...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_15 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - as...
+========================= 7 failed, 36 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_48"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_48_1" aria-expanded="false" aria-controls="job_list___sub_collapse_48_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_48_1"><button class="btn btn-outline-success"><span class="job_id">48 : Job ID 5a444a5be3c64a4e8e72004827a9b8aa</span></button></div></a><div aria-labelledby="job_list___sub_heading_48_1" data-parent="#job_list___sub_accordion_48" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_48_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=125" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (125, 56), end pos: (125, 61)</button></a></pre><pre>operator: core/ReplaceFalseWithTrue, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -122,7 +122,7 @@
+ 
+         """Check if stack is empty."""
+ 
+-        return True if self.__stack.getSize() == 0 else False
++        return True if self.__stack.getSize() == 0 else True
+ 
+     def getSize(self) -&gt; int:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .............F...      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .............F...          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py ...F.....           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_3 - as...
+========================= 3 failed, 40 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_49"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_49_1" aria-expanded="false" aria-controls="job_list___sub_collapse_49_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_49_1"><button class="btn btn-outline-success"><span class="job_id">49 : Job ID 75de1a208c1c47b98ed3292384e4ac13</span></button></div></a><div aria-labelledby="job_list___sub_heading_49_1" data-parent="#job_list___sub_accordion_49" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_49_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=17" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (17, 22), end pos: (17, 23)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -14,7 +14,7 @@
+     def __init__(self):
+         self.__sentinel = Node(None)
+         self.__head = self.__sentinel
+-        self.__size = 0
++        self.__size = 1
+ 
+     def add(self, value: T) -&gt; None:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_50"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_50_1" aria-expanded="false" aria-controls="job_list___sub_collapse_50_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_50_1"><button class="btn btn-outline-success"><span class="job_id">50 : Job ID 7e8d0973fe4e4b4ba490c0932c3cc3f4</span></button></div></a><div aria-labelledby="job_list___sub_heading_50_1" data-parent="#job_list___sub_accordion_50" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_50_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=17" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (17, 22), end pos: (17, 23)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -14,7 +14,7 @@
+     def __init__(self):
+         self.__sentinel = Node(None)
+         self.__head = self.__sentinel
+-        self.__size = 0
++        self.__size = -1
+ 
+     def add(self, value: T) -&gt; None:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_51"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_51_1" aria-expanded="false" aria-controls="job_list___sub_collapse_51_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_51_1"><button class="btn btn-outline-success"><span class="job_id">51 : Job ID b476cda5fdc745a7a38716d84f016bca</span></button></div></a><div aria-labelledby="job_list___sub_heading_51_1" data-parent="#job_list___sub_accordion_51" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_51_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=24" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (24, 26), end pos: (24, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -21,7 +21,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size == 1:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_52"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_52_1" aria-expanded="false" aria-controls="job_list___sub_collapse_52_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_52_1"><button class="btn btn-outline-success"><span class="job_id">52 : Job ID e7a771cdf8574d04bbedde83bc6dae7a</span></button></div></a><div aria-labelledby="job_list___sub_heading_52_1" data-parent="#job_list___sub_accordion_52" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_52_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=24" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (24, 26), end pos: (24, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -21,7 +21,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size == -1:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_53"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_53_1" aria-expanded="false" aria-controls="job_list___sub_collapse_53_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_53_1"><button class="btn btn-outline-success"><span class="job_id">53 : Job ID a9c624cf073448feafe72eebe4664e1f</span></button></div></a><div aria-labelledby="job_list___sub_heading_53_1" data-parent="#job_list___sub_accordion_53" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_53_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (27, 27), end pos: (27, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -24,7 +24,7 @@
+         if self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 2
+         else:
+             self.__sentinel.next = newNode
+             newNode.next = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ................F      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ................F          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F.F.....           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - assert 3...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_3 - as...
+========================= 4 failed, 39 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_54"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_54_1" aria-expanded="false" aria-controls="job_list___sub_collapse_54_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_54_1"><button class="btn btn-outline-success"><span class="job_id">54 : Job ID 9639be7d7cd54af68d08522915b1ddbe</span></button></div></a><div aria-labelledby="job_list___sub_heading_54_1" data-parent="#job_list___sub_accordion_54" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_54_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (27, 27), end pos: (27, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -24,7 +24,7 @@
+         if self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 0
+         else:
+             self.__sentinel.next = newNode
+             newNode.next = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .F..F....FF..F.FF      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .F..F....FF..F.FF          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F.FF....           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_1 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_4 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_9 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_10 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_15 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_1 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_4 - assert Tr...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_9 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_10 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_15 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - As...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_3 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_4 - As...
+======================== 17 failed, 26 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_55"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_55_1" aria-expanded="false" aria-controls="job_list___sub_collapse_55_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_55_1"><button class="btn btn-outline-success"><span class="job_id">55 : Job ID d590d446010e4b3d865b14fabfb01352</span></button></div></a><div aria-labelledby="job_list___sub_heading_55_1" data-parent="#job_list___sub_accordion_55" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_55_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=32" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (32, 27), end pos: (32, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -29,7 +29,7 @@
+             self.__sentinel.next = newNode
+             newNode.next = self.__head
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 2
+ 
+     def remove(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ................F      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ................F          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F.F.....           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - assert 3...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_3 - as...
+========================= 4 failed, 39 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_56"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_56_1" aria-expanded="false" aria-controls="job_list___sub_collapse_56_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_56_1"><button class="btn btn-outline-success"><span class="job_id">56 : Job ID e3dc028dd17b4946bfeffe242dda9293</span></button></div></a><div aria-labelledby="job_list___sub_heading_56_1" data-parent="#job_list___sub_accordion_56" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_56_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=32" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (32, 27), end pos: (32, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -29,7 +29,7 @@
+             self.__sentinel.next = newNode
+             newNode.next = self.__head
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 0
+ 
+     def remove(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ................F      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ................F          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F.F.....           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_16 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_16 - assert 1...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_3 - as...
+========================= 4 failed, 39 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_57"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_57_1" aria-expanded="false" aria-controls="job_list___sub_collapse_57_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_57_1"><button class="btn btn-outline-success"><span class="job_id">57 : Job ID 04cfc4c3a0894d728acd16aedc5ccd8c</span></button></div></a><div aria-labelledby="job_list___sub_heading_57_1" data-parent="#job_list___sub_accordion_57" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_57_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=38" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (38, 26), end pos: (38, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 8</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -35,7 +35,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size == 1:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .F..F....FF..F...      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .F..F....FF..F...          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py ....FF..F           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_1 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_4 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_9 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_10 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - Asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_1 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_4 - assert &lt;s...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_9 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_10 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - Assertio...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_4 - As...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_5 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_8 - as...
+======================== 13 failed, 30 passed in 0.12s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_58"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_58_1" aria-expanded="false" aria-controls="job_list___sub_collapse_58_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_58_1"><button class="btn btn-outline-success"><span class="job_id">58 : Job ID 665c554368c746f08bdf307b9b826b12</span></button></div></a><div aria-labelledby="job_list___sub_heading_58_1" data-parent="#job_list___sub_accordion_58" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_58_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=38" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (38, 26), end pos: (38, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 9</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -35,7 +35,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size == -1:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .....F..F           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_5 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_8 - as...
+========================= 2 failed, 41 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_59"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_59_1" aria-expanded="false" aria-controls="job_list___sub_collapse_59_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_59_1"><button class="btn btn-outline-success"><span class="job_id">59 : Job ID 22e18c113a4343439d2a5daf4ae18a9e</span></button></div></a><div aria-labelledby="job_list___sub_heading_59_1" data-parent="#job_list___sub_accordion_59" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_59_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (40, 26), end pos: (40, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 10</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -37,7 +37,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &gt;= 2:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .........F...F...      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .........F...F...          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_9 - Asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - Attr...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_9 - Assertion...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - Attribut...
+========================= 4 failed, 39 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_60"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_60_1" aria-expanded="false" aria-controls="job_list___sub_collapse_60_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_60_1"><button class="btn btn-outline-danger"><span class="job_id">60 : Job ID f98c9e6774cc4fbd843e2958d35dcc03</span></button></div></a><div aria-labelledby="job_list___sub_heading_60_1" data-parent="#job_list___sub_accordion_60" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_60_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (40, 26), end pos: (40, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 11</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -37,7 +37,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &gt;= 0:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_61"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_61_1" aria-expanded="false" aria-controls="job_list___sub_collapse_61_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_61_1"><button class="btn btn-outline-success"><span class="job_id">61 : Job ID 151d6c169f2048a4833dac2d9d51ad97</span></button></div></a><div aria-labelledby="job_list___sub_heading_61_1" data-parent="#job_list___sub_accordion_61" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_61_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (44, 27), end pos: (44, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 12</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -41,7 +41,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F.......           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - as...
+========================= 1 failed, 42 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_62"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_62_1" aria-expanded="false" aria-controls="job_list___sub_collapse_62_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_62_1"><button class="btn btn-outline-success"><span class="job_id">62 : Job ID 0b642c51db3d4e8884f0af587ef9b6fd</span></button></div></a><div aria-labelledby="job_list___sub_heading_62_1" data-parent="#job_list___sub_accordion_62" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_62_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (44, 27), end pos: (44, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 13</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -41,7 +41,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+-            self.__size -= 1
++            self.__size -= 0
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F.......           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - as...
+========================= 1 failed, 42 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_63"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_63_1" aria-expanded="false" aria-controls="job_list___sub_collapse_63_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_63_1"><button class="btn btn-outline-danger"><span class="job_id">63 : Job ID 7f7a3a8399304924b1b89be61e39a14a</span></button></div></a><div aria-labelledby="job_list___sub_heading_63_1" data-parent="#job_list___sub_accordion_63" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_63_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=50" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (50, 27), end pos: (50, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 14</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -47,7 +47,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+ 
+     def getHead(self) -&gt; T:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_64"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_64_1" aria-expanded="false" aria-controls="job_list___sub_collapse_64_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_64_1"><button class="btn btn-outline-danger"><span class="job_id">64 : Job ID 7356279ed79e459889c128114e4e1db1</span></button></div></a><div aria-labelledby="job_list___sub_heading_64_1" data-parent="#job_list___sub_accordion_64" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_64_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=50" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (50, 27), end pos: (50, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 15</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -47,7 +47,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+-            self.__size -= 1
++            self.__size -= 0
+             return nodeToRemove
+ 
+     def getHead(self) -&gt; T:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_65"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_65_1" aria-expanded="false" aria-controls="job_list___sub_collapse_65_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_65_1"><button class="btn btn-outline-success"><span class="job_id">65 : Job ID 538e08b65cc240788f4f4fb6d2c351b0</span></button></div></a><div aria-labelledby="job_list___sub_heading_65_1" data-parent="#job_list___sub_accordion_65" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_65_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=75" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (75, 38), end pos: (75, 39)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 16</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -72,7 +72,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == 1 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ...FF..........F.      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ...FF..........F.          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .F.....F.           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_3 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_4 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_15 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_3 - assert Fa...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_4 - assert Tr...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_15 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_1 - as...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_7 - as...
+========================= 8 failed, 35 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_66"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_66_1" aria-expanded="false" aria-controls="job_list___sub_collapse_66_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_66_1"><button class="btn btn-outline-success"><span class="job_id">66 : Job ID 4845af34ffa5422aaa5e4eb8a84ae6ca</span></button></div></a><div aria-labelledby="job_list___sub_heading_66_1" data-parent="#job_list___sub_accordion_66" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_66_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=75" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (75, 38), end pos: (75, 39)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 17</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -72,7 +72,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == -1 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py ...F.............      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py ...F.............          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .......F.           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_3 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_3 - assert Fa...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_7 - as...
+========================= 3 failed, 40 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_67"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_67_1" aria-expanded="false" aria-controls="job_list___sub_collapse_67_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_67_1"><button class="btn btn-outline-success"><span class="job_id">67 : Job ID 0abd68fb721f4a66ae3584ef28e1b549</span></button></div></a><div aria-labelledby="job_list___sub_heading_67_1" data-parent="#job_list___sub_accordion_67" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_67_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=125" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (125, 49), end pos: (125, 50)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 18</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -122,7 +122,7 @@
+ 
+         """Check if stack is empty."""
+ 
+-        return True if self.__stack.getSize() == 0 else False
++        return True if self.__stack.getSize() == 1 else False
+ 
+     def getSize(self) -&gt; int:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .......F.....F...      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .......F.....F...          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py ..F......           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_7 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_13 - asse...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_7 - assert Fa...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_13 - assert T...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_2 - as...
+========================= 5 failed, 38 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_68"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_68_1" aria-expanded="false" aria-controls="job_list___sub_collapse_68_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_68_1"><button class="btn btn-outline-success"><span class="job_id">68 : Job ID e4a2ee8d80fe499aa5039dd8fff2cfd6</span></button></div></a><div aria-labelledby="job_list___sub_heading_68_1" data-parent="#job_list___sub_accordion_68" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_68_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=125" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (125, 49), end pos: (125, 50)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 19</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -122,7 +122,7 @@
+ 
+         """Check if stack is empty."""
+ 
+-        return True if self.__stack.getSize() == 0 else False
++        return True if self.__stack.getSize() == -1 else False
+ 
+     def getSize(self) -&gt; int:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .......F.........      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .......F.........          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py ..F......           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_7 - asser...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_7 - assert Fa...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_2 - as...
+========================= 3 failed, 40 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_69"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_69_1" aria-expanded="false" aria-controls="job_list___sub_collapse_69_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_69_1"><button class="btn btn-outline-danger"><span class="job_id">69 : Job ID 6577c65e62964efdb9f6850823c68d5d</span></button></div></a><div aria-labelledby="job_list___sub_heading_69_1" data-parent="#job_list___sub_accordion_69" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_69_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=137" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (137, 45), end pos: (137, 46)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 20</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -134,7 +134,7 @@
+ 
+         """Get string representation of the stack."""
+ 
+-        return str(self.__stack.toArray()[::-1])
++        return str(self.__stack.toArray()[::- 2])
+ 
+ 
+ if __name__ == "__main__":</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........           [100%]
+
+============================== 43 passed in 0.11s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_70"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_70_1" aria-expanded="false" aria-controls="job_list___sub_collapse_70_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_70_1"><button class="btn btn-outline-success"><span class="job_id">70 : Job ID 39880e71b00144809afb87cc87243f75</span></button></div></a><div aria-labelledby="job_list___sub_heading_70_1" data-parent="#job_list___sub_accordion_70" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_70_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack3.py&amp;line=137" class="text-secondary"><button class="btn btn-outline-dark">stack3.py, start pos: (137, 45), end pos: (137, 46)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 21</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack3.py
++++ bstack3.py
+@@ -134,7 +134,7 @@
+ 
+         """Get string representation of the stack."""
+ 
+-        return str(self.__stack.toArray()[::-1])
++        return str(self.__stack.toArray()[::- 0])
+ 
+ 
+ if __name__ == "__main__":</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 43 items
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .....F......F....      [ 39%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .....F......F....          [ 79%]
+DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py ...F.....           [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_5 - Value...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py::test_case_12 - Valu...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_5 - ValueErro...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_MOSA.py::test_case_12 - ValueErr...
+FAILED DYNAMOSA-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py::test_case_3 - Va...
+========================= 5 failed, 38 passed in 0.11s =========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

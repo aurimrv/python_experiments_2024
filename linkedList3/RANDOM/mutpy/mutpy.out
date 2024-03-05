@@ -1,0 +1,4285 @@
+[*] Start mutation process:
+   - targets: linkedList3.py
+   - tests: ./RANDOM
+[*] 1864 tests passed:
+   - test_linkedList3_RANDOM [2.51296 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+-  29:             self.__size += 1
++  29:             self.__size -= 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+--------------------------------------------------------------------------------
+[3.49147 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_115
+
+def test_case_115():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_3.remove()
+        bool_1 = singly_linked_list_3.isEmpty()
+        assert bool_1 is True
+        var_2 = singly_linked_list_1.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_4.__str__()
+        assert str_1 == '[None]'
+        bool_2 = False
+        node_2 = module_0.Node(bool_2)
+        str_2 = singly_linked_list_4.__str__()
+        assert str_2 == '[None]'
+        bool_3 = False
+        node_3 = module_0.Node(bool_3)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        var_3 = singly_linked_list_5.getHead()
+        str_3 = var_3.__str__()
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_6.toArray()
+        none_type_0 = None
+        node_4 = module_0.Node(none_type_0)
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_7.__str__()
+        assert str_4 == '[None]'
+        none_type_1 = singly_linked_list_7.add(singly_linked_list_7)
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        var_4 = singly_linked_list_7.remove()
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_4.value).__module__}.{type(var_4.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert var_4.next is None
+        str_5 = var_4.__str__()
+        bool_4 = singly_linked_list_7.isEmpty()
+>       assert bool_4 is True
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:3195: AssertionError
+   - [#   2] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+-  34:             self.__size += 1
++  34:             self.__size -= 1
+   35:     
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[3.49603 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_182
+
+def test_case_182():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        none_type_1 = None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_2 = singly_linked_list_1.add(none_type_1)
+        none_type_3 = singly_linked_list_1.add(none_type_1)
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_2.getHeadNode()
+        int_1 = singly_linked_list_1.getSize()
+>       assert int_1 == 2
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:5310: AssertionError
+   - [#   3] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
++  46:             self.__size += 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[3.38632 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_115
+
+def test_case_115():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_3.remove()
+        bool_1 = singly_linked_list_3.isEmpty()
+        assert bool_1 is True
+        var_2 = singly_linked_list_1.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_4.__str__()
+        assert str_1 == '[None]'
+        bool_2 = False
+        node_2 = module_0.Node(bool_2)
+        str_2 = singly_linked_list_4.__str__()
+        assert str_2 == '[None]'
+        bool_3 = False
+        node_3 = module_0.Node(bool_3)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        var_3 = singly_linked_list_5.getHead()
+        str_3 = var_3.__str__()
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_6.toArray()
+        none_type_0 = None
+        node_4 = module_0.Node(none_type_0)
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_7.__str__()
+        assert str_4 == '[None]'
+        none_type_1 = singly_linked_list_7.add(singly_linked_list_7)
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        var_4 = singly_linked_list_7.remove()
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_4.value).__module__}.{type(var_4.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert var_4.next is None
+        str_5 = var_4.__str__()
+        bool_4 = singly_linked_list_7.isEmpty()
+>       assert bool_4 is True
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:3195: AssertionError
+   - [#   4] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
++  52:             self.__size += 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+--------------------------------------------------------------------------------
+[2.46065 s] survived
+   - [#   5] CDI linkedList3: 
+--------------------------------------------------------------------------------
+    6: T = TypeVar('T')
+    7: 
+    8: 
+    9: class Node:
+-  10:     def __init__(self, value: T):
+-  11:         self.value = value
+-  12:         self.next = None
+-  13: 
++  10:     @classmethod
++  11:     def __init__(self, value: T):
++  12:         self.value = value
++  13:         self.next = None
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+--------------------------------------------------------------------------------
+[3.32924 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_11
+
+def test_case_11():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is True
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_2.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        node_2 = singly_linked_list_3.getHeadNode()
+        str_1 = singly_linked_list_1.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        int_1 = 0
+        node_3 = module_0.Node(int_1)
+        str_2 = singly_linked_list_3.__str__()
+>       assert str_2 == '[None]'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:136: AssertionError
+   - [#   6] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+-  16:     def __init__(self):
+-  17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
+-  20:     
++  16:     @classmethod
++  17:     def __init__(self):
++  18:         self.__sentinel = Node(None)
++  19:         self.__head = self.__sentinel
++  20:         self.__size = 0
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+--------------------------------------------------------------------------------
+[3.44138 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_142
+
+def test_case_142():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_2.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_4.getHeadNode()
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_6.getHeadNode()
+        bool_0 = False
+        node_2 = module_0.Node(bool_0)
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_7.getHead()
+        str_2 = var_0.__str__()
+        int_0 = singly_linked_list_6.getSize()
+        bool_1 = False
+        node_3 = module_0.Node(bool_1)
+        none_type_0 = None
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        none_type_1 = singly_linked_list_8.add(none_type_0)
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        str_3 = singly_linked_list_9.__str__()
+        assert str_3 == '[None]'
+        none_type_2 = singly_linked_list_9.add(singly_linked_list_9)
+        none_type_3 = singly_linked_list_9.add(str_3)
+        var_1 = singly_linked_list_9.getHead()
+        assert var_1 == '[None]'
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_10.__str__()
+        assert str_4 == '[None]'
+        none_type_4 = singly_linked_list_10.add(singly_linked_list_10)
+        str_5 = singly_linked_list_0.__str__()
+>       assert str_5 == '[None]'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:4063: AssertionError
+   - [#   7] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+-  21:     def add(self, value: T) -> None:
+-  22:         
+-  23:         '''Add element to linked list.'''
+-  24:         
+-  25:         newNode = Node(value)
+-  26:         if self.__size == 0:
+-  27:             self.__head.next = newNode
+-  28:             self.__head = newNode
+-  29:             self.__size += 1
+-  30:         else:
+-  31:             self.__sentinel.next = newNode
+-  32:             newNode.next = self.__head
+-  33:             self.__head = newNode
+-  34:             self.__size += 1
+-  35:     
++  21:     @classmethod
++  22:     def add(self, value: T) -> None:
++  23:         
++  24:         '''Add element to linked list.'''
++  25:         
++  26:         newNode = Node(value)
++  27:         if self.__size == 0:
++  28:             self.__head.next = newNode
++  29:             self.__head = newNode
++  30:             self.__size += 1
++  31:         else:
++  32:             self.__sentinel.next = newNode
++  33:             newNode.next = self.__head
++  34:             self.__head = newNode
++  35:             self.__size += 1
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+--------------------------------------------------------------------------------
+[3.31316 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_16
+
+def test_case_16():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+RANDOM/test_linkedList3_RANDOM.py:219: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+value = <linkedList3.SinglyLinkedList object at 0x7fdb4ee3dcf0>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:27: AttributeError
+   - [#   8] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+-  36:     def remove(self):
+-  37:         
+-  38:         '''Remove node from linkedlist.'''
+-  39:         
+-  40:         if self.__size == 0:
+-  41:             return None
+-  42:         if self.__size >= 1:
+-  43:             nodeToRemove = self.__head
+-  44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
+-  47:             return nodeToRemove
+-  48:         else:
+-  49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
+-  53:             return nodeToRemove
+-  54:     
++  36:     @classmethod
++  37:     def remove(self):
++  38:         
++  39:         '''Remove node from linkedlist.'''
++  40:         
++  41:         if self.__size == 0:
++  42:             return None
++  43:         if self.__size >= 1:
++  44:             nodeToRemove = self.__head
++  45:             self.__sentinel.next = None
++  46:             self.__head = self.__sentinel
++  47:             self.__size -= 1
++  48:             return nodeToRemove
++  49:         else:
++  50:             nodeToRemove = self.__head
++  51:             self.__sentinel.next = self.__head.next
++  52:             self.__head = self.__sentinel.next
++  53:             self.__size -= 1
++  54:             return nodeToRemove
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+--------------------------------------------------------------------------------
+[3.43621 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_5
+
+def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_1.getHeadNode()
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        int_1 = 0
+        node_2 = module_0.Node(int_1)
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_2.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_3.getHeadNode()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        none_type_0 = None
+        node_4 = module_0.Node(none_type_0)
+>       var_0 = singly_linked_list_3.remove()
+
+RANDOM/test_linkedList3_RANDOM.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:41: AttributeError
+   - [#   9] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+-  55:     def getHead(self) -> T:
+-  56:         
+-  57:         '''Get value of the linkedlist head node.'''
+-  58:         
+-  59:         return self.__head.value
+-  60:     
++  55:     @classmethod
++  56:     def getHead(self) -> T:
++  57:         
++  58:         '''Get value of the linkedlist head node.'''
++  59:         
++  60:         return self.__head.value
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+--------------------------------------------------------------------------------
+[3.52169 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_49
+
+def test_case_49():
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_2.getHeadNode()
+        str_1 = singly_linked_list_0.__str__()
+        assert str_1 == '[None]'
+>       var_0 = singly_linked_list_1.getHead()
+
+RANDOM/test_linkedList3_RANDOM.py:1235: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:60: AttributeError
+   - [#  10] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+   59:         return self.__head.value
+   60:     
+-  61:     def getHeadNode(self) -> Node:
+-  62:         
+-  63:         '''Get head node referance.'''
+-  64:         
+-  65:         return self.__head
+-  66:     
++  61:     @classmethod
++  62:     def getHeadNode(self) -> Node:
++  63:         
++  64:         '''Get head node referance.'''
++  65:         
++  66:         return self.__head
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+--------------------------------------------------------------------------------
+[3.43365 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       node_0 = singly_linked_list_0.getHeadNode()
+
+RANDOM/test_linkedList3_RANDOM.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:66: AttributeError
+   - [#  11] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   63:         '''Get head node referance.'''
+   64:         
+   65:         return self.__head
+   66:     
+-  67:     def getSize(self) -> int:
+-  68:         
+-  69:         '''Return size of the linkedlist.'''
+-  70:         
+-  71:         return self.__size
+-  72:     
++  67:     @classmethod
++  68:     def getSize(self) -> int:
++  69:         
++  70:         '''Return size of the linkedlist.'''
++  71:         
++  72:         return self.__size
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+--------------------------------------------------------------------------------
+[3.42687 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_37
+
+def test_case_37():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_2.isEmpty()
+        assert bool_0 is True
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_3.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        node_2 = singly_linked_list_4.getHeadNode()
+        str_1 = singly_linked_list_2.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_5.__str__()
+        assert str_2 == '[None]'
+        none_type_0 = singly_linked_list_5.add(singly_linked_list_5)
+        int_1 = 0
+        node_3 = module_0.Node(int_1)
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_6.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        int_2 = 0
+        node_4 = module_0.Node(int_2)
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_8.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        node_5 = singly_linked_list_9.getHeadNode()
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        none_type_1 = None
+        node_6 = module_0.Node(none_type_1)
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        str_3 = singly_linked_list_11.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_12.__str__()
+        assert str_4 == '[None]'
+        singly_linked_list_13 = module_0.SinglyLinkedList()
+        singly_linked_list_14 = module_0.SinglyLinkedList()
+        bool_3 = singly_linked_list_14.isEmpty()
+        assert bool_3 is True
+        singly_linked_list_15 = module_0.SinglyLinkedList()
+        str_5 = singly_linked_list_15.__str__()
+        assert str_5 == '[None]'
+        node_7 = singly_linked_list_14.getHeadNode()
+>       int_3 = singly_linked_list_2.getSize()
+
+RANDOM/test_linkedList3_RANDOM.py:898: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:72: AttributeError
+   - [#  12] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   69:         '''Return size of the linkedlist.'''
+   70:         
+   71:         return self.__size
+   72:     
+-  73:     def isEmpty(self) -> bool:
+-  74:         
+-  75:         '''Checks if linkedlist is empty.'''
+-  76:         
+-  77:         return True if self.__size == 0 else False
+-  78:     
++  73:     @classmethod
++  74:     def isEmpty(self) -> bool:
++  75:         
++  76:         '''Checks if linkedlist is empty.'''
++  77:         
++  78:         return True if self.__size == 0 else False
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+--------------------------------------------------------------------------------
+[3.32556 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       bool_0 = singly_linked_list_0.isEmpty()
+
+RANDOM/test_linkedList3_RANDOM.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:78: AttributeError
+   - [#  13] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+   77:         return True if self.__size == 0 else False
+   78:     
+-  79:     def toArray(self) -> list:
+-  80:         
+-  81:         '''Converts linkedlist to list.'''
+-  82:         
+-  83:         arr = []
+-  84:         current = self.__head
+-  85:         while current:
+-  86:             arr.append(current.value)
+-  87:             current = current.next
+-  88:         return arr
+-  89:     
++  79:     @classmethod
++  80:     def toArray(self) -> list:
++  81:         
++  82:         '''Converts linkedlist to list.'''
++  83:         
++  84:         arr = []
++  85:         current = self.__head
++  86:         while current:
++  87:             arr.append(current.value)
++  88:             current = current.next
++  89:         return arr
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+--------------------------------------------------------------------------------
+[3.30239 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_9
+
+def test_case_9():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is True
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_2.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_3.getHeadNode()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        none_type_0 = None
+        node_2 = module_0.Node(none_type_0)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_5.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_6.remove()
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_7.getHeadNode()
+        int_1 = 0
+        node_4 = module_0.Node(int_1)
+>       list_0 = singly_linked_list_7.toArray()
+
+RANDOM/test_linkedList3_RANDOM.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:85: AttributeError
+   - [#  14] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+   89:     
+-  90:     def __str__(self) -> str:
+-  91:         
+-  92:         '''Return String representation of linkedlist values.'''
+-  93:         
+-  94:         arr = []
+-  95:         current = self.__head
+-  96:         while current:
+-  97:             arr.append(current.value)
+-  98:             current = current.next
+-  99:         return str(arr)
+- 100: 
++  90:     @classmethod
++  91:     def __str__(self) -> str:
++  92:         
++  93:         '''Return String representation of linkedlist values.'''
++  94:         
++  95:         arr = []
++  96:         current = self.__head
++  97:         while current:
++  98:             arr.append(current.value)
++  99:             current = current.next
++ 100:         return str(arr)
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[3.22467 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_8
+
+def test_case_8():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       str_0 = singly_linked_list_0.__str__()
+
+RANDOM/test_linkedList3_RANDOM.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:96: AttributeError
+   - [#  15] COI linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+-  26:         if self.__size == 0:
++  26:         if not (self.__size == 0):
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[12.57994 s] timeout
+   - [#  16] COI linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+-  40:         if self.__size == 0:
++  40:         if not (self.__size == 0):
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[3.38058 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_28
+
+def test_case_28():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_2.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_3.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_4.getHeadNode()
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_5.isEmpty()
+        assert bool_0 is True
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_6.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_2 = singly_linked_list_7.getHeadNode()
+        str_3 = singly_linked_list_5.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_8.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_9.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_10.__str__()
+        assert str_4 == '[None]'
+        node_3 = singly_linked_list_9.getHeadNode()
+        int_1 = 0
+        node_4 = module_0.Node(int_1)
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        bool_3 = singly_linked_list_11.isEmpty()
+        assert bool_3 is True
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_0.remove()
+        str_5 = var_1.__str__()
+>       assert str_5 == 'None'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:577: AssertionError
+   - [#  17] COI linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if not (self.__size >= 1):
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[3.89116 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_527
+
+def test_case_527():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert var_0.next is None
+        str_1 = var_0.__str__()
+        node_0 = singly_linked_list_0.getHeadNode()
+>       assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:18034: AssertionError
+   - [#  18] COI linkedList3: 
+--------------------------------------------------------------------------------
+   81:         '''Converts linkedlist to list.'''
+   82:         
+   83:         arr = []
+   84:         current = self.__head
+-  85:         while current:
++  85:         while not current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+   89:     
+--------------------------------------------------------------------------------
+[3.81817 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_333
+
+def test_case_333():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        none_type_0 = None
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_1 = singly_linked_list_0.add(none_type_0)
+        none_type_2 = singly_linked_list_0.add(none_type_0)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is False
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_2.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_5.__str__()
+        assert str_1 == '[None]'
+        var_0 = singly_linked_list_5.remove()
+        node_1 = singly_linked_list_5.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_6.toArray()
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_7.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_8.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_10.remove()
+        int_0 = 0
+        node_2 = module_0.Node(int_0)
+        var_2 = singly_linked_list_8.getHead()
+        list_1 = singly_linked_list_9.toArray()
+        bool_3 = False
+        node_3 = module_0.Node(bool_3)
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        var_3 = singly_linked_list_11.getHead()
+        str_3 = var_3.__str__()
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_12.__str__()
+        assert str_4 == '[None]'
+        var_4 = singly_linked_list_12.remove()
+        singly_linked_list_13 = module_0.SinglyLinkedList()
+        bool_4 = singly_linked_list_13.isEmpty()
+        assert bool_4 is True
+        bool_5 = singly_linked_list_13.isEmpty()
+        assert bool_5 is True
+        node_4 = module_0.Node(list_0)
+>       assert node_4.value == [None]
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:10606: AssertionError
+   - [#  19] COI linkedList3: 
+--------------------------------------------------------------------------------
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+   94:         arr = []
+   95:         current = self.__head
+-  96:         while current:
++  96:         while not current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+--------------------------------------------------------------------------------
+[3.51414 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_8
+
+def test_case_8():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:75: AssertionError
+   - [#  20] COI linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+- 102: if __name__ == '__main__':
++ 102: if not (__name__ == '__main__'):
+  103:     pass
+--------------------------------------------------------------------------------
+[2.53828 s] survived
+   - [#  21] CRP linkedList3: 
+--------------------------------------------------------------------------------
+    2: 
+    3: from typing import TypeVar
+    4: 
+    5: 
+-   6: T = TypeVar('T')
++   6: T = TypeVar('mutpy')
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+--------------------------------------------------------------------------------
+[2.54855 s] survived
+   - [#  22] CRP linkedList3: 
+--------------------------------------------------------------------------------
+    2: 
+    3: from typing import TypeVar
+    4: 
+    5: 
+-   6: T = TypeVar('T')
++   6: T = TypeVar('')
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+--------------------------------------------------------------------------------
+[2.53944 s] survived
+   - [#  23] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
++  19:         self.__size = 1
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[3.41493 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:9: AssertionError
+   - [#  24] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+-  26:         if self.__size == 0:
++  26:         if self.__size == 1:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[12.58199 s] timeout
+   - [#  25] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+-  29:             self.__size += 1
++  29:             self.__size += 2
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+--------------------------------------------------------------------------------
+[3.44384 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_115
+
+def test_case_115():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_3.remove()
+        bool_1 = singly_linked_list_3.isEmpty()
+        assert bool_1 is True
+        var_2 = singly_linked_list_1.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_4.__str__()
+        assert str_1 == '[None]'
+        bool_2 = False
+        node_2 = module_0.Node(bool_2)
+        str_2 = singly_linked_list_4.__str__()
+        assert str_2 == '[None]'
+        bool_3 = False
+        node_3 = module_0.Node(bool_3)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        var_3 = singly_linked_list_5.getHead()
+        str_3 = var_3.__str__()
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_6.toArray()
+        none_type_0 = None
+        node_4 = module_0.Node(none_type_0)
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_7.__str__()
+        assert str_4 == '[None]'
+        none_type_1 = singly_linked_list_7.add(singly_linked_list_7)
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        var_4 = singly_linked_list_7.remove()
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_4.value).__module__}.{type(var_4.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert var_4.next is None
+        str_5 = var_4.__str__()
+        bool_4 = singly_linked_list_7.isEmpty()
+>       assert bool_4 is True
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:3195: AssertionError
+   - [#  26] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+-  34:             self.__size += 1
++  34:             self.__size += 2
+   35:     
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[3.56248 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_182
+
+def test_case_182():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        none_type_1 = None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_2 = singly_linked_list_1.add(none_type_1)
+        none_type_3 = singly_linked_list_1.add(none_type_1)
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_2.getHeadNode()
+        int_1 = singly_linked_list_1.getSize()
+>       assert int_1 == 2
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:5310: AssertionError
+   - [#  27] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+-  40:         if self.__size == 0:
++  40:         if self.__size == 1:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[3.33128 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_28
+
+def test_case_28():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_2.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_3.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_4.getHeadNode()
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_5.isEmpty()
+        assert bool_0 is True
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_6.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_2 = singly_linked_list_7.getHeadNode()
+        str_3 = singly_linked_list_5.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_8.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_9.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_10.__str__()
+        assert str_4 == '[None]'
+        node_3 = singly_linked_list_9.getHeadNode()
+        int_1 = 0
+        node_4 = module_0.Node(int_1)
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        bool_3 = singly_linked_list_11.isEmpty()
+        assert bool_3 is True
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_0.remove()
+        str_5 = var_1.__str__()
+>       assert str_5 == 'None'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:577: AssertionError
+   - [#  28] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if self.__size >= 2:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[4.00435 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_527
+
+def test_case_527():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert var_0.next is None
+        str_1 = var_0.__str__()
+        node_0 = singly_linked_list_0.getHeadNode()
+>       assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:18034: AssertionError
+   - [#  29] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
++  46:             self.__size -= 2
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[3.48845 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_115
+
+def test_case_115():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_3.remove()
+        bool_1 = singly_linked_list_3.isEmpty()
+        assert bool_1 is True
+        var_2 = singly_linked_list_1.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_4.__str__()
+        assert str_1 == '[None]'
+        bool_2 = False
+        node_2 = module_0.Node(bool_2)
+        str_2 = singly_linked_list_4.__str__()
+        assert str_2 == '[None]'
+        bool_3 = False
+        node_3 = module_0.Node(bool_3)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        var_3 = singly_linked_list_5.getHead()
+        str_3 = var_3.__str__()
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_6.toArray()
+        none_type_0 = None
+        node_4 = module_0.Node(none_type_0)
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_7.__str__()
+        assert str_4 == '[None]'
+        none_type_1 = singly_linked_list_7.add(singly_linked_list_7)
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        var_4 = singly_linked_list_7.remove()
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_4.value).__module__}.{type(var_4.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert var_4.next is None
+        str_5 = var_4.__str__()
+        bool_4 = singly_linked_list_7.isEmpty()
+>       assert bool_4 is True
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:3195: AssertionError
+   - [#  30] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
++  52:             self.__size -= 2
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+--------------------------------------------------------------------------------
+[2.46619 s] survived
+   - [#  31] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+-  77:         return True if self.__size == 0 else False
++  77:         return True if self.__size == 1 else False
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[3.30644 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:9: AssertionError
+   - [#  32] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+- 102: if __name__ == '__main__':
++ 102: if __name__ == 'mutpy':
+  103:     pass
+--------------------------------------------------------------------------------
+[2.32279 s] survived
+   - [#  33] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+- 102: if __name__ == '__main__':
++ 102: if __name__ == '':
+  103:     pass
+--------------------------------------------------------------------------------
+[2.44328 s] survived
+   - [#  34] OIL linkedList3: 
+--------------------------------------------------------------------------------
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+-  88:         return arr
+-  89:     
++  88:             break
++  89:         return arr
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+--------------------------------------------------------------------------------
+[2.41806 s] survived
+   - [#  35] OIL linkedList3: 
+--------------------------------------------------------------------------------
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+-  99:         return str(arr)
+- 100: 
++  99:             break
++ 100:         return str(arr)
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[3.65705 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_186
+
+def test_case_186():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        str_0 = var_0.__str__()
+        assert str_0 == 'None'
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        none_type_0 = None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_1 = singly_linked_list_1.add(none_type_0)
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_2.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        node_2 = singly_linked_list_3.getHeadNode()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        none_type_2 = None
+        node_3 = module_0.Node(none_type_2)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_5.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_7.remove()
+        bool_2 = singly_linked_list_7.isEmpty()
+        assert bool_2 is True
+        bool_3 = False
+        node_4 = module_0.Node(bool_3)
+        none_type_3 = None
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        none_type_4 = singly_linked_list_8.add(none_type_3)
+        none_type_5 = singly_linked_list_8.add(none_type_3)
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_9.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        bool_4 = singly_linked_list_9.isEmpty()
+        assert bool_4 is True
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_11.toArray()
+        str_3 = singly_linked_list_8.__str__()
+>       assert str_3 == '[None, None]'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:5422: AssertionError
+   - [#  36] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+-  26:         if self.__size == 0:
++  26:         if self.__size != 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[12.57826 s] timeout
+   - [#  37] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+-  40:         if self.__size == 0:
++  40:         if self.__size != 0:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[3.41717 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_28
+
+def test_case_28():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_2.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_3.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_4.getHeadNode()
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_5.isEmpty()
+        assert bool_0 is True
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_6.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_2 = singly_linked_list_7.getHeadNode()
+        str_3 = singly_linked_list_5.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_8.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_9.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_10.__str__()
+        assert str_4 == '[None]'
+        node_3 = singly_linked_list_9.getHeadNode()
+        int_1 = 0
+        node_4 = module_0.Node(int_1)
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        bool_3 = singly_linked_list_11.isEmpty()
+        assert bool_3 is True
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_0.remove()
+        str_5 = var_1.__str__()
+>       assert str_5 == 'None'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:577: AssertionError
+   - [#  38] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if self.__size <= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[4.67829 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_1425
+
+def test_case_1425():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        var_0 = singly_linked_list_0.getHead()
+        dict_0 = {int_0: none_type_0, var_0: str_0}
+        node_0 = module_0.Node(dict_0)
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_1 = singly_linked_list_0.add(dict_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_1.__str__()
+        assert str_1 == '[None]'
+        none_type_2 = singly_linked_list_1.add(singly_linked_list_1)
+        none_type_3 = singly_linked_list_1.add(str_1)
+        var_1 = singly_linked_list_1.remove()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList3.Node'
+        assert var_1.value == '[None]'
+        assert f'{type(var_1.next).__module__}.{type(var_1.next).__qualname__}' == 'linkedList3.Node'
+        str_2 = singly_linked_list_1.__str__()
+>       assert str_2 == '[None]'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:55043: AssertionError
+   - [#  39] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if self.__size > 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[3.88367 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_527
+
+def test_case_527():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert var_0.next is None
+        str_1 = var_0.__str__()
+        node_0 = singly_linked_list_0.getHeadNode()
+>       assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:18034: AssertionError
+   - [#  40] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+-  77:         return True if self.__size == 0 else False
++  77:         return True if self.__size != 0 else False
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[3.48211 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:9: AssertionError
+   - [#  41] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+- 102: if __name__ == '__main__':
++ 102: if __name__ != '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[2.45776 s] survived
+   - [#  42] SDI linkedList3: 
+--------------------------------------------------------------------------------
+    6: T = TypeVar('T')
+    7: 
+    8: 
+    9: class Node:
+-  10:     def __init__(self, value: T):
+-  11:         self.value = value
+-  12:         self.next = None
+-  13: 
++  10:     @staticmethod
++  11:     def __init__(self, value: T):
++  12:         self.value = value
++  13:         self.next = None
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+--------------------------------------------------------------------------------
+[3.35991 s] incompetent
+
+TypeError: linkedList3:17: TypeError: Node.__init__() missing 1 required positional argument: 'value'
+
+   - [#  43] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+-  16:     def __init__(self):
+-  17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
+-  20:     
++  16:     @staticmethod
++  17:     def __init__(self):
++  18:         self.__sentinel = Node(None)
++  19:         self.__head = self.__sentinel
++  20:         self.__size = 0
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+--------------------------------------------------------------------------------
+[3.42176 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/RANDOM/test_linkedList3_RANDOM.py:7: TypeError: SinglyLinkedList.__init__() missing 1 required positional argument: 'self'
+
+   - [#  44] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+-  21:     def add(self, value: T) -> None:
+-  22:         
+-  23:         '''Add element to linked list.'''
+-  24:         
+-  25:         newNode = Node(value)
+-  26:         if self.__size == 0:
+-  27:             self.__head.next = newNode
+-  28:             self.__head = newNode
+-  29:             self.__size += 1
+-  30:         else:
+-  31:             self.__sentinel.next = newNode
+-  32:             newNode.next = self.__head
+-  33:             self.__head = newNode
+-  34:             self.__size += 1
+-  35:     
++  21:     @staticmethod
++  22:     def add(self, value: T) -> None:
++  23:         
++  24:         '''Add element to linked list.'''
++  25:         
++  26:         newNode = Node(value)
++  27:         if self.__size == 0:
++  28:             self.__head.next = newNode
++  29:             self.__head = newNode
++  30:             self.__size += 1
++  31:         else:
++  32:             self.__sentinel.next = newNode
++  33:             newNode.next = self.__head
++  34:             self.__head = newNode
++  35:             self.__size += 1
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+--------------------------------------------------------------------------------
+[3.26010 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/RANDOM/test_linkedList3_RANDOM.py:219: TypeError: SinglyLinkedList.add() missing 1 required positional argument: 'value'
+
+   - [#  45] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+-  36:     def remove(self):
+-  37:         
+-  38:         '''Remove node from linkedlist.'''
+-  39:         
+-  40:         if self.__size == 0:
+-  41:             return None
+-  42:         if self.__size >= 1:
+-  43:             nodeToRemove = self.__head
+-  44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
+-  47:             return nodeToRemove
+-  48:         else:
+-  49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
+-  53:             return nodeToRemove
+-  54:     
++  36:     @staticmethod
++  37:     def remove(self):
++  38:         
++  39:         '''Remove node from linkedlist.'''
++  40:         
++  41:         if self.__size == 0:
++  42:             return None
++  43:         if self.__size >= 1:
++  44:             nodeToRemove = self.__head
++  45:             self.__sentinel.next = None
++  46:             self.__head = self.__sentinel
++  47:             self.__size -= 1
++  48:             return nodeToRemove
++  49:         else:
++  50:             nodeToRemove = self.__head
++  51:             self.__sentinel.next = self.__head.next
++  52:             self.__head = self.__sentinel.next
++  53:             self.__size -= 1
++  54:             return nodeToRemove
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+--------------------------------------------------------------------------------
+[3.38985 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/RANDOM/test_linkedList3_RANDOM.py:52: TypeError: SinglyLinkedList.remove() missing 1 required positional argument: 'self'
+
+   - [#  46] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+-  55:     def getHead(self) -> T:
+-  56:         
+-  57:         '''Get value of the linkedlist head node.'''
+-  58:         
+-  59:         return self.__head.value
+-  60:     
++  55:     @staticmethod
++  56:     def getHead(self) -> T:
++  57:         
++  58:         '''Get value of the linkedlist head node.'''
++  59:         
++  60:         return self.__head.value
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+--------------------------------------------------------------------------------
+[3.54691 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/RANDOM/test_linkedList3_RANDOM.py:1235: TypeError: SinglyLinkedList.getHead() missing 1 required positional argument: 'self'
+
+   - [#  47] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+   59:         return self.__head.value
+   60:     
+-  61:     def getHeadNode(self) -> Node:
+-  62:         
+-  63:         '''Get head node referance.'''
+-  64:         
+-  65:         return self.__head
+-  66:     
++  61:     @staticmethod
++  62:     def getHeadNode(self) -> Node:
++  63:         
++  64:         '''Get head node referance.'''
++  65:         
++  66:         return self.__head
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+--------------------------------------------------------------------------------
+[3.47309 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/RANDOM/test_linkedList3_RANDOM.py:16: TypeError: SinglyLinkedList.getHeadNode() missing 1 required positional argument: 'self'
+
+   - [#  48] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   63:         '''Get head node referance.'''
+   64:         
+   65:         return self.__head
+   66:     
+-  67:     def getSize(self) -> int:
+-  68:         
+-  69:         '''Return size of the linkedlist.'''
+-  70:         
+-  71:         return self.__size
+-  72:     
++  67:     @staticmethod
++  68:     def getSize(self) -> int:
++  69:         
++  70:         '''Return size of the linkedlist.'''
++  71:         
++  72:         return self.__size
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+--------------------------------------------------------------------------------
+[3.50696 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/RANDOM/test_linkedList3_RANDOM.py:898: TypeError: SinglyLinkedList.getSize() missing 1 required positional argument: 'self'
+
+   - [#  49] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   69:         '''Return size of the linkedlist.'''
+   70:         
+   71:         return self.__size
+   72:     
+-  73:     def isEmpty(self) -> bool:
+-  74:         
+-  75:         '''Checks if linkedlist is empty.'''
+-  76:         
+-  77:         return True if self.__size == 0 else False
+-  78:     
++  73:     @staticmethod
++  74:     def isEmpty(self) -> bool:
++  75:         
++  76:         '''Checks if linkedlist is empty.'''
++  77:         
++  78:         return True if self.__size == 0 else False
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+--------------------------------------------------------------------------------
+[3.54734 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/RANDOM/test_linkedList3_RANDOM.py:8: TypeError: SinglyLinkedList.isEmpty() missing 1 required positional argument: 'self'
+
+   - [#  50] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+   77:         return True if self.__size == 0 else False
+   78:     
+-  79:     def toArray(self) -> list:
+-  80:         
+-  81:         '''Converts linkedlist to list.'''
+-  82:         
+-  83:         arr = []
+-  84:         current = self.__head
+-  85:         while current:
+-  86:             arr.append(current.value)
+-  87:             current = current.next
+-  88:         return arr
+-  89:     
++  79:     @staticmethod
++  80:     def toArray(self) -> list:
++  81:         
++  82:         '''Converts linkedlist to list.'''
++  83:         
++  84:         arr = []
++  85:         current = self.__head
++  86:         while current:
++  87:             arr.append(current.value)
++  88:             current = current.next
++  89:         return arr
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+--------------------------------------------------------------------------------
+[3.46234 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/RANDOM/test_linkedList3_RANDOM.py:101: TypeError: SinglyLinkedList.toArray() missing 1 required positional argument: 'self'
+
+   - [#  51] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+   89:     
+-  90:     def __str__(self) -> str:
+-  91:         
+-  92:         '''Return String representation of linkedlist values.'''
+-  93:         
+-  94:         arr = []
+-  95:         current = self.__head
+-  96:         while current:
+-  97:             arr.append(current.value)
+-  98:             current = current.next
+-  99:         return str(arr)
+- 100: 
++  90:     @staticmethod
++  91:     def __str__(self) -> str:
++  92:         
++  93:         '''Return String representation of linkedlist values.'''
++  94:         
++  95:         arr = []
++  96:         current = self.__head
++  97:         while current:
++  98:             arr.append(current.value)
++  99:             current = current.next
++ 100:         return str(arr)
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[3.46227 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/RANDOM/test_linkedList3_RANDOM.py:74: TypeError: SinglyLinkedList.__str__() missing 1 required positional argument: 'self'
+
+   - [#  52] SDL linkedList3: 
+--------------------------------------------------------------------------------
+    2: 
+    3: from typing import TypeVar
+    4: 
+    5: 
+-   6: T = TypeVar('T')
++   6: pass
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+NameError: name 'T' is not defined
+
+   - [#  53] SDL linkedList3: 
+--------------------------------------------------------------------------------
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+-  11:         self.value = value
++  11:         pass
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+--------------------------------------------------------------------------------
+[3.48219 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_8
+
+def test_case_8():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       str_0 = singly_linked_list_0.__str__()
+
+RANDOM/test_linkedList3_RANDOM.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4d075900>
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'value'
+
+linkedList3:97: AttributeError
+   - [#  54] SDL linkedList3: 
+--------------------------------------------------------------------------------
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+   11:         self.value = value
+-  12:         self.next = None
++  12:         pass
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+--------------------------------------------------------------------------------
+[3.33451 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_8
+
+def test_case_8():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       str_0 = singly_linked_list_0.__str__()
+
+RANDOM/test_linkedList3_RANDOM.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4fa0ea70>
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'next'
+
+linkedList3:98: AttributeError
+   - [#  55] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+-  17:         self.__sentinel = Node(None)
++  17:         pass
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+--------------------------------------------------------------------------------
+[3.49339 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_0
+
+def test_case_0():
+>       singly_linked_list_0 = module_0.SinglyLinkedList()
+
+RANDOM/test_linkedList3_RANDOM.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4fa968f0>
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__sentinel'
+
+linkedList3:18: AttributeError
+   - [#  56] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
++  18:         pass
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+--------------------------------------------------------------------------------
+[3.38338 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       node_0 = singly_linked_list_0.getHeadNode()
+
+RANDOM/test_linkedList3_RANDOM.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4ecd5cc0>
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__head'. Did you mean: '_SinglyLinkedList__size'?
+
+linkedList3:65: AttributeError
+   - [#  57] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
++  19:         pass
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[3.45798 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       bool_0 = singly_linked_list_0.isEmpty()
+
+RANDOM/test_linkedList3_RANDOM.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4cfc0df0>
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__size'. Did you mean: '_SinglyLinkedList__head'?
+
+linkedList3:77: AttributeError
+   - [#  58] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+-  25:         newNode = Node(value)
++  25:         pass
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+--------------------------------------------------------------------------------
+[3.44270 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_16
+
+def test_case_16():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+RANDOM/test_linkedList3_RANDOM.py:219: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4ecd5930>
+value = <linkedList3.SinglyLinkedList object at 0x7fdb4ecd5930>
+
+>   ???
+E   NameError: name 'newNode' is not defined
+
+linkedList3:27: NameError
+   - [#  59] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+-  27:             self.__head.next = newNode
++  27:             pass
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+--------------------------------------------------------------------------------
+[4.41188 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_1165
+
+def test_case_1165():
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        none_type_0 = None
+        node_1 = module_0.Node(none_type_0)
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        var_0 = singly_linked_list_0.remove()
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        bool_0 = False
+        node_3 = module_0.Node(bool_0)
+        node_4 = module_0.Node(node_3)
+        none_type_1 = singly_linked_list_0.add(var_0)
+>       assert f'{type(node_2.next).__module__}.{type(node_2.next).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:44102: AssertionError
+   - [#  60] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+-  28:             self.__head = newNode
++  28:             pass
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+--------------------------------------------------------------------------------
+[3.40774 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_34
+
+def test_case_34():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_3.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_4.getHeadNode()
+        int_1 = 0
+        node_2 = module_0.Node(int_1)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_5.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_6.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_7.getHeadNode()
+        str_2 = singly_linked_list_5.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        str_3 = singly_linked_list_8.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_9.__str__()
+        assert str_4 == '[None]'
+        none_type_0 = singly_linked_list_9.add(singly_linked_list_9)
+        int_2 = 0
+        node_4 = module_0.Node(int_2)
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_10.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        node_5 = singly_linked_list_11.getHeadNode()
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        none_type_1 = None
+        node_6 = module_0.Node(none_type_1)
+        var_1 = singly_linked_list_9.remove()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList3.Node'
+>       assert f'{type(var_1.value).__module__}.{type(var_1.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:765: AssertionError
+   - [#  61] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+-  31:             self.__sentinel.next = newNode
++  31:             pass
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+--------------------------------------------------------------------------------
+[2.39967 s] survived
+   - [#  62] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+-  32:             newNode.next = self.__head
++  32:             pass
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+--------------------------------------------------------------------------------
+[3.61862 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_186
+
+def test_case_186():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        str_0 = var_0.__str__()
+        assert str_0 == 'None'
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        none_type_0 = None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_1 = singly_linked_list_1.add(none_type_0)
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_2.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        node_2 = singly_linked_list_3.getHeadNode()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        none_type_2 = None
+        node_3 = module_0.Node(none_type_2)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_5.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_7.remove()
+        bool_2 = singly_linked_list_7.isEmpty()
+        assert bool_2 is True
+        bool_3 = False
+        node_4 = module_0.Node(bool_3)
+        none_type_3 = None
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        none_type_4 = singly_linked_list_8.add(none_type_3)
+        none_type_5 = singly_linked_list_8.add(none_type_3)
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_9.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        bool_4 = singly_linked_list_9.isEmpty()
+        assert bool_4 is True
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_11.toArray()
+        str_3 = singly_linked_list_8.__str__()
+>       assert str_3 == '[None, None]'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:5422: AssertionError
+   - [#  63] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+-  33:             self.__head = newNode
++  33:             pass
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+   37:         
+--------------------------------------------------------------------------------
+[3.57586 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_135
+
+def test_case_135():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.getHead()
+>       assert var_0 == '[None]'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:3770: AssertionError
+   - [#  64] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+-  41:             return None
++  41:             pass
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+--------------------------------------------------------------------------------
+[3.25365 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_28
+
+def test_case_28():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_2.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_3.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_4.getHeadNode()
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_5.isEmpty()
+        assert bool_0 is True
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_6.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_2 = singly_linked_list_7.getHeadNode()
+        str_3 = singly_linked_list_5.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_8.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_9.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_10.__str__()
+        assert str_4 == '[None]'
+        node_3 = singly_linked_list_9.getHeadNode()
+        int_1 = 0
+        node_4 = module_0.Node(int_1)
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        bool_3 = singly_linked_list_11.isEmpty()
+        assert bool_3 is True
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_0.remove()
+        str_5 = var_1.__str__()
+>       assert str_5 == 'None'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:577: AssertionError
+   - [#  65] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+-  43:             nodeToRemove = self.__head
++  43:             pass
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+--------------------------------------------------------------------------------
+[3.44705 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_34
+
+def test_case_34():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_3.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_4.getHeadNode()
+        int_1 = 0
+        node_2 = module_0.Node(int_1)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_5.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_6.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_7.getHeadNode()
+        str_2 = singly_linked_list_5.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        str_3 = singly_linked_list_8.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_9.__str__()
+        assert str_4 == '[None]'
+        none_type_0 = singly_linked_list_9.add(singly_linked_list_9)
+        int_2 = 0
+        node_4 = module_0.Node(int_2)
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_10.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        node_5 = singly_linked_list_11.getHeadNode()
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        none_type_1 = None
+        node_6 = module_0.Node(none_type_1)
+>       var_1 = singly_linked_list_9.remove()
+
+RANDOM/test_linkedList3_RANDOM.py:763: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4ee75030>
+
+>   ???
+E   UnboundLocalError: local variable 'nodeToRemove' referenced before assignment
+
+linkedList3:47: UnboundLocalError
+   - [#  66] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+-  44:             self.__sentinel.next = None
++  44:             pass
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+--------------------------------------------------------------------------------
+[3.88704 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_527
+
+def test_case_527():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert var_0.next is None
+        str_1 = var_0.__str__()
+        node_0 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'linkedList3.Node'
+        assert node_0.value is None
+>       assert node_0.next is None
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:18036: AssertionError
+   - [#  67] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
++  45:             pass
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[3.71813 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_527
+
+def test_case_527():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert var_0.next is None
+        str_1 = var_0.__str__()
+        node_0 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_0).__module__}.{type(node_0).__qualname__}' == 'linkedList3.Node'
+>       assert node_0.value is None
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:18035: AssertionError
+   - [#  68] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+-  47:             return nodeToRemove
++  47:             pass
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+--------------------------------------------------------------------------------
+[3.32501 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_34
+
+def test_case_34():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_3.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_4.getHeadNode()
+        int_1 = 0
+        node_2 = module_0.Node(int_1)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_5.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_6.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_7.getHeadNode()
+        str_2 = singly_linked_list_5.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        str_3 = singly_linked_list_8.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_9.__str__()
+        assert str_4 == '[None]'
+        none_type_0 = singly_linked_list_9.add(singly_linked_list_9)
+        int_2 = 0
+        node_4 = module_0.Node(int_2)
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_10.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        node_5 = singly_linked_list_11.getHeadNode()
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        none_type_1 = None
+        node_6 = module_0.Node(none_type_1)
+        var_1 = singly_linked_list_9.remove()
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:764: AssertionError
+   - [#  69] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+-  49:             nodeToRemove = self.__head
++  49:             pass
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+--------------------------------------------------------------------------------
+[2.47832 s] survived
+   - [#  70] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
++  50:             pass
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+--------------------------------------------------------------------------------
+[2.45836 s] survived
+   - [#  71] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
++  51:             pass
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[2.33703 s] survived
+   - [#  72] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+-  53:             return nodeToRemove
++  53:             pass
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+--------------------------------------------------------------------------------
+[2.37208 s] survived
+   - [#  73] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+-  59:         return self.__head.value
++  59:         pass
+   60:     
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+--------------------------------------------------------------------------------
+[3.39410 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_135
+
+def test_case_135():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.getHead()
+>       assert var_0 == '[None]'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:3770: AssertionError
+   - [#  74] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+-  65:         return self.__head
++  65:         pass
+   66:     
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+--------------------------------------------------------------------------------
+[3.26616 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_65
+
+def test_case_65():
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_1.getHeadNode()
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        none_type_0 = None
+        node_2 = module_0.Node(none_type_0)
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_3.getHeadNode()
+        int_1 = 0
+        node_4 = module_0.Node(int_1)
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_4.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_6.__str__()
+        assert str_0 == '[None]'
+        none_type_1 = singly_linked_list_6.add(singly_linked_list_6)
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_6.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert var_0.next is None
+        str_1 = var_0.__str__()
+        bool_2 = False
+        node_5 = module_0.Node(bool_2)
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_8.remove()
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_9.__str__()
+        assert str_2 == '[None]'
+        bool_3 = False
+        node_6 = module_0.Node(bool_3)
+        str_3 = singly_linked_list_9.__str__()
+        assert str_3 == '[None]'
+        bool_4 = False
+        node_7 = module_0.Node(bool_4)
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        node_8 = singly_linked_list_8.getHeadNode()
+>       assert f'{type(node_8).__module__}.{type(node_8).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:1639: AssertionError
+   - [#  75] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+-  71:         return self.__size
++  71:         pass
+   72:     
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+--------------------------------------------------------------------------------
+[3.35384 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_84
+
+def test_case_84():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is True
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_2.__str__()
+        assert str_1 == '[None]'
+        node_0 = singly_linked_list_1.getHeadNode()
+        bool_1 = False
+        node_1 = module_0.Node(bool_1)
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_3.getHead()
+        str_2 = var_0.__str__()
+        int_0 = 0
+        node_2 = module_0.Node(int_0)
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_4.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        str_3 = singly_linked_list_5.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_6.getHeadNode()
+        str_4 = singly_linked_list_4.__str__()
+        assert str_4 == '[None]'
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_4 = singly_linked_list_7.getHeadNode()
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_8.remove()
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        bool_3 = singly_linked_list_9.isEmpty()
+        assert bool_3 is True
+        int_1 = 0
+        node_5 = module_0.Node(int_1)
+        bool_4 = False
+        node_6 = module_0.Node(bool_4)
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        var_2 = singly_linked_list_10.remove()
+        int_2 = 0
+        node_7 = module_0.Node(int_2)
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        bool_5 = singly_linked_list_11.isEmpty()
+        assert bool_5 is True
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        node_8 = singly_linked_list_12.getHeadNode()
+        singly_linked_list_13 = module_0.SinglyLinkedList()
+        none_type_1 = None
+        node_9 = module_0.Node(none_type_1)
+        int_3 = singly_linked_list_10.getSize()
+>       assert int_3 == 0
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:2330: AssertionError
+   - [#  76] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+-  77:         return True if self.__size == 0 else False
++  77:         pass
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[3.57273 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:9: AssertionError
+   - [#  77] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+-  83:         arr = []
++  83:         pass
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+--------------------------------------------------------------------------------
+[3.45168 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_9
+
+def test_case_9():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is True
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_2.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_3.getHeadNode()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        none_type_0 = None
+        node_2 = module_0.Node(none_type_0)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_5.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_6.remove()
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_7.getHeadNode()
+        int_1 = 0
+        node_4 = module_0.Node(int_1)
+>       list_0 = singly_linked_list_7.toArray()
+
+RANDOM/test_linkedList3_RANDOM.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4ed04ac0>
+
+>   ???
+E   NameError: name 'arr' is not defined
+
+linkedList3:86: NameError
+   - [#  78] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+   83:         arr = []
+-  84:         current = self.__head
++  84:         pass
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+--------------------------------------------------------------------------------
+[3.29396 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_9
+
+def test_case_9():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is True
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_2.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_3.getHeadNode()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        none_type_0 = None
+        node_2 = module_0.Node(none_type_0)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_5.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_6.remove()
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_7.getHeadNode()
+        int_1 = 0
+        node_4 = module_0.Node(int_1)
+>       list_0 = singly_linked_list_7.toArray()
+
+RANDOM/test_linkedList3_RANDOM.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4f654fd0>
+
+>   ???
+E   UnboundLocalError: local variable 'current' referenced before assignment
+
+linkedList3:85: UnboundLocalError
+   - [#  79] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   82:         
+   83:         arr = []
+   84:         current = self.__head
+   85:         while current:
+-  86:             arr.append(current.value)
++  86:             pass
+   87:             current = current.next
+   88:         return arr
+   89:     
+   90:     def __str__(self) -> str:
+--------------------------------------------------------------------------------
+[3.74531 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_333
+
+def test_case_333():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        none_type_0 = None
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_1 = singly_linked_list_0.add(none_type_0)
+        none_type_2 = singly_linked_list_0.add(none_type_0)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is False
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_2.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_5.__str__()
+        assert str_1 == '[None]'
+        var_0 = singly_linked_list_5.remove()
+        node_1 = singly_linked_list_5.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_6.toArray()
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_7.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_8.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_10.remove()
+        int_0 = 0
+        node_2 = module_0.Node(int_0)
+        var_2 = singly_linked_list_8.getHead()
+        list_1 = singly_linked_list_9.toArray()
+        bool_3 = False
+        node_3 = module_0.Node(bool_3)
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        var_3 = singly_linked_list_11.getHead()
+        str_3 = var_3.__str__()
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_12.__str__()
+        assert str_4 == '[None]'
+        var_4 = singly_linked_list_12.remove()
+        singly_linked_list_13 = module_0.SinglyLinkedList()
+        bool_4 = singly_linked_list_13.isEmpty()
+        assert bool_4 is True
+        bool_5 = singly_linked_list_13.isEmpty()
+        assert bool_5 is True
+        node_4 = module_0.Node(list_0)
+>       assert node_4.value == [None]
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:10606: AssertionError
+   - [#  80] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   83:         arr = []
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+-  87:             current = current.next
++  87:             pass
+   88:         return arr
+   89:     
+   90:     def __str__(self) -> str:
+   91:         
+--------------------------------------------------------------------------------
+[12.57935 s] timeout
+   - [#  81] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+-  88:         return arr
++  88:         pass
+   89:     
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+--------------------------------------------------------------------------------
+[3.68048 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_333
+
+def test_case_333():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        none_type_0 = None
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_1 = singly_linked_list_0.add(none_type_0)
+        none_type_2 = singly_linked_list_0.add(none_type_0)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is False
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_2.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_5.__str__()
+        assert str_1 == '[None]'
+        var_0 = singly_linked_list_5.remove()
+        node_1 = singly_linked_list_5.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_6.toArray()
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_7.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_8.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_10.remove()
+        int_0 = 0
+        node_2 = module_0.Node(int_0)
+        var_2 = singly_linked_list_8.getHead()
+        list_1 = singly_linked_list_9.toArray()
+        bool_3 = False
+        node_3 = module_0.Node(bool_3)
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        var_3 = singly_linked_list_11.getHead()
+        str_3 = var_3.__str__()
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_12.__str__()
+        assert str_4 == '[None]'
+        var_4 = singly_linked_list_12.remove()
+        singly_linked_list_13 = module_0.SinglyLinkedList()
+        bool_4 = singly_linked_list_13.isEmpty()
+        assert bool_4 is True
+        bool_5 = singly_linked_list_13.isEmpty()
+        assert bool_5 is True
+        node_4 = module_0.Node(list_0)
+>       assert node_4.value == [None]
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:10606: AssertionError
+   - [#  82] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+-  94:         arr = []
++  94:         pass
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+--------------------------------------------------------------------------------
+[3.31412 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_8
+
+def test_case_8():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       str_0 = singly_linked_list_0.__str__()
+
+RANDOM/test_linkedList3_RANDOM.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4fa0fc40>
+
+>   ???
+E   NameError: name 'arr' is not defined
+
+linkedList3:97: NameError
+   - [#  83] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+   94:         arr = []
+-  95:         current = self.__head
++  95:         pass
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+   99:         return str(arr)
+--------------------------------------------------------------------------------
+[3.27292 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_8
+
+def test_case_8():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       str_0 = singly_linked_list_0.__str__()
+
+RANDOM/test_linkedList3_RANDOM.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4d077910>
+
+>   ???
+E   UnboundLocalError: local variable 'current' referenced before assignment
+
+linkedList3:96: UnboundLocalError
+   - [#  84] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   93:         
+   94:         arr = []
+   95:         current = self.__head
+   96:         while current:
+-  97:             arr.append(current.value)
++  97:             pass
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+--------------------------------------------------------------------------------
+[3.18370 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_8
+
+def test_case_8():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:75: AssertionError
+   - [#  85] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   94:         arr = []
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+-  98:             current = current.next
++  98:             pass
+   99:         return str(arr)
+  100: 
+  101: 
+  102: if __name__ == '__main__':
+--------------------------------------------------------------------------------
+[12.58203 s] timeout
+   - [#  86] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+-  99:         return str(arr)
++  99:         pass
+  100: 
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[3.17064 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_8
+
+def test_case_8():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:75: AssertionError
+   - [#  87] SVD linkedList3: 
+--------------------------------------------------------------------------------
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+-  11:         self.value = value
++  11:         value = value
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  88] SVD linkedList3: 
+--------------------------------------------------------------------------------
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+   11:         self.value = value
+-  12:         self.next = None
++  12:         next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  89] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+-  17:         self.__sentinel = Node(None)
++  17:         __sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  90] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
++  18:         __head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  91] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
++  18:         self.__head = __sentinel
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+--------------------------------------------------------------------------------
+[3.24244 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_0
+
+def test_case_0():
+>       singly_linked_list_0 = module_0.SinglyLinkedList()
+
+RANDOM/test_linkedList3_RANDOM.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4ed05090>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:18: NameError
+   - [#  92] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
++  19:         __size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  93] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+-  26:         if self.__size == 0:
++  26:         if __size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[3.25798 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_16
+
+def test_case_16():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+RANDOM/test_linkedList3_RANDOM.py:219: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4ee77040>
+value = <linkedList3.SinglyLinkedList object at 0x7fdb4ee77040>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:26: NameError
+   - [#  94] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+-  27:             self.__head.next = newNode
++  27:             __head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+--------------------------------------------------------------------------------
+[3.36472 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_16
+
+def test_case_16():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+RANDOM/test_linkedList3_RANDOM.py:219: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4de250c0>
+value = <linkedList3.SinglyLinkedList object at 0x7fdb4de250c0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:27: NameError
+   - [#  95] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+-  28:             self.__head = newNode
++  28:             __head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  96] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+-  29:             self.__size += 1
++  29:             __size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  97] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+-  31:             self.__sentinel.next = newNode
++  31:             __sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+--------------------------------------------------------------------------------
+[3.26089 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_68
+
+def test_case_68():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        none_type_0 = None
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_1 = singly_linked_list_0.add(none_type_0)
+>       none_type_2 = singly_linked_list_0.add(none_type_0)
+
+RANDOM/test_linkedList3_RANDOM.py:1711: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4dea56c0>, value = None
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:31: NameError
+   - [#  98] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+-  32:             newNode.next = self.__head
++  32:             newNode.next = __head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+--------------------------------------------------------------------------------
+[3.35229 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_68
+
+def test_case_68():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        none_type_0 = None
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_1 = singly_linked_list_0.add(none_type_0)
+>       none_type_2 = singly_linked_list_0.add(none_type_0)
+
+RANDOM/test_linkedList3_RANDOM.py:1711: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4f656ce0>, value = None
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:32: NameError
+   - [#  99] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+-  33:             self.__head = newNode
++  33:             __head = newNode
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+   37:         
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 100] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+-  34:             self.__size += 1
++  34:             __size += 1
+   35:     
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 101] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+-  40:         if self.__size == 0:
++  40:         if __size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[3.32530 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_5
+
+def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_1.getHeadNode()
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        int_1 = 0
+        node_2 = module_0.Node(int_1)
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_2.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_3.getHeadNode()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        none_type_0 = None
+        node_4 = module_0.Node(none_type_0)
+>       var_0 = singly_linked_list_3.remove()
+
+RANDOM/test_linkedList3_RANDOM.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4cfed240>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:40: NameError
+   - [# 102] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if __size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[3.24754 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_34
+
+def test_case_34():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_3.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_4.getHeadNode()
+        int_1 = 0
+        node_2 = module_0.Node(int_1)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_5.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_6.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_7.getHeadNode()
+        str_2 = singly_linked_list_5.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        str_3 = singly_linked_list_8.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_9.__str__()
+        assert str_4 == '[None]'
+        none_type_0 = singly_linked_list_9.add(singly_linked_list_9)
+        int_2 = 0
+        node_4 = module_0.Node(int_2)
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_10.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        node_5 = singly_linked_list_11.getHeadNode()
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        none_type_1 = None
+        node_6 = module_0.Node(none_type_1)
+>       var_1 = singly_linked_list_9.remove()
+
+RANDOM/test_linkedList3_RANDOM.py:763: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4e58aa70>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:42: NameError
+   - [# 103] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+-  43:             nodeToRemove = self.__head
++  43:             nodeToRemove = __head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+--------------------------------------------------------------------------------
+[3.23358 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_34
+
+def test_case_34():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_3.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_4.getHeadNode()
+        int_1 = 0
+        node_2 = module_0.Node(int_1)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_5.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_6.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_7.getHeadNode()
+        str_2 = singly_linked_list_5.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        str_3 = singly_linked_list_8.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_9.__str__()
+        assert str_4 == '[None]'
+        none_type_0 = singly_linked_list_9.add(singly_linked_list_9)
+        int_2 = 0
+        node_4 = module_0.Node(int_2)
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_10.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        node_5 = singly_linked_list_11.getHeadNode()
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        none_type_1 = None
+        node_6 = module_0.Node(none_type_1)
+>       var_1 = singly_linked_list_9.remove()
+
+RANDOM/test_linkedList3_RANDOM.py:763: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4d002bc0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:43: NameError
+   - [# 104] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+-  44:             self.__sentinel.next = None
++  44:             __sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+--------------------------------------------------------------------------------
+[3.28121 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_34
+
+def test_case_34():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_3.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_4.getHeadNode()
+        int_1 = 0
+        node_2 = module_0.Node(int_1)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_5.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_6.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_7.getHeadNode()
+        str_2 = singly_linked_list_5.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        str_3 = singly_linked_list_8.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_9.__str__()
+        assert str_4 == '[None]'
+        none_type_0 = singly_linked_list_9.add(singly_linked_list_9)
+        int_2 = 0
+        node_4 = module_0.Node(int_2)
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_10.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        node_5 = singly_linked_list_11.getHeadNode()
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        none_type_1 = None
+        node_6 = module_0.Node(none_type_1)
+>       var_1 = singly_linked_list_9.remove()
+
+RANDOM/test_linkedList3_RANDOM.py:763: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4ed05360>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:44: NameError
+   - [# 105] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
++  45:             __head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 106] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
++  45:             self.__head = __sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[3.31775 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_34
+
+def test_case_34():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_3.remove()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_4.getHeadNode()
+        int_1 = 0
+        node_2 = module_0.Node(int_1)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_5.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_6.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_7.getHeadNode()
+        str_2 = singly_linked_list_5.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        str_3 = singly_linked_list_8.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_9.__str__()
+        assert str_4 == '[None]'
+        none_type_0 = singly_linked_list_9.add(singly_linked_list_9)
+        int_2 = 0
+        node_4 = module_0.Node(int_2)
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_10.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        node_5 = singly_linked_list_11.getHeadNode()
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        none_type_1 = None
+        node_6 = module_0.Node(none_type_1)
+>       var_1 = singly_linked_list_9.remove()
+
+RANDOM/test_linkedList3_RANDOM.py:763: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4ed05420>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:45: NameError
+   - [# 107] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
++  46:             __size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 108] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+-  49:             nodeToRemove = self.__head
++  49:             nodeToRemove = __head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+--------------------------------------------------------------------------------
+[2.43834 s] survived
+   - [# 109] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
++  50:             __sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+--------------------------------------------------------------------------------
+[2.45430 s] survived
+   - [# 110] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
++  50:             self.__sentinel.next = __head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+--------------------------------------------------------------------------------
+[2.39667 s] survived
+   - [# 111] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
++  51:             __head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 112] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
++  51:             self.__head = __sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[2.43600 s] survived
+   - [# 113] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
++  52:             __size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 114] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+-  59:         return self.__head.value
++  59:         return __head.value
+   60:     
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+--------------------------------------------------------------------------------
+[3.35169 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_49
+
+def test_case_49():
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_2.getHeadNode()
+        str_1 = singly_linked_list_0.__str__()
+        assert str_1 == '[None]'
+>       var_0 = singly_linked_list_1.getHead()
+
+RANDOM/test_linkedList3_RANDOM.py:1235: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4edd6590>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:59: NameError
+   - [# 115] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+-  65:         return self.__head
++  65:         return __head
+   66:     
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+--------------------------------------------------------------------------------
+[3.23445 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       node_0 = singly_linked_list_0.getHeadNode()
+
+RANDOM/test_linkedList3_RANDOM.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4e5ea4d0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:65: NameError
+   - [# 116] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+-  71:         return self.__size
++  71:         return __size
+   72:     
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+--------------------------------------------------------------------------------
+[3.21027 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_37
+
+def test_case_37():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        int_0 = 0
+        node_1 = module_0.Node(int_0)
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_2.isEmpty()
+        assert bool_0 is True
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_3.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        node_2 = singly_linked_list_4.getHeadNode()
+        str_1 = singly_linked_list_2.__str__()
+        assert str_1 == '[None]'
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_5.__str__()
+        assert str_2 == '[None]'
+        none_type_0 = singly_linked_list_5.add(singly_linked_list_5)
+        int_1 = 0
+        node_3 = module_0.Node(int_1)
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_6.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        int_2 = 0
+        node_4 = module_0.Node(int_2)
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_8.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        node_5 = singly_linked_list_9.getHeadNode()
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        none_type_1 = None
+        node_6 = module_0.Node(none_type_1)
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        str_3 = singly_linked_list_11.__str__()
+        assert str_3 == '[None]'
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_12.__str__()
+        assert str_4 == '[None]'
+        singly_linked_list_13 = module_0.SinglyLinkedList()
+        singly_linked_list_14 = module_0.SinglyLinkedList()
+        bool_3 = singly_linked_list_14.isEmpty()
+        assert bool_3 is True
+        singly_linked_list_15 = module_0.SinglyLinkedList()
+        str_5 = singly_linked_list_15.__str__()
+        assert str_5 == '[None]'
+        node_7 = singly_linked_list_14.getHeadNode()
+>       int_3 = singly_linked_list_2.getSize()
+
+RANDOM/test_linkedList3_RANDOM.py:898: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4e5e9e40>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:71: NameError
+   - [# 117] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+-  77:         return True if self.__size == 0 else False
++  77:         return True if __size == 0 else False
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[3.44541 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       bool_0 = singly_linked_list_0.isEmpty()
+
+RANDOM/test_linkedList3_RANDOM.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4e5bdbd0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:77: NameError
+   - [# 118] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+   83:         arr = []
+-  84:         current = self.__head
++  84:         current = __head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+--------------------------------------------------------------------------------
+[3.28888 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_9
+
+def test_case_9():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is True
+        int_0 = 0
+        node_0 = module_0.Node(int_0)
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        bool_1 = singly_linked_list_2.isEmpty()
+        assert bool_1 is True
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        node_1 = singly_linked_list_3.getHeadNode()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        none_type_0 = None
+        node_2 = module_0.Node(none_type_0)
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_5.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_6.remove()
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        node_3 = singly_linked_list_7.getHeadNode()
+        int_1 = 0
+        node_4 = module_0.Node(int_1)
+>       list_0 = singly_linked_list_7.toArray()
+
+RANDOM/test_linkedList3_RANDOM.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4ded3490>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:84: NameError
+   - [# 119] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+   94:         arr = []
+-  95:         current = self.__head
++  95:         current = __head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+   99:         return str(arr)
+--------------------------------------------------------------------------------
+[3.30387 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_8
+
+def test_case_8():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       str_0 = singly_linked_list_0.__str__()
+
+RANDOM/test_linkedList3_RANDOM.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7fdb4ecd7eb0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:95: NameError
+   - [# 120] ZIL linkedList3: 
+--------------------------------------------------------------------------------
+   82:         
+   83:         arr = []
+   84:         current = self.__head
+   85:         while current:
+-  86:             arr.append(current.value)
+-  87:             current = current.next
++  86:             break
++  87:         
+   88:         return arr
+   89:     
+   90:     def __str__(self) -> str:
+   91:         
+--------------------------------------------------------------------------------
+[4.00216 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_333
+
+def test_case_333():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        none_type_0 = None
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_1 = singly_linked_list_0.add(none_type_0)
+        none_type_2 = singly_linked_list_0.add(none_type_0)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is False
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_2.__str__()
+        assert str_0 == '[None]'
+        singly_linked_list_3 = module_0.SinglyLinkedList()
+        singly_linked_list_4 = module_0.SinglyLinkedList()
+        singly_linked_list_5 = module_0.SinglyLinkedList()
+        str_1 = singly_linked_list_5.__str__()
+        assert str_1 == '[None]'
+        var_0 = singly_linked_list_5.remove()
+        node_1 = singly_linked_list_5.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        singly_linked_list_6 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_6.toArray()
+        singly_linked_list_7 = module_0.SinglyLinkedList()
+        bool_2 = singly_linked_list_7.isEmpty()
+        assert bool_2 is True
+        singly_linked_list_8 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_8.__str__()
+        assert str_2 == '[None]'
+        singly_linked_list_9 = module_0.SinglyLinkedList()
+        singly_linked_list_10 = module_0.SinglyLinkedList()
+        var_1 = singly_linked_list_10.remove()
+        int_0 = 0
+        node_2 = module_0.Node(int_0)
+        var_2 = singly_linked_list_8.getHead()
+        list_1 = singly_linked_list_9.toArray()
+        bool_3 = False
+        node_3 = module_0.Node(bool_3)
+        singly_linked_list_11 = module_0.SinglyLinkedList()
+        var_3 = singly_linked_list_11.getHead()
+        str_3 = var_3.__str__()
+        singly_linked_list_12 = module_0.SinglyLinkedList()
+        str_4 = singly_linked_list_12.__str__()
+        assert str_4 == '[None]'
+        var_4 = singly_linked_list_12.remove()
+        singly_linked_list_13 = module_0.SinglyLinkedList()
+        bool_4 = singly_linked_list_13.isEmpty()
+        assert bool_4 is True
+        bool_5 = singly_linked_list_13.isEmpty()
+        assert bool_5 is True
+        node_4 = module_0.Node(list_0)
+>       assert node_4.value == [None]
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:10606: AssertionError
+   - [# 121] ZIL linkedList3: 
+--------------------------------------------------------------------------------
+   93:         
+   94:         arr = []
+   95:         current = self.__head
+   96:         while current:
+-  97:             arr.append(current.value)
+-  98:             current = current.next
++  97:             break
++  98:         
+   99:         return str(arr)
+  100: 
+  101: 
+  102: if __name__ == '__main__':
+--------------------------------------------------------------------------------
+[3.50741 s] killed by RANDOM/test_linkedList3_RANDOM.py::test_case_8
+
+def test_case_8():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+RANDOM/test_linkedList3_RANDOM.py:75: AssertionError
+[*] Mutation score [411.03340 s]: 81.4%
+   - all: 121
+   - killed: 74 (61.2%)
+   - survived: 18 (14.9%)
+   - incompetent: 24 (19.8%)
+   - timeout: 5 (4.1%)

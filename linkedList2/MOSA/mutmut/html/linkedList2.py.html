@@ -1,0 +1,111 @@
+<html><body><h1>linkedList2.py</h1>Killed 34 out of 44 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 3</h3><pre>--- linkedList2.py
++++ linkedList2.py
+@@ -11,7 +11,7 @@
+ 
+     def checkInfinite(self):
+         """Check whether infinite loop via next."""
+-        p1 = p2 = self
++        p1 = p2 = None
+         while p1 != None and p2 != None:
+             if p2.next == None: return False
+ 
+</pre><h3>Mutant 4</h3><pre>--- linkedList2.py
++++ linkedList2.py
+@@ -12,7 +12,7 @@
+     def checkInfinite(self):
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+-        while p1 != None and p2 != None:
++        while p1 == None and p2 != None:
+             if p2.next == None: return False
+ 
+             p1 = p1.next
+</pre><h3>Mutant 5</h3><pre>--- linkedList2.py
++++ linkedList2.py
+@@ -12,7 +12,7 @@
+     def checkInfinite(self):
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+-        while p1 != None and p2 != None:
++        while p1 != None and p2 == None:
+             if p2.next == None: return False
+ 
+             p1 = p1.next
+</pre><h3>Mutant 10</h3><pre>--- linkedList2.py
++++ linkedList2.py
+@@ -16,7 +16,7 @@
+             if p2.next == None: return False
+ 
+             p1 = p1.next
+-            p2 = p2.next.next
++            p2 = None
+             
+             if p1 == p2: return True
+         return False
+</pre><h3>Mutant 12</h3><pre>--- linkedList2.py
++++ linkedList2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 == p2: return False
+         return False
+ 
+ class LinkedList:
+</pre><h3>Mutant 17</h3><pre>--- linkedList2.py
++++ linkedList2.py
+@@ -35,7 +35,7 @@
+     def pop(self):
+         """Remove first value in list."""
+         if self.head is None:
+-            raise Exception ("Linked list is empty.")
++            raise Exception ("XXLinked list is empty.XX")
+         val = self.head.value
+         self.head = self.head.next
+         return val
+</pre><h3>Mutant 19</h3><pre>--- linkedList2.py
++++ linkedList2.py
+@@ -37,7 +37,7 @@
+         if self.head is None:
+             raise Exception ("Linked list is empty.")
+         val = self.head.value
+-        self.head = self.head.next
++        self.head = None
+         return val
+ 
+     def remove(self, value):
+</pre><h3>Mutant 26</h3><pre>--- linkedList2.py
++++ linkedList2.py
+@@ -49,7 +49,7 @@
+                 if last == None:
+                     self.head = self.head.next
+                 else:
+-                    last.next = n.next
++                    last.next = None
+                 return True
+             n = n.next
+         return False
+</pre><h3>Mutant 28</h3><pre>--- linkedList2.py
++++ linkedList2.py
+@@ -51,7 +51,7 @@
+                 else:
+                     last.next = n.next
+                 return True
+-            n = n.next
++            n = None
+         return False
+         
+     def __iter__(self):
+</pre><h3>Mutant 36</h3><pre>--- linkedList2.py
++++ linkedList2.py
+@@ -66,7 +66,7 @@
+         if self.head is None:
+             return 'link:[]'
+ 
+-        return 'link:[{0:s}]'.format(','.join(map(str,self)))
++        return 'link:[{0:s}]'.format('XX,XX'.join(map(str,self)))
+ 
+     def __len__(self):
+         """Count values in list."""
+</pre></body></html>

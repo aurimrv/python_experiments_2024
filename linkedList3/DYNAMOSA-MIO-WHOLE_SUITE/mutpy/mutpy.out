@@ -1,0 +1,3757 @@
+[*] Start mutation process:
+   - targets: linkedList3.py
+   - tests: ./DYNAMOSA-MIO-WHOLE_SUITE
+[*] 33 tests passed:
+   - test_linkedList3_WHOLE_SUITE [0.06796 s]
+   - test_linkedList3_MIO [0.05558 s]
+   - test_linkedList3_DYNAMOSA [0.05063 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+-  29:             self.__size += 1
++  29:             self.__size -= 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+--------------------------------------------------------------------------------
+[0.09075 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+>       assert int_0 == 1
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:25: AssertionError
+   - [#   2] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+-  34:             self.__size += 1
++  34:             self.__size -= 1
+   35:     
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[0.10100 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+        assert bool_2 is False
+        node_0 = module_0.Node(singly_linked_list_0)
+        node_1 = module_0.Node(node_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_1 = []
+        bool_3 = singly_linked_list_0.isEmpty()
+>       assert bool_3 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:106: AssertionError
+   - [#   3] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
++  46:             self.__size += 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[0.08205 s] survived
+   - [#   4] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
++  52:             self.__size += 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+--------------------------------------------------------------------------------
+[0.08091 s] survived
+   - [#   5] CDI linkedList3: 
+--------------------------------------------------------------------------------
+    6: T = TypeVar('T')
+    7: 
+    8: 
+    9: class Node:
+-  10:     def __init__(self, value: T):
+-  11:         self.value = value
+-  12:         self.next = None
+-  13: 
++  10:     @classmethod
++  11:     def __init__(self, value: T):
++  12:         self.value = value
++  13:         self.next = None
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+--------------------------------------------------------------------------------
+[0.09287 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+>       assert node_1.value is None
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:32: AssertionError
+   - [#   6] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+-  16:     def __init__(self):
+-  17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
+-  20:     
++  16:     @classmethod
++  17:     def __init__(self):
++  18:         self.__sentinel = Node(None)
++  19:         self.__head = self.__sentinel
++  20:         self.__size = 0
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+--------------------------------------------------------------------------------
+[0.09065 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+>       assert node_1.next is None
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:33: AssertionError
+   - [#   7] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+-  21:     def add(self, value: T) -> None:
+-  22:         
+-  23:         '''Add element to linked list.'''
+-  24:         
+-  25:         newNode = Node(value)
+-  26:         if self.__size == 0:
+-  27:             self.__head.next = newNode
+-  28:             self.__head = newNode
+-  29:             self.__size += 1
+-  30:         else:
+-  31:             self.__sentinel.next = newNode
+-  32:             newNode.next = self.__head
+-  33:             self.__head = newNode
+-  34:             self.__size += 1
+-  35:     
++  21:     @classmethod
++  22:     def add(self, value: T) -> None:
++  23:         
++  24:         '''Add element to linked list.'''
++  25:         
++  26:         newNode = Node(value)
++  27:         if self.__size == 0:
++  28:             self.__head.next = newNode
++  29:             self.__head = newNode
++  30:             self.__size += 1
++  31:         else:
++  32:             self.__sentinel.next = newNode
++  33:             newNode.next = self.__head
++  34:             self.__head = newNode
++  35:             self.__size += 1
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+--------------------------------------------------------------------------------
+[0.08977 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>, value = '+(ff'
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:27: AttributeError
+   - [#   8] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+-  36:     def remove(self):
+-  37:         
+-  38:         '''Remove node from linkedlist.'''
+-  39:         
+-  40:         if self.__size == 0:
+-  41:             return None
+-  42:         if self.__size >= 1:
+-  43:             nodeToRemove = self.__head
+-  44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
+-  47:             return nodeToRemove
+-  48:         else:
+-  49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
+-  53:             return nodeToRemove
+-  54:     
++  36:     @classmethod
++  37:     def remove(self):
++  38:         
++  39:         '''Remove node from linkedlist.'''
++  40:         
++  41:         if self.__size == 0:
++  42:             return None
++  43:         if self.__size >= 1:
++  44:             nodeToRemove = self.__head
++  45:             self.__sentinel.next = None
++  46:             self.__head = self.__sentinel
++  47:             self.__size -= 1
++  48:             return nodeToRemove
++  49:         else:
++  50:             nodeToRemove = self.__head
++  51:             self.__sentinel.next = self.__head.next
++  52:             self.__head = self.__sentinel.next
++  53:             self.__size -= 1
++  54:             return nodeToRemove
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+--------------------------------------------------------------------------------
+[0.08780 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+>       var_0 = singly_linked_list_0.remove()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:41: AttributeError
+   - [#   9] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+-  55:     def getHead(self) -> T:
+-  56:         
+-  57:         '''Get value of the linkedlist head node.'''
+-  58:         
+-  59:         return self.__head.value
+-  60:     
++  55:     @classmethod
++  56:     def getHead(self) -> T:
++  57:         
++  58:         '''Get value of the linkedlist head node.'''
++  59:         
++  60:         return self.__head.value
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+--------------------------------------------------------------------------------
+[0.09563 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+>       var_1 = singly_linked_list_1.getHead()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:60: AttributeError
+   - [#  10] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+   59:         return self.__head.value
+   60:     
+-  61:     def getHeadNode(self) -> Node:
+-  62:         
+-  63:         '''Get head node referance.'''
+-  64:         
+-  65:         return self.__head
+-  66:     
++  61:     @classmethod
++  62:     def getHeadNode(self) -> Node:
++  63:         
++  64:         '''Get head node referance.'''
++  65:         
++  66:         return self.__head
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+--------------------------------------------------------------------------------
+[0.12867 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+>       node_1 = singly_linked_list_0.getHeadNode()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:66: AttributeError
+   - [#  11] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   63:         '''Get head node referance.'''
+   64:         
+   65:         return self.__head
+   66:     
+-  67:     def getSize(self) -> int:
+-  68:         
+-  69:         '''Return size of the linkedlist.'''
+-  70:         
+-  71:         return self.__size
+-  72:     
++  67:     @classmethod
++  68:     def getSize(self) -> int:
++  69:         
++  70:         '''Return size of the linkedlist.'''
++  71:         
++  72:         return self.__size
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+--------------------------------------------------------------------------------
+[0.11601 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+>       int_0 = singly_linked_list_1.getSize()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:72: AttributeError
+   - [#  12] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   69:         '''Return size of the linkedlist.'''
+   70:         
+   71:         return self.__size
+   72:     
+-  73:     def isEmpty(self) -> bool:
+-  74:         
+-  75:         '''Checks if linkedlist is empty.'''
+-  76:         
+-  77:         return True if self.__size == 0 else False
+-  78:     
++  73:     @classmethod
++  74:     def isEmpty(self) -> bool:
++  75:         
++  76:         '''Checks if linkedlist is empty.'''
++  77:         
++  78:         return True if self.__size == 0 else False
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+--------------------------------------------------------------------------------
+[0.10050 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+>       bool_0 = singly_linked_list_1.isEmpty()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:78: AttributeError
+   - [#  13] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+   77:         return True if self.__size == 0 else False
+   78:     
+-  79:     def toArray(self) -> list:
+-  80:         
+-  81:         '''Converts linkedlist to list.'''
+-  82:         
+-  83:         arr = []
+-  84:         current = self.__head
+-  85:         while current:
+-  86:             arr.append(current.value)
+-  87:             current = current.next
+-  88:         return arr
+-  89:     
++  79:     @classmethod
++  80:     def toArray(self) -> list:
++  81:         
++  82:         '''Converts linkedlist to list.'''
++  83:         
++  84:         arr = []
++  85:         current = self.__head
++  86:         while current:
++  87:             arr.append(current.value)
++  88:             current = current.next
++  89:         return arr
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+--------------------------------------------------------------------------------
+[0.11957 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+        assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        var_3 = singly_linked_list_2.getHead()
+>       list_0 = singly_linked_list_1.toArray()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:85: AttributeError
+   - [#  14] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+   89:     
+-  90:     def __str__(self) -> str:
+-  91:         
+-  92:         '''Return String representation of linkedlist values.'''
+-  93:         
+-  94:         arr = []
+-  95:         current = self.__head
+-  96:         while current:
+-  97:             arr.append(current.value)
+-  98:             current = current.next
+-  99:         return str(arr)
+- 100: 
++  90:     @classmethod
++  91:     def __str__(self) -> str:
++  92:         
++  93:         '''Return String representation of linkedlist values.'''
++  94:         
++  95:         arr = []
++  96:         current = self.__head
++  97:         while current:
++  98:             arr.append(current.value)
++  99:             current = current.next
++ 100:         return str(arr)
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.11681 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+>       str_0 = singly_linked_list_0.__str__()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:96: AttributeError
+   - [#  15] COI linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+-  26:         if self.__size == 0:
++  26:         if not (self.__size == 0):
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[0.09691 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert var_0.value == '+(ff'
+>       assert var_0.next is None
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:15: AssertionError
+   - [#  16] COI linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+-  40:         if self.__size == 0:
++  40:         if not (self.__size == 0):
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.10873 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:13: AssertionError
+   - [#  17] COI linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if not (self.__size >= 1):
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.11227 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+        assert int_1 == 2
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        var_0 = singly_linked_list_0.getHead()
+        int_2 = singly_linked_list_0.getSize()
+        assert int_2 == 2
+        list_1 = singly_linked_list_0.toArray()
+        var_1 = singly_linked_list_0.getHead()
+        var_2 = singly_linked_list_0.remove()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_2.value).__module__}.{type(var_2.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList3.Node'
+        node_2 = module_0.Node(node_1)
+        var_3 = var_1.remove()
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList3.Node'
+>       assert var_3.value is None
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:63: AssertionError
+   - [#  18] COI linkedList3: 
+--------------------------------------------------------------------------------
+   81:         '''Converts linkedlist to list.'''
+   82:         
+   83:         arr = []
+   84:         current = self.__head
+-  85:         while current:
++  85:         while not current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+   89:     
+--------------------------------------------------------------------------------
+[0.08529 s] survived
+   - [#  19] COI linkedList3: 
+--------------------------------------------------------------------------------
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+   94:         arr = []
+   95:         current = self.__head
+-  96:         while current:
++  96:         while not current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+--------------------------------------------------------------------------------
+[0.09429 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:43: AssertionError
+   - [#  20] COI linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+- 102: if __name__ == '__main__':
++ 102: if not (__name__ == '__main__'):
+  103:     pass
+--------------------------------------------------------------------------------
+[0.09086 s] survived
+   - [#  21] CRP linkedList3: 
+--------------------------------------------------------------------------------
+    2: 
+    3: from typing import TypeVar
+    4: 
+    5: 
+-   6: T = TypeVar('T')
++   6: T = TypeVar('mutpy')
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+--------------------------------------------------------------------------------
+[0.09461 s] survived
+   - [#  22] CRP linkedList3: 
+--------------------------------------------------------------------------------
+    2: 
+    3: from typing import TypeVar
+    4: 
+    5: 
+-   6: T = TypeVar('T')
++   6: T = TypeVar('')
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+--------------------------------------------------------------------------------
+[0.08421 s] survived
+   - [#  23] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
++  19:         self.__size = 1
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[0.09815 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert var_0.value == '+(ff'
+>       assert var_0.next is None
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:15: AssertionError
+   - [#  24] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+-  26:         if self.__size == 0:
++  26:         if self.__size == 1:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[0.09175 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert var_0.value == '+(ff'
+>       assert var_0.next is None
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:15: AssertionError
+   - [#  25] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+-  29:             self.__size += 1
++  29:             self.__size += 2
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+--------------------------------------------------------------------------------
+[0.13872 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+>       assert int_0 == 1
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:25: AssertionError
+   - [#  26] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+-  34:             self.__size += 1
++  34:             self.__size += 2
+   35:     
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[0.11669 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_10
+
+def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+        assert bool_2 is False
+        node_0 = module_0.Node(singly_linked_list_0)
+        node_1 = module_0.Node(node_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_1 = []
+        bool_3 = singly_linked_list_0.isEmpty()
+        assert bool_3 is False
+        none_type_2 = singly_linked_list_0.add(list_1)
+        list_2 = singly_linked_list_0.toArray()
+        int_0 = singly_linked_list_0.getSize()
+>       assert int_0 == 3
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:110: AssertionError
+   - [#  27] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+-  40:         if self.__size == 0:
++  40:         if self.__size == 1:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.10059 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:13: AssertionError
+   - [#  28] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if self.__size >= 2:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.21907 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+        assert int_1 == 2
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        var_0 = singly_linked_list_0.getHead()
+        int_2 = singly_linked_list_0.getSize()
+        assert int_2 == 2
+        list_1 = singly_linked_list_0.toArray()
+        var_1 = singly_linked_list_0.getHead()
+        var_2 = singly_linked_list_0.remove()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_2.value).__module__}.{type(var_2.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList3.Node'
+        node_2 = module_0.Node(node_1)
+        var_3 = var_1.remove()
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList3.Node'
+        assert var_3.value is None
+        assert var_3.next is None
+        node_3 = singly_linked_list_0.getHeadNode()
+>       assert f'{type(node_3).__module__}.{type(node_3).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:66: AssertionError
+   - [#  29] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
++  46:             self.__size -= 2
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[0.11074 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+        assert var_0.next is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_2 = module_0.Node(var_0)
+        assert f'{type(node_2.value).__module__}.{type(node_2.value).__qualname__}' == 'linkedList3.Node'
+        int_0 = singly_linked_list_1.getSize()
+        var_1 = singly_linked_list_1.getHead()
+        list_0 = singly_linked_list_1.toArray()
+        var_2 = singly_linked_list_0.remove()
+>       var_3 = singly_linked_list_0.remove()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f5698618bb0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList3:50: AttributeError
+   - [#  30] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
++  52:             self.__size -= 2
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+--------------------------------------------------------------------------------
+[0.08984 s] survived
+   - [#  31] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+-  77:         return True if self.__size == 0 else False
++  77:         return True if self.__size == 1 else False
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.11286 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+>       assert bool_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:45: AssertionError
+   - [#  32] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+- 102: if __name__ == '__main__':
++ 102: if __name__ == 'mutpy':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.10872 s] survived
+   - [#  33] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+- 102: if __name__ == '__main__':
++ 102: if __name__ == '':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.08545 s] survived
+   - [#  34] OIL linkedList3: 
+--------------------------------------------------------------------------------
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+-  88:         return arr
+-  89:     
++  88:             break
++  89:         return arr
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+--------------------------------------------------------------------------------
+[0.08442 s] survived
+   - [#  35] OIL linkedList3: 
+--------------------------------------------------------------------------------
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+-  99:         return str(arr)
+- 100: 
++  99:             break
++ 100:         return str(arr)
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.09016 s] survived
+   - [#  36] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+-  26:         if self.__size == 0:
++  26:         if self.__size != 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[0.11435 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert var_0.value == '+(ff'
+>       assert var_0.next is None
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:15: AssertionError
+   - [#  37] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+-  40:         if self.__size == 0:
++  40:         if self.__size != 0:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.09079 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:13: AssertionError
+   - [#  38] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if self.__size <= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.10634 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+        assert int_1 == 2
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        var_0 = singly_linked_list_0.getHead()
+        int_2 = singly_linked_list_0.getSize()
+        assert int_2 == 2
+        list_1 = singly_linked_list_0.toArray()
+        var_1 = singly_linked_list_0.getHead()
+        var_2 = singly_linked_list_0.remove()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_2.value).__module__}.{type(var_2.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList3.Node'
+        node_2 = module_0.Node(node_1)
+        var_3 = var_1.remove()
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList3.Node'
+>       assert var_3.value is None
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:63: AssertionError
+   - [#  39] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if self.__size > 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.09968 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+        assert int_1 == 2
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        var_0 = singly_linked_list_0.getHead()
+        int_2 = singly_linked_list_0.getSize()
+        assert int_2 == 2
+        list_1 = singly_linked_list_0.toArray()
+        var_1 = singly_linked_list_0.getHead()
+        var_2 = singly_linked_list_0.remove()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_2.value).__module__}.{type(var_2.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList3.Node'
+        node_2 = module_0.Node(node_1)
+        var_3 = var_1.remove()
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList3.Node'
+        assert var_3.value is None
+        assert var_3.next is None
+        node_3 = singly_linked_list_0.getHeadNode()
+>       assert f'{type(node_3).__module__}.{type(node_3).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:66: AssertionError
+   - [#  40] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+-  77:         return True if self.__size == 0 else False
++  77:         return True if self.__size != 0 else False
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.09192 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+>       assert bool_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:45: AssertionError
+   - [#  41] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+- 102: if __name__ == '__main__':
++ 102: if __name__ != '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.08787 s] survived
+   - [#  42] SDI linkedList3: 
+--------------------------------------------------------------------------------
+    6: T = TypeVar('T')
+    7: 
+    8: 
+    9: class Node:
+-  10:     def __init__(self, value: T):
+-  11:         self.value = value
+-  12:         self.next = None
+-  13: 
++  10:     @staticmethod
++  11:     def __init__(self, value: T):
++  12:         self.value = value
++  13:         self.next = None
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+--------------------------------------------------------------------------------
+[0.11326 s] incompetent
+
+TypeError: linkedList3:17: TypeError: Node.__init__() missing 1 required positional argument: 'value'
+
+   - [#  43] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+-  16:     def __init__(self):
+-  17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
+-  20:     
++  16:     @staticmethod
++  17:     def __init__(self):
++  18:         self.__sentinel = Node(None)
++  19:         self.__head = self.__sentinel
++  20:         self.__size = 0
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+--------------------------------------------------------------------------------
+[0.08999 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:6: TypeError: SinglyLinkedList.__init__() missing 1 required positional argument: 'self'
+
+   - [#  44] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+-  21:     def add(self, value: T) -> None:
+-  22:         
+-  23:         '''Add element to linked list.'''
+-  24:         
+-  25:         newNode = Node(value)
+-  26:         if self.__size == 0:
+-  27:             self.__head.next = newNode
+-  28:             self.__head = newNode
+-  29:             self.__size += 1
+-  30:         else:
+-  31:             self.__sentinel.next = newNode
+-  32:             newNode.next = self.__head
+-  33:             self.__head = newNode
+-  34:             self.__size += 1
+-  35:     
++  21:     @staticmethod
++  22:     def add(self, value: T) -> None:
++  23:         
++  24:         '''Add element to linked list.'''
++  25:         
++  26:         newNode = Node(value)
++  27:         if self.__size == 0:
++  28:             self.__head.next = newNode
++  29:             self.__head = newNode
++  30:             self.__size += 1
++  31:         else:
++  32:             self.__sentinel.next = newNode
++  33:             newNode.next = self.__head
++  34:             self.__head = newNode
++  35:             self.__size += 1
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+--------------------------------------------------------------------------------
+[0.09250 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:11: TypeError: SinglyLinkedList.add() missing 1 required positional argument: 'value'
+
+   - [#  45] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+-  36:     def remove(self):
+-  37:         
+-  38:         '''Remove node from linkedlist.'''
+-  39:         
+-  40:         if self.__size == 0:
+-  41:             return None
+-  42:         if self.__size >= 1:
+-  43:             nodeToRemove = self.__head
+-  44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
+-  47:             return nodeToRemove
+-  48:         else:
+-  49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
+-  53:             return nodeToRemove
+-  54:     
++  36:     @staticmethod
++  37:     def remove(self):
++  38:         
++  39:         '''Remove node from linkedlist.'''
++  40:         
++  41:         if self.__size == 0:
++  42:             return None
++  43:         if self.__size >= 1:
++  44:             nodeToRemove = self.__head
++  45:             self.__sentinel.next = None
++  46:             self.__head = self.__sentinel
++  47:             self.__size -= 1
++  48:             return nodeToRemove
++  49:         else:
++  50:             nodeToRemove = self.__head
++  51:             self.__sentinel.next = self.__head.next
++  52:             self.__head = self.__sentinel.next
++  53:             self.__size -= 1
++  54:             return nodeToRemove
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+--------------------------------------------------------------------------------
+[0.08713 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:12: TypeError: SinglyLinkedList.remove() missing 1 required positional argument: 'self'
+
+   - [#  46] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+-  55:     def getHead(self) -> T:
+-  56:         
+-  57:         '''Get value of the linkedlist head node.'''
+-  58:         
+-  59:         return self.__head.value
+-  60:     
++  55:     @staticmethod
++  56:     def getHead(self) -> T:
++  57:         
++  58:         '''Get value of the linkedlist head node.'''
++  59:         
++  60:         return self.__head.value
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+--------------------------------------------------------------------------------
+[0.08627 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:28: TypeError: SinglyLinkedList.getHead() missing 1 required positional argument: 'self'
+
+   - [#  47] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+   59:         return self.__head.value
+   60:     
+-  61:     def getHeadNode(self) -> Node:
+-  62:         
+-  63:         '''Get head node referance.'''
+-  64:         
+-  65:         return self.__head
+-  66:     
++  61:     @staticmethod
++  62:     def getHeadNode(self) -> Node:
++  63:         
++  64:         '''Get head node referance.'''
++  65:         
++  66:         return self.__head
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+--------------------------------------------------------------------------------
+[0.09069 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:30: TypeError: SinglyLinkedList.getHeadNode() missing 1 required positional argument: 'self'
+
+   - [#  48] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   63:         '''Get head node referance.'''
+   64:         
+   65:         return self.__head
+   66:     
+-  67:     def getSize(self) -> int:
+-  68:         
+-  69:         '''Return size of the linkedlist.'''
+-  70:         
+-  71:         return self.__size
+-  72:     
++  67:     @staticmethod
++  68:     def getSize(self) -> int:
++  69:         
++  70:         '''Return size of the linkedlist.'''
++  71:         
++  72:         return self.__size
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+--------------------------------------------------------------------------------
+[0.08705 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:24: TypeError: SinglyLinkedList.getSize() missing 1 required positional argument: 'self'
+
+   - [#  49] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   69:         '''Return size of the linkedlist.'''
+   70:         
+   71:         return self.__size
+   72:     
+-  73:     def isEmpty(self) -> bool:
+-  74:         
+-  75:         '''Checks if linkedlist is empty.'''
+-  76:         
+-  77:         return True if self.__size == 0 else False
+-  78:     
++  73:     @staticmethod
++  74:     def isEmpty(self) -> bool:
++  75:         
++  76:         '''Checks if linkedlist is empty.'''
++  77:         
++  78:         return True if self.__size == 0 else False
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+--------------------------------------------------------------------------------
+[0.09229 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:44: TypeError: SinglyLinkedList.isEmpty() missing 1 required positional argument: 'self'
+
+   - [#  50] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+   77:         return True if self.__size == 0 else False
+   78:     
+-  79:     def toArray(self) -> list:
+-  80:         
+-  81:         '''Converts linkedlist to list.'''
+-  82:         
+-  83:         arr = []
+-  84:         current = self.__head
+-  85:         while current:
+-  86:             arr.append(current.value)
+-  87:             current = current.next
+-  88:         return arr
+-  89:     
++  79:     @staticmethod
++  80:     def toArray(self) -> list:
++  81:         
++  82:         '''Converts linkedlist to list.'''
++  83:         
++  84:         arr = []
++  85:         current = self.__head
++  86:         while current:
++  87:             arr.append(current.value)
++  88:             current = current.next
++  89:         return arr
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+--------------------------------------------------------------------------------
+[0.09257 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:54: TypeError: SinglyLinkedList.toArray() missing 1 required positional argument: 'self'
+
+   - [#  51] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+   89:     
+-  90:     def __str__(self) -> str:
+-  91:         
+-  92:         '''Return String representation of linkedlist values.'''
+-  93:         
+-  94:         arr = []
+-  95:         current = self.__head
+-  96:         while current:
+-  97:             arr.append(current.value)
+-  98:             current = current.next
+-  99:         return str(arr)
+- 100: 
++  90:     @staticmethod
++  91:     def __str__(self) -> str:
++  92:         
++  93:         '''Return String representation of linkedlist values.'''
++  94:         
++  95:         arr = []
++  96:         current = self.__head
++  97:         while current:
++  98:             arr.append(current.value)
++  99:             current = current.next
++ 100:         return str(arr)
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.08563 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList3/DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:42: TypeError: SinglyLinkedList.__str__() missing 1 required positional argument: 'self'
+
+   - [#  52] SDL linkedList3: 
+--------------------------------------------------------------------------------
+    2: 
+    3: from typing import TypeVar
+    4: 
+    5: 
+-   6: T = TypeVar('T')
++   6: pass
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+NameError: name 'T' is not defined
+
+   - [#  53] SDL linkedList3: 
+--------------------------------------------------------------------------------
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+-  11:         self.value = value
++  11:         pass
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+--------------------------------------------------------------------------------
+[0.08680 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+>       assert var_0.value == '+(ff'
+E       AttributeError: 'Node' object has no attribute 'value'
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:14: AttributeError
+   - [#  54] SDL linkedList3: 
+--------------------------------------------------------------------------------
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+   11:         self.value = value
+-  12:         self.next = None
++  12:         pass
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+--------------------------------------------------------------------------------
+[0.15721 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert var_0.value == '+(ff'
+>       assert var_0.next is None
+E       AttributeError: 'Node' object has no attribute 'next'
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:15: AttributeError
+   - [#  55] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+-  17:         self.__sentinel = Node(None)
++  17:         pass
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+--------------------------------------------------------------------------------
+[0.10007 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+>       singly_linked_list_0 = module_0.SinglyLinkedList()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f5698133460>
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__sentinel'
+
+linkedList3:18: AttributeError
+   - [#  56] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
++  18:         pass
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+--------------------------------------------------------------------------------
+[0.11121 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f56984b8be0>, value = '+(ff'
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__head'. Did you mean: '_SinglyLinkedList__size'?
+
+linkedList3:27: AttributeError
+   - [#  57] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
++  19:         pass
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[0.16080 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f5698448190>, value = '+(ff'
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__size'. Did you mean: '_SinglyLinkedList__head'?
+
+linkedList3:26: AttributeError
+   - [#  58] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+-  25:         newNode = Node(value)
++  25:         pass
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+--------------------------------------------------------------------------------
+[0.13981 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f5698726530>, value = '+(ff'
+
+>   ???
+E   NameError: name 'newNode' is not defined
+
+linkedList3:27: NameError
+   - [#  59] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+-  27:             self.__head.next = newNode
++  27:             pass
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+--------------------------------------------------------------------------------
+[0.09516 s] survived
+   - [#  60] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+-  28:             self.__head = newNode
++  28:             pass
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+--------------------------------------------------------------------------------
+[0.13499 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+>       assert var_0.value == '+(ff'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:14: AssertionError
+   - [#  61] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+-  31:             self.__sentinel.next = newNode
++  31:             pass
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+--------------------------------------------------------------------------------
+[0.11710 s] survived
+   - [#  62] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+-  32:             newNode.next = self.__head
++  32:             pass
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+--------------------------------------------------------------------------------
+[0.10505 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+>       assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:51: AssertionError
+   - [#  63] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+-  33:             self.__head = newNode
++  33:             pass
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+   37:         
+--------------------------------------------------------------------------------
+[0.09659 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+>       assert node_3.value == 1
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:50: AssertionError
+   - [#  64] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+-  41:             return None
++  41:             pass
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+--------------------------------------------------------------------------------
+[0.09385 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+>       assert node_0.value is None
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:21: AssertionError
+   - [#  65] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+-  43:             nodeToRemove = self.__head
++  43:             pass
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.09137 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+>       var_0 = singly_linked_list_0.remove()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f56982ecfa0>
+
+>   ???
+E   UnboundLocalError: local variable 'nodeToRemove' referenced before assignment
+
+linkedList3:47: UnboundLocalError
+   - [#  66] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+-  44:             self.__sentinel.next = None
++  44:             pass
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+--------------------------------------------------------------------------------
+[0.10019 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+>       assert node_0.next is None
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:25: AssertionError
+   - [#  67] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
++  45:             pass
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[0.10318 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+        assert int_1 == 2
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        var_0 = singly_linked_list_0.getHead()
+        int_2 = singly_linked_list_0.getSize()
+        assert int_2 == 2
+        list_1 = singly_linked_list_0.toArray()
+        var_1 = singly_linked_list_0.getHead()
+        var_2 = singly_linked_list_0.remove()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_2.value).__module__}.{type(var_2.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList3.Node'
+        node_2 = module_0.Node(node_1)
+        var_3 = var_1.remove()
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList3.Node'
+>       assert var_3.value is None
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:63: AssertionError
+   - [#  68] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+-  47:             return nodeToRemove
++  47:             pass
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+--------------------------------------------------------------------------------
+[0.08943 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:13: AssertionError
+   - [#  69] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+-  49:             nodeToRemove = self.__head
++  49:             pass
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.08107 s] survived
+   - [#  70] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
++  50:             pass
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+--------------------------------------------------------------------------------
+[0.07856 s] survived
+   - [#  71] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
++  51:             pass
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[0.09995 s] survived
+   - [#  72] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+-  53:             return nodeToRemove
++  53:             pass
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+--------------------------------------------------------------------------------
+[0.08653 s] survived
+   - [#  73] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+-  59:         return self.__head.value
++  59:         pass
+   60:     
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+--------------------------------------------------------------------------------
+[0.09809 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+>       none_type_1 = var_2.add(int_3)
+E       AttributeError: 'NoneType' object has no attribute 'add'
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:46: AttributeError
+   - [#  74] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+-  65:         return self.__head
++  65:         pass
+   66:     
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+--------------------------------------------------------------------------------
+[0.09136 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+>       assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:31: AssertionError
+   - [#  75] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+-  71:         return self.__size
++  71:         pass
+   72:     
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+--------------------------------------------------------------------------------
+[0.09006 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+>       assert int_0 == 1
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:25: AssertionError
+   - [#  76] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+-  77:         return True if self.__size == 0 else False
++  77:         pass
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.09567 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+>       assert bool_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:45: AssertionError
+   - [#  77] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+-  83:         arr = []
++  83:         pass
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+--------------------------------------------------------------------------------
+[0.09537 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+        assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        var_3 = singly_linked_list_2.getHead()
+>       list_0 = singly_linked_list_1.toArray()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f56982c6f20>
+
+>   ???
+E   NameError: name 'arr' is not defined
+
+linkedList3:86: NameError
+   - [#  78] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+   83:         arr = []
+-  84:         current = self.__head
++  84:         pass
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+--------------------------------------------------------------------------------
+[0.09308 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+        assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        var_3 = singly_linked_list_2.getHead()
+>       list_0 = singly_linked_list_1.toArray()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f56986685b0>
+
+>   ???
+E   UnboundLocalError: local variable 'current' referenced before assignment
+
+linkedList3:85: UnboundLocalError
+   - [#  79] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   82:         
+   83:         arr = []
+   84:         current = self.__head
+   85:         while current:
+-  86:             arr.append(current.value)
++  86:             pass
+   87:             current = current.next
+   88:         return arr
+   89:     
+   90:     def __str__(self) -> str:
+--------------------------------------------------------------------------------
+[0.08275 s] survived
+   - [#  80] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   83:         arr = []
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+-  87:             current = current.next
++  87:             pass
+   88:         return arr
+   89:     
+   90:     def __str__(self) -> str:
+   91:         
+--------------------------------------------------------------------------------
+[5.00521 s] timeout
+   - [#  81] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+-  88:         return arr
++  88:         pass
+   89:     
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+--------------------------------------------------------------------------------
+[0.07863 s] survived
+   - [#  82] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+-  94:         arr = []
++  94:         pass
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+--------------------------------------------------------------------------------
+[0.08878 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+>       str_0 = singly_linked_list_0.__str__()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f569824e470>
+
+>   ???
+E   NameError: name 'arr' is not defined
+
+linkedList3:97: NameError
+   - [#  83] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+   94:         arr = []
+-  95:         current = self.__head
++  95:         pass
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+   99:         return str(arr)
+--------------------------------------------------------------------------------
+[0.08998 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+>       str_0 = singly_linked_list_0.__str__()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f569833f730>
+
+>   ???
+E   UnboundLocalError: local variable 'current' referenced before assignment
+
+linkedList3:96: UnboundLocalError
+   - [#  84] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   93:         
+   94:         arr = []
+   95:         current = self.__head
+   96:         while current:
+-  97:             arr.append(current.value)
++  97:             pass
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+--------------------------------------------------------------------------------
+[0.09034 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:43: AssertionError
+   - [#  85] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   94:         arr = []
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+-  98:             current = current.next
++  98:             pass
+   99:         return str(arr)
+  100: 
+  101: 
+  102: if __name__ == '__main__':
+--------------------------------------------------------------------------------
+[5.00391 s] timeout
+   - [#  86] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+-  99:         return str(arr)
++  99:         pass
+  100: 
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.14023 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:43: AssertionError
+   - [#  87] SVD linkedList3: 
+--------------------------------------------------------------------------------
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+-  11:         self.value = value
++  11:         value = value
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  88] SVD linkedList3: 
+--------------------------------------------------------------------------------
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+   11:         self.value = value
+-  12:         self.next = None
++  12:         next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  89] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+-  17:         self.__sentinel = Node(None)
++  17:         __sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  90] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
++  18:         __head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  91] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+-  18:         self.__head = self.__sentinel
++  18:         self.__head = __sentinel
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+--------------------------------------------------------------------------------
+[0.09893 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+>       singly_linked_list_0 = module_0.SinglyLinkedList()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f56983a2170>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:18: NameError
+   - [#  92] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+-  19:         self.__size = 0
++  19:         __size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  93] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+-  26:         if self.__size == 0:
++  26:         if __size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[0.10211 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f56985d17b0>, value = '+(ff'
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:26: NameError
+   - [#  94] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+-  27:             self.__head.next = newNode
++  27:             __head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+--------------------------------------------------------------------------------
+[0.14975 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f5698291ae0>, value = '+(ff'
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:27: NameError
+   - [#  95] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+-  28:             self.__head = newNode
++  28:             __head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  96] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+-  29:             self.__size += 1
++  29:             __size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  97] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+-  31:             self.__sentinel.next = newNode
++  31:             __sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+--------------------------------------------------------------------------------
+[0.09584 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+>       none_type_1 = var_2.add(int_3)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f5698669cc0>, value = 1
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:31: NameError
+   - [#  98] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+-  32:             newNode.next = self.__head
++  32:             newNode.next = __head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+--------------------------------------------------------------------------------
+[0.09388 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+>       none_type_1 = var_2.add(int_3)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f5698250f10>, value = 1
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:32: NameError
+   - [#  99] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+-  33:             self.__head = newNode
++  33:             __head = newNode
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+   37:         
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 100] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+-  34:             self.__size += 1
++  34:             __size += 1
+   35:     
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 101] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+-  40:         if self.__size == 0:
++  40:         if __size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.08859 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+>       var_0 = singly_linked_list_0.remove()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f569827b9d0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:40: NameError
+   - [# 102] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+-  42:         if self.__size >= 1:
++  42:         if __size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.08948 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+>       var_0 = singly_linked_list_0.remove()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f569824eda0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:42: NameError
+   - [# 103] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+-  43:             nodeToRemove = self.__head
++  43:             nodeToRemove = __head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.08990 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+>       var_0 = singly_linked_list_0.remove()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f569825d600>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:43: NameError
+   - [# 104] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+-  44:             self.__sentinel.next = None
++  44:             __sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+--------------------------------------------------------------------------------
+[0.10299 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+>       var_0 = singly_linked_list_0.remove()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f5698306710>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:44: NameError
+   - [# 105] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
++  45:             __head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 106] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+-  45:             self.__head = self.__sentinel
++  45:             self.__head = __sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[0.10391 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+>       var_0 = singly_linked_list_0.remove()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f56985d2e30>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:45: NameError
+   - [# 107] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+-  46:             self.__size -= 1
++  46:             __size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 108] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+-  49:             nodeToRemove = self.__head
++  49:             nodeToRemove = __head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.10650 s] survived
+   - [# 109] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
++  50:             __sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+--------------------------------------------------------------------------------
+[0.08340 s] survived
+   - [# 110] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+-  50:             self.__sentinel.next = self.__head.next
++  50:             self.__sentinel.next = __head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+--------------------------------------------------------------------------------
+[0.08598 s] survived
+   - [# 111] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
++  51:             __head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 112] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+-  51:             self.__head = self.__sentinel.next
++  51:             self.__head = __sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[0.08354 s] survived
+   - [# 113] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+-  52:             self.__size -= 1
++  52:             __size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 114] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+-  59:         return self.__head.value
++  59:         return __head.value
+   60:     
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+--------------------------------------------------------------------------------
+[0.09415 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+>       var_1 = singly_linked_list_1.getHead()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f569850e140>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:59: NameError
+   - [# 115] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+-  65:         return self.__head
++  65:         return __head
+   66:     
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+--------------------------------------------------------------------------------
+[0.10987 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+>       node_1 = singly_linked_list_0.getHeadNode()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f56982c11e0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:65: NameError
+   - [# 116] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+-  71:         return self.__size
++  71:         return __size
+   72:     
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+--------------------------------------------------------------------------------
+[0.08310 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+>       int_0 = singly_linked_list_1.getSize()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f56984735b0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:71: NameError
+   - [# 117] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+-  77:         return True if self.__size == 0 else False
++  77:         return True if __size == 0 else False
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.08380 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+>       bool_0 = singly_linked_list_1.isEmpty()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f56981a53f0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:77: NameError
+   - [# 118] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+   83:         arr = []
+-  84:         current = self.__head
++  84:         current = __head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+--------------------------------------------------------------------------------
+[0.08672 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+        assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        var_3 = singly_linked_list_2.getHead()
+>       list_0 = singly_linked_list_1.toArray()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f56982c1510>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:84: NameError
+   - [# 119] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+   94:         arr = []
+-  95:         current = self.__head
++  95:         current = __head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+   99:         return str(arr)
+--------------------------------------------------------------------------------
+[0.11726 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+>       str_0 = singly_linked_list_0.__str__()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f56982c6320>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:95: NameError
+   - [# 120] ZIL linkedList3: 
+--------------------------------------------------------------------------------
+   82:         
+   83:         arr = []
+   84:         current = self.__head
+   85:         while current:
+-  86:             arr.append(current.value)
+-  87:             current = current.next
++  86:             break
++  87:         
+   88:         return arr
+   89:     
+   90:     def __str__(self) -> str:
+   91:         
+--------------------------------------------------------------------------------
+[0.09030 s] survived
+   - [# 121] ZIL linkedList3: 
+--------------------------------------------------------------------------------
+   93:         
+   94:         arr = []
+   95:         current = self.__head
+   96:         while current:
+-  97:             arr.append(current.value)
+-  98:             current = current.next
++  97:             break
++  98:         
+   99:         return str(arr)
+  100: 
+  101: 
+  102: if __name__ == '__main__':
+--------------------------------------------------------------------------------
+[0.08981 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_linkedList3_DYNAMOSA.py:43: AssertionError
+[*] Mutation score [26.61587 s]: 74.2%
+   - all: 121
+   - killed: 70 (57.9%)
+   - survived: 25 (20.7%)
+   - incompetent: 24 (19.8%)
+   - timeout: 2 (1.7%)

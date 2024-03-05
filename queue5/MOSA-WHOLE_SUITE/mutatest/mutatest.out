@@ -1,0 +1,111 @@
+2023-03-06 14:08:57,709: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 13 items
+
+MOSA-WHOLE_SUITE/test_queue5_MOSA.py .....                               [ 38%]
+MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py ........                     [100%]
+
+============================== 13 passed in 0.04s ==============================
+2023-03-06 14:08:57,928: [92m20 mutation targets found in queue5.py AST.[0m
+2023-03-06 14:08:57,928: Setting random.seed to: None
+2023-03-06 14:08:57,929: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-06 14:08:57,929: Total sample space size: 20
+2023-03-06 14:08:57,929: [92mSelecting 10 locations from 20 potentials.[0m
+2023-03-06 14:08:57,929: Starting individual mutation trials!
+2023-03-06 14:08:57,929: Running serial (single processor) dispatch mode.
+2023-03-06 14:08:57,929: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=32, col_offset=24, op_type=None, end_lineno=32, end_col_offset=28)
+2023-03-06 14:08:58,161: [92mResult: Detected at queue5.py: (32, 24)[0m
+2023-03-06 14:08:58,393: [92mResult: Detected at queue5.py: (32, 24)[0m
+2023-03-06 14:08:58,393: Current target location: queue5.py, LocIndex(ast_class='CompareIs', lineno=26, col_offset=33, op_type=<class 'ast.Is'>, end_lineno=26, end_col_offset=50)
+2023-03-06 14:08:58,634: [92mResult: Detected at queue5.py: (26, 33)[0m
+2023-03-06 14:08:58,635: Current target location: queue5.py, LocIndex(ast_class='BoolOp', lineno=26, col_offset=11, op_type=<class 'ast.And'>, end_lineno=26, end_col_offset=50)
+2023-03-06 14:08:58,826: [91mResult: Survived at queue5.py: (26, 11)[0m
+2023-03-06 14:08:58,826: Current target location: queue5.py, LocIndex(ast_class='If', lineno=17, col_offset=8, op_type='If_Statement', end_lineno=22, end_col_offset=28)
+2023-03-06 14:08:59,069: [92mResult: Detected at queue5.py: (17, 8)[0m
+2023-03-06 14:08:59,280: [92mResult: Detected at queue5.py: (17, 8)[0m
+2023-03-06 14:08:59,280: Current target location: queue5.py, LocIndex(ast_class='BoolOp', lineno=17, col_offset=11, op_type=<class 'ast.And'>, end_lineno=17, end_col_offset=50)
+2023-03-06 14:08:59,472: [91mResult: Survived at queue5.py: (17, 11)[0m
+2023-03-06 14:08:59,472: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=11, col_offset=20, op_type=None, end_lineno=11, end_col_offset=24)
+2023-03-06 14:08:59,719: [92mResult: Detected at queue5.py: (11, 20)[0m
+2023-03-06 14:08:59,965: [92mResult: Detected at queue5.py: (11, 20)[0m
+2023-03-06 14:08:59,966: Current target location: queue5.py, LocIndex(ast_class='CompareIs', lineno=26, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=26, end_col_offset=28)
+2023-03-06 14:09:00,199: [92mResult: Detected at queue5.py: (26, 11)[0m
+2023-03-06 14:09:00,199: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=26, col_offset=24, op_type=None, end_lineno=26, end_col_offset=28)
+2023-03-06 14:09:00,440: [92mResult: Detected at queue5.py: (26, 24)[0m
+2023-03-06 14:09:00,679: [92mResult: Detected at queue5.py: (26, 24)[0m
+2023-03-06 14:09:00,679: Current target location: queue5.py, LocIndex(ast_class='CompareIs', lineno=17, col_offset=33, op_type=<class 'ast.Is'>, end_lineno=17, end_col_offset=50)
+2023-03-06 14:09:00,914: [92mResult: Detected at queue5.py: (17, 33)[0m
+2023-03-06 14:09:00,914: Current target location: queue5.py, LocIndex(ast_class='CompareIs', lineno=17, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=17, end_col_offset=28)
+2023-03-06 14:09:01,157: [92mResult: Detected at queue5.py: (17, 11)[0m
+2023-03-06 14:09:01,157: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 13 items
+
+MOSA-WHOLE_SUITE/test_queue5_MOSA.py .....                               [ 38%]
+MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py ........                     [100%]
+
+============================== 13 passed in 0.02s ==============================
+2023-03-06 14:09:01,346: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/queue5/queue5.py
+ - Test commands: ['python', '-m', 'pytest', './MOSA-WHOLE_SUITE']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 20
+ - Location sample coverage: 50.00 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:00.217349
+ - Clean trial 2 run time: 0:00:00.188890
+ - Mutation trials total run time: 0:00:03.230166
+
+2023-03-06 14:09:01,346: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - DETECTED: 12
+ - SURVIVED: 2
+ - TOTAL RUNS: 14
+ - RUN DATETIME: 2023-03-06 14:09:01.346747
+
+2023-03-06 14:09:01,346: Detected mutations:[92m
+
+DETECTED
+--------
+ - queue5.py: (l: 11, c: 20) - mutation from None to True
+ - queue5.py: (l: 11, c: 20) - mutation from None to False
+ - queue5.py: (l: 17, c: 8) - mutation from If_Statement to If_False
+ - queue5.py: (l: 17, c: 8) - mutation from If_Statement to If_True
+ - queue5.py: (l: 17, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - queue5.py: (l: 17, c: 33) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - queue5.py: (l: 26, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - queue5.py: (l: 26, c: 24) - mutation from None to True
+ - queue5.py: (l: 26, c: 24) - mutation from None to False
+ - queue5.py: (l: 26, c: 33) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - queue5.py: (l: 32, c: 24) - mutation from None to False
+ - queue5.py: (l: 32, c: 24) - mutation from None to True[0m
+
+2023-03-06 14:09:01,347: Timedout mutations:
+
+2023-03-06 14:09:01,347: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - queue5.py: (l: 17, c: 11) - mutation from <class 'ast.And'> to <class 'ast.Or'>
+ - queue5.py: (l: 26, c: 11) - mutation from <class 'ast.And'> to <class 'ast.Or'>[0m
+
+2023-03-06 14:09:01,347: Writing output report to: /home/auri/temp/lucca/python_experiments/queue5/MOSA-WHOLE_SUITE/mutatest/MOSA-WHOLE_SUITE-report.rst

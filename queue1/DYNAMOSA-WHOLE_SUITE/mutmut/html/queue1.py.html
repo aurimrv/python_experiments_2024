@@ -1,0 +1,78 @@
+<html><body><h1>queue1.py</h1>Killed 20 out of 27 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 2</h3><pre>--- queue1.py
++++ queue1.py
+@@ -8,7 +8,7 @@
+ 
+ 	def __init__(self):
+ 		self.front = None
+-		self.back = None
++		self.back = ""
+ 		self.size = 0
+ 
+ 	def __str__(self):
+</pre><h3>Mutant 9</h3><pre>--- queue1.py
++++ queue1.py
+@@ -25,7 +25,7 @@
+ 			self.front = new_node
+ 			self.back = new_node
+ 		else: 
+-			new_back = QueueNode(item)
++			new_back = None
+ 			self.back.next = new_back
+ 			self.back = new_back
+ 
+</pre><h3>Mutant 10</h3><pre>--- queue1.py
++++ queue1.py
+@@ -26,7 +26,7 @@
+ 			self.back = new_node
+ 		else: 
+ 			new_back = QueueNode(item)
+-			self.back.next = new_back
++			self.back.next = None
+ 			self.back = new_back
+ 
+ 		self.size += 1
+</pre><h3>Mutant 11</h3><pre>--- queue1.py
++++ queue1.py
+@@ -27,7 +27,7 @@
+ 		else: 
+ 			new_back = QueueNode(item)
+ 			self.back.next = new_back
+-			self.back = new_back
++			self.back = None
+ 
+ 		self.size += 1
+ 
+</pre><h3>Mutant 17</h3><pre>--- queue1.py
++++ queue1.py
+@@ -36,7 +36,7 @@
+ 			raise ValueError()
+ 		else:
+ 			front_node = self.front
+-			self.front = self.front.next
++			self.front = None
+ 			self.size -= 1
+ 			return front_node.data
+ 
+</pre><h3>Mutant 24</h3><pre>--- queue1.py
++++ queue1.py
+@@ -47,7 +47,7 @@
+ 
+ 	def clear(self):
+ 		self.size = 0 
+-		self.front = None
++		self.front = ""
+ 		self.back = None
+ 
+ class QueueNode(object):
+</pre><h3>Mutant 25</h3><pre>--- queue1.py
++++ queue1.py
+@@ -48,7 +48,7 @@
+ 	def clear(self):
+ 		self.size = 0 
+ 		self.front = None
+-		self.back = None
++		self.back = ""
+ 
+ class QueueNode(object):
+ 	def __init__(self, item):
+</pre></body></html>

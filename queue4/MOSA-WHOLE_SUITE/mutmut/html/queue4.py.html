@@ -1,0 +1,243 @@
+<html><body><h1>queue4.py</h1>Killed 52 out of 74 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 20</h3><pre>--- queue4.py
++++ queue4.py
+@@ -53,7 +53,7 @@
+         """Remove the val from the head of the list."""
+         to_return = self.head
+         if self._length < 1:
+-            raise IndexError('Cannot pop from an empty list.')
++            raise IndexError('XXCannot pop from an empty list.XX')
+ 
+         new_head = self.head.next
+         if new_head:
+</pre><h3>Mutant 22</h3><pre>--- queue4.py
++++ queue4.py
+@@ -57,7 +57,7 @@
+ 
+         new_head = self.head.next
+         if new_head:
+-            new_head.prev = None
++            new_head.prev = ""
+         self.head = new_head
+         self._length -= 1
+         if self._length < 1:
+</pre><h3>Mutant 27</h3><pre>--- queue4.py
++++ queue4.py
+@@ -60,7 +60,7 @@
+             new_head.prev = None
+         self.head = new_head
+         self._length -= 1
+-        if self._length < 1:
++        if self._length <= 1:
+             self.tail = None
+         return to_return.data
+ 
+</pre><h3>Mutant 28</h3><pre>--- queue4.py
++++ queue4.py
+@@ -60,7 +60,7 @@
+             new_head.prev = None
+         self.head = new_head
+         self._length -= 1
+-        if self._length < 1:
++        if self._length < 2:
+             self.tail = None
+         return to_return.data
+ 
+</pre><h3>Mutant 33</h3><pre>--- queue4.py
++++ queue4.py
+@@ -70,7 +70,7 @@
+         self.tail = Node(val, prev=old_tail)
+         if old_tail:
+             old_tail.next = self.tail
+-        if self._length < 1:
++        if self._length <= 1:
+             self.head = self.tail
+         self._length += 1
+ 
+</pre><h3>Mutant 34</h3><pre>--- queue4.py
++++ queue4.py
+@@ -70,7 +70,7 @@
+         self.tail = Node(val, prev=old_tail)
+         if old_tail:
+             old_tail.next = self.tail
+-        if self._length < 1:
++        if self._length < 2:
+             self.head = self.tail
+         self._length += 1
+ 
+</pre><h3>Mutant 42</h3><pre>--- queue4.py
++++ queue4.py
+@@ -78,7 +78,7 @@
+         """Remove the val from the tail of the list."""
+         to_return = self.tail
+         if self._length < 1:
+-            raise IndexError('Cannot shift from an empty list.')
++            raise IndexError('XXCannot shift from an empty list.XX')
+ 
+         new_tail = self.tail.prev
+         if new_tail:
+</pre><h3>Mutant 44</h3><pre>--- queue4.py
++++ queue4.py
+@@ -82,7 +82,7 @@
+ 
+         new_tail = self.tail.prev
+         if new_tail:
+-            new_tail.next = None
++            new_tail.next = ""
+         self.tail = new_tail
+         self._length -= 1
+         if self._length < 1:
+</pre><h3>Mutant 45</h3><pre>--- queue4.py
++++ queue4.py
+@@ -83,7 +83,7 @@
+         new_tail = self.tail.prev
+         if new_tail:
+             new_tail.next = None
+-        self.tail = new_tail
++        self.tail = None
+         self._length -= 1
+         if self._length < 1:
+             self.tail = None
+</pre><h3>Mutant 46</h3><pre>--- queue4.py
++++ queue4.py
+@@ -84,7 +84,7 @@
+         if new_tail:
+             new_tail.next = None
+         self.tail = new_tail
+-        self._length -= 1
++        self._length = 1
+         if self._length < 1:
+             self.tail = None
+         return to_return.data
+</pre><h3>Mutant 47</h3><pre>--- queue4.py
++++ queue4.py
+@@ -84,7 +84,7 @@
+         if new_tail:
+             new_tail.next = None
+         self.tail = new_tail
+-        self._length -= 1
++        self._length += 1
+         if self._length < 1:
+             self.tail = None
+         return to_return.data
+</pre><h3>Mutant 48</h3><pre>--- queue4.py
++++ queue4.py
+@@ -84,7 +84,7 @@
+         if new_tail:
+             new_tail.next = None
+         self.tail = new_tail
+-        self._length -= 1
++        self._length -= 2
+         if self._length < 1:
+             self.tail = None
+         return to_return.data
+</pre><h3>Mutant 49</h3><pre>--- queue4.py
++++ queue4.py
+@@ -85,7 +85,7 @@
+             new_tail.next = None
+         self.tail = new_tail
+         self._length -= 1
+-        if self._length < 1:
++        if self._length <= 1:
+             self.tail = None
+         return to_return.data
+ 
+</pre><h3>Mutant 50</h3><pre>--- queue4.py
++++ queue4.py
+@@ -85,7 +85,7 @@
+             new_tail.next = None
+         self.tail = new_tail
+         self._length -= 1
+-        if self._length < 1:
++        if self._length < 2:
+             self.tail = None
+         return to_return.data
+ 
+</pre><h3>Mutant 65</h3><pre>--- queue4.py
++++ queue4.py
+@@ -102,7 +102,7 @@
+                     self.head, curr.next.prev = curr.next, None
+                 elif curr is self.tail:
+                     self.tail, curr.prev.next = curr.prev, None
+-                self._length -= 1
++                self._length = 1
+                 return
+             curr = curr.next
+ 
+</pre><h3>Mutant 66</h3><pre>--- queue4.py
++++ queue4.py
+@@ -102,7 +102,7 @@
+                     self.head, curr.next.prev = curr.next, None
+                 elif curr is self.tail:
+                     self.tail, curr.prev.next = curr.prev, None
+-                self._length -= 1
++                self._length += 1
+                 return
+             curr = curr.next
+ 
+</pre><h3>Mutant 69</h3><pre>--- queue4.py
++++ queue4.py
+@@ -106,7 +106,7 @@
+                 return
+             curr = curr.next
+ 
+-        raise ValueError('{} is not in the list'.format(val))
++        raise ValueError('XX{} is not in the listXX'.format(val))
+ 
+     def _repr(self):
+         """Return list representation of dll."""
+</pre><h3>Mutant 70</h3><pre>--- queue4.py
++++ queue4.py
+@@ -110,7 +110,7 @@
+ 
+     def _repr(self):
+         """Return list representation of dll."""
+-        l = []
++        l = None
+         while True:
+             try:
+                 popped_data = self.pop()
+</pre><h3>Mutant 71</h3><pre>--- queue4.py
++++ queue4.py
+@@ -111,7 +111,7 @@
+     def _repr(self):
+         """Return list representation of dll."""
+         l = []
+-        while True:
++        while False:
+             try:
+                 popped_data = self.pop()
+                 l.append(popped_data)
+</pre><h3>Mutant 72</h3><pre>--- queue4.py
++++ queue4.py
+@@ -113,7 +113,7 @@
+         l = []
+         while True:
+             try:
+-                popped_data = self.pop()
++                popped_data = None
+                 l.append(popped_data)
+             except IndexError:
+                 break
+</pre><h3>Mutant 73</h3><pre>--- queue4.py
++++ queue4.py
+@@ -116,7 +116,7 @@
+                 popped_data = self.pop()
+                 l.append(popped_data)
+             except IndexError:
+-                break
++                continue
+         return l
+ 
+ 
+</pre><h2>Suspicious</h2>Mutants that made the test suite take longer, but otherwise seemed ok<h3>Mutant 8</h3><pre>--- queue4.py
++++ queue4.py
+@@ -31,7 +31,7 @@
+         """Initialize list."""
+         self.head = None
+         self.tail = None
+-        self._length = 0
++        self._length = None
+         try:
+             for val in data:
+                 self.push(val)
+</pre></body></html>

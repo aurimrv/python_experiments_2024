@@ -1,0 +1,100 @@
+<html><body><h1>binarySearchTree3.py</h1>Killed 170 out of 179 mutants<h2>Timeouts</h2>Mutants that made the test suite take a lot longer so the tests were killed.<h3>Mutant 72</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -112,7 +112,7 @@
+         l = []
+         while True:
+             try:
+-                popped_data = self.pop()
++                popped_data = None
+                 l.append(popped_data)
+             except IndexError:
+                 break
+</pre><h3>Mutant 73</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -115,7 +115,7 @@
+                 popped_data = self.pop()
+                 l.append(popped_data)
+             except IndexError:
+-                break
++                continue
+         return l
+ 
+ class Queue(object):
+</pre><h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 29</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -60,7 +60,7 @@
+         self.head = new_head
+         self._length -= 1
+         if self._length < 1:
+-            self.tail = None
++            self.tail = ""
+         return to_return.data
+ 
+     def append(self, val):
+</pre><h3>Mutant 48</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -83,7 +83,7 @@
+         if new_tail:
+             new_tail.next = None
+         self.tail = new_tail
+-        self._length -= 1
++        self._length -= 2
+         if self._length < 1:
+             self.tail = None
+         return to_return.data
+</pre><h3>Mutant 49</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -84,7 +84,7 @@
+             new_tail.next = None
+         self.tail = new_tail
+         self._length -= 1
+-        if self._length < 1:
++        if self._length <= 1:
+             self.tail = None
+         return to_return.data
+ 
+</pre><h3>Mutant 50</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -84,7 +84,7 @@
+             new_tail.next = None
+         self.tail = new_tail
+         self._length -= 1
+-        if self._length < 1:
++        if self._length < 2:
+             self.tail = None
+         return to_return.data
+ 
+</pre><h3>Mutant 98</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -238,7 +238,7 @@
+         """Insert val into BST. If val is already present will be ignored."""
+         if not self.root:
+             self.root = Node(val)
+-            self._size += 1
++            self._size = 1
+         else:
+             self._step(val, self.root)
+ 
+</pre><h3>Mutant 123</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -270,7 +270,7 @@
+         while curr:
+             if curr.val == val:
+                 return curr
+-            elif val < curr.val:
++            elif val <= curr.val:
+                 curr = curr.left
+             else:
+                 curr = curr.right
+</pre><h3>Mutant 176</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -398,7 +398,7 @@
+                 if node._side() == 'left':
+                     return node.parent # Alterado para corrigir comportamento (antes = self.parent)
+                 else:
+-                    node.parent.right = None
++                    node.parent.right = ""
+                     tmp = self._find_replacement(node.parent)
+                     node.parent.right = node
+                     return tmp
+</pre></body></html>

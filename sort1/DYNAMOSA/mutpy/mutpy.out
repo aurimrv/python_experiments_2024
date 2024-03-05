@@ -1,0 +1,2383 @@
+[34m[*][0m Start mutation process:
+[36m   -[0m targets: sort1.py
+[36m   -[0m tests: ./DYNAMOSA
+[34m[*][0m 15 tests passed:
+[36m   -[0m test_sort1_DYNAMOSA [0.27467 s]
+[34m[*][0m Start mutants generation and execution:
+[36m   -[0m [#   1] AOR sort1: 
+--------------------------------------------------------------------------------
+  11:             Complexity: O(n^2)
+  12:         '''
+  13:         for i in range(len(arr)):
+  14:             minimum = i
+[34m- 15:             for j in range(i + 1, len(arr)):[0m
+[32m+ 15:             for j in range(i - 1, len(arr)):[0m
+  16:                 
+  17:                 if arr[j] < arr[minimum]:
+  18:                     minimum = j
+  19:             
+--------------------------------------------------------------------------------
+[0.15184 s] [31msurvived[0m
+[36m   -[0m [#   2] AOR sort1: 
+--------------------------------------------------------------------------------
+  27:         '''
+  28:         for i in range(len(arr)):
+  29:             cursor = arr[i]
+  30:             pos = i
+[34m- 31:             while (pos > 0 and arr[pos - 1] > cursor):[0m
+[32m+ 31:             while (pos > 0 and arr[pos + 1] > cursor):[0m
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+  34:                 pos = pos - 1
+  35:             
+--------------------------------------------------------------------------------
+[0.15915 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        sort_0 = module_0.Sort()
+>       var_0 = sort_0.insertion_sort(list_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = [False, False, False, False]
+
+>   ???
+E   IndexError: list index out of range
+
+sort1:31: IndexError
+[36m   -[0m [#   3] AOR sort1: 
+--------------------------------------------------------------------------------
+  29:             cursor = arr[i]
+  30:             pos = i
+  31:             while (pos > 0 and arr[pos - 1] > cursor):
+  32:                 
+[34m- 33:                 arr[pos] = arr[pos - 1][0m
+[32m+ 33:                 arr[pos] = arr[pos + 1][0m
+  34:                 pos = pos - 1
+  35:             
+  36:             arr[pos] = cursor
+  37:         return arr
+--------------------------------------------------------------------------------
+[0.17996 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_12
+
+def test_case_12():
+        bool_0 = True
+        float_0 = -491.8264
+        list_0 = [bool_0, float_0]
+        sort_0 = module_0.Sort()
+>       var_0 = sort_0.insertion_sort(list_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = [True, -491.8264]
+
+>   ???
+E   IndexError: list index out of range
+
+sort1:33: IndexError
+[36m   -[0m [#   4] AOR sort1: 
+--------------------------------------------------------------------------------
+  30:             pos = i
+  31:             while (pos > 0 and arr[pos - 1] > cursor):
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+[34m- 34:                 pos = pos - 1[0m
+[32m+ 34:                 pos = pos + 1[0m
+  35:             
+  36:             arr[pos] = cursor
+  37:         return arr
+  38:     
+--------------------------------------------------------------------------------
+[0.18956 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_12
+
+def test_case_12():
+        bool_0 = True
+        float_0 = -491.8264
+        list_0 = [bool_0, float_0]
+        sort_0 = module_0.Sort()
+>       var_0 = sort_0.insertion_sort(list_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = [True, True]
+
+>   ???
+E   IndexError: list assignment index out of range
+
+sort1:33: IndexError
+[36m   -[0m [#   5] AOR sort1: 
+--------------------------------------------------------------------------------
+  41:     def merge_sort(arr):''' Merge Sort
+  42:             Complexity: O(n log(n))
+  43:         '''
+  44:         size = len(arr)
+[34m- 45:         half = size // 2[0m
+[32m+ 45:         half = size / 2[0m
+  46:         
+  47:         if size <= 1:
+  48:             return arr
+  49:         
+--------------------------------------------------------------------------------
+[0.16108 s] [36mincompetent[0m
+
+TypeError: sort1:50: TypeError: slice indices must be integers or None or have an __index__ method
+
+[36m   -[0m [#   6] AOR sort1: 
+--------------------------------------------------------------------------------
+  41:     def merge_sort(arr):''' Merge Sort
+  42:             Complexity: O(n log(n))
+  43:         '''
+  44:         size = len(arr)
+[34m- 45:         half = size // 2[0m
+[32m+ 45:         half = size * 2[0m
+  46:         
+  47:         if size <= 1:
+  48:             return arr
+  49:         
+--------------------------------------------------------------------------------
+[0.18465 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+[36m   -[0m [#   7] AOR sort1: 
+--------------------------------------------------------------------------------
+  81:         '''
+  82:         if first < last:
+  83:             pos = Sort.partition(arr, first, last)
+  84:             
+[34m- 85:             Sort.quick_sort(arr, first, pos - 1)[0m
+[32m+ 85:             Sort.quick_sort(arr, first, pos + 1)[0m
+  86:             Sort.quick_sort(arr, pos + 1, last)
+  87:     
+  88:     
+  89:     @staticmethod
+--------------------------------------------------------------------------------
+[0.14744 s] [31msurvived[0m
+[36m   -[0m [#   8] AOR sort1: 
+--------------------------------------------------------------------------------
+  82:         if first < last:
+  83:             pos = Sort.partition(arr, first, last)
+  84:             
+  85:             Sort.quick_sort(arr, first, pos - 1)
+[34m- 86:             Sort.quick_sort(arr, pos + 1, last)[0m
+[32m+ 86:             Sort.quick_sort(arr, pos - 1, last)[0m
+  87:     
+  88:     
+  89:     @staticmethod
+  90:     def partition(arr, first, last):pivot = first
+--------------------------------------------------------------------------------
+[0.14887 s] [31msurvived[0m
+[36m   -[0m [#   9] ASR sort1: 
+--------------------------------------------------------------------------------
+  62:         while (left_cursor < len(left) and right_cursor < len(right)):
+  63:             
+  64:             if left[left_cursor] <= right[right_cursor]:
+  65:                 arr.append(left[left_cursor])
+[34m- 66:                 left_cursor += 1[0m
+[32m+ 66:                 left_cursor -= 1[0m
+  67:             else:
+  68:                 arr.append(right[right_cursor])
+  69:                 right_cursor += 1
+  70:         
+--------------------------------------------------------------------------------
+[0.22375 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:53: in merge_sort
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+left = '&', right = 'P'
+
+>   ???
+E   IndexError: string index out of range
+
+sort1:64: IndexError
+[36m   -[0m [#  10] ASR sort1: 
+--------------------------------------------------------------------------------
+  65:                 arr.append(left[left_cursor])
+  66:                 left_cursor += 1
+  67:             else:
+  68:                 arr.append(right[right_cursor])
+[34m- 69:                 right_cursor += 1[0m
+[32m+ 69:                 right_cursor -= 1[0m
+  70:         
+  71:         if left:
+  72:             arr.extend(left[left_cursor:])
+  73:         if right:
+--------------------------------------------------------------------------------
+[0.18017 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:53: in merge_sort
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+left = ['&', 'P'], right = '8'
+
+>   ???
+E   IndexError: string index out of range
+
+sort1:64: IndexError
+[36m   -[0m [#  11] ASR sort1: 
+--------------------------------------------------------------------------------
+  90:     def partition(arr, first, last):pivot = first
+  91:         for pos in range(first, last):
+  92:             if arr[pos] < arr[last]:
+  93:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])
+[34m- 94:                 pivot += 1[0m
+[32m+ 94:                 pivot -= 1[0m
+  95:         (arr[pivot], arr[last]) = (arr[last], arr[pivot])
+  96:         return pivot
+--------------------------------------------------------------------------------
+[0.15217 s] [31msurvived[0m
+[36m   -[0m [#  12] CDI sort1: 
+--------------------------------------------------------------------------------
+   5: 
+   6: 
+   7: class Sort:
+   8:     
+[34m-  9:     @staticmethod[0m
+[34m- 10:     def selection_sort(arr):''' Selection Sort[0m
+[34m- 11:             Complexity: O(n^2)[0m
+[34m- 12:         '''[0m
+[34m- 13:         for i in range(len(arr)):[0m
+[34m- 14:             minimum = i[0m
+[34m- 15:             for j in range(i + 1, len(arr)):[0m
+[34m- 16:                 [0m
+[34m- 17:                 if arr[j] < arr[minimum]:[0m
+[34m- 18:                     minimum = j[0m
+[34m- 19:             [0m
+[34m- 20:             (arr[minimum], arr[i]) = (arr[i], arr[minimum])[0m
+[34m- 21:         return arr[0m
+[34m- 22:     [0m
+[32m+  9:     @staticmethod@classmethod[0m
+[32m+ 10:     def selection_sort(arr):[0m
+[32m+ 11:         ''' Selection Sort[0m
+[32m+ 12:             Complexity: O(n^2)[0m
+[32m+ 13:         '''[0m
+[32m+ 14:         for i in range(len(arr)):[0m
+[32m+ 15:             minimum = i[0m
+[32m+ 16:             for j in range(i + 1, len(arr)):[0m
+[32m+ 17:                 [0m
+[32m+ 18:                 if arr[j] < arr[minimum]:[0m
+[32m+ 19:                     minimum = j[0m
+[32m+ 20:             [0m
+[32m+ 21:             (arr[minimum], arr[i]) = (arr[i], arr[minimum])[0m
+[32m+ 22:         return arr[0m
+  23:     
+  24:     @staticmethod
+  25:     def insertion_sort(arr):''' Insertion Sort
+  26:             Complexity: O(n^2)
+--------------------------------------------------------------------------------
+[0.17239 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/sort1/DYNAMOSA/test_sort1_DYNAMOSA.py:12: TypeError: 'classmethod' object is not callable
+
+[36m   -[0m [#  13] CDI sort1: 
+--------------------------------------------------------------------------------
+  20:             (arr[minimum], arr[i]) = (arr[i], arr[minimum])
+  21:         return arr
+  22:     
+  23:     
+[34m- 24:     @staticmethod[0m
+[34m- 25:     def insertion_sort(arr):''' Insertion Sort[0m
+[34m- 26:             Complexity: O(n^2)[0m
+[34m- 27:         '''[0m
+[34m- 28:         for i in range(len(arr)):[0m
+[34m- 29:             cursor = arr[i][0m
+[34m- 30:             pos = i[0m
+[34m- 31:             while (pos > 0 and arr[pos - 1] > cursor):[0m
+[34m- 32:                 [0m
+[34m- 33:                 arr[pos] = arr[pos - 1][0m
+[34m- 34:                 pos = pos - 1[0m
+[34m- 35:             [0m
+[34m- 36:             arr[pos] = cursor[0m
+[34m- 37:         return arr[0m
+[34m- 38:     [0m
+[32m+ 24:     @staticmethod@classmethod[0m
+[32m+ 25:     def insertion_sort(arr):[0m
+[32m+ 26:         ''' Insertion Sort[0m
+[32m+ 27:             Complexity: O(n^2)[0m
+[32m+ 28:         '''[0m
+[32m+ 29:         for i in range(len(arr)):[0m
+[32m+ 30:             cursor = arr[i][0m
+[32m+ 31:             pos = i[0m
+[32m+ 32:             while (pos > 0 and arr[pos - 1] > cursor):[0m
+[32m+ 33:                 [0m
+[32m+ 34:                 arr[pos] = arr[pos - 1][0m
+[32m+ 35:                 pos = pos - 1[0m
+[32m+ 36:             [0m
+[32m+ 37:             arr[pos] = cursor[0m
+[32m+ 38:         return arr[0m
+  39:     
+  40:     @staticmethod
+  41:     def merge_sort(arr):''' Merge Sort
+  42:             Complexity: O(n log(n))
+--------------------------------------------------------------------------------
+[0.16457 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/sort1/DYNAMOSA/test_sort1_DYNAMOSA.py:9: TypeError: 'classmethod' object is not callable
+
+[36m   -[0m [#  14] CDI sort1: 
+--------------------------------------------------------------------------------
+  36:             arr[pos] = cursor
+  37:         return arr
+  38:     
+  39:     
+[34m- 40:     @staticmethod[0m
+[34m- 41:     def merge_sort(arr):''' Merge Sort[0m
+[34m- 42:             Complexity: O(n log(n))[0m
+[34m- 43:         '''[0m
+[34m- 44:         size = len(arr)[0m
+[34m- 45:         half = size // 2[0m
+[34m- 46:         [0m
+[34m- 47:         if size <= 1:[0m
+[34m- 48:             return arr[0m
+[34m- 49:         [0m
+[34m- 50:         (left, right) = (Sort.merge_sort(arr[half:]), Sort.merge_sort(arr[:half]))[0m
+[34m- 51:         [0m
+[32m+ 40:     @staticmethod@classmethod[0m
+[32m+ 41:     def merge_sort(arr):[0m
+[32m+ 42:         ''' Merge Sort[0m
+[32m+ 43:             Complexity: O(n log(n))[0m
+[32m+ 44:         '''[0m
+[32m+ 45:         size = len(arr)[0m
+[32m+ 46:         half = size // 2[0m
+[32m+ 47:         [0m
+[32m+ 48:         if size <= 1:[0m
+[32m+ 49:             return arr[0m
+[32m+ 50:         [0m
+[32m+ 51:         (left, right) = (Sort.merge_sort(arr[half:]), Sort.merge_sort(arr[:half]))[0m
+  52:         
+[34m- 53:         return Sort.merge(left, right)[0m
+[34m- 54:     [0m
+[32m+ 53:         [0m
+[32m+ 54:         return Sort.merge(left, right)[0m
+  55:     
+  56:     @staticmethod
+  57:     def merge(left, right):''' Merge helper
+  58:             Complexity: O(n)
+--------------------------------------------------------------------------------
+[0.17230 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/sort1/DYNAMOSA/test_sort1_DYNAMOSA.py:24: TypeError: 'classmethod' object is not callable
+
+[36m   -[0m [#  15] CDI sort1: 
+--------------------------------------------------------------------------------
+  52:         
+  53:         return Sort.merge(left, right)
+  54:     
+  55:     
+[34m- 56:     @staticmethod[0m
+[34m- 57:     def merge(left, right):''' Merge helper[0m
+[34m- 58:             Complexity: O(n)[0m
+[34m- 59:         '''[0m
+[34m- 60:         arr = [][0m
+[34m- 61:         (left_cursor, right_cursor) = (0, 0)[0m
+[34m- 62:         while (left_cursor < len(left) and right_cursor < len(right)):[0m
+[34m- 63:             [0m
+[34m- 64:             if left[left_cursor] <= right[right_cursor]:[0m
+[34m- 65:                 arr.append(left[left_cursor])[0m
+[34m- 66:                 left_cursor += 1[0m
+[34m- 67:             else:[0m
+[34m- 68:                 arr.append(right[right_cursor])[0m
+[34m- 69:                 right_cursor += 1[0m
+[34m- 70:         [0m
+[34m- 71:         if left:[0m
+[34m- 72:             arr.extend(left[left_cursor:])[0m
+[34m- 73:         if right:[0m
+[34m- 74:             arr.extend(right[right_cursor:])[0m
+[34m- 75:         return arr[0m
+[34m- 76:     [0m
+[32m+ 56:     @staticmethod@classmethod[0m
+[32m+ 57:     def merge(left, right):[0m
+[32m+ 58:         ''' Merge helper[0m
+[32m+ 59:             Complexity: O(n)[0m
+[32m+ 60:         '''[0m
+[32m+ 61:         arr = [][0m
+[32m+ 62:         (left_cursor, right_cursor) = (0, 0)[0m
+[32m+ 63:         while (left_cursor < len(left) and right_cursor < len(right)):[0m
+[32m+ 64:             [0m
+[32m+ 65:             if left[left_cursor] <= right[right_cursor]:[0m
+[32m+ 66:                 arr.append(left[left_cursor])[0m
+[32m+ 67:                 left_cursor += 1[0m
+[32m+ 68:             else:[0m
+[32m+ 69:                 arr.append(right[right_cursor])[0m
+[32m+ 70:                 right_cursor += 1[0m
+[32m+ 71:         [0m
+[32m+ 72:         if left:[0m
+[32m+ 73:             arr.extend(left[left_cursor:])[0m
+[32m+ 74:         if right:[0m
+[32m+ 75:             arr.extend(right[right_cursor:])[0m
+[32m+ 76:         return arr[0m
+  77:     
+  78:     @staticmethod
+  79:     def quick_sort(arr, first, last):''' Quicksort
+  80:             Complexity: O(n log(n))
+--------------------------------------------------------------------------------
+[0.17506 s] [36mincompetent[0m
+
+TypeError: sort1:53: TypeError: 'classmethod' object is not callable
+
+[36m   -[0m [#  16] CDI sort1: 
+--------------------------------------------------------------------------------
+  74:             arr.extend(right[right_cursor:])
+  75:         return arr
+  76:     
+  77:     
+[34m- 78:     @staticmethod[0m
+[34m- 79:     def quick_sort(arr, first, last):''' Quicksort[0m
+[34m- 80:             Complexity: O(n log(n))[0m
+[34m- 81:         '''[0m
+[34m- 82:         if first < last:[0m
+[34m- 83:             pos = Sort.partition(arr, first, last)[0m
+[34m- 84:             [0m
+[34m- 85:             Sort.quick_sort(arr, first, pos - 1)[0m
+[34m- 86:             Sort.quick_sort(arr, pos + 1, last)[0m
+[34m- 87:     [0m
+[32m+ 78:     @staticmethod@classmethod[0m
+[32m+ 79:     def quick_sort(arr, first, last):[0m
+[32m+ 80:         ''' Quicksort[0m
+[32m+ 81:             Complexity: O(n log(n))[0m
+[32m+ 82:         '''[0m
+[32m+ 83:         if first < last:[0m
+[32m+ 84:             pos = Sort.partition(arr, first, last)[0m
+[32m+ 85:             [0m
+[32m+ 86:             Sort.quick_sort(arr, first, pos - 1)[0m
+[32m+ 87:             Sort.quick_sort(arr, pos + 1, last)[0m
+  88:     
+  89:     @staticmethod
+  90:     def partition(arr, first, last):pivot = first
+  91:         for pos in range(first, last):
+--------------------------------------------------------------------------------
+[0.17233 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/sort1/DYNAMOSA/test_sort1_DYNAMOSA.py:41: TypeError: 'classmethod' object is not callable
+
+[36m   -[0m [#  17] CDI sort1: 
+--------------------------------------------------------------------------------
+  85:             Sort.quick_sort(arr, first, pos - 1)
+  86:             Sort.quick_sort(arr, pos + 1, last)
+  87:     
+  88:     
+[34m- 89:     @staticmethod[0m
+[34m- 90:     def partition(arr, first, last):pivot = first[0m
+[34m- 91:         for pos in range(first, last):[0m
+[34m- 92:             if arr[pos] < arr[last]:[0m
+[34m- 93:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])[0m
+[34m- 94:                 pivot += 1[0m
+[34m- 95:         (arr[pivot], arr[last]) = (arr[last], arr[pivot])[0m
+[34m- 96:         return pivot[0m
+[32m+ 89:     @staticmethod@classmethod[0m
+[32m+ 90:     def partition(arr, first, last):[0m
+[32m+ 91:         pivot = first[0m
+[32m+ 92:         for pos in range(first, last):[0m
+[32m+ 93:             if arr[pos] < arr[last]:[0m
+[32m+ 94:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])[0m
+[32m+ 95:                 pivot += 1[0m
+[32m+ 96:         (arr[pivot], arr[last]) = (arr[last], arr[pivot])[0m
+[32m+ 97:         return pivot[0m
+--------------------------------------------------------------------------------
+[0.16928 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/sort1/DYNAMOSA/test_sort1_DYNAMOSA.py:10: TypeError: 'classmethod' object is not callable
+
+[36m   -[0m [#  18] COI sort1: 
+--------------------------------------------------------------------------------
+  13:         for i in range(len(arr)):
+  14:             minimum = i
+  15:             for j in range(i + 1, len(arr)):
+  16:                 
+[34m- 17:                 if arr[j] < arr[minimum]:[0m
+[32m+ 17:                 if not (arr[j] < arr[minimum]):[0m
+  18:                     minimum = j
+  19:             
+  20:             (arr[minimum], arr[i]) = (arr[i], arr[minimum])
+  21:         return arr
+--------------------------------------------------------------------------------
+[0.21502 s] [31msurvived[0m
+[36m   -[0m [#  19] COI sort1: 
+--------------------------------------------------------------------------------
+  27:         '''
+  28:         for i in range(len(arr)):
+  29:             cursor = arr[i]
+  30:             pos = i
+[34m- 31:             while (pos > 0 and arr[pos - 1] > cursor):[0m
+[32m+ 31:             while not ((pos > 0 and arr[pos - 1] > cursor)):[0m
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+  34:                 pos = pos - 1
+  35:             
+--------------------------------------------------------------------------------
+[0.16412 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        sort_0 = module_0.Sort()
+>       var_0 = sort_0.insertion_sort(list_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = [False, False, False, False]
+
+>   ???
+E   IndexError: list index out of range
+
+sort1:33: IndexError
+[36m   -[0m [#  20] COI sort1: 
+--------------------------------------------------------------------------------
+  43:         '''
+  44:         size = len(arr)
+  45:         half = size // 2
+  46:         
+[34m- 47:         if size <= 1:[0m
+[32m+ 47:         if not (size <= 1):[0m
+  48:             return arr
+  49:         
+  50:         (left, right) = (Sort.merge_sort(arr[half:]), Sort.merge_sort(arr[:half]))
+  51:         
+--------------------------------------------------------------------------------
+[0.14754 s] [31msurvived[0m
+[36m   -[0m [#  21] COI sort1: 
+--------------------------------------------------------------------------------
+  58:             Complexity: O(n)
+  59:         '''
+  60:         arr = []
+  61:         (left_cursor, right_cursor) = (0, 0)
+[34m- 62:         while (left_cursor < len(left) and right_cursor < len(right)):[0m
+[32m+ 62:         while not ((left_cursor < len(left) and right_cursor < len(right))):[0m
+  63:             
+  64:             if left[left_cursor] <= right[right_cursor]:
+  65:                 arr.append(left[left_cursor])
+  66:                 left_cursor += 1
+--------------------------------------------------------------------------------
+[0.17205 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        bool_0 = True
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        sort_0 = module_0.Sort()
+        var_0 = sort_0.insertion_sort(list_0)
+        dict_0 = {}
+        var_1 = sort_0.selection_sort(dict_0)
+>       var_2 = sort_0.merge(var_1, var_1)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+left = {}, right = {}
+
+>   ???
+E   KeyError: 0
+
+sort1:64: KeyError
+[36m   -[0m [#  22] COI sort1: 
+--------------------------------------------------------------------------------
+  60:         arr = []
+  61:         (left_cursor, right_cursor) = (0, 0)
+  62:         while (left_cursor < len(left) and right_cursor < len(right)):
+  63:             
+[34m- 64:             if left[left_cursor] <= right[right_cursor]:[0m
+[32m+ 64:             if not (left[left_cursor] <= right[right_cursor]):[0m
+  65:                 arr.append(left[left_cursor])
+  66:                 left_cursor += 1
+  67:             else:
+  68:                 arr.append(right[right_cursor])
+--------------------------------------------------------------------------------
+[0.14721 s] [31msurvived[0m
+[36m   -[0m [#  23] COI sort1: 
+--------------------------------------------------------------------------------
+  67:             else:
+  68:                 arr.append(right[right_cursor])
+  69:                 right_cursor += 1
+  70:         
+[34m- 71:         if left:[0m
+[32m+ 71:         if not left:[0m
+  72:             arr.extend(left[left_cursor:])
+  73:         if right:
+  74:             arr.extend(right[right_cursor:])
+  75:         return arr
+--------------------------------------------------------------------------------
+[0.17945 s] [36mincompetent[0m
+
+TypeError: sort1:72: TypeError: unhashable type: 'slice'
+
+[36m   -[0m [#  24] COI sort1: 
+--------------------------------------------------------------------------------
+  69:                 right_cursor += 1
+  70:         
+  71:         if left:
+  72:             arr.extend(left[left_cursor:])
+[34m- 73:         if right:[0m
+[32m+ 73:         if not right:[0m
+  74:             arr.extend(right[right_cursor:])
+  75:         return arr
+  76:     
+  77:     
+--------------------------------------------------------------------------------
+[0.17407 s] [36mincompetent[0m
+
+TypeError: sort1:74: TypeError: unhashable type: 'slice'
+
+[36m   -[0m [#  25] COI sort1: 
+--------------------------------------------------------------------------------
+  78:     @staticmethod
+  79:     def quick_sort(arr, first, last):''' Quicksort
+  80:             Complexity: O(n log(n))
+  81:         '''
+[34m- 82:         if first < last:[0m
+[32m+ 82:         if not (first < last):[0m
+  83:             pos = Sort.partition(arr, first, last)
+  84:             
+  85:             Sort.quick_sort(arr, first, pos - 1)
+  86:             Sort.quick_sort(arr, pos + 1, last)
+--------------------------------------------------------------------------------
+[0.18104 s] [36mincompetent[0m
+
+TypeError: sort1:91: TypeError: 'str' object cannot be interpreted as an integer
+
+[36m   -[0m [#  26] COI sort1: 
+--------------------------------------------------------------------------------
+  88:     
+  89:     @staticmethod
+  90:     def partition(arr, first, last):pivot = first
+  91:         for pos in range(first, last):
+[34m- 92:             if arr[pos] < arr[last]:[0m
+[32m+ 92:             if not (arr[pos] < arr[last]):[0m
+  93:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])
+  94:                 pivot += 1
+  95:         (arr[pivot], arr[last]) = (arr[last], arr[pivot])
+  96:         return pivot
+--------------------------------------------------------------------------------
+[0.15553 s] [31msurvived[0m
+[36m   -[0m [#  27] CRP sort1: 
+--------------------------------------------------------------------------------
+  11:             Complexity: O(n^2)
+  12:         '''
+  13:         for i in range(len(arr)):
+  14:             minimum = i
+[34m- 15:             for j in range(i + 1, len(arr)):[0m
+[32m+ 15:             for j in range(i + 2, len(arr)):[0m
+  16:                 
+  17:                 if arr[j] < arr[minimum]:
+  18:                     minimum = j
+  19:             
+--------------------------------------------------------------------------------
+[0.21557 s] [31msurvived[0m
+[36m   -[0m [#  28] CRP sort1: 
+--------------------------------------------------------------------------------
+  27:         '''
+  28:         for i in range(len(arr)):
+  29:             cursor = arr[i]
+  30:             pos = i
+[34m- 31:             while (pos > 0 and arr[pos - 1] > cursor):[0m
+[32m+ 31:             while (pos > 1 and arr[pos - 1] > cursor):[0m
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+  34:                 pos = pos - 1
+  35:             
+--------------------------------------------------------------------------------
+[0.13581 s] [31msurvived[0m
+[36m   -[0m [#  29] CRP sort1: 
+--------------------------------------------------------------------------------
+  27:         '''
+  28:         for i in range(len(arr)):
+  29:             cursor = arr[i]
+  30:             pos = i
+[34m- 31:             while (pos > 0 and arr[pos - 1] > cursor):[0m
+[32m+ 31:             while (pos > 0 and arr[pos - 2] > cursor):[0m
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+  34:                 pos = pos - 1
+  35:             
+--------------------------------------------------------------------------------
+[0.14851 s] [31msurvived[0m
+[36m   -[0m [#  30] CRP sort1: 
+--------------------------------------------------------------------------------
+  29:             cursor = arr[i]
+  30:             pos = i
+  31:             while (pos > 0 and arr[pos - 1] > cursor):
+  32:                 
+[34m- 33:                 arr[pos] = arr[pos - 1][0m
+[32m+ 33:                 arr[pos] = arr[pos - 2][0m
+  34:                 pos = pos - 1
+  35:             
+  36:             arr[pos] = cursor
+  37:         return arr
+--------------------------------------------------------------------------------
+[0.14774 s] [31msurvived[0m
+[36m   -[0m [#  31] CRP sort1: 
+--------------------------------------------------------------------------------
+  30:             pos = i
+  31:             while (pos > 0 and arr[pos - 1] > cursor):
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+[34m- 34:                 pos = pos - 1[0m
+[32m+ 34:                 pos = pos - 2[0m
+  35:             
+  36:             arr[pos] = cursor
+  37:         return arr
+  38:     
+--------------------------------------------------------------------------------
+[0.15443 s] [31msurvived[0m
+[36m   -[0m [#  32] CRP sort1: 
+--------------------------------------------------------------------------------
+  41:     def merge_sort(arr):''' Merge Sort
+  42:             Complexity: O(n log(n))
+  43:         '''
+  44:         size = len(arr)
+[34m- 45:         half = size // 2[0m
+[32m+ 45:         half = size // 3[0m
+  46:         
+  47:         if size <= 1:
+  48:             return arr
+  49:         
+--------------------------------------------------------------------------------
+[0.18761 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+[36m   -[0m [#  33] CRP sort1: 
+--------------------------------------------------------------------------------
+  43:         '''
+  44:         size = len(arr)
+  45:         half = size // 2
+  46:         
+[34m- 47:         if size <= 1:[0m
+[32m+ 47:         if size <= 2:[0m
+  48:             return arr
+  49:         
+  50:         (left, right) = (Sort.merge_sort(arr[half:]), Sort.merge_sort(arr[:half]))
+  51:         
+--------------------------------------------------------------------------------
+[0.15566 s] [31msurvived[0m
+[36m   -[0m [#  34] CRP sort1: 
+--------------------------------------------------------------------------------
+  57:     def merge(left, right):''' Merge helper
+  58:             Complexity: O(n)
+  59:         '''
+  60:         arr = []
+[34m- 61:         (left_cursor, right_cursor) = (0, 0)[0m
+[32m+ 61:         (left_cursor, right_cursor) = (1, 0)[0m
+  62:         while (left_cursor < len(left) and right_cursor < len(right)):
+  63:             
+  64:             if left[left_cursor] <= right[right_cursor]:
+  65:                 arr.append(left[left_cursor])
+--------------------------------------------------------------------------------
+[0.14673 s] [31msurvived[0m
+[36m   -[0m [#  35] CRP sort1: 
+--------------------------------------------------------------------------------
+  57:     def merge(left, right):''' Merge helper
+  58:             Complexity: O(n)
+  59:         '''
+  60:         arr = []
+[34m- 61:         (left_cursor, right_cursor) = (0, 0)[0m
+[32m+ 61:         (left_cursor, right_cursor) = (0, 1)[0m
+  62:         while (left_cursor < len(left) and right_cursor < len(right)):
+  63:             
+  64:             if left[left_cursor] <= right[right_cursor]:
+  65:                 arr.append(left[left_cursor])
+--------------------------------------------------------------------------------
+[0.14916 s] [31msurvived[0m
+[36m   -[0m [#  36] CRP sort1: 
+--------------------------------------------------------------------------------
+  62:         while (left_cursor < len(left) and right_cursor < len(right)):
+  63:             
+  64:             if left[left_cursor] <= right[right_cursor]:
+  65:                 arr.append(left[left_cursor])
+[34m- 66:                 left_cursor += 1[0m
+[32m+ 66:                 left_cursor += 2[0m
+  67:             else:
+  68:                 arr.append(right[right_cursor])
+  69:                 right_cursor += 1
+  70:         
+--------------------------------------------------------------------------------
+[0.15391 s] [31msurvived[0m
+[36m   -[0m [#  37] CRP sort1: 
+--------------------------------------------------------------------------------
+  65:                 arr.append(left[left_cursor])
+  66:                 left_cursor += 1
+  67:             else:
+  68:                 arr.append(right[right_cursor])
+[34m- 69:                 right_cursor += 1[0m
+[32m+ 69:                 right_cursor += 2[0m
+  70:         
+  71:         if left:
+  72:             arr.extend(left[left_cursor:])
+  73:         if right:
+--------------------------------------------------------------------------------
+[0.20611 s] [31msurvived[0m
+[36m   -[0m [#  38] CRP sort1: 
+--------------------------------------------------------------------------------
+  81:         '''
+  82:         if first < last:
+  83:             pos = Sort.partition(arr, first, last)
+  84:             
+[34m- 85:             Sort.quick_sort(arr, first, pos - 1)[0m
+[32m+ 85:             Sort.quick_sort(arr, first, pos - 2)[0m
+  86:             Sort.quick_sort(arr, pos + 1, last)
+  87:     
+  88:     
+  89:     @staticmethod
+--------------------------------------------------------------------------------
+[0.15290 s] [31msurvived[0m
+[36m   -[0m [#  39] CRP sort1: 
+--------------------------------------------------------------------------------
+  82:         if first < last:
+  83:             pos = Sort.partition(arr, first, last)
+  84:             
+  85:             Sort.quick_sort(arr, first, pos - 1)
+[34m- 86:             Sort.quick_sort(arr, pos + 1, last)[0m
+[32m+ 86:             Sort.quick_sort(arr, pos + 2, last)[0m
+  87:     
+  88:     
+  89:     @staticmethod
+  90:     def partition(arr, first, last):pivot = first
+--------------------------------------------------------------------------------
+[0.15472 s] [31msurvived[0m
+[36m   -[0m [#  40] CRP sort1: 
+--------------------------------------------------------------------------------
+  90:     def partition(arr, first, last):pivot = first
+  91:         for pos in range(first, last):
+  92:             if arr[pos] < arr[last]:
+  93:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])
+[34m- 94:                 pivot += 1[0m
+[32m+ 94:                 pivot += 2[0m
+  95:         (arr[pivot], arr[last]) = (arr[last], arr[pivot])
+  96:         return pivot
+--------------------------------------------------------------------------------
+[0.13908 s] [31msurvived[0m
+[36m   -[0m [#  41] DDL sort1: 
+--------------------------------------------------------------------------------
+   5: 
+   6: 
+   7: class Sort:
+   8:     
+[34m-  9:     @staticmethod[0m
+[34m- 10:     def selection_sort(arr):''' Selection Sort[0m
+[32m+  9:     def selection_sort(arr):[0m
+[32m+ 10:         ''' Selection Sort[0m
+  11:             Complexity: O(n^2)
+  12:         '''
+  13:         for i in range(len(arr)):
+  14:             minimum = i
+--------------------------------------------------------------------------------
+[0.17189 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/sort1/DYNAMOSA/test_sort1_DYNAMOSA.py:12: TypeError: Sort.selection_sort() takes 1 positional argument but 2 were given
+
+[36m   -[0m [#  42] DDL sort1: 
+--------------------------------------------------------------------------------
+  20:             (arr[minimum], arr[i]) = (arr[i], arr[minimum])
+  21:         return arr
+  22:     
+  23:     
+[34m- 24:     @staticmethod[0m
+[34m- 25:     def insertion_sort(arr):''' Insertion Sort[0m
+[32m+ 24:     def insertion_sort(arr):[0m
+[32m+ 25:         ''' Insertion Sort[0m
+  26:             Complexity: O(n^2)
+  27:         '''
+  28:         for i in range(len(arr)):
+  29:             cursor = arr[i]
+--------------------------------------------------------------------------------
+[0.16310 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/sort1/DYNAMOSA/test_sort1_DYNAMOSA.py:9: TypeError: Sort.insertion_sort() takes 1 positional argument but 2 were given
+
+[36m   -[0m [#  43] DDL sort1: 
+--------------------------------------------------------------------------------
+  36:             arr[pos] = cursor
+  37:         return arr
+  38:     
+  39:     
+[34m- 40:     @staticmethod[0m
+[34m- 41:     def merge_sort(arr):''' Merge Sort[0m
+[32m+ 40:     def merge_sort(arr):[0m
+[32m+ 41:         ''' Merge Sort[0m
+  42:             Complexity: O(n log(n))
+  43:         '''
+  44:         size = len(arr)
+  45:         half = size // 2
+--------------------------------------------------------------------------------
+[0.17746 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/sort1/DYNAMOSA/test_sort1_DYNAMOSA.py:24: TypeError: Sort.merge_sort() takes 1 positional argument but 2 were given
+
+[36m   -[0m [#  44] DDL sort1: 
+--------------------------------------------------------------------------------
+  52:         
+  53:         return Sort.merge(left, right)
+  54:     
+  55:     
+[34m- 56:     @staticmethod[0m
+[34m- 57:     def merge(left, right):''' Merge helper[0m
+[32m+ 56:     def merge(left, right):[0m
+[32m+ 57:         ''' Merge helper[0m
+  58:             Complexity: O(n)
+  59:         '''
+  60:         arr = []
+  61:         (left_cursor, right_cursor) = (0, 0)
+--------------------------------------------------------------------------------
+[0.18265 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/sort1/DYNAMOSA/test_sort1_DYNAMOSA.py:50: TypeError: Sort.merge() takes 2 positional arguments but 3 were given
+
+[36m   -[0m [#  45] DDL sort1: 
+--------------------------------------------------------------------------------
+  74:             arr.extend(right[right_cursor:])
+  75:         return arr
+  76:     
+  77:     
+[34m- 78:     @staticmethod[0m
+[34m- 79:     def quick_sort(arr, first, last):''' Quicksort[0m
+[32m+ 78:     def quick_sort(arr, first, last):[0m
+[32m+ 79:         ''' Quicksort[0m
+  80:             Complexity: O(n log(n))
+  81:         '''
+  82:         if first < last:
+  83:             pos = Sort.partition(arr, first, last)
+--------------------------------------------------------------------------------
+[0.23676 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/sort1/DYNAMOSA/test_sort1_DYNAMOSA.py:41: TypeError: Sort.quick_sort() takes 3 positional arguments but 4 were given
+
+[36m   -[0m [#  46] DDL sort1: 
+--------------------------------------------------------------------------------
+  85:             Sort.quick_sort(arr, first, pos - 1)
+  86:             Sort.quick_sort(arr, pos + 1, last)
+  87:     
+  88:     
+[34m- 89:     @staticmethod[0m
+[34m- 90:     def partition(arr, first, last):pivot = first[0m
+[32m+ 89:     def partition(arr, first, last):[0m
+[32m+ 90:         pivot = first[0m
+  91:         for pos in range(first, last):
+  92:             if arr[pos] < arr[last]:
+  93:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])
+  94:                 pivot += 1
+--------------------------------------------------------------------------------
+[0.17189 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/sort1/DYNAMOSA/test_sort1_DYNAMOSA.py:10: TypeError: Sort.partition() takes 3 positional arguments but 4 were given
+
+[36m   -[0m [#  47] LCR sort1: 
+--------------------------------------------------------------------------------
+  27:         '''
+  28:         for i in range(len(arr)):
+  29:             cursor = arr[i]
+  30:             pos = i
+[34m- 31:             while (pos > 0 and arr[pos - 1] > cursor):[0m
+[32m+ 31:             while (pos > 0 or arr[pos - 1] > cursor):[0m
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+  34:                 pos = pos - 1
+  35:             
+--------------------------------------------------------------------------------
+[0.19003 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_12
+
+def test_case_12():
+        bool_0 = True
+        float_0 = -491.8264
+        list_0 = [bool_0, float_0]
+        sort_0 = module_0.Sort()
+>       var_0 = sort_0.insertion_sort(list_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = [True, True]
+
+>   ???
+E   IndexError: list index out of range
+
+sort1:31: IndexError
+[36m   -[0m [#  48] LCR sort1: 
+--------------------------------------------------------------------------------
+  58:             Complexity: O(n)
+  59:         '''
+  60:         arr = []
+  61:         (left_cursor, right_cursor) = (0, 0)
+[34m- 62:         while (left_cursor < len(left) and right_cursor < len(right)):[0m
+[32m+ 62:         while (left_cursor < len(left) or right_cursor < len(right)):[0m
+  63:             
+  64:             if left[left_cursor] <= right[right_cursor]:
+  65:                 arr.append(left[left_cursor])
+  66:                 left_cursor += 1
+--------------------------------------------------------------------------------
+[0.18053 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:53: in merge_sort
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+left = '&', right = 'P'
+
+>   ???
+E   IndexError: string index out of range
+
+sort1:64: IndexError
+[36m   -[0m [#  49] OIL sort1: 
+--------------------------------------------------------------------------------
+  17:                 if arr[j] < arr[minimum]:
+  18:                     minimum = j
+  19:             
+  20:             (arr[minimum], arr[i]) = (arr[i], arr[minimum])
+[34m- 21:         return arr[0m
+[34m- 22:     [0m
+[32m+ 21:             break[0m
+[32m+ 22:         return arr[0m
+  23:     
+  24:     @staticmethod
+  25:     def insertion_sort(arr):''' Insertion Sort
+  26:             Complexity: O(n^2)
+--------------------------------------------------------------------------------
+[0.15319 s] [31msurvived[0m
+[36m   -[0m [#  50] OIL sort1: 
+--------------------------------------------------------------------------------
+  15:             for j in range(i + 1, len(arr)):
+  16:                 
+  17:                 if arr[j] < arr[minimum]:
+  18:                     minimum = j
+[34m- 19:             [0m
+[32m+ 19:                 break[0m
+  20:             (arr[minimum], arr[i]) = (arr[i], arr[minimum])
+  21:         return arr
+  22:     
+  23:     
+--------------------------------------------------------------------------------
+[0.15716 s] [31msurvived[0m
+[36m   -[0m [#  51] OIL sort1: 
+--------------------------------------------------------------------------------
+  33:                 arr[pos] = arr[pos - 1]
+  34:                 pos = pos - 1
+  35:             
+  36:             arr[pos] = cursor
+[34m- 37:         return arr[0m
+[34m- 38:     [0m
+[32m+ 37:             break[0m
+[32m+ 38:         return arr[0m
+  39:     
+  40:     @staticmethod
+  41:     def merge_sort(arr):''' Merge Sort
+  42:             Complexity: O(n log(n))
+--------------------------------------------------------------------------------
+[0.15493 s] [31msurvived[0m
+[36m   -[0m [#  52] OIL sort1: 
+--------------------------------------------------------------------------------
+  31:             while (pos > 0 and arr[pos - 1] > cursor):
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+  34:                 pos = pos - 1
+[34m- 35:             [0m
+[32m+ 35:                 break[0m
+  36:             arr[pos] = cursor
+  37:         return arr
+  38:     
+  39:     
+--------------------------------------------------------------------------------
+[0.14043 s] [31msurvived[0m
+[36m   -[0m [#  53] OIL sort1: 
+--------------------------------------------------------------------------------
+  65:                 arr.append(left[left_cursor])
+  66:                 left_cursor += 1
+  67:             else:
+  68:                 arr.append(right[right_cursor])
+[34m- 69:                 right_cursor += 1[0m
+[32m+ 69:                 right_cursor += 1break[0m
+  70:         
+  71:         if left:
+  72:             arr.extend(left[left_cursor:])
+  73:         if right:
+--------------------------------------------------------------------------------
+[0.14935 s] [31msurvived[0m
+[36m   -[0m [#  54] OIL sort1: 
+--------------------------------------------------------------------------------
+  91:         for pos in range(first, last):
+  92:             if arr[pos] < arr[last]:
+  93:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])
+  94:                 pivot += 1
+[34m- 95:         (arr[pivot], arr[last]) = (arr[last], arr[pivot])[0m
+[34m- 96:         return pivot[0m
+[32m+ 95:             break[0m
+[32m+ 96:         (arr[pivot], arr[last]) = (arr[last], arr[pivot])[0m
+[32m+ 97:         return pivot[0m
+--------------------------------------------------------------------------------
+[0.19810 s] [31msurvived[0m
+[36m   -[0m [#  55] RIL sort1: 
+--------------------------------------------------------------------------------
+   9:     @staticmethod
+  10:     def selection_sort(arr):''' Selection Sort
+  11:             Complexity: O(n^2)
+  12:         '''
+[34m- 13:         for i in range(len(arr)):[0m
+[32m+ 13:         for i in reversed(range(len(arr))):[0m
+  14:             minimum = i
+  15:             for j in range(i + 1, len(arr)):
+  16:                 
+  17:                 if arr[j] < arr[minimum]:
+--------------------------------------------------------------------------------
+[0.13708 s] [31msurvived[0m
+[36m   -[0m [#  56] RIL sort1: 
+--------------------------------------------------------------------------------
+  11:             Complexity: O(n^2)
+  12:         '''
+  13:         for i in range(len(arr)):
+  14:             minimum = i
+[34m- 15:             for j in range(i + 1, len(arr)):[0m
+[32m+ 15:             for j in reversed(range(i + 1, len(arr))):[0m
+  16:                 
+  17:                 if arr[j] < arr[minimum]:
+  18:                     minimum = j
+  19:             
+--------------------------------------------------------------------------------
+[0.13709 s] [31msurvived[0m
+[36m   -[0m [#  57] RIL sort1: 
+--------------------------------------------------------------------------------
+  24:     @staticmethod
+  25:     def insertion_sort(arr):''' Insertion Sort
+  26:             Complexity: O(n^2)
+  27:         '''
+[34m- 28:         for i in range(len(arr)):[0m
+[32m+ 28:         for i in reversed(range(len(arr))):[0m
+  29:             cursor = arr[i]
+  30:             pos = i
+  31:             while (pos > 0 and arr[pos - 1] > cursor):
+  32:                 
+--------------------------------------------------------------------------------
+[0.15405 s] [31msurvived[0m
+[36m   -[0m [#  58] RIL sort1: 
+--------------------------------------------------------------------------------
+  87:     
+  88:     
+  89:     @staticmethod
+  90:     def partition(arr, first, last):pivot = first
+[34m- 91:         for pos in range(first, last):[0m
+[32m+ 91:         for pos in reversed(range(first, last)):[0m
+  92:             if arr[pos] < arr[last]:
+  93:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])
+  94:                 pivot += 1
+  95:         (arr[pivot], arr[last]) = (arr[last], arr[pivot])
+--------------------------------------------------------------------------------
+[0.15033 s] [31msurvived[0m
+[36m   -[0m [#  59] ROR sort1: 
+--------------------------------------------------------------------------------
+  13:         for i in range(len(arr)):
+  14:             minimum = i
+  15:             for j in range(i + 1, len(arr)):
+  16:                 
+[34m- 17:                 if arr[j] < arr[minimum]:[0m
+[32m+ 17:                 if arr[j] > arr[minimum]:[0m
+  18:                     minimum = j
+  19:             
+  20:             (arr[minimum], arr[i]) = (arr[i], arr[minimum])
+  21:         return arr
+--------------------------------------------------------------------------------
+[0.15674 s] [31msurvived[0m
+[36m   -[0m [#  60] ROR sort1: 
+--------------------------------------------------------------------------------
+  13:         for i in range(len(arr)):
+  14:             minimum = i
+  15:             for j in range(i + 1, len(arr)):
+  16:                 
+[34m- 17:                 if arr[j] < arr[minimum]:[0m
+[32m+ 17:                 if arr[j] <= arr[minimum]:[0m
+  18:                     minimum = j
+  19:             
+  20:             (arr[minimum], arr[i]) = (arr[i], arr[minimum])
+  21:         return arr
+--------------------------------------------------------------------------------
+[0.13874 s] [31msurvived[0m
+[36m   -[0m [#  61] ROR sort1: 
+--------------------------------------------------------------------------------
+  27:         '''
+  28:         for i in range(len(arr)):
+  29:             cursor = arr[i]
+  30:             pos = i
+[34m- 31:             while (pos > 0 and arr[pos - 1] > cursor):[0m
+[32m+ 31:             while (pos < 0 and arr[pos - 1] > cursor):[0m
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+  34:                 pos = pos - 1
+  35:             
+--------------------------------------------------------------------------------
+[0.15464 s] [31msurvived[0m
+[36m   -[0m [#  62] ROR sort1: 
+--------------------------------------------------------------------------------
+  27:         '''
+  28:         for i in range(len(arr)):
+  29:             cursor = arr[i]
+  30:             pos = i
+[34m- 31:             while (pos > 0 and arr[pos - 1] > cursor):[0m
+[32m+ 31:             while (pos >= 0 and arr[pos - 1] > cursor):[0m
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+  34:                 pos = pos - 1
+  35:             
+--------------------------------------------------------------------------------
+[0.13757 s] [31msurvived[0m
+[36m   -[0m [#  63] ROR sort1: 
+--------------------------------------------------------------------------------
+  27:         '''
+  28:         for i in range(len(arr)):
+  29:             cursor = arr[i]
+  30:             pos = i
+[34m- 31:             while (pos > 0 and arr[pos - 1] > cursor):[0m
+[32m+ 31:             while (pos > 0 and arr[pos - 1] < cursor):[0m
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+  34:                 pos = pos - 1
+  35:             
+--------------------------------------------------------------------------------
+[0.21383 s] [31msurvived[0m
+[36m   -[0m [#  64] ROR sort1: 
+--------------------------------------------------------------------------------
+  27:         '''
+  28:         for i in range(len(arr)):
+  29:             cursor = arr[i]
+  30:             pos = i
+[34m- 31:             while (pos > 0 and arr[pos - 1] > cursor):[0m
+[32m+ 31:             while (pos > 0 and arr[pos - 1] >= cursor):[0m
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+  34:                 pos = pos - 1
+  35:             
+--------------------------------------------------------------------------------
+[0.14843 s] [31msurvived[0m
+[36m   -[0m [#  65] ROR sort1: 
+--------------------------------------------------------------------------------
+  43:         '''
+  44:         size = len(arr)
+  45:         half = size // 2
+  46:         
+[34m- 47:         if size <= 1:[0m
+[32m+ 47:         if size >= 1:[0m
+  48:             return arr
+  49:         
+  50:         (left, right) = (Sort.merge_sort(arr[half:]), Sort.merge_sort(arr[:half]))
+  51:         
+--------------------------------------------------------------------------------
+[0.14956 s] [31msurvived[0m
+[36m   -[0m [#  66] ROR sort1: 
+--------------------------------------------------------------------------------
+  43:         '''
+  44:         size = len(arr)
+  45:         half = size // 2
+  46:         
+[34m- 47:         if size <= 1:[0m
+[32m+ 47:         if size < 1:[0m
+  48:             return arr
+  49:         
+  50:         (left, right) = (Sort.merge_sort(arr[half:]), Sort.merge_sort(arr[:half]))
+  51:         
+--------------------------------------------------------------------------------
+[0.18744 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+[36m   -[0m [#  67] ROR sort1: 
+--------------------------------------------------------------------------------
+  58:             Complexity: O(n)
+  59:         '''
+  60:         arr = []
+  61:         (left_cursor, right_cursor) = (0, 0)
+[34m- 62:         while (left_cursor < len(left) and right_cursor < len(right)):[0m
+[32m+ 62:         while (left_cursor > len(left) and right_cursor < len(right)):[0m
+  63:             
+  64:             if left[left_cursor] <= right[right_cursor]:
+  65:                 arr.append(left[left_cursor])
+  66:                 left_cursor += 1
+--------------------------------------------------------------------------------
+[0.13921 s] [31msurvived[0m
+[36m   -[0m [#  68] ROR sort1: 
+--------------------------------------------------------------------------------
+  58:             Complexity: O(n)
+  59:         '''
+  60:         arr = []
+  61:         (left_cursor, right_cursor) = (0, 0)
+[34m- 62:         while (left_cursor < len(left) and right_cursor < len(right)):[0m
+[32m+ 62:         while (left_cursor <= len(left) and right_cursor < len(right)):[0m
+  63:             
+  64:             if left[left_cursor] <= right[right_cursor]:
+  65:                 arr.append(left[left_cursor])
+  66:                 left_cursor += 1
+--------------------------------------------------------------------------------
+[0.18299 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:53: in merge_sort
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+left = '&', right = 'P'
+
+>   ???
+E   IndexError: string index out of range
+
+sort1:64: IndexError
+[36m   -[0m [#  69] ROR sort1: 
+--------------------------------------------------------------------------------
+  58:             Complexity: O(n)
+  59:         '''
+  60:         arr = []
+  61:         (left_cursor, right_cursor) = (0, 0)
+[34m- 62:         while (left_cursor < len(left) and right_cursor < len(right)):[0m
+[32m+ 62:         while (left_cursor < len(left) and right_cursor > len(right)):[0m
+  63:             
+  64:             if left[left_cursor] <= right[right_cursor]:
+  65:                 arr.append(left[left_cursor])
+  66:                 left_cursor += 1
+--------------------------------------------------------------------------------
+[0.13810 s] [31msurvived[0m
+[36m   -[0m [#  70] ROR sort1: 
+--------------------------------------------------------------------------------
+  58:             Complexity: O(n)
+  59:         '''
+  60:         arr = []
+  61:         (left_cursor, right_cursor) = (0, 0)
+[34m- 62:         while (left_cursor < len(left) and right_cursor < len(right)):[0m
+[32m+ 62:         while (left_cursor < len(left) and right_cursor <= len(right)):[0m
+  63:             
+  64:             if left[left_cursor] <= right[right_cursor]:
+  65:                 arr.append(left[left_cursor])
+  66:                 left_cursor += 1
+--------------------------------------------------------------------------------
+[0.17961 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:53: in merge_sort
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+left = ['&', 'P'], right = '8'
+
+>   ???
+E   IndexError: string index out of range
+
+sort1:64: IndexError
+[36m   -[0m [#  71] ROR sort1: 
+--------------------------------------------------------------------------------
+  60:         arr = []
+  61:         (left_cursor, right_cursor) = (0, 0)
+  62:         while (left_cursor < len(left) and right_cursor < len(right)):
+  63:             
+[34m- 64:             if left[left_cursor] <= right[right_cursor]:[0m
+[32m+ 64:             if left[left_cursor] >= right[right_cursor]:[0m
+  65:                 arr.append(left[left_cursor])
+  66:                 left_cursor += 1
+  67:             else:
+  68:                 arr.append(right[right_cursor])
+--------------------------------------------------------------------------------
+[0.15718 s] [31msurvived[0m
+[36m   -[0m [#  72] ROR sort1: 
+--------------------------------------------------------------------------------
+  60:         arr = []
+  61:         (left_cursor, right_cursor) = (0, 0)
+  62:         while (left_cursor < len(left) and right_cursor < len(right)):
+  63:             
+[34m- 64:             if left[left_cursor] <= right[right_cursor]:[0m
+[32m+ 64:             if left[left_cursor] < right[right_cursor]:[0m
+  65:                 arr.append(left[left_cursor])
+  66:                 left_cursor += 1
+  67:             else:
+  68:                 arr.append(right[right_cursor])
+--------------------------------------------------------------------------------
+[0.14084 s] [31msurvived[0m
+[36m   -[0m [#  73] ROR sort1: 
+--------------------------------------------------------------------------------
+  78:     @staticmethod
+  79:     def quick_sort(arr, first, last):''' Quicksort
+  80:             Complexity: O(n log(n))
+  81:         '''
+[34m- 82:         if first < last:[0m
+[32m+ 82:         if first > last:[0m
+  83:             pos = Sort.partition(arr, first, last)
+  84:             
+  85:             Sort.quick_sort(arr, first, pos - 1)
+  86:             Sort.quick_sort(arr, pos + 1, last)
+--------------------------------------------------------------------------------
+[0.19728 s] [31msurvived[0m
+[36m   -[0m [#  74] ROR sort1: 
+--------------------------------------------------------------------------------
+  78:     @staticmethod
+  79:     def quick_sort(arr, first, last):''' Quicksort
+  80:             Complexity: O(n log(n))
+  81:         '''
+[34m- 82:         if first < last:[0m
+[32m+ 82:         if first <= last:[0m
+  83:             pos = Sort.partition(arr, first, last)
+  84:             
+  85:             Sort.quick_sort(arr, first, pos - 1)
+  86:             Sort.quick_sort(arr, pos + 1, last)
+--------------------------------------------------------------------------------
+[0.16258 s] [36mincompetent[0m
+
+TypeError: sort1:91: TypeError: 'str' object cannot be interpreted as an integer
+
+[36m   -[0m [#  75] ROR sort1: 
+--------------------------------------------------------------------------------
+  88:     
+  89:     @staticmethod
+  90:     def partition(arr, first, last):pivot = first
+  91:         for pos in range(first, last):
+[34m- 92:             if arr[pos] < arr[last]:[0m
+[32m+ 92:             if arr[pos] > arr[last]:[0m
+  93:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])
+  94:                 pivot += 1
+  95:         (arr[pivot], arr[last]) = (arr[last], arr[pivot])
+  96:         return pivot
+--------------------------------------------------------------------------------
+[0.13683 s] [31msurvived[0m
+[36m   -[0m [#  76] ROR sort1: 
+--------------------------------------------------------------------------------
+  88:     
+  89:     @staticmethod
+  90:     def partition(arr, first, last):pivot = first
+  91:         for pos in range(first, last):
+[34m- 92:             if arr[pos] < arr[last]:[0m
+[32m+ 92:             if arr[pos] <= arr[last]:[0m
+  93:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])
+  94:                 pivot += 1
+  95:         (arr[pivot], arr[last]) = (arr[last], arr[pivot])
+  96:         return pivot
+--------------------------------------------------------------------------------
+[0.13560 s] [31msurvived[0m
+[36m   -[0m [#  77] SDL sort1: 
+--------------------------------------------------------------------------------
+  10:     def selection_sort(arr):''' Selection Sort
+  11:             Complexity: O(n^2)
+  12:         '''
+  13:         for i in range(len(arr)):
+[34m- 14:             minimum = i[0m
+[32m+ 14:             pass[0m
+  15:             for j in range(i + 1, len(arr)):
+  16:                 
+  17:                 if arr[j] < arr[minimum]:
+  18:                     minimum = j
+--------------------------------------------------------------------------------
+[0.17218 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        sort_0 = module_0.Sort()
+        var_0 = sort_0.insertion_sort(list_0)
+        var_1 = sort_0.partition(var_0, bool_0, bool_0)
+        assert var_1 is False
+>       var_2 = sort_0.selection_sort(var_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = [False, False, False, False]
+
+>   ???
+E   UnboundLocalError: local variable 'minimum' referenced before assignment
+
+sort1:17: UnboundLocalError
+[36m   -[0m [#  78] SDL sort1: 
+--------------------------------------------------------------------------------
+  14:             minimum = i
+  15:             for j in range(i + 1, len(arr)):
+  16:                 
+  17:                 if arr[j] < arr[minimum]:
+[34m- 18:                     minimum = j[0m
+[32m+ 18:                     pass[0m
+  19:             
+  20:             (arr[minimum], arr[i]) = (arr[i], arr[minimum])
+  21:         return arr
+  22:     
+--------------------------------------------------------------------------------
+[0.13726 s] [31msurvived[0m
+[36m   -[0m [#  79] SDL sort1: 
+--------------------------------------------------------------------------------
+  16:                 
+  17:                 if arr[j] < arr[minimum]:
+  18:                     minimum = j
+  19:             
+[34m- 20:             (arr[minimum], arr[i]) = (arr[i], arr[minimum])[0m
+[32m+ 20:             pass[0m
+  21:         return arr
+  22:     
+  23:     
+  24:     @staticmethod
+--------------------------------------------------------------------------------
+[0.13653 s] [31msurvived[0m
+[36m   -[0m [#  80] SDL sort1: 
+--------------------------------------------------------------------------------
+  17:                 if arr[j] < arr[minimum]:
+  18:                     minimum = j
+  19:             
+  20:             (arr[minimum], arr[i]) = (arr[i], arr[minimum])
+[34m- 21:         return arr[0m
+[32m+ 21:         pass[0m
+  22:     
+  23:     
+  24:     @staticmethod
+  25:     def insertion_sort(arr):''' Insertion Sort
+--------------------------------------------------------------------------------
+[0.17813 s] [36mincompetent[0m
+
+TypeError: sort1:62: TypeError: object of type 'NoneType' has no len()
+
+[36m   -[0m [#  81] SDL sort1: 
+--------------------------------------------------------------------------------
+  25:     def insertion_sort(arr):''' Insertion Sort
+  26:             Complexity: O(n^2)
+  27:         '''
+  28:         for i in range(len(arr)):
+[34m- 29:             cursor = arr[i][0m
+[32m+ 29:             pass[0m
+  30:             pos = i
+  31:             while (pos > 0 and arr[pos - 1] > cursor):
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+--------------------------------------------------------------------------------
+[0.15650 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        sort_0 = module_0.Sort()
+>       var_0 = sort_0.insertion_sort(list_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = [False, False, False, False]
+
+>   ???
+E   NameError: name 'cursor' is not defined
+
+sort1:36: NameError
+[36m   -[0m [#  82] SDL sort1: 
+--------------------------------------------------------------------------------
+  26:             Complexity: O(n^2)
+  27:         '''
+  28:         for i in range(len(arr)):
+  29:             cursor = arr[i]
+[34m- 30:             pos = i[0m
+[32m+ 30:             pass[0m
+  31:             while (pos > 0 and arr[pos - 1] > cursor):
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+  34:                 pos = pos - 1
+--------------------------------------------------------------------------------
+[0.21959 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        sort_0 = module_0.Sort()
+>       var_0 = sort_0.insertion_sort(list_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = [False, False, False, False]
+
+>   ???
+E   UnboundLocalError: local variable 'pos' referenced before assignment
+
+sort1:31: UnboundLocalError
+[36m   -[0m [#  83] SDL sort1: 
+--------------------------------------------------------------------------------
+  29:             cursor = arr[i]
+  30:             pos = i
+  31:             while (pos > 0 and arr[pos - 1] > cursor):
+  32:                 
+[34m- 33:                 arr[pos] = arr[pos - 1][0m
+[32m+ 33:                 pass[0m
+  34:                 pos = pos - 1
+  35:             
+  36:             arr[pos] = cursor
+  37:         return arr
+--------------------------------------------------------------------------------
+[0.13740 s] [31msurvived[0m
+[36m   -[0m [#  84] SDL sort1: 
+--------------------------------------------------------------------------------
+  30:             pos = i
+  31:             while (pos > 0 and arr[pos - 1] > cursor):
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+[34m- 34:                 pos = pos - 1[0m
+[32m+ 34:                 pass[0m
+  35:             
+  36:             arr[pos] = cursor
+  37:         return arr
+  38:     
+--------------------------------------------------------------------------------
+[5.00805 s] [33mtimeout[0m
+[36m   -[0m [#  85] SDL sort1: 
+--------------------------------------------------------------------------------
+  32:                 
+  33:                 arr[pos] = arr[pos - 1]
+  34:                 pos = pos - 1
+  35:             
+[34m- 36:             arr[pos] = cursor[0m
+[32m+ 36:             pass[0m
+  37:         return arr
+  38:     
+  39:     
+  40:     @staticmethod
+--------------------------------------------------------------------------------
+[0.15577 s] [31msurvived[0m
+[36m   -[0m [#  86] SDL sort1: 
+--------------------------------------------------------------------------------
+  33:                 arr[pos] = arr[pos - 1]
+  34:                 pos = pos - 1
+  35:             
+  36:             arr[pos] = cursor
+[34m- 37:         return arr[0m
+[32m+ 37:         pass[0m
+  38:     
+  39:     
+  40:     @staticmethod
+  41:     def merge_sort(arr):''' Merge Sort
+--------------------------------------------------------------------------------
+[0.16468 s] [36mincompetent[0m
+
+TypeError: sort1:95: TypeError: 'NoneType' object is not subscriptable
+
+[36m   -[0m [#  87] SDL sort1: 
+--------------------------------------------------------------------------------
+  40:     @staticmethod
+  41:     def merge_sort(arr):''' Merge Sort
+  42:             Complexity: O(n log(n))
+  43:         '''
+[34m- 44:         size = len(arr)[0m
+[32m+ 44:         pass[0m
+  45:         half = size // 2
+  46:         
+  47:         if size <= 1:
+  48:             return arr
+--------------------------------------------------------------------------------
+[0.16215 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = 'Z^[`[*-KJ8P&'
+
+>   ???
+E   NameError: name 'size' is not defined
+
+sort1:45: NameError
+[36m   -[0m [#  88] SDL sort1: 
+--------------------------------------------------------------------------------
+  41:     def merge_sort(arr):''' Merge Sort
+  42:             Complexity: O(n log(n))
+  43:         '''
+  44:         size = len(arr)
+[34m- 45:         half = size // 2[0m
+[32m+ 45:         pass[0m
+  46:         
+  47:         if size <= 1:
+  48:             return arr
+  49:         
+--------------------------------------------------------------------------------
+[0.17345 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = 'Z^[`[*-KJ8P&'
+
+>   ???
+E   NameError: name 'half' is not defined
+
+sort1:50: NameError
+[36m   -[0m [#  89] SDL sort1: 
+--------------------------------------------------------------------------------
+  44:         size = len(arr)
+  45:         half = size // 2
+  46:         
+  47:         if size <= 1:
+[34m- 48:             return arr[0m
+[32m+ 48:             pass[0m
+  49:         
+  50:         (left, right) = (Sort.merge_sort(arr[half:]), Sort.merge_sort(arr[:half]))
+  51:         
+  52:         
+--------------------------------------------------------------------------------
+[0.17043 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+[36m   -[0m [#  90] SDL sort1: 
+--------------------------------------------------------------------------------
+  46:         
+  47:         if size <= 1:
+  48:             return arr
+  49:         
+[34m- 50:         (left, right) = (Sort.merge_sort(arr[half:]), Sort.merge_sort(arr[:half]))[0m
+[32m+ 50:         pass[0m
+  51:         
+  52:         
+  53:         return Sort.merge(left, right)
+  54:     
+--------------------------------------------------------------------------------
+[0.17733 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = 'Z^[`[*-KJ8P&'
+
+>   ???
+E   NameError: name 'left' is not defined
+
+sort1:53: NameError
+[36m   -[0m [#  91] SDL sort1: 
+--------------------------------------------------------------------------------
+  49:         
+  50:         (left, right) = (Sort.merge_sort(arr[half:]), Sort.merge_sort(arr[:half]))
+  51:         
+  52:         
+[34m- 53:         return Sort.merge(left, right)[0m
+[32m+ 53:         pass[0m
+  54:     
+  55:     
+  56:     @staticmethod
+  57:     def merge(left, right):''' Merge helper
+--------------------------------------------------------------------------------
+[0.20509 s] [31msurvived[0m
+[36m   -[0m [#  92] SDL sort1: 
+--------------------------------------------------------------------------------
+  56:     @staticmethod
+  57:     def merge(left, right):''' Merge helper
+  58:             Complexity: O(n)
+  59:         '''
+[34m- 60:         arr = [][0m
+[32m+ 60:         pass[0m
+  61:         (left_cursor, right_cursor) = (0, 0)
+  62:         while (left_cursor < len(left) and right_cursor < len(right)):
+  63:             
+  64:             if left[left_cursor] <= right[right_cursor]:
+--------------------------------------------------------------------------------
+[0.17343 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:53: in merge_sort
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+left = '&', right = 'P'
+
+>   ???
+E   NameError: name 'arr' is not defined
+
+sort1:65: NameError
+[36m   -[0m [#  93] SDL sort1: 
+--------------------------------------------------------------------------------
+  57:     def merge(left, right):''' Merge helper
+  58:             Complexity: O(n)
+  59:         '''
+  60:         arr = []
+[34m- 61:         (left_cursor, right_cursor) = (0, 0)[0m
+[32m+ 61:         pass[0m
+  62:         while (left_cursor < len(left) and right_cursor < len(right)):
+  63:             
+  64:             if left[left_cursor] <= right[right_cursor]:
+  65:                 arr.append(left[left_cursor])
+--------------------------------------------------------------------------------
+[0.16791 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:53: in merge_sort
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+left = '&', right = 'P'
+
+>   ???
+E   UnboundLocalError: local variable 'left_cursor' referenced before assignment
+
+sort1:62: UnboundLocalError
+[36m   -[0m [#  94] SDL sort1: 
+--------------------------------------------------------------------------------
+  61:         (left_cursor, right_cursor) = (0, 0)
+  62:         while (left_cursor < len(left) and right_cursor < len(right)):
+  63:             
+  64:             if left[left_cursor] <= right[right_cursor]:
+[34m- 65:                 arr.append(left[left_cursor])[0m
+[32m+ 65:                 pass[0m
+  66:                 left_cursor += 1
+  67:             else:
+  68:                 arr.append(right[right_cursor])
+  69:                 right_cursor += 1
+--------------------------------------------------------------------------------
+[0.13876 s] [31msurvived[0m
+[36m   -[0m [#  95] SDL sort1: 
+--------------------------------------------------------------------------------
+  64:             if left[left_cursor] <= right[right_cursor]:
+  65:                 arr.append(left[left_cursor])
+  66:                 left_cursor += 1
+  67:             else:
+[34m- 68:                 arr.append(right[right_cursor])[0m
+[32m+ 68:                 pass[0m
+  69:                 right_cursor += 1
+  70:         
+  71:         if left:
+  72:             arr.extend(left[left_cursor:])
+--------------------------------------------------------------------------------
+[0.14821 s] [31msurvived[0m
+[36m   -[0m [#  96] SDL sort1: 
+--------------------------------------------------------------------------------
+  68:                 arr.append(right[right_cursor])
+  69:                 right_cursor += 1
+  70:         
+  71:         if left:
+[34m- 72:             arr.extend(left[left_cursor:])[0m
+[32m+ 72:             pass[0m
+  73:         if right:
+  74:             arr.extend(right[right_cursor:])
+  75:         return arr
+  76:     
+--------------------------------------------------------------------------------
+[0.14800 s] [31msurvived[0m
+[36m   -[0m [#  97] SDL sort1: 
+--------------------------------------------------------------------------------
+  70:         
+  71:         if left:
+  72:             arr.extend(left[left_cursor:])
+  73:         if right:
+[34m- 74:             arr.extend(right[right_cursor:])[0m
+[32m+ 74:             pass[0m
+  75:         return arr
+  76:     
+  77:     
+  78:     @staticmethod
+--------------------------------------------------------------------------------
+[0.14783 s] [31msurvived[0m
+[36m   -[0m [#  98] SDL sort1: 
+--------------------------------------------------------------------------------
+  71:         if left:
+  72:             arr.extend(left[left_cursor:])
+  73:         if right:
+  74:             arr.extend(right[right_cursor:])
+[34m- 75:         return arr[0m
+[32m+ 75:         pass[0m
+  76:     
+  77:     
+  78:     @staticmethod
+  79:     def quick_sort(arr, first, last):''' Quicksort
+--------------------------------------------------------------------------------
+[0.17439 s] [36mincompetent[0m
+
+TypeError: sort1:62: TypeError: object of type 'NoneType' has no len()
+
+[36m   -[0m [#  99] SDL sort1: 
+--------------------------------------------------------------------------------
+  79:     def quick_sort(arr, first, last):''' Quicksort
+  80:             Complexity: O(n log(n))
+  81:         '''
+  82:         if first < last:
+[34m- 83:             pos = Sort.partition(arr, first, last)[0m
+[32m+ 83:             pass[0m
+  84:             
+  85:             Sort.quick_sort(arr, first, pos - 1)
+  86:             Sort.quick_sort(arr, pos + 1, last)
+  87:     
+--------------------------------------------------------------------------------
+[0.13904 s] [31msurvived[0m
+[36m   -[0m [# 100] SDL sort1: 
+--------------------------------------------------------------------------------
+  81:         '''
+  82:         if first < last:
+  83:             pos = Sort.partition(arr, first, last)
+  84:             
+[34m- 85:             Sort.quick_sort(arr, first, pos - 1)[0m
+[32m+ 85:             pass[0m
+  86:             Sort.quick_sort(arr, pos + 1, last)
+  87:     
+  88:     
+  89:     @staticmethod
+--------------------------------------------------------------------------------
+[0.15510 s] [31msurvived[0m
+[36m   -[0m [# 101] SDL sort1: 
+--------------------------------------------------------------------------------
+  82:         if first < last:
+  83:             pos = Sort.partition(arr, first, last)
+  84:             
+  85:             Sort.quick_sort(arr, first, pos - 1)
+[34m- 86:             Sort.quick_sort(arr, pos + 1, last)[0m
+[32m+ 86:             pass[0m
+  87:     
+  88:     
+  89:     @staticmethod
+  90:     def partition(arr, first, last):pivot = first
+--------------------------------------------------------------------------------
+[0.20269 s] [31msurvived[0m
+[36m   -[0m [# 102] SDL sort1: 
+--------------------------------------------------------------------------------
+  86:             Sort.quick_sort(arr, pos + 1, last)
+  87:     
+  88:     
+  89:     @staticmethod
+[34m- 90:     def partition(arr, first, last):pivot = first[0m
+[32m+ 90:     def partition(arr, first, last):pass[0m
+  91:         for pos in range(first, last):
+  92:             if arr[pos] < arr[last]:
+  93:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])
+  94:                 pivot += 1
+--------------------------------------------------------------------------------
+[0.17380 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        sort_0 = module_0.Sort()
+        var_0 = sort_0.insertion_sort(list_0)
+>       var_1 = sort_0.partition(var_0, bool_0, bool_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = [False, False, False, False], first = False, last = False
+
+>   ???
+E   UnboundLocalError: local variable 'pivot' referenced before assignment
+
+sort1:95: UnboundLocalError
+[36m   -[0m [# 103] SDL sort1: 
+--------------------------------------------------------------------------------
+  89:     @staticmethod
+  90:     def partition(arr, first, last):pivot = first
+  91:         for pos in range(first, last):
+  92:             if arr[pos] < arr[last]:
+[34m- 93:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])[0m
+[32m+ 93:                 pass[0m
+  94:                 pivot += 1
+  95:         (arr[pivot], arr[last]) = (arr[last], arr[pivot])
+  96:         return pivot
+--------------------------------------------------------------------------------
+[0.13701 s] [31msurvived[0m
+[36m   -[0m [# 104] SDL sort1: 
+--------------------------------------------------------------------------------
+  91:         for pos in range(first, last):
+  92:             if arr[pos] < arr[last]:
+  93:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])
+  94:                 pivot += 1
+[34m- 95:         (arr[pivot], arr[last]) = (arr[last], arr[pivot])[0m
+[32m+ 95:         pass[0m
+  96:         return pivot
+--------------------------------------------------------------------------------
+[0.15433 s] [31msurvived[0m
+[36m   -[0m [# 105] SDL sort1: 
+--------------------------------------------------------------------------------
+  92:             if arr[pos] < arr[last]:
+  93:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])
+  94:                 pivot += 1
+  95:         (arr[pivot], arr[last]) = (arr[last], arr[pivot])
+[34m- 96:         return pivot[0m
+[32m+ 96:         pass[0m
+--------------------------------------------------------------------------------
+[0.15497 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        sort_0 = module_0.Sort()
+        var_0 = sort_0.insertion_sort(list_0)
+        var_1 = sort_0.partition(var_0, bool_0, bool_0)
+>       assert var_1 is False
+E       AssertionError
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:11: AssertionError
+[36m   -[0m [# 106] SIR sort1: 
+--------------------------------------------------------------------------------
+  46:         
+  47:         if size <= 1:
+  48:             return arr
+  49:         
+[34m- 50:         (left, right) = (Sort.merge_sort(arr[half:]), Sort.merge_sort(arr[:half]))[0m
+[32m+ 50:         (left, right) = (Sort.merge_sort(arr[:]), Sort.merge_sort(arr[:half]))[0m
+  51:         
+  52:         
+  53:         return Sort.merge(left, right)
+  54:     
+--------------------------------------------------------------------------------
+[0.16809 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+[36m   -[0m [# 107] SIR sort1: 
+--------------------------------------------------------------------------------
+  46:         
+  47:         if size <= 1:
+  48:             return arr
+  49:         
+[34m- 50:         (left, right) = (Sort.merge_sort(arr[half:]), Sort.merge_sort(arr[:half]))[0m
+[32m+ 50:         (left, right) = (Sort.merge_sort(arr[half:]), Sort.merge_sort(arr[:]))[0m
+  51:         
+  52:         
+  53:         return Sort.merge(left, right)
+  54:     
+--------------------------------------------------------------------------------
+[0.18701 s] [32mkilled[0m by DYNAMOSA/test_sort1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        sort_0 = module_0.Sort()
+        str_0 = 'Z^[`[*-KJ8P&'
+>       dict_0 = sort_0.merge_sort(str_0)
+
+DYNAMOSA/test_sort1_DYNAMOSA.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+sort1:50: in merge_sort
+    ???
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+[36m   -[0m [# 108] SIR sort1: 
+--------------------------------------------------------------------------------
+  68:                 arr.append(right[right_cursor])
+  69:                 right_cursor += 1
+  70:         
+  71:         if left:
+[34m- 72:             arr.extend(left[left_cursor:])[0m
+[32m+ 72:             arr.extend(left[:])[0m
+  73:         if right:
+  74:             arr.extend(right[right_cursor:])
+  75:         return arr
+  76:     
+--------------------------------------------------------------------------------
+[0.15574 s] [31msurvived[0m
+[36m   -[0m [# 109] SIR sort1: 
+--------------------------------------------------------------------------------
+  70:         
+  71:         if left:
+  72:             arr.extend(left[left_cursor:])
+  73:         if right:
+[34m- 74:             arr.extend(right[right_cursor:])[0m
+[32m+ 74:             arr.extend(right[:])[0m
+  75:         return arr
+  76:     
+  77:     
+  78:     @staticmethod
+--------------------------------------------------------------------------------
+[0.14733 s] [31msurvived[0m
+[36m   -[0m [# 110] ZIL sort1: 
+--------------------------------------------------------------------------------
+  10:     def selection_sort(arr):''' Selection Sort
+  11:             Complexity: O(n^2)
+  12:         '''
+  13:         for i in range(len(arr)):
+[34m- 14:             minimum = i[0m
+[34m- 15:             for j in range(i + 1, len(arr)):[0m
+[34m- 16:                 [0m
+[34m- 17:                 if arr[j] < arr[minimum]:[0m
+[34m- 18:                     minimum = j[0m
+[34m- 19:             [0m
+[34m- 20:             (arr[minimum], arr[i]) = (arr[i], arr[minimum])[0m
+[32m+ 14:             break[0m
+[32m+ 15:         [0m
+[32m+ 16:         [0m
+[32m+ 17:         [0m
+[32m+ 18:         [0m
+[32m+ 19:         [0m
+[32m+ 20:         [0m
+  21:         return arr
+  22:     
+  23:     
+  24:     @staticmethod
+--------------------------------------------------------------------------------
+[0.21854 s] [31msurvived[0m
+[36m   -[0m [# 111] ZIL sort1: 
+--------------------------------------------------------------------------------
+  13:         for i in range(len(arr)):
+  14:             minimum = i
+  15:             for j in range(i + 1, len(arr)):
+  16:                 
+[34m- 17:                 if arr[j] < arr[minimum]:[0m
+[34m- 18:                     minimum = j[0m
+[32m+ 17:                 break[0m
+[32m+ 18:             [0m
+  19:             
+  20:             (arr[minimum], arr[i]) = (arr[i], arr[minimum])
+  21:         return arr
+  22:     
+--------------------------------------------------------------------------------
+[0.14730 s] [31msurvived[0m
+[36m   -[0m [# 112] ZIL sort1: 
+--------------------------------------------------------------------------------
+  25:     def insertion_sort(arr):''' Insertion Sort
+  26:             Complexity: O(n^2)
+  27:         '''
+  28:         for i in range(len(arr)):
+[34m- 29:             cursor = arr[i][0m
+[34m- 30:             pos = i[0m
+[34m- 31:             while (pos > 0 and arr[pos - 1] > cursor):[0m
+[34m- 32:                 [0m
+[34m- 33:                 arr[pos] = arr[pos - 1][0m
+[34m- 34:                 pos = pos - 1[0m
+[34m- 35:             [0m
+[34m- 36:             arr[pos] = cursor[0m
+[32m+ 29:             break[0m
+[32m+ 30:         [0m
+[32m+ 31:         [0m
+[32m+ 32:         [0m
+[32m+ 33:         [0m
+[32m+ 34:         [0m
+[32m+ 35:         [0m
+[32m+ 36:         [0m
+  37:         return arr
+  38:     
+  39:     
+  40:     @staticmethod
+--------------------------------------------------------------------------------
+[0.15467 s] [31msurvived[0m
+[36m   -[0m [# 113] ZIL sort1: 
+--------------------------------------------------------------------------------
+  29:             cursor = arr[i]
+  30:             pos = i
+  31:             while (pos > 0 and arr[pos - 1] > cursor):
+  32:                 
+[34m- 33:                 arr[pos] = arr[pos - 1][0m
+[34m- 34:                 pos = pos - 1[0m
+[32m+ 33:                 break[0m
+[32m+ 34:             [0m
+  35:             
+  36:             arr[pos] = cursor
+  37:         return arr
+  38:     
+--------------------------------------------------------------------------------
+[0.14864 s] [31msurvived[0m
+[36m   -[0m [# 114] ZIL sort1: 
+--------------------------------------------------------------------------------
+  60:         arr = []
+  61:         (left_cursor, right_cursor) = (0, 0)
+  62:         while (left_cursor < len(left) and right_cursor < len(right)):
+  63:             
+[34m- 64:             if left[left_cursor] <= right[right_cursor]:[0m
+[34m- 65:                 arr.append(left[left_cursor])[0m
+[34m- 66:                 left_cursor += 1[0m
+[34m- 67:             else:[0m
+[34m- 68:                 arr.append(right[right_cursor])[0m
+[34m- 69:                 right_cursor += 1[0m
+[32m+ 64:             break[0m
+[32m+ 65:         [0m
+[32m+ 66:         [0m
+[32m+ 67:         [0m
+[32m+ 68:         [0m
+[32m+ 69:         [0m
+  70:         
+  71:         if left:
+  72:             arr.extend(left[left_cursor:])
+  73:         if right:
+--------------------------------------------------------------------------------
+[0.14847 s] [31msurvived[0m
+[36m   -[0m [# 115] ZIL sort1: 
+--------------------------------------------------------------------------------
+  88:     
+  89:     @staticmethod
+  90:     def partition(arr, first, last):pivot = first
+  91:         for pos in range(first, last):
+[34m- 92:             if arr[pos] < arr[last]:[0m
+[34m- 93:                 (arr[pos], arr[pivot]) = (arr[pivot], arr[pos])[0m
+[34m- 94:                 pivot += 1[0m
+[32m+ 92:             break[0m
+[32m+ 93:         [0m
+[32m+ 94:         [0m
+  95:         (arr[pivot], arr[last]) = (arr[last], arr[pivot])
+  96:         return pivot
+--------------------------------------------------------------------------------
+[0.15378 s] [31msurvived[0m
+[34m[*][0m Mutation score [33.64658 s]: [1m[34m29.5%[0m
+[36m   -[0m all: 115
+[36m   -[0m killed: 27 (23.5%)
+[36m   -[0m survived: 67 (58.3%)
+[36m   -[0m incompetent: 20 (17.4%)
+[36m   -[0m timeout: 1 (0.9%)

@@ -1,0 +1,3405 @@
+[*] Start mutation process:
+   - targets: linkedList2.py
+   - tests: ./RANDOM
+[*] 2308 tests passed:
+   - test_linkedList2_RANDOM [2.76555 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR linkedList2: 
+--------------------------------------------------------------------------------
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+  75:         while n != None:
+- 76:             count += 1
++ 76:             count -= 1
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[4.85301 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_1 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_1.checkInfinite()
+        var_2 = var_1.__repr__()
+        var_3 = linked_list_1.__len__()
+        assert var_3 == 0
+        var_4 = linked_list_1.prepend(var_3)
+>       assert len(linked_list_1) == 1
+E       ValueError: __len__() should return >= 0
+
+RANDOM/test_linkedList2_RANDOM.py:76: ValueError
+   - [#   2] CDI linkedList2: 
+--------------------------------------------------------------------------------
+   3: 
+   4:     Author: George Heineman
+   5: '''
+   6: class LinkedNode:
+-  7:     def __init__(self, value, tail=None):
+-  8:         '''Node in a Linked List.'''
+-  9:         self.value = value
+- 10:         self.next = tail
+- 11:     
++  7:     @classmethod
++  8:     def __init__(self, value, tail=None):
++  9:         '''Node in a Linked List.'''
++ 10:         self.value = value
++ 11:         self.next = tail
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+--------------------------------------------------------------------------------
+[5.14739 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/RANDOM/test_linkedList2_RANDOM.py:203: TypeError: object of type 'bool' has no len()
+
+   - [#   3] CDI linkedList2: 
+--------------------------------------------------------------------------------
+   8:         '''Node in a Linked List.'''
+   9:         self.value = value
+  10:         self.next = tail
+  11:     
+- 12:     def checkInfinite(self):
+- 13:         '''Check whether infinite loop via next.'''
+- 14:         p1 = p2 = self
+- 15:         while (p1 != None and p2 != None):
+- 16:             if p2.next == None:
+- 17:                 return False
+- 18:             p1 = p1.next
+- 19:             p2 = p2.next.next
+- 20:             
+- 21:             if p1 == p2:
+- 22:                 return True
+- 23:         return False
+- 24: class LinkedList:
+- 25:     def __init__(self, *start):
+- 26:         '''Demonstrate linked lists in Python.'''
+- 27:         self.head = None
+- 28:         for _ in start:
+- 29:             self.prepend(_)
+- 30:     
++ 12:     @classmethod
++ 13:     def checkInfinite(self):
++ 14:         '''Check whether infinite loop via next.'''
++ 15:         p1 = p2 = self
++ 16:         while (p1 != None and p2 != None):
++ 17:             if p2.next == None:
++ 18:                 return False
++ 19:             p1 = p1.next
++ 20:             p2 = p2.next.next
++ 21:             
++ 22:             if p1 == p2:
++ 23:                 return True
++ 24:         return False
++ 25: class LinkedList:
++ 26:     def __init__(self, *start):
++ 27:         '''Demonstrate linked lists in Python.'''
++ 28:         self.head = None
++ 29:         for _ in start:
++ 30:             self.prepend(_)
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[5.06452 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+>       var_0 = linked_node_0.checkInfinite()
+
+RANDOM/test_linkedList2_RANDOM.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedNode'>
+
+>   ???
+E   AttributeError: type object 'LinkedNode' has no attribute 'next'
+
+linkedList2:17: AttributeError
+   - [#   4] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  21:             if p1 == p2:
+  22:                 return True
+  23:         return False
+  24: class LinkedList:
+- 25:     def __init__(self, *start):
+- 26:         '''Demonstrate linked lists in Python.'''
+- 27:         self.head = None
+- 28:         for _ in start:
+- 29:             self.prepend(_)
+- 30:     
++ 25:     @classmethod
++ 26:     def __init__(self, *start):
++ 27:         '''Demonstrate linked lists in Python.'''
++ 28:         self.head = None
++ 29:         for _ in start:
++ 30:             self.prepend(_)
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[5.05224 s] incompetent
+
+TypeError: linkedList2:30: TypeError: LinkedList.prepend() missing 1 required positional argument: 'value'
+
+   - [#   5] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  27:         self.head = None
+  28:         for _ in start:
+  29:             self.prepend(_)
+  30:     
+- 31:     def prepend(self, value):
+- 32:         '''Prepend element into list.'''
+- 33:         self.head = LinkedNode(value, self.head)
+- 34:     
++ 31:     @classmethod
++ 32:     def prepend(self, value):
++ 33:         '''Prepend element into list.'''
++ 34:         self.head = LinkedNode(value, self.head)
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+--------------------------------------------------------------------------------
+[5.09671 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_1 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_1.checkInfinite()
+        var_2 = var_1.__repr__()
+        var_3 = linked_list_1.__len__()
+        assert var_3 == 0
+>       var_4 = linked_list_1.prepend(var_3)
+
+RANDOM/test_linkedList2_RANDOM.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>, value = 0
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:34: AttributeError
+   - [#   6] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+- 35:     def pop(self):
+- 36:         '''Remove first value in list.'''
+- 37:         if self.head is None:
+- 38:             raise Exception('Linked list is empty.')
+- 39:         val = self.head.value
+- 40:         self.head = self.head.next
+- 41:         return val
+- 42:     
++ 35:     @classmethod
++ 36:     def pop(self):
++ 37:         '''Remove first value in list.'''
++ 38:         if self.head is None:
++ 39:             raise Exception('Linked list is empty.')
++ 40:         val = self.head.value
++ 41:         self.head = self.head.next
++ 42:         return val
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+--------------------------------------------------------------------------------
+[5.07931 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_38
+
+def test_case_38():
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        complex_1 = 4095.03 - 599.647583j
+        linked_node_1 = module_0.LinkedNode(complex_1)
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_2 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_2.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_3 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_3.value) == 0
+        var_2 = linked_node_3.checkInfinite()
+        var_3 = linked_list_1.prepend(var_0)
+        assert len(linked_list_1) == 1
+        assert len(linked_node_3.value) == 1
+        bool_0 = True
+        linked_node_4 = module_0.LinkedNode(bool_0)
+        var_4 = linked_node_4.checkInfinite()
+>       var_5 = linked_list_1.pop()
+
+RANDOM/test_linkedList2_RANDOM.py:1116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:38: AttributeError
+   - [#   7] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+- 43:     def remove(self, value):
+- 44:         '''Remove value from list.'''
+- 45:         n = self.head
+- 46:         last = None
+- 47:         while n != None:
+- 48:             if n.value == value:
+- 49:                 if last == None:
+- 50:                     self.head = self.head.next
+- 51:                 else:
+- 52:                     last.next = n.next
+- 53:                 return True
+- 54:             n = n.next
+- 55:         return False
+- 56:     
++ 43:     @classmethod
++ 44:     def remove(self, value):
++ 45:         '''Remove value from list.'''
++ 46:         n = self.head
++ 47:         last = None
++ 48:         while n != None:
++ 49:             if n.value == value:
++ 50:                 if last == None:
++ 51:                     self.head = self.head.next
++ 52:                 else:
++ 53:                     last.next = n.next
++ 54:                 return True
++ 55:             n = n.next
++ 56:         return False
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+--------------------------------------------------------------------------------
+[5.09745 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_1 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_1.checkInfinite()
+        var_2 = var_1.__repr__()
+        var_3 = linked_list_2.__len__()
+        assert var_3 == 0
+        linked_list_3 = module_0.LinkedList()
+        assert len(linked_list_3) == 0
+        linked_node_2 = module_0.LinkedNode(linked_list_3)
+        assert len(linked_node_2.value) == 0
+        var_4 = linked_node_2.checkInfinite()
+        bytes_1 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_3 = module_0.LinkedNode(bytes_1)
+        var_5 = linked_node_3.checkInfinite()
+        var_6 = var_5.__repr__()
+>       var_7 = linked_list_0.remove(linked_node_1)
+
+RANDOM/test_linkedList2_RANDOM.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+value = <linkedList2.LinkedNode object at 0x7fc7103583d0>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:46: AttributeError
+   - [#   8] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  53:                 return True
+  54:             n = n.next
+  55:         return False
+  56:     
+- 57:     def __iter__(self):
+- 58:         '''Iterator of values in the list.'''
+- 59:         n = self.head
+- 60:         while n != None:
+- 61:             yield n.value
+- 62:             n = n.next
+- 63:     
++ 57:     @classmethod
++ 58:     def __iter__(self):
++ 59:         '''Iterator of values in the list.'''
++ 60:         n = self.head
++ 61:         while n != None:
++ 62:             yield n.value
++ 63:             n = n.next
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+--------------------------------------------------------------------------------
+[5.07136 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_40
+
+def test_case_40():
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_0 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_1 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_1.value) == 0
+        var_2 = linked_node_1.checkInfinite()
+        var_3 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_1.value) == 1
+>       var_4 = linked_list_0.__repr__()
+
+RANDOM/test_linkedList2_RANDOM.py:1139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList2:69: in __repr__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:60: AttributeError
+   - [#   9] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+- 64:     def __repr__(self):
+- 65:         '''String representation of linked list.'''
+- 66:         if self.head is None:
+- 67:             return 'link:[]'
+- 68:         
+- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+- 70:     
++ 64:     @classmethod
++ 65:     def __repr__(self):
++ 66:         '''String representation of linked list.'''
++ 67:         if self.head is None:
++ 68:             return 'link:[]'
++ 69:         
++ 70:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+--------------------------------------------------------------------------------
+[5.01011 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_40
+
+def test_case_40():
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_0 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_1 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_1.value) == 0
+        var_2 = linked_node_1.checkInfinite()
+        var_3 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_1.value) == 1
+>       var_4 = linked_list_0.__repr__()
+
+RANDOM/test_linkedList2_RANDOM.py:1139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:67: AttributeError
+   - [#  10] CDI linkedList2: 
+--------------------------------------------------------------------------------
+  67:             return 'link:[]'
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+- 71:     def __len__(self):
+- 72:         '''Count values in list.'''
+- 73:         n = self.head
+- 74:         count = 0
+- 75:         while n != None:
+- 76:             count += 1
+- 77:             n = n.next
+- 78:         return count
++ 71:     @classmethod
++ 72:     def __len__(self):
++ 73:         '''Count values in list.'''
++ 74:         n = self.head
++ 75:         count = 0
++ 76:         while n != None:
++ 77:             count += 1
++ 78:             n = n.next
++ 79:         return count
+--------------------------------------------------------------------------------
+[4.96185 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+RANDOM/test_linkedList2_RANDOM.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList2.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList2:74: AttributeError
+   - [#  11] COI linkedList2: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+- 15:         while (p1 != None and p2 != None):
++ 15:         while not ((p1 != None and p2 != None)):
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+--------------------------------------------------------------------------------
+[2.86707 s] survived
+   - [#  12] COI linkedList2: 
+--------------------------------------------------------------------------------
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+- 16:             if p2.next == None:
++ 16:             if not (p2.next == None):
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+--------------------------------------------------------------------------------
+[4.92643 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+>       var_0 = linked_node_0.checkInfinite()
+
+RANDOM/test_linkedList2_RANDOM.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7fc70f715990>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:19: AttributeError
+   - [#  13] COI linkedList2: 
+--------------------------------------------------------------------------------
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+- 21:             if p1 == p2:
++ 21:             if not (p1 == p2):
+  22:                 return True
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+--------------------------------------------------------------------------------
+[2.83118 s] survived
+   - [#  14] COI linkedList2: 
+--------------------------------------------------------------------------------
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+- 37:         if self.head is None:
++ 37:         if not (self.head is None):
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+--------------------------------------------------------------------------------
+[4.94037 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_38
+
+def test_case_38():
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        complex_1 = 4095.03 - 599.647583j
+        linked_node_1 = module_0.LinkedNode(complex_1)
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_2 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_2.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_3 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_3.value) == 0
+        var_2 = linked_node_3.checkInfinite()
+        var_3 = linked_list_1.prepend(var_0)
+        assert len(linked_list_1) == 1
+        assert len(linked_node_3.value) == 1
+        bool_0 = True
+        linked_node_4 = module_0.LinkedNode(bool_0)
+        var_4 = linked_node_4.checkInfinite()
+>       var_5 = linked_list_1.pop()
+
+RANDOM/test_linkedList2_RANDOM.py:1116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[False]
+
+>   ???
+E   Exception: Linked list is empty.
+
+linkedList2:38: Exception
+   - [#  15] COI linkedList2: 
+--------------------------------------------------------------------------------
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+- 47:         while n != None:
++ 47:         while not (n != None):
+  48:             if n.value == value:
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+--------------------------------------------------------------------------------
+[5.02814 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_1 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_1.checkInfinite()
+        var_2 = var_1.__repr__()
+        var_3 = linked_list_2.__len__()
+        assert var_3 == 0
+        linked_list_3 = module_0.LinkedList()
+        assert len(linked_list_3) == 0
+        linked_node_2 = module_0.LinkedNode(linked_list_3)
+        assert len(linked_node_2.value) == 0
+        var_4 = linked_node_2.checkInfinite()
+        bytes_1 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_3 = module_0.LinkedNode(bytes_1)
+        var_5 = linked_node_3.checkInfinite()
+        var_6 = var_5.__repr__()
+>       var_7 = linked_list_0.remove(linked_node_1)
+
+RANDOM/test_linkedList2_RANDOM.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[], value = <linkedList2.LinkedNode object at 0x7fc70c02ff10>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'value'
+
+linkedList2:48: AttributeError
+   - [#  16] COI linkedList2: 
+--------------------------------------------------------------------------------
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+- 48:             if n.value == value:
++ 48:             if not (n.value == value):
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+--------------------------------------------------------------------------------
+[5.16094 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_27
+
+def test_case_27():
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_1 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_1.value) == 0
+        var_0 = linked_node_1.checkInfinite()
+        assert var_0 is False
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_2 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_2.checkInfinite()
+        var_2 = var_1.__repr__()
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        linked_node_3 = module_0.LinkedNode(linked_list_2)
+        assert len(linked_node_3.value) == 0
+        var_3 = linked_node_3.checkInfinite()
+        var_4 = linked_list_2.prepend(var_1)
+        assert len(linked_list_2) == 1
+        assert len(linked_node_3.value) == 1
+        linked_list_3 = module_0.LinkedList()
+        assert len(linked_list_3) == 0
+        linked_node_4 = module_0.LinkedNode(linked_list_3)
+        assert len(linked_node_4.value) == 0
+        var_5 = linked_node_4.checkInfinite()
+        linked_list_4 = module_0.LinkedList()
+        assert len(linked_list_4) == 0
+        bytes_1 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_5 = module_0.LinkedNode(bytes_1)
+        var_6 = linked_node_5.checkInfinite()
+        var_7 = var_6.__repr__()
+        var_8 = linked_list_4.__len__()
+        assert var_8 == 0
+        bytes_2 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_6 = module_0.LinkedNode(bytes_2)
+        var_9 = linked_node_6.checkInfinite()
+        var_10 = var_9.__repr__()
+        linked_list_5 = module_0.LinkedList()
+        assert len(linked_list_5) == 0
+        linked_node_7 = module_0.LinkedNode(linked_list_5)
+        assert len(linked_node_7.value) == 0
+        var_11 = linked_node_7.checkInfinite()
+        var_12 = var_10.__len__()
+        var_13 = linked_list_2.remove(linked_node_1)
+>       assert var_13 is False
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:757: AssertionError
+   - [#  17] COI linkedList2: 
+--------------------------------------------------------------------------------
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+- 49:                 if last == None:
++ 49:                 if not (last == None):
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+--------------------------------------------------------------------------------
+[5.76017 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_621
+
+def test_case_621():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        var_0 = linked_list_0.prepend(dict_0)
+        assert len(linked_list_0) == 1
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.prepend(dict_0)
+        assert len(linked_list_1) == 1
+>       var_2 = linked_list_1.remove(dict_0)
+
+RANDOM/test_linkedList2_RANDOM.py:26461: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[{link:[{...}]: link:[{...}]}]
+value = {link:[{link:[{...}]: link:[{...}]}]: link:[{link:[{...}]: link:[{...}]}]}
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:52: AttributeError
+   - [#  18] COI linkedList2: 
+--------------------------------------------------------------------------------
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+- 60:         while n != None:
++ 60:         while not (n != None):
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+--------------------------------------------------------------------------------
+[5.06937 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_40
+
+def test_case_40():
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_0 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_1 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_1.value) == 0
+        var_2 = linked_node_1.checkInfinite()
+        var_3 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_1.value) == 1
+        var_4 = linked_list_0.__repr__()
+>       assert var_4 == 'link:[False]'
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:1140: AssertionError
+   - [#  19] COI linkedList2: 
+--------------------------------------------------------------------------------
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+- 66:         if self.head is None:
++ 66:         if not (self.head is None):
+  67:             return 'link:[]'
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+--------------------------------------------------------------------------------
+[5.05606 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_40
+
+def test_case_40():
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_0 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_1 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_1.value) == 0
+        var_2 = linked_node_1.checkInfinite()
+        var_3 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_1.value) == 1
+        var_4 = linked_list_0.__repr__()
+>       assert var_4 == 'link:[False]'
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:1140: AssertionError
+   - [#  20] COI linkedList2: 
+--------------------------------------------------------------------------------
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+- 75:         while n != None:
++ 75:         while not (n != None):
+  76:             count += 1
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[5.15106 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+RANDOM/test_linkedList2_RANDOM.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[]
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:77: AttributeError
+   - [#  21] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+- 38:             raise Exception('Linked list is empty.')
++ 38:             raise Exception('mutpy')
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+--------------------------------------------------------------------------------
+[2.74131 s] survived
+   - [#  22] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+- 38:             raise Exception('Linked list is empty.')
++ 38:             raise Exception('')
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+--------------------------------------------------------------------------------
+[2.85012 s] survived
+   - [#  23] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+- 67:             return 'link:[]'
++ 67:             return 'mutpy'
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+--------------------------------------------------------------------------------
+[5.05952 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_70
+
+def test_case_70():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        var_1 = linked_node_0.checkInfinite()
+        var_2 = linked_list_0.__repr__()
+>       assert var_2 == 'link:[]'
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:2387: AssertionError
+   - [#  24] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+- 67:             return 'link:[]'
++ 67:             return ''
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+--------------------------------------------------------------------------------
+[5.17121 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_70
+
+def test_case_70():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        var_1 = linked_node_0.checkInfinite()
+        var_2 = linked_list_0.__repr__()
+>       assert var_2 == 'link:[]'
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:2387: AssertionError
+   - [#  25] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
++ 69:         return 'mutpy'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[5.00218 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_40
+
+def test_case_40():
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_0 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_1 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_1.value) == 0
+        var_2 = linked_node_1.checkInfinite()
+        var_3 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_1.value) == 1
+        var_4 = linked_list_0.__repr__()
+>       assert var_4 == 'link:[False]'
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:1140: AssertionError
+   - [#  26] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
++ 69:         return ''.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[4.98468 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_40
+
+def test_case_40():
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_0 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_1 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_1.value) == 0
+        var_2 = linked_node_1.checkInfinite()
+        var_3 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_1.value) == 1
+        var_4 = linked_list_0.__repr__()
+>       assert var_4 == 'link:[False]'
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:1140: AssertionError
+   - [#  27] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
++ 69:         return 'link:[{0:s}]'.format('mutpy'.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[5.35757 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_317
+
+def test_case_317():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        float_0 = 2862.9
+        bytes_0 = b"&Z\xac\x82WC\xc4\x88'\\m\x0c\xaf\xccJ\xda"
+        list_0 = [bytes_0, bytes_0]
+        linked_list_1 = module_0.LinkedList(*list_0)
+        assert len(linked_list_1) == 2
+        var_0 = linked_list_1.remove(float_0)
+        assert var_0 is False
+        var_1 = linked_list_1.__repr__()
+>       assert var_1 == 'link:[b"&Z\\xac\\x82WC\\xc4\\x88\'\\\\m\\x0c\\xaf\\xccJ\\xda",b"&Z\\xac\\x82WC\\xc4\\x88\'\\\\m\\x0c\\xaf\\xccJ\\xda"]'
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:13372: AssertionError
+   - [#  28] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
++ 69:         return 'link:[{0:s}]'.format(''.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[5.27446 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_317
+
+def test_case_317():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        float_0 = 2862.9
+        bytes_0 = b"&Z\xac\x82WC\xc4\x88'\\m\x0c\xaf\xccJ\xda"
+        list_0 = [bytes_0, bytes_0]
+        linked_list_1 = module_0.LinkedList(*list_0)
+        assert len(linked_list_1) == 2
+        var_0 = linked_list_1.remove(float_0)
+        assert var_0 is False
+        var_1 = linked_list_1.__repr__()
+>       assert var_1 == 'link:[b"&Z\\xac\\x82WC\\xc4\\x88\'\\\\m\\x0c\\xaf\\xccJ\\xda",b"&Z\\xac\\x82WC\\xc4\\x88\'\\\\m\\x0c\\xaf\\xccJ\\xda"]'
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:13372: AssertionError
+   - [#  29] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+- 74:         count = 0
++ 74:         count = 1
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[5.02058 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:8: AssertionError
+   - [#  30] CRP linkedList2: 
+--------------------------------------------------------------------------------
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+  75:         while n != None:
+- 76:             count += 1
++ 76:             count += 2
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[5.02920 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_1 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_1.checkInfinite()
+        var_2 = var_1.__repr__()
+        var_3 = linked_list_1.__len__()
+        assert var_3 == 0
+        var_4 = linked_list_1.prepend(var_3)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:76: AssertionError
+   - [#  31] LCR linkedList2: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+- 15:         while (p1 != None and p2 != None):
++ 15:         while (p1 != None or p2 != None):
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+--------------------------------------------------------------------------------
+[2.83400 s] survived
+   - [#  32] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+  22:                 return True
+- 23:         return False
+- 24: class LinkedList:
+- 25:     def __init__(self, *start):
+- 26:         '''Demonstrate linked lists in Python.'''
+- 27:         self.head = None
+- 28:         for _ in start:
+- 29:             self.prepend(_)
+- 30:     
++ 23:             break
++ 24:         return False
++ 25: class LinkedList:
++ 26:     def __init__(self, *start):
++ 27:         '''Demonstrate linked lists in Python.'''
++ 28:         self.head = None
++ 29:         for _ in start:
++ 30:             self.prepend(_)
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[2.86300 s] survived
+   - [#  33] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+  28:         for _ in start:
+  29:             self.prepend(_)
+- 30:     
++ 30:             break
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[5.13236 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_47
+
+def test_case_47():
+        float_0 = 2862.9
+        bytes_0 = b"&Z\xac\x82WC\xc4\x88'\\m\x0c\xaf\xccJ\xda"
+        list_0 = [bytes_0, bytes_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:1461: AssertionError
+   - [#  34] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+- 55:         return False
+- 56:     
++ 55:             break
++ 56:         return False
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+--------------------------------------------------------------------------------
+[2.87939 s] survived
+   - [#  35] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  59:         n = self.head
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+- 63:     
++ 63:             break
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+--------------------------------------------------------------------------------
+[5.30589 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_317
+
+def test_case_317():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        float_0 = 2862.9
+        bytes_0 = b"&Z\xac\x82WC\xc4\x88'\\m\x0c\xaf\xccJ\xda"
+        list_0 = [bytes_0, bytes_0]
+        linked_list_1 = module_0.LinkedList(*list_0)
+        assert len(linked_list_1) == 2
+        var_0 = linked_list_1.remove(float_0)
+        assert var_0 is False
+        var_1 = linked_list_1.__repr__()
+>       assert var_1 == 'link:[b"&Z\\xac\\x82WC\\xc4\\x88\'\\\\m\\x0c\\xaf\\xccJ\\xda",b"&Z\\xac\\x82WC\\xc4\\x88\'\\\\m\\x0c\\xaf\\xccJ\\xda"]'
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:13372: AssertionError
+   - [#  36] OIL linkedList2: 
+--------------------------------------------------------------------------------
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+- 78:         return count
++ 78:             break
++ 79:         return count
+--------------------------------------------------------------------------------
+[5.10614 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_17
+
+def test_case_17():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_1 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_1.checkInfinite()
+        var_2 = var_1.__repr__()
+        bool_0 = True
+        linked_node_2 = module_0.LinkedNode(bool_0)
+        var_3 = linked_node_2.checkInfinite()
+        bytes_1 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_3 = module_0.LinkedNode(bytes_1)
+        var_4 = linked_node_3.checkInfinite()
+        var_5 = var_4.__repr__()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_4 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_4.value) == 0
+        var_6 = linked_node_4.checkInfinite()
+        var_7 = linked_list_1.prepend(var_4)
+        assert len(linked_list_1) == 1
+        assert len(linked_node_4.value) == 1
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        linked_node_5 = module_0.LinkedNode(linked_list_2)
+        assert len(linked_node_5.value) == 0
+        var_8 = linked_node_5.checkInfinite()
+        linked_list_3 = module_0.LinkedList()
+        assert len(linked_list_3) == 0
+        bytes_2 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_6 = module_0.LinkedNode(bytes_2)
+        var_9 = linked_node_6.checkInfinite()
+        var_10 = var_9.__repr__()
+        var_11 = linked_list_3.__len__()
+        assert var_11 == 0
+        list_0 = [linked_list_1, var_4, bytes_2, var_0]
+        var_12 = linked_list_1.prepend(list_0)
+>       assert len(linked_list_1) == 2
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:420: AssertionError
+   - [#  37] RIL linkedList2: 
+--------------------------------------------------------------------------------
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+- 28:         for _ in start:
++ 28:         for _ in reversed(start):
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+--------------------------------------------------------------------------------
+[5.69185 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_536
+
+def test_case_536():
+        str_0 = '2z8Y!\rS\\wS1L'
+        bytes_0 = b'\xe9F\x1a\xd6\xde\x92S\x8b'
+        list_0 = []
+        tuple_0 = (str_0, bytes_0, list_0)
+        list_1 = [tuple_0, list_0, str_0]
+        linked_list_0 = module_0.LinkedList(*list_1)
+        assert len(linked_list_0) == 3
+        var_0 = linked_list_0.__repr__()
+>       assert var_0 == "link:[2z8Y!\rS\\wS1L,[],('2z8Y!\\rS\\\\wS1L', b'\\xe9F\\x1a\\xd6\\xde\\x92S\\x8b', [])]"
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:22992: AssertionError
+   - [#  38] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+- 15:         while (p1 != None and p2 != None):
++ 15:         while (p1 == None and p2 != None):
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+--------------------------------------------------------------------------------
+[2.77476 s] survived
+   - [#  39] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+- 15:         while (p1 != None and p2 != None):
++ 15:         while (p1 != None and p2 == None):
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+--------------------------------------------------------------------------------
+[2.81314 s] survived
+   - [#  40] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+- 16:             if p2.next == None:
++ 16:             if p2.next != None:
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+--------------------------------------------------------------------------------
+[5.03879 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+>       var_0 = linked_node_0.checkInfinite()
+
+RANDOM/test_linkedList2_RANDOM.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7fc70f57f550>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:19: AttributeError
+   - [#  41] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  17:                 return False
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+- 21:             if p1 == p2:
++ 21:             if p1 != p2:
+  22:                 return True
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+--------------------------------------------------------------------------------
+[2.92192 s] survived
+   - [#  42] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+- 47:         while n != None:
++ 47:         while n == None:
+  48:             if n.value == value:
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+--------------------------------------------------------------------------------
+[4.99133 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_1 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_1.checkInfinite()
+        var_2 = var_1.__repr__()
+        var_3 = linked_list_2.__len__()
+        assert var_3 == 0
+        linked_list_3 = module_0.LinkedList()
+        assert len(linked_list_3) == 0
+        linked_node_2 = module_0.LinkedNode(linked_list_3)
+        assert len(linked_node_2.value) == 0
+        var_4 = linked_node_2.checkInfinite()
+        bytes_1 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_3 = module_0.LinkedNode(bytes_1)
+        var_5 = linked_node_3.checkInfinite()
+        var_6 = var_5.__repr__()
+>       var_7 = linked_list_0.remove(linked_node_1)
+
+RANDOM/test_linkedList2_RANDOM.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[], value = <linkedList2.LinkedNode object at 0x7fc70f57ce20>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'value'
+
+linkedList2:48: AttributeError
+   - [#  43] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+- 48:             if n.value == value:
++ 48:             if n.value != value:
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+--------------------------------------------------------------------------------
+[5.01437 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_27
+
+def test_case_27():
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_1 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_1.value) == 0
+        var_0 = linked_node_1.checkInfinite()
+        assert var_0 is False
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_2 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_2.checkInfinite()
+        var_2 = var_1.__repr__()
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        linked_node_3 = module_0.LinkedNode(linked_list_2)
+        assert len(linked_node_3.value) == 0
+        var_3 = linked_node_3.checkInfinite()
+        var_4 = linked_list_2.prepend(var_1)
+        assert len(linked_list_2) == 1
+        assert len(linked_node_3.value) == 1
+        linked_list_3 = module_0.LinkedList()
+        assert len(linked_list_3) == 0
+        linked_node_4 = module_0.LinkedNode(linked_list_3)
+        assert len(linked_node_4.value) == 0
+        var_5 = linked_node_4.checkInfinite()
+        linked_list_4 = module_0.LinkedList()
+        assert len(linked_list_4) == 0
+        bytes_1 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_5 = module_0.LinkedNode(bytes_1)
+        var_6 = linked_node_5.checkInfinite()
+        var_7 = var_6.__repr__()
+        var_8 = linked_list_4.__len__()
+        assert var_8 == 0
+        bytes_2 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_6 = module_0.LinkedNode(bytes_2)
+        var_9 = linked_node_6.checkInfinite()
+        var_10 = var_9.__repr__()
+        linked_list_5 = module_0.LinkedList()
+        assert len(linked_list_5) == 0
+        linked_node_7 = module_0.LinkedNode(linked_list_5)
+        assert len(linked_node_7.value) == 0
+        var_11 = linked_node_7.checkInfinite()
+        var_12 = var_10.__len__()
+        var_13 = linked_list_2.remove(linked_node_1)
+>       assert var_13 is False
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:757: AssertionError
+   - [#  44] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+- 49:                 if last == None:
++ 49:                 if last != None:
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+--------------------------------------------------------------------------------
+[5.66611 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_621
+
+def test_case_621():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        var_0 = linked_list_0.prepend(dict_0)
+        assert len(linked_list_0) == 1
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.prepend(dict_0)
+        assert len(linked_list_1) == 1
+>       var_2 = linked_list_1.remove(dict_0)
+
+RANDOM/test_linkedList2_RANDOM.py:26461: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[{link:[{...}]: link:[{...}]}]
+value = {link:[{link:[{...}]: link:[{...}]}]: link:[{link:[{...}]: link:[{...}]}]}
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:52: AttributeError
+   - [#  45] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+- 60:         while n != None:
++ 60:         while n == None:
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+--------------------------------------------------------------------------------
+[4.99089 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_40
+
+def test_case_40():
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_0 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_1 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_1.value) == 0
+        var_2 = linked_node_1.checkInfinite()
+        var_3 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_1.value) == 1
+        var_4 = linked_list_0.__repr__()
+>       assert var_4 == 'link:[False]'
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:1140: AssertionError
+   - [#  46] ROR linkedList2: 
+--------------------------------------------------------------------------------
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+- 75:         while n != None:
++ 75:         while n == None:
+  76:             count += 1
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[4.98291 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+RANDOM/test_linkedList2_RANDOM.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[]
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:77: AttributeError
+   - [#  47] SDI linkedList2: 
+--------------------------------------------------------------------------------
+   3: 
+   4:     Author: George Heineman
+   5: '''
+   6: class LinkedNode:
+-  7:     def __init__(self, value, tail=None):
+-  8:         '''Node in a Linked List.'''
+-  9:         self.value = value
+- 10:         self.next = tail
+- 11:     
++  7:     @staticmethod
++  8:     def __init__(self, value, tail=None):
++  9:         '''Node in a Linked List.'''
++ 10:         self.value = value
++ 11:         self.next = tail
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+--------------------------------------------------------------------------------
+[5.17543 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/RANDOM/test_linkedList2_RANDOM.py:13: TypeError: LinkedNode.__init__() missing 1 required positional argument: 'value'
+
+   - [#  48] SDI linkedList2: 
+--------------------------------------------------------------------------------
+   8:         '''Node in a Linked List.'''
+   9:         self.value = value
+  10:         self.next = tail
+  11:     
+- 12:     def checkInfinite(self):
+- 13:         '''Check whether infinite loop via next.'''
+- 14:         p1 = p2 = self
+- 15:         while (p1 != None and p2 != None):
+- 16:             if p2.next == None:
+- 17:                 return False
+- 18:             p1 = p1.next
+- 19:             p2 = p2.next.next
+- 20:             
+- 21:             if p1 == p2:
+- 22:                 return True
+- 23:         return False
+- 24: class LinkedList:
+- 25:     def __init__(self, *start):
+- 26:         '''Demonstrate linked lists in Python.'''
+- 27:         self.head = None
+- 28:         for _ in start:
+- 29:             self.prepend(_)
+- 30:     
++ 12:     @staticmethod
++ 13:     def checkInfinite(self):
++ 14:         '''Check whether infinite loop via next.'''
++ 15:         p1 = p2 = self
++ 16:         while (p1 != None and p2 != None):
++ 17:             if p2.next == None:
++ 18:                 return False
++ 19:             p1 = p1.next
++ 20:             p2 = p2.next.next
++ 21:             
++ 22:             if p1 == p2:
++ 23:                 return True
++ 24:         return False
++ 25: class LinkedList:
++ 26:     def __init__(self, *start):
++ 27:         '''Demonstrate linked lists in Python.'''
++ 28:         self.head = None
++ 29:         for _ in start:
++ 30:             self.prepend(_)
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[5.19657 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/RANDOM/test_linkedList2_RANDOM.py:15: TypeError: LinkedNode.checkInfinite() missing 1 required positional argument: 'self'
+
+   - [#  49] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  21:             if p1 == p2:
+  22:                 return True
+  23:         return False
+  24: class LinkedList:
+- 25:     def __init__(self, *start):
+- 26:         '''Demonstrate linked lists in Python.'''
+- 27:         self.head = None
+- 28:         for _ in start:
+- 29:             self.prepend(_)
+- 30:     
++ 25:     @staticmethod
++ 26:     def __init__(self, *start):
++ 27:         '''Demonstrate linked lists in Python.'''
++ 28:         self.head = None
++ 29:         for _ in start:
++ 30:             self.prepend(_)
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+--------------------------------------------------------------------------------
+[5.10622 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/RANDOM/test_linkedList2_RANDOM.py:7: TypeError: LinkedList.__init__() missing 1 required positional argument: 'self'
+
+   - [#  50] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  27:         self.head = None
+  28:         for _ in start:
+  29:             self.prepend(_)
+  30:     
+- 31:     def prepend(self, value):
+- 32:         '''Prepend element into list.'''
+- 33:         self.head = LinkedNode(value, self.head)
+- 34:     
++ 31:     @staticmethod
++ 32:     def prepend(self, value):
++ 33:         '''Prepend element into list.'''
++ 34:         self.head = LinkedNode(value, self.head)
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+--------------------------------------------------------------------------------
+[5.19110 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/RANDOM/test_linkedList2_RANDOM.py:75: TypeError: LinkedList.prepend() missing 1 required positional argument: 'value'
+
+   - [#  51] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+- 35:     def pop(self):
+- 36:         '''Remove first value in list.'''
+- 37:         if self.head is None:
+- 38:             raise Exception('Linked list is empty.')
+- 39:         val = self.head.value
+- 40:         self.head = self.head.next
+- 41:         return val
+- 42:     
++ 35:     @staticmethod
++ 36:     def pop(self):
++ 37:         '''Remove first value in list.'''
++ 38:         if self.head is None:
++ 39:             raise Exception('Linked list is empty.')
++ 40:         val = self.head.value
++ 41:         self.head = self.head.next
++ 42:         return val
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+--------------------------------------------------------------------------------
+[5.11891 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/RANDOM/test_linkedList2_RANDOM.py:1116: TypeError: LinkedList.pop() missing 1 required positional argument: 'self'
+
+   - [#  52] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+- 43:     def remove(self, value):
+- 44:         '''Remove value from list.'''
+- 45:         n = self.head
+- 46:         last = None
+- 47:         while n != None:
+- 48:             if n.value == value:
+- 49:                 if last == None:
+- 50:                     self.head = self.head.next
+- 51:                 else:
+- 52:                     last.next = n.next
+- 53:                 return True
+- 54:             n = n.next
+- 55:         return False
+- 56:     
++ 43:     @staticmethod
++ 44:     def remove(self, value):
++ 45:         '''Remove value from list.'''
++ 46:         n = self.head
++ 47:         last = None
++ 48:         while n != None:
++ 49:             if n.value == value:
++ 50:                 if last == None:
++ 51:                     self.head = self.head.next
++ 52:                 else:
++ 53:                     last.next = n.next
++ 54:                 return True
++ 55:             n = n.next
++ 56:         return False
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+--------------------------------------------------------------------------------
+[5.06109 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/RANDOM/test_linkedList2_RANDOM.py:158: TypeError: LinkedList.remove() missing 1 required positional argument: 'value'
+
+   - [#  53] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  53:                 return True
+  54:             n = n.next
+  55:         return False
+  56:     
+- 57:     def __iter__(self):
+- 58:         '''Iterator of values in the list.'''
+- 59:         n = self.head
+- 60:         while n != None:
+- 61:             yield n.value
+- 62:             n = n.next
+- 63:     
++ 57:     @staticmethod
++ 58:     def __iter__(self):
++ 59:         '''Iterator of values in the list.'''
++ 60:         n = self.head
++ 61:         while n != None:
++ 62:             yield n.value
++ 63:             n = n.next
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+--------------------------------------------------------------------------------
+[5.07240 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/RANDOM/test_linkedList2_RANDOM.py:58: TypeError: LinkedList.__iter__() missing 1 required positional argument: 'self'
+
+   - [#  54] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+- 64:     def __repr__(self):
+- 65:         '''String representation of linked list.'''
+- 66:         if self.head is None:
+- 67:             return 'link:[]'
+- 68:         
+- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+- 70:     
++ 64:     @staticmethod
++ 65:     def __repr__(self):
++ 66:         '''String representation of linked list.'''
++ 67:         if self.head is None:
++ 68:             return 'link:[]'
++ 69:         
++ 70:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+--------------------------------------------------------------------------------
+[5.17618 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/RANDOM/test_linkedList2_RANDOM.py:1139: TypeError: LinkedList.__repr__() missing 1 required positional argument: 'self'
+
+   - [#  55] SDI linkedList2: 
+--------------------------------------------------------------------------------
+  67:             return 'link:[]'
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+- 71:     def __len__(self):
+- 72:         '''Count values in list.'''
+- 73:         n = self.head
+- 74:         count = 0
+- 75:         while n != None:
+- 76:             count += 1
+- 77:             n = n.next
+- 78:         return count
++ 71:     @staticmethod
++ 72:     def __len__(self):
++ 73:         '''Count values in list.'''
++ 74:         n = self.head
++ 75:         count = 0
++ 76:         while n != None:
++ 77:             count += 1
++ 78:             n = n.next
++ 79:         return count
+--------------------------------------------------------------------------------
+[5.19684 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/RANDOM/test_linkedList2_RANDOM.py:8: TypeError: LinkedList.__len__() missing 1 required positional argument: 'self'
+
+   - [#  56] SDL linkedList2: 
+--------------------------------------------------------------------------------
+   5: '''
+   6: class LinkedNode:
+   7:     def __init__(self, value, tail=None):
+   8:         '''Node in a Linked List.'''
+-  9:         self.value = value
++  9:         pass
+  10:         self.next = tail
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+--------------------------------------------------------------------------------
+[5.08760 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+>       assert len(linked_node_0.value) == 0
+E       AttributeError: 'LinkedNode' object has no attribute 'value'
+
+RANDOM/test_linkedList2_RANDOM.py:14: AttributeError
+   - [#  57] SDL linkedList2: 
+--------------------------------------------------------------------------------
+   6: class LinkedNode:
+   7:     def __init__(self, value, tail=None):
+   8:         '''Node in a Linked List.'''
+   9:         self.value = value
+- 10:         self.next = tail
++ 10:         pass
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+--------------------------------------------------------------------------------
+[5.02761 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+>       var_0 = linked_node_0.checkInfinite()
+
+RANDOM/test_linkedList2_RANDOM.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7fc70dbc4370>
+
+>   ???
+E   AttributeError: 'LinkedNode' object has no attribute 'next'
+
+linkedList2:16: AttributeError
+   - [#  58] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  10:         self.next = tail
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+- 14:         p1 = p2 = self
++ 14:         pass
+  15:         while (p1 != None and p2 != None):
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+--------------------------------------------------------------------------------
+[5.08657 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+>       var_0 = linked_node_0.checkInfinite()
+
+RANDOM/test_linkedList2_RANDOM.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7fc70dbc5030>
+
+>   ???
+E   UnboundLocalError: local variable 'p1' referenced before assignment
+
+linkedList2:15: UnboundLocalError
+   - [#  59] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+  16:             if p2.next == None:
+- 17:                 return False
++ 17:                 pass
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+--------------------------------------------------------------------------------
+[4.99103 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_1
+
+def test_case_1():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+>       var_0 = linked_node_0.checkInfinite()
+
+RANDOM/test_linkedList2_RANDOM.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList2.LinkedNode object at 0x7fc70dbc4250>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList2:19: AttributeError
+   - [#  60] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+  16:             if p2.next == None:
+  17:                 return False
+- 18:             p1 = p1.next
++ 18:             pass
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+  22:                 return True
+--------------------------------------------------------------------------------
+[2.84076 s] survived
+   - [#  61] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  15:         while (p1 != None and p2 != None):
+  16:             if p2.next == None:
+  17:                 return False
+  18:             p1 = p1.next
+- 19:             p2 = p2.next.next
++ 19:             pass
+  20:             
+  21:             if p1 == p2:
+  22:                 return True
+  23:         return False
+--------------------------------------------------------------------------------
+[2.81590 s] survived
+   - [#  62] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  18:             p1 = p1.next
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+- 22:                 return True
++ 22:                 pass
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+--------------------------------------------------------------------------------
+[2.84696 s] survived
+   - [#  63] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  19:             p2 = p2.next.next
+  20:             
+  21:             if p1 == p2:
+  22:                 return True
+- 23:         return False
++ 23:         pass
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+--------------------------------------------------------------------------------
+[2.95725 s] survived
+   - [#  64] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+- 27:         self.head = None
++ 27:         pass
+  28:         for _ in start:
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+--------------------------------------------------------------------------------
+[5.11214 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+RANDOM/test_linkedList2_RANDOM.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[AttributeError("'LinkedList' object has no attribute 'head'") raised in repr()] LinkedList object at 0x7fc70f556380>
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute 'head'
+
+linkedList2:73: AttributeError
+   - [#  65] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+  28:         for _ in start:
+- 29:             self.prepend(_)
++ 29:             pass
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+--------------------------------------------------------------------------------
+[5.21539 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_47
+
+def test_case_47():
+        float_0 = 2862.9
+        bytes_0 = b"&Z\xac\x82WC\xc4\x88'\\m\x0c\xaf\xccJ\xda"
+        list_0 = [bytes_0, bytes_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:1461: AssertionError
+   - [#  66] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+- 33:         self.head = LinkedNode(value, self.head)
++ 33:         pass
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+--------------------------------------------------------------------------------
+[5.14869 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_1 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_1.checkInfinite()
+        var_2 = var_1.__repr__()
+        var_3 = linked_list_1.__len__()
+        assert var_3 == 0
+        var_4 = linked_list_1.prepend(var_3)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:76: AssertionError
+   - [#  67] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+- 39:         val = self.head.value
++ 39:         pass
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+--------------------------------------------------------------------------------
+[5.12762 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_38
+
+def test_case_38():
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        complex_1 = 4095.03 - 599.647583j
+        linked_node_1 = module_0.LinkedNode(complex_1)
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_2 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_2.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_3 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_3.value) == 0
+        var_2 = linked_node_3.checkInfinite()
+        var_3 = linked_list_1.prepend(var_0)
+        assert len(linked_list_1) == 1
+        assert len(linked_node_3.value) == 1
+        bool_0 = True
+        linked_node_4 = module_0.LinkedNode(bool_0)
+        var_4 = linked_node_4.checkInfinite()
+>       var_5 = linked_list_1.pop()
+
+RANDOM/test_linkedList2_RANDOM.py:1116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[]
+
+>   ???
+E   NameError: name 'val' is not defined
+
+linkedList2:41: NameError
+   - [#  68] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+- 40:         self.head = self.head.next
++ 40:         pass
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+--------------------------------------------------------------------------------
+[5.22763 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_38
+
+def test_case_38():
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        complex_1 = 4095.03 - 599.647583j
+        linked_node_1 = module_0.LinkedNode(complex_1)
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_2 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_2.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_3 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_3.value) == 0
+        var_2 = linked_node_3.checkInfinite()
+        var_3 = linked_list_1.prepend(var_0)
+        assert len(linked_list_1) == 1
+        assert len(linked_node_3.value) == 1
+        bool_0 = True
+        linked_node_4 = module_0.LinkedNode(bool_0)
+        var_4 = linked_node_4.checkInfinite()
+        var_5 = linked_list_1.pop()
+        assert var_5 is False
+>       assert len(linked_list_1) == 0
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:1118: AssertionError
+   - [#  69] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+- 41:         return val
++ 41:         pass
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+--------------------------------------------------------------------------------
+[5.10975 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_38
+
+def test_case_38():
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        complex_1 = 4095.03 - 599.647583j
+        linked_node_1 = module_0.LinkedNode(complex_1)
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_2 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_2.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_3 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_3.value) == 0
+        var_2 = linked_node_3.checkInfinite()
+        var_3 = linked_list_1.prepend(var_0)
+        assert len(linked_list_1) == 1
+        assert len(linked_node_3.value) == 1
+        bool_0 = True
+        linked_node_4 = module_0.LinkedNode(bool_0)
+        var_4 = linked_node_4.checkInfinite()
+        var_5 = linked_list_1.pop()
+>       assert var_5 is False
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:1117: AssertionError
+   - [#  70] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+- 45:         n = self.head
++ 45:         pass
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+--------------------------------------------------------------------------------
+[5.13773 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_1 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_1.checkInfinite()
+        var_2 = var_1.__repr__()
+        var_3 = linked_list_2.__len__()
+        assert var_3 == 0
+        linked_list_3 = module_0.LinkedList()
+        assert len(linked_list_3) == 0
+        linked_node_2 = module_0.LinkedNode(linked_list_3)
+        assert len(linked_node_2.value) == 0
+        var_4 = linked_node_2.checkInfinite()
+        bytes_1 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_3 = module_0.LinkedNode(bytes_1)
+        var_5 = linked_node_3.checkInfinite()
+        var_6 = var_5.__repr__()
+>       var_7 = linked_list_0.remove(linked_node_1)
+
+RANDOM/test_linkedList2_RANDOM.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[], value = <linkedList2.LinkedNode object at 0x7fc70dbc4c70>
+
+>   ???
+E   UnboundLocalError: local variable 'n' referenced before assignment
+
+linkedList2:47: UnboundLocalError
+   - [#  71] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+- 46:         last = None
++ 46:         pass
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+--------------------------------------------------------------------------------
+[5.65337 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_621
+
+def test_case_621():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        var_0 = linked_list_0.prepend(dict_0)
+        assert len(linked_list_0) == 1
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.prepend(dict_0)
+        assert len(linked_list_1) == 1
+>       var_2 = linked_list_1.remove(dict_0)
+
+RANDOM/test_linkedList2_RANDOM.py:26461: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[{link:[{...}]: link:[{...}]}]
+value = {link:[{link:[{...}]: link:[{...}]}]: link:[{link:[{...}]: link:[{...}]}]}
+
+>   ???
+E   NameError: name 'last' is not defined
+
+linkedList2:49: NameError
+   - [#  72] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+- 50:                     self.head = self.head.next
++ 50:                     pass
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+--------------------------------------------------------------------------------
+[5.76387 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_621
+
+def test_case_621():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        var_0 = linked_list_0.prepend(dict_0)
+        assert len(linked_list_0) == 1
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.prepend(dict_0)
+        assert len(linked_list_1) == 1
+        var_2 = linked_list_1.remove(dict_0)
+        assert var_2 is True
+>       assert len(linked_list_1) == 0
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:26463: AssertionError
+   - [#  73] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  48:             if n.value == value:
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+- 52:                     last.next = n.next
++ 52:                     pass
+  53:                 return True
+  54:             n = n.next
+  55:         return False
+  56:     
+--------------------------------------------------------------------------------
+[2.87083 s] survived
+   - [#  74] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  49:                 if last == None:
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+- 53:                 return True
++ 53:                 pass
+  54:             n = n.next
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+--------------------------------------------------------------------------------
+[5.69149 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_621
+
+def test_case_621():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        var_0 = linked_list_0.prepend(dict_0)
+        assert len(linked_list_0) == 1
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.prepend(dict_0)
+        assert len(linked_list_1) == 1
+        var_2 = linked_list_1.remove(dict_0)
+>       assert var_2 is True
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:26462: AssertionError
+   - [#  75] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  50:                     self.head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+- 54:             n = n.next
++ 54:             pass
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+--------------------------------------------------------------------------------
+[13.84737 s] timeout
+   - [#  76] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+- 55:         return False
++ 55:         pass
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+--------------------------------------------------------------------------------
+[5.07148 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_1 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_1.checkInfinite()
+        var_2 = var_1.__repr__()
+        var_3 = linked_list_2.__len__()
+        assert var_3 == 0
+        linked_list_3 = module_0.LinkedList()
+        assert len(linked_list_3) == 0
+        linked_node_2 = module_0.LinkedNode(linked_list_3)
+        assert len(linked_node_2.value) == 0
+        var_4 = linked_node_2.checkInfinite()
+        bytes_1 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_3 = module_0.LinkedNode(bytes_1)
+        var_5 = linked_node_3.checkInfinite()
+        var_6 = var_5.__repr__()
+        var_7 = linked_list_0.remove(linked_node_1)
+>       assert var_7 is False
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:159: AssertionError
+   - [#  77] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+- 59:         n = self.head
++ 59:         pass
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+--------------------------------------------------------------------------------
+[5.01615 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_40
+
+def test_case_40():
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_0 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_1 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_1.value) == 0
+        var_2 = linked_node_1.checkInfinite()
+        var_3 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_1.value) == 1
+>       var_4 = linked_list_0.__repr__()
+
+RANDOM/test_linkedList2_RANDOM.py:1139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList2:69: in __repr__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[UnboundLocalError("local variable 'n' referenced before assignment") raised in repr()] LinkedList object at 0x7fc70c02c430>
+
+>   ???
+E   UnboundLocalError: local variable 'n' referenced before assignment
+
+linkedList2:60: UnboundLocalError
+   - [#  78] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+- 61:             yield n.value
++ 61:             pass
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+--------------------------------------------------------------------------------
+[4.98675 s] incompetent
+
+TypeError: linkedList2:69: TypeError: iter() returned non-iterator of type 'NoneType'
+
+   - [#  79] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+  61:             yield n.value
+- 62:             n = n.next
++ 62:             pass
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+--------------------------------------------------------------------------------
+[13.84733 s] timeout
+   - [#  80] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+- 67:             return 'link:[]'
++ 67:             pass
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+--------------------------------------------------------------------------------
+[2.99917 s] survived
+   - [#  81] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+  67:             return 'link:[]'
+  68:         
+- 69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
++ 69:         pass
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+--------------------------------------------------------------------------------
+[5.14852 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_40
+
+def test_case_40():
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_0 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_1 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_1.value) == 0
+        var_2 = linked_node_1.checkInfinite()
+        var_3 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_1.value) == 1
+        var_4 = linked_list_0.__repr__()
+>       assert var_4 == 'link:[False]'
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:1140: AssertionError
+   - [#  82] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+- 73:         n = self.head
++ 73:         pass
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+--------------------------------------------------------------------------------
+[5.29933 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+RANDOM/test_linkedList2_RANDOM.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[]
+
+>   ???
+E   UnboundLocalError: local variable 'n' referenced before assignment
+
+linkedList2:75: UnboundLocalError
+   - [#  83] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+  73:         n = self.head
+- 74:         count = 0
++ 74:         pass
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+  78:         return count
+--------------------------------------------------------------------------------
+[5.13609 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+RANDOM/test_linkedList2_RANDOM.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[]
+
+>   ???
+E   UnboundLocalError: local variable 'count' referenced before assignment
+
+linkedList2:78: UnboundLocalError
+   - [#  84] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  73:         n = self.head
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+- 77:             n = n.next
++ 77:             pass
+  78:         return count
+--------------------------------------------------------------------------------
+[13.84736 s] timeout
+   - [#  85] SDL linkedList2: 
+--------------------------------------------------------------------------------
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+- 78:         return count
++ 78:         pass
+--------------------------------------------------------------------------------
+[5.13274 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/linkedList2/RANDOM/test_linkedList2_RANDOM.py:8: TypeError: 'NoneType' object cannot be interpreted as an integer
+
+   - [#  86] SVD linkedList2: 
+--------------------------------------------------------------------------------
+   5: '''
+   6: class LinkedNode:
+   7:     def __init__(self, value, tail=None):
+   8:         '''Node in a Linked List.'''
+-  9:         self.value = value
++  9:         value = value
+  10:         self.next = tail
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  87] SVD linkedList2: 
+--------------------------------------------------------------------------------
+   6: class LinkedNode:
+   7:     def __init__(self, value, tail=None):
+   8:         '''Node in a Linked List.'''
+   9:         self.value = value
+- 10:         self.next = tail
++ 10:         next = tail
+  11:     
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  88] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  23:         return False
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+- 27:         self.head = None
++ 27:         head = None
+  28:         for _ in start:
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  89] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+  28:         for _ in start:
+- 29:             self.prepend(_)
++ 29:             prepend(_)
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+--------------------------------------------------------------------------------
+[5.17468 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_47
+
+def test_case_47():
+        float_0 = 2862.9
+        bytes_0 = b"&Z\xac\x82WC\xc4\x88'\\m\x0c\xaf\xccJ\xda"
+        list_0 = [bytes_0, bytes_0]
+>       linked_list_0 = module_0.LinkedList(*list_0)
+
+RANDOM/test_linkedList2_RANDOM.py:1460: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[]
+start = (b"&Z\xac\x82WC\xc4\x88'\\m\x0c\xaf\xccJ\xda", b"&Z\xac\x82WC\xc4\x88'\\m\x0c\xaf\xccJ\xda")
+_ = b"&Z\xac\x82WC\xc4\x88'\\m\x0c\xaf\xccJ\xda"
+
+>   ???
+E   NameError: name 'prepend' is not defined
+
+linkedList2:29: NameError
+   - [#  90] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+- 33:         self.head = LinkedNode(value, self.head)
++ 33:         head = LinkedNode(value, self.head)
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  91] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  29:             self.prepend(_)
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+- 33:         self.head = LinkedNode(value, self.head)
++ 33:         self.head = LinkedNode(value, head)
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+--------------------------------------------------------------------------------
+[5.08755 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_1 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_1.checkInfinite()
+        var_2 = var_1.__repr__()
+        var_3 = linked_list_1.__len__()
+        assert var_3 == 0
+>       var_4 = linked_list_1.prepend(var_3)
+
+RANDOM/test_linkedList2_RANDOM.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[], value = 0
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:33: NameError
+   - [#  92] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  33:         self.head = LinkedNode(value, self.head)
+  34:     
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+- 37:         if self.head is None:
++ 37:         if head is None:
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+  40:         self.head = self.head.next
+  41:         return val
+--------------------------------------------------------------------------------
+[5.07265 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_38
+
+def test_case_38():
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        complex_1 = 4095.03 - 599.647583j
+        linked_node_1 = module_0.LinkedNode(complex_1)
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_2 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_2.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_3 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_3.value) == 0
+        var_2 = linked_node_3.checkInfinite()
+        var_3 = linked_list_1.prepend(var_0)
+        assert len(linked_list_1) == 1
+        assert len(linked_node_3.value) == 1
+        bool_0 = True
+        linked_node_4 = module_0.LinkedNode(bool_0)
+        var_4 = linked_node_4.checkInfinite()
+>       var_5 = linked_list_1.pop()
+
+RANDOM/test_linkedList2_RANDOM.py:1116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[False]
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:37: NameError
+   - [#  93] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  35:     def pop(self):
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+- 39:         val = self.head.value
++ 39:         val = head.value
+  40:         self.head = self.head.next
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+--------------------------------------------------------------------------------
+[5.10436 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_38
+
+def test_case_38():
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        complex_1 = 4095.03 - 599.647583j
+        linked_node_1 = module_0.LinkedNode(complex_1)
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_2 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_2.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_3 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_3.value) == 0
+        var_2 = linked_node_3.checkInfinite()
+        var_3 = linked_list_1.prepend(var_0)
+        assert len(linked_list_1) == 1
+        assert len(linked_node_3.value) == 1
+        bool_0 = True
+        linked_node_4 = module_0.LinkedNode(bool_0)
+        var_4 = linked_node_4.checkInfinite()
+>       var_5 = linked_list_1.pop()
+
+RANDOM/test_linkedList2_RANDOM.py:1116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[False]
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:39: NameError
+   - [#  94] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+- 40:         self.head = self.head.next
++ 40:         head = self.head.next
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  95] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  36:         '''Remove first value in list.'''
+  37:         if self.head is None:
+  38:             raise Exception('Linked list is empty.')
+  39:         val = self.head.value
+- 40:         self.head = self.head.next
++ 40:         self.head = head.next
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+--------------------------------------------------------------------------------
+[5.02102 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_38
+
+def test_case_38():
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        complex_1 = 4095.03 - 599.647583j
+        linked_node_1 = module_0.LinkedNode(complex_1)
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_2 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_2.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_3 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_3.value) == 0
+        var_2 = linked_node_3.checkInfinite()
+        var_3 = linked_list_1.prepend(var_0)
+        assert len(linked_list_1) == 1
+        assert len(linked_node_3.value) == 1
+        bool_0 = True
+        linked_node_4 = module_0.LinkedNode(bool_0)
+        var_4 = linked_node_4.checkInfinite()
+>       var_5 = linked_list_1.pop()
+
+RANDOM/test_linkedList2_RANDOM.py:1116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[False]
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:40: NameError
+   - [#  96] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  41:         return val
+  42:     
+  43:     def remove(self, value):
+  44:         '''Remove value from list.'''
+- 45:         n = self.head
++ 45:         n = head
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+--------------------------------------------------------------------------------
+[5.25215 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_8
+
+def test_case_8():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_1)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_1 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_1.checkInfinite()
+        var_2 = var_1.__repr__()
+        var_3 = linked_list_2.__len__()
+        assert var_3 == 0
+        linked_list_3 = module_0.LinkedList()
+        assert len(linked_list_3) == 0
+        linked_node_2 = module_0.LinkedNode(linked_list_3)
+        assert len(linked_node_2.value) == 0
+        var_4 = linked_node_2.checkInfinite()
+        bytes_1 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_3 = module_0.LinkedNode(bytes_1)
+        var_5 = linked_node_3.checkInfinite()
+        var_6 = var_5.__repr__()
+>       var_7 = linked_list_0.remove(linked_node_1)
+
+RANDOM/test_linkedList2_RANDOM.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[], value = <linkedList2.LinkedNode object at 0x7fc70f5ae200>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:45: NameError
+   - [#  97] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+- 50:                     self.head = self.head.next
++ 50:                     head = self.head.next
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  98] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  46:         last = None
+  47:         while n != None:
+  48:             if n.value == value:
+  49:                 if last == None:
+- 50:                     self.head = self.head.next
++ 50:                     self.head = head.next
+  51:                 else:
+  52:                     last.next = n.next
+  53:                 return True
+  54:             n = n.next
+--------------------------------------------------------------------------------
+[5.76754 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_621
+
+def test_case_621():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        var_0 = linked_list_0.prepend(dict_0)
+        assert len(linked_list_0) == 1
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.prepend(dict_0)
+        assert len(linked_list_1) == 1
+>       var_2 = linked_list_1.remove(dict_0)
+
+RANDOM/test_linkedList2_RANDOM.py:26461: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[{link:[{...}]: link:[{...}]}]
+value = {link:[{link:[{...}]: link:[{...}]}]: link:[{link:[{...}]: link:[{...}]}]}
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:50: NameError
+   - [#  99] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+- 59:         n = self.head
++ 59:         n = head
+  60:         while n != None:
+  61:             yield n.value
+  62:             n = n.next
+  63:     
+--------------------------------------------------------------------------------
+[5.46553 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_40
+
+def test_case_40():
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_0 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_1 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_1.value) == 0
+        var_2 = linked_node_1.checkInfinite()
+        var_3 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_1.value) == 1
+>       var_4 = linked_list_0.__repr__()
+
+RANDOM/test_linkedList2_RANDOM.py:1139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList2:69: in __repr__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[NameError("name 'head' is not defined") raised in repr()] LinkedList object at 0x7fc70fbad6f0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:59: NameError
+   - [# 100] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  62:             n = n.next
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+- 66:         if self.head is None:
++ 66:         if head is None:
+  67:             return 'link:[]'
+  68:         
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+--------------------------------------------------------------------------------
+[5.46823 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_40
+
+def test_case_40():
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_0 = module_0.LinkedNode(bytes_0)
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        var_1 = var_0.__repr__()
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_1 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_1.value) == 0
+        var_2 = linked_node_1.checkInfinite()
+        var_3 = linked_list_0.prepend(var_0)
+        assert len(linked_list_0) == 1
+        assert len(linked_node_1.value) == 1
+>       var_4 = linked_list_0.__repr__()
+
+RANDOM/test_linkedList2_RANDOM.py:1139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[NameError("name 'head' is not defined") raised in repr()] LinkedList object at 0x7fc70dbc56c0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:66: NameError
+   - [# 101] SVD linkedList2: 
+--------------------------------------------------------------------------------
+  69:         return 'link:[{0:s}]'.format(','.join(map(str, self)))
+  70:     
+  71:     def __len__(self):
+  72:         '''Count values in list.'''
+- 73:         n = self.head
++ 73:         n = head
+  74:         count = 0
+  75:         while n != None:
+  76:             count += 1
+  77:             n = n.next
+--------------------------------------------------------------------------------
+[5.52721 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_0
+
+def test_case_0():
+        linked_list_0 = module_0.LinkedList()
+>       assert len(linked_list_0) == 0
+
+RANDOM/test_linkedList2_RANDOM.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = link:[]
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList2:73: NameError
+   - [# 102] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  12:     def checkInfinite(self):
+  13:         '''Check whether infinite loop via next.'''
+  14:         p1 = p2 = self
+  15:         while (p1 != None and p2 != None):
+- 16:             if p2.next == None:
+- 17:                 return False
+- 18:             p1 = p1.next
+- 19:             p2 = p2.next.next
+- 20:             
+- 21:             if p1 == p2:
+- 22:                 return True
+- 23:         return False
++ 16:             break
++ 17:         
++ 18:         
++ 19:         
++ 20:         
++ 21:         
++ 22:         return False
++ 23: 
+  24: class LinkedList:
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+--------------------------------------------------------------------------------
+[2.98681 s] survived
+   - [# 103] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  25:     def __init__(self, *start):
+  26:         '''Demonstrate linked lists in Python.'''
+  27:         self.head = None
+  28:         for _ in start:
+- 29:             self.prepend(_)
++ 29:             break
+  30:     
+  31:     def prepend(self, value):
+  32:         '''Prepend element into list.'''
+  33:         self.head = LinkedNode(value, self.head)
+--------------------------------------------------------------------------------
+[5.38626 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_47
+
+def test_case_47():
+        float_0 = 2862.9
+        bytes_0 = b"&Z\xac\x82WC\xc4\x88'\\m\x0c\xaf\xccJ\xda"
+        list_0 = [bytes_0, bytes_0]
+        linked_list_0 = module_0.LinkedList(*list_0)
+>       assert len(linked_list_0) == 2
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:1461: AssertionError
+   - [# 104] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  44:         '''Remove value from list.'''
+  45:         n = self.head
+  46:         last = None
+  47:         while n != None:
+- 48:             if n.value == value:
+- 49:                 if last == None:
+- 50:                     self.head = self.head.next
+- 51:                 else:
+- 52:                     last.next = n.next
+- 53:                 return True
+- 54:             n = n.next
++ 48:             break
++ 49:         
++ 50:         
++ 51:         
++ 52:         
++ 53:         
++ 54:         
+  55:         return False
+  56:     
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+--------------------------------------------------------------------------------
+[6.07127 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_621
+
+def test_case_621():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        dict_0 = {linked_list_0: linked_list_0, linked_list_0: linked_list_0, linked_list_0: linked_list_0}
+        var_0 = linked_list_0.prepend(dict_0)
+        assert len(linked_list_0) == 1
+        complex_0 = 4095.03 - 599.647583j
+        linked_node_0 = module_0.LinkedNode(complex_0)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.prepend(dict_0)
+        assert len(linked_list_1) == 1
+        var_2 = linked_list_1.remove(dict_0)
+>       assert var_2 is True
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:26462: AssertionError
+   - [# 105] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  57:     def __iter__(self):
+  58:         '''Iterator of values in the list.'''
+  59:         n = self.head
+  60:         while n != None:
+- 61:             yield n.value
+- 62:             n = n.next
++ 61:             break
++ 62:     
+  63:     
+  64:     def __repr__(self):
+  65:         '''String representation of linked list.'''
+  66:         if self.head is None:
+--------------------------------------------------------------------------------
+[5.41928 s] incompetent
+
+TypeError: linkedList2:69: TypeError: iter() returned non-iterator of type 'NoneType'
+
+   - [# 106] ZIL linkedList2: 
+--------------------------------------------------------------------------------
+  72:         '''Count values in list.'''
+  73:         n = self.head
+  74:         count = 0
+  75:         while n != None:
+- 76:             count += 1
+- 77:             n = n.next
++ 76:             break
++ 77:         
+  78:         return count
+--------------------------------------------------------------------------------
+[5.43097 s] killed by RANDOM/test_linkedList2_RANDOM.py::test_case_5
+
+def test_case_5():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        linked_node_0 = module_0.LinkedNode(linked_list_0)
+        assert len(linked_node_0.value) == 0
+        var_0 = linked_node_0.checkInfinite()
+        assert var_0 is False
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_node_1 = module_0.LinkedNode(bytes_0)
+        var_1 = linked_node_1.checkInfinite()
+        var_2 = var_1.__repr__()
+        var_3 = linked_list_1.__len__()
+        assert var_3 == 0
+        var_4 = linked_list_1.prepend(var_3)
+>       assert len(linked_list_1) == 1
+E       AssertionError
+
+RANDOM/test_linkedList2_RANDOM.py:76: AssertionError
+[*] Mutation score [516.95608 s]: 80.2%
+   - all: 106
+   - killed: 66 (62.3%)
+   - survived: 17 (16.0%)
+   - incompetent: 20 (18.9%)
+   - timeout: 3 (2.8%)

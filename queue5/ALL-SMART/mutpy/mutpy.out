@@ -1,0 +1,1273 @@
+[*] Start mutation process:
+   - targets: queue5.py
+   - tests: ./DYNAMOSA-MIO-MOSA-WHOLE_SUITE
+[*] 24 tests passed:
+   - test_queue5_MIO [0.05436 s]
+   - test_queue5_WHOLE_SUITE [0.04306 s]
+   - test_queue5_MOSA [0.04016 s]
+   - test_queue5_DYNAMOSA [0.04918 s]
+[*] Start mutants generation and execution:
+   - [#   1] CDI queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data):
+-  4:         self.data = data
+-  5:         self.next = None
+-  6: 
++  3:     @classmethod
++  4:     def __init__(self, data):
++  5:         self.data = data
++  6:         self.next = None
+   7: 
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+--------------------------------------------------------------------------------
+[0.08014 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        bytes_0 = b'`\xf8e\x02J'
+        var_1 = queue_0.enqueue(bytes_0)
+        var_2 = queue_0.dequeue()
+>       assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'queue5.Queue'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:55: AssertionError
+   - [#   2] CDI queue5: 
+--------------------------------------------------------------------------------
+   6: 
+   7: 
+   8: class Queue(object):
+   9:     
+- 10:     def __init__(self):
+- 11:         self.head = None
+- 12:         self.tail = None
+- 13:     
++ 10:     @classmethod
++ 11:     def __init__(self):
++ 12:         self.head = None
++ 13:         self.tail = None
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+--------------------------------------------------------------------------------
+[0.06783 s] survived
+   - [#   3] CDI queue5: 
+--------------------------------------------------------------------------------
+  10:     def __init__(self):
+  11:         self.head = None
+  12:         self.tail = None
+  13:     
+- 14:     def enqueue(self, data):
+- 15:         node = Node(data)
+- 16:         
+- 17:         if (self.head is None and self.tail is None):
+- 18:             self.head = node
+- 19:             self.tail = node
+- 20:         else:
+- 21:             self.tail.next = node
+- 22:             self.tail = node
+- 23:     
++ 14:     @classmethod
++ 15:     def enqueue(self, data):
++ 16:         node = Node(data)
++ 17:         
++ 18:         if (self.head is None and self.tail is None):
++ 19:             self.head = node
++ 20:             self.tail = node
++ 21:         else:
++ 22:             self.tail.next = node
++ 23:             self.tail = node
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+--------------------------------------------------------------------------------
+[0.07846 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(none_type_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'queue5.Queue'>, data = None
+
+>   ???
+E   AttributeError: type object 'Queue' has no attribute 'head'
+
+queue5:18: AttributeError
+   - [#   4] CDI queue5: 
+--------------------------------------------------------------------------------
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+  23:     
+- 24:     def dequeue(self):
+- 25:         
+- 26:         if (self.head is None and self.tail is None):
+- 27:             return None
+- 28:         data = self.head.data
+- 29:         
+- 30:         if self.head == self.tail:
+- 31:             self.head = None
+- 32:             self.tail = None
+- 33:         else:
+- 34:             self.head = self.head.next
+- 35:         return data
++ 24:     @classmethod
++ 25:     def dequeue(self):
++ 26:         
++ 27:         if (self.head is None and self.tail is None):
++ 28:             return None
++ 29:         data = self.head.data
++ 30:         
++ 31:         if self.head == self.tail:
++ 32:             self.head = None
++ 33:             self.tail = None
++ 34:         else:
++ 35:             self.head = self.head.next
++ 36:         return data
+--------------------------------------------------------------------------------
+[0.08297 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'queue5.Queue'>
+
+>   ???
+E   AttributeError: type object 'Queue' has no attribute 'head'
+
+queue5:27: AttributeError
+   - [#   5] COI queue5: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+- 17:         if (self.head is None and self.tail is None):
++ 17:         if not ((self.head is None and self.tail is None)):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+--------------------------------------------------------------------------------
+[0.08053 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(none_type_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f481840>, data = None
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5:21: AttributeError
+   - [#   6] COI queue5: 
+--------------------------------------------------------------------------------
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+- 26:         if (self.head is None and self.tail is None):
++ 26:         if not ((self.head is None and self.tail is None)):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+--------------------------------------------------------------------------------
+[0.08287 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f3683a0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5:28: AttributeError
+   - [#   7] COI queue5: 
+--------------------------------------------------------------------------------
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+- 30:         if self.head == self.tail:
++ 30:         if not (self.head == self.tail):
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[0.08425 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        queue_0 = module_0.Queue()
+        queue_1 = module_0.Queue()
+        var_0 = queue_1.dequeue()
+        var_1 = queue_1.enqueue(queue_1)
+        assert f'{type(queue_1.head).__module__}.{type(queue_1.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_1.tail).__module__}.{type(queue_1.tail).__qualname__}' == 'queue5.Node'
+        var_2 = queue_1.dequeue()
+>       assert queue_1.tail is None
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:43: AssertionError
+   - [#   8] LCR queue5: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+- 17:         if (self.head is None and self.tail is None):
++ 17:         if (self.head is None or self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+--------------------------------------------------------------------------------
+[0.07667 s] survived
+   - [#   9] LCR queue5: 
+--------------------------------------------------------------------------------
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+- 26:         if (self.head is None and self.tail is None):
++ 26:         if (self.head is None or self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+--------------------------------------------------------------------------------
+[0.06975 s] survived
+   - [#  10] ROR queue5: 
+--------------------------------------------------------------------------------
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+- 30:         if self.head == self.tail:
++ 30:         if self.head != self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[0.07990 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        queue_0 = module_0.Queue()
+        queue_1 = module_0.Queue()
+        var_0 = queue_1.dequeue()
+        var_1 = queue_1.enqueue(queue_1)
+        assert f'{type(queue_1.head).__module__}.{type(queue_1.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_1.tail).__module__}.{type(queue_1.tail).__qualname__}' == 'queue5.Node'
+        var_2 = queue_1.dequeue()
+>       assert queue_1.tail is None
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:43: AssertionError
+   - [#  11] SDI queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data):
+-  4:         self.data = data
+-  5:         self.next = None
+-  6: 
++  3:     @staticmethod
++  4:     def __init__(self, data):
++  5:         self.data = data
++  6:         self.next = None
+   7: 
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+--------------------------------------------------------------------------------
+[0.07859 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue5/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:7: TypeError: Node.__init__() missing 1 required positional argument: 'data'
+
+   - [#  12] SDI queue5: 
+--------------------------------------------------------------------------------
+   6: 
+   7: 
+   8: class Queue(object):
+   9:     
+- 10:     def __init__(self):
+- 11:         self.head = None
+- 12:         self.tail = None
+- 13:     
++ 10:     @staticmethod
++ 11:     def __init__(self):
++ 12:         self.head = None
++ 13:         self.tail = None
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+--------------------------------------------------------------------------------
+[0.07797 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue5/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:8: TypeError: Queue.__init__() missing 1 required positional argument: 'self'
+
+   - [#  13] SDI queue5: 
+--------------------------------------------------------------------------------
+  10:     def __init__(self):
+  11:         self.head = None
+  12:         self.tail = None
+  13:     
+- 14:     def enqueue(self, data):
+- 15:         node = Node(data)
+- 16:         
+- 17:         if (self.head is None and self.tail is None):
+- 18:             self.head = node
+- 19:             self.tail = node
+- 20:         else:
+- 21:             self.tail.next = node
+- 22:             self.tail = node
+- 23:     
++ 14:     @staticmethod
++ 15:     def enqueue(self, data):
++ 16:         node = Node(data)
++ 17:         
++ 18:         if (self.head is None and self.tail is None):
++ 19:             self.head = node
++ 20:             self.tail = node
++ 21:         else:
++ 22:             self.tail.next = node
++ 23:             self.tail = node
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+--------------------------------------------------------------------------------
+[0.07513 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue5/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:9: TypeError: Queue.enqueue() missing 1 required positional argument: 'data'
+
+   - [#  14] SDI queue5: 
+--------------------------------------------------------------------------------
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+  23:     
+- 24:     def dequeue(self):
+- 25:         
+- 26:         if (self.head is None and self.tail is None):
+- 27:             return None
+- 28:         data = self.head.data
+- 29:         
+- 30:         if self.head == self.tail:
+- 31:             self.head = None
+- 32:             self.tail = None
+- 33:         else:
+- 34:             self.head = self.head.next
+- 35:         return data
++ 24:     @staticmethod
++ 25:     def dequeue(self):
++ 26:         
++ 27:         if (self.head is None and self.tail is None):
++ 28:             return None
++ 29:         data = self.head.data
++ 30:         
++ 31:         if self.head == self.tail:
++ 32:             self.head = None
++ 33:             self.tail = None
++ 34:         else:
++ 35:             self.head = self.head.next
++ 36:         return data
+--------------------------------------------------------------------------------
+[0.08253 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue5/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:33: TypeError: Queue.dequeue() missing 1 required positional argument: 'self'
+
+   - [#  15] SDL queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+-  4:         self.data = data
++  4:         pass
+   5:         self.next = None
+   6: 
+   7: 
+   8: class Queue(object):
+--------------------------------------------------------------------------------
+[0.08511 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        queue_0 = module_0.Queue()
+        queue_1 = module_0.Queue()
+        var_0 = queue_1.dequeue()
+        var_1 = queue_1.enqueue(queue_1)
+        assert f'{type(queue_1.head).__module__}.{type(queue_1.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_1.tail).__module__}.{type(queue_1.tail).__qualname__}' == 'queue5.Node'
+>       var_2 = queue_1.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f4c2830>
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'data'
+
+queue5:28: AttributeError
+   - [#  16] SDL queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+-  5:         self.next = None
++  5:         pass
+   6: 
+   7: 
+   8: class Queue(object):
+   9:     
+--------------------------------------------------------------------------------
+[0.06710 s] survived
+   - [#  17] SDL queue5: 
+--------------------------------------------------------------------------------
+   7: 
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+- 11:         self.head = None
++ 11:         pass
+  12:         self.tail = None
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+--------------------------------------------------------------------------------
+[0.07911 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(none_type_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f652380>, data = None
+
+>   ???
+E   AttributeError: 'Queue' object has no attribute 'head'
+
+queue5:17: AttributeError
+   - [#  18] SDL queue5: 
+--------------------------------------------------------------------------------
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+  11:         self.head = None
+- 12:         self.tail = None
++ 12:         pass
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+--------------------------------------------------------------------------------
+[0.07974 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(none_type_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f369750>, data = None
+
+>   ???
+E   AttributeError: 'Queue' object has no attribute 'tail'
+
+queue5:17: AttributeError
+   - [#  19] SDL queue5: 
+--------------------------------------------------------------------------------
+  11:         self.head = None
+  12:         self.tail = None
+  13:     
+  14:     def enqueue(self, data):
+- 15:         node = Node(data)
++ 15:         pass
+  16:         
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+--------------------------------------------------------------------------------
+[0.07776 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(none_type_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f4c1180>, data = None
+
+>   ???
+E   NameError: name 'node' is not defined
+
+queue5:18: NameError
+   - [#  20] SDL queue5: 
+--------------------------------------------------------------------------------
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+- 18:             self.head = node
++ 18:             pass
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+--------------------------------------------------------------------------------
+[0.07873 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+>       assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:10: AssertionError
+   - [#  21] SDL queue5: 
+--------------------------------------------------------------------------------
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+- 19:             self.tail = node
++ 19:             pass
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+  23:     
+--------------------------------------------------------------------------------
+[0.08127 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+>       assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:11: AssertionError
+   - [#  22] SDL queue5: 
+--------------------------------------------------------------------------------
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+- 21:             self.tail.next = node
++ 21:             pass
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+--------------------------------------------------------------------------------
+[0.07993 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        bytes_0 = b'`\xf8e\x02J'
+        var_1 = queue_0.enqueue(bytes_0)
+        var_2 = queue_0.dequeue()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'queue5.Queue'
+>       assert f'{type(var_2.head).__module__}.{type(var_2.head).__qualname__}' == 'queue5.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:56: AssertionError
+   - [#  23] SDL queue5: 
+--------------------------------------------------------------------------------
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+- 22:             self.tail = node
++ 22:             pass
+  23:     
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+--------------------------------------------------------------------------------
+[0.08163 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        bytes_0 = b'`\xf8e\x02J'
+        var_1 = queue_0.enqueue(bytes_0)
+        var_2 = queue_0.dequeue()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'queue5.Queue'
+>       assert f'{type(var_2.head).__module__}.{type(var_2.head).__qualname__}' == 'queue5.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:56: AssertionError
+   - [#  24] SDL queue5: 
+--------------------------------------------------------------------------------
+  23:     
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+- 27:             return None
++ 27:             pass
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+--------------------------------------------------------------------------------
+[0.08411 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f483970>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5:28: AttributeError
+   - [#  25] SDL queue5: 
+--------------------------------------------------------------------------------
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+- 28:         data = self.head.data
++ 28:         pass
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+--------------------------------------------------------------------------------
+[0.07985 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        queue_0 = module_0.Queue()
+        queue_1 = module_0.Queue()
+        var_0 = queue_1.dequeue()
+        var_1 = queue_1.enqueue(queue_1)
+        assert f'{type(queue_1.head).__module__}.{type(queue_1.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_1.tail).__module__}.{type(queue_1.tail).__qualname__}' == 'queue5.Node'
+>       var_2 = queue_1.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f4c16c0>
+
+>   ???
+E   NameError: name 'data' is not defined
+
+queue5:35: NameError
+   - [#  26] SDL queue5: 
+--------------------------------------------------------------------------------
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+- 31:             self.head = None
++ 31:             pass
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.08824 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        bytes_0 = b'`\xf8e\x02J'
+        var_1 = queue_0.enqueue(bytes_0)
+        var_2 = queue_0.dequeue()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'queue5.Queue'
+        assert f'{type(var_2.head).__module__}.{type(var_2.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(var_2.tail).__module__}.{type(var_2.tail).__qualname__}' == 'queue5.Node'
+        var_3 = var_2.dequeue()
+        assert var_3 == b'`\xf8e\x02J'
+>       assert queue_0.head is None
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:60: AssertionError
+   - [#  27] SDL queue5: 
+--------------------------------------------------------------------------------
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+- 32:             self.tail = None
++ 32:             pass
+  33:         else:
+  34:             self.head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.07977 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        queue_0 = module_0.Queue()
+        queue_1 = module_0.Queue()
+        var_0 = queue_1.dequeue()
+        var_1 = queue_1.enqueue(queue_1)
+        assert f'{type(queue_1.head).__module__}.{type(queue_1.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_1.tail).__module__}.{type(queue_1.tail).__qualname__}' == 'queue5.Node'
+        var_2 = queue_1.dequeue()
+>       assert queue_1.tail is None
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:43: AssertionError
+   - [#  28] SDL queue5: 
+--------------------------------------------------------------------------------
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+- 34:             self.head = self.head.next
++ 34:             pass
+  35:         return data
+--------------------------------------------------------------------------------
+[0.08004 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        bytes_0 = b'`\xf8e\x02J'
+        var_1 = queue_0.enqueue(bytes_0)
+        var_2 = queue_0.dequeue()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'queue5.Queue'
+        assert f'{type(var_2.head).__module__}.{type(var_2.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(var_2.tail).__module__}.{type(var_2.tail).__qualname__}' == 'queue5.Node'
+        var_3 = var_2.dequeue()
+>       assert var_3 == b'`\xf8e\x02J'
+E       AssertionError
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:59: AssertionError
+   - [#  29] SDL queue5: 
+--------------------------------------------------------------------------------
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+- 35:         return data
++ 35:         pass
+--------------------------------------------------------------------------------
+[0.08702 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        queue_0 = module_0.Queue()
+        queue_1 = module_0.Queue()
+        var_0 = queue_1.dequeue()
+        var_1 = queue_1.enqueue(queue_1)
+        assert f'{type(queue_1.head).__module__}.{type(queue_1.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_1.tail).__module__}.{type(queue_1.tail).__qualname__}' == 'queue5.Node'
+        var_2 = queue_1.dequeue()
+        assert queue_1.tail is None
+>       assert var_2.tail is None
+E       AttributeError: 'NoneType' object has no attribute 'tail'
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:44: AttributeError
+   - [#  30] SVD queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+-  4:         self.data = data
++  4:         data = data
+   5:         self.next = None
+   6: 
+   7: 
+   8: class Queue(object):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  31] SVD queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+-  5:         self.next = None
++  5:         next = None
+   6: 
+   7: 
+   8: class Queue(object):
+   9:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  32] SVD queue5: 
+--------------------------------------------------------------------------------
+   7: 
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+- 11:         self.head = None
++ 11:         head = None
+  12:         self.tail = None
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  33] SVD queue5: 
+--------------------------------------------------------------------------------
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+  11:         self.head = None
+- 12:         self.tail = None
++ 12:         tail = None
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  34] SVD queue5: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+- 17:         if (self.head is None and self.tail is None):
++ 17:         if (head is None and self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+--------------------------------------------------------------------------------
+[0.08284 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(none_type_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f50aec0>, data = None
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:17: NameError
+   - [#  35] SVD queue5: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+- 17:         if (self.head is None and self.tail is None):
++ 17:         if (self.head is None and tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+--------------------------------------------------------------------------------
+[0.08246 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(none_type_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f273bb0>, data = None
+
+>   ???
+E   NameError: name 'tail' is not defined
+
+queue5:17: NameError
+   - [#  36] SVD queue5: 
+--------------------------------------------------------------------------------
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+- 18:             self.head = node
++ 18:             head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  37] SVD queue5: 
+--------------------------------------------------------------------------------
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+- 19:             self.tail = node
++ 19:             tail = node
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+  23:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  38] SVD queue5: 
+--------------------------------------------------------------------------------
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+- 21:             self.tail.next = node
++ 21:             tail.next = node
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+--------------------------------------------------------------------------------
+[0.07933 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(none_type_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        int_0 = 3392
+        tuple_0 = (int_0,)
+>       var_1 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f4f2ce0>
+data = <queue5.Queue object at 0x7fe95f4f2ce0>
+
+>   ???
+E   NameError: name 'tail' is not defined
+
+queue5:21: NameError
+   - [#  39] SVD queue5: 
+--------------------------------------------------------------------------------
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+- 22:             self.tail = node
++ 22:             tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  40] SVD queue5: 
+--------------------------------------------------------------------------------
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+- 26:         if (self.head is None and self.tail is None):
++ 26:         if (head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+--------------------------------------------------------------------------------
+[0.08385 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f50b850>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:26: NameError
+   - [#  41] SVD queue5: 
+--------------------------------------------------------------------------------
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+- 26:         if (self.head is None and self.tail is None):
++ 26:         if (self.head is None and tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+--------------------------------------------------------------------------------
+[0.08494 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f272b90>
+
+>   ???
+E   NameError: name 'tail' is not defined
+
+queue5:26: NameError
+   - [#  42] SVD queue5: 
+--------------------------------------------------------------------------------
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+- 28:         data = self.head.data
++ 28:         data = head.data
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+--------------------------------------------------------------------------------
+[0.10398 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        queue_0 = module_0.Queue()
+        queue_1 = module_0.Queue()
+        var_0 = queue_1.dequeue()
+        var_1 = queue_1.enqueue(queue_1)
+        assert f'{type(queue_1.head).__module__}.{type(queue_1.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_1.tail).__module__}.{type(queue_1.tail).__qualname__}' == 'queue5.Node'
+>       var_2 = queue_1.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f36c040>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:28: NameError
+   - [#  43] SVD queue5: 
+--------------------------------------------------------------------------------
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+- 30:         if self.head == self.tail:
++ 30:         if head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[0.08848 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        queue_0 = module_0.Queue()
+        queue_1 = module_0.Queue()
+        var_0 = queue_1.dequeue()
+        var_1 = queue_1.enqueue(queue_1)
+        assert f'{type(queue_1.head).__module__}.{type(queue_1.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_1.tail).__module__}.{type(queue_1.tail).__qualname__}' == 'queue5.Node'
+>       var_2 = queue_1.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f652e90>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:30: NameError
+   - [#  44] SVD queue5: 
+--------------------------------------------------------------------------------
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+- 30:         if self.head == self.tail:
++ 30:         if self.head == tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[0.08528 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        queue_0 = module_0.Queue()
+        queue_1 = module_0.Queue()
+        var_0 = queue_1.dequeue()
+        var_1 = queue_1.enqueue(queue_1)
+        assert f'{type(queue_1.head).__module__}.{type(queue_1.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_1.tail).__module__}.{type(queue_1.tail).__qualname__}' == 'queue5.Node'
+>       var_2 = queue_1.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f742560>
+
+>   ???
+E   NameError: name 'tail' is not defined
+
+queue5:30: NameError
+   - [#  45] SVD queue5: 
+--------------------------------------------------------------------------------
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+- 31:             self.head = None
++ 31:             head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  46] SVD queue5: 
+--------------------------------------------------------------------------------
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+- 32:             self.tail = None
++ 32:             tail = None
+  33:         else:
+  34:             self.head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  47] SVD queue5: 
+--------------------------------------------------------------------------------
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+- 34:             self.head = self.head.next
++ 34:             head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  48] SVD queue5: 
+--------------------------------------------------------------------------------
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+- 34:             self.head = self.head.next
++ 34:             self.head = head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.08832 s] killed by DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        bytes_0 = b'`\xf8e\x02J'
+        var_1 = queue_0.enqueue(bytes_0)
+>       var_2 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue5_WHOLE_SUITE.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fe95f652890>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:34: NameError
+[*] Mutation score [4.14807 s]: 88.2%
+   - all: 48
+   - killed: 30 (62.5%)
+   - survived: 4 (8.3%)
+   - incompetent: 14 (29.2%)
+   - timeout: 0 (0.0%)

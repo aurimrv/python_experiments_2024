@@ -1,0 +1,56 @@
+<html><body><h1>sort1.py</h1>Killed 56 out of 61 mutants<h2>Timeouts</h2>Mutants that made the test suite take a lot longer so the tests were killed.<h3>Mutant 41</h3><pre>--- sort1.py
++++ sort1.py
+@@ -63,7 +63,7 @@
+             # Sort each one and place into the result
+             if left[left_cursor] <= right[right_cursor]:
+                 arr.append(left[left_cursor])
+-                left_cursor += 1
++                left_cursor = 1
+             else:
+                 arr.append(right[right_cursor])
+                 right_cursor += 1
+</pre><h3>Mutant 44</h3><pre>--- sort1.py
++++ sort1.py
+@@ -66,7 +66,7 @@
+                 left_cursor += 1
+             else:
+                 arr.append(right[right_cursor])
+-                right_cursor += 1
++                right_cursor = 1
+         # Add the left overs if there's any left to the result
+         if left:
+             arr.extend(left[left_cursor:])
+</pre><h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 5</h3><pre>--- sort1.py
++++ sort1.py
+@@ -14,7 +14,7 @@
+             minimum = i
+             for j in range(i+1, len(arr)):
+                 # "Select" the correct value
+-                if arr[j] < arr[minimum]:
++                if arr[j] <= arr[minimum]:
+                     minimum = j
+             # Using a pythonic swap
+             arr[minimum], arr[i] = arr[i], arr[minimum]
+</pre><h3>Mutant 15</h3><pre>--- sort1.py
++++ sort1.py
+@@ -28,7 +28,7 @@
+         for i in range(len(arr)):
+             cursor = arr[i]
+             pos = i
+-            while pos > 0 and arr[pos-1] > cursor:
++            while pos > 0 and arr[pos-1] >= cursor:
+                 # Swap the number down the list
+                 arr[pos] = arr[pos-1]
+                 pos = pos-1
+</pre><h3>Mutant 40</h3><pre>--- sort1.py
++++ sort1.py
+@@ -61,7 +61,7 @@
+         left_cursor, right_cursor = 0, 0
+         while left_cursor < len(left) and right_cursor < len(right):
+             # Sort each one and place into the result
+-            if left[left_cursor] <= right[right_cursor]:
++            if left[left_cursor] < right[right_cursor]:
+                 arr.append(left[left_cursor])
+                 left_cursor += 1
+             else:
+</pre></body></html>

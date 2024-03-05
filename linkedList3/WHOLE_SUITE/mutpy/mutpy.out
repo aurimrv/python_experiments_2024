@@ -1,0 +1,3388 @@
+[34m[*][0m Start mutation process:
+[36m   -[0m targets: linkedList3.py
+[36m   -[0m tests: ./WHOLE_SUITE
+[34m[*][0m 8 tests passed:
+[36m   -[0m test_linkedList3_WHOLE_SUITE [0.26823 s]
+[34m[*][0m Start mutants generation and execution:
+[36m   -[0m [#   1] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+[34m-  29:             self.__size += 1[0m
+[32m+  29:             self.__size -= 1[0m
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+--------------------------------------------------------------------------------
+[0.17355 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+        assert var_0.next is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_2 = module_0.Node(var_0)
+        assert f'{type(node_2.value).__module__}.{type(node_2.value).__qualname__}' == 'linkedList3.Node'
+        int_0 = singly_linked_list_1.getSize()
+        var_1 = singly_linked_list_1.getHead()
+        list_0 = singly_linked_list_1.toArray()
+>       var_2 = singly_linked_list_0.remove()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b945664a0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList3:50: AttributeError
+[36m   -[0m [#   2] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+[34m-  34:             self.__size += 1[0m
+[32m+  34:             self.__size -= 1[0m
+   35:     
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[0.16687 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+>       assert int_1 == 2
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:48: AssertionError
+[36m   -[0m [#   3] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+[34m-  46:             self.__size -= 1[0m
+[32m+  46:             self.__size += 1[0m
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[0.12569 s] [31msurvived[0m
+[36m   -[0m [#   4] ASR linkedList3: 
+--------------------------------------------------------------------------------
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+[34m-  52:             self.__size -= 1[0m
+[32m+  52:             self.__size += 1[0m
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+--------------------------------------------------------------------------------
+[0.14595 s] [31msurvived[0m
+[36m   -[0m [#   5] CDI linkedList3: 
+--------------------------------------------------------------------------------
+    6: T = TypeVar('T')
+    7: 
+    8: 
+    9: class Node:
+[34m-  10:     def __init__(self, value: T):[0m
+[34m-  11:         self.value = value[0m
+[34m-  12:         self.next = None[0m
+[34m-  13: [0m
+[32m+  10:     @classmethod[0m
+[32m+  11:     def __init__(self, value: T):[0m
+[32m+  12:         self.value = value[0m
+[32m+  13:         self.next = None[0m
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+--------------------------------------------------------------------------------
+[0.16888 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+        assert int_1 == 2
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        var_0 = singly_linked_list_0.getHead()
+        int_2 = singly_linked_list_0.getSize()
+        assert int_2 == 2
+        list_1 = singly_linked_list_0.toArray()
+        var_1 = singly_linked_list_0.getHead()
+        var_2 = singly_linked_list_0.remove()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_2.value).__module__}.{type(var_2.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList3.Node'
+        node_2 = module_0.Node(node_1)
+        var_3 = var_1.remove()
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList3.Node'
+>       assert var_3.value is None
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:63: AssertionError
+[36m   -[0m [#   6] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+[34m-  16:     def __init__(self):[0m
+[34m-  17:         self.__sentinel = Node(None)[0m
+[34m-  18:         self.__head = self.__sentinel[0m
+[34m-  19:         self.__size = 0[0m
+[34m-  20:     [0m
+[32m+  16:     @classmethod[0m
+[32m+  17:     def __init__(self):[0m
+[32m+  18:         self.__sentinel = Node(None)[0m
+[32m+  19:         self.__head = self.__sentinel[0m
+[32m+  20:         self.__size = 0[0m
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+--------------------------------------------------------------------------------
+[0.17876 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 2
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+        assert str_0 == '[None]'
+        list_1 = singly_linked_list_0.toArray()
+        list_2 = singly_linked_list_1.toArray()
+        int_1 = singly_linked_list_1.getSize()
+        int_2 = singly_linked_list_1.getSize()
+        var_0 = singly_linked_list_1.remove()
+        node_1 = singly_linked_list_1.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        str_1 = var_0.__str__()
+        assert str_1 == 'None'
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        str_2 = singly_linked_list_1.__str__()
+        assert str_2 == '[None]'
+        none_type_2 = singly_linked_list_2.add(int_2)
+        node_2 = singly_linked_list_1.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+>       assert node_2.next is None
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:133: AssertionError
+[36m   -[0m [#   7] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+[34m-  21:     def add(self, value: T) -> None:[0m
+[34m-  22:         [0m
+[34m-  23:         '''Add element to linked list.'''[0m
+[34m-  24:         [0m
+[34m-  25:         newNode = Node(value)[0m
+[34m-  26:         if self.__size == 0:[0m
+[34m-  27:             self.__head.next = newNode[0m
+[34m-  28:             self.__head = newNode[0m
+[34m-  29:             self.__size += 1[0m
+[34m-  30:         else:[0m
+[34m-  31:             self.__sentinel.next = newNode[0m
+[34m-  32:             newNode.next = self.__head[0m
+[34m-  33:             self.__head = newNode[0m
+[34m-  34:             self.__size += 1[0m
+[34m-  35:     [0m
+[32m+  21:     @classmethod[0m
+[32m+  22:     def add(self, value: T) -> None:[0m
+[32m+  23:         [0m
+[32m+  24:         '''Add element to linked list.'''[0m
+[32m+  25:         [0m
+[32m+  26:         newNode = Node(value)[0m
+[32m+  27:         if self.__size == 0:[0m
+[32m+  28:             self.__head.next = newNode[0m
+[32m+  29:             self.__head = newNode[0m
+[32m+  30:             self.__size += 1[0m
+[32m+  31:         else:[0m
+[32m+  32:             self.__sentinel.next = newNode[0m
+[32m+  33:             newNode.next = self.__head[0m
+[32m+  34:             self.__head = newNode[0m
+[32m+  35:             self.__size += 1[0m
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+--------------------------------------------------------------------------------
+[0.15532 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+value = <linkedList3.SinglyLinkedList object at 0x7f3b945144c0>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:27: AttributeError
+[36m   -[0m [#   8] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+[34m-  36:     def remove(self):[0m
+[34m-  37:         [0m
+[34m-  38:         '''Remove node from linkedlist.'''[0m
+[34m-  39:         [0m
+[34m-  40:         if self.__size == 0:[0m
+[34m-  41:             return None[0m
+[34m-  42:         if self.__size >= 1:[0m
+[34m-  43:             nodeToRemove = self.__head[0m
+[34m-  44:             self.__sentinel.next = None[0m
+[34m-  45:             self.__head = self.__sentinel[0m
+[34m-  46:             self.__size -= 1[0m
+[34m-  47:             return nodeToRemove[0m
+[34m-  48:         else:[0m
+[34m-  49:             nodeToRemove = self.__head[0m
+[34m-  50:             self.__sentinel.next = self.__head.next[0m
+[34m-  51:             self.__head = self.__sentinel.next[0m
+[34m-  52:             self.__size -= 1[0m
+[34m-  53:             return nodeToRemove[0m
+[34m-  54:     [0m
+[32m+  36:     @classmethod[0m
+[32m+  37:     def remove(self):[0m
+[32m+  38:         [0m
+[32m+  39:         '''Remove node from linkedlist.'''[0m
+[32m+  40:         [0m
+[32m+  41:         if self.__size == 0:[0m
+[32m+  42:             return None[0m
+[32m+  43:         if self.__size >= 1:[0m
+[32m+  44:             nodeToRemove = self.__head[0m
+[32m+  45:             self.__sentinel.next = None[0m
+[32m+  46:             self.__head = self.__sentinel[0m
+[32m+  47:             self.__size -= 1[0m
+[32m+  48:             return nodeToRemove[0m
+[32m+  49:         else:[0m
+[32m+  50:             nodeToRemove = self.__head[0m
+[32m+  51:             self.__sentinel.next = self.__head.next[0m
+[32m+  52:             self.__head = self.__sentinel.next[0m
+[32m+  53:             self.__size -= 1[0m
+[32m+  54:             return nodeToRemove[0m
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+--------------------------------------------------------------------------------
+[0.17838 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       var_0 = singly_linked_list_0.remove()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:41: AttributeError
+[36m   -[0m [#   9] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+[34m-  55:     def getHead(self) -> T:[0m
+[34m-  56:         [0m
+[34m-  57:         '''Get value of the linkedlist head node.'''[0m
+[34m-  58:         [0m
+[34m-  59:         return self.__head.value[0m
+[34m-  60:     [0m
+[32m+  55:     @classmethod[0m
+[32m+  56:     def getHead(self) -> T:[0m
+[32m+  57:         [0m
+[32m+  58:         '''Get value of the linkedlist head node.'''[0m
+[32m+  59:         [0m
+[32m+  60:         return self.__head.value[0m
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+--------------------------------------------------------------------------------
+[0.17396 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+        assert var_0.next is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_2 = module_0.Node(var_0)
+        assert f'{type(node_2.value).__module__}.{type(node_2.value).__qualname__}' == 'linkedList3.Node'
+        int_0 = singly_linked_list_1.getSize()
+>       var_1 = singly_linked_list_1.getHead()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:60: AttributeError
+[36m   -[0m [#  10] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+   59:         return self.__head.value
+   60:     
+[34m-  61:     def getHeadNode(self) -> Node:[0m
+[34m-  62:         [0m
+[34m-  63:         '''Get head node referance.'''[0m
+[34m-  64:         [0m
+[34m-  65:         return self.__head[0m
+[34m-  66:     [0m
+[32m+  61:     @classmethod[0m
+[32m+  62:     def getHeadNode(self) -> Node:[0m
+[32m+  63:         [0m
+[32m+  64:         '''Get head node referance.'''[0m
+[32m+  65:         [0m
+[32m+  66:         return self.__head[0m
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+--------------------------------------------------------------------------------
+[0.16540 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+>       node_0 = singly_linked_list_0.getHeadNode()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:66: AttributeError
+[36m   -[0m [#  11] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   63:         '''Get head node referance.'''
+   64:         
+   65:         return self.__head
+   66:     
+[34m-  67:     def getSize(self) -> int:[0m
+[34m-  68:         [0m
+[34m-  69:         '''Return size of the linkedlist.'''[0m
+[34m-  70:         [0m
+[34m-  71:         return self.__size[0m
+[34m-  72:     [0m
+[32m+  67:     @classmethod[0m
+[32m+  68:     def getSize(self) -> int:[0m
+[32m+  69:         [0m
+[32m+  70:         '''Return size of the linkedlist.'''[0m
+[32m+  71:         [0m
+[32m+  72:         return self.__size[0m
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+--------------------------------------------------------------------------------
+[0.15835 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+        assert var_0.next is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_2 = module_0.Node(var_0)
+        assert f'{type(node_2.value).__module__}.{type(node_2.value).__qualname__}' == 'linkedList3.Node'
+>       int_0 = singly_linked_list_1.getSize()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:72: AttributeError
+[36m   -[0m [#  12] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   69:         '''Return size of the linkedlist.'''
+   70:         
+   71:         return self.__size
+   72:     
+[34m-  73:     def isEmpty(self) -> bool:[0m
+[34m-  74:         [0m
+[34m-  75:         '''Checks if linkedlist is empty.'''[0m
+[34m-  76:         [0m
+[34m-  77:         return True if self.__size == 0 else False[0m
+[34m-  78:     [0m
+[32m+  73:     @classmethod[0m
+[32m+  74:     def isEmpty(self) -> bool:[0m
+[32m+  75:         [0m
+[32m+  76:         '''Checks if linkedlist is empty.'''[0m
+[32m+  77:         [0m
+[32m+  78:         return True if self.__size == 0 else False[0m
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+--------------------------------------------------------------------------------
+[0.15942 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       bool_0 = singly_linked_list_0.isEmpty()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__size'
+
+linkedList3:78: AttributeError
+[36m   -[0m [#  13] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+   77:         return True if self.__size == 0 else False
+   78:     
+[34m-  79:     def toArray(self) -> list:[0m
+[34m-  80:         [0m
+[34m-  81:         '''Converts linkedlist to list.'''[0m
+[34m-  82:         [0m
+[34m-  83:         arr = [][0m
+[34m-  84:         current = self.__head[0m
+[34m-  85:         while current:[0m
+[34m-  86:             arr.append(current.value)[0m
+[34m-  87:             current = current.next[0m
+[34m-  88:         return arr[0m
+[34m-  89:     [0m
+[32m+  79:     @classmethod[0m
+[32m+  80:     def toArray(self) -> list:[0m
+[32m+  81:         [0m
+[32m+  82:         '''Converts linkedlist to list.'''[0m
+[32m+  83:         [0m
+[32m+  84:         arr = [][0m
+[32m+  85:         current = self.__head[0m
+[32m+  86:         while current:[0m
+[32m+  87:             arr.append(current.value)[0m
+[32m+  88:             current = current.next[0m
+[32m+  89:         return arr[0m
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+--------------------------------------------------------------------------------
+[0.20489 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+        assert var_0.next is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_2 = module_0.Node(var_0)
+        assert f'{type(node_2.value).__module__}.{type(node_2.value).__qualname__}' == 'linkedList3.Node'
+        int_0 = singly_linked_list_1.getSize()
+        var_1 = singly_linked_list_1.getHead()
+>       list_0 = singly_linked_list_1.toArray()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:85: AttributeError
+[36m   -[0m [#  14] CDI linkedList3: 
+--------------------------------------------------------------------------------
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+   89:     
+[34m-  90:     def __str__(self) -> str:[0m
+[34m-  91:         [0m
+[34m-  92:         '''Return String representation of linkedlist values.'''[0m
+[34m-  93:         [0m
+[34m-  94:         arr = [][0m
+[34m-  95:         current = self.__head[0m
+[34m-  96:         while current:[0m
+[34m-  97:             arr.append(current.value)[0m
+[34m-  98:             current = current.next[0m
+[34m-  99:         return str(arr)[0m
+[34m- 100: [0m
+[32m+  90:     @classmethod[0m
+[32m+  91:     def __str__(self) -> str:[0m
+[32m+  92:         [0m
+[32m+  93:         '''Return String representation of linkedlist values.'''[0m
+[32m+  94:         [0m
+[32m+  95:         arr = [][0m
+[32m+  96:         current = self.__head[0m
+[32m+  97:         while current:[0m
+[32m+  98:             arr.append(current.value)[0m
+[32m+  99:             current = current.next[0m
+[32m+ 100:         return str(arr)[0m
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.20622 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 2
+>       str_0 = singly_linked_list_0.__str__()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList3.SinglyLinkedList'>
+
+>   ???
+E   AttributeError: type object 'SinglyLinkedList' has no attribute '_SinglyLinkedList__head'
+
+linkedList3:96: AttributeError
+[36m   -[0m [#  15] COI linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+[34m-  26:         if self.__size == 0:[0m
+[32m+  26:         if not (self.__size == 0):[0m
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[0.17735 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+>       assert var_0.next is None
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:29: AssertionError
+[36m   -[0m [#  16] COI linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+[34m-  40:         if self.__size == 0:[0m
+[32m+  40:         if not (self.__size == 0):[0m
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.15692 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+>       assert node_0.next is None
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:25: AssertionError
+[36m   -[0m [#  17] COI linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+[34m-  42:         if self.__size >= 1:[0m
+[32m+  42:         if not (self.__size >= 1):[0m
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.15962 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+        assert int_1 == 2
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        var_0 = singly_linked_list_0.getHead()
+        int_2 = singly_linked_list_0.getSize()
+        assert int_2 == 2
+        list_1 = singly_linked_list_0.toArray()
+        var_1 = singly_linked_list_0.getHead()
+        var_2 = singly_linked_list_0.remove()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_2.value).__module__}.{type(var_2.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList3.Node'
+        node_2 = module_0.Node(node_1)
+        var_3 = var_1.remove()
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList3.Node'
+>       assert var_3.value is None
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:63: AssertionError
+[36m   -[0m [#  18] COI linkedList3: 
+--------------------------------------------------------------------------------
+   81:         '''Converts linkedlist to list.'''
+   82:         
+   83:         arr = []
+   84:         current = self.__head
+[34m-  85:         while current:[0m
+[32m+  85:         while not current:[0m
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+   89:     
+--------------------------------------------------------------------------------
+[0.12992 s] [31msurvived[0m
+[36m   -[0m [#  19] COI linkedList3: 
+--------------------------------------------------------------------------------
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+   94:         arr = []
+   95:         current = self.__head
+[34m-  96:         while current:[0m
+[32m+  96:         while not current:[0m
+   97:             arr.append(current.value)
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+--------------------------------------------------------------------------------
+[0.16209 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 2
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:114: AssertionError
+[36m   -[0m [#  20] COI linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+[34m- 102: if __name__ == '__main__':[0m
+[32m+ 102: if not (__name__ == '__main__'):[0m
+  103:     pass
+--------------------------------------------------------------------------------
+[0.14716 s] [31msurvived[0m
+[36m   -[0m [#  21] CRP linkedList3: 
+--------------------------------------------------------------------------------
+    2: 
+    3: from typing import TypeVar
+    4: 
+    5: 
+[34m-   6: T = TypeVar('T')[0m
+[32m+   6: T = TypeVar('mutpy')[0m
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+--------------------------------------------------------------------------------
+[0.13909 s] [31msurvived[0m
+[36m   -[0m [#  22] CRP linkedList3: 
+--------------------------------------------------------------------------------
+    2: 
+    3: from typing import TypeVar
+    4: 
+    5: 
+[34m-   6: T = TypeVar('T')[0m
+[32m+   6: T = TypeVar('')[0m
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+--------------------------------------------------------------------------------
+[0.12880 s] [31msurvived[0m
+[36m   -[0m [#  23] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+[34m-  19:         self.__size = 0[0m
+[32m+  19:         self.__size = 1[0m
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[0.17510 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+>       assert var_0.next is None
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:29: AssertionError
+[36m   -[0m [#  24] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+[34m-  26:         if self.__size == 0:[0m
+[32m+  26:         if self.__size == 1:[0m
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[0.16543 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+>       assert var_0.next is None
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:29: AssertionError
+[36m   -[0m [#  25] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+[34m-  29:             self.__size += 1[0m
+[32m+  29:             self.__size += 2[0m
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+--------------------------------------------------------------------------------
+[0.15871 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+>       assert int_0 == 1
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:44: AssertionError
+[36m   -[0m [#  26] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+[34m-  34:             self.__size += 1[0m
+[32m+  34:             self.__size += 2[0m
+   35:     
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[0.17830 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+>       assert int_1 == 2
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:48: AssertionError
+[36m   -[0m [#  27] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+[34m-  40:         if self.__size == 0:[0m
+[32m+  40:         if self.__size == 1:[0m
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.22240 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+>       assert node_0.next is None
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:25: AssertionError
+[36m   -[0m [#  28] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+[34m-  42:         if self.__size >= 1:[0m
+[32m+  42:         if self.__size >= 2:[0m
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.22839 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+        assert int_1 == 2
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        var_0 = singly_linked_list_0.getHead()
+        int_2 = singly_linked_list_0.getSize()
+        assert int_2 == 2
+        list_1 = singly_linked_list_0.toArray()
+        var_1 = singly_linked_list_0.getHead()
+        var_2 = singly_linked_list_0.remove()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_2.value).__module__}.{type(var_2.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList3.Node'
+        node_2 = module_0.Node(node_1)
+        var_3 = var_1.remove()
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList3.Node'
+        assert var_3.value is None
+        assert var_3.next is None
+        node_3 = singly_linked_list_0.getHeadNode()
+>       assert f'{type(node_3).__module__}.{type(node_3).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:66: AssertionError
+[36m   -[0m [#  29] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+[34m-  46:             self.__size -= 1[0m
+[32m+  46:             self.__size -= 2[0m
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[0.18089 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+        assert var_0.next is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_2 = module_0.Node(var_0)
+        assert f'{type(node_2.value).__module__}.{type(node_2.value).__qualname__}' == 'linkedList3.Node'
+        int_0 = singly_linked_list_1.getSize()
+        var_1 = singly_linked_list_1.getHead()
+        list_0 = singly_linked_list_1.toArray()
+        var_2 = singly_linked_list_0.remove()
+>       var_3 = singly_linked_list_0.remove()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b943d1f30>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList3:50: AttributeError
+[36m   -[0m [#  30] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+[34m-  52:             self.__size -= 1[0m
+[32m+  52:             self.__size -= 2[0m
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+--------------------------------------------------------------------------------
+[0.14528 s] [31msurvived[0m
+[36m   -[0m [#  31] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+[34m-  77:         return True if self.__size == 0 else False[0m
+[32m+  77:         return True if self.__size == 1 else False[0m
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.16479 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:75: AssertionError
+[36m   -[0m [#  32] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+[34m- 102: if __name__ == '__main__':[0m
+[32m+ 102: if __name__ == 'mutpy':[0m
+  103:     pass
+--------------------------------------------------------------------------------
+[0.12977 s] [31msurvived[0m
+[36m   -[0m [#  33] CRP linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+[34m- 102: if __name__ == '__main__':[0m
+[32m+ 102: if __name__ == '':[0m
+  103:     pass
+--------------------------------------------------------------------------------
+[0.14801 s] [31msurvived[0m
+[36m   -[0m [#  34] OIL linkedList3: 
+--------------------------------------------------------------------------------
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+[34m-  88:         return arr[0m
+[34m-  89:     [0m
+[32m+  88:             break[0m
+[32m+  89:         return arr[0m
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+--------------------------------------------------------------------------------
+[0.14129 s] [31msurvived[0m
+[36m   -[0m [#  35] OIL linkedList3: 
+--------------------------------------------------------------------------------
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+[34m-  99:         return str(arr)[0m
+[34m- 100: [0m
+[32m+  99:             break[0m
+[32m+ 100:         return str(arr)[0m
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.14212 s] [31msurvived[0m
+[36m   -[0m [#  36] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+[34m-  26:         if self.__size == 0:[0m
+[32m+  26:         if self.__size != 0:[0m
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[0.15479 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+>       assert var_0.next is None
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:29: AssertionError
+[36m   -[0m [#  37] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+[34m-  40:         if self.__size == 0:[0m
+[32m+  40:         if self.__size != 0:[0m
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.15635 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+>       assert node_0.next is None
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:25: AssertionError
+[36m   -[0m [#  38] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+[34m-  42:         if self.__size >= 1:[0m
+[32m+  42:         if self.__size <= 1:[0m
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.17991 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+        assert int_1 == 2
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        var_0 = singly_linked_list_0.getHead()
+        int_2 = singly_linked_list_0.getSize()
+        assert int_2 == 2
+        list_1 = singly_linked_list_0.toArray()
+        var_1 = singly_linked_list_0.getHead()
+        var_2 = singly_linked_list_0.remove()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_2.value).__module__}.{type(var_2.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList3.Node'
+        node_2 = module_0.Node(node_1)
+        var_3 = var_1.remove()
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList3.Node'
+>       assert var_3.value is None
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:63: AssertionError
+[36m   -[0m [#  39] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+[34m-  42:         if self.__size >= 1:[0m
+[32m+  42:         if self.__size > 1:[0m
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.16667 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+        assert int_1 == 2
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        var_0 = singly_linked_list_0.getHead()
+        int_2 = singly_linked_list_0.getSize()
+        assert int_2 == 2
+        list_1 = singly_linked_list_0.toArray()
+        var_1 = singly_linked_list_0.getHead()
+        var_2 = singly_linked_list_0.remove()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_2.value).__module__}.{type(var_2.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList3.Node'
+        node_2 = module_0.Node(node_1)
+        var_3 = var_1.remove()
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList3.Node'
+        assert var_3.value is None
+        assert var_3.next is None
+        node_3 = singly_linked_list_0.getHeadNode()
+>       assert f'{type(node_3).__module__}.{type(node_3).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:66: AssertionError
+[36m   -[0m [#  40] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+[34m-  77:         return True if self.__size == 0 else False[0m
+[32m+  77:         return True if self.__size != 0 else False[0m
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.16210 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:75: AssertionError
+[36m   -[0m [#  41] ROR linkedList3: 
+--------------------------------------------------------------------------------
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+[34m- 102: if __name__ == '__main__':[0m
+[32m+ 102: if __name__ != '__main__':[0m
+  103:     pass
+--------------------------------------------------------------------------------
+[0.13176 s] [31msurvived[0m
+[36m   -[0m [#  42] SDI linkedList3: 
+--------------------------------------------------------------------------------
+    6: T = TypeVar('T')
+    7: 
+    8: 
+    9: class Node:
+[34m-  10:     def __init__(self, value: T):[0m
+[34m-  11:         self.value = value[0m
+[34m-  12:         self.next = None[0m
+[34m-  13: [0m
+[32m+  10:     @staticmethod[0m
+[32m+  11:     def __init__(self, value: T):[0m
+[32m+  12:         self.value = value[0m
+[32m+  13:         self.next = None[0m
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+--------------------------------------------------------------------------------
+[0.21477 s] [36mincompetent[0m
+
+TypeError: linkedList3:17: TypeError: Node.__init__() missing 1 required positional argument: 'value'
+
+[36m   -[0m [#  43] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+[34m-  16:     def __init__(self):[0m
+[34m-  17:         self.__sentinel = Node(None)[0m
+[34m-  18:         self.__head = self.__sentinel[0m
+[34m-  19:         self.__size = 0[0m
+[34m-  20:     [0m
+[32m+  16:     @staticmethod[0m
+[32m+  17:     def __init__(self):[0m
+[32m+  18:         self.__sentinel = Node(None)[0m
+[32m+  19:         self.__head = self.__sentinel[0m
+[32m+  20:         self.__size = 0[0m
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+--------------------------------------------------------------------------------
+[0.15403 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList3/WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:6: TypeError: SinglyLinkedList.__init__() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  44] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+[34m-  21:     def add(self, value: T) -> None:[0m
+[34m-  22:         [0m
+[34m-  23:         '''Add element to linked list.'''[0m
+[34m-  24:         [0m
+[34m-  25:         newNode = Node(value)[0m
+[34m-  26:         if self.__size == 0:[0m
+[34m-  27:             self.__head.next = newNode[0m
+[34m-  28:             self.__head = newNode[0m
+[34m-  29:             self.__size += 1[0m
+[34m-  30:         else:[0m
+[34m-  31:             self.__sentinel.next = newNode[0m
+[34m-  32:             newNode.next = self.__head[0m
+[34m-  33:             self.__head = newNode[0m
+[34m-  34:             self.__size += 1[0m
+[34m-  35:     [0m
+[32m+  21:     @staticmethod[0m
+[32m+  22:     def add(self, value: T) -> None:[0m
+[32m+  23:         [0m
+[32m+  24:         '''Add element to linked list.'''[0m
+[32m+  25:         [0m
+[32m+  26:         newNode = Node(value)[0m
+[32m+  27:         if self.__size == 0:[0m
+[32m+  28:             self.__head.next = newNode[0m
+[32m+  29:             self.__head = newNode[0m
+[32m+  30:             self.__size += 1[0m
+[32m+  31:         else:[0m
+[32m+  32:             self.__sentinel.next = newNode[0m
+[32m+  33:             newNode.next = self.__head[0m
+[32m+  34:             self.__head = newNode[0m
+[32m+  35:             self.__size += 1[0m
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+--------------------------------------------------------------------------------
+[0.15324 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList3/WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:7: TypeError: SinglyLinkedList.add() missing 1 required positional argument: 'value'
+
+[36m   -[0m [#  45] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+[34m-  36:     def remove(self):[0m
+[34m-  37:         [0m
+[34m-  38:         '''Remove node from linkedlist.'''[0m
+[34m-  39:         [0m
+[34m-  40:         if self.__size == 0:[0m
+[34m-  41:             return None[0m
+[34m-  42:         if self.__size >= 1:[0m
+[34m-  43:             nodeToRemove = self.__head[0m
+[34m-  44:             self.__sentinel.next = None[0m
+[34m-  45:             self.__head = self.__sentinel[0m
+[34m-  46:             self.__size -= 1[0m
+[34m-  47:             return nodeToRemove[0m
+[34m-  48:         else:[0m
+[34m-  49:             nodeToRemove = self.__head[0m
+[34m-  50:             self.__sentinel.next = self.__head.next[0m
+[34m-  51:             self.__head = self.__sentinel.next[0m
+[34m-  52:             self.__size -= 1[0m
+[34m-  53:             return nodeToRemove[0m
+[34m-  54:     [0m
+[32m+  36:     @staticmethod[0m
+[32m+  37:     def remove(self):[0m
+[32m+  38:         [0m
+[32m+  39:         '''Remove node from linkedlist.'''[0m
+[32m+  40:         [0m
+[32m+  41:         if self.__size == 0:[0m
+[32m+  42:             return None[0m
+[32m+  43:         if self.__size >= 1:[0m
+[32m+  44:             nodeToRemove = self.__head[0m
+[32m+  45:             self.__sentinel.next = None[0m
+[32m+  46:             self.__head = self.__sentinel[0m
+[32m+  47:             self.__size -= 1[0m
+[32m+  48:             return nodeToRemove[0m
+[32m+  49:         else:[0m
+[32m+  50:             nodeToRemove = self.__head[0m
+[32m+  51:             self.__sentinel.next = self.__head.next[0m
+[32m+  52:             self.__head = self.__sentinel.next[0m
+[32m+  53:             self.__size -= 1[0m
+[32m+  54:             return nodeToRemove[0m
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+--------------------------------------------------------------------------------
+[0.15869 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList3/WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:17: TypeError: SinglyLinkedList.remove() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  46] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+[34m-  55:     def getHead(self) -> T:[0m
+[34m-  56:         [0m
+[34m-  57:         '''Get value of the linkedlist head node.'''[0m
+[34m-  58:         [0m
+[34m-  59:         return self.__head.value[0m
+[34m-  60:     [0m
+[32m+  55:     @staticmethod[0m
+[32m+  56:     def getHead(self) -> T:[0m
+[32m+  57:         [0m
+[32m+  58:         '''Get value of the linkedlist head node.'''[0m
+[32m+  59:         [0m
+[32m+  60:         return self.__head.value[0m
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+--------------------------------------------------------------------------------
+[0.17363 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList3/WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:34: TypeError: SinglyLinkedList.getHead() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  47] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+   59:         return self.__head.value
+   60:     
+[34m-  61:     def getHeadNode(self) -> Node:[0m
+[34m-  62:         [0m
+[34m-  63:         '''Get head node referance.'''[0m
+[34m-  64:         [0m
+[34m-  65:         return self.__head[0m
+[34m-  66:     [0m
+[32m+  61:     @staticmethod[0m
+[32m+  62:     def getHeadNode(self) -> Node:[0m
+[32m+  63:         [0m
+[32m+  64:         '''Get head node referance.'''[0m
+[32m+  65:         [0m
+[32m+  66:         return self.__head[0m
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+--------------------------------------------------------------------------------
+[0.15610 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList3/WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:9: TypeError: SinglyLinkedList.getHeadNode() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  48] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   63:         '''Get head node referance.'''
+   64:         
+   65:         return self.__head
+   66:     
+[34m-  67:     def getSize(self) -> int:[0m
+[34m-  68:         [0m
+[34m-  69:         '''Return size of the linkedlist.'''[0m
+[34m-  70:         [0m
+[34m-  71:         return self.__size[0m
+[34m-  72:     [0m
+[32m+  67:     @staticmethod[0m
+[32m+  68:     def getSize(self) -> int:[0m
+[32m+  69:         [0m
+[32m+  70:         '''Return size of the linkedlist.'''[0m
+[32m+  71:         [0m
+[32m+  72:         return self.__size[0m
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+--------------------------------------------------------------------------------
+[0.17604 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList3/WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:33: TypeError: SinglyLinkedList.getSize() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  49] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   69:         '''Return size of the linkedlist.'''
+   70:         
+   71:         return self.__size
+   72:     
+[34m-  73:     def isEmpty(self) -> bool:[0m
+[34m-  74:         [0m
+[34m-  75:         '''Checks if linkedlist is empty.'''[0m
+[34m-  76:         [0m
+[34m-  77:         return True if self.__size == 0 else False[0m
+[34m-  78:     [0m
+[32m+  73:     @staticmethod[0m
+[32m+  74:     def isEmpty(self) -> bool:[0m
+[32m+  75:         [0m
+[32m+  76:         '''Checks if linkedlist is empty.'''[0m
+[32m+  77:         [0m
+[32m+  78:         return True if self.__size == 0 else False[0m
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+--------------------------------------------------------------------------------
+[0.15829 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList3/WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:74: TypeError: SinglyLinkedList.isEmpty() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  50] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+   77:         return True if self.__size == 0 else False
+   78:     
+[34m-  79:     def toArray(self) -> list:[0m
+[34m-  80:         [0m
+[34m-  81:         '''Converts linkedlist to list.'''[0m
+[34m-  82:         [0m
+[34m-  83:         arr = [][0m
+[34m-  84:         current = self.__head[0m
+[34m-  85:         while current:[0m
+[34m-  86:             arr.append(current.value)[0m
+[34m-  87:             current = current.next[0m
+[34m-  88:         return arr[0m
+[34m-  89:     [0m
+[32m+  79:     @staticmethod[0m
+[32m+  80:     def toArray(self) -> list:[0m
+[32m+  81:         [0m
+[32m+  82:         '''Converts linkedlist to list.'''[0m
+[32m+  83:         [0m
+[32m+  84:         arr = [][0m
+[32m+  85:         current = self.__head[0m
+[32m+  86:         while current:[0m
+[32m+  87:             arr.append(current.value)[0m
+[32m+  88:             current = current.next[0m
+[32m+  89:         return arr[0m
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+--------------------------------------------------------------------------------
+[0.15983 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList3/WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:35: TypeError: SinglyLinkedList.toArray() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  51] SDI linkedList3: 
+--------------------------------------------------------------------------------
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+   89:     
+[34m-  90:     def __str__(self) -> str:[0m
+[34m-  91:         [0m
+[34m-  92:         '''Return String representation of linkedlist values.'''[0m
+[34m-  93:         [0m
+[34m-  94:         arr = [][0m
+[34m-  95:         current = self.__head[0m
+[34m-  96:         while current:[0m
+[34m-  97:             arr.append(current.value)[0m
+[34m-  98:             current = current.next[0m
+[34m-  99:         return str(arr)[0m
+[34m- 100: [0m
+[32m+  90:     @staticmethod[0m
+[32m+  91:     def __str__(self) -> str:[0m
+[32m+  92:         [0m
+[32m+  93:         '''Return String representation of linkedlist values.'''[0m
+[32m+  94:         [0m
+[32m+  95:         arr = [][0m
+[32m+  96:         current = self.__head[0m
+[32m+  97:         while current:[0m
+[32m+  98:             arr.append(current.value)[0m
+[32m+  99:             current = current.next[0m
+[32m+ 100:         return str(arr)[0m
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.15948 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList3/WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:94: TypeError: SinglyLinkedList.__str__() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  52] SDL linkedList3: 
+--------------------------------------------------------------------------------
+    2: 
+    3: from typing import TypeVar
+    4: 
+    5: 
+[34m-   6: T = TypeVar('T')[0m
+[32m+   6: pass[0m
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+NameError: name 'T' is not defined
+
+[36m   -[0m [#  53] SDL linkedList3: 
+--------------------------------------------------------------------------------
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+[34m-  11:         self.value = value[0m
+[32m+  11:         pass[0m
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+--------------------------------------------------------------------------------
+[0.17667 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+>       assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+E       AttributeError: 'Node' object has no attribute 'value'
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:28: AttributeError
+[36m   -[0m [#  54] SDL linkedList3: 
+--------------------------------------------------------------------------------
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+   11:         self.value = value
+[34m-  12:         self.next = None[0m
+[32m+  12:         pass[0m
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+--------------------------------------------------------------------------------
+[0.16921 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+>       assert var_0.next is None
+E       AttributeError: 'Node' object has no attribute 'next'
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:29: AttributeError
+[36m   -[0m [#  55] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+[34m-  17:         self.__sentinel = Node(None)[0m
+[32m+  17:         pass[0m
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+--------------------------------------------------------------------------------
+[0.20605 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+>       singly_linked_list_0 = module_0.SinglyLinkedList()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b942805e0>
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__sentinel'
+
+linkedList3:18: AttributeError
+[36m   -[0m [#  56] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+[34m-  18:         self.__head = self.__sentinel[0m
+[32m+  18:         pass[0m
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+--------------------------------------------------------------------------------
+[0.21833 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b94590670>
+value = <linkedList3.SinglyLinkedList object at 0x7f3b94590670>
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__head'
+
+linkedList3:27: AttributeError
+[36m   -[0m [#  57] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+[34m-  19:         self.__size = 0[0m
+[32m+  19:         pass[0m
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[0.16727 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b943ed930>
+value = <linkedList3.SinglyLinkedList object at 0x7f3b943ed930>
+
+>   ???
+E   AttributeError: 'SinglyLinkedList' object has no attribute '_SinglyLinkedList__size'
+
+linkedList3:26: AttributeError
+[36m   -[0m [#  58] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+[34m-  25:         newNode = Node(value)[0m
+[32m+  25:         pass[0m
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+--------------------------------------------------------------------------------
+[0.16054 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b944c0d60>
+value = <linkedList3.SinglyLinkedList object at 0x7f3b944c0d60>
+
+>   ???
+E   NameError: name 'newNode' is not defined
+
+linkedList3:27: NameError
+[36m   -[0m [#  59] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+[34m-  27:             self.__head.next = newNode[0m
+[32m+  27:             pass[0m
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+--------------------------------------------------------------------------------
+[0.14140 s] [31msurvived[0m
+[36m   -[0m [#  60] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+[34m-  28:             self.__head = newNode[0m
+[32m+  28:             pass[0m
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+--------------------------------------------------------------------------------
+[0.15654 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+>       assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:28: AssertionError
+[36m   -[0m [#  61] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+[34m-  31:             self.__sentinel.next = newNode[0m
+[32m+  31:             pass[0m
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+--------------------------------------------------------------------------------
+[0.14169 s] [31msurvived[0m
+[36m   -[0m [#  62] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+[34m-  32:             newNode.next = self.__head[0m
+[32m+  32:             pass[0m
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+--------------------------------------------------------------------------------
+[0.15834 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+        assert int_1 == 2
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        var_0 = singly_linked_list_0.getHead()
+        int_2 = singly_linked_list_0.getSize()
+        assert int_2 == 2
+        list_1 = singly_linked_list_0.toArray()
+        var_1 = singly_linked_list_0.getHead()
+        var_2 = singly_linked_list_0.remove()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_2.value).__module__}.{type(var_2.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+>       assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:59: AssertionError
+[36m   -[0m [#  63] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+[34m-  33:             self.__head = newNode[0m
+[32m+  33:             pass[0m
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+   37:         
+--------------------------------------------------------------------------------
+[0.17008 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+        assert int_1 == 2
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        var_0 = singly_linked_list_0.getHead()
+        int_2 = singly_linked_list_0.getSize()
+        assert int_2 == 2
+        list_1 = singly_linked_list_0.toArray()
+        var_1 = singly_linked_list_0.getHead()
+        var_2 = singly_linked_list_0.remove()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList3.Node'
+>       assert f'{type(var_2.value).__module__}.{type(var_2.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:58: AssertionError
+[36m   -[0m [#  64] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+[34m-  41:             return None[0m
+[32m+  41:             pass[0m
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+--------------------------------------------------------------------------------
+[0.16303 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+        assert var_0.next is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_2 = module_0.Node(var_0)
+        assert f'{type(node_2.value).__module__}.{type(node_2.value).__qualname__}' == 'linkedList3.Node'
+        int_0 = singly_linked_list_1.getSize()
+        var_1 = singly_linked_list_1.getHead()
+        list_0 = singly_linked_list_1.toArray()
+        var_2 = singly_linked_list_0.remove()
+>       var_3 = singly_linked_list_0.remove()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b942ce860>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList3:50: AttributeError
+[36m   -[0m [#  65] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+[34m-  43:             nodeToRemove = self.__head[0m
+[32m+  43:             pass[0m
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.15749 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+>       var_0 = singly_linked_list_0.remove()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b9435c970>
+
+>   ???
+E   UnboundLocalError: local variable 'nodeToRemove' referenced before assignment
+
+linkedList3:47: UnboundLocalError
+[36m   -[0m [#  66] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+[34m-  44:             self.__sentinel.next = None[0m
+[32m+  44:             pass[0m
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+--------------------------------------------------------------------------------
+[0.15655 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+>       assert node_0.next is None
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:25: AssertionError
+[36m   -[0m [#  67] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+[34m-  45:             self.__head = self.__sentinel[0m
+[32m+  45:             pass[0m
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[0.16932 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+        assert int_1 == 2
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        var_0 = singly_linked_list_0.getHead()
+        int_2 = singly_linked_list_0.getSize()
+        assert int_2 == 2
+        list_1 = singly_linked_list_0.toArray()
+        var_1 = singly_linked_list_0.getHead()
+        var_2 = singly_linked_list_0.remove()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_2.value).__module__}.{type(var_2.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList3.Node'
+        node_2 = module_0.Node(node_1)
+        var_3 = var_1.remove()
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList3.Node'
+>       assert var_3.value is None
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:63: AssertionError
+[36m   -[0m [#  68] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+[34m-  47:             return nodeToRemove[0m
+[32m+  47:             pass[0m
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+--------------------------------------------------------------------------------
+[0.16940 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:27: AssertionError
+[36m   -[0m [#  69] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+[34m-  49:             nodeToRemove = self.__head[0m
+[32m+  49:             pass[0m
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.14109 s] [31msurvived[0m
+[36m   -[0m [#  70] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+[34m-  50:             self.__sentinel.next = self.__head.next[0m
+[32m+  50:             pass[0m
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+--------------------------------------------------------------------------------
+[0.18188 s] [31msurvived[0m
+[36m   -[0m [#  71] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+[34m-  51:             self.__head = self.__sentinel.next[0m
+[32m+  51:             pass[0m
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[0.18335 s] [31msurvived[0m
+[36m   -[0m [#  72] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+[34m-  53:             return nodeToRemove[0m
+[32m+  53:             pass[0m
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+--------------------------------------------------------------------------------
+[0.14846 s] [31msurvived[0m
+[36m   -[0m [#  73] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+[34m-  59:         return self.__head.value[0m
+[32m+  59:         pass[0m
+   60:     
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+--------------------------------------------------------------------------------
+[0.17540 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 1
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_0 = singly_linked_list_0.toArray()
+        int_1 = singly_linked_list_0.getSize()
+        assert int_1 == 2
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        var_0 = singly_linked_list_0.getHead()
+        int_2 = singly_linked_list_0.getSize()
+        assert int_2 == 2
+        list_1 = singly_linked_list_0.toArray()
+        var_1 = singly_linked_list_0.getHead()
+        var_2 = singly_linked_list_0.remove()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_2.value).__module__}.{type(var_2.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+        assert f'{type(var_2.next).__module__}.{type(var_2.next).__qualname__}' == 'linkedList3.Node'
+        node_2 = module_0.Node(node_1)
+>       var_3 = var_1.remove()
+E       AttributeError: 'NoneType' object has no attribute 'remove'
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:61: AttributeError
+[36m   -[0m [#  74] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+[34m-  65:         return self.__head[0m
+[32m+  65:         pass[0m
+   66:     
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+--------------------------------------------------------------------------------
+[0.15614 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+>       assert node_0.next is None
+E       AttributeError: 'NoneType' object has no attribute 'next'
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:25: AttributeError
+[36m   -[0m [#  75] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+[34m-  71:         return self.__size[0m
+[32m+  71:         pass[0m
+   72:     
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+--------------------------------------------------------------------------------
+[0.17021 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_3
+
+def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        complex_0 = -1570.48195 - 1139.15j
+        none_type_0 = singly_linked_list_0.add(complex_0)
+        int_0 = singly_linked_list_0.getSize()
+>       assert int_0 == 1
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:44: AssertionError
+[36m   -[0m [#  76] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+[34m-  77:         return True if self.__size == 0 else False[0m
+[32m+  77:         pass[0m
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.17881 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+>       assert bool_0 is True
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:75: AssertionError
+[36m   -[0m [#  77] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+[34m-  83:         arr = [][0m
+[32m+  83:         pass[0m
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+--------------------------------------------------------------------------------
+[0.17540 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+        assert var_0.next is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_2 = module_0.Node(var_0)
+        assert f'{type(node_2.value).__module__}.{type(node_2.value).__qualname__}' == 'linkedList3.Node'
+        int_0 = singly_linked_list_1.getSize()
+        var_1 = singly_linked_list_1.getHead()
+>       list_0 = singly_linked_list_1.toArray()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b944470d0>
+
+>   ???
+E   NameError: name 'arr' is not defined
+
+linkedList3:86: NameError
+[36m   -[0m [#  78] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+   83:         arr = []
+[34m-  84:         current = self.__head[0m
+[32m+  84:         pass[0m
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+--------------------------------------------------------------------------------
+[0.16854 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+        assert var_0.next is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_2 = module_0.Node(var_0)
+        assert f'{type(node_2.value).__module__}.{type(node_2.value).__qualname__}' == 'linkedList3.Node'
+        int_0 = singly_linked_list_1.getSize()
+        var_1 = singly_linked_list_1.getHead()
+>       list_0 = singly_linked_list_1.toArray()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b943e3130>
+
+>   ???
+E   UnboundLocalError: local variable 'current' referenced before assignment
+
+linkedList3:85: UnboundLocalError
+[36m   -[0m [#  79] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   82:         
+   83:         arr = []
+   84:         current = self.__head
+   85:         while current:
+[34m-  86:             arr.append(current.value)[0m
+[32m+  86:             pass[0m
+   87:             current = current.next
+   88:         return arr
+   89:     
+   90:     def __str__(self) -> str:
+--------------------------------------------------------------------------------
+[0.15142 s] [31msurvived[0m
+[36m   -[0m [#  80] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   83:         arr = []
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+[34m-  87:             current = current.next[0m
+[32m+  87:             pass[0m
+   88:         return arr
+   89:     
+   90:     def __str__(self) -> str:
+   91:         
+--------------------------------------------------------------------------------
+[5.00799 s] [33mtimeout[0m
+[36m   -[0m [#  81] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   84:         current = self.__head
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+[34m-  88:         return arr[0m
+[32m+  88:         pass[0m
+   89:     
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+--------------------------------------------------------------------------------
+[0.14909 s] [31msurvived[0m
+[36m   -[0m [#  82] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   90:     def __str__(self) -> str:
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+[34m-  94:         arr = [][0m
+[32m+  94:         pass[0m
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+--------------------------------------------------------------------------------
+[0.16138 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 2
+>       str_0 = singly_linked_list_0.__str__()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b942cd990>
+
+>   ???
+E   NameError: name 'arr' is not defined
+
+linkedList3:97: NameError
+[36m   -[0m [#  83] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+   94:         arr = []
+[34m-  95:         current = self.__head[0m
+[32m+  95:         pass[0m
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+   99:         return str(arr)
+--------------------------------------------------------------------------------
+[0.18101 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 2
+>       str_0 = singly_linked_list_0.__str__()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b9446c190>
+
+>   ???
+E   UnboundLocalError: local variable 'current' referenced before assignment
+
+linkedList3:96: UnboundLocalError
+[36m   -[0m [#  84] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   93:         
+   94:         arr = []
+   95:         current = self.__head
+   96:         while current:
+[34m-  97:             arr.append(current.value)[0m
+[32m+  97:             pass[0m
+   98:             current = current.next
+   99:         return str(arr)
+  100: 
+  101: 
+--------------------------------------------------------------------------------
+[0.16656 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 2
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:114: AssertionError
+[36m   -[0m [#  85] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   94:         arr = []
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+[34m-  98:             current = current.next[0m
+[32m+  98:             pass[0m
+   99:         return str(arr)
+  100: 
+  101: 
+  102: if __name__ == '__main__':
+--------------------------------------------------------------------------------
+[5.00799 s] [33mtimeout[0m
+[36m   -[0m [#  86] SDL linkedList3: 
+--------------------------------------------------------------------------------
+   95:         current = self.__head
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+[34m-  99:         return str(arr)[0m
+[32m+  99:         pass[0m
+  100: 
+  101: 
+  102: if __name__ == '__main__':
+  103:     pass
+--------------------------------------------------------------------------------
+[0.17863 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 2
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:114: AssertionError
+[36m   -[0m [#  87] SVD linkedList3: 
+--------------------------------------------------------------------------------
+    7: 
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+[34m-  11:         self.value = value[0m
+[32m+  11:         value = value[0m
+   12:         self.next = None
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  88] SVD linkedList3: 
+--------------------------------------------------------------------------------
+    8: 
+    9: class Node:
+   10:     def __init__(self, value: T):
+   11:         self.value = value
+[34m-  12:         self.next = None[0m
+[32m+  12:         next = None[0m
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  89] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   13: 
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+[34m-  17:         self.__sentinel = Node(None)[0m
+[32m+  17:         __sentinel = Node(None)[0m
+   18:         self.__head = self.__sentinel
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  90] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+[34m-  18:         self.__head = self.__sentinel[0m
+[32m+  18:         __head = self.__sentinel[0m
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  91] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   14: 
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+[34m-  18:         self.__head = self.__sentinel[0m
+[32m+  18:         self.__head = __sentinel[0m
+   19:         self.__size = 0
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+--------------------------------------------------------------------------------
+[0.17315 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+>       singly_linked_list_0 = module_0.SinglyLinkedList()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b942cf010>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:18: NameError
+[36m   -[0m [#  92] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   15: class SinglyLinkedList:
+   16:     def __init__(self):
+   17:         self.__sentinel = Node(None)
+   18:         self.__head = self.__sentinel
+[34m-  19:         self.__size = 0[0m
+[32m+  19:         __size = 0[0m
+   20:     
+   21:     def add(self, value: T) -> None:
+   22:         
+   23:         '''Add element to linked list.'''
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  93] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   22:         
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+[34m-  26:         if self.__size == 0:[0m
+[32m+  26:         if __size == 0:[0m
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+--------------------------------------------------------------------------------
+[0.17481 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b94434dc0>
+value = <linkedList3.SinglyLinkedList object at 0x7f3b94434dc0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:26: NameError
+[36m   -[0m [#  94] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   23:         '''Add element to linked list.'''
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+[34m-  27:             self.__head.next = newNode[0m
+[32m+  27:             __head.next = newNode[0m
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+--------------------------------------------------------------------------------
+[0.16850 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b943dc370>
+value = <linkedList3.SinglyLinkedList object at 0x7f3b943dc370>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:27: NameError
+[36m   -[0m [#  95] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   24:         
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+[34m-  28:             self.__head = newNode[0m
+[32m+  28:             __head = newNode[0m
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  96] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   25:         newNode = Node(value)
+   26:         if self.__size == 0:
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+[34m-  29:             self.__size += 1[0m
+[32m+  29:             __size += 1[0m
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  97] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   27:             self.__head.next = newNode
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+[34m-  31:             self.__sentinel.next = newNode[0m
+[32m+  31:             __sentinel.next = newNode[0m
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+--------------------------------------------------------------------------------
+[0.16719 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b9435c2e0>
+value = <linkedList3.SinglyLinkedList object at 0x7f3b9435c2e0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:31: NameError
+[36m   -[0m [#  98] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   28:             self.__head = newNode
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+[34m-  32:             newNode.next = self.__head[0m
+[32m+  32:             newNode.next = __head[0m
+   33:             self.__head = newNode
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+--------------------------------------------------------------------------------
+[0.17339 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+>       none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b945219c0>
+value = <linkedList3.SinglyLinkedList object at 0x7f3b945219c0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:32: NameError
+[36m   -[0m [#  99] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   29:             self.__size += 1
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+[34m-  33:             self.__head = newNode[0m
+[32m+  33:             __head = newNode[0m
+   34:             self.__size += 1
+   35:     
+   36:     def remove(self):
+   37:         
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 100] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   30:         else:
+   31:             self.__sentinel.next = newNode
+   32:             newNode.next = self.__head
+   33:             self.__head = newNode
+[34m-  34:             self.__size += 1[0m
+[32m+  34:             __size += 1[0m
+   35:     
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 101] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   36:     def remove(self):
+   37:         
+   38:         '''Remove node from linkedlist.'''
+   39:         
+[34m-  40:         if self.__size == 0:[0m
+[32m+  40:         if __size == 0:[0m
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+--------------------------------------------------------------------------------
+[0.17940 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       var_0 = singly_linked_list_0.remove()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b943eece0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:40: NameError
+[36m   -[0m [# 102] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   38:         '''Remove node from linkedlist.'''
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+[34m-  42:         if self.__size >= 1:[0m
+[32m+  42:         if __size >= 1:[0m
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+--------------------------------------------------------------------------------
+[0.17754 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+>       var_0 = singly_linked_list_0.remove()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b94515870>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:42: NameError
+[36m   -[0m [# 103] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   39:         
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+[34m-  43:             nodeToRemove = self.__head[0m
+[32m+  43:             nodeToRemove = __head[0m
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.15710 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+>       var_0 = singly_linked_list_0.remove()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b944c32e0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:43: NameError
+[36m   -[0m [# 104] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   40:         if self.__size == 0:
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+[34m-  44:             self.__sentinel.next = None[0m
+[32m+  44:             __sentinel.next = None[0m
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+--------------------------------------------------------------------------------
+[0.16831 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+>       var_0 = singly_linked_list_0.remove()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b94313ee0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:44: NameError
+[36m   -[0m [# 105] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+[34m-  45:             self.__head = self.__sentinel[0m
+[32m+  45:             __head = self.__sentinel[0m
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 106] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   41:             return None
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+[34m-  45:             self.__head = self.__sentinel[0m
+[32m+  45:             self.__head = __sentinel[0m
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+--------------------------------------------------------------------------------
+[0.15785 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+>       var_0 = singly_linked_list_0.remove()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b942cfc70>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__sentinel' is not defined
+
+linkedList3:45: NameError
+[36m   -[0m [# 107] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   42:         if self.__size >= 1:
+   43:             nodeToRemove = self.__head
+   44:             self.__sentinel.next = None
+   45:             self.__head = self.__sentinel
+[34m-  46:             self.__size -= 1[0m
+[32m+  46:             __size -= 1[0m
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 108] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   45:             self.__head = self.__sentinel
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+[34m-  49:             nodeToRemove = self.__head[0m
+[32m+  49:             nodeToRemove = __head[0m
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+--------------------------------------------------------------------------------
+[0.13053 s] [31msurvived[0m
+[36m   -[0m [# 109] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+[34m-  50:             self.__sentinel.next = self.__head.next[0m
+[32m+  50:             __sentinel.next = self.__head.next[0m
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+--------------------------------------------------------------------------------
+[0.14070 s] [31msurvived[0m
+[36m   -[0m [# 110] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   46:             self.__size -= 1
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+[34m-  50:             self.__sentinel.next = self.__head.next[0m
+[32m+  50:             self.__sentinel.next = __head.next[0m
+   51:             self.__head = self.__sentinel.next
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+--------------------------------------------------------------------------------
+[0.14237 s] [31msurvived[0m
+[36m   -[0m [# 111] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+[34m-  51:             self.__head = self.__sentinel.next[0m
+[32m+  51:             __head = self.__sentinel.next[0m
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 112] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   47:             return nodeToRemove
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+[34m-  51:             self.__head = self.__sentinel.next[0m
+[32m+  51:             self.__head = __sentinel.next[0m
+   52:             self.__size -= 1
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+--------------------------------------------------------------------------------
+[0.14122 s] [31msurvived[0m
+[36m   -[0m [# 113] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   48:         else:
+   49:             nodeToRemove = self.__head
+   50:             self.__sentinel.next = self.__head.next
+   51:             self.__head = self.__sentinel.next
+[34m-  52:             self.__size -= 1[0m
+[32m+  52:             __size -= 1[0m
+   53:             return nodeToRemove
+   54:     
+   55:     def getHead(self) -> T:
+   56:         
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 114] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   55:     def getHead(self) -> T:
+   56:         
+   57:         '''Get value of the linkedlist head node.'''
+   58:         
+[34m-  59:         return self.__head.value[0m
+[32m+  59:         return __head.value[0m
+   60:     
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+--------------------------------------------------------------------------------
+[0.22214 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+        assert var_0.next is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_2 = module_0.Node(var_0)
+        assert f'{type(node_2.value).__module__}.{type(node_2.value).__qualname__}' == 'linkedList3.Node'
+        int_0 = singly_linked_list_1.getSize()
+>       var_1 = singly_linked_list_1.getHead()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b944bddb0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:59: NameError
+[36m   -[0m [# 115] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   61:     def getHeadNode(self) -> Node:
+   62:         
+   63:         '''Get head node referance.'''
+   64:         
+[34m-  65:         return self.__head[0m
+[32m+  65:         return __head[0m
+   66:     
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+--------------------------------------------------------------------------------
+[0.22106 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+>       node_0 = singly_linked_list_0.getHeadNode()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b9435c3a0>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:65: NameError
+[36m   -[0m [# 116] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   67:     def getSize(self) -> int:
+   68:         
+   69:         '''Return size of the linkedlist.'''
+   70:         
+[34m-  71:         return self.__size[0m
+[32m+  71:         return __size[0m
+   72:     
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+--------------------------------------------------------------------------------
+[0.17586 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+        assert var_0.next is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_2 = module_0.Node(var_0)
+        assert f'{type(node_2.value).__module__}.{type(node_2.value).__qualname__}' == 'linkedList3.Node'
+>       int_0 = singly_linked_list_1.getSize()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b942cea70>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:71: NameError
+[36m   -[0m [# 117] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   73:     def isEmpty(self) -> bool:
+   74:         
+   75:         '''Checks if linkedlist is empty.'''
+   76:         
+[34m-  77:         return True if self.__size == 0 else False[0m
+[32m+  77:         return True if __size == 0 else False[0m
+   78:     
+   79:     def toArray(self) -> list:
+   80:         
+   81:         '''Converts linkedlist to list.'''
+--------------------------------------------------------------------------------
+[0.15848 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+>       bool_0 = singly_linked_list_0.isEmpty()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b944bfd30>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__size' is not defined
+
+linkedList3:77: NameError
+[36m   -[0m [# 118] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   80:         
+   81:         '''Converts linkedlist to list.'''
+   82:         
+   83:         arr = []
+[34m-  84:         current = self.__head[0m
+[32m+  84:         current = __head[0m
+   85:         while current:
+   86:             arr.append(current.value)
+   87:             current = current.next
+   88:         return arr
+--------------------------------------------------------------------------------
+[0.15937 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        node_0 = singly_linked_list_0.getHeadNode()
+        node_1 = singly_linked_list_0.getHeadNode()
+        none_type_0 = singly_linked_list_0.add(node_1)
+        var_0 = singly_linked_list_0.remove()
+        assert node_0.next is None
+        assert node_1.next is None
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.Node'
+        assert var_0.next is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        node_2 = module_0.Node(var_0)
+        assert f'{type(node_2.value).__module__}.{type(node_2.value).__qualname__}' == 'linkedList3.Node'
+        int_0 = singly_linked_list_1.getSize()
+        var_1 = singly_linked_list_1.getHead()
+>       list_0 = singly_linked_list_1.toArray()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b943edf30>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:84: NameError
+[36m   -[0m [# 119] SVD linkedList3: 
+--------------------------------------------------------------------------------
+   91:         
+   92:         '''Return String representation of linkedlist values.'''
+   93:         
+   94:         arr = []
+[34m-  95:         current = self.__head[0m
+[32m+  95:         current = __head[0m
+   96:         while current:
+   97:             arr.append(current.value)
+   98:             current = current.next
+   99:         return str(arr)
+--------------------------------------------------------------------------------
+[0.17961 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 2
+>       str_0 = singly_linked_list_0.__str__()
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList3.SinglyLinkedList object at 0x7f3b942cfe80>
+
+>   ???
+E   NameError: name '_SinglyLinkedList__head' is not defined
+
+linkedList3:95: NameError
+[36m   -[0m [# 120] ZIL linkedList3: 
+--------------------------------------------------------------------------------
+   82:         
+   83:         arr = []
+   84:         current = self.__head
+   85:         while current:
+[34m-  86:             arr.append(current.value)[0m
+[34m-  87:             current = current.next[0m
+[32m+  86:             break[0m
+[32m+  87:         [0m
+   88:         return arr
+   89:     
+   90:     def __str__(self) -> str:
+   91:         
+--------------------------------------------------------------------------------
+[0.14301 s] [31msurvived[0m
+[36m   -[0m [# 121] ZIL linkedList3: 
+--------------------------------------------------------------------------------
+   93:         
+   94:         arr = []
+   95:         current = self.__head
+   96:         while current:
+[34m-  97:             arr.append(current.value)[0m
+[34m-  98:             current = current.next[0m
+[32m+  97:             break[0m
+[32m+  98:         [0m
+   99:         return str(arr)
+  100: 
+  101: 
+  102: if __name__ == '__main__':
+--------------------------------------------------------------------------------
+[0.16126 s] [32mkilled[0m by WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        node_0 = singly_linked_list_0.getHeadNode()
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 2
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_1.__str__()
+>       assert str_0 == '[None]'
+E       AssertionError
+
+WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py:114: AssertionError
+[34m[*][0m Mutation score [35.55934 s]: [1m[34m74.2%[0m
+[36m   -[0m all: 121
+[36m   -[0m killed: 70 (57.9%)
+[36m   -[0m survived: 25 (20.7%)
+[36m   -[0m incompetent: 24 (19.8%)
+[36m   -[0m timeout: 2 (1.7%)

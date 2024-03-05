@@ -1,0 +1,254 @@
+<html><body><h1>binarySearchTree1.py</h1>Killed 49 out of 72 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 6</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -17,7 +17,7 @@
+         """
+         if val <= self.value:
+             self.left = self.addToSubTree(self.left, val)
+-        elif val > self.value:
++        elif val >= self.value:
+             self.right = self.addToSubTree(self.right, val)
+ 
+     def addToSubTree(self, parent, val):
+</pre><h3>Mutant 10</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -33,7 +33,7 @@
+          Remove val of self from BinaryTree. 
+         """
+         if val < self.value:
+-            self.left = self.removeFromParent(self.left, val)
++            self.left = None
+         elif val > self.value:
+             self.right = self.removeFromParent(self.right, val)
+         else:
+</pre><h3>Mutant 40</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -100,7 +100,7 @@
+     def getMin(self):
+         """Returns minimum value."""
+         if self.root is None:
+-            raise ValueError("Binary Tree is empty")
++            raise ValueError("XXBinary Tree is emptyXX")
+         n = self.root
+         while n.left != None:
+             n = n.left
+</pre><h3>Mutant 45</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -109,7 +109,7 @@
+     def getMax(self):
+         """Returns maximum value."""
+         if self.root is None:
+-            raise ValueError("Binary Tree is empty")
++            raise ValueError("XXBinary Tree is emptyXX")
+         n = self.root
+         while n.right != None:
+             n = n.right
+</pre><h3>Mutant 58</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -137,7 +137,7 @@
+             return None
+         
+         best = node = self.root
+-        distance = abs(self.root.value - target)
++        distance = abs(self.root.value + target)
+         while node:
+             if abs(node.value - target) < distance:
+                 distance = abs(node.value - target)
+</pre><h3>Mutant 60</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -139,7 +139,7 @@
+         best = node = self.root
+         distance = abs(self.root.value - target)
+         while node:
+-            if abs(node.value - target) < distance:
++            if abs(node.value + target) < distance:
+                 distance = abs(node.value - target)
+                 best = node
+             if target < node.value:
+</pre><h3>Mutant 61</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -139,7 +139,7 @@
+         best = node = self.root
+         distance = abs(self.root.value - target)
+         while node:
+-            if abs(node.value - target) < distance:
++            if abs(node.value - target) <= distance:
+                 distance = abs(node.value - target)
+                 best = node
+             if target < node.value:
+</pre><h3>Mutant 62</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -140,7 +140,7 @@
+         distance = abs(self.root.value - target)
+         while node:
+             if abs(node.value - target) < distance:
+-                distance = abs(node.value - target)
++                distance = abs(node.value + target)
+                 best = node
+             if target < node.value:
+                 node = node.left
+</pre><h3>Mutant 64</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -141,7 +141,7 @@
+         while node:
+             if abs(node.value - target) < distance:
+                 distance = abs(node.value - target)
+-                best = node
++                best = None
+             if target < node.value:
+                 node = node.left
+             elif target > node.value:
+</pre><h3>Mutant 65</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -142,7 +142,7 @@
+             if abs(node.value - target) < distance:
+                 distance = abs(node.value - target)
+                 best = node
+-            if target < node.value:
++            if target <= node.value:
+                 node = node.left
+             elif target > node.value:
+                 node = node.right
+</pre><h3>Mutant 66</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -143,7 +143,7 @@
+                 distance = abs(node.value - target)
+                 best = node
+             if target < node.value:
+-                node = node.left
++                node = None
+             elif target > node.value:
+                 node = node.right
+             else:
+</pre><h3>Mutant 67</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -144,7 +144,7 @@
+                 best = node
+             if target < node.value:
+                 node = node.left
+-            elif target > node.value:
++            elif target >= node.value:
+                 node = node.right
+             else:
+                 return target
+</pre><h2>Suspicious</h2>Mutants that made the test suite take longer, but otherwise seemed ok<h3>Mutant 1</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -7,7 +7,7 @@
+ 
+     def __init__(self, value):
+         """Create binary node."""
+-        self.value   = value
++        self.value   = None
+         self.left    = None
+         self.right   = None
+ 
+</pre><h3>Mutant 2</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -8,7 +8,7 @@
+     def __init__(self, value):
+         """Create binary node."""
+         self.value   = value
+-        self.left    = None
++        self.left    = ""
+         self.right   = None
+ 
+     def add(self, val):
+</pre><h3>Mutant 3</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -9,7 +9,7 @@
+         """Create binary node."""
+         self.value   = value
+         self.left    = None
+-        self.right   = None
++        self.right   = ""
+ 
+     def add(self, val):
+         """
+</pre><h3>Mutant 8</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -22,7 +22,7 @@
+ 
+     def addToSubTree(self, parent, val):
+         """Add val to parent subtree (if exists) and return root of that subtree."""
+-        if parent is None:
++        if parent is not None:
+             return BinaryNode(val)
+ 
+         parent.add(val)
+</pre><h3>Mutant 35</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -83,7 +83,7 @@
+ 
+     def __init__(self):
+         """Create empty binary tree."""
+-        self.root = None
++        self.root = ""
+    
+     def add(self, value):
+         """Insert value into proper location in Binary Tree."""
+</pre><h3>Mutant 36</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -87,7 +87,7 @@
+    
+     def add(self, value):
+         """Insert value into proper location in Binary Tree."""
+-        if self.root is None:
++        if self.root is not None:
+             self.root = BinaryNode(value)
+         else:
+             self.root.add(value)
+</pre><h3>Mutant 37</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -88,7 +88,7 @@
+     def add(self, value):
+         """Insert value into proper location in Binary Tree."""
+         if self.root is None:
+-            self.root = BinaryNode(value)
++            self.root = None
+         else:
+             self.root.add(value)
+ 
+</pre><h3>Mutant 44</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -108,7 +108,7 @@
+ 
+     def getMax(self):
+         """Returns maximum value."""
+-        if self.root is None:
++        if self.root is not None:
+             raise ValueError("Binary Tree is empty")
+         n = self.root
+         while n.right != None:
+</pre><h3>Mutant 46</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -110,7 +110,7 @@
+         """Returns maximum value."""
+         if self.root is None:
+             raise ValueError("Binary Tree is empty")
+-        n = self.root
++        n = None
+         while n.right != None:
+             n = n.right
+         return n.value
+</pre><h3>Mutant 47</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -111,7 +111,7 @@
+         if self.root is None:
+             raise ValueError("Binary Tree is empty")
+         n = self.root
+-        while n.right != None:
++        while n.right == None:
+             n = n.right
+         return n.value
+     
+</pre><h3>Mutant 55</h3><pre>--- binarySearchTree1.py
++++ binarySearchTree1.py
+@@ -126,7 +126,7 @@
+             else:
+                 return True
+                 
+-        return False
++        return True
+ 
+     def closest(self, target):
+         """
+</pre></body></html>

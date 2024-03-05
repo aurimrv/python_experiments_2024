@@ -1,0 +1,2312 @@
+[*] Start mutation process:
+   - targets: queue1.py
+   - tests: ./RANDOM
+[*] 300 tests passed:
+   - test_queue1_RANDOM [0.47236 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR queue1: 
+--------------------------------------------------------------------------------
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+  30:             self.back = new_back
+  31:         
+- 32:         self.size += 1
++ 32:         self.size -= 1
+  33:     
+  34:     def dequeue(self):
+  35:         if self.front is None:
+  36:             raise ValueError()
+--------------------------------------------------------------------------------
+[0.59347 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_3
+
+def test_case_3():
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        var_1 = queue_1.enqueue(none_type_0)
+>       assert len(queue_1) == 1
+E       ValueError: __len__() should return >= 0
+
+RANDOM/test_queue1_RANDOM.py:33: ValueError
+   - [#   2] ASR queue1: 
+--------------------------------------------------------------------------------
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+  39:             self.front = self.front.next
+- 40:             self.size -= 1
++ 40:             self.size += 1
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+  44:         if self.front is None:
+--------------------------------------------------------------------------------
+[0.76771 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_183
+
+def test_case_183():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_2 = queue_2.__len__()
+        assert var_2 == 0
+        queue_node_2 = module_0.QueueNode(none_type_1)
+        var_3 = queue_2.clear()
+        str_0 = 'a,~'
+        queue_node_3 = module_0.QueueNode(str_0)
+        queue_node_4 = module_0.QueueNode(queue_node_3)
+        var_4 = queue_0.dequeue()
+>       assert len(queue_0) == 0
+E       AssertionError
+
+RANDOM/test_queue1_RANDOM.py:7677: AssertionError
+   - [#   3] CDI queue1: 
+--------------------------------------------------------------------------------
+   5: '''
+   6: 
+   7: class Queue(object):
+   8:     
+-  9:     def __init__(self):
+- 10:         self.front = None
+- 11:         self.back = None
+- 12:         self.size = 0
+- 13:     
++  9:     @classmethod
++ 10:     def __init__(self):
++ 11:         self.front = None
++ 12:         self.back = None
++ 13:         self.size = 0
+  14:     def __str__(self):
+  15:         
+  16:         pass
+  17:     
+--------------------------------------------------------------------------------
+[0.44772 s] survived
+   - [#   4] CDI queue1: 
+--------------------------------------------------------------------------------
+  10:         self.front = None
+  11:         self.back = None
+  12:         self.size = 0
+  13:     
+- 14:     def __str__(self):
+- 15:         
+- 16:         pass
+- 17:     
++ 14:     @classmethod
++ 15:     def __str__(self):
++ 16:         
++ 17:         pass
+  18:     def __len__(self):
+  19:         return self.size
+  20:     
+  21:     def enqueue(self, item):
+--------------------------------------------------------------------------------
+[0.44463 s] survived
+   - [#   5] CDI queue1: 
+--------------------------------------------------------------------------------
+  14:     def __str__(self):
+  15:         
+  16:         pass
+  17:     
+- 18:     def __len__(self):
+- 19:         return self.size
+- 20:     
++ 18:     @classmethod
++ 19:     def __len__(self):
++ 20:         return self.size
+  21:     def enqueue(self, item):
+  22:         
+  23:         if self.front is None:
+  24:             new_node = QueueNode(item)
+--------------------------------------------------------------------------------
+[0.59605 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_1
+
+def test_case_1():
+        queue_0 = module_0.Queue()
+>       assert len(queue_0) == 0
+
+RANDOM/test_queue1_RANDOM.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'queue1.Queue'>
+
+>   ???
+E   AttributeError: type object 'Queue' has no attribute 'size'
+
+queue1:20: AttributeError
+   - [#   6] CDI queue1: 
+--------------------------------------------------------------------------------
+  17:     
+  18:     def __len__(self):
+  19:         return self.size
+  20:     
+- 21:     def enqueue(self, item):
+- 22:         
+- 23:         if self.front is None:
+- 24:             new_node = QueueNode(item)
+- 25:             self.front = new_node
+- 26:             self.back = new_node
+- 27:         else:
+- 28:             new_back = QueueNode(item)
+- 29:             self.back.next = new_back
+- 30:             self.back = new_back
+- 31:         
+- 32:         self.size += 1
+- 33:     
++ 21:     @classmethod
++ 22:     def enqueue(self, item):
++ 23:         
++ 24:         if self.front is None:
++ 25:             new_node = QueueNode(item)
++ 26:             self.front = new_node
++ 27:             self.back = new_node
++ 28:         else:
++ 29:             new_back = QueueNode(item)
++ 30:             self.back.next = new_back
++ 31:             self.back = new_back
++ 32:         
++ 33:         self.size += 1
+  34:     def dequeue(self):
+  35:         if self.front is None:
+  36:             raise ValueError()
+  37:         else:
+--------------------------------------------------------------------------------
+[0.59537 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_3
+
+def test_case_3():
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+>       var_1 = queue_1.enqueue(none_type_0)
+
+RANDOM/test_queue1_RANDOM.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'queue1.Queue'>, item = None
+
+>   ???
+E   AttributeError: type object 'Queue' has no attribute 'front'
+
+queue1:24: AttributeError
+   - [#   7] CDI queue1: 
+--------------------------------------------------------------------------------
+  30:             self.back = new_back
+  31:         
+  32:         self.size += 1
+  33:     
+- 34:     def dequeue(self):
+- 35:         if self.front is None:
+- 36:             raise ValueError()
+- 37:         else:
+- 38:             front_node = self.front
+- 39:             self.front = self.front.next
+- 40:             self.size -= 1
+- 41:             return front_node.data
+- 42:     
++ 34:     @classmethod
++ 35:     def dequeue(self):
++ 36:         if self.front is None:
++ 37:             raise ValueError()
++ 38:         else:
++ 39:             front_node = self.front
++ 40:             self.front = self.front.next
++ 41:             self.size -= 1
++ 42:             return front_node.data
+  43:     def peek(self):
+  44:         if self.front is None:
+  45:             return None
+  46:         return self.front.data
+--------------------------------------------------------------------------------
+[0.89875 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_183
+
+def test_case_183():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_2 = queue_2.__len__()
+        assert var_2 == 0
+        queue_node_2 = module_0.QueueNode(none_type_1)
+        var_3 = queue_2.clear()
+        str_0 = 'a,~'
+        queue_node_3 = module_0.QueueNode(str_0)
+        queue_node_4 = module_0.QueueNode(queue_node_3)
+>       var_4 = queue_0.dequeue()
+
+RANDOM/test_queue1_RANDOM.py:7676: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'queue1.Queue'>
+
+>   ???
+E   AttributeError: type object 'Queue' has no attribute 'front'
+
+queue1:36: AttributeError
+   - [#   8] CDI queue1: 
+--------------------------------------------------------------------------------
+  39:             self.front = self.front.next
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+- 43:     def peek(self):
+- 44:         if self.front is None:
+- 45:             return None
+- 46:         return self.front.data
+- 47:     
++ 43:     @classmethod
++ 44:     def peek(self):
++ 45:         if self.front is None:
++ 46:             return None
++ 47:         return self.front.data
+  48:     def clear(self):
+  49:         self.size = 0
+  50:         self.front = None
+  51:         self.back = None
+--------------------------------------------------------------------------------
+[0.64895 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_17
+
+def test_case_17():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_0 = queue_1.__len__()
+        assert var_0 == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        var_2 = var_1.__str__()
+        assert var_2 == '0'
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        tuple_0 = ()
+        queue_node_2 = module_0.QueueNode(tuple_0)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        none_type_2 = None
+        queue_node_3 = module_0.QueueNode(none_type_2)
+        none_type_3 = None
+        queue_node_4 = module_0.QueueNode(none_type_3)
+        tuple_1 = ()
+        queue_node_5 = module_0.QueueNode(tuple_1)
+        queue_3 = module_0.Queue()
+        assert len(queue_3) == 0
+        var_3 = queue_3.__str__()
+>       var_4 = queue_3.peek()
+
+RANDOM/test_queue1_RANDOM.py:383: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'queue1.Queue'>
+
+>   ???
+E   AttributeError: type object 'Queue' has no attribute 'front'
+
+queue1:45: AttributeError
+   - [#   9] CDI queue1: 
+--------------------------------------------------------------------------------
+  44:         if self.front is None:
+  45:             return None
+  46:         return self.front.data
+  47:     
+- 48:     def clear(self):
+- 49:         self.size = 0
+- 50:         self.front = None
+- 51:         self.back = None
+- 52: 
++ 48:     @classmethod
++ 49:     def clear(self):
++ 50:         self.size = 0
++ 51:         self.front = None
++ 52:         self.back = None
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+  55:         self.data = item
+  56:         self.next = None
+--------------------------------------------------------------------------------
+[0.63951 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_13
+
+def test_case_13():
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_1 = queue_2.__len__()
+        assert var_1 == 0
+        queue_3 = module_0.Queue()
+        assert len(queue_3) == 0
+        none_type_2 = None
+        queue_node_2 = module_0.QueueNode(none_type_2)
+        var_2 = queue_3.enqueue(none_type_1)
+        assert len(queue_3) == 1
+        none_type_3 = None
+        queue_node_3 = module_0.QueueNode(none_type_3)
+        queue_4 = module_0.Queue()
+        assert len(queue_4) == 0
+        none_type_4 = None
+        queue_node_4 = module_0.QueueNode(none_type_4)
+        queue_5 = module_0.Queue()
+        assert len(queue_5) == 0
+        var_3 = queue_5.__len__()
+        assert var_3 == 0
+        var_4 = queue_5.__len__()
+        assert var_4 == 0
+        var_5 = var_4.__str__()
+        assert var_5 == '0'
+        none_type_5 = None
+        queue_node_5 = module_0.QueueNode(none_type_5)
+        tuple_0 = ()
+        queue_node_6 = module_0.QueueNode(tuple_0)
+        var_6 = queue_3.clear()
+>       assert len(queue_3) == 0
+E       AssertionError
+
+RANDOM/test_queue1_RANDOM.py:301: AssertionError
+   - [#  10] CDI queue1: 
+--------------------------------------------------------------------------------
+  50:         self.front = None
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+- 54:     def __init__(self, item):
+- 55:         self.data = item
+- 56:         self.next = None
++ 54:     @classmethod
++ 55:     def __init__(self, item):
++ 56:         self.data = item
++ 57:         self.next = None
+--------------------------------------------------------------------------------
+[0.74246 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/RANDOM/test_queue1_RANDOM.py:4702: TypeError: object of type 'NoneType' has no len()
+
+   - [#  11] COI queue1: 
+--------------------------------------------------------------------------------
+  19:         return self.size
+  20:     
+  21:     def enqueue(self, item):
+  22:         
+- 23:         if self.front is None:
++ 23:         if not (self.front is None):
+  24:             new_node = QueueNode(item)
+  25:             self.front = new_node
+  26:             self.back = new_node
+  27:         else:
+--------------------------------------------------------------------------------
+[0.62160 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_3
+
+def test_case_3():
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+>       var_1 = queue_1.enqueue(none_type_0)
+
+RANDOM/test_queue1_RANDOM.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c9a98a90>, item = None
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1:29: AttributeError
+   - [#  12] COI queue1: 
+--------------------------------------------------------------------------------
+  31:         
+  32:         self.size += 1
+  33:     
+  34:     def dequeue(self):
+- 35:         if self.front is None:
++ 35:         if not (self.front is None):
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+  39:             self.front = self.front.next
+--------------------------------------------------------------------------------
+[0.80564 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_183
+
+def test_case_183():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_2 = queue_2.__len__()
+        assert var_2 == 0
+        queue_node_2 = module_0.QueueNode(none_type_1)
+        var_3 = queue_2.clear()
+        str_0 = 'a,~'
+        queue_node_3 = module_0.QueueNode(str_0)
+        queue_node_4 = module_0.QueueNode(queue_node_3)
+>       var_4 = queue_0.dequeue()
+
+RANDOM/test_queue1_RANDOM.py:7676: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c9ab1210>
+
+>   ???
+E   ValueError
+
+queue1:36: ValueError
+   - [#  13] COI queue1: 
+--------------------------------------------------------------------------------
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+- 44:         if self.front is None:
++ 44:         if not (self.front is None):
+  45:             return None
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+--------------------------------------------------------------------------------
+[0.66401 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_17
+
+def test_case_17():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_0 = queue_1.__len__()
+        assert var_0 == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        var_2 = var_1.__str__()
+        assert var_2 == '0'
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        tuple_0 = ()
+        queue_node_2 = module_0.QueueNode(tuple_0)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        none_type_2 = None
+        queue_node_3 = module_0.QueueNode(none_type_2)
+        none_type_3 = None
+        queue_node_4 = module_0.QueueNode(none_type_3)
+        tuple_1 = ()
+        queue_node_5 = module_0.QueueNode(tuple_1)
+        queue_3 = module_0.Queue()
+        assert len(queue_3) == 0
+        var_3 = queue_3.__str__()
+>       var_4 = queue_3.peek()
+
+RANDOM/test_queue1_RANDOM.py:383: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c9c01870>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1:46: AttributeError
+   - [#  14] CRP queue1: 
+--------------------------------------------------------------------------------
+   8:     
+   9:     def __init__(self):
+  10:         self.front = None
+  11:         self.back = None
+- 12:         self.size = 0
++ 12:         self.size = 1
+  13:     
+  14:     def __str__(self):
+  15:         
+  16:         pass
+--------------------------------------------------------------------------------
+[0.62611 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_1
+
+def test_case_1():
+        queue_0 = module_0.Queue()
+>       assert len(queue_0) == 0
+E       AssertionError
+
+RANDOM/test_queue1_RANDOM.py:11: AssertionError
+   - [#  15] CRP queue1: 
+--------------------------------------------------------------------------------
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+  30:             self.back = new_back
+  31:         
+- 32:         self.size += 1
++ 32:         self.size += 2
+  33:     
+  34:     def dequeue(self):
+  35:         if self.front is None:
+  36:             raise ValueError()
+--------------------------------------------------------------------------------
+[0.63091 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_3
+
+def test_case_3():
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        var_1 = queue_1.enqueue(none_type_0)
+>       assert len(queue_1) == 1
+E       AssertionError
+
+RANDOM/test_queue1_RANDOM.py:33: AssertionError
+   - [#  16] CRP queue1: 
+--------------------------------------------------------------------------------
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+  39:             self.front = self.front.next
+- 40:             self.size -= 1
++ 40:             self.size -= 2
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+  44:         if self.front is None:
+--------------------------------------------------------------------------------
+[0.80116 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_183
+
+def test_case_183():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_2 = queue_2.__len__()
+        assert var_2 == 0
+        queue_node_2 = module_0.QueueNode(none_type_1)
+        var_3 = queue_2.clear()
+        str_0 = 'a,~'
+        queue_node_3 = module_0.QueueNode(str_0)
+        queue_node_4 = module_0.QueueNode(queue_node_3)
+        var_4 = queue_0.dequeue()
+>       assert len(queue_0) == 0
+E       ValueError: __len__() should return >= 0
+
+RANDOM/test_queue1_RANDOM.py:7677: ValueError
+   - [#  17] CRP queue1: 
+--------------------------------------------------------------------------------
+  45:             return None
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+- 49:         self.size = 0
++ 49:         self.size = 1
+  50:         self.front = None
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+--------------------------------------------------------------------------------
+[0.64136 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_13
+
+def test_case_13():
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_1 = queue_2.__len__()
+        assert var_1 == 0
+        queue_3 = module_0.Queue()
+        assert len(queue_3) == 0
+        none_type_2 = None
+        queue_node_2 = module_0.QueueNode(none_type_2)
+        var_2 = queue_3.enqueue(none_type_1)
+        assert len(queue_3) == 1
+        none_type_3 = None
+        queue_node_3 = module_0.QueueNode(none_type_3)
+        queue_4 = module_0.Queue()
+        assert len(queue_4) == 0
+        none_type_4 = None
+        queue_node_4 = module_0.QueueNode(none_type_4)
+        queue_5 = module_0.Queue()
+        assert len(queue_5) == 0
+        var_3 = queue_5.__len__()
+        assert var_3 == 0
+        var_4 = queue_5.__len__()
+        assert var_4 == 0
+        var_5 = var_4.__str__()
+        assert var_5 == '0'
+        none_type_5 = None
+        queue_node_5 = module_0.QueueNode(none_type_5)
+        tuple_0 = ()
+        queue_node_6 = module_0.QueueNode(tuple_0)
+        var_6 = queue_3.clear()
+>       assert len(queue_3) == 0
+E       AssertionError
+
+RANDOM/test_queue1_RANDOM.py:301: AssertionError
+   - [#  18] SDI queue1: 
+--------------------------------------------------------------------------------
+   5: '''
+   6: 
+   7: class Queue(object):
+   8:     
+-  9:     def __init__(self):
+- 10:         self.front = None
+- 11:         self.back = None
+- 12:         self.size = 0
+- 13:     
++  9:     @staticmethod
++ 10:     def __init__(self):
++ 11:         self.front = None
++ 12:         self.back = None
++ 13:         self.size = 0
+  14:     def __str__(self):
+  15:         
+  16:         pass
+  17:     
+--------------------------------------------------------------------------------
+[0.66237 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/RANDOM/test_queue1_RANDOM.py:10: TypeError: Queue.__init__() missing 1 required positional argument: 'self'
+
+   - [#  19] SDI queue1: 
+--------------------------------------------------------------------------------
+  10:         self.front = None
+  11:         self.back = None
+  12:         self.size = 0
+  13:     
+- 14:     def __str__(self):
+- 15:         
+- 16:         pass
+- 17:     
++ 14:     @staticmethod
++ 15:     def __str__(self):
++ 16:         
++ 17:         pass
+  18:     def __len__(self):
+  19:         return self.size
+  20:     
+  21:     def enqueue(self, item):
+--------------------------------------------------------------------------------
+[0.67868 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/RANDOM/test_queue1_RANDOM.py:119: TypeError: Queue.__str__() missing 1 required positional argument: 'self'
+
+   - [#  20] SDI queue1: 
+--------------------------------------------------------------------------------
+  14:     def __str__(self):
+  15:         
+  16:         pass
+  17:     
+- 18:     def __len__(self):
+- 19:         return self.size
+- 20:     
++ 18:     @staticmethod
++ 19:     def __len__(self):
++ 20:         return self.size
+  21:     def enqueue(self, item):
+  22:         
+  23:         if self.front is None:
+  24:             new_node = QueueNode(item)
+--------------------------------------------------------------------------------
+[0.67209 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/RANDOM/test_queue1_RANDOM.py:11: TypeError: Queue.__len__() missing 1 required positional argument: 'self'
+
+   - [#  21] SDI queue1: 
+--------------------------------------------------------------------------------
+  17:     
+  18:     def __len__(self):
+  19:         return self.size
+  20:     
+- 21:     def enqueue(self, item):
+- 22:         
+- 23:         if self.front is None:
+- 24:             new_node = QueueNode(item)
+- 25:             self.front = new_node
+- 26:             self.back = new_node
+- 27:         else:
+- 28:             new_back = QueueNode(item)
+- 29:             self.back.next = new_back
+- 30:             self.back = new_back
+- 31:         
+- 32:         self.size += 1
+- 33:     
++ 21:     @staticmethod
++ 22:     def enqueue(self, item):
++ 23:         
++ 24:         if self.front is None:
++ 25:             new_node = QueueNode(item)
++ 26:             self.front = new_node
++ 27:             self.back = new_node
++ 28:         else:
++ 29:             new_back = QueueNode(item)
++ 30:             self.back.next = new_back
++ 31:             self.back = new_back
++ 32:         
++ 33:         self.size += 1
+  34:     def dequeue(self):
+  35:         if self.front is None:
+  36:             raise ValueError()
+  37:         else:
+--------------------------------------------------------------------------------
+[0.61482 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/RANDOM/test_queue1_RANDOM.py:32: TypeError: Queue.enqueue() missing 1 required positional argument: 'item'
+
+   - [#  22] SDI queue1: 
+--------------------------------------------------------------------------------
+  30:             self.back = new_back
+  31:         
+  32:         self.size += 1
+  33:     
+- 34:     def dequeue(self):
+- 35:         if self.front is None:
+- 36:             raise ValueError()
+- 37:         else:
+- 38:             front_node = self.front
+- 39:             self.front = self.front.next
+- 40:             self.size -= 1
+- 41:             return front_node.data
+- 42:     
++ 34:     @staticmethod
++ 35:     def dequeue(self):
++ 36:         if self.front is None:
++ 37:             raise ValueError()
++ 38:         else:
++ 39:             front_node = self.front
++ 40:             self.front = self.front.next
++ 41:             self.size -= 1
++ 42:             return front_node.data
+  43:     def peek(self):
+  44:         if self.front is None:
+  45:             return None
+  46:         return self.front.data
+--------------------------------------------------------------------------------
+[0.79310 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/RANDOM/test_queue1_RANDOM.py:7676: TypeError: Queue.dequeue() missing 1 required positional argument: 'self'
+
+   - [#  23] SDI queue1: 
+--------------------------------------------------------------------------------
+  39:             self.front = self.front.next
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+- 43:     def peek(self):
+- 44:         if self.front is None:
+- 45:             return None
+- 46:         return self.front.data
+- 47:     
++ 43:     @staticmethod
++ 44:     def peek(self):
++ 45:         if self.front is None:
++ 46:             return None
++ 47:         return self.front.data
+  48:     def clear(self):
+  49:         self.size = 0
+  50:         self.front = None
+  51:         self.back = None
+--------------------------------------------------------------------------------
+[0.63274 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/RANDOM/test_queue1_RANDOM.py:383: TypeError: Queue.peek() missing 1 required positional argument: 'self'
+
+   - [#  24] SDI queue1: 
+--------------------------------------------------------------------------------
+  44:         if self.front is None:
+  45:             return None
+  46:         return self.front.data
+  47:     
+- 48:     def clear(self):
+- 49:         self.size = 0
+- 50:         self.front = None
+- 51:         self.back = None
+- 52: 
++ 48:     @staticmethod
++ 49:     def clear(self):
++ 50:         self.size = 0
++ 51:         self.front = None
++ 52:         self.back = None
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+  55:         self.data = item
+  56:         self.next = None
+--------------------------------------------------------------------------------
+[0.61681 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/RANDOM/test_queue1_RANDOM.py:300: TypeError: Queue.clear() missing 1 required positional argument: 'self'
+
+   - [#  25] SDI queue1: 
+--------------------------------------------------------------------------------
+  50:         self.front = None
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+- 54:     def __init__(self, item):
+- 55:         self.data = item
+- 56:         self.next = None
++ 54:     @staticmethod
++ 55:     def __init__(self, item):
++ 56:         self.data = item
++ 57:         self.next = None
+--------------------------------------------------------------------------------
+[0.59325 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/RANDOM/test_queue1_RANDOM.py:7: TypeError: QueueNode.__init__() missing 1 required positional argument: 'item'
+
+   - [#  26] SDL queue1: 
+--------------------------------------------------------------------------------
+   6: 
+   7: class Queue(object):
+   8:     
+   9:     def __init__(self):
+- 10:         self.front = None
++ 10:         pass
+  11:         self.back = None
+  12:         self.size = 0
+  13:     
+  14:     def __str__(self):
+--------------------------------------------------------------------------------
+[0.59324 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_3
+
+def test_case_3():
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+>       var_1 = queue_1.enqueue(none_type_0)
+
+RANDOM/test_queue1_RANDOM.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c9808910>, item = None
+
+>   ???
+E   AttributeError: 'Queue' object has no attribute 'front'
+
+queue1:23: AttributeError
+   - [#  27] SDL queue1: 
+--------------------------------------------------------------------------------
+   7: class Queue(object):
+   8:     
+   9:     def __init__(self):
+  10:         self.front = None
+- 11:         self.back = None
++ 11:         pass
+  12:         self.size = 0
+  13:     
+  14:     def __str__(self):
+  15:         
+--------------------------------------------------------------------------------
+[0.48446 s] survived
+   - [#  28] SDL queue1: 
+--------------------------------------------------------------------------------
+   8:     
+   9:     def __init__(self):
+  10:         self.front = None
+  11:         self.back = None
+- 12:         self.size = 0
++ 12:         pass
+  13:     
+  14:     def __str__(self):
+  15:         
+  16:         pass
+--------------------------------------------------------------------------------
+[0.66150 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_1
+
+def test_case_1():
+        queue_0 = module_0.Queue()
+>       assert len(queue_0) == 0
+
+RANDOM/test_queue1_RANDOM.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c98c9360>
+
+>   ???
+E   AttributeError: 'Queue' object has no attribute 'size'
+
+queue1:19: AttributeError
+   - [#  29] SDL queue1: 
+--------------------------------------------------------------------------------
+  15:         
+  16:         pass
+  17:     
+  18:     def __len__(self):
+- 19:         return self.size
++ 19:         pass
+  20:     
+  21:     def enqueue(self, item):
+  22:         
+  23:         if self.front is None:
+--------------------------------------------------------------------------------
+[0.59907 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/RANDOM/test_queue1_RANDOM.py:11: TypeError: 'NoneType' object cannot be interpreted as an integer
+
+   - [#  30] SDL queue1: 
+--------------------------------------------------------------------------------
+  20:     
+  21:     def enqueue(self, item):
+  22:         
+  23:         if self.front is None:
+- 24:             new_node = QueueNode(item)
++ 24:             pass
+  25:             self.front = new_node
+  26:             self.back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+--------------------------------------------------------------------------------
+[0.58805 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_3
+
+def test_case_3():
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+>       var_1 = queue_1.enqueue(none_type_0)
+
+RANDOM/test_queue1_RANDOM.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c9828b80>, item = None
+
+>   ???
+E   NameError: name 'new_node' is not defined
+
+queue1:25: NameError
+   - [#  31] SDL queue1: 
+--------------------------------------------------------------------------------
+  21:     def enqueue(self, item):
+  22:         
+  23:         if self.front is None:
+  24:             new_node = QueueNode(item)
+- 25:             self.front = new_node
++ 25:             pass
+  26:             self.back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+--------------------------------------------------------------------------------
+[0.70896 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/RANDOM/test_queue1_RANDOM.py:4702: TypeError: object of type 'NoneType' has no len()
+
+   - [#  32] SDL queue1: 
+--------------------------------------------------------------------------------
+  22:         
+  23:         if self.front is None:
+  24:             new_node = QueueNode(item)
+  25:             self.front = new_node
+- 26:             self.back = new_node
++ 26:             pass
+  27:         else:
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+  30:             self.back = new_back
+--------------------------------------------------------------------------------
+[0.68303 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_60
+
+def test_case_60():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_0 = queue_1.__len__()
+        assert var_0 == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        var_2 = var_1.__str__()
+        assert var_2 == '0'
+        str_0 = 'a,~'
+        queue_node_1 = module_0.QueueNode(str_0)
+        none_type_1 = None
+        queue_node_2 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_3 = queue_2.__len__()
+        assert var_3 == 0
+        queue_3 = module_0.Queue()
+        assert len(queue_3) == 0
+        none_type_2 = None
+        queue_node_3 = module_0.QueueNode(none_type_2)
+        var_4 = queue_3.enqueue(none_type_1)
+        assert len(queue_3) == 1
+        queue_4 = module_0.Queue()
+        assert len(queue_4) == 0
+        none_type_3 = None
+        queue_node_4 = module_0.QueueNode(none_type_3)
+        queue_5 = module_0.Queue()
+        assert len(queue_5) == 0
+        var_5 = queue_5.__len__()
+        assert var_5 == 0
+        none_type_4 = None
+        queue_node_5 = module_0.QueueNode(none_type_4)
+        tuple_0 = ()
+        queue_node_6 = module_0.QueueNode(tuple_0)
+        var_6 = queue_5.clear()
+        queue_6 = module_0.Queue()
+        assert len(queue_6) == 0
+        none_type_5 = None
+        queue_node_7 = module_0.QueueNode(none_type_5)
+        queue_7 = module_0.Queue()
+        assert len(queue_7) == 0
+        var_7 = queue_7.__len__()
+        assert var_7 == 0
+        queue_8 = module_0.Queue()
+        assert len(queue_8) == 0
+        none_type_6 = None
+        queue_node_8 = module_0.QueueNode(none_type_6)
+        var_8 = queue_8.enqueue(none_type_5)
+        assert len(queue_8) == 1
+        none_type_7 = None
+        queue_node_9 = module_0.QueueNode(none_type_7)
+        none_type_8 = None
+        queue_node_10 = module_0.QueueNode(none_type_8)
+        queue_9 = module_0.Queue()
+        assert len(queue_9) == 0
+        var_9 = queue_9.__len__()
+        assert var_9 == 0
+>       var_10 = queue_8.enqueue(queue_node_6)
+
+RANDOM/test_queue1_RANDOM.py:2338: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c97a55a0>
+item = <queue1.QueueNode object at 0x7f93c97a6950>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1:29: AttributeError
+   - [#  33] SDL queue1: 
+--------------------------------------------------------------------------------
+  24:             new_node = QueueNode(item)
+  25:             self.front = new_node
+  26:             self.back = new_node
+  27:         else:
+- 28:             new_back = QueueNode(item)
++ 28:             pass
+  29:             self.back.next = new_back
+  30:             self.back = new_back
+  31:         
+  32:         self.size += 1
+--------------------------------------------------------------------------------
+[0.68183 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_60
+
+def test_case_60():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_0 = queue_1.__len__()
+        assert var_0 == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        var_2 = var_1.__str__()
+        assert var_2 == '0'
+        str_0 = 'a,~'
+        queue_node_1 = module_0.QueueNode(str_0)
+        none_type_1 = None
+        queue_node_2 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_3 = queue_2.__len__()
+        assert var_3 == 0
+        queue_3 = module_0.Queue()
+        assert len(queue_3) == 0
+        none_type_2 = None
+        queue_node_3 = module_0.QueueNode(none_type_2)
+        var_4 = queue_3.enqueue(none_type_1)
+        assert len(queue_3) == 1
+        queue_4 = module_0.Queue()
+        assert len(queue_4) == 0
+        none_type_3 = None
+        queue_node_4 = module_0.QueueNode(none_type_3)
+        queue_5 = module_0.Queue()
+        assert len(queue_5) == 0
+        var_5 = queue_5.__len__()
+        assert var_5 == 0
+        none_type_4 = None
+        queue_node_5 = module_0.QueueNode(none_type_4)
+        tuple_0 = ()
+        queue_node_6 = module_0.QueueNode(tuple_0)
+        var_6 = queue_5.clear()
+        queue_6 = module_0.Queue()
+        assert len(queue_6) == 0
+        none_type_5 = None
+        queue_node_7 = module_0.QueueNode(none_type_5)
+        queue_7 = module_0.Queue()
+        assert len(queue_7) == 0
+        var_7 = queue_7.__len__()
+        assert var_7 == 0
+        queue_8 = module_0.Queue()
+        assert len(queue_8) == 0
+        none_type_6 = None
+        queue_node_8 = module_0.QueueNode(none_type_6)
+        var_8 = queue_8.enqueue(none_type_5)
+        assert len(queue_8) == 1
+        none_type_7 = None
+        queue_node_9 = module_0.QueueNode(none_type_7)
+        none_type_8 = None
+        queue_node_10 = module_0.QueueNode(none_type_8)
+        queue_9 = module_0.Queue()
+        assert len(queue_9) == 0
+        var_9 = queue_9.__len__()
+        assert var_9 == 0
+>       var_10 = queue_8.enqueue(queue_node_6)
+
+RANDOM/test_queue1_RANDOM.py:2338: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c97d5330>
+item = <queue1.QueueNode object at 0x7f93c97d5120>
+
+>   ???
+E   NameError: name 'new_back' is not defined
+
+queue1:29: NameError
+   - [#  34] SDL queue1: 
+--------------------------------------------------------------------------------
+  25:             self.front = new_node
+  26:             self.back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+- 29:             self.back.next = new_back
++ 29:             pass
+  30:             self.back = new_back
+  31:         
+  32:         self.size += 1
+  33:     
+--------------------------------------------------------------------------------
+[0.43085 s] survived
+   - [#  35] SDL queue1: 
+--------------------------------------------------------------------------------
+  26:             self.back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+- 30:             self.back = new_back
++ 30:             pass
+  31:         
+  32:         self.size += 1
+  33:     
+  34:     def dequeue(self):
+--------------------------------------------------------------------------------
+[0.44677 s] survived
+   - [#  36] SDL queue1: 
+--------------------------------------------------------------------------------
+  34:     def dequeue(self):
+  35:         if self.front is None:
+  36:             raise ValueError()
+  37:         else:
+- 38:             front_node = self.front
++ 38:             pass
+  39:             self.front = self.front.next
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+--------------------------------------------------------------------------------
+[0.80663 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_183
+
+def test_case_183():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_2 = queue_2.__len__()
+        assert var_2 == 0
+        queue_node_2 = module_0.QueueNode(none_type_1)
+        var_3 = queue_2.clear()
+        str_0 = 'a,~'
+        queue_node_3 = module_0.QueueNode(str_0)
+        queue_node_4 = module_0.QueueNode(queue_node_3)
+>       var_4 = queue_0.dequeue()
+
+RANDOM/test_queue1_RANDOM.py:7676: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c9c02380>
+
+>   ???
+E   NameError: name 'front_node' is not defined
+
+queue1:41: NameError
+   - [#  37] SDL queue1: 
+--------------------------------------------------------------------------------
+  35:         if self.front is None:
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+- 39:             self.front = self.front.next
++ 39:             pass
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+--------------------------------------------------------------------------------
+[0.44204 s] survived
+   - [#  38] SDL queue1: 
+--------------------------------------------------------------------------------
+  37:         else:
+  38:             front_node = self.front
+  39:             self.front = self.front.next
+  40:             self.size -= 1
+- 41:             return front_node.data
++ 41:             pass
+  42:     
+  43:     def peek(self):
+  44:         if self.front is None:
+  45:             return None
+--------------------------------------------------------------------------------
+[0.80240 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_183
+
+def test_case_183():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_2 = queue_2.__len__()
+        assert var_2 == 0
+        queue_node_2 = module_0.QueueNode(none_type_1)
+        var_3 = queue_2.clear()
+        str_0 = 'a,~'
+        queue_node_3 = module_0.QueueNode(str_0)
+        queue_node_4 = module_0.QueueNode(queue_node_3)
+        var_4 = queue_0.dequeue()
+        assert len(queue_0) == 0
+>       assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'queue1.Queue'
+E       AssertionError
+
+RANDOM/test_queue1_RANDOM.py:7678: AssertionError
+   - [#  39] SDL queue1: 
+--------------------------------------------------------------------------------
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+  44:         if self.front is None:
+- 45:             return None
++ 45:             pass
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+  49:         self.size = 0
+--------------------------------------------------------------------------------
+[0.64277 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_17
+
+def test_case_17():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_0 = queue_1.__len__()
+        assert var_0 == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        var_2 = var_1.__str__()
+        assert var_2 == '0'
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        tuple_0 = ()
+        queue_node_2 = module_0.QueueNode(tuple_0)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        none_type_2 = None
+        queue_node_3 = module_0.QueueNode(none_type_2)
+        none_type_3 = None
+        queue_node_4 = module_0.QueueNode(none_type_3)
+        tuple_1 = ()
+        queue_node_5 = module_0.QueueNode(tuple_1)
+        queue_3 = module_0.Queue()
+        assert len(queue_3) == 0
+        var_3 = queue_3.__str__()
+>       var_4 = queue_3.peek()
+
+RANDOM/test_queue1_RANDOM.py:383: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c9c01330>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1:46: AttributeError
+   - [#  40] SDL queue1: 
+--------------------------------------------------------------------------------
+  42:     
+  43:     def peek(self):
+  44:         if self.front is None:
+  45:             return None
+- 46:         return self.front.data
++ 46:         pass
+  47:     
+  48:     def clear(self):
+  49:         self.size = 0
+  50:         self.front = None
+--------------------------------------------------------------------------------
+[0.74284 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/RANDOM/test_queue1_RANDOM.py:4702: TypeError: object of type 'NoneType' has no len()
+
+   - [#  41] SDL queue1: 
+--------------------------------------------------------------------------------
+  45:             return None
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+- 49:         self.size = 0
++ 49:         pass
+  50:         self.front = None
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+--------------------------------------------------------------------------------
+[0.63995 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_13
+
+def test_case_13():
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_1 = queue_2.__len__()
+        assert var_1 == 0
+        queue_3 = module_0.Queue()
+        assert len(queue_3) == 0
+        none_type_2 = None
+        queue_node_2 = module_0.QueueNode(none_type_2)
+        var_2 = queue_3.enqueue(none_type_1)
+        assert len(queue_3) == 1
+        none_type_3 = None
+        queue_node_3 = module_0.QueueNode(none_type_3)
+        queue_4 = module_0.Queue()
+        assert len(queue_4) == 0
+        none_type_4 = None
+        queue_node_4 = module_0.QueueNode(none_type_4)
+        queue_5 = module_0.Queue()
+        assert len(queue_5) == 0
+        var_3 = queue_5.__len__()
+        assert var_3 == 0
+        var_4 = queue_5.__len__()
+        assert var_4 == 0
+        var_5 = var_4.__str__()
+        assert var_5 == '0'
+        none_type_5 = None
+        queue_node_5 = module_0.QueueNode(none_type_5)
+        tuple_0 = ()
+        queue_node_6 = module_0.QueueNode(tuple_0)
+        var_6 = queue_3.clear()
+>       assert len(queue_3) == 0
+E       AssertionError
+
+RANDOM/test_queue1_RANDOM.py:301: AssertionError
+   - [#  42] SDL queue1: 
+--------------------------------------------------------------------------------
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+  49:         self.size = 0
+- 50:         self.front = None
++ 50:         pass
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+--------------------------------------------------------------------------------
+[0.45167 s] survived
+   - [#  43] SDL queue1: 
+--------------------------------------------------------------------------------
+  47:     
+  48:     def clear(self):
+  49:         self.size = 0
+  50:         self.front = None
+- 51:         self.back = None
++ 51:         pass
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+  55:         self.data = item
+--------------------------------------------------------------------------------
+[0.44674 s] survived
+   - [#  44] SDL queue1: 
+--------------------------------------------------------------------------------
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+- 55:         self.data = item
++ 55:         pass
+  56:         self.next = None
+--------------------------------------------------------------------------------
+[0.63301 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_10
+
+def test_case_10():
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        none_type_2 = None
+        queue_node_2 = module_0.QueueNode(none_type_2)
+        var_1 = queue_1.enqueue(none_type_1)
+        assert len(queue_1) == 1
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        queue_node_3 = module_0.QueueNode(queue_0)
+>       assert len(queue_node_3.data) == 0
+E       AttributeError: 'QueueNode' object has no attribute 'data'
+
+RANDOM/test_queue1_RANDOM.py:189: AttributeError
+   - [#  45] SDL queue1: 
+--------------------------------------------------------------------------------
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+  55:         self.data = item
+- 56:         self.next = None
++ 56:         pass
+--------------------------------------------------------------------------------
+[0.80037 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_183
+
+def test_case_183():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_2 = queue_2.__len__()
+        assert var_2 == 0
+        queue_node_2 = module_0.QueueNode(none_type_1)
+        var_3 = queue_2.clear()
+        str_0 = 'a,~'
+        queue_node_3 = module_0.QueueNode(str_0)
+        queue_node_4 = module_0.QueueNode(queue_node_3)
+>       var_4 = queue_0.dequeue()
+
+RANDOM/test_queue1_RANDOM.py:7676: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c984ebc0>
+
+>   ???
+E   AttributeError: 'QueueNode' object has no attribute 'next'
+
+queue1:39: AttributeError
+   - [#  46] SVD queue1: 
+--------------------------------------------------------------------------------
+   6: 
+   7: class Queue(object):
+   8:     
+   9:     def __init__(self):
+- 10:         self.front = None
++ 10:         front = None
+  11:         self.back = None
+  12:         self.size = 0
+  13:     
+  14:     def __str__(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  47] SVD queue1: 
+--------------------------------------------------------------------------------
+   7: class Queue(object):
+   8:     
+   9:     def __init__(self):
+  10:         self.front = None
+- 11:         self.back = None
++ 11:         back = None
+  12:         self.size = 0
+  13:     
+  14:     def __str__(self):
+  15:         
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  48] SVD queue1: 
+--------------------------------------------------------------------------------
+   8:     
+   9:     def __init__(self):
+  10:         self.front = None
+  11:         self.back = None
+- 12:         self.size = 0
++ 12:         size = 0
+  13:     
+  14:     def __str__(self):
+  15:         
+  16:         pass
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  49] SVD queue1: 
+--------------------------------------------------------------------------------
+  15:         
+  16:         pass
+  17:     
+  18:     def __len__(self):
+- 19:         return self.size
++ 19:         return size
+  20:     
+  21:     def enqueue(self, item):
+  22:         
+  23:         if self.front is None:
+--------------------------------------------------------------------------------
+[0.61420 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_1
+
+def test_case_1():
+        queue_0 = module_0.Queue()
+>       assert len(queue_0) == 0
+
+RANDOM/test_queue1_RANDOM.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c9179c90>
+
+>   ???
+E   NameError: name 'size' is not defined
+
+queue1:19: NameError
+   - [#  50] SVD queue1: 
+--------------------------------------------------------------------------------
+  19:         return self.size
+  20:     
+  21:     def enqueue(self, item):
+  22:         
+- 23:         if self.front is None:
++ 23:         if front is None:
+  24:             new_node = QueueNode(item)
+  25:             self.front = new_node
+  26:             self.back = new_node
+  27:         else:
+--------------------------------------------------------------------------------
+[0.61299 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_3
+
+def test_case_3():
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+>       var_1 = queue_1.enqueue(none_type_0)
+
+RANDOM/test_queue1_RANDOM.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c9c691b0>, item = None
+
+>   ???
+E   NameError: name 'front' is not defined
+
+queue1:23: NameError
+   - [#  51] SVD queue1: 
+--------------------------------------------------------------------------------
+  21:     def enqueue(self, item):
+  22:         
+  23:         if self.front is None:
+  24:             new_node = QueueNode(item)
+- 25:             self.front = new_node
++ 25:             front = new_node
+  26:             self.back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  52] SVD queue1: 
+--------------------------------------------------------------------------------
+  22:         
+  23:         if self.front is None:
+  24:             new_node = QueueNode(item)
+  25:             self.front = new_node
+- 26:             self.back = new_node
++ 26:             back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+  30:             self.back = new_back
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  53] SVD queue1: 
+--------------------------------------------------------------------------------
+  25:             self.front = new_node
+  26:             self.back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+- 29:             self.back.next = new_back
++ 29:             back.next = new_back
+  30:             self.back = new_back
+  31:         
+  32:         self.size += 1
+  33:     
+--------------------------------------------------------------------------------
+[0.65434 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_60
+
+def test_case_60():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_0 = queue_1.__len__()
+        assert var_0 == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        var_2 = var_1.__str__()
+        assert var_2 == '0'
+        str_0 = 'a,~'
+        queue_node_1 = module_0.QueueNode(str_0)
+        none_type_1 = None
+        queue_node_2 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_3 = queue_2.__len__()
+        assert var_3 == 0
+        queue_3 = module_0.Queue()
+        assert len(queue_3) == 0
+        none_type_2 = None
+        queue_node_3 = module_0.QueueNode(none_type_2)
+        var_4 = queue_3.enqueue(none_type_1)
+        assert len(queue_3) == 1
+        queue_4 = module_0.Queue()
+        assert len(queue_4) == 0
+        none_type_3 = None
+        queue_node_4 = module_0.QueueNode(none_type_3)
+        queue_5 = module_0.Queue()
+        assert len(queue_5) == 0
+        var_5 = queue_5.__len__()
+        assert var_5 == 0
+        none_type_4 = None
+        queue_node_5 = module_0.QueueNode(none_type_4)
+        tuple_0 = ()
+        queue_node_6 = module_0.QueueNode(tuple_0)
+        var_6 = queue_5.clear()
+        queue_6 = module_0.Queue()
+        assert len(queue_6) == 0
+        none_type_5 = None
+        queue_node_7 = module_0.QueueNode(none_type_5)
+        queue_7 = module_0.Queue()
+        assert len(queue_7) == 0
+        var_7 = queue_7.__len__()
+        assert var_7 == 0
+        queue_8 = module_0.Queue()
+        assert len(queue_8) == 0
+        none_type_6 = None
+        queue_node_8 = module_0.QueueNode(none_type_6)
+        var_8 = queue_8.enqueue(none_type_5)
+        assert len(queue_8) == 1
+        none_type_7 = None
+        queue_node_9 = module_0.QueueNode(none_type_7)
+        none_type_8 = None
+        queue_node_10 = module_0.QueueNode(none_type_8)
+        queue_9 = module_0.Queue()
+        assert len(queue_9) == 0
+        var_9 = queue_9.__len__()
+        assert var_9 == 0
+>       var_10 = queue_8.enqueue(queue_node_6)
+
+RANDOM/test_queue1_RANDOM.py:2338: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c97d49a0>
+item = <queue1.QueueNode object at 0x7f93c97d4ac0>
+
+>   ???
+E   NameError: name 'back' is not defined
+
+queue1:29: NameError
+   - [#  54] SVD queue1: 
+--------------------------------------------------------------------------------
+  26:             self.back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+- 30:             self.back = new_back
++ 30:             back = new_back
+  31:         
+  32:         self.size += 1
+  33:     
+  34:     def dequeue(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  55] SVD queue1: 
+--------------------------------------------------------------------------------
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+  30:             self.back = new_back
+  31:         
+- 32:         self.size += 1
++ 32:         size += 1
+  33:     
+  34:     def dequeue(self):
+  35:         if self.front is None:
+  36:             raise ValueError()
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  56] SVD queue1: 
+--------------------------------------------------------------------------------
+  31:         
+  32:         self.size += 1
+  33:     
+  34:     def dequeue(self):
+- 35:         if self.front is None:
++ 35:         if front is None:
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+  39:             self.front = self.front.next
+--------------------------------------------------------------------------------
+[0.86429 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_183
+
+def test_case_183():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_2 = queue_2.__len__()
+        assert var_2 == 0
+        queue_node_2 = module_0.QueueNode(none_type_1)
+        var_3 = queue_2.clear()
+        str_0 = 'a,~'
+        queue_node_3 = module_0.QueueNode(str_0)
+        queue_node_4 = module_0.QueueNode(queue_node_3)
+>       var_4 = queue_0.dequeue()
+
+RANDOM/test_queue1_RANDOM.py:7676: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c9c46680>
+
+>   ???
+E   NameError: name 'front' is not defined
+
+queue1:35: NameError
+   - [#  57] SVD queue1: 
+--------------------------------------------------------------------------------
+  34:     def dequeue(self):
+  35:         if self.front is None:
+  36:             raise ValueError()
+  37:         else:
+- 38:             front_node = self.front
++ 38:             front_node = front
+  39:             self.front = self.front.next
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+--------------------------------------------------------------------------------
+[0.75831 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_183
+
+def test_case_183():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_2 = queue_2.__len__()
+        assert var_2 == 0
+        queue_node_2 = module_0.QueueNode(none_type_1)
+        var_3 = queue_2.clear()
+        str_0 = 'a,~'
+        queue_node_3 = module_0.QueueNode(str_0)
+        queue_node_4 = module_0.QueueNode(queue_node_3)
+>       var_4 = queue_0.dequeue()
+
+RANDOM/test_queue1_RANDOM.py:7676: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c9c46c50>
+
+>   ???
+E   NameError: name 'front' is not defined
+
+queue1:38: NameError
+   - [#  58] SVD queue1: 
+--------------------------------------------------------------------------------
+  35:         if self.front is None:
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+- 39:             self.front = self.front.next
++ 39:             front = self.front.next
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  59] SVD queue1: 
+--------------------------------------------------------------------------------
+  35:         if self.front is None:
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+- 39:             self.front = self.front.next
++ 39:             self.front = front.next
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+--------------------------------------------------------------------------------
+[0.79559 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_183
+
+def test_case_183():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_2 = queue_2.__len__()
+        assert var_2 == 0
+        queue_node_2 = module_0.QueueNode(none_type_1)
+        var_3 = queue_2.clear()
+        str_0 = 'a,~'
+        queue_node_3 = module_0.QueueNode(str_0)
+        queue_node_4 = module_0.QueueNode(queue_node_3)
+>       var_4 = queue_0.dequeue()
+
+RANDOM/test_queue1_RANDOM.py:7676: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c980be20>
+
+>   ???
+E   NameError: name 'front' is not defined
+
+queue1:39: NameError
+   - [#  60] SVD queue1: 
+--------------------------------------------------------------------------------
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+  39:             self.front = self.front.next
+- 40:             self.size -= 1
++ 40:             size -= 1
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+  44:         if self.front is None:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  61] SVD queue1: 
+--------------------------------------------------------------------------------
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+- 44:         if self.front is None:
++ 44:         if front is None:
+  45:             return None
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+--------------------------------------------------------------------------------
+[0.64416 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_17
+
+def test_case_17():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_0 = queue_1.__len__()
+        assert var_0 == 0
+        var_1 = queue_1.__len__()
+        assert var_1 == 0
+        var_2 = var_1.__str__()
+        assert var_2 == '0'
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        tuple_0 = ()
+        queue_node_2 = module_0.QueueNode(tuple_0)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        none_type_2 = None
+        queue_node_3 = module_0.QueueNode(none_type_2)
+        none_type_3 = None
+        queue_node_4 = module_0.QueueNode(none_type_3)
+        tuple_1 = ()
+        queue_node_5 = module_0.QueueNode(tuple_1)
+        queue_3 = module_0.Queue()
+        assert len(queue_3) == 0
+        var_3 = queue_3.__str__()
+>       var_4 = queue_3.peek()
+
+RANDOM/test_queue1_RANDOM.py:383: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c98085b0>
+
+>   ???
+E   NameError: name 'front' is not defined
+
+queue1:44: NameError
+   - [#  62] SVD queue1: 
+--------------------------------------------------------------------------------
+  42:     
+  43:     def peek(self):
+  44:         if self.front is None:
+  45:             return None
+- 46:         return self.front.data
++ 46:         return front.data
+  47:     
+  48:     def clear(self):
+  49:         self.size = 0
+  50:         self.front = None
+--------------------------------------------------------------------------------
+[0.65962 s] killed by RANDOM/test_queue1_RANDOM.py::test_case_31
+
+def test_case_31():
+        none_type_0 = None
+        queue_node_0 = module_0.QueueNode(none_type_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        none_type_1 = None
+        queue_node_1 = module_0.QueueNode(none_type_1)
+        tuple_0 = ()
+        queue_node_2 = module_0.QueueNode(tuple_0)
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        var_1 = queue_1.__str__()
+        none_type_2 = None
+        queue_node_3 = module_0.QueueNode(none_type_2)
+        queue_2 = module_0.Queue()
+        assert len(queue_2) == 0
+        var_2 = queue_2.__len__()
+        assert var_2 == 0
+        queue_3 = module_0.Queue()
+        assert len(queue_3) == 0
+        none_type_3 = None
+        queue_node_4 = module_0.QueueNode(none_type_3)
+        var_3 = queue_3.enqueue(none_type_2)
+        assert len(queue_3) == 1
+        none_type_4 = None
+        queue_node_5 = module_0.QueueNode(none_type_4)
+        queue_4 = module_0.Queue()
+        assert len(queue_4) == 0
+        queue_5 = module_0.Queue()
+        assert len(queue_5) == 0
+        none_type_5 = None
+        queue_node_6 = module_0.QueueNode(none_type_5)
+        queue_6 = module_0.Queue()
+        assert len(queue_6) == 0
+        var_4 = queue_6.__len__()
+        assert var_4 == 0
+        var_5 = queue_6.__len__()
+        assert var_5 == 0
+        var_6 = var_5.__str__()
+        assert var_6 == '0'
+        var_7 = queue_5.peek()
+        none_type_6 = None
+        queue_node_7 = module_0.QueueNode(none_type_6)
+        tuple_1 = ()
+        queue_node_8 = module_0.QueueNode(tuple_1)
+        none_type_7 = None
+        queue_node_9 = module_0.QueueNode(none_type_7)
+        queue_7 = module_0.Queue()
+        assert len(queue_7) == 0
+        var_8 = queue_7.__len__()
+        assert var_8 == 0
+        none_type_8 = None
+        queue_node_10 = module_0.QueueNode(none_type_8)
+        tuple_2 = ()
+        queue_node_11 = module_0.QueueNode(tuple_2)
+        var_9 = queue_7.clear()
+        queue_8 = module_0.Queue()
+        assert len(queue_8) == 0
+        queue_9 = module_0.Queue()
+        assert len(queue_9) == 0
+        none_type_9 = None
+        queue_node_12 = module_0.QueueNode(none_type_9)
+        queue_10 = module_0.Queue()
+        assert len(queue_10) == 0
+        var_10 = queue_10.__len__()
+        assert var_10 == 0
+        var_11 = queue_10.__len__()
+        assert var_11 == 0
+        var_12 = var_11.__str__()
+        assert var_12 == '0'
+>       var_13 = queue_3.peek()
+
+RANDOM/test_queue1_RANDOM.py:1002: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f93c917bb80>
+
+>   ???
+E   NameError: name 'front' is not defined
+
+queue1:46: NameError
+   - [#  63] SVD queue1: 
+--------------------------------------------------------------------------------
+  45:             return None
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+- 49:         self.size = 0
++ 49:         size = 0
+  50:         self.front = None
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  64] SVD queue1: 
+--------------------------------------------------------------------------------
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+  49:         self.size = 0
+- 50:         self.front = None
++ 50:         front = None
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  65] SVD queue1: 
+--------------------------------------------------------------------------------
+  47:     
+  48:     def clear(self):
+  49:         self.size = 0
+  50:         self.front = None
+- 51:         self.back = None
++ 51:         back = None
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+  55:         self.data = item
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  66] SVD queue1: 
+--------------------------------------------------------------------------------
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+- 55:         self.data = item
++ 55:         data = item
+  56:         self.next = None
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  67] SVD queue1: 
+--------------------------------------------------------------------------------
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+  55:         self.data = item
+- 56:         self.next = None
++ 56:         next = None
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+[*] Mutation score [37.68176 s]: 80.5%
+   - all: 67
+   - killed: 33 (49.3%)
+   - survived: 8 (11.9%)
+   - incompetent: 26 (38.8%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,108 @@
+2024-02-23 21:25:22,309: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack2
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 21 items
+
+ALL-SMART-GPT-COSMICRAY/test_stack2_DYNAMOSA.py .....                    [ 23%]
+ALL-SMART-GPT-COSMICRAY/test_stack2_MIO.py ....                          [ 42%]
+ALL-SMART-GPT-COSMICRAY/test_stack2_MOSA.py .....                        [ 66%]
+ALL-SMART-GPT-COSMICRAY/test_stack2_WHOLE_SUITE.py .......               [100%]
+
+============================== 21 passed in 0.14s ==============================
+2024-02-23 21:25:23,026: [92m3 mutation targets found in stack2.py AST.[0m
+2024-02-23 21:25:23,026: Setting random.seed to: 2023
+2024-02-23 21:25:23,027: Coverage file does not exist, proceeding to sample from all targets.
+2024-02-23 21:25:23,027: Total sample space size: 3
+2024-02-23 21:25:23,027: [93m10000 exceeds sample space, using full sample: 3.[0m
+2024-02-23 21:25:23,027: Starting individual mutation trials!
+2024-02-23 21:25:23,027: Running serial (single processor) dispatch mode.
+2024-02-23 21:25:23,027: Current target location: stack2.py, LocIndex(ast_class='Compare', lineno=13, col_offset=15, op_type=<class 'ast.Eq'>, end_lineno=13, end_col_offset=35)
+2024-02-23 21:25:23,756: [92mResult: Detected at stack2.py: (13, 15)[0m
+2024-02-23 21:25:24,465: [92mResult: Detected at stack2.py: (13, 15)[0m
+2024-02-23 21:25:25,204: [92mResult: Detected at stack2.py: (13, 15)[0m
+2024-02-23 21:25:25,903: [91mResult: Survived at stack2.py: (13, 15)[0m
+2024-02-23 21:25:26,593: [92mResult: Detected at stack2.py: (13, 15)[0m
+2024-02-23 21:25:26,594: Current target location: stack2.py, LocIndex(ast_class='If', lineno=21, col_offset=8, op_type='If_Statement', end_lineno=22, end_col_offset=46)
+2024-02-23 21:25:27,261: [92mResult: Detected at stack2.py: (21, 8)[0m
+2024-02-23 21:25:28,002: [91mResult: Survived at stack2.py: (21, 8)[0m
+2024-02-23 21:25:28,003: Current target location: stack2.py, LocIndex(ast_class='BinOp', lineno=27, col_offset=15, op_type=<class 'ast.Add'>, end_lineno=27, end_col_offset=41)
+2024-02-23 21:25:28,716: [92mResult: Detected at stack2.py: (27, 15)[0m
+2024-02-23 21:25:29,403: [92mResult: Detected at stack2.py: (27, 15)[0m
+2024-02-23 21:25:30,075: [92mResult: Detected at stack2.py: (27, 15)[0m
+2024-02-23 21:25:30,752: [92mResult: Detected at stack2.py: (27, 15)[0m
+2024-02-23 21:25:31,448: [92mResult: Detected at stack2.py: (27, 15)[0m
+2024-02-23 21:25:32,149: [92mResult: Detected at stack2.py: (27, 15)[0m
+2024-02-23 21:25:32,149: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack2
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 21 items
+
+ALL-SMART-GPT-COSMICRAY/test_stack2_DYNAMOSA.py .....                    [ 23%]
+ALL-SMART-GPT-COSMICRAY/test_stack2_MIO.py ....                          [ 42%]
+ALL-SMART-GPT-COSMICRAY/test_stack2_MOSA.py .....                        [ 66%]
+ALL-SMART-GPT-COSMICRAY/test_stack2_WHOLE_SUITE.py .......               [100%]
+
+============================== 21 passed in 0.11s ==============================
+2024-02-23 21:25:32,816: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack2/stack2.py
+ - Test commands: ['python', '-m', 'pytest', '--tb=no', './ALL-SMART-GPT-COSMICRAY']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10000
+ - Random seed: 2023
+
+Random sample details
+---------------------
+ - Total locations mutated: 3
+ - Total locations identified: 3
+ - Location sample coverage: 100.00 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:00.715397
+ - Clean trial 2 run time: 0:00:00.665726
+ - Mutation trials total run time: 0:00:09.124388
+
+2024-02-23 21:25:32,816: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - DETECTED: 11
+ - SURVIVED: 2
+ - TOTAL RUNS: 13
+ - RUN DATETIME: 2024-02-23 21:25:32.816172
+
+2024-02-23 21:25:32,816: Detected mutations:[92m
+
+DETECTED
+--------
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - stack2.py: (l: 21, c: 8) - mutation from If_Statement to If_True
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>[0m
+
+2024-02-23 21:25:32,817: Timedout mutations:
+
+2024-02-23 21:25:32,817: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - stack2.py: (l: 21, c: 8) - mutation from If_Statement to If_False[0m
+
+2024-02-23 21:25:32,817: Writing output report to: /home/lucca/desktop/ic/experimento/testes/python_experiments/stack2/ALL-SMART-GPT-COSMICRAY/mutatest/ALL-SMART-GPT-COSMICRAY-report.rst

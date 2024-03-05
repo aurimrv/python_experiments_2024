@@ -1,0 +1,1273 @@
+[*] Start mutation process:
+   - targets: queue5.py
+   - tests: ./DYNAMOSA-MOSA
+[*] 10 tests passed:
+   - test_queue5_MOSA [0.35322 s]
+   - test_queue5_DYNAMOSA [0.25997 s]
+[*] Start mutants generation and execution:
+   - [#   1] CDI queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data):
+-  4:         self.data = data
+-  5:         self.next = None
+-  6: 
++  3:     @classmethod
++  4:     def __init__(self, data):
++  5:         self.data = data
++  6:         self.next = None
+   7: 
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+--------------------------------------------------------------------------------
+[0.54999 s] killed by DYNAMOSA-MOSA/test_queue5_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        bool_0 = False
+        queue_0 = module_0.Queue()
+        queue_1 = module_0.Queue()
+        var_0 = queue_0.enqueue(bool_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        node_0 = module_0.Node(var_0)
+        queue_2 = module_0.Queue()
+        var_1 = queue_2.enqueue(queue_1)
+        var_2 = queue_0.dequeue()
+>       assert var_2 is False
+E       AssertionError
+
+DYNAMOSA-MOSA/test_queue5_DYNAMOSA.py:60: AssertionError
+   - [#   2] CDI queue5: 
+--------------------------------------------------------------------------------
+   6: 
+   7: 
+   8: class Queue(object):
+   9:     
+- 10:     def __init__(self):
+- 11:         self.head = None
+- 12:         self.tail = None
+- 13:     
++ 10:     @classmethod
++ 11:     def __init__(self):
++ 12:         self.head = None
++ 13:         self.tail = None
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+--------------------------------------------------------------------------------
+[0.42449 s] survived
+   - [#   3] CDI queue5: 
+--------------------------------------------------------------------------------
+  10:     def __init__(self):
+  11:         self.head = None
+  12:         self.tail = None
+  13:     
+- 14:     def enqueue(self, data):
+- 15:         node = Node(data)
+- 16:         
+- 17:         if (self.head is None and self.tail is None):
+- 18:             self.head = node
+- 19:             self.tail = node
+- 20:         else:
+- 21:             self.tail.next = node
+- 22:             self.tail = node
+- 23:     
++ 14:     @classmethod
++ 15:     def enqueue(self, data):
++ 16:         node = Node(data)
++ 17:         
++ 18:         if (self.head is None and self.tail is None):
++ 19:             self.head = node
++ 20:             self.tail = node
++ 21:         else:
++ 22:             self.tail.next = node
++ 23:             self.tail = node
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+--------------------------------------------------------------------------------
+[0.52867 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'queue5.Queue'>, data = <queue5.Queue object at 0x7fda0fd2cb20>
+
+>   ???
+E   AttributeError: type object 'Queue' has no attribute 'head'
+
+queue5:18: AttributeError
+   - [#   4] CDI queue5: 
+--------------------------------------------------------------------------------
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+  23:     
+- 24:     def dequeue(self):
+- 25:         
+- 26:         if (self.head is None and self.tail is None):
+- 27:             return None
+- 28:         data = self.head.data
+- 29:         
+- 30:         if self.head == self.tail:
+- 31:             self.head = None
+- 32:             self.tail = None
+- 33:         else:
+- 34:             self.head = self.head.next
+- 35:         return data
++ 24:     @classmethod
++ 25:     def dequeue(self):
++ 26:         
++ 27:         if (self.head is None and self.tail is None):
++ 28:             return None
++ 29:         data = self.head.data
++ 30:         
++ 31:         if self.head == self.tail:
++ 32:             self.head = None
++ 33:             self.tail = None
++ 34:         else:
++ 35:             self.head = self.head.next
++ 36:         return data
+--------------------------------------------------------------------------------
+[0.71907 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_1
+
+def test_case_1():
+        queue_0 = module_0.Queue()
+        bool_0 = True
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        queue_2 = module_0.Queue()
+        node_0 = module_0.Node(bool_0)
+>       var_1 = queue_2.dequeue()
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'queue5.Queue'>
+
+>   ???
+E   AttributeError: type object 'Queue' has no attribute 'head'
+
+queue5:27: AttributeError
+   - [#   5] COI queue5: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+- 17:         if (self.head is None and self.tail is None):
++ 17:         if not ((self.head is None and self.tail is None)):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+--------------------------------------------------------------------------------
+[0.50273 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fbd2d10>
+data = <queue5.Queue object at 0x7fda0fbd2d10>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5:21: AttributeError
+   - [#   6] COI queue5: 
+--------------------------------------------------------------------------------
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+- 26:         if (self.head is None and self.tail is None):
++ 26:         if not ((self.head is None and self.tail is None)):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+--------------------------------------------------------------------------------
+[0.54114 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_1
+
+def test_case_1():
+        queue_0 = module_0.Queue()
+        bool_0 = True
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        queue_2 = module_0.Queue()
+        node_0 = module_0.Node(bool_0)
+>       var_1 = queue_2.dequeue()
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fba5060>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5:28: AttributeError
+   - [#   7] COI queue5: 
+--------------------------------------------------------------------------------
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+- 30:         if self.head == self.tail:
++ 30:         if not (self.head == self.tail):
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[0.55403 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.dequeue()
+        assert queue_0.head is None
+>       assert queue_0.tail is None
+E       AssertionError
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:34: AssertionError
+   - [#   8] LCR queue5: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+- 17:         if (self.head is None and self.tail is None):
++ 17:         if (self.head is None or self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+--------------------------------------------------------------------------------
+[0.39279 s] survived
+   - [#   9] LCR queue5: 
+--------------------------------------------------------------------------------
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+- 26:         if (self.head is None and self.tail is None):
++ 26:         if (self.head is None or self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+--------------------------------------------------------------------------------
+[0.38323 s] survived
+   - [#  10] ROR queue5: 
+--------------------------------------------------------------------------------
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+- 30:         if self.head == self.tail:
++ 30:         if self.head != self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[0.51026 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.dequeue()
+        assert queue_0.head is None
+>       assert queue_0.tail is None
+E       AssertionError
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:34: AssertionError
+   - [#  11] SDI queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data):
+-  4:         self.data = data
+-  5:         self.next = None
+-  6: 
++  3:     @staticmethod
++  4:     def __init__(self, data):
++  5:         self.data = data
++  6:         self.next = None
+   7: 
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+--------------------------------------------------------------------------------
+[0.51258 s] incompetent
+
+TypeError: queue5:15: TypeError: Node.__init__() missing 1 required positional argument: 'data'
+
+   - [#  12] SDI queue5: 
+--------------------------------------------------------------------------------
+   6: 
+   7: 
+   8: class Queue(object):
+   9:     
+- 10:     def __init__(self):
+- 11:         self.head = None
+- 12:         self.tail = None
+- 13:     
++ 10:     @staticmethod
++ 11:     def __init__(self):
++ 12:         self.head = None
++ 13:         self.tail = None
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+--------------------------------------------------------------------------------
+[0.52021 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue5/DYNAMOSA-MOSA/test_queue5_MOSA.py:6: TypeError: Queue.__init__() missing 1 required positional argument: 'self'
+
+   - [#  13] SDI queue5: 
+--------------------------------------------------------------------------------
+  10:     def __init__(self):
+  11:         self.head = None
+  12:         self.tail = None
+  13:     
+- 14:     def enqueue(self, data):
+- 15:         node = Node(data)
+- 16:         
+- 17:         if (self.head is None and self.tail is None):
+- 18:             self.head = node
+- 19:             self.tail = node
+- 20:         else:
+- 21:             self.tail.next = node
+- 22:             self.tail = node
+- 23:     
++ 14:     @staticmethod
++ 15:     def enqueue(self, data):
++ 16:         node = Node(data)
++ 17:         
++ 18:         if (self.head is None and self.tail is None):
++ 19:             self.head = node
++ 20:             self.tail = node
++ 21:         else:
++ 22:             self.tail.next = node
++ 23:             self.tail = node
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+--------------------------------------------------------------------------------
+[0.51093 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue5/DYNAMOSA-MOSA/test_queue5_MOSA.py:7: TypeError: Queue.enqueue() missing 1 required positional argument: 'data'
+
+   - [#  14] SDI queue5: 
+--------------------------------------------------------------------------------
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+  23:     
+- 24:     def dequeue(self):
+- 25:         
+- 26:         if (self.head is None and self.tail is None):
+- 27:             return None
+- 28:         data = self.head.data
+- 29:         
+- 30:         if self.head == self.tail:
+- 31:             self.head = None
+- 32:             self.tail = None
+- 33:         else:
+- 34:             self.head = self.head.next
+- 35:         return data
++ 24:     @staticmethod
++ 25:     def dequeue(self):
++ 26:         
++ 27:         if (self.head is None and self.tail is None):
++ 28:             return None
++ 29:         data = self.head.data
++ 30:         
++ 31:         if self.head == self.tail:
++ 32:             self.head = None
++ 33:             self.tail = None
++ 34:         else:
++ 35:             self.head = self.head.next
++ 36:         return data
+--------------------------------------------------------------------------------
+[0.52418 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue5/DYNAMOSA-MOSA/test_queue5_MOSA.py:20: TypeError: Queue.dequeue() missing 1 required positional argument: 'self'
+
+   - [#  15] SDL queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+-  4:         self.data = data
++  4:         pass
+   5:         self.next = None
+   6: 
+   7: 
+   8: class Queue(object):
+--------------------------------------------------------------------------------
+[0.53248 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+>       var_1 = queue_0.dequeue()
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fd2c610>
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'data'
+
+queue5:28: AttributeError
+   - [#  16] SDL queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+-  5:         self.next = None
++  5:         pass
+   6: 
+   7: 
+   8: class Queue(object):
+   9:     
+--------------------------------------------------------------------------------
+[0.38576 s] survived
+   - [#  17] SDL queue5: 
+--------------------------------------------------------------------------------
+   7: 
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+- 11:         self.head = None
++ 11:         pass
+  12:         self.tail = None
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+--------------------------------------------------------------------------------
+[0.51295 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fa60370>
+data = <queue5.Queue object at 0x7fda0fa60370>
+
+>   ???
+E   AttributeError: 'Queue' object has no attribute 'head'
+
+queue5:17: AttributeError
+   - [#  18] SDL queue5: 
+--------------------------------------------------------------------------------
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+  11:         self.head = None
+- 12:         self.tail = None
++ 12:         pass
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+--------------------------------------------------------------------------------
+[0.51754 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fddfc70>
+data = <queue5.Queue object at 0x7fda0fddfc70>
+
+>   ???
+E   AttributeError: 'Queue' object has no attribute 'tail'
+
+queue5:17: AttributeError
+   - [#  19] SDL queue5: 
+--------------------------------------------------------------------------------
+  11:         self.head = None
+  12:         self.tail = None
+  13:     
+  14:     def enqueue(self, data):
+- 15:         node = Node(data)
++ 15:         pass
+  16:         
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+--------------------------------------------------------------------------------
+[0.50610 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fbd3010>
+data = <queue5.Queue object at 0x7fda0fbd3010>
+
+>   ???
+E   NameError: name 'node' is not defined
+
+queue5:18: NameError
+   - [#  20] SDL queue5: 
+--------------------------------------------------------------------------------
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+- 18:             self.head = node
++ 18:             pass
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+--------------------------------------------------------------------------------
+[0.51292 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+>       assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:8: AssertionError
+   - [#  21] SDL queue5: 
+--------------------------------------------------------------------------------
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+- 19:             self.tail = node
++ 19:             pass
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+  23:     
+--------------------------------------------------------------------------------
+[0.57364 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+>       assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:9: AssertionError
+   - [#  22] SDL queue5: 
+--------------------------------------------------------------------------------
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+- 21:             self.tail.next = node
++ 21:             pass
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+--------------------------------------------------------------------------------
+[0.54536 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_4
+
+def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+        var_2 = queue_0.dequeue()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'queue5.Queue'
+>       assert f'{type(var_2.head).__module__}.{type(var_2.head).__qualname__}' == 'queue5.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:47: AssertionError
+   - [#  23] SDL queue5: 
+--------------------------------------------------------------------------------
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+- 22:             self.tail = node
++ 22:             pass
+  23:     
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+--------------------------------------------------------------------------------
+[0.54091 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_4
+
+def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+        var_2 = queue_0.dequeue()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'queue5.Queue'
+>       assert f'{type(var_2.head).__module__}.{type(var_2.head).__qualname__}' == 'queue5.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:47: AssertionError
+   - [#  24] SDL queue5: 
+--------------------------------------------------------------------------------
+  23:     
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+- 27:             return None
++ 27:             pass
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+--------------------------------------------------------------------------------
+[0.41505 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_1
+
+def test_case_1():
+        queue_0 = module_0.Queue()
+        bool_0 = True
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        queue_2 = module_0.Queue()
+        node_0 = module_0.Node(bool_0)
+>       var_1 = queue_2.dequeue()
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fce3c10>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5:28: AttributeError
+   - [#  25] SDL queue5: 
+--------------------------------------------------------------------------------
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+- 28:         data = self.head.data
++ 28:         pass
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+--------------------------------------------------------------------------------
+[0.52532 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+>       var_1 = queue_0.dequeue()
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fbd3b50>
+
+>   ???
+E   NameError: name 'data' is not defined
+
+queue5:35: NameError
+   - [#  26] SDL queue5: 
+--------------------------------------------------------------------------------
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+- 31:             self.head = None
++ 31:             pass
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.51338 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.dequeue()
+>       assert queue_0.head is None
+E       AssertionError
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:33: AssertionError
+   - [#  27] SDL queue5: 
+--------------------------------------------------------------------------------
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+- 32:             self.tail = None
++ 32:             pass
+  33:         else:
+  34:             self.head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.52937 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.dequeue()
+        assert queue_0.head is None
+>       assert queue_0.tail is None
+E       AssertionError
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:34: AssertionError
+   - [#  28] SDL queue5: 
+--------------------------------------------------------------------------------
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+- 34:             self.head = self.head.next
++ 34:             pass
+  35:         return data
+--------------------------------------------------------------------------------
+[0.53378 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_4
+
+def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+        var_2 = queue_0.dequeue()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'queue5.Queue'
+        assert f'{type(var_2.head).__module__}.{type(var_2.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(var_2.tail).__module__}.{type(var_2.tail).__qualname__}' == 'queue5.Node'
+        var_3 = queue_0.dequeue()
+>       assert queue_0.head is None
+E       AssertionError
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:50: AssertionError
+   - [#  29] SDL queue5: 
+--------------------------------------------------------------------------------
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+- 35:         return data
++ 35:         pass
+--------------------------------------------------------------------------------
+[0.51715 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.dequeue()
+        assert queue_0.head is None
+        assert queue_0.tail is None
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue5.Queue'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:35: AssertionError
+   - [#  30] SVD queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+-  4:         self.data = data
++  4:         data = data
+   5:         self.next = None
+   6: 
+   7: 
+   8: class Queue(object):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  31] SVD queue5: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+-  5:         self.next = None
++  5:         next = None
+   6: 
+   7: 
+   8: class Queue(object):
+   9:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  32] SVD queue5: 
+--------------------------------------------------------------------------------
+   7: 
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+- 11:         self.head = None
++ 11:         head = None
+  12:         self.tail = None
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  33] SVD queue5: 
+--------------------------------------------------------------------------------
+   8: class Queue(object):
+   9:     
+  10:     def __init__(self):
+  11:         self.head = None
+- 12:         self.tail = None
++ 12:         tail = None
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  34] SVD queue5: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+- 17:         if (self.head is None and self.tail is None):
++ 17:         if (head is None and self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+--------------------------------------------------------------------------------
+[0.58134 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fbde050>
+data = <queue5.Queue object at 0x7fda0fbde050>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:17: NameError
+   - [#  35] SVD queue5: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+- 17:         if (self.head is None and self.tail is None):
++ 17:         if (self.head is None and tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+--------------------------------------------------------------------------------
+[0.50663 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+>       var_0 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fd2d450>
+data = <queue5.Queue object at 0x7fda0fd2d450>
+
+>   ???
+E   NameError: name 'tail' is not defined
+
+queue5:17: NameError
+   - [#  36] SVD queue5: 
+--------------------------------------------------------------------------------
+  14:     def enqueue(self, data):
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+- 18:             self.head = node
++ 18:             head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  37] SVD queue5: 
+--------------------------------------------------------------------------------
+  15:         node = Node(data)
+  16:         
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+- 19:             self.tail = node
++ 19:             tail = node
+  20:         else:
+  21:             self.tail.next = node
+  22:             self.tail = node
+  23:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  38] SVD queue5: 
+--------------------------------------------------------------------------------
+  17:         if (self.head is None and self.tail is None):
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+- 21:             self.tail.next = node
++ 21:             tail.next = node
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+--------------------------------------------------------------------------------
+[0.52826 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_1
+
+def test_case_1():
+        queue_0 = module_0.Queue()
+        bool_0 = True
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        queue_2 = module_0.Queue()
+        node_0 = module_0.Node(bool_0)
+        var_1 = queue_2.dequeue()
+>       var_2 = queue_0.enqueue(bool_0)
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0faf34c0>, data = True
+
+>   ???
+E   NameError: name 'tail' is not defined
+
+queue5:21: NameError
+   - [#  39] SVD queue5: 
+--------------------------------------------------------------------------------
+  18:             self.head = node
+  19:             self.tail = node
+  20:         else:
+  21:             self.tail.next = node
+- 22:             self.tail = node
++ 22:             tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  40] SVD queue5: 
+--------------------------------------------------------------------------------
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+- 26:         if (self.head is None and self.tail is None):
++ 26:         if (head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+--------------------------------------------------------------------------------
+[0.54090 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_1
+
+def test_case_1():
+        queue_0 = module_0.Queue()
+        bool_0 = True
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        queue_2 = module_0.Queue()
+        node_0 = module_0.Node(bool_0)
+>       var_1 = queue_2.dequeue()
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fa99db0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:26: NameError
+   - [#  41] SVD queue5: 
+--------------------------------------------------------------------------------
+  22:             self.tail = node
+  23:     
+  24:     def dequeue(self):
+  25:         
+- 26:         if (self.head is None and self.tail is None):
++ 26:         if (self.head is None and tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+--------------------------------------------------------------------------------
+[0.51912 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_1
+
+def test_case_1():
+        queue_0 = module_0.Queue()
+        bool_0 = True
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        queue_2 = module_0.Queue()
+        node_0 = module_0.Node(bool_0)
+>       var_1 = queue_2.dequeue()
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fb16a10>
+
+>   ???
+E   NameError: name 'tail' is not defined
+
+queue5:26: NameError
+   - [#  42] SVD queue5: 
+--------------------------------------------------------------------------------
+  24:     def dequeue(self):
+  25:         
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+- 28:         data = self.head.data
++ 28:         data = head.data
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+--------------------------------------------------------------------------------
+[0.52036 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+>       var_1 = queue_0.dequeue()
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fbdf490>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:28: NameError
+   - [#  43] SVD queue5: 
+--------------------------------------------------------------------------------
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+- 30:         if self.head == self.tail:
++ 30:         if head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[0.54158 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+>       var_1 = queue_0.dequeue()
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fbdd840>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:30: NameError
+   - [#  44] SVD queue5: 
+--------------------------------------------------------------------------------
+  26:         if (self.head is None and self.tail is None):
+  27:             return None
+  28:         data = self.head.data
+  29:         
+- 30:         if self.head == self.tail:
++ 30:         if self.head == tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+--------------------------------------------------------------------------------
+[0.54088 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_3
+
+def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+>       var_1 = queue_0.dequeue()
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fc9dcc0>
+
+>   ???
+E   NameError: name 'tail' is not defined
+
+queue5:30: NameError
+   - [#  45] SVD queue5: 
+--------------------------------------------------------------------------------
+  27:             return None
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+- 31:             self.head = None
++ 31:             head = None
+  32:             self.tail = None
+  33:         else:
+  34:             self.head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  46] SVD queue5: 
+--------------------------------------------------------------------------------
+  28:         data = self.head.data
+  29:         
+  30:         if self.head == self.tail:
+  31:             self.head = None
+- 32:             self.tail = None
++ 32:             tail = None
+  33:         else:
+  34:             self.head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  47] SVD queue5: 
+--------------------------------------------------------------------------------
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+- 34:             self.head = self.head.next
++ 34:             head = self.head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  48] SVD queue5: 
+--------------------------------------------------------------------------------
+  30:         if self.head == self.tail:
+  31:             self.head = None
+  32:             self.tail = None
+  33:         else:
+- 34:             self.head = self.head.next
++ 34:             self.head = head.next
+  35:         return data
+--------------------------------------------------------------------------------
+[0.52875 s] killed by DYNAMOSA-MOSA/test_queue5_MOSA.py::test_case_4
+
+def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+>       var_2 = queue_0.dequeue()
+
+DYNAMOSA-MOSA/test_queue5_MOSA.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue5.Queue object at 0x7fda0fbdc940>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+queue5:34: NameError
+[*] Mutation score [25.11185 s]: 88.2%
+   - all: 48
+   - killed: 30 (62.5%)
+   - survived: 4 (8.3%)
+   - incompetent: 14 (29.2%)
+   - timeout: 0 (0.0%)

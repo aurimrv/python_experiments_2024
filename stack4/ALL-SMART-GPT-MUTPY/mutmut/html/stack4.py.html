@@ -1,0 +1,34 @@
+<html><body><h1>stack4.py</h1>Killed 44 out of 47 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 12</h3><pre>--- stack4.py
++++ stack4.py
+@@ -46,7 +46,7 @@
+     def pop(self):
+         """Remove the first value and return it."""
+         if not self.head:
+-            raise IndexError('Cannot pop from an empty list')
++            raise IndexError('XXCannot pop from an empty listXX')
+         to_return = self.head
+         self.head = self.head.next
+         self._length -= 1
+</pre><h3>Mutant 14</h3><pre>--- stack4.py
++++ stack4.py
+@@ -48,7 +48,7 @@
+         if not self.head:
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+-        self.head = self.head.next
++        self.head = None
+         self._length -= 1
+         return to_return.data
+ 
+</pre><h3>Mutant 24</h3><pre>--- stack4.py
++++ stack4.py
+@@ -68,7 +68,7 @@
+         """Remove node from list if exists."""
+         curr = self.head
+         if curr and val is self.head.data:
+-            self.head = self.head.next
++            self.head = None
+             self._length -= 1
+         while curr:
+             if (curr.next and curr.next.data == val):
+</pre></body></html>

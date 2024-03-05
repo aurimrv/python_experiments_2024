@@ -1,0 +1,519 @@
+<html><body><h1>binarySearchTree2.py</h1>Killed 52 out of 99 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -2,7 +2,7 @@
+ 
+ from typing import TypeVar
+ 
+-T = TypeVar("T")
++T = TypeVar("XXTXX")
+ 
+ class Node:
+     def __init__(self, value: T):
+</pre><h3>Mutant 2</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -2,7 +2,7 @@
+ 
+ from typing import TypeVar
+ 
+-T = TypeVar("T")
++T = None
+ 
+ class Node:
+     def __init__(self, value: T):
+</pre><h3>Mutant 12</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -20,7 +20,7 @@
+             return False
+         elif self.root == None:
+             self.root = Node(value)
+-            self.size += 1
++            self.size = 1
+         else:
+             self.__add(self.root, value)
+ 
+</pre><h3>Mutant 15</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -25,7 +25,7 @@
+             self.__add(self.root, value)
+ 
+     def __add(self, root, value):
+-        if value < root.value:
++        if value <= root.value:
+             if root.left == None:
+                 root.left = Node(value)
+                 self.size += 1
+</pre><h3>Mutant 31</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -48,7 +48,7 @@
+         elif root.value == value:
+             return True
+         else:
+-            if value < root.value:
++            if value <= root.value:
+                 return self.__contains(root.left, value)
+             else:
+                 return self.__contains(root.right, value)
+</pre><h3>Mutant 34</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -57,7 +57,7 @@
+         current = node
+ 
+         while current.left is not None:
+-            current = current.left
++            current = None
+ 
+         return current
+ 
+</pre><h3>Mutant 37</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -65,7 +65,7 @@
+ 
+         if self.contains(value):
+             if self.size == 1:
+-                self.root = None
++                self.root = ""
+                 self.size -= 1
+ 
+             else:
+</pre><h3>Mutant 44</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -76,7 +76,7 @@
+ 
+     def __remove(self, root, value: T):
+         def minValueNode(node):
+-            current = node
++            current = None
+ 
+             while current.left is not None:
+                 current = current.left
+</pre><h3>Mutant 45</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -78,7 +78,7 @@
+         def minValueNode(node):
+             current = node
+ 
+-            while current.left is not None:
++            while current.left is  None:
+                 current = current.left
+ 
+             return current
+</pre><h3>Mutant 46</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -79,7 +79,7 @@
+             current = node
+ 
+             while current.left is not None:
+-                current = current.left
++                current = None
+ 
+             return current
+ 
+</pre><h3>Mutant 47</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -83,7 +83,7 @@
+ 
+             return current
+ 
+-        if root is None:
++        if root is not None:
+             return root
+ 
+         if value < root.value:
+</pre><h3>Mutant 48</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -86,7 +86,7 @@
+         if root is None:
+             return root
+ 
+-        if value < root.value:
++        if value <= root.value:
+             root.left = self.__remove(root.left, value)
+ 
+         elif value > root.value:
+</pre><h3>Mutant 49</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -87,7 +87,7 @@
+             return root
+ 
+         if value < root.value:
+-            root.left = self.__remove(root.left, value)
++            root.left = None
+ 
+         elif value > root.value:
+             root.right = self.__remove(root.right, value)
+</pre><h3>Mutant 50</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -89,7 +89,7 @@
+         if value < root.value:
+             root.left = self.__remove(root.left, value)
+ 
+-        elif value > root.value:
++        elif value >= root.value:
+             root.right = self.__remove(root.right, value)
+ 
+         else:
+</pre><h3>Mutant 51</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -90,7 +90,7 @@
+             root.left = self.__remove(root.left, value)
+ 
+         elif value > root.value:
+-            root.right = self.__remove(root.right, value)
++            root.right = None
+ 
+         else:
+ 
+</pre><h3>Mutant 52</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -94,7 +94,7 @@
+ 
+         else:
+ 
+-            if root.left is None:
++            if root.left is not None:
+                 temp = root.right
+                 root = None
+                 return temp
+</pre><h3>Mutant 53</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -95,7 +95,7 @@
+         else:
+ 
+             if root.left is None:
+-                temp = root.right
++                temp = None
+                 root = None
+                 return temp
+ 
+</pre><h3>Mutant 54</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -96,7 +96,7 @@
+ 
+             if root.left is None:
+                 temp = root.right
+-                root = None
++                root = ""
+                 return temp
+ 
+             elif root.right is None:
+</pre><h3>Mutant 55</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -99,7 +99,7 @@
+                 root = None
+                 return temp
+ 
+-            elif root.right is None:
++            elif root.right is not None:
+                 temp = root.left
+                 root = None
+                 return temp
+</pre><h3>Mutant 56</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -100,7 +100,7 @@
+                 return temp
+ 
+             elif root.right is None:
+-                temp = root.left
++                temp = None
+                 root = None
+                 return temp
+ 
+</pre><h3>Mutant 57</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -101,7 +101,7 @@
+ 
+             elif root.right is None:
+                 temp = root.left
+-                root = None
++                root = ""
+                 return temp
+ 
+             temp = minValueNode(root.right)
+</pre><h3>Mutant 58</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -104,7 +104,7 @@
+                 root = None
+                 return temp
+ 
+-            temp = minValueNode(root.right)
++            temp = None
+ 
+             root.value = temp.value
+ 
+</pre><h3>Mutant 59</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -106,7 +106,7 @@
+ 
+             temp = minValueNode(root.right)
+ 
+-            root.value = temp.value
++            root.value = None
+ 
+             root.right = self.__remove(root.right, temp.value)
+ 
+</pre><h3>Mutant 60</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -108,7 +108,7 @@
+ 
+             root.value = temp.value
+ 
+-            root.right = self.__remove(root.right, temp.value)
++            root.right = None
+ 
+         return root
+ 
+</pre><h3>Mutant 72</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -129,7 +129,7 @@
+         if not root:
+ 
+             root = Node(array[mid])
+-            self.size += 1
++            self.size = 1
+ 
+         else:
+ 
+</pre><h3>Mutant 84</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -163,7 +163,7 @@
+         if order == "inOrder":
+             inOrder(self.root)
+             return traversal
+-        elif order == "preOrder":
++        elif order == "XXpreOrderXX":
+             preOrder(self.root)
+             return traversal
+         elif order == "postOrder":
+</pre><h3>Mutant 86</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -166,7 +166,7 @@
+         elif order == "preOrder":
+             preOrder(self.root)
+             return traversal
+-        elif order == "postOrder":
++        elif order == "XXpostOrderXX":
+             postOrder(self.root)
+             return traversal
+ 
+</pre><h3>Mutant 87</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -183,7 +183,7 @@
+         return str(self.getOrder())
+ 
+ 
+-if __name__ == "__main__":
++if __name__ != "__main__":
+ 
+     tree = BST()
+ 
+</pre><h3>Mutant 88</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -183,7 +183,7 @@
+         return str(self.getOrder())
+ 
+ 
+-if __name__ == "__main__":
++if __name__ == "XX__main__XX":
+ 
+     tree = BST()
+ 
+</pre><h3>Mutant 89</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -185,7 +185,7 @@
+ 
+ if __name__ == "__main__":
+ 
+-    tree = BST()
++    tree = None
+ 
+     tree.add(3)
+     tree.add(2)
+</pre><h3>Mutant 90</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -187,7 +187,7 @@
+ 
+     tree = BST()
+ 
+-    tree.add(3)
++    tree.add(4)
+     tree.add(2)
+     tree.add(4)
+ 
+</pre><h3>Mutant 91</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -188,7 +188,7 @@
+     tree = BST()
+ 
+     tree.add(3)
+-    tree.add(2)
++    tree.add(3)
+     tree.add(4)
+ 
+     # print(tree.root.value)
+</pre><h3>Mutant 92</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -189,7 +189,7 @@
+ 
+     tree.add(3)
+     tree.add(2)
+-    tree.add(4)
++    tree.add(5)
+ 
+     # print(tree.root.value)
+     # print(tree.root.left.value)
+</pre><h3>Mutant 93</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -195,7 +195,7 @@
+     # print(tree.root.left.value)
+     # print(tree.root.right.value)
+ 
+-    tree2 = BST()
++    tree2 = None
+     tree2.build([1, 2, 3])
+     print(tree2, tree2.size)
+     tree2.remove(1)
+</pre><h3>Mutant 94</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -196,7 +196,7 @@
+     # print(tree.root.right.value)
+ 
+     tree2 = BST()
+-    tree2.build([1, 2, 3])
++    tree2.build([2, 2, 3])
+     print(tree2, tree2.size)
+     tree2.remove(1)
+     print(tree2, tree2.size)
+</pre><h3>Mutant 95</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -196,7 +196,7 @@
+     # print(tree.root.right.value)
+ 
+     tree2 = BST()
+-    tree2.build([1, 2, 3])
++    tree2.build([1, 3, 3])
+     print(tree2, tree2.size)
+     tree2.remove(1)
+     print(tree2, tree2.size)
+</pre><h3>Mutant 96</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -196,7 +196,7 @@
+     # print(tree.root.right.value)
+ 
+     tree2 = BST()
+-    tree2.build([1, 2, 3])
++    tree2.build([1, 2, 4])
+     print(tree2, tree2.size)
+     tree2.remove(1)
+     print(tree2, tree2.size)
+</pre><h3>Mutant 97</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -198,7 +198,7 @@
+     tree2 = BST()
+     tree2.build([1, 2, 3])
+     print(tree2, tree2.size)
+-    tree2.remove(1)
++    tree2.remove(2)
+     print(tree2, tree2.size)
+     tree2.remove(3)
+     print(tree2, tree2.size)
+</pre><h3>Mutant 98</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -200,7 +200,7 @@
+     print(tree2, tree2.size)
+     tree2.remove(1)
+     print(tree2, tree2.size)
+-    tree2.remove(3)
++    tree2.remove(4)
+     print(tree2, tree2.size)
+     tree2.remove(2)
+     print(tree2, tree2.size)
+</pre><h3>Mutant 99</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -202,6 +202,6 @@
+     print(tree2, tree2.size)
+     tree2.remove(3)
+     print(tree2, tree2.size)
+-    tree2.remove(2)
+-    print(tree2, tree2.size)
+-
++    tree2.remove(3)
++    print(tree2, tree2.size)
++
+</pre><h2>Suspicious</h2>Mutants that made the test suite take longer, but otherwise seemed ok<h3>Mutant 6</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -12,7 +12,7 @@
+ 
+ class BST:
+     def __init__(self):
+-        self.root = None
++        self.root = ""
+         self.size = 0
+ 
+     def add(self, value: T):
+</pre><h3>Mutant 27</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -43,7 +43,7 @@
+         return self.__contains(self.root, value)
+ 
+     def __contains(self, root, value):
+-        if root == None:
++        if root != None:
+             return False
+         elif root.value == value:
+             return True
+</pre><h3>Mutant 30</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -46,7 +46,7 @@
+         if root == None:
+             return False
+         elif root.value == value:
+-            return True
++            return False
+         else:
+             if value < root.value:
+                 return self.__contains(root.left, value)
+</pre><h3>Mutant 62</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -117,7 +117,7 @@
+ 
+     def build(self, array: list) -> None:
+ 
+-        self.root = self.__build(array, None, 0, len(array) - 1)
++        self.root = self.__build(array, None, 0, len(array) + 1)
+ 
+     def __build(self, array: list, root, left: int, right: int):
+ 
+</pre><h3>Mutant 66</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -124,7 +124,7 @@
+         if left > right:
+             return
+ 
+-        mid = (left + right) // 2
++        mid = (left - right) // 2
+ 
+         if not root:
+ 
+</pre><h3>Mutant 75</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -135,7 +135,7 @@
+ 
+             self.__add(root, array[mid])
+ 
+-        self.__build(array, root, left, mid - 1)
++        self.__build(array, root, left, mid + 1)
+         self.__build(array, root, mid + 1, right)
+ 
+         return root
+</pre><h3>Mutant 77</h3><pre>--- binarySearchTree2.py
++++ binarySearchTree2.py
+@@ -136,7 +136,7 @@
+             self.__add(root, array[mid])
+ 
+         self.__build(array, root, left, mid - 1)
+-        self.__build(array, root, mid + 1, right)
++        self.__build(array, root, mid - 1, right)
+ 
+         return root
+ 
+</pre></body></html>

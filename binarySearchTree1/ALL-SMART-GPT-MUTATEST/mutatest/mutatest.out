@@ -1,0 +1,49 @@
+2024-02-23 12:07:10,771: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/lucca/desktop/ic/experimento/testes/python_experiments/binarySearchTree1
+plugins: Faker-15.1.1, hypothesis-6.56.3
+collected 122 items
+
+ALL-SMART-GPT-MUTATEST/test_binarySearchTree1_DYNAMOSA.py .............. [ 11%]
+.................                                                        [ 25%]
+ALL-SMART-GPT-MUTATEST/test_binarySearchTree1_MIO.py ................... [ 40%]
+............                                                             [ 50%]
+ALL-SMART-GPT-MUTATEST/test_binarySearchTree1_MOSA.py .................. [ 65%]
+...............                                                          [ 77%]
+ALL-SMART-GPT-MUTATEST/test_binarySearchTree1_MUTATEST.py .....          [ 81%]
+ALL-SMART-GPT-MUTATEST/test_binarySearchTree1_WHOLE_SUITE.py ........... [ 90%]
+...........                                                              [100%]
+
+============================= 122 passed in 0.54s ==============================
+2024-02-23 12:07:11,820: [92m67 mutation targets found in binarySearchTree1.py AST.[0m
+2024-02-23 12:07:11,820: Setting random.seed to: 2023
+2024-02-23 12:07:11,821: Coverage file does not exist, proceeding to sample from all targets.
+2024-02-23 12:07:11,821: Total sample space size: 67
+2024-02-23 12:07:11,821: [92mSelecting 10 locations from 67 potentials.[0m
+2024-02-23 12:07:11,821: Starting individual mutation trials!
+2024-02-23 12:07:11,821: Running serial (single processor) dispatch mode.
+2024-02-23 12:07:11,821: Current target location: binarySearchTree1.py, LocIndex(ast_class='If', lineno=136, col_offset=8, op_type='If_Statement', end_lineno=137, end_col_offset=23)
+2024-02-23 12:07:12,547: [91mResult: Survived at binarySearchTree1.py: (136, 8)[0m
+Traceback (most recent call last):
+  File "/home/lucca/.local/bin/mutatest", line 8, in <module>
+    sys.exit(cli_main())
+  File "/home/lucca/.local/lib/python3.10/site-packages/mutatest/cli.py", line 731, in cli_main
+    main(args)
+  File "/home/lucca/.local/lib/python3.10/site-packages/mutatest/cli.py", line 779, in main
+    results_summary = run.run_mutation_trials(
+  File "/home/lucca/.local/lib/python3.10/site-packages/mutatest/run.py", line 609, in run_mutation_trials
+    mutation_sample_dispatch(
+  File "/home/lucca/.local/lib/python3.10/site-packages/mutatest/run.py", line 533, in mutation_sample_dispatch
+    trial_results = trial_runner(
+  File "/home/lucca/.local/lib/python3.10/site-packages/mutatest/run.py", line 391, in create_mutation_run_trial
+    mutant_trial = subprocess.run(
+  File "/usr/lib/python3.10/subprocess.py", line 505, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 1154, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 2021, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt

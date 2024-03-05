@@ -1,0 +1,1910 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 20/04/2023 17:15:39</p><p>Total jobs: 62</p><p>Complete: 62 (100.00%)</p><p>Surviving mutants: 9 (14.52%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID 3545bd9165e645a19ad8b56546229711</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (21, 18), end pos: (21, 20)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 != p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..F...............................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...FF..........F.........F.                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_2 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_3 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_25 - assert True is False
+========================= 5 failed, 56 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID 55fa2b1f25c340449bfd15526ce27043</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (48, 23), end pos: (48, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if n.value != value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ........FFF.......................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ..F..F.....F.F....F..F.FF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - assert False is True
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_9 - assert True is False
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_10 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - assert True is False
+======================== 11 failed, 50 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 66f75abb6a0b4ce2a119f26c40addafa</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (21, 18), end pos: (21, 20)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 &lt; p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..F...............................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...FF..........F.........F.                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_2 - TypeError: '&lt;' not supporte...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_3 - TypeError: '&lt;' not support...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - TypeError: '&lt;' not support...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - TypeError: '&lt;' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_25 - TypeError: '&lt;' not suppor...
+========================= 5 failed, 56 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID f1ef7c72a9cb4ce69dde77e5c4218808</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (48, 23), end pos: (48, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if n.value &lt; value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ........FFF.......................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ..F..F.....F.F....F..F.FF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - TypeError: '&lt;' not supporte...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_9 - TypeError: '&lt;' not supporte...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_10 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - TypeError: '&lt;' not support...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - TypeError: '&lt;' not support...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - TypeError: '&lt;' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - TypeError: '&lt;' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - TypeError: '&lt;' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - TypeError: '&lt;' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - TypeError: '&lt;' not suppor...
+======================== 11 failed, 50 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID 1821333db7b347a5b6c9ce7dbc8b8285</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (21, 18), end pos: (21, 20)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 &lt;= p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..F...............................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...FF..........F.........F.                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_2 - TypeError: '&lt;=' not support...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_3 - TypeError: '&lt;=' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - TypeError: '&lt;=' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - TypeError: '&lt;=' not suppo...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_25 - TypeError: '&lt;=' not suppo...
+========================= 5 failed, 56 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID 9a52e895d2bb48cea70c0408491c7522</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (48, 23), end pos: (48, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if n.value &lt;= value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ........FFF.......................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ..F..F.......F....F..F.FF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - TypeError: '&lt;=' not support...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_9 - TypeError: '&lt;=' not support...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_10 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - TypeError: '&lt;=' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - TypeError: '&lt;=' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - TypeError: '&lt;=' not suppo...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - TypeError: '&lt;=' not suppo...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - TypeError: '&lt;=' not suppo...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - TypeError: '&lt;=' not suppo...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - TypeError: '&lt;=' not suppo...
+======================== 10 failed, 51 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID 522da6442e3945a38a81f966e97dfbe8</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (21, 18), end pos: (21, 20)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 &gt; p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..F...............................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...FF..........F.........F.                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_2 - TypeError: '&gt;' not supporte...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_3 - TypeError: '&gt;' not support...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - TypeError: '&gt;' not support...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - TypeError: '&gt;' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_25 - TypeError: '&gt;' not suppor...
+========================= 5 failed, 56 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID 006c1bee06e249bca9cdce6d9619d1e8</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (48, 23), end pos: (48, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if n.value &gt; value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ........FF........................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ..F..F.....F.F....F..F.FF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - TypeError: '&gt;' not supporte...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_9 - TypeError: '&gt;' not supporte...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - TypeError: '&gt;' not support...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - TypeError: '&gt;' not support...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - TypeError: '&gt;' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - TypeError: '&gt;' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - TypeError: '&gt;' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - TypeError: '&gt;' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - TypeError: '&gt;' not suppor...
+======================== 10 failed, 51 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID b6572cf0bd38435892cd864d6ff1ca34</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (21, 18), end pos: (21, 20)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 &gt;= p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..F...............................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...FF..........F.........F.                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_2 - TypeError: '&gt;=' not support...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_3 - TypeError: '&gt;=' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - TypeError: '&gt;=' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - TypeError: '&gt;=' not suppo...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_25 - TypeError: '&gt;=' not suppo...
+========================= 5 failed, 56 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID eaf5e2cc4eeb4286816c70d0e416744e</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (48, 23), end pos: (48, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if n.value &gt;= value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ........FF........................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ..F..F.......F....F..F.FF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - TypeError: '&gt;=' not support...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_9 - TypeError: '&gt;=' not support...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - TypeError: '&gt;=' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - TypeError: '&gt;=' not suppor...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - TypeError: '&gt;=' not suppo...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - TypeError: '&gt;=' not suppo...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - TypeError: '&gt;=' not suppo...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - TypeError: '&gt;=' not suppo...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - TypeError: '&gt;=' not suppo...
+========================= 9 failed, 52 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_11_1"><button class="btn btn-outline-danger"><span class="job_id">11 : Job ID 476edaae740d476b99479d13777e1492</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (21, 18), end pos: (21, 20)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 is p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..................................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...........................                 [100%]
+
+============================== 61 passed in 0.10s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_12_1"><button class="btn btn-outline-danger"><span class="job_id">12 : Job ID 74b1a7fc157b41fca118295fd766e96f</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (48, 23), end pos: (48, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if n.value is value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..................................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...........................                 [100%]
+
+============================== 61 passed in 0.08s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID af09b7e0e4bf4a1b83c88287aeb4d359</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=16" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (16, 23), end pos: (16, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -13,7 +13,7 @@
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+         while p1 != None and p2 != None:
+-            if p2.next == None: return False
++            if p2.next is not None: return False
+ 
+             p1 = p1.next
+             p2 = p2.next.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py F.................................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py F....F............F.FF.....                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_0 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_0 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_20 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - AttributeError: 'NoneType...
+========================= 6 failed, 55 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID dd37bebcf11a4585b43cc701a8f85625</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (21, 18), end pos: (21, 20)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 is not p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..F...............................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...FF..........F.........F.                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_2 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_3 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_25 - assert True is False
+========================= 5 failed, 56 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_15_1"><button class="btn btn-outline-success"><span class="job_id">15 : Job ID ec16fa1f0e994115b91d5d8fba9af109</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (48, 23), end pos: (48, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if n.value is not value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ........FFF.......................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ..F..F.....F.F....F..F.FF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - assert False is True
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_9 - assert True is False
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_10 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - assert True is False
+======================== 11 failed, 50 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_16_1"><button class="btn btn-outline-success"><span class="job_id">16 : Job ID 4b4ef968a49b437eb1c8467d64a8857f</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (49, 24), end pos: (49, 26)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -46,7 +46,7 @@
+         last = None
+         while n != None:
+             if n.value == value:
+-                if last == None:
++                if last is not None:
+                     self.head = self.head.next
+                 else:
+                     last.next = n.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ........F.........................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ..F..F.....F.F.......F.....                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - AttributeError: 'NoneType...
+========================= 6 failed, 55 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_17_1"><button class="btn btn-outline-success"><span class="job_id">17 : Job ID debb546c23b34118b50fcba3aa6a7ea6</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=99" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (99, 25), end pos: (99, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -96,7 +96,7 @@
+ 
+     def isEmpty(self):
+         """Determine if queue is empty."""
+-        return self.head == None
++        return self.head is not None
+ 
+     def pop(self):
+         """Remove first value from queue."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py .................................F           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...............F.F....F....                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_33 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_17 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - assert False is True
+========================= 4 failed, 57 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_18_1"><button class="btn btn-outline-danger"><span class="job_id">18 : Job ID da2607c11b984d219372ecebf80c29b0</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=15" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (15, 17), end pos: (15, 19)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_NotEq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -12,7 +12,7 @@
+     def checkInfinite(self):
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+-        while p1 != None and p2 != None:
++        while p1 is None and p2 != None:
+             if p2.next == None: return False
+ 
+             p1 = p1.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..................................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...........................                 [100%]
+
+============================== 61 passed in 0.08s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_19"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_19_1" aria-expanded="false" aria-controls="job_list___sub_collapse_19_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_19_1"><button class="btn btn-outline-danger"><span class="job_id">19 : Job ID 7fd4c90541294694b9edc6d73571e250</span></button></div></a><div aria-labelledby="job_list___sub_heading_19_1" data-parent="#job_list___sub_accordion_19" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_19_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=15" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (15, 32), end pos: (15, 34)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_NotEq_Is, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -12,7 +12,7 @@
+     def checkInfinite(self):
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+-        while p1 != None and p2 != None:
++        while p1 != None and p2 is None:
+             if p2.next == None: return False
+ 
+             p1 = p1.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..................................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...........................                 [100%]
+
+============================== 61 passed in 0.10s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_20"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_20_1" aria-expanded="false" aria-controls="job_list___sub_collapse_20_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_20_1"><button class="btn btn-outline-success"><span class="job_id">20 : Job ID 71370a4b5885468ca7369bc361181967</span></button></div></a><div aria-labelledby="job_list___sub_heading_20_1" data-parent="#job_list___sub_accordion_20" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_20_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=47" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (47, 16), end pos: (47, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_NotEq_Is, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -44,7 +44,7 @@
+         """Remove value from list."""
+         n = self.head
+         last = None
+-        while n != None:
++        while n is None:
+             if n.value == value:
+                 if last == None:
+                     self.head = self.head.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ........F..F......................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ..F..F.....F.F.......F.....                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - assert False is True
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_11 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert False is True
+========================= 7 failed, 54 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_21"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_21_1" aria-expanded="false" aria-controls="job_list___sub_collapse_21_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_21_1"><button class="btn btn-outline-success"><span class="job_id">21 : Job ID 19eafe615c8b4429b834d6e58b2c8c52</span></button></div></a><div aria-labelledby="job_list___sub_heading_21_1" data-parent="#job_list___sub_accordion_21" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_21_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=60" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (60, 16), end pos: (60, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_NotEq_Is, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -57,7 +57,7 @@
+     def __iter__(self):
+         """Iterator of values in the list."""
+         n = self.head
+-        while n != None:
++        while n is None:
+             yield n.value
+             n = n.next
+         </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ............FF....................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py .F......F..................                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_12 - AssertionError: assert 'li...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_13 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_1 - AssertionError: assert 'li...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_8 - AttributeError: 'NoneType'...
+========================= 4 failed, 57 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_22"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_22_1" aria-expanded="false" aria-controls="job_list___sub_collapse_22_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_22_1"><button class="btn btn-outline-success"><span class="job_id">22 : Job ID 383ecd3751ae422ab4cadfa564ff858e</span></button></div></a><div aria-labelledby="job_list___sub_heading_22_1" data-parent="#job_list___sub_accordion_22" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_22_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=75" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (75, 16), end pos: (75, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_NotEq_Is, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -72,7 +72,7 @@
+         """Count values in list."""
+         n = self.head
+         count = 0
+-        while n != None:
++        while n is None:
+             count += 1
+             n = n.next
+         return count</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ....FFFFFFFFFFFFF...............F.           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py .FFFFFFFF..F.F.FF.F..FFFF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_4 - assert 0 == 6
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_5 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_6 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_7 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_9 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_10 - assert 0 == 7
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_11 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_12 - assert 0 == 2
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_13 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_14 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_15 - assert 0 == 2
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_16 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_32 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_1 - assert 0 == 3
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_3 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_6 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_7 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_8 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_16 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - assert 0 == 4
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - assert 0 == 3
+======================== 31 failed, 30 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_23"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_23_1" aria-expanded="false" aria-controls="job_list___sub_collapse_23_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_23_1"><button class="btn btn-outline-success"><span class="job_id">23 : Job ID 208eb03b82584828b3d9d423b4576121</span></button></div></a><div aria-labelledby="job_list___sub_heading_23_1" data-parent="#job_list___sub_accordion_23" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_23_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=114" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (114, 16), end pos: (114, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_NotEq_Is, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -111,7 +111,7 @@
+     def __iter__(self):
+         """Iterator of values in queue."""
+         n = self.head
+-        while n != None:
++        while n is None:
+             yield n.value
+             n = n.next
+         </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py .........................F.F......           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ....FF.....F.F.F..F..F.F...                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_25 - AssertionError: assert 'qu...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_27 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - assert 0 == 1
+======================== 10 failed, 51 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_24"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_24_1" aria-expanded="false" aria-controls="job_list___sub_collapse_24_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_24_1"><button class="btn btn-outline-success"><span class="job_id">24 : Job ID 0dfc691e477742df89b108013a94e189</span></button></div></a><div aria-labelledby="job_list___sub_heading_24_1" data-parent="#job_list___sub_accordion_24" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_24_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=129" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (129, 16), end pos: (129, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_NotEq_Is, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -126,7 +126,7 @@
+         """Count values in queue."""
+         n = self.head
+         count = 0
+-        while n != None:
++        while n is None:
+             count += 1
+             n = n.next
+         return count</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..................FFFFFFFFFFFFF..F           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ....FFFFF.FFFFFFFFF.FFFF...                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_18 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_19 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_20 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_21 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_22 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_23 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_24 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_25 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_26 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_27 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_28 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_29 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_30 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_33 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_6 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_7 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_8 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_10 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_12 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_14 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_16 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_17 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_20 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - AttributeError: 'NoneType...
+======================== 32 failed, 29 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_25"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_25_1" aria-expanded="false" aria-controls="job_list___sub_collapse_25_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_25_1"><button class="btn btn-outline-success"><span class="job_id">25 : Job ID 6273adca3e7a4f03a4ea509f780abbab</span></button></div></a><div aria-labelledby="job_list___sub_heading_25_1" data-parent="#job_list___sub_accordion_25" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_25_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=37" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (37, 21), end pos: (37, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -34,7 +34,7 @@
+ 
+     def pop(self):
+         """Remove first value in list."""
+-        if self.head is None:
++        if self.head is not None:
+             raise Exception ("Linked list is empty.")
+         val = self.head.value
+         self.head = self.head.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py .......F..........................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ....F.................F....                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_7 - Exception: Linked list is e...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - Exception: Linked list is ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - Exception: Linked list is...
+========================= 3 failed, 58 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_26"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_26_1" aria-expanded="false" aria-controls="job_list___sub_collapse_26_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_26_1"><button class="btn btn-outline-success"><span class="job_id">26 : Job ID 19322cff90524806b40e0c40a1d0206d</span></button></div></a><div aria-labelledby="job_list___sub_heading_26_1" data-parent="#job_list___sub_accordion_26" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_26_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=66" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (66, 21), end pos: (66, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -63,7 +63,7 @@
+         
+     def __repr__(self):
+         """String representation of linked list."""
+-        if self.head is None:
++        if self.head is not None:
+             return 'link:[]'
+ 
+         return 'link:[{0:s}]'.format(','.join(map(str,self)))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ............F.....................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py .F.........................                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_12 - AssertionError: assert 'li...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_1 - AssertionError: assert 'li...
+========================= 2 failed, 59 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_27"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_27_1" aria-expanded="false" aria-controls="job_list___sub_collapse_27_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_27_1"><button class="btn btn-outline-success"><span class="job_id">27 : Job ID 75dc3abb062842e89cca4791b98d1198</span></button></div></a><div aria-labelledby="job_list___sub_heading_27_1" data-parent="#job_list___sub_accordion_27" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_27_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=91" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (91, 21), end pos: (91, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -88,7 +88,7 @@
+     def append(self, value):
+         """Add value to end of queue."""
+         newNode = LinkedNode(value, None)
+-        if self.head is None:
++        if self.head is not None:
+             self.head = self.tail = newNode
+         else:
+             self.tail.next = newNode</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ...................FFFF.FFF..F....           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ....FF.....FF..F..F.FFFF...                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_19 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_20 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_21 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_22 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_24 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_25 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_26 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_29 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_12 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_20 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - AttributeError: 'NoneType...
+======================== 18 failed, 43 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_28"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_28_1" aria-expanded="false" aria-controls="job_list___sub_collapse_28_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_28_1"><button class="btn btn-outline-success"><span class="job_id">28 : Job ID 04ac9223b2824e06903a86c8e4245f9e</span></button></div></a><div aria-labelledby="job_list___sub_heading_28_1" data-parent="#job_list___sub_accordion_28" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_28_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=103" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (103, 21), end pos: (103, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -100,7 +100,7 @@
+ 
+     def pop(self):
+         """Remove first value from queue."""
+-        if self.head is None:
++        if self.head is not None:
+             raise Exception ("Queue is empty.")
+         val = self.head.value
+         self.head = self.head.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py .....................FF...........           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py .....F......F.....F..F.....                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_21 - Exception: Queue is empty.
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_22 - Exception: Queue is empty.
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - Exception: Queue is empty.
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_12 - Exception: Queue is empty.
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - Exception: Queue is empty.
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - Exception: Queue is empty.
+========================= 6 failed, 55 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_29"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_29_1" aria-expanded="false" aria-controls="job_list___sub_collapse_29_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_29_1"><button class="btn btn-outline-danger"><span class="job_id">29 : Job ID 70d8382d1aee48f1a4948f42117245ed</span></button></div></a><div aria-labelledby="job_list___sub_heading_29_1" data-parent="#job_list___sub_accordion_29" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_29_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=107" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (107, 21), end pos: (107, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -104,7 +104,7 @@
+             raise Exception ("Queue is empty.")
+         val = self.head.value
+         self.head = self.head.next
+-        if self.head is None:
++        if self.head is not None:
+             self.tail = None
+         return val
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..................................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...........................                 [100%]
+
+============================== 61 passed in 0.09s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_30"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_30_1" aria-expanded="false" aria-controls="job_list___sub_collapse_30_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_30_1"><button class="btn btn-outline-success"><span class="job_id">30 : Job ID b8fcc599fd6d4a03b0fa3ada1317e878</span></button></div></a><div aria-labelledby="job_list___sub_heading_30_1" data-parent="#job_list___sub_accordion_30" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_30_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=120" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (120, 21), end pos: (120, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -117,7 +117,7 @@
+         
+     def __repr__(self):
+         """String representation of queue."""
+-        if self.head is None:
++        if self.head is not None:
+             return 'queue:[]'
+ 
+         return 'queue:[{0:s}]'.format(','.join(map(str,self)))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py .........................F........           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...............F...........                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_25 - AssertionError: assert 'qu...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - AssertionError: assert 'q...
+========================= 2 failed, 59 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_31"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_31_1" aria-expanded="false" aria-controls="job_list___sub_collapse_31_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_31_1"><button class="btn btn-outline-danger"><span class="job_id">31 : Job ID d3d14601055441c7a6a7518b04ba9442</span></button></div></a><div aria-labelledby="job_list___sub_heading_31_1" data-parent="#job_list___sub_accordion_31" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_31_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=15" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (15, 14), end pos: (15, 39)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -12,7 +12,7 @@
+     def checkInfinite(self):
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+-        while p1 != None and p2 != None:
++        while not p1 != None and p2 != None:
+             if p2.next == None: return False
+ 
+             p1 = p1.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..................................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...........................                 [100%]
+
+============================== 61 passed in 0.09s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_32"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_32_1" aria-expanded="false" aria-controls="job_list___sub_collapse_32_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_32_1"><button class="btn btn-outline-success"><span class="job_id">32 : Job ID 3d8dddf65f7d4e85bf676e486aed3d31</span></button></div></a><div aria-labelledby="job_list___sub_heading_32_1" data-parent="#job_list___sub_accordion_32" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_32_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=16" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (16, 15), end pos: (16, 30)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -13,7 +13,7 @@
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+         while p1 != None and p2 != None:
+-            if p2.next == None: return False
++            if not p2.next == None: return False
+ 
+             p1 = p1.next
+             p2 = p2.next.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py F.................................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py F....F............F.FF.....                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_0 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_0 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_20 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - AttributeError: 'NoneType...
+========================= 6 failed, 55 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_33"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_33_1" aria-expanded="false" aria-controls="job_list___sub_collapse_33_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_33_1"><button class="btn btn-outline-success"><span class="job_id">33 : Job ID 19f184dac0f344a8bbc2b14f091d1d83</span></button></div></a><div aria-labelledby="job_list___sub_heading_33_1" data-parent="#job_list___sub_accordion_33" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_33_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (21, 15), end pos: (21, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if not p1 == p2: return True
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..F...............................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...FF..........F.........F.                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_2 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_3 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_25 - assert True is False
+========================= 5 failed, 56 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_34"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_34_1" aria-expanded="false" aria-controls="job_list___sub_collapse_34_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_34_1"><button class="btn btn-outline-success"><span class="job_id">34 : Job ID ec8b863dbfb44ceba692aa6e84bf737f</span></button></div></a><div aria-labelledby="job_list___sub_heading_34_1" data-parent="#job_list___sub_accordion_34" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_34_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=37" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (37, 11), end pos: (37, 28)</button></a></pre><pre>operator: core/AddNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -34,7 +34,7 @@
+ 
+     def pop(self):
+         """Remove first value in list."""
+-        if self.head is None:
++        if not self.head is None:
+             raise Exception ("Linked list is empty.")
+         val = self.head.value
+         self.head = self.head.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py .......F..........................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ....F.................F....                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_7 - Exception: Linked list is e...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - Exception: Linked list is ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - Exception: Linked list is...
+========================= 3 failed, 58 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_35"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_35_1" aria-expanded="false" aria-controls="job_list___sub_collapse_35_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_35_1"><button class="btn btn-outline-success"><span class="job_id">35 : Job ID 8513e99588994fa888913cf7b360ab63</span></button></div></a><div aria-labelledby="job_list___sub_heading_35_1" data-parent="#job_list___sub_accordion_35" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_35_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=47" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (47, 14), end pos: (47, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -44,7 +44,7 @@
+         """Remove value from list."""
+         n = self.head
+         last = None
+-        while n != None:
++        while not n != None:
+             if n.value == value:
+                 if last == None:
+                     self.head = self.head.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ........F..F......................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ..F..F.....F.F.......F.....                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - assert False is True
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_11 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert False is True
+========================= 7 failed, 54 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_36"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_36_1" aria-expanded="false" aria-controls="job_list___sub_collapse_36_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_36_1"><button class="btn btn-outline-success"><span class="job_id">36 : Job ID 9d0ec515166149529c56752681a710e7</span></button></div></a><div aria-labelledby="job_list___sub_heading_36_1" data-parent="#job_list___sub_accordion_36" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_36_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=48" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (48, 15), end pos: (48, 31)</button></a></pre><pre>operator: core/AddNot, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -45,7 +45,7 @@
+         n = self.head
+         last = None
+         while n != None:
+-            if n.value == value:
++            if not n.value == value:
+                 if last == None:
+                     self.head = self.head.next
+                 else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ........FFF.......................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ..F..F.....F.F....F..F.FF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - assert False is True
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_9 - assert True is False
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_10 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - assert True is False
+======================== 11 failed, 50 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_37"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_37_1" aria-expanded="false" aria-controls="job_list___sub_collapse_37_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_37_1"><button class="btn btn-outline-success"><span class="job_id">37 : Job ID 953db2345b1a457487faca74a5b91dc7</span></button></div></a><div aria-labelledby="job_list___sub_heading_37_1" data-parent="#job_list___sub_accordion_37" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_37_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (49, 19), end pos: (49, 31)</button></a></pre><pre>operator: core/AddNot, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -46,7 +46,7 @@
+         last = None
+         while n != None:
+             if n.value == value:
+-                if last == None:
++                if not last == None:
+                     self.head = self.head.next
+                 else:
+                     last.next = n.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ........F.........................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ..F..F.....F.F.......F.....                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - AttributeError: 'NoneType...
+========================= 6 failed, 55 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_38"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_38_1" aria-expanded="false" aria-controls="job_list___sub_collapse_38_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_38_1"><button class="btn btn-outline-success"><span class="job_id">38 : Job ID 0624de91f8c54988b4cf32dc63a7618e</span></button></div></a><div aria-labelledby="job_list___sub_heading_38_1" data-parent="#job_list___sub_accordion_38" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_38_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=60" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (60, 14), end pos: (60, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -57,7 +57,7 @@
+     def __iter__(self):
+         """Iterator of values in the list."""
+         n = self.head
+-        while n != None:
++        while not n != None:
+             yield n.value
+             n = n.next
+         </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ............FF....................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py .F......F..................                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_12 - AssertionError: assert 'li...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_13 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_1 - AssertionError: assert 'li...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_8 - AttributeError: 'NoneType'...
+========================= 4 failed, 57 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_39"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_39_1" aria-expanded="false" aria-controls="job_list___sub_collapse_39_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_39_1"><button class="btn btn-outline-success"><span class="job_id">39 : Job ID e36a1201f086472d95531991c15a63b7</span></button></div></a><div aria-labelledby="job_list___sub_heading_39_1" data-parent="#job_list___sub_accordion_39" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_39_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=66" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (66, 11), end pos: (66, 28)</button></a></pre><pre>operator: core/AddNot, occurrence: 8</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -63,7 +63,7 @@
+         
+     def __repr__(self):
+         """String representation of linked list."""
+-        if self.head is None:
++        if not self.head is None:
+             return 'link:[]'
+ 
+         return 'link:[{0:s}]'.format(','.join(map(str,self)))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ............F.....................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py .F.........................                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_12 - AssertionError: assert 'li...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_1 - AssertionError: assert 'li...
+========================= 2 failed, 59 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_40"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_40_1" aria-expanded="false" aria-controls="job_list___sub_collapse_40_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_40_1"><button class="btn btn-outline-success"><span class="job_id">40 : Job ID 9a4e8cbd906f4fd5abba91d587649713</span></button></div></a><div aria-labelledby="job_list___sub_heading_40_1" data-parent="#job_list___sub_accordion_40" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_40_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=75" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (75, 14), end pos: (75, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 9</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -72,7 +72,7 @@
+         """Count values in list."""
+         n = self.head
+         count = 0
+-        while n != None:
++        while not n != None:
+             count += 1
+             n = n.next
+         return count</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ....FFFFFFFFFFFFF...............F.           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py .FFFFFFFF..F.F.FF.F..FFFF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_4 - assert 0 == 6
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_5 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_6 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_7 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_9 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_10 - assert 0 == 7
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_11 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_12 - assert 0 == 2
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_13 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_14 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_15 - assert 0 == 2
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_16 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_32 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_1 - assert 0 == 3
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_3 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_6 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_7 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_8 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_16 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - assert 0 == 4
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - assert 0 == 3
+======================== 31 failed, 30 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_41"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_41_1" aria-expanded="false" aria-controls="job_list___sub_collapse_41_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_41_1"><button class="btn btn-outline-success"><span class="job_id">41 : Job ID 2a4ada2326ca42948422ca042ac99825</span></button></div></a><div aria-labelledby="job_list___sub_heading_41_1" data-parent="#job_list___sub_accordion_41" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_41_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=91" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (91, 11), end pos: (91, 28)</button></a></pre><pre>operator: core/AddNot, occurrence: 10</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -88,7 +88,7 @@
+     def append(self, value):
+         """Add value to end of queue."""
+         newNode = LinkedNode(value, None)
+-        if self.head is None:
++        if not self.head is None:
+             self.head = self.tail = newNode
+         else:
+             self.tail.next = newNode</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ...................FFFF.FFF..F....           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ....FF.....FF..F..F.FFFF...                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_19 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_20 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_21 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_22 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_24 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_25 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_26 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_29 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_12 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_20 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - AttributeError: 'NoneType...
+======================== 18 failed, 43 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_42"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_42_1" aria-expanded="false" aria-controls="job_list___sub_collapse_42_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_42_1"><button class="btn btn-outline-success"><span class="job_id">42 : Job ID fac953ce6bb6455f87077c219177f8e1</span></button></div></a><div aria-labelledby="job_list___sub_heading_42_1" data-parent="#job_list___sub_accordion_42" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_42_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=103" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (103, 11), end pos: (103, 28)</button></a></pre><pre>operator: core/AddNot, occurrence: 11</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -100,7 +100,7 @@
+ 
+     def pop(self):
+         """Remove first value from queue."""
+-        if self.head is None:
++        if not self.head is None:
+             raise Exception ("Queue is empty.")
+         val = self.head.value
+         self.head = self.head.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py .....................FF...........           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py .....F......F.....F..F.....                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_21 - Exception: Queue is empty.
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_22 - Exception: Queue is empty.
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - Exception: Queue is empty.
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_12 - Exception: Queue is empty.
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - Exception: Queue is empty.
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - Exception: Queue is empty.
+========================= 6 failed, 55 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_43"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_43_1" aria-expanded="false" aria-controls="job_list___sub_collapse_43_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_43_1"><button class="btn btn-outline-danger"><span class="job_id">43 : Job ID b8001fb138a5483ab0a700c5f26b4971</span></button></div></a><div aria-labelledby="job_list___sub_heading_43_1" data-parent="#job_list___sub_accordion_43" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_43_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=107" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (107, 11), end pos: (107, 28)</button></a></pre><pre>operator: core/AddNot, occurrence: 12</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -104,7 +104,7 @@
+             raise Exception ("Queue is empty.")
+         val = self.head.value
+         self.head = self.head.next
+-        if self.head is None:
++        if not self.head is None:
+             self.tail = None
+         return val
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..................................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...........................                 [100%]
+
+============================== 61 passed in 0.09s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_44"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_44_1" aria-expanded="false" aria-controls="job_list___sub_collapse_44_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_44_1"><button class="btn btn-outline-success"><span class="job_id">44 : Job ID d5f5bc103ed144bc98d0f3249d20f1ad</span></button></div></a><div aria-labelledby="job_list___sub_heading_44_1" data-parent="#job_list___sub_accordion_44" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_44_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=114" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (114, 14), end pos: (114, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 13</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -111,7 +111,7 @@
+     def __iter__(self):
+         """Iterator of values in queue."""
+         n = self.head
+-        while n != None:
++        while not n != None:
+             yield n.value
+             n = n.next
+         </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py .........................F.F......           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ....FF.....F.F.F..F..F.F...                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_25 - AssertionError: assert 'qu...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_27 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - assert 0 == 1
+======================== 10 failed, 51 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_45"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_45_1" aria-expanded="false" aria-controls="job_list___sub_collapse_45_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_45_1"><button class="btn btn-outline-success"><span class="job_id">45 : Job ID 50ff20ade0394b6da5992ea924b0b763</span></button></div></a><div aria-labelledby="job_list___sub_heading_45_1" data-parent="#job_list___sub_accordion_45" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_45_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=120" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (120, 11), end pos: (120, 28)</button></a></pre><pre>operator: core/AddNot, occurrence: 14</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -117,7 +117,7 @@
+         
+     def __repr__(self):
+         """String representation of queue."""
+-        if self.head is None:
++        if not self.head is None:
+             return 'queue:[]'
+ 
+         return 'queue:[{0:s}]'.format(','.join(map(str,self)))</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py .........................F........           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...............F...........                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_25 - AssertionError: assert 'qu...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - AssertionError: assert 'q...
+========================= 2 failed, 59 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_46"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_46_1" aria-expanded="false" aria-controls="job_list___sub_collapse_46_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_46_1"><button class="btn btn-outline-success"><span class="job_id">46 : Job ID 7ca7ed9da4af4aca8eb51d1f31c54a50</span></button></div></a><div aria-labelledby="job_list___sub_heading_46_1" data-parent="#job_list___sub_accordion_46" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_46_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=129" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (129, 14), end pos: (129, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 15</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -126,7 +126,7 @@
+         """Count values in queue."""
+         n = self.head
+         count = 0
+-        while n != None:
++        while not n != None:
+             count += 1
+             n = n.next
+         return count</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..................FFFFFFFFFFFFF..F           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ....FFFFF.FFFFFFFFF.FFFF...                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_18 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_19 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_20 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_21 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_22 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_23 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_24 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_25 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_26 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_27 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_28 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_29 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_30 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_33 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_6 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_7 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_8 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_10 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_12 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_14 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_16 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_17 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_20 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - AttributeError: 'NoneType...
+======================== 32 failed, 29 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_47"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_47_1" aria-expanded="false" aria-controls="job_list___sub_collapse_47_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_47_1"><button class="btn btn-outline-danger"><span class="job_id">47 : Job ID 271371b52bb94010b3ce4939c65d3b2d</span></button></div></a><div aria-labelledby="job_list___sub_heading_47_1" data-parent="#job_list___sub_accordion_47" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_47_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (21, 32), end pos: (21, 36)</button></a></pre><pre>operator: core/ReplaceTrueWithFalse, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -18,7 +18,7 @@
+             p1 = p1.next
+             p2 = p2.next.next
+             
+-            if p1 == p2: return True
++            if p1 == p2: return False
+         return False
+ 
+ class LinkedList:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..................................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...........................                 [100%]
+
+============================== 61 passed in 0.09s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_48"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_48_1" aria-expanded="false" aria-controls="job_list___sub_collapse_48_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_48_1"><button class="btn btn-outline-success"><span class="job_id">48 : Job ID c9378dfad46c4071884a0c657cca4610</span></button></div></a><div aria-labelledby="job_list___sub_heading_48_1" data-parent="#job_list___sub_accordion_48" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_48_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=53" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (53, 23), end pos: (53, 27)</button></a></pre><pre>operator: core/ReplaceTrueWithFalse, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -50,7 +50,7 @@
+                     self.head = self.head.next
+                 else:
+                     last.next = n.next
+-                return True
++                return False
+             n = n.next
+         return False
+         </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ........F.........................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ..F..F.....F.F.......F.....                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - assert False is True
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert False is True
+========================= 6 failed, 55 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_49"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_49_1" aria-expanded="false" aria-controls="job_list___sub_collapse_49_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_49_1"><button class="btn btn-outline-success"><span class="job_id">49 : Job ID 8a58c01999b64b1283af6c3a9c2a7927</span></button></div></a><div aria-labelledby="job_list___sub_heading_49_1" data-parent="#job_list___sub_accordion_49" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_49_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=16" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (16, 39), end pos: (16, 44)</button></a></pre><pre>operator: core/ReplaceFalseWithTrue, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -13,7 +13,7 @@
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+         while p1 != None and p2 != None:
+-            if p2.next == None: return False
++            if p2.next == None: return True
+ 
+             p1 = p1.next
+             p2 = p2.next.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py F.................................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py F....F............F.FF.....                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_0 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_0 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_20 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert True is False
+========================= 6 failed, 55 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_50"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_50_1" aria-expanded="false" aria-controls="job_list___sub_collapse_50_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_50_1"><button class="btn btn-outline-success"><span class="job_id">50 : Job ID af9201fd29124ff79a8c25fb0c1e256e</span></button></div></a><div aria-labelledby="job_list___sub_heading_50_1" data-parent="#job_list___sub_accordion_50" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_50_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=22" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (22, 15), end pos: (22, 20)</button></a></pre><pre>operator: core/ReplaceFalseWithTrue, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -19,7 +19,7 @@
+             p2 = p2.next.next
+             
+             if p1 == p2: return True
+-        return False
++        return True
+ 
+ class LinkedList:
+     def __init__(self, *start):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..F...............................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...FF..........F.........F.                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_2 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_3 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_25 - assert True is False
+========================= 5 failed, 56 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_51"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_51_1" aria-expanded="false" aria-controls="job_list___sub_collapse_51_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_51_1"><button class="btn btn-outline-success"><span class="job_id">51 : Job ID 76d5ad4789064b1e89844d375ecf42dc</span></button></div></a><div aria-labelledby="job_list___sub_heading_51_1" data-parent="#job_list___sub_accordion_51" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_51_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=55" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (55, 15), end pos: (55, 20)</button></a></pre><pre>operator: core/ReplaceFalseWithTrue, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -52,7 +52,7 @@
+                     last.next = n.next
+                 return True
+             n = n.next
+-        return False
++        return True
+         
+     def __iter__(self):
+         """Iterator of values in the list."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py .........FFF......................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py .....F............F..F.FF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_9 - assert True is False
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_10 - assert True is False
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_11 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - assert True is False
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - assert True is False
+========================= 8 failed, 53 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_52"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_52_1" aria-expanded="false" aria-controls="job_list___sub_collapse_52_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_52_1"><button class="btn btn-outline-success"><span class="job_id">52 : Job ID 2bd1afe62b8b4e9387d811ba391b05c3</span></button></div></a><div aria-labelledby="job_list___sub_heading_52_1" data-parent="#job_list___sub_accordion_52" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_52_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=15" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (15, 25), end pos: (15, 28)</button></a></pre><pre>operator: core/ReplaceAndWithOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -12,7 +12,7 @@
+     def checkInfinite(self):
+         """Check whether infinite loop via next."""
+         p1 = p2 = self
+-        while p1 != None and p2 != None:
++        while p1 != None or p2 != None:
+             if p2.next == None: return False
+ 
+             p1 = p1.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..F...............................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...FF..........F.........F.                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_2 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_3 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - AttributeError: 'NoneType...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_25 - AttributeError: 'NoneType...
+========================= 5 failed, 56 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_53"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_53_1" aria-expanded="false" aria-controls="job_list___sub_collapse_53_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_53_1"><button class="btn btn-outline-success"><span class="job_id">53 : Job ID 9f8eb8bc6d6243e287f150b1b638252a</span></button></div></a><div aria-labelledby="job_list___sub_heading_53_1" data-parent="#job_list___sub_accordion_53" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_53_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (74, 16), end pos: (74, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -71,7 +71,7 @@
+     def __len__(self):
+         """Count values in list."""
+         n = self.head
+-        count = 0
++        count = 1
+         while n != None:
+             count += 1
+             n = n.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ....FFFFFFFFFFFFF...............F.           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py .FFFFFFFF..F.F.FF.F..FFFF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_4 - assert 7 == 6
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_5 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_6 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_7 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_9 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_10 - assert 8 == 7
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_11 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_12 - assert 3 == 2
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_13 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_14 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_15 - assert 3 == 2
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_16 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_32 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_1 - assert 4 == 3
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_3 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_6 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_7 - assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_8 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_16 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - assert 5 == 4
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - assert 4 == 3
+======================== 31 failed, 30 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_54"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_54_1" aria-expanded="false" aria-controls="job_list___sub_collapse_54_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_54_1"><button class="btn btn-outline-success"><span class="job_id">54 : Job ID cb4b123bc068479c9265a92b0babc92f</span></button></div></a><div aria-labelledby="job_list___sub_heading_54_1" data-parent="#job_list___sub_accordion_54" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_54_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=74" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (74, 16), end pos: (74, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -71,7 +71,7 @@
+     def __len__(self):
+         """Count values in list."""
+         n = self.head
+-        count = 0
++        count = -1
+         while n != None:
+             count += 1
+             n = n.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ....FFFFFFFFFFFFF...............F.           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py .FFFFFFFF..F.F.FF.F..FFFF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_4 - assert 5 == 6
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_5 - ValueError: __len__() shoul...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_6 - ValueError: __len__() shoul...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_7 - ValueError: __len__() shoul...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - ValueError: __len__() shoul...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_9 - ValueError: __len__() shoul...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_10 - assert 6 == 7
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_11 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_12 - assert 1 == 2
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_13 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_14 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_15 - assert 1 == 2
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_16 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_32 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_1 - assert 2 == 3
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_3 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_6 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_7 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_8 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_16 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - assert 3 == 4
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - assert 2 == 3
+======================== 31 failed, 30 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_55"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_55_1" aria-expanded="false" aria-controls="job_list___sub_collapse_55_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_55_1"><button class="btn btn-outline-success"><span class="job_id">55 : Job ID 5ea1d1cc87cd4f7a9a7f905dda57ac65</span></button></div></a><div aria-labelledby="job_list___sub_heading_55_1" data-parent="#job_list___sub_accordion_55" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_55_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=76" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (76, 21), end pos: (76, 22)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -73,7 +73,7 @@
+         n = self.head
+         count = 0
+         while n != None:
+-            count += 1
++            count += 2
+             n = n.next
+         return count
+     </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ....F..FFFF.F..FF...............F.           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py .FF.FF.F...F.F.F..F..FFFF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_4 - assert 12 == 6
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_7 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_9 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_10 - assert 14 == 7
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_12 - assert 4 == 2
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_15 - assert 4 == 2
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_16 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_32 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_1 - assert 6 == 3
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_7 - assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - AssertionError: assert 2 ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - AssertionError: assert 2 ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - AssertionError: assert 2 ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - assert 8 == 4
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - AssertionError: assert 2 ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - assert 6 == 3
+======================== 22 failed, 39 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_56"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_56_1" aria-expanded="false" aria-controls="job_list___sub_collapse_56_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_56_1"><button class="btn btn-outline-success"><span class="job_id">56 : Job ID 8a26c666a81a47cba58db33c7d577a40</span></button></div></a><div aria-labelledby="job_list___sub_heading_56_1" data-parent="#job_list___sub_accordion_56" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_56_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=76" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (76, 21), end pos: (76, 22)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -73,7 +73,7 @@
+         n = self.head
+         count = 0
+         while n != None:
+-            count += 1
++            count += 0
+             n = n.next
+         return count
+     </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ....F..FFFF.F..FF...............F.           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py .FF.FF.F...F.F.F..F..FFFF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_4 - assert 0 == 6
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_7 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_8 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_9 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_10 - assert 0 == 7
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_12 - assert 0 == 2
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_15 - assert 0 == 2
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_16 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_32 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_1 - assert 0 == 3
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_2 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_7 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - AssertionError: assert 0 ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - AssertionError: assert 0 ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - AssertionError: assert 0 ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - assert 0 == 4
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - AssertionError: assert 0 ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - assert 0 == 3
+======================== 22 failed, 39 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_57"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_57_1" aria-expanded="false" aria-controls="job_list___sub_collapse_57_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_57_1"><button class="btn btn-outline-success"><span class="job_id">57 : Job ID e3a5a11fd3e34c45828e66f296eb2b90</span></button></div></a><div aria-labelledby="job_list___sub_heading_57_1" data-parent="#job_list___sub_accordion_57" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_57_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=128" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (128, 16), end pos: (128, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -125,7 +125,7 @@
+     def __len__(self):
+         """Count values in queue."""
+         n = self.head
+-        count = 0
++        count = 1
+         while n != None:
+             count += 1
+             n = n.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..................FFFFFFFFFFFFF..F           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ....FFFFF.FFFFFFFFF.FFFF...                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_18 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_19 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_20 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_21 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_22 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_23 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_24 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_25 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_26 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_27 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_28 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_29 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_30 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_33 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_6 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_7 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_8 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_10 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_12 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_14 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_16 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_17 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_20 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - assert 1 == 0
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - assert 1 == 0
+======================== 32 failed, 29 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_58"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_58_1" aria-expanded="false" aria-controls="job_list___sub_collapse_58_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_58_1"><button class="btn btn-outline-success"><span class="job_id">58 : Job ID e9a8784531714e0e9341d9664ea930d8</span></button></div></a><div aria-labelledby="job_list___sub_heading_58_1" data-parent="#job_list___sub_accordion_58" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_58_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=128" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (128, 16), end pos: (128, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -125,7 +125,7 @@
+     def __len__(self):
+         """Count values in queue."""
+         n = self.head
+-        count = 0
++        count = -1
+         while n != None:
+             count += 1
+             n = n.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..................FFFFFFFFFFFFF..F           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ....FFFFF.FFFFFFFFF.FFFF...                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_18 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_19 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_20 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_21 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_22 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_23 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_24 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_25 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_26 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_27 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_28 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_29 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_30 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_33 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_6 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_7 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_8 - ValueError: __len__() shou...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_10 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_12 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_13 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_14 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_16 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_17 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_20 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - ValueError: __len__() sho...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - ValueError: __len__() sho...
+======================== 32 failed, 29 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_59"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_59_1" aria-expanded="false" aria-controls="job_list___sub_collapse_59_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_59_1"><button class="btn btn-outline-success"><span class="job_id">59 : Job ID f8318ec302644c76b61b740e9d425504</span></button></div></a><div aria-labelledby="job_list___sub_heading_59_1" data-parent="#job_list___sub_accordion_59" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_59_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=130" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (130, 21), end pos: (130, 22)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -127,7 +127,7 @@
+         n = self.head
+         count = 0
+         while n != None:
+-            count += 1
++            count += 2
+             n = n.next
+         return count
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ...................FFFF.FFF..F....           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ....FF.....FF..F..F.FFFF...                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_19 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_20 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_21 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_22 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_24 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_25 - assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_26 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_29 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AssertionError: assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_12 - AssertionError: assert 2 ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_20 - AssertionError: assert 2 ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - assert 2 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - assert 2 == 1
+======================== 18 failed, 43 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_60"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_60_1" aria-expanded="false" aria-controls="job_list___sub_collapse_60_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_60_1"><button class="btn btn-outline-success"><span class="job_id">60 : Job ID e2904538db2840a19f39808e58b9f040</span></button></div></a><div aria-labelledby="job_list___sub_heading_60_1" data-parent="#job_list___sub_accordion_60" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_60_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=130" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (130, 21), end pos: (130, 22)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -127,7 +127,7 @@
+         n = self.head
+         count = 0
+         while n != None:
+-            count += 1
++            count += 0
+             n = n.next
+         return count
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ...................FFFF.FFF..F....           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ....FF.....FF..F..F.FFFF...                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_19 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_20 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_21 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_22 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_24 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_25 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_26 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_29 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_5 - AssertionError: assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_12 - AssertionError: assert 0 ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_20 - AssertionError: assert 0 ...
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - assert 0 == 1
+======================== 18 failed, 43 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_61"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_61_1" aria-expanded="false" aria-controls="job_list___sub_collapse_61_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_61_1"><button class="btn btn-outline-success"><span class="job_id">61 : Job ID e10aea9f65974855a4d47e3a3cc84e6a</span></button></div></a><div aria-labelledby="job_list___sub_heading_61_1" data-parent="#job_list___sub_accordion_61" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_61_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=28" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (28, 17), end pos: (28, 22)</button></a></pre><pre>operator: core/ZeroIterationForLoop, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -25,7 +25,7 @@
+     def __init__(self, *start):
+         """Demonstrate linked lists in Python."""
+         self.head  = None
+-        for _ in start:
++        for _ in []:
+             self.prepend(_)
+ 
+     def prepend(self, value):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ....F.....F.F..F..................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py .F..F..F...F...F..F..FFFF..                 [100%]
+
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_4 - assert 0 == 6
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_10 - assert 0 == 7
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_12 - assert 0 == 2
+FAILED MIO-MOSA/test_queue2_MIO.py::test_case_15 - assert 0 == 2
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_1 - assert 0 == 3
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_4 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_7 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_11 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_15 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_18 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_21 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_22 - assert 0 == 4
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_23 - assert 0 == 1
+FAILED MIO-MOSA/test_queue2_MOSA.py::test_case_24 - assert 0 == 3
+======================== 14 failed, 47 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_62"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_62_1" aria-expanded="false" aria-controls="job_list___sub_collapse_62_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_62_1"><button class="btn btn-outline-danger"><span class="job_id">62 : Job ID d99b7cc07a5c4b93b6cd6577bbe472d8</span></button></div></a><div aria-labelledby="job_list___sub_heading_62_1" data-parent="#job_list___sub_accordion_62" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_62_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue2.py&amp;line=85" class="text-secondary"><button class="btn btn-outline-dark">queue2.py, start pos: (85, 17), end pos: (85, 22)</button></a></pre><pre>operator: core/ZeroIterationForLoop, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue2.py
++++ bqueue2.py
+@@ -82,7 +82,7 @@
+         """Demonstrate queue using linked list in Python."""
+         self.head = None
+         self.tail = None
+-        for _ in start:
++        for _ in []:
+             self.add(_)
+ 
+     def append(self, value):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 61 items
+
+MIO-MOSA/test_queue2_MIO.py ..................................           [ 55%]
+MIO-MOSA/test_queue2_MOSA.py ...........................                 [100%]
+
+============================== 61 passed in 0.08s ==============================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

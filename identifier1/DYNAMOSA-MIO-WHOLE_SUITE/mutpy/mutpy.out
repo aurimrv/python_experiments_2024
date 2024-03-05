@@ -1,0 +1,2395 @@
+[*] Start mutation process:
+   - targets: identifier1.py
+   - tests: ./DYNAMOSA-MIO-WHOLE_SUITE
+[*] 35 tests passed:
+   - test_identifier1_WHOLE_SUITE [0.06933 s]
+   - test_identifier1_DYNAMOSA [0.05003 s]
+   - test_identifier1_MIO [0.05495 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR identifier1: 
+--------------------------------------------------------------------------------
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+- 33:                     i += 1
++ 33:                     i -= 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[0.08540 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        identifier_0 = module_0.Identifier()
+        str_0 = 'N~P{c=2s'
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f5e450c1ed0>, s = 'N~P{c=2s'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:30: IndexError
+   - [#   2] CDI identifier1: 
+--------------------------------------------------------------------------------
+   1: 
+   2: class Identifier(object):
+   3:     ''' generated source for class Identifier '''
+   4:     
+-  5:     def valid_s(self, ch):
+-  6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+-  8:             return True
+-  9:         else:
+- 10:             return False
+- 11:     
++  5:     @classmethod
++  6:     def valid_s(self, ch):
++  7:         ''' generated source for method valid_s '''
++  8:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  9:             return True
++ 10:         else:
++ 11:             return False
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+--------------------------------------------------------------------------------
+[0.08390 s] survived
+   - [#   3] CDI identifier1: 
+--------------------------------------------------------------------------------
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+- 12:     def valid_f(self, ch):
+- 13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+- 15:             return True
+- 16:         else:
+- 17:             return False
+- 18:     
++ 12:     @classmethod
++ 13:     def valid_f(self, ch):
++ 14:         ''' generated source for method valid_f '''
++ 15:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 16:             return True
++ 17:         else:
++ 18:             return False
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+--------------------------------------------------------------------------------
+[0.08085 s] survived
+   - [#   4] CDI identifier1: 
+--------------------------------------------------------------------------------
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+- 19:     def validateIdentifier(self, s):
+- 20:         ''' generated source for method validateIdentifier '''
+- 21:         achar = str()
+- 22:         valid_id = False
+- 23:         if len(s) > 0:
+- 24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
+- 27:                 achar = s[1]
+- 28:                 i = 1
+- 29:                 while i < len(s):
+- 30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
+- 33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
+- 36:             else:
+- 37:                 return False
+- 38:         else:
+- 39:             return False
++ 19:     @classmethod
++ 20:     def validateIdentifier(self, s):
++ 21:         ''' generated source for method validateIdentifier '''
++ 22:         achar = str()
++ 23:         valid_id = False
++ 24:         if len(s) > 0:
++ 25:             achar = s[0]
++ 26:             valid_id = self.valid_s(achar)
++ 27:             if len(s) > 1:
++ 28:                 achar = s[1]
++ 29:                 i = 1
++ 30:                 while i < len(s):
++ 31:                     achar = s[i]
++ 32:                     if not (self.valid_f(achar)):
++ 33:                         valid_id = False
++ 34:                     i += 1
++ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 36:                 return True
++ 37:             else:
++ 38:                 return False
++ 39:         else:
++ 40:             return False
+--------------------------------------------------------------------------------
+[0.08567 s] incompetent
+
+TypeError: identifier1:26: TypeError: Identifier.valid_s() missing 1 required positional argument: 'ch'
+
+   - [#   5] COD identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
++ 31:                     if self.valid_f(achar):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[0.13203 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = 'i8'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:9: AssertionError
+   - [#   6] COI identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if not (((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z'))):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.09857 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:56: AssertionError
+   - [#   7] COI identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if not (((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9'))):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09064 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = 'dYjOEfJ'
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        identifier_2 = module_0.Identifier()
+        var_0 = identifier_2.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:47: AssertionError
+   - [#   8] COI identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if not (len(s) > 0):
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.09173 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        list_0 = []
+        str_0 = "y\n(s/i'#!\x0b46WuH\x0cixuN"
+        dict_0 = {str_0: str_0, str_0: str_0}
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(list_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f5e4510c8b0>, s = []
+
+>   ???
+E   IndexError: list index out of range
+
+identifier1:24: IndexError
+   - [#   9] COI identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if not (len(s) > 1):
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.09188 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f5e4504f5b0>, s = 'u'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:27: IndexError
+   - [#  10] COI identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+- 29:                 while i < len(s):
++ 29:                 while not (i < len(s)):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[0.10164 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:24: AssertionError
+   - [#  11] COI identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
++ 31:                     if not ((not (self.valid_f(achar)))):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[0.09891 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = 'i8'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:9: AssertionError
+   - [#  12] COI identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if not ((valid_id and len(s) >= 1 and len(s) <= 6)):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.08571 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        identifier_0 = module_0.Identifier()
+        str_0 = 'N~P{c=2s'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:11: AssertionError
+   - [#  13] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'mutpy' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.09601 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        str_0 = 'Y'
+        list_0 = []
+        identifier_0 = module_0.Identifier(*list_0)
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:59: AssertionError
+   - [#  14] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= '' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.09993 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        str_0 = '!W'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:30: AssertionError
+   - [#  15] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'mutpy') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.10531 s] survived
+   - [#  16] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= '') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.11429 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        str_0 = 'Y'
+        list_0 = []
+        identifier_0 = module_0.Identifier(*list_0)
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:59: AssertionError
+   - [#  17] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'mutpy' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.10055 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = 'i8'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:9: AssertionError
+   - [#  18] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= '' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.09891 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        str_0 = '!W'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:30: AssertionError
+   - [#  19] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'mutpy')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08976 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:56: AssertionError
+   - [#  20] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= '')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08967 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:56: AssertionError
+   - [#  21] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'mutpy' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.10536 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_MIO.py::test_case_6
+
+def test_case_6():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'HI8ft5A\x0bj%%;.q.1@'
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_MIO.py:44: AssertionError
+   - [#  22] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= '' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.10086 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        str_0 = "w'"
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:42: AssertionError
+   - [#  23] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'mutpy') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.11219 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:24: AssertionError
+   - [#  24] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= '') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.12436 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_MIO.py::test_case_6
+
+def test_case_6():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'HI8ft5A\x0bj%%;.q.1@'
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_MIO.py:44: AssertionError
+   - [#  25] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'mutpy' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.11661 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = 'dYjOEfJ'
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        identifier_2 = module_0.Identifier()
+        var_0 = identifier_2.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:47: AssertionError
+   - [#  26] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= '' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.11344 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:24: AssertionError
+   - [#  27] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'mutpy') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.11157 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_MIO.py:32: AssertionError
+   - [#  28] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= '') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08768 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = 'dYjOEfJ'
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        identifier_2 = module_0.Identifier()
+        var_0 = identifier_2.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:47: AssertionError
+   - [#  29] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= 'mutpy' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09254 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = 'i8'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:9: AssertionError
+   - [#  30] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.10028 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        str_0 = "w'"
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:42: AssertionError
+   - [#  31] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= 'mutpy')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09690 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:24: AssertionError
+   - [#  32] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09482 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = 'i8'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:9: AssertionError
+   - [#  33] CRP identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if len(s) > 1:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.09343 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:56: AssertionError
+   - [#  34] CRP identifier1: 
+--------------------------------------------------------------------------------
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+- 24:             achar = s[0]
++ 24:             achar = s[1]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+--------------------------------------------------------------------------------
+[0.08855 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f5e45093550>, s = 'u'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:24: IndexError
+   - [#  35] CRP identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if len(s) > 2:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.10831 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:24: AssertionError
+   - [#  36] CRP identifier1: 
+--------------------------------------------------------------------------------
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+- 27:                 achar = s[1]
++ 27:                 achar = s[2]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+--------------------------------------------------------------------------------
+[0.11338 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_9
+
+def test_case_9():
+        str_0 = '1~'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f5e450c2260>, s = '1~'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:27: IndexError
+   - [#  37] CRP identifier1: 
+--------------------------------------------------------------------------------
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+- 28:                 i = 1
++ 28:                 i = 2
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+--------------------------------------------------------------------------------
+[0.09973 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:24: AssertionError
+   - [#  38] CRP identifier1: 
+--------------------------------------------------------------------------------
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+- 33:                     i += 1
++ 33:                     i += 2
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[0.11457 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        str_0 = 'i8='
+        str_1 = 'j'
+        dict_0 = {}
+        identifier_0 = module_0.Identifier(**dict_0)
+        var_0 = identifier_0.validateIdentifier(str_1)
+        assert var_0 is True
+        var_1 = identifier_0.validateIdentifier(str_0)
+>       assert var_1 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:52: AssertionError
+   - [#  39] CRP identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 2 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.09212 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:56: AssertionError
+   - [#  40] CRP identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 1 and len(s) <= 7):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.10055 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = 'dYjOEfJ'
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        identifier_2 = module_0.Identifier()
+        var_0 = identifier_2.valid_f(str_0)
+        assert var_0 is True
+        var_1 = identifier_1.validateIdentifier(str_0)
+>       assert var_1 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:49: AssertionError
+   - [#  41] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') and (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.09682 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:56: AssertionError
+   - [#  42] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' or ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.09608 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_8
+
+def test_case_8():
+        object_0 = module_1.object()
+        int_0 = 2545
+        str_0 = "}#Ys%@&Kx,u=M)6'V"
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:69: AssertionError
+   - [#  43] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' or ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.09561 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_8
+
+def test_case_8():
+        object_0 = module_1.object()
+        int_0 = 2545
+        str_0 = "}#Ys%@&Kx,u=M)6'V"
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:69: AssertionError
+   - [#  44] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') and (ch >= 'a' and ch <= 'z') and (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08951 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = 'dYjOEfJ'
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        identifier_2 = module_0.Identifier()
+        var_0 = identifier_2.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:47: AssertionError
+   - [#  45] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' or ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.12315 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:24: AssertionError
+   - [#  46] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' or ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.11581 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:24: AssertionError
+   - [#  47] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' or ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.10387 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:24: AssertionError
+   - [#  48] LCR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id or len(s) >= 1 or len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.08980 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        identifier_0 = module_0.Identifier()
+        str_0 = 'N~P{c=2s'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:11: AssertionError
+   - [#  49] OIL identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
+- 36:             else:
+- 37:                 return False
++ 34:                     break
++ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 36:                 return True
++ 37:             else:return False
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[0.11917 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        str_0 = 'i8='
+        str_1 = 'j'
+        dict_0 = {}
+        identifier_0 = module_0.Identifier(**dict_0)
+        var_0 = identifier_0.validateIdentifier(str_1)
+        assert var_0 is True
+        var_1 = identifier_0.validateIdentifier(str_0)
+>       assert var_1 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:52: AssertionError
+   - [#  50] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch <= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.11755 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        str_0 = '!W'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:30: AssertionError
+   - [#  51] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch > 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08046 s] survived
+   - [#  52] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch >= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.13656 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_8
+
+def test_case_8():
+        object_0 = module_1.object()
+        int_0 = 2545
+        str_0 = "}#Ys%@&Kx,u=M)6'V"
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:69: AssertionError
+   - [#  53] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch < 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08879 s] survived
+   - [#  54] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch <= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.09375 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:56: AssertionError
+   - [#  55] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch > 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08258 s] survived
+   - [#  56] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch >= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.09363 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:56: AssertionError
+   - [#  57] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch < 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.11015 s] survived
+   - [#  58] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch <= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.13115 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        str_0 = "w'"
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:42: AssertionError
+   - [#  59] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch > 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09148 s] survived
+   - [#  60] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch >= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.10462 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:24: AssertionError
+   - [#  61] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch < 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09357 s] survived
+   - [#  62] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch <= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.10189 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = 'dYjOEfJ'
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        identifier_2 = module_0.Identifier()
+        var_0 = identifier_2.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:47: AssertionError
+   - [#  63] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch > 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.10671 s] survived
+   - [#  64] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch >= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09906 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = 'dYjOEfJ'
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        identifier_2 = module_0.Identifier()
+        var_0 = identifier_2.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:47: AssertionError
+   - [#  65] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch < 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08822 s] survived
+   - [#  66] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch <= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.10011 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = 'i8'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:9: AssertionError
+   - [#  67] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch > '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.11911 s] survived
+   - [#  68] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch >= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.11029 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = 'i8'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:9: AssertionError
+   - [#  69] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch < '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08804 s] survived
+   - [#  70] ROR identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if len(s) < 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.09688 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:56: AssertionError
+   - [#  71] ROR identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if len(s) >= 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.10164 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        list_0 = []
+        str_0 = "y\n(s/i'#!\x0b46WuH\x0cixuN"
+        dict_0 = {str_0: str_0, str_0: str_0}
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(list_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f5e45017f10>, s = []
+
+>   ???
+E   IndexError: list index out of range
+
+identifier1:24: IndexError
+   - [#  72] ROR identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if len(s) < 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.18313 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:24: AssertionError
+   - [#  73] ROR identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if len(s) >= 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.10301 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f5e44f6b4f0>, s = 'u'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:27: IndexError
+   - [#  74] ROR identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+- 29:                 while i < len(s):
++ 29:                 while i > len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[0.10871 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:24: AssertionError
+   - [#  75] ROR identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+- 29:                 while i < len(s):
++ 29:                 while i <= len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[0.11513 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        identifier_0 = module_0.Identifier()
+        str_0 = 'N~P{c=2s'
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f5e45017010>, s = 'N~P{c=2s'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:30: IndexError
+   - [#  76] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) <= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.14345 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = 'i8'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:9: AssertionError
+   - [#  77] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) > 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.12042 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:56: AssertionError
+   - [#  78] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 1 and len(s) >= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.09529 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = 'dYjOEfJ'
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        identifier_2 = module_0.Identifier()
+        var_0 = identifier_2.valid_f(str_0)
+        assert var_0 is True
+        var_1 = identifier_1.validateIdentifier(str_0)
+>       assert var_1 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:49: AssertionError
+   - [#  79] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 1 and len(s) < 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.09217 s] survived
+   - [#  80] SDI identifier1: 
+--------------------------------------------------------------------------------
+   1: 
+   2: class Identifier(object):
+   3:     ''' generated source for class Identifier '''
+   4:     
+-  5:     def valid_s(self, ch):
+-  6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+-  8:             return True
+-  9:         else:
+- 10:             return False
+- 11:     
++  5:     @staticmethod
++  6:     def valid_s(self, ch):
++  7:         ''' generated source for method valid_s '''
++  8:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  9:             return True
++ 10:         else:
++ 11:             return False
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+--------------------------------------------------------------------------------
+[0.08285 s] incompetent
+
+TypeError: identifier1:25: TypeError: Identifier.valid_s() missing 1 required positional argument: 'ch'
+
+   - [#  81] SDI identifier1: 
+--------------------------------------------------------------------------------
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+- 12:     def valid_f(self, ch):
+- 13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+- 15:             return True
+- 16:         else:
+- 17:             return False
+- 18:     
++ 12:     @staticmethod
++ 13:     def valid_f(self, ch):
++ 14:         ''' generated source for method valid_f '''
++ 15:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 16:             return True
++ 17:         else:
++ 18:             return False
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+--------------------------------------------------------------------------------
+[0.10826 s] incompetent
+
+TypeError: identifier1:31: TypeError: Identifier.valid_f() missing 1 required positional argument: 'ch'
+
+   - [#  82] SDI identifier1: 
+--------------------------------------------------------------------------------
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+- 19:     def validateIdentifier(self, s):
+- 20:         ''' generated source for method validateIdentifier '''
+- 21:         achar = str()
+- 22:         valid_id = False
+- 23:         if len(s) > 0:
+- 24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
+- 27:                 achar = s[1]
+- 28:                 i = 1
+- 29:                 while i < len(s):
+- 30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
+- 33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
+- 36:             else:
+- 37:                 return False
+- 38:         else:
+- 39:             return False
++ 19:     @staticmethod
++ 20:     def validateIdentifier(self, s):
++ 21:         ''' generated source for method validateIdentifier '''
++ 22:         achar = str()
++ 23:         valid_id = False
++ 24:         if len(s) > 0:
++ 25:             achar = s[0]
++ 26:             valid_id = self.valid_s(achar)
++ 27:             if len(s) > 1:
++ 28:                 achar = s[1]
++ 29:                 i = 1
++ 30:                 while i < len(s):
++ 31:                     achar = s[i]
++ 32:                     if not (self.valid_f(achar)):
++ 33:                         valid_id = False
++ 34:                     i += 1
++ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 36:                 return True
++ 37:             else:
++ 38:                 return False
++ 39:         else:
++ 40:             return False
+--------------------------------------------------------------------------------
+[0.08609 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/identifier1/DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:10: TypeError: Identifier.validateIdentifier() missing 1 required positional argument: 's'
+
+   - [#  83] SDL identifier1: 
+--------------------------------------------------------------------------------
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+   7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+-  8:             return True
++  8:             pass
+   9:         else:
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+--------------------------------------------------------------------------------
+[0.09855 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:56: AssertionError
+   - [#  84] SDL identifier1: 
+--------------------------------------------------------------------------------
+   6:         ''' generated source for method valid_s '''
+   7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+- 10:             return False
++ 10:             pass
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+--------------------------------------------------------------------------------
+[0.09564 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_8
+
+def test_case_8():
+        object_0 = module_1.object()
+        int_0 = 2545
+        str_0 = "}#Ys%@&Kx,u=M)6'V"
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:69: AssertionError
+   - [#  85] SDL identifier1: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+- 15:             return True
++ 15:             pass
+  16:         else:
+  17:             return False
+  18:     
+  19:     def validateIdentifier(self, s):
+--------------------------------------------------------------------------------
+[0.11503 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = 'dYjOEfJ'
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        identifier_2 = module_0.Identifier()
+        var_0 = identifier_2.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:47: AssertionError
+   - [#  86] SDL identifier1: 
+--------------------------------------------------------------------------------
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+- 17:             return False
++ 17:             pass
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+--------------------------------------------------------------------------------
+[0.09770 s] survived
+   - [#  87] SDL identifier1: 
+--------------------------------------------------------------------------------
+  17:             return False
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+- 21:         achar = str()
++ 21:         pass
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+--------------------------------------------------------------------------------
+[0.09126 s] survived
+   - [#  88] SDL identifier1: 
+--------------------------------------------------------------------------------
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+- 22:         valid_id = False
++ 22:         pass
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+--------------------------------------------------------------------------------
+[0.08413 s] survived
+   - [#  89] SDL identifier1: 
+--------------------------------------------------------------------------------
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+- 24:             achar = s[0]
++ 24:             pass
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+--------------------------------------------------------------------------------
+[0.09686 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:56: AssertionError
+   - [#  90] SDL identifier1: 
+--------------------------------------------------------------------------------
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
++ 25:             pass
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+--------------------------------------------------------------------------------
+[0.09877 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:56: AssertionError
+   - [#  91] SDL identifier1: 
+--------------------------------------------------------------------------------
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+- 27:                 achar = s[1]
++ 27:                 pass
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+--------------------------------------------------------------------------------
+[0.08498 s] survived
+   - [#  92] SDL identifier1: 
+--------------------------------------------------------------------------------
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+- 28:                 i = 1
++ 28:                 pass
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+--------------------------------------------------------------------------------
+[0.09080 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        identifier_0 = module_0.Identifier()
+        str_0 = 'N~P{c=2s'
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f5e44fc38b0>, s = 'N~P{c=2s'
+
+>   ???
+E   UnboundLocalError: local variable 'i' referenced before assignment
+
+identifier1:29: UnboundLocalError
+   - [#  93] SDL identifier1: 
+--------------------------------------------------------------------------------
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+- 30:                     achar = s[i]
++ 30:                     pass
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+--------------------------------------------------------------------------------
+[0.10351 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        str_0 = 'i8='
+        str_1 = 'j'
+        dict_0 = {}
+        identifier_0 = module_0.Identifier(**dict_0)
+        var_0 = identifier_0.validateIdentifier(str_1)
+        assert var_0 is True
+        var_1 = identifier_0.validateIdentifier(str_0)
+>       assert var_1 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:52: AssertionError
+   - [#  94] SDL identifier1: 
+--------------------------------------------------------------------------------
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
++ 32:                         pass
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+--------------------------------------------------------------------------------
+[0.10908 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:24: AssertionError
+   - [#  95] SDL identifier1: 
+--------------------------------------------------------------------------------
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
++ 35:                 pass
+  36:             else:
+  37:                 return False
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[0.10071 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_6
+
+def test_case_6():
+        str_0 = 'u'
+        bytes_0 = b'~P%d\x99S'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:56: AssertionError
+   - [#  96] SDL identifier1: 
+--------------------------------------------------------------------------------
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+- 37:                 return False
++ 37:                 pass
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[0.11066 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        identifier_0 = module_0.Identifier()
+        str_0 = 'N~P{c=2s'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:11: AssertionError
+   - [#  97] SDL identifier1: 
+--------------------------------------------------------------------------------
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+- 39:             return False
++ 39:             pass
+--------------------------------------------------------------------------------
+[0.09967 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_2
+
+def test_case_2():
+        list_0 = []
+        str_0 = "y\n(s/i'#!\x0b46WuH\x0cixuN"
+        dict_0 = {str_0: str_0, str_0: str_0}
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(list_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:25: AssertionError
+   - [#  98] SVD identifier1: 
+--------------------------------------------------------------------------------
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
++ 25:             valid_id = valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+--------------------------------------------------------------------------------
+[0.08959 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        identifier_0 = module_0.Identifier()
+        str_0 = 'N~P{c=2s'
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f5e450160e0>, s = 'N~P{c=2s'
+
+>   ???
+E   NameError: name 'valid_s' is not defined
+
+identifier1:25: NameError
+   - [#  99] SVD identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
++ 31:                     if not (valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[0.08938 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        none_type_0 = None
+        identifier_0 = module_0.Identifier()
+        str_0 = 'N~P{c=2s'
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_WHOLE_SUITE.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f5e44e908b0>, s = 'N~P{c=2s'
+
+>   ???
+E   NameError: name 'valid_f' is not defined
+
+identifier1:31: NameError
+   - [# 100] ZIL identifier1: 
+--------------------------------------------------------------------------------
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+- 30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
+- 33:                     i += 1
++ 30:                     break
++ 31:             
++ 32:             
++ 33:             
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[0.10280 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_identifier1_DYNAMOSA.py:24: AssertionError
+[*] Mutation score [13.21418 s]: 81.2%
+   - all: 100
+   - killed: 78 (78.0%)
+   - survived: 18 (18.0%)
+   - incompetent: 4 (4.0%)
+   - timeout: 0 (0.0%)

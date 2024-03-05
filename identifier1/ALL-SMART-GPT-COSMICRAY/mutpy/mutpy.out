@@ -1,0 +1,2507 @@
+[34m[*][0m Start mutation process:
+[36m   -[0m targets: identifier1.py
+[36m   -[0m tests: ./ALL-SMART-GPT-COSMICRAY
+[34m[*][0m 48 tests passed:
+[36m   -[0m test_identifier1_WHOLE_SUITE [0.35488 s]
+[36m   -[0m test_identifier1_MIO [0.18226 s]
+[36m   -[0m test_identifier1_DYNAMOSA [0.14681 s]
+[36m   -[0m test_identifier1_MOSA [0.14791 s]
+[36m   -[0m test_identifier1_COSMICRAY [0.12829 s]
+[34m[*][0m Start mutants generation and execution:
+[36m   -[0m [#   1] ASR identifier1: 
+--------------------------------------------------------------------------------
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+[34m- 33:                     i += 1[0m
+[32m+ 33:                     i -= 1[0m
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[0.20688 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fd67701c790>, s = 'e=g'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:30: IndexError
+[36m   -[0m [#   2] CDI identifier1: 
+--------------------------------------------------------------------------------
+   1: 
+   2: class Identifier(object):
+   3:     ''' generated source for class Identifier '''
+   4:     
+[34m-  5:     def valid_s(self, ch):[0m
+[34m-  6:         ''' generated source for method valid_s '''[0m
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[34m-  8:             return True[0m
+[34m-  9:         else:[0m
+[34m- 10:             return False[0m
+[34m- 11:     [0m
+[32m+  5:     @classmethod[0m
+[32m+  6:     def valid_s(self, ch):[0m
+[32m+  7:         ''' generated source for method valid_s '''[0m
+[32m+  8:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  9:             return True[0m
+[32m+ 10:         else:[0m
+[32m+ 11:             return False[0m
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+--------------------------------------------------------------------------------
+[0.24373 s] [31msurvived[0m
+[36m   -[0m [#   3] CDI identifier1: 
+--------------------------------------------------------------------------------
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+[34m- 12:     def valid_f(self, ch):[0m
+[34m- 13:         ''' generated source for method valid_f '''[0m
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[34m- 15:             return True[0m
+[34m- 16:         else:[0m
+[34m- 17:             return False[0m
+[34m- 18:     [0m
+[32m+ 12:     @classmethod[0m
+[32m+ 13:     def valid_f(self, ch):[0m
+[32m+ 14:         ''' generated source for method valid_f '''[0m
+[32m+ 15:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 16:             return True[0m
+[32m+ 17:         else:[0m
+[32m+ 18:             return False[0m
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+--------------------------------------------------------------------------------
+[0.24105 s] [31msurvived[0m
+[36m   -[0m [#   4] CDI identifier1: 
+--------------------------------------------------------------------------------
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+[34m- 19:     def validateIdentifier(self, s):[0m
+[34m- 20:         ''' generated source for method validateIdentifier '''[0m
+[34m- 21:         achar = str()[0m
+[34m- 22:         valid_id = False[0m
+[34m- 23:         if len(s) > 0:[0m
+[34m- 24:             achar = s[0][0m
+[34m- 25:             valid_id = self.valid_s(achar)[0m
+[34m- 26:             if len(s) > 1:[0m
+[34m- 27:                 achar = s[1][0m
+[34m- 28:                 i = 1[0m
+[34m- 29:                 while i < len(s):[0m
+[34m- 30:                     achar = s[i][0m
+[34m- 31:                     if not (self.valid_f(achar)):[0m
+[34m- 32:                         valid_id = False[0m
+[34m- 33:                     i += 1[0m
+[34m- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):[0m
+[34m- 35:                 return True[0m
+[34m- 36:             else:[0m
+[34m- 37:                 return False[0m
+[34m- 38:         else:[0m
+[34m- 39:             return False[0m
+[32m+ 19:     @classmethod[0m
+[32m+ 20:     def validateIdentifier(self, s):[0m
+[32m+ 21:         ''' generated source for method validateIdentifier '''[0m
+[32m+ 22:         achar = str()[0m
+[32m+ 23:         valid_id = False[0m
+[32m+ 24:         if len(s) > 0:[0m
+[32m+ 25:             achar = s[0][0m
+[32m+ 26:             valid_id = self.valid_s(achar)[0m
+[32m+ 27:             if len(s) > 1:[0m
+[32m+ 28:                 achar = s[1][0m
+[32m+ 29:                 i = 1[0m
+[32m+ 30:                 while i < len(s):[0m
+[32m+ 31:                     achar = s[i][0m
+[32m+ 32:                     if not (self.valid_f(achar)):[0m
+[32m+ 33:                         valid_id = False[0m
+[32m+ 34:                     i += 1[0m
+[32m+ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):[0m
+[32m+ 36:                 return True[0m
+[32m+ 37:             else:[0m
+[32m+ 38:                 return False[0m
+[32m+ 39:         else:[0m
+[32m+ 40:             return False[0m
+--------------------------------------------------------------------------------
+[0.20722 s] [36mincompetent[0m
+
+TypeError: identifier1:26: TypeError: Identifier.valid_s() missing 1 required positional argument: 'ch'
+
+[36m   -[0m [#   5] COD identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+[34m- 31:                     if not (self.valid_f(achar)):[0m
+[32m+ 31:                     if self.valid_f(achar):[0m
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[0.21200 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_5
+
+def test_case_5():
+        str_0 = 'S\x0c'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:38: AssertionError
+[36m   -[0m [#   6] COI identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if not (((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z'))):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.19901 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:14: AssertionError
+[36m   -[0m [#   7] COI identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if not (((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9'))):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.20733 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:32: AssertionError
+[36m   -[0m [#   8] COI identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+[34m- 23:         if len(s) > 0:[0m
+[32m+ 23:         if not (len(s) > 0):[0m
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.21115 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:20: AssertionError
+[36m   -[0m [#   9] COI identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+[34m- 26:             if len(s) > 1:[0m
+[32m+ 26:             if not (len(s) > 1):[0m
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.22495 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  10] COI identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+[34m- 29:                 while i < len(s):[0m
+[32m+ 29:                 while not (i < len(s)):[0m
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[0.27818 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  11] COI identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+[34m- 31:                     if not (self.valid_f(achar)):[0m
+[32m+ 31:                     if not ((not (self.valid_f(achar)))):[0m
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[0.26209 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_5
+
+def test_case_5():
+        str_0 = 'S\x0c'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:38: AssertionError
+[36m   -[0m [#  12] COI identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+[34m- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):[0m
+[32m+ 34:             if not ((valid_id and len(s) >= 1 and len(s) <= 6)):[0m
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.27320 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  13] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'mutpy' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.21017 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:20: AssertionError
+[36m   -[0m [#  14] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= '' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.24924 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:14: AssertionError
+[36m   -[0m [#  15] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' and ch <= 'mutpy') or (ch >= 'a' and ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.25022 s] [31msurvived[0m
+[36m   -[0m [#  16] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' and ch <= '') or (ch >= 'a' and ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.21177 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:20: AssertionError
+[36m   -[0m [#  17] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'mutpy' and ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.23686 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_edge_cases
+
+def test_edge_cases():
+        identifier_instance = Identifier()
+    
+>       assert identifier_instance.valid_s('a') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:7: AssertionError
+[36m   -[0m [#  18] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= '' and ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.20099 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:14: AssertionError
+[36m   -[0m [#  19] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'mutpy')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.22755 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_edge_cases
+
+def test_edge_cases():
+        identifier_instance = Identifier()
+    
+        assert identifier_instance.valid_s('a') == True
+    
+>       assert identifier_instance.valid_s('z') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:9: AssertionError
+[36m   -[0m [#  20] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= '')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.23581 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_edge_cases
+
+def test_edge_cases():
+        identifier_instance = Identifier()
+    
+>       assert identifier_instance.valid_s('a') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:7: AssertionError
+[36m   -[0m [#  21] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'mutpy' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.22684 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_6
+
+def test_case_6():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'HI8ft5A\x0bj%%;.q.1@'
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:44: AssertionError
+[36m   -[0m [#  22] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= '' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.22005 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  23] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'mutpy') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.31608 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'K^'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_DYNAMOSA.py:24: AssertionError
+[36m   -[0m [#  24] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= '') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.23567 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_6
+
+def test_case_6():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'HI8ft5A\x0bj%%;.q.1@'
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:44: AssertionError
+[36m   -[0m [#  25] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'mutpy' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.23228 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_edge_cases
+
+def test_edge_cases():
+        identifier_instance = Identifier()
+    
+        assert identifier_instance.valid_s('a') == True
+    
+        assert identifier_instance.valid_s('z') == True
+    
+        assert identifier_instance.valid_s('Z') == True
+    
+        assert identifier_instance.valid_s('A') == True
+    
+        assert identifier_instance.valid_f('A') == True
+    
+        assert identifier_instance.valid_f('Z') == True
+    
+>       assert identifier_instance.valid_f('a') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:19: AssertionError
+[36m   -[0m [#  26] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= '' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.22518 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  27] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'mutpy') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.22677 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:32: AssertionError
+[36m   -[0m [#  28] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= '') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.21926 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:32: AssertionError
+[36m   -[0m [#  29] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= 'mutpy' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.23405 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_edge_cases
+
+def test_edge_cases():
+        identifier_instance = Identifier()
+    
+        assert identifier_instance.valid_s('a') == True
+    
+        assert identifier_instance.valid_s('z') == True
+    
+        assert identifier_instance.valid_s('Z') == True
+    
+        assert identifier_instance.valid_s('A') == True
+    
+        assert identifier_instance.valid_f('A') == True
+    
+        assert identifier_instance.valid_f('Z') == True
+    
+        assert identifier_instance.valid_f('a') == True
+    
+>       assert identifier_instance.valid_f('0') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:21: AssertionError
+[36m   -[0m [#  30] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.22324 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_5
+
+def test_case_5():
+        str_0 = 'S\x0c'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:38: AssertionError
+[36m   -[0m [#  31] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= 'mutpy')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.21786 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  32] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.23073 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_edge_cases
+
+def test_edge_cases():
+        identifier_instance = Identifier()
+    
+        assert identifier_instance.valid_s('a') == True
+    
+        assert identifier_instance.valid_s('z') == True
+    
+        assert identifier_instance.valid_s('Z') == True
+    
+        assert identifier_instance.valid_s('A') == True
+    
+        assert identifier_instance.valid_f('A') == True
+    
+        assert identifier_instance.valid_f('Z') == True
+    
+        assert identifier_instance.valid_f('a') == True
+    
+>       assert identifier_instance.valid_f('0') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:21: AssertionError
+[36m   -[0m [#  33] CRP identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+[34m- 23:         if len(s) > 0:[0m
+[32m+ 23:         if len(s) > 1:[0m
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.25784 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:20: AssertionError
+[36m   -[0m [#  34] CRP identifier1: 
+--------------------------------------------------------------------------------
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+[34m- 24:             achar = s[0][0m
+[32m+ 24:             achar = s[1][0m
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+--------------------------------------------------------------------------------
+[0.22243 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fd67706e3b0>, s = 'M'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:24: IndexError
+[36m   -[0m [#  35] CRP identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+[34m- 26:             if len(s) > 1:[0m
+[32m+ 26:             if len(s) > 2:[0m
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.23099 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_5
+
+def test_case_5():
+        str_0 = 'S\x0c'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:38: AssertionError
+[36m   -[0m [#  36] CRP identifier1: 
+--------------------------------------------------------------------------------
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+[34m- 27:                 achar = s[1][0m
+[32m+ 27:                 achar = s[2][0m
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+--------------------------------------------------------------------------------
+[0.21861 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_5
+
+def test_case_5():
+        str_0 = 'S\x0c'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fd67706c310>, s = 'S\x0c'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:27: IndexError
+[36m   -[0m [#  37] CRP identifier1: 
+--------------------------------------------------------------------------------
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+[34m- 28:                 i = 1[0m
+[32m+ 28:                 i = 2[0m
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+--------------------------------------------------------------------------------
+[0.26344 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  38] CRP identifier1: 
+--------------------------------------------------------------------------------
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+[34m- 33:                     i += 1[0m
+[32m+ 33:                     i += 2[0m
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[0.34402 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        str_0 = 'i8='
+        str_1 = 'j'
+        dict_0 = {}
+        identifier_0 = module_0.Identifier(**dict_0)
+        var_0 = identifier_0.validateIdentifier(str_1)
+        assert var_0 is True
+        var_1 = identifier_0.validateIdentifier(str_0)
+>       assert var_1 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_DYNAMOSA.py:52: AssertionError
+[36m   -[0m [#  39] CRP identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+[34m- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):[0m
+[32m+ 34:             if (valid_id and len(s) >= 2 and len(s) <= 6):[0m
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.28205 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:20: AssertionError
+[36m   -[0m [#  40] CRP identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+[34m- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):[0m
+[32m+ 34:             if (valid_id and len(s) >= 1 and len(s) <= 7):[0m
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.24474 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        str_0 = 'dYjOEfJ'
+        identifier_0 = module_0.Identifier()
+        identifier_1 = module_0.Identifier()
+        identifier_2 = module_0.Identifier()
+        var_0 = identifier_2.valid_f(str_0)
+        assert var_0 is True
+        var_1 = identifier_1.validateIdentifier(str_0)
+>       assert var_1 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_WHOLE_SUITE.py:49: AssertionError
+[36m   -[0m [#  41] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' and ch <= 'Z') and (ch >= 'a' and ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.23225 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:20: AssertionError
+[36m   -[0m [#  42] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' or ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.22695 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:14: AssertionError
+[36m   -[0m [#  43] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' or ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.22411 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:14: AssertionError
+[36m   -[0m [#  44] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') and (ch >= 'a' and ch <= 'z') and (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.22348 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:32: AssertionError
+[36m   -[0m [#  45] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' or ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.22391 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  46] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' or ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.20680 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  47] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' or ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.21350 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  48] LCR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+[34m- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):[0m
+[32m+ 34:             if (valid_id or len(s) >= 1 or len(s) <= 6):[0m
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.22636 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  49] OIL identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+[34m- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):[0m
+[34m- 35:                 return True[0m
+[34m- 36:             else:[0m
+[34m- 37:                 return False[0m
+[32m+ 34:                     break[0m
+[32m+ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):[0m
+[32m+ 36:                 return True[0m
+[32m+ 37:             else:return False[0m
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[0.28520 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        str_0 = 'i8='
+        str_1 = 'j'
+        dict_0 = {}
+        identifier_0 = module_0.Identifier(**dict_0)
+        var_0 = identifier_0.validateIdentifier(str_1)
+        assert var_0 is True
+        var_1 = identifier_0.validateIdentifier(str_0)
+>       assert var_1 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_DYNAMOSA.py:52: AssertionError
+[36m   -[0m [#  50] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch <= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.21129 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:14: AssertionError
+[36m   -[0m [#  51] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch > 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.24468 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_edge_cases
+
+def test_edge_cases():
+        identifier_instance = Identifier()
+    
+        assert identifier_instance.valid_s('a') == True
+    
+        assert identifier_instance.valid_s('z') == True
+    
+        assert identifier_instance.valid_s('Z') == True
+    
+>       assert identifier_instance.valid_s('A') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:13: AssertionError
+[36m   -[0m [#  52] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' and ch >= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.21868 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:20: AssertionError
+[36m   -[0m [#  53] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' and ch < 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.24122 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_edge_cases
+
+def test_edge_cases():
+        identifier_instance = Identifier()
+    
+        assert identifier_instance.valid_s('a') == True
+    
+        assert identifier_instance.valid_s('z') == True
+    
+>       assert identifier_instance.valid_s('Z') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:11: AssertionError
+[36m   -[0m [#  54] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' and ch <= 'Z') or (ch <= 'a' and ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.25591 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:14: AssertionError
+[36m   -[0m [#  55] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' and ch <= 'Z') or (ch > 'a' and ch <= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.24021 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_edge_cases
+
+def test_edge_cases():
+        identifier_instance = Identifier()
+    
+>       assert identifier_instance.valid_s('a') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:7: AssertionError
+[36m   -[0m [#  56] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch >= 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.21426 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '}\t'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:26: AssertionError
+[36m   -[0m [#  57] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch < 'z')):[0m
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.25029 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_edge_cases
+
+def test_edge_cases():
+        identifier_instance = Identifier()
+    
+        assert identifier_instance.valid_s('a') == True
+    
+>       assert identifier_instance.valid_s('z') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:9: AssertionError
+[36m   -[0m [#  58] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch <= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.20914 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  59] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch > 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.23263 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_edge_cases
+
+def test_edge_cases():
+        identifier_instance = Identifier()
+    
+        assert identifier_instance.valid_s('a') == True
+    
+        assert identifier_instance.valid_s('z') == True
+    
+        assert identifier_instance.valid_s('Z') == True
+    
+        assert identifier_instance.valid_s('A') == True
+    
+>       assert identifier_instance.valid_f('A') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:15: AssertionError
+[36m   -[0m [#  60] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch >= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.21588 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_6
+
+def test_case_6():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'HI8ft5A\x0bj%%;.q.1@'
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:44: AssertionError
+[36m   -[0m [#  61] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch < 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.22617 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_edge_cases
+
+def test_edge_cases():
+        identifier_instance = Identifier()
+    
+        assert identifier_instance.valid_s('a') == True
+    
+        assert identifier_instance.valid_s('z') == True
+    
+        assert identifier_instance.valid_s('Z') == True
+    
+        assert identifier_instance.valid_s('A') == True
+    
+        assert identifier_instance.valid_f('A') == True
+    
+>       assert identifier_instance.valid_f('Z') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:17: AssertionError
+[36m   -[0m [#  62] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch <= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.27838 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:32: AssertionError
+[36m   -[0m [#  63] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch > 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.28869 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_edge_cases
+
+def test_edge_cases():
+        identifier_instance = Identifier()
+    
+        assert identifier_instance.valid_s('a') == True
+    
+        assert identifier_instance.valid_s('z') == True
+    
+        assert identifier_instance.valid_s('Z') == True
+    
+        assert identifier_instance.valid_s('A') == True
+    
+        assert identifier_instance.valid_f('A') == True
+    
+        assert identifier_instance.valid_f('Z') == True
+    
+>       assert identifier_instance.valid_f('a') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:19: AssertionError
+[36m   -[0m [#  64] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch >= 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.28742 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:32: AssertionError
+[36m   -[0m [#  65] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch < 'z') or (ch >= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.32244 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MOSA.py::test_case_8
+
+def test_case_8():
+        str_0 = 'e6zLE'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MOSA.py:55: AssertionError
+[36m   -[0m [#  66] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch <= '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.24240 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_5
+
+def test_case_5():
+        str_0 = 'S\x0c'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:38: AssertionError
+[36m   -[0m [#  67] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch > '0' and ch <= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.25524 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_edge_cases
+
+def test_edge_cases():
+        identifier_instance = Identifier()
+    
+        assert identifier_instance.valid_s('a') == True
+    
+        assert identifier_instance.valid_s('z') == True
+    
+        assert identifier_instance.valid_s('Z') == True
+    
+        assert identifier_instance.valid_s('A') == True
+    
+        assert identifier_instance.valid_f('A') == True
+    
+        assert identifier_instance.valid_f('Z') == True
+    
+        assert identifier_instance.valid_f('a') == True
+    
+>       assert identifier_instance.valid_f('0') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:21: AssertionError
+[36m   -[0m [#  68] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch >= '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.24916 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  69] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch < '9')):[0m
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.26018 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MOSA.py:9: AssertionError
+[36m   -[0m [#  70] ROR identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+[34m- 23:         if len(s) > 0:[0m
+[32m+ 23:         if len(s) < 0:[0m
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.22621 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:20: AssertionError
+[36m   -[0m [#  71] ROR identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+[34m- 23:         if len(s) > 0:[0m
+[32m+ 23:         if len(s) >= 0:[0m
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.23455 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_9
+
+def test_case_9():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fd67704edd0>, s = ''
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:24: IndexError
+[36m   -[0m [#  72] ROR identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+[34m- 26:             if len(s) > 1:[0m
+[32m+ 26:             if len(s) < 1:[0m
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.22081 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  73] ROR identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+[34m- 26:             if len(s) > 1:[0m
+[32m+ 26:             if len(s) >= 1:[0m
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.21472 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fd67714ab30>, s = 'M'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:27: IndexError
+[36m   -[0m [#  74] ROR identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+[34m- 29:                 while i < len(s):[0m
+[32m+ 29:                 while i > len(s):[0m
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[0.22213 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  75] ROR identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+[34m- 29:                 while i < len(s):[0m
+[32m+ 29:                 while i <= len(s):[0m
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[0.21982 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fd676ff90f0>, s = 'e=g'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:30: IndexError
+[36m   -[0m [#  76] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+[34m- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):[0m
+[32m+ 34:             if (valid_id and len(s) <= 1 and len(s) <= 6):[0m
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.22151 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_validate_identifier_max_length
+
+def test_validate_identifier_max_length():
+        identifier_instance = Identifier()
+    
+>       assert identifier_instance.validateIdentifier('AbCdEf') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:26: AssertionError
+[36m   -[0m [#  77] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+[34m- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):[0m
+[32m+ 34:             if (valid_id and len(s) > 1 and len(s) <= 6):[0m
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.22893 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:20: AssertionError
+[36m   -[0m [#  78] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+[34m- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):[0m
+[32m+ 34:             if (valid_id and len(s) >= 1 and len(s) >= 6):[0m
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.22418 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:20: AssertionError
+[36m   -[0m [#  79] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+[34m- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):[0m
+[32m+ 34:             if (valid_id and len(s) >= 1 and len(s) < 6):[0m
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.21976 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py::test_validate_identifier_max_length
+
+def test_validate_identifier_max_length():
+        identifier_instance = Identifier()
+    
+>       assert identifier_instance.validateIdentifier('AbCdEf') == True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_COSMICRAY.py:26: AssertionError
+[36m   -[0m [#  80] SDI identifier1: 
+--------------------------------------------------------------------------------
+   1: 
+   2: class Identifier(object):
+   3:     ''' generated source for class Identifier '''
+   4:     
+[34m-  5:     def valid_s(self, ch):[0m
+[34m-  6:         ''' generated source for method valid_s '''[0m
+[34m-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[34m-  8:             return True[0m
+[34m-  9:         else:[0m
+[34m- 10:             return False[0m
+[34m- 11:     [0m
+[32m+  5:     @staticmethod[0m
+[32m+  6:     def valid_s(self, ch):[0m
+[32m+  7:         ''' generated source for method valid_s '''[0m
+[32m+  8:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):[0m
+[32m+  9:             return True[0m
+[32m+ 10:         else:[0m
+[32m+ 11:             return False[0m
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+--------------------------------------------------------------------------------
+[0.23093 s] [36mincompetent[0m
+
+TypeError: identifier1:25: TypeError: Identifier.valid_s() missing 1 required positional argument: 'ch'
+
+[36m   -[0m [#  81] SDI identifier1: 
+--------------------------------------------------------------------------------
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+[34m- 12:     def valid_f(self, ch):[0m
+[34m- 13:         ''' generated source for method valid_f '''[0m
+[34m- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[34m- 15:             return True[0m
+[34m- 16:         else:[0m
+[34m- 17:             return False[0m
+[34m- 18:     [0m
+[32m+ 12:     @staticmethod[0m
+[32m+ 13:     def valid_f(self, ch):[0m
+[32m+ 14:         ''' generated source for method valid_f '''[0m
+[32m+ 15:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):[0m
+[32m+ 16:             return True[0m
+[32m+ 17:         else:[0m
+[32m+ 18:             return False[0m
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+--------------------------------------------------------------------------------
+[0.22765 s] [36mincompetent[0m
+
+TypeError: identifier1:31: TypeError: Identifier.valid_f() missing 1 required positional argument: 'ch'
+
+[36m   -[0m [#  82] SDI identifier1: 
+--------------------------------------------------------------------------------
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+[34m- 19:     def validateIdentifier(self, s):[0m
+[34m- 20:         ''' generated source for method validateIdentifier '''[0m
+[34m- 21:         achar = str()[0m
+[34m- 22:         valid_id = False[0m
+[34m- 23:         if len(s) > 0:[0m
+[34m- 24:             achar = s[0][0m
+[34m- 25:             valid_id = self.valid_s(achar)[0m
+[34m- 26:             if len(s) > 1:[0m
+[34m- 27:                 achar = s[1][0m
+[34m- 28:                 i = 1[0m
+[34m- 29:                 while i < len(s):[0m
+[34m- 30:                     achar = s[i][0m
+[34m- 31:                     if not (self.valid_f(achar)):[0m
+[34m- 32:                         valid_id = False[0m
+[34m- 33:                     i += 1[0m
+[34m- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):[0m
+[34m- 35:                 return True[0m
+[34m- 36:             else:[0m
+[34m- 37:                 return False[0m
+[34m- 38:         else:[0m
+[34m- 39:             return False[0m
+[32m+ 19:     @staticmethod[0m
+[32m+ 20:     def validateIdentifier(self, s):[0m
+[32m+ 21:         ''' generated source for method validateIdentifier '''[0m
+[32m+ 22:         achar = str()[0m
+[32m+ 23:         valid_id = False[0m
+[32m+ 24:         if len(s) > 0:[0m
+[32m+ 25:             achar = s[0][0m
+[32m+ 26:             valid_id = self.valid_s(achar)[0m
+[32m+ 27:             if len(s) > 1:[0m
+[32m+ 28:                 achar = s[1][0m
+[32m+ 29:                 i = 1[0m
+[32m+ 30:                 while i < len(s):[0m
+[32m+ 31:                     achar = s[i][0m
+[32m+ 32:                     if not (self.valid_f(achar)):[0m
+[32m+ 33:                         valid_id = False[0m
+[32m+ 34:                     i += 1[0m
+[32m+ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):[0m
+[32m+ 36:                 return True[0m
+[32m+ 37:             else:[0m
+[32m+ 38:                 return False[0m
+[32m+ 39:         else:[0m
+[32m+ 40:             return False[0m
+--------------------------------------------------------------------------------
+[0.22299 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/identifier1/ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:7: TypeError: Identifier.validateIdentifier() missing 1 required positional argument: 's'
+
+[36m   -[0m [#  83] SDL identifier1: 
+--------------------------------------------------------------------------------
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+   7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+[34m-  8:             return True[0m
+[32m+  8:             pass[0m
+   9:         else:
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+--------------------------------------------------------------------------------
+[0.22747 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:20: AssertionError
+[36m   -[0m [#  84] SDL identifier1: 
+--------------------------------------------------------------------------------
+   6:         ''' generated source for method valid_s '''
+   7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+[34m- 10:             return False[0m
+[32m+ 10:             pass[0m
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+--------------------------------------------------------------------------------
+[0.23283 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:14: AssertionError
+[36m   -[0m [#  85] SDL identifier1: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+[34m- 15:             return True[0m
+[32m+ 15:             pass[0m
+  16:         else:
+  17:             return False
+  18:     
+  19:     def validateIdentifier(self, s):
+--------------------------------------------------------------------------------
+[0.25418 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:32: AssertionError
+[36m   -[0m [#  86] SDL identifier1: 
+--------------------------------------------------------------------------------
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+[34m- 17:             return False[0m
+[32m+ 17:             pass[0m
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+--------------------------------------------------------------------------------
+[0.24236 s] [31msurvived[0m
+[36m   -[0m [#  87] SDL identifier1: 
+--------------------------------------------------------------------------------
+  17:             return False
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+[34m- 21:         achar = str()[0m
+[32m+ 21:         pass[0m
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+--------------------------------------------------------------------------------
+[0.25451 s] [31msurvived[0m
+[36m   -[0m [#  88] SDL identifier1: 
+--------------------------------------------------------------------------------
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+[34m- 22:         valid_id = False[0m
+[32m+ 22:         pass[0m
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+--------------------------------------------------------------------------------
+[0.28318 s] [31msurvived[0m
+[36m   -[0m [#  89] SDL identifier1: 
+--------------------------------------------------------------------------------
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+[34m- 24:             achar = s[0][0m
+[32m+ 24:             pass[0m
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+--------------------------------------------------------------------------------
+[0.27200 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:20: AssertionError
+[36m   -[0m [#  90] SDL identifier1: 
+--------------------------------------------------------------------------------
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+[34m- 25:             valid_id = self.valid_s(achar)[0m
+[32m+ 25:             pass[0m
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+--------------------------------------------------------------------------------
+[0.27166 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:20: AssertionError
+[36m   -[0m [#  91] SDL identifier1: 
+--------------------------------------------------------------------------------
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+[34m- 27:                 achar = s[1][0m
+[32m+ 27:                 pass[0m
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+--------------------------------------------------------------------------------
+[0.23599 s] [31msurvived[0m
+[36m   -[0m [#  92] SDL identifier1: 
+--------------------------------------------------------------------------------
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+[34m- 28:                 i = 1[0m
+[32m+ 28:                 pass[0m
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+--------------------------------------------------------------------------------
+[0.20721 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fd6771493f0>, s = 'e=g'
+
+>   ???
+E   UnboundLocalError: local variable 'i' referenced before assignment
+
+identifier1:29: UnboundLocalError
+[36m   -[0m [#  93] SDL identifier1: 
+--------------------------------------------------------------------------------
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+[34m- 30:                     achar = s[i][0m
+[32m+ 30:                     pass[0m
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+--------------------------------------------------------------------------------
+[0.27922 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        str_0 = 'i8='
+        str_1 = 'j'
+        dict_0 = {}
+        identifier_0 = module_0.Identifier(**dict_0)
+        var_0 = identifier_0.validateIdentifier(str_1)
+        assert var_0 is True
+        var_1 = identifier_0.validateIdentifier(str_0)
+>       assert var_1 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_DYNAMOSA.py:52: AssertionError
+[36m   -[0m [#  94] SDL identifier1: 
+--------------------------------------------------------------------------------
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+[34m- 32:                         valid_id = False[0m
+[32m+ 32:                         pass[0m
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+--------------------------------------------------------------------------------
+[0.22734 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  95] SDL identifier1: 
+--------------------------------------------------------------------------------
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+[34m- 35:                 return True[0m
+[32m+ 35:                 pass[0m
+  36:             else:
+  37:                 return False
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[0.22981 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:20: AssertionError
+[36m   -[0m [#  96] SDL identifier1: 
+--------------------------------------------------------------------------------
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+[34m- 37:                 return False[0m
+[32m+ 37:                 pass[0m
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[0.22278 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[36m   -[0m [#  97] SDL identifier1: 
+--------------------------------------------------------------------------------
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+[34m- 39:             return False[0m
+[32m+ 39:             pass[0m
+--------------------------------------------------------------------------------
+[0.23229 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_9
+
+def test_case_9():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:62: AssertionError
+[36m   -[0m [#  98] SVD identifier1: 
+--------------------------------------------------------------------------------
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+[34m- 25:             valid_id = self.valid_s(achar)[0m
+[32m+ 25:             valid_id = valid_s(achar)[0m
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+--------------------------------------------------------------------------------
+[0.21736 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fd67704e2f0>, s = 'e=g'
+
+>   ???
+E   NameError: name 'valid_s' is not defined
+
+identifier1:25: NameError
+[36m   -[0m [#  99] SVD identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+[34m- 31:                     if not (self.valid_f(achar)):[0m
+[32m+ 31:                     if not (valid_f(achar)):[0m
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[0.21936 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7fd676fd8a00>, s = 'e=g'
+
+>   ???
+E   NameError: name 'valid_f' is not defined
+
+identifier1:31: NameError
+[36m   -[0m [# 100] ZIL identifier1: 
+--------------------------------------------------------------------------------
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+[34m- 30:                     achar = s[i][0m
+[34m- 31:                     if not (self.valid_f(achar)):[0m
+[34m- 32:                         valid_id = False[0m
+[34m- 33:                     i += 1[0m
+[32m+ 30:                     break[0m
+[32m+ 31:             [0m
+[32m+ 32:             [0m
+[32m+ 33:             [0m
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[0.22997 s] [32mkilled[0m by ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+ALL-SMART-GPT-COSMICRAY/test_identifier1_MIO.py:8: AssertionError
+[34m[*][0m Mutation score [30.69125 s]: [1m[34m92.7%[0m
+[36m   -[0m all: 100
+[36m   -[0m killed: 89 (89.0%)
+[36m   -[0m survived: 7 (7.0%)
+[36m   -[0m incompetent: 4 (4.0%)
+[36m   -[0m timeout: 0 (0.0%)

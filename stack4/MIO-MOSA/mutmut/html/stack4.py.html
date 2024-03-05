@@ -1,0 +1,210 @@
+<html><body><h1>stack4.py</h1>Killed 28 out of 47 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 8</h3><pre>--- stack4.py
++++ stack4.py
+@@ -41,7 +41,7 @@
+         """Insert a value at the head of the list."""
+         old_head = self.head
+         self.head = Node(val, old_head)
+-        self._length += 1
++        self._length = 1
+ 
+     def pop(self):
+         """Remove the first value and return it."""
+</pre><h3>Mutant 9</h3><pre>--- stack4.py
++++ stack4.py
+@@ -41,7 +41,7 @@
+         """Insert a value at the head of the list."""
+         old_head = self.head
+         self.head = Node(val, old_head)
+-        self._length += 1
++        self._length -= 1
+ 
+     def pop(self):
+         """Remove the first value and return it."""
+</pre><h3>Mutant 10</h3><pre>--- stack4.py
++++ stack4.py
+@@ -41,7 +41,7 @@
+         """Insert a value at the head of the list."""
+         old_head = self.head
+         self.head = Node(val, old_head)
+-        self._length += 1
++        self._length += 2
+ 
+     def pop(self):
+         """Remove the first value and return it."""
+</pre><h3>Mutant 12</h3><pre>--- stack4.py
++++ stack4.py
+@@ -46,7 +46,7 @@
+     def pop(self):
+         """Remove the first value and return it."""
+         if not self.head:
+-            raise IndexError('Cannot pop from an empty list')
++            raise IndexError('XXCannot pop from an empty listXX')
+         to_return = self.head
+         self.head = self.head.next
+         self._length -= 1
+</pre><h3>Mutant 14</h3><pre>--- stack4.py
++++ stack4.py
+@@ -48,7 +48,7 @@
+         if not self.head:
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+-        self.head = self.head.next
++        self.head = None
+         self._length -= 1
+         return to_return.data
+ 
+</pre><h3>Mutant 15</h3><pre>--- stack4.py
++++ stack4.py
+@@ -49,7 +49,7 @@
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next
+-        self._length -= 1
++        self._length = 1
+         return to_return.data
+ 
+     def size(self):
+</pre><h3>Mutant 16</h3><pre>--- stack4.py
++++ stack4.py
+@@ -49,7 +49,7 @@
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next
+-        self._length -= 1
++        self._length += 1
+         return to_return.data
+ 
+     def size(self):
+</pre><h3>Mutant 17</h3><pre>--- stack4.py
++++ stack4.py
+@@ -49,7 +49,7 @@
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next
+-        self._length -= 1
++        self._length -= 2
+         return to_return.data
+ 
+     def size(self):
+</pre><h3>Mutant 20</h3><pre>--- stack4.py
++++ stack4.py
+@@ -62,7 +62,7 @@
+         while curr:
+             if curr.data == val:
+                 return curr
+-            curr = curr.next
++            curr = None
+ 
+     def remove(self, val):
+         """Remove node from list if exists."""
+</pre><h3>Mutant 24</h3><pre>--- stack4.py
++++ stack4.py
+@@ -68,7 +68,7 @@
+         """Remove node from list if exists."""
+         curr = self.head
+         if curr and val is self.head.data:
+-            self.head = self.head.next
++            self.head = None
+             self._length -= 1
+         while curr:
+             if (curr.next and curr.next.data == val):
+</pre><h3>Mutant 25</h3><pre>--- stack4.py
++++ stack4.py
+@@ -69,7 +69,7 @@
+         curr = self.head
+         if curr and val is self.head.data:
+             self.head = self.head.next
+-            self._length -= 1
++            self._length = 1
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+</pre><h3>Mutant 26</h3><pre>--- stack4.py
++++ stack4.py
+@@ -69,7 +69,7 @@
+         curr = self.head
+         if curr and val is self.head.data:
+             self.head = self.head.next
+-            self._length -= 1
++            self._length += 1
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+</pre><h3>Mutant 27</h3><pre>--- stack4.py
++++ stack4.py
+@@ -69,7 +69,7 @@
+         curr = self.head
+         if curr and val is self.head.data:
+             self.head = self.head.next
+-            self._length -= 1
++            self._length -= 2
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+</pre><h3>Mutant 28</h3><pre>--- stack4.py
++++ stack4.py
+@@ -71,7 +71,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data != val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next
+</pre><h3>Mutant 30</h3><pre>--- stack4.py
++++ stack4.py
+@@ -72,7 +72,7 @@
+             self._length -= 1
+         while curr:
+             if (curr.next and curr.next.data == val):
+-                curr.next = curr.next.next
++                curr.next = None
+                 self._length -= 1
+             curr = curr.next
+ 
+</pre><h3>Mutant 31</h3><pre>--- stack4.py
++++ stack4.py
+@@ -73,7 +73,7 @@
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+-                self._length -= 1
++                self._length = 1
+             curr = curr.next
+ 
+     def display(self):
+</pre><h3>Mutant 32</h3><pre>--- stack4.py
++++ stack4.py
+@@ -73,7 +73,7 @@
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+-                self._length -= 1
++                self._length += 1
+             curr = curr.next
+ 
+     def display(self):
+</pre><h3>Mutant 33</h3><pre>--- stack4.py
++++ stack4.py
+@@ -73,7 +73,7 @@
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+-                self._length -= 1
++                self._length -= 2
+             curr = curr.next
+ 
+     def display(self):
+</pre><h3>Mutant 34</h3><pre>--- stack4.py
++++ stack4.py
+@@ -74,7 +74,7 @@
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+-            curr = curr.next
++            curr = None
+ 
+     def display(self):
+         """Display list as a tuple."""
+</pre></body></html>

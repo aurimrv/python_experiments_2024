@@ -1,0 +1,101 @@
+2023-07-14 00:04:48,704: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 96 items
+
+RANDOM/test_stack2_RANDOM.py ........................................... [ 44%]
+.....................................................                    [100%]
+
+============================== 96 passed in 0.46s ==============================
+2023-07-14 00:04:49,328: [92m3 mutation targets found in stack2.py AST.[0m
+2023-07-14 00:04:49,328: Setting random.seed to: 2023
+2023-07-14 00:04:49,329: Total sample space size: 3
+2023-07-14 00:04:49,329: [93m10 exceeds sample space, using full sample: 3.[0m
+2023-07-14 00:04:49,329: Starting individual mutation trials!
+2023-07-14 00:04:49,329: Running serial (single processor) dispatch mode.
+2023-07-14 00:04:49,329: Current target location: stack2.py, LocIndex(ast_class='Compare', lineno=13, col_offset=15, op_type=<class 'ast.Eq'>, end_lineno=13, end_col_offset=35)
+2023-07-14 00:04:49,655: [92mResult: Detected at stack2.py: (13, 15)[0m
+2023-07-14 00:04:49,965: [92mResult: Detected at stack2.py: (13, 15)[0m
+2023-07-14 00:04:50,276: [92mResult: Detected at stack2.py: (13, 15)[0m
+2023-07-14 00:04:50,533: [91mResult: Survived at stack2.py: (13, 15)[0m
+2023-07-14 00:04:50,832: [92mResult: Detected at stack2.py: (13, 15)[0m
+2023-07-14 00:04:50,832: Current target location: stack2.py, LocIndex(ast_class='If', lineno=21, col_offset=8, op_type='If_Statement', end_lineno=22, end_col_offset=46)
+2023-07-14 00:04:51,091: [92mResult: Detected at stack2.py: (21, 8)[0m
+2023-07-14 00:04:51,341: [91mResult: Survived at stack2.py: (21, 8)[0m
+2023-07-14 00:04:51,341: Current target location: stack2.py, LocIndex(ast_class='BinOp', lineno=27, col_offset=15, op_type=<class 'ast.Add'>, end_lineno=27, end_col_offset=41)
+2023-07-14 00:04:51,638: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-07-14 00:04:51,924: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-07-14 00:04:52,223: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-07-14 00:04:52,505: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-07-14 00:04:52,804: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-07-14 00:04:53,086: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-07-14 00:04:53,086: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 96 items
+
+RANDOM/test_stack2_RANDOM.py ........................................... [ 44%]
+.....................................................                    [100%]
+
+============================== 96 passed in 0.09s ==============================
+2023-07-14 00:04:53,350: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/stack2/stack2.py
+ - Test commands: ['python', '-m', 'pytest', '--tb=no', './RANDOM']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: 2023
+
+Random sample details
+---------------------
+ - Total locations mutated: 3
+ - Total locations identified: 3
+ - Location sample coverage: 100.00 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:00.623093
+ - Clean trial 2 run time: 0:00:00.263775
+ - Mutation trials total run time: 0:00:03.758631
+
+2023-07-14 00:04:53,350: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - DETECTED: 11
+ - SURVIVED: 2
+ - TOTAL RUNS: 13
+ - RUN DATETIME: 2023-07-14 00:04:53.350772
+
+2023-07-14 00:04:53,351: Detected mutations:[92m
+
+DETECTED
+--------
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - stack2.py: (l: 21, c: 8) - mutation from If_Statement to If_True
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>[0m
+
+2023-07-14 00:04:53,351: Timedout mutations:
+
+2023-07-14 00:04:53,351: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - stack2.py: (l: 21, c: 8) - mutation from If_Statement to If_False[0m
+
+2023-07-14 00:04:53,351: Writing output report to: /home/auri/temp/lucca/python_experiments/stack2/RANDOM/mutatest/RANDOM-report.rst

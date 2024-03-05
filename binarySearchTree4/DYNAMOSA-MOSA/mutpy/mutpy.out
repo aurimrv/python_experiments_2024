@@ -1,0 +1,1648 @@
+[*] Start mutation process:
+   - targets: binarySearchTree4.py
+   - tests: ./DYNAMOSA-MOSA
+[*] 19 tests passed:
+   - test_binarySearchTree4_DYNAMOSA [0.35756 s]
+   - test_binarySearchTree4_MOSA [0.29668 s]
+[*] Start mutants generation and execution:
+   - [#   1] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data):
+-  4:         self.data = data
+-  5:         self.left = None
+-  6:         self.right = None
+-  7:         self.parent = None
+-  8:     
++  3:     @classmethod
++  4:     def __init__(self, data):
++  5:         self.data = data
++  6:         self.left = None
++  7:         self.right = None
++  8:         self.parent = None
+   9:     def __repr__(self):
+  10:         return str(self.data)
+  11: 
+  12: class Bst(object):
+--------------------------------------------------------------------------------
+[0.64119 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(tuple_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == ()
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(tuple_0)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+        var_2 = var_1.__repr__()
+        var_3 = var_2.__repr__()
+        var_4 = bst_0.insert(tuple_0)
+        assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_4.parent).__module__}.{type(var_4.parent).__qualname__}' == 'binarySearchTree4.Node'
+        node_0 = module_0.Node(var_1)
+>       var_5 = var_4.__repr__()
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:10: in __repr__
+    ???
+binarySearchTree4:10: in __repr__
+    ???
+binarySearchTree4:10: in __repr__
+    ???
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+   - [#   2] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+   5:         self.left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+-  9:     def __repr__(self):
+- 10:         return str(self.data)
+- 11: 
++  9:     @classmethod
++ 10:     def __repr__(self):
++ 11:         return str(self.data)
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+--------------------------------------------------------------------------------
+[0.51593 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U <2SrvUq'
+        var_0 = bst_0.insert(str_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == 'Eq$Iy6fg;+)U <2SrvUq'
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+>       var_1 = var_0.__repr__()
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'binarySearchTree4.Node'>
+
+>   ???
+E   AttributeError: type object 'Node' has no attribute 'data'
+
+binarySearchTree4:11: AttributeError
+   - [#   3] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  10:         return str(self.data)
+  11: 
+  12: class Bst(object):
+  13:     
+- 14:     def __init__(self, root=None):
+- 15:         self.root = root
+- 16:     
++ 14:     @classmethod
++ 15:     def __init__(self, root=None):
++ 16:         self.root = root
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+--------------------------------------------------------------------------------
+[0.54519 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+>       var_0 = bst_0.insert(bool_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f146c18e0b0>
+node = <binarySearchTree4.Bst object at 0x7f146c18e0b0>, data = False
+
+>   ???
+E   AttributeError: 'Bst' object has no attribute 'data'
+
+binarySearchTree4:29: AttributeError
+   - [#   4] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+  16:     
+- 17:     def insert(self, data):
+- 18:         if data is None:
+- 19:             raise TypeError('data cannot be None')
+- 20:         if self.root is None:
+- 21:             self.root = Node(data)
+- 22:             return self.root
+- 23:         else:
+- 24:             return self._insert(self.root, data)
+- 25:     
++ 17:     @classmethod
++ 18:     def insert(self, data):
++ 19:         if data is None:
++ 20:             raise TypeError('data cannot be None')
++ 21:         if self.root is None:
++ 22:             self.root = Node(data)
++ 23:             return self.root
++ 24:         else:
++ 25:             return self._insert(self.root, data)
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+--------------------------------------------------------------------------------
+[0.52844 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+>       var_0 = bst_0.insert(bst_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'binarySearchTree4.Bst'>
+data = <binarySearchTree4.Bst object at 0x7f146bfc6e60>
+
+>   ???
+E   AttributeError: type object 'Bst' has no attribute 'root'
+
+binarySearchTree4:21: AttributeError
+   - [#   5] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+- 26:     def _insert(self, node, data):
+- 27:         if node is None:
+- 28:             return Node(data)
+- 29:         if data <= node.data:
+- 30:             if node.left is None:
+- 31:                 node.left = self._insert(node.left, data)
+- 32:                 node.left.parent = node
+- 33:                 return node.left
+- 34:             else:
+- 35:                 return self._insert(node.left, data)
+- 36:         
+- 37:         elif node.right is None:
+- 38:             node.right = self._insert(node.right, data)
+- 39:             node.right.parent = node
+- 40:             return node.right
+- 41:         else:
+- 42:             return self._insert(node.right, data)
++ 26:     @classmethod
++ 27:     def _insert(self, node, data):
++ 28:         if node is None:
++ 29:             return Node(data)
++ 30:         if data <= node.data:
++ 31:             if node.left is None:
++ 32:                 node.left = self._insert(node.left, data)
++ 33:                 node.left.parent = node
++ 34:                 return node.left
++ 35:             else:
++ 36:                 return self._insert(node.left, data)
++ 37:         
++ 38:         elif node.right is None:
++ 39:             node.right = self._insert(node.right, data)
++ 40:             node.right.parent = node
++ 41:             return node.right
++ 42:         else:
++ 43:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[0.42090 s] survived
+   - [#   6] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+  16:     
+  17:     def insert(self, data):
+- 18:         if data is None:
++ 18:         if not (data is None):
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+--------------------------------------------------------------------------------
+[0.51837 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/binarySearchTree4/DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:8: Failed: DID NOT RAISE <class 'TypeError'>
+
+   - [#   7] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+- 20:         if self.root is None:
++ 20:         if not (self.root is None):
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+--------------------------------------------------------------------------------
+[0.50809 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+>       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:16: AssertionError
+   - [#   8] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+- 27:         if node is None:
++ 27:         if not (node is None):
+  28:             return Node(data)
+  29:         if data <= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+--------------------------------------------------------------------------------
+[0.54189 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/binarySearchTree4/DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:33: Failed: DID NOT RAISE <class 'TypeError'>
+
+   - [#   9] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+- 29:         if data <= node.data:
++ 29:         if not (data <= node.data):
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+--------------------------------------------------------------------------------
+[0.55402 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+        var_1 = bst_0.insert(bool_1)
+>       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:72: AssertionError
+   - [#  10] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+- 30:             if node.left is None:
++ 30:             if not (node.left is None):
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+--------------------------------------------------------------------------------
+[0.61596 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+        var_2 = bst_0.insert(bool_0)
+>       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:88: AssertionError
+   - [#  11] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  33:                 return node.left
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+- 37:         elif node.right is None:
++ 37:         elif not (node.right is None):
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+--------------------------------------------------------------------------------
+[0.50838 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+        var_1 = bst_0.insert(bool_1)
+>       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:72: AssertionError
+   - [#  12] CRP binarySearchTree4: 
+--------------------------------------------------------------------------------
+  15:         self.root = root
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+- 19:             raise TypeError('data cannot be None')
++ 19:             raise TypeError('mutpy')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+--------------------------------------------------------------------------------
+[0.42321 s] survived
+   - [#  13] CRP binarySearchTree4: 
+--------------------------------------------------------------------------------
+  15:         self.root = root
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+- 19:             raise TypeError('data cannot be None')
++ 19:             raise TypeError('')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+--------------------------------------------------------------------------------
+[0.43846 s] survived
+   - [#  14] ROR binarySearchTree4: 
+--------------------------------------------------------------------------------
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+- 29:         if data <= node.data:
++ 29:         if data >= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+--------------------------------------------------------------------------------
+[0.50893 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+        var_1 = bst_0.insert(bool_1)
+>       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:72: AssertionError
+   - [#  15] ROR binarySearchTree4: 
+--------------------------------------------------------------------------------
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+- 29:         if data <= node.data:
++ 29:         if data < node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+--------------------------------------------------------------------------------
+[0.59610 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+        var_2 = bst_0.insert(bool_0)
+>       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:88: AssertionError
+   - [#  16] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data):
+-  4:         self.data = data
+-  5:         self.left = None
+-  6:         self.right = None
+-  7:         self.parent = None
+-  8:     
++  3:     @staticmethod
++  4:     def __init__(self, data):
++  5:         self.data = data
++  6:         self.left = None
++  7:         self.right = None
++  8:         self.parent = None
+   9:     def __repr__(self):
+  10:         return str(self.data)
+  11: 
+  12: class Bst(object):
+--------------------------------------------------------------------------------
+[0.61287 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/binarySearchTree4/DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:13: TypeError: Node.__init__() missing 1 required positional argument: 'data'
+
+   - [#  17] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+   5:         self.left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+-  9:     def __repr__(self):
+- 10:         return str(self.data)
+- 11: 
++  9:     @staticmethod
++ 10:     def __repr__(self):
++ 11:         return str(self.data)
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+--------------------------------------------------------------------------------
+[0.56689 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/binarySearchTree4/DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:50: TypeError: Node.__repr__() missing 1 required positional argument: 'self'
+
+   - [#  18] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  10:         return str(self.data)
+  11: 
+  12: class Bst(object):
+  13:     
+- 14:     def __init__(self, root=None):
+- 15:         self.root = root
+- 16:     
++ 14:     @staticmethod
++ 15:     def __init__(self, root=None):
++ 16:         self.root = root
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+--------------------------------------------------------------------------------
+[0.57358 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/binarySearchTree4/DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:7: TypeError: Bst.__init__() missing 1 required positional argument: 'self'
+
+   - [#  19] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+  16:     
+- 17:     def insert(self, data):
+- 18:         if data is None:
+- 19:             raise TypeError('data cannot be None')
+- 20:         if self.root is None:
+- 21:             self.root = Node(data)
+- 22:             return self.root
+- 23:         else:
+- 24:             return self._insert(self.root, data)
+- 25:     
++ 17:     @staticmethod
++ 18:     def insert(self, data):
++ 19:         if data is None:
++ 20:             raise TypeError('data cannot be None')
++ 21:         if self.root is None:
++ 22:             self.root = Node(data)
++ 23:             return self.root
++ 24:         else:
++ 25:             return self._insert(self.root, data)
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+--------------------------------------------------------------------------------
+[0.56068 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/binarySearchTree4/DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:15: TypeError: Bst.insert() missing 1 required positional argument: 'data'
+
+   - [#  20] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+- 26:     def _insert(self, node, data):
+- 27:         if node is None:
+- 28:             return Node(data)
+- 29:         if data <= node.data:
+- 30:             if node.left is None:
+- 31:                 node.left = self._insert(node.left, data)
+- 32:                 node.left.parent = node
+- 33:                 return node.left
+- 34:             else:
+- 35:                 return self._insert(node.left, data)
+- 36:         
+- 37:         elif node.right is None:
+- 38:             node.right = self._insert(node.right, data)
+- 39:             node.right.parent = node
+- 40:             return node.right
+- 41:         else:
+- 42:             return self._insert(node.right, data)
++ 26:     @staticmethod
++ 27:     def _insert(self, node, data):
++ 28:         if node is None:
++ 29:             return Node(data)
++ 30:         if data <= node.data:
++ 31:             if node.left is None:
++ 32:                 node.left = self._insert(node.left, data)
++ 33:                 node.left.parent = node
++ 34:                 return node.left
++ 35:             else:
++ 36:                 return self._insert(node.left, data)
++ 37:         
++ 38:         elif node.right is None:
++ 39:             node.right = self._insert(node.right, data)
++ 40:             node.right.parent = node
++ 41:             return node.right
++ 42:         else:
++ 43:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[0.48721 s] incompetent
+
+TypeError: binarySearchTree4:24: TypeError: Bst._insert() missing 1 required positional argument: 'data'
+
+   - [#  21] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+-  4:         self.data = data
++  4:         pass
+   5:         self.left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+--------------------------------------------------------------------------------
+[0.58429 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'binarySearchTree4.Bst'
+E       AttributeError: 'Node' object has no attribute 'data'
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:18: AttributeError
+   - [#  22] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+-  5:         self.left = None
++  5:         pass
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+--------------------------------------------------------------------------------
+[0.63158 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'binarySearchTree4.Bst'
+>       assert var_0.left is None
+E       AttributeError: 'Node' object has no attribute 'left'
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:19: AttributeError
+   - [#  23] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+   5:         self.left = None
+-  6:         self.right = None
++  6:         pass
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+  10:         return str(self.data)
+--------------------------------------------------------------------------------
+[0.65000 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'binarySearchTree4.Bst'
+        assert var_0.left is None
+>       assert var_0.right is None
+E       AttributeError: 'Node' object has no attribute 'right'
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:20: AttributeError
+   - [#  24] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   3:     def __init__(self, data):
+   4:         self.data = data
+   5:         self.left = None
+   6:         self.right = None
+-  7:         self.parent = None
++  7:         pass
+   8:     
+   9:     def __repr__(self):
+  10:         return str(self.data)
+  11: 
+--------------------------------------------------------------------------------
+[0.54563 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0.data).__module__}.{type(var_0.data).__qualname__}' == 'binarySearchTree4.Bst'
+        assert var_0.left is None
+        assert var_0.right is None
+>       assert var_0.parent is None
+E       AttributeError: 'Node' object has no attribute 'parent'
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:21: AttributeError
+   - [#  25] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+- 10:         return str(self.data)
++ 10:         pass
+  11: 
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+--------------------------------------------------------------------------------
+[0.43082 s] survived
+   - [#  26] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  11: 
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+- 15:         self.root = root
++ 15:         pass
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+--------------------------------------------------------------------------------
+[0.59933 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+>       var_0 = bst_0.insert(bst_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f146be290c0>
+data = <binarySearchTree4.Bst object at 0x7f146be290c0>
+
+>   ???
+E   AttributeError: 'Bst' object has no attribute 'root'
+
+binarySearchTree4:20: AttributeError
+   - [#  27] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+- 21:             self.root = Node(data)
++ 21:             pass
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+--------------------------------------------------------------------------------
+[0.56860 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+>       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:16: AssertionError
+   - [#  28] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+- 22:             return self.root
++ 22:             pass
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+--------------------------------------------------------------------------------
+[0.52346 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:17: AssertionError
+   - [#  29] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+- 24:             return self._insert(self.root, data)
++ 24:             pass
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+--------------------------------------------------------------------------------
+[0.53580 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/binarySearchTree4/DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:33: Failed: DID NOT RAISE <class 'TypeError'>
+
+   - [#  30] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  24:             return self._insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+- 28:             return Node(data)
++ 28:             pass
+  29:         if data <= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+--------------------------------------------------------------------------------
+[0.56093 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+>       var_1 = bst_0.insert(bool_1)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+binarySearchTree4:38: in _insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f146beb39a0>, node = None
+data = True
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+binarySearchTree4:29: AttributeError
+   - [#  31] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+  30:             if node.left is None:
+- 31:                 node.left = self._insert(node.left, data)
++ 31:                 pass
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+  35:                 return self._insert(node.left, data)
+--------------------------------------------------------------------------------
+[0.68714 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+>       var_2 = bst_0.insert(bool_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f146c1475b0>, node = False
+data = False
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'parent'
+
+binarySearchTree4:32: AttributeError
+   - [#  32] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  28:             return Node(data)
+  29:         if data <= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+- 32:                 node.left.parent = node
++ 32:                 pass
+  33:                 return node.left
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+--------------------------------------------------------------------------------
+[0.55952 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+        var_2 = bst_0.insert(bool_0)
+        assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(var_2.parent).__module__}.{type(var_2.parent).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:89: AssertionError
+   - [#  33] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  29:         if data <= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+- 33:                 return node.left
++ 33:                 pass
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+--------------------------------------------------------------------------------
+[0.59389 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+        var_2 = bst_0.insert(bool_0)
+        assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(var_2.parent).__module__}.{type(var_2.parent).__qualname__}' == 'binarySearchTree4.Node'
+E       AttributeError: 'NoneType' object has no attribute 'parent'
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:89: AttributeError
+   - [#  34] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+- 35:                 return self._insert(node.left, data)
++ 35:                 pass
+  36:         
+  37:         elif node.right is None:
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+--------------------------------------------------------------------------------
+[0.69258 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(tuple_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == ()
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(tuple_0)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+        var_2 = var_1.__repr__()
+        var_3 = var_2.__repr__()
+        var_4 = bst_0.insert(tuple_0)
+>       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:115: AssertionError
+   - [#  35] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+- 38:             node.right = self._insert(node.right, data)
++ 38:             pass
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+  42:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[0.55448 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+>       var_1 = bst_0.insert(bool_1)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f146c146410>, node = False
+data = True
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'parent'
+
+binarySearchTree4:39: AttributeError
+   - [#  36] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  35:                 return self._insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+  38:             node.right = self._insert(node.right, data)
+- 39:             node.right.parent = node
++ 39:             pass
+  40:             return node.right
+  41:         else:
+  42:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[0.65925 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+        var_1 = bst_0.insert(bool_1)
+        assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:73: AssertionError
+   - [#  37] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  36:         
+  37:         elif node.right is None:
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+- 40:             return node.right
++ 40:             pass
+  41:         else:
+  42:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[0.59731 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+        var_1 = bst_0.insert(bool_1)
+        assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+E       AttributeError: 'NoneType' object has no attribute 'parent'
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:73: AttributeError
+   - [#  38] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+- 42:             return self._insert(node.right, data)
++ 42:             pass
+--------------------------------------------------------------------------------
+[0.50573 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+
+def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+        assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+        var_2 = bst_1.insert(var_0)
+        assert f'{type(bst_1.root).__module__}.{type(bst_1.root).__qualname__}' == 'binarySearchTree4.Node'
+        var_3 = var_1.__repr__()
+        str_0 = 'fRiH'
+        node_0 = module_0.Node(bool_0)
+        var_4 = var_0.__repr__()
+        node_1 = module_0.Node(var_0)
+        node_2 = module_0.Node(str_0)
+        var_5 = bst_0.insert(bool_0)
+>       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:145: AssertionError
+   - [#  39] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+-  4:         self.data = data
++  4:         data = data
+   5:         self.left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  40] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+-  5:         self.left = None
++  5:         left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  41] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+   5:         self.left = None
+-  6:         self.right = None
++  6:         right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+  10:         return str(self.data)
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  42] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   3:     def __init__(self, data):
+   4:         self.data = data
+   5:         self.left = None
+   6:         self.right = None
+-  7:         self.parent = None
++  7:         parent = None
+   8:     
+   9:     def __repr__(self):
+  10:         return str(self.data)
+  11: 
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  43] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+- 10:         return str(self.data)
++ 10:         return str(data)
+  11: 
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+--------------------------------------------------------------------------------
+[0.59402 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_4
+
+def test_case_4():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U <2SrvUq'
+        var_0 = bst_0.insert(str_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == 'Eq$Iy6fg;+)U <2SrvUq'
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+>       var_1 = var_0.__repr__()
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[NameError("name 'data' is not defined") raised in repr()] Node object at 0x7f146c09f250>
+
+>   ???
+E   NameError: name 'data' is not defined
+
+binarySearchTree4:10: NameError
+   - [#  44] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  11: 
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+- 15:         self.root = root
++ 15:         root = root
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  45] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+- 20:         if self.root is None:
++ 20:         if root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+--------------------------------------------------------------------------------
+[0.53040 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+>       var_0 = bst_0.insert(bst_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f146be37190>
+data = <binarySearchTree4.Bst object at 0x7f146be37190>
+
+>   ???
+E   NameError: name 'root' is not defined
+
+binarySearchTree4:20: NameError
+   - [#  46] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+- 21:             self.root = Node(data)
++ 21:             root = Node(data)
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  47] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+- 22:             return self.root
++ 22:             return root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+--------------------------------------------------------------------------------
+[0.60096 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+>       var_0 = bst_0.insert(bst_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f146bf5a290>
+data = <binarySearchTree4.Bst object at 0x7f146bf5a290>
+
+>   ???
+E   NameError: name 'root' is not defined
+
+binarySearchTree4:22: NameError
+   - [#  48] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+- 24:             return self._insert(self.root, data)
++ 24:             return _insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+--------------------------------------------------------------------------------
+[0.62033 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U <2SrvUq'
+        var_0 = bst_0.insert(str_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == 'Eq$Iy6fg;+)U <2SrvUq'
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        with pytest.raises(TypeError):
+>           bst_0.insert(var_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f146be2b4f0>
+data = Eq$Iy6fg;+)U <2SrvUq
+
+>   ???
+E   NameError: name '_insert' is not defined
+
+binarySearchTree4:24: NameError
+   - [#  49] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+- 24:             return self._insert(self.root, data)
++ 24:             return self._insert(root, data)
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+--------------------------------------------------------------------------------
+[0.65509 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U <2SrvUq'
+        var_0 = bst_0.insert(str_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == 'Eq$Iy6fg;+)U <2SrvUq'
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        with pytest.raises(TypeError):
+>           bst_0.insert(var_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f146c1e2530>
+data = Eq$Iy6fg;+)U <2SrvUq
+
+>   ???
+E   NameError: name 'root' is not defined
+
+binarySearchTree4:24: NameError
+   - [#  50] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+  30:             if node.left is None:
+- 31:                 node.left = self._insert(node.left, data)
++ 31:                 node.left = _insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+  35:                 return self._insert(node.left, data)
+--------------------------------------------------------------------------------
+[0.47541 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+
+def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+>       var_2 = bst_0.insert(bool_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f146c1e0bb0>, node = False
+data = False
+
+>   ???
+E   NameError: name '_insert' is not defined
+
+binarySearchTree4:31: NameError
+   - [#  51] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+- 35:                 return self._insert(node.left, data)
++ 35:                 return _insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+--------------------------------------------------------------------------------
+[0.57405 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(tuple_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == ()
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(tuple_0)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+        var_2 = var_1.__repr__()
+        var_3 = var_2.__repr__()
+>       var_4 = bst_0.insert(tuple_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f146c0054e0>, node = (), data = ()
+
+>   ???
+E   NameError: name '_insert' is not defined
+
+binarySearchTree4:35: NameError
+   - [#  52] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+- 38:             node.right = self._insert(node.right, data)
++ 38:             node.right = _insert(node.right, data)
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+  42:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[0.60750 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+>       var_1 = bst_0.insert(bool_1)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f146c004910>, node = False
+data = True
+
+>   ???
+E   NameError: name '_insert' is not defined
+
+binarySearchTree4:38: NameError
+   - [#  53] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+- 42:             return self._insert(node.right, data)
++ 42:             return _insert(node.right, data)
+--------------------------------------------------------------------------------
+[0.61826 s] killed by DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+
+def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+        assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+        var_2 = bst_1.insert(var_0)
+        assert f'{type(bst_1.root).__module__}.{type(bst_1.root).__qualname__}' == 'binarySearchTree4.Node'
+        var_3 = var_1.__repr__()
+        str_0 = 'fRiH'
+        node_0 = module_0.Node(bool_0)
+        var_4 = var_0.__repr__()
+        node_1 = module_0.Node(var_0)
+        node_2 = module_0.Node(str_0)
+>       var_5 = bst_0.insert(bool_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f146c0f3d60>, node = -2088
+data = False
+
+>   ???
+E   NameError: name '_insert' is not defined
+
+binarySearchTree4:42: NameError
+[*] Mutation score [35.02201 s]: 89.7%
+   - all: 53
+   - killed: 35 (66.0%)
+   - survived: 4 (7.5%)
+   - incompetent: 14 (26.4%)
+   - timeout: 0 (0.0%)

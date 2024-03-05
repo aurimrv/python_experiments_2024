@@ -1,0 +1,2913 @@
+[34m[*][0m Start mutation process:
+[36m   -[0m targets: linkedList4.py
+[36m   -[0m tests: ./ALL-SMART-GPT-MUTMUT
+[34m[*][0m 60 tests passed:
+[36m   -[0m test_linkedList4_MIO [0.17132 s]
+[36m   -[0m test_linkedList4_DYNAMOSA [0.08714 s]
+[36m   -[0m test_linkedList4_WHOLE_SUITE [0.06764 s]
+[36m   -[0m test_linkedList4_MUTMUT [0.06590 s]
+[36m   -[0m test_linkedList4_MOSA [0.07325 s]
+[34m[*][0m Start mutants generation and execution:
+[36m   -[0m [#   1] AOD linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         return display[:2] + ')'[0m
+--------------------------------------------------------------------------------
+[0.13517 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+        display_string = linked_list.display()
+>       assert display_string == "(30, 10)"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:32: AssertionError
+[36m   -[0m [#   2] AOR linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+[34m- 85:             display += str(curr.data) + ', '[0m
+[32m+ 85:             display += str(curr.data) - ', '[0m
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.12938 s] [36mincompetent[0m
+
+TypeError: linkedList4:85: TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+[36m   -[0m [#   3] AOR linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         return display[:+2] + ')'[0m
+--------------------------------------------------------------------------------
+[0.15659 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+        display_string = linked_list.display()
+>       assert display_string == "(30, 10)"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:32: AssertionError
+[36m   -[0m [#   4] AOR linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         return display[:-2] - ')'[0m
+--------------------------------------------------------------------------------
+[0.10947 s] [36mincompetent[0m
+
+TypeError: linkedList4:87: TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+[36m   -[0m [#   5] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+[34m- 45:         self._length += 1[0m
+[32m+ 45:         self._length -= 1[0m
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+--------------------------------------------------------------------------------
+[0.12826 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: AssertionError
+[36m   -[0m [#   6] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+[34m- 53:         self._length -= 1[0m
+[32m+ 53:         self._length += 1[0m
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+--------------------------------------------------------------------------------
+[0.13433 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_pop_and_verify_head
+
+def test_pop_and_verify_head():
+        linked_list = LinkedList([10, 20, 30])
+        popped_value = linked_list.pop()
+    
+        # Ensure that the popped value is correct and verify the new head of the linked list
+        assert popped_value == 30
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:40: AssertionError
+[36m   -[0m [#   7] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val == self.head.data):
+  72:             self.head = self.head.next
+[34m- 73:             self._length -= 1[0m
+[32m+ 73:             self._length += 1[0m
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+--------------------------------------------------------------------------------
+[0.13116 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: AssertionError
+[36m   -[0m [#   8] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+[34m- 77:                 self._length -= 1[0m
+[32m+ 77:                 self._length += 1[0m
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+--------------------------------------------------------------------------------
+[0.13334 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:27: AssertionError
+[36m   -[0m [#   9] ASR linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+[34m- 85:             display += str(curr.data) + ', '[0m
+[32m+ 85:             display -= str(curr.data) + ', '[0m
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.16104 s] [36mincompetent[0m
+
+TypeError: linkedList4:85: TypeError: unsupported operand type(s) for -=: 'str' and 'str'
+
+[36m   -[0m [#  10] CDI linkedList4: 
+--------------------------------------------------------------------------------
+   6: 
+   7:     Data attribute for data storage and Next for pointer to next node.
+   8:     '''
+   9:     
+[34m- 10:     def __init__(self, data, next_node=None):[0m
+[34m- 11:         '''Attribute data and next_node.'''[0m
+[34m- 12:         self.data = data[0m
+[34m- 13:         self.next = next_node[0m
+[34m- 14: [0m
+[32m+ 10:     @classmethod[0m
+[32m+ 11:     def __init__(self, data, next_node=None):[0m
+[32m+ 12:         '''Attribute data and next_node.'''[0m
+[32m+ 13:         self.data = data[0m
+[32m+ 14:         self.next = next_node[0m
+  15: 
+  16: class LinkedList(object):
+  17:     '''Method for linked list.
+  18: 
+--------------------------------------------------------------------------------
+[5.00663 s] [33mtimeout[0m
+[36m   -[0m [#  11] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  26:     display() - will return a unicode string representing the list as
+  27:     if it were a Python tuple literal: "(12, \'sam\', 37, \'tango\')"
+  28:     '''
+  29:     
+[34m- 30:     def __init__(self, data=None):[0m
+[34m- 31:         '''Linked list initialized with head.'''[0m
+[34m- 32:         self._length = 0[0m
+[34m- 33:         self.head = None[0m
+[34m- 34:         try:[0m
+[34m- 35:             for val in data:[0m
+[34m- 36:                 self.push(val)[0m
+[34m- 37:         except TypeError:[0m
+[34m- 38:             if data:[0m
+[34m- 39:                 self.push(data)[0m
+[34m- 40:     [0m
+[32m+ 30:     @classmethod[0m
+[32m+ 31:     def __init__(self, data=None):[0m
+[32m+ 32:         '''Linked list initialized with head.'''[0m
+[32m+ 33:         self._length = 0[0m
+[32m+ 34:         self.head = None[0m
+[32m+ 35:         try:[0m
+[32m+ 36:             for val in data:[0m
+[32m+ 37:                 self.push(val)[0m
+[32m+ 38:         except TypeError:[0m
+[32m+ 39:             if data:[0m
+[32m+ 40:                 self.push(data)[0m
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+--------------------------------------------------------------------------------
+[0.11591 s] [36mincompetent[0m
+
+TypeError: linkedList4:40: TypeError: LinkedList.push() missing 1 required positional argument: 'val'
+
+[36m   -[0m [#  12] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+[34m- 41:     def push(self, val):[0m
+[34m- 42:         '''Insert a value at the head of the list.'''[0m
+[34m- 43:         old_head = self.head[0m
+[34m- 44:         self.head = Node(val, old_head)[0m
+[34m- 45:         self._length += 1[0m
+[34m- 46:     [0m
+[32m+ 41:     @classmethod[0m
+[32m+ 42:     def push(self, val):[0m
+[32m+ 43:         '''Insert a value at the head of the list.'''[0m
+[32m+ 44:         old_head = self.head[0m
+[32m+ 45:         self.head = Node(val, old_head)[0m
+[32m+ 46:         self._length += 1[0m
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+--------------------------------------------------------------------------------
+[0.14560 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+>       linked_list = LinkedList([10, 20, 30])
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>, val = 10
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList4:44: AttributeError
+[36m   -[0m [#  13] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+  45:         self._length += 1
+  46:     
+[34m- 47:     def pop(self):[0m
+[34m- 48:         '''Remove the first value and return it.'''[0m
+[34m- 49:         if not (self.head):[0m
+[34m- 50:             raise IndexError('Cannot pop from an empty list')[0m
+[34m- 51:         to_return = self.head[0m
+[34m- 52:         self.head = self.head.next[0m
+[34m- 53:         self._length -= 1[0m
+[34m- 54:         return to_return.data[0m
+[34m- 55:     [0m
+[32m+ 47:     @classmethod[0m
+[32m+ 48:     def pop(self):[0m
+[32m+ 49:         '''Remove the first value and return it.'''[0m
+[32m+ 50:         if not (self.head):[0m
+[32m+ 51:             raise IndexError('Cannot pop from an empty list')[0m
+[32m+ 52:         to_return = self.head[0m
+[32m+ 53:         self.head = self.head.next[0m
+[32m+ 54:         self._length -= 1[0m
+[32m+ 55:         return to_return.data[0m
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+  59:     
+--------------------------------------------------------------------------------
+[0.13931 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_exception_pop
+
+def test_exception_pop():
+        # Create an empty stack
+        linked_list = LinkedList()
+    
+        # Test the mutant code: pop should raise an exception with the original message
+        with pytest.raises(Exception) as exception:
+            linked_list.pop()
+>       assert str(exception.value) == "Cannot pop from an empty list"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:11: AssertionError
+[36m   -[0m [#  14] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+[34m- 56:     def size(self):[0m
+[34m- 57:         '''Return the length of the list.'''[0m
+[34m- 58:         return self._length[0m
+[34m- 59:     [0m
+[32m+ 56:     @classmethod[0m
+[32m+ 57:     def size(self):[0m
+[32m+ 58:         '''Return the length of the list.'''[0m
+[32m+ 59:         return self._length[0m
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+--------------------------------------------------------------------------------
+[0.13781 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute '_length'
+
+linkedList4:59: AttributeError
+[36m   -[0m [#  15] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+  59:     
+[34m- 60:     def search(self, val):[0m
+[34m- 61:         '''Return the node containing val.'''[0m
+[34m- 62:         curr = self.head[0m
+[34m- 63:         while curr:[0m
+[34m- 64:             if curr.data == val:[0m
+[34m- 65:                 return curr[0m
+[34m- 66:             curr = curr.next[0m
+[34m- 67:     [0m
+[32m+ 60:     @classmethod[0m
+[32m+ 61:     def search(self, val):[0m
+[32m+ 62:         '''Return the node containing val.'''[0m
+[32m+ 63:         curr = self.head[0m
+[32m+ 64:         while curr:[0m
+[32m+ 65:             if curr.data == val:[0m
+[32m+ 66:                 return curr[0m
+[32m+ 67:             curr = curr.next[0m
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val == self.head.data):
+--------------------------------------------------------------------------------
+[0.13521 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+        assert linked_list.size() == 2
+>       assert linked_list.search(30) is None
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>, val = 30
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList4:63: AttributeError
+[36m   -[0m [#  16] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+[34m- 68:     def remove(self, val):[0m
+[34m- 69:         '''Remove node from list if exists.'''[0m
+[34m- 70:         curr = self.head[0m
+[34m- 71:         if (curr and val == self.head.data):[0m
+[34m- 72:             self.head = self.head.next[0m
+[34m- 73:             self._length -= 1[0m
+[34m- 74:         while curr:[0m
+[34m- 75:             if (curr.next and curr.next.data == val):[0m
+[34m- 76:                 curr.next = curr.next.next[0m
+[34m- 77:                 self._length -= 1[0m
+[34m- 78:             curr = curr.next[0m
+[34m- 79:     [0m
+[32m+ 68:     @classmethod[0m
+[32m+ 69:     def remove(self, val):[0m
+[32m+ 70:         '''Remove node from list if exists.'''[0m
+[32m+ 71:         curr = self.head[0m
+[32m+ 72:         if (curr and val == self.head.data):[0m
+[32m+ 73:             self.head = self.head.next[0m
+[32m+ 74:             self._length -= 1[0m
+[32m+ 75:         while curr:[0m
+[32m+ 76:             if (curr.next and curr.next.data == val):[0m
+[32m+ 77:                 curr.next = curr.next.next[0m
+[32m+ 78:                 self._length -= 1[0m
+[32m+ 79:             curr = curr.next[0m
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+--------------------------------------------------------------------------------
+[0.13317 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+>       linked_list.remove(30)
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>, val = 30
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList4:71: AttributeError
+[36m   -[0m [#  17] CDI linkedList4: 
+--------------------------------------------------------------------------------
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+[34m- 80:     def display(self):[0m
+[34m- 81:         '''Display list as a tuple.'''[0m
+[34m- 82:         curr = self.head[0m
+[34m- 83:         display = '('[0m
+[34m- 84:         while curr:[0m
+[34m- 85:             display += str(curr.data) + ', '[0m
+[34m- 86:             curr = curr.next[0m
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 80:     @classmethod[0m
+[32m+ 81:     def display(self):[0m
+[32m+ 82:         '''Display list as a tuple.'''[0m
+[32m+ 83:         curr = self.head[0m
+[32m+ 84:         display = '('[0m
+[32m+ 85:         while curr:[0m
+[32m+ 86:             display += str(curr.data) + ', '[0m
+[32m+ 87:             curr = curr.next[0m
+[32m+ 88:         return display[:-2] + ')'[0m
+--------------------------------------------------------------------------------
+[0.13073 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+>       display_string = linked_list.display()
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'linkedList4.LinkedList'>
+
+>   ???
+E   AttributeError: type object 'LinkedList' has no attribute 'head'
+
+linkedList4:83: AttributeError
+[36m   -[0m [#  18] COD linkedList4: 
+--------------------------------------------------------------------------------
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+[34m- 49:         if not (self.head):[0m
+[32m+ 49:         if self.head:[0m
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+--------------------------------------------------------------------------------
+[0.11053 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_exception_pop
+
+def test_exception_pop():
+        # Create an empty stack
+        linked_list = LinkedList()
+    
+        # Test the mutant code: pop should raise an exception with the original message
+        with pytest.raises(Exception) as exception:
+            linked_list.pop()
+>       assert str(exception.value) == "Cannot pop from an empty list"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:11: AssertionError
+[36m   -[0m [#  19] COI linkedList4: 
+--------------------------------------------------------------------------------
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+[34m- 38:             if data:[0m
+[32m+ 38:             if not data:[0m
+  39:                 self.push(data)
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+--------------------------------------------------------------------------------
+[0.12688 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_exception_pop
+
+def test_exception_pop():
+        # Create an empty stack
+        linked_list = LinkedList()
+    
+        # Test the mutant code: pop should raise an exception with the original message
+>       with pytest.raises(Exception) as exception:
+E       Failed: DID NOT RAISE <class 'Exception'>
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:9: Failed
+[36m   -[0m [#  20] COI linkedList4: 
+--------------------------------------------------------------------------------
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+[34m- 49:         if not (self.head):[0m
+[32m+ 49:         if not ((not (self.head))):[0m
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+--------------------------------------------------------------------------------
+[0.13859 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_exception_pop
+
+def test_exception_pop():
+        # Create an empty stack
+        linked_list = LinkedList()
+    
+        # Test the mutant code: pop should raise an exception with the original message
+        with pytest.raises(Exception) as exception:
+            linked_list.pop()
+>       assert str(exception.value) == "Cannot pop from an empty list"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:11: AssertionError
+[36m   -[0m [#  21] COI linkedList4: 
+--------------------------------------------------------------------------------
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+[34m- 63:         while curr:[0m
+[32m+ 63:         while not curr:[0m
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+--------------------------------------------------------------------------------
+[0.12035 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MOSA.py::test_case_5
+
+def test_case_5():
+        int_0 = -1014
+        linked_list_0 = module_0.LinkedList(int_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.search(int_0)
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MOSA.py:46: AssertionError
+[36m   -[0m [#  22] COI linkedList4: 
+--------------------------------------------------------------------------------
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+[34m- 64:             if curr.data == val:[0m
+[32m+ 64:             if not (curr.data == val):[0m
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+--------------------------------------------------------------------------------
+[0.10904 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+        assert linked_list.size() == 2
+>       assert linked_list.search(30) is None
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:19: AssertionError
+[36m   -[0m [#  23] COI linkedList4: 
+--------------------------------------------------------------------------------
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+[34m- 71:         if (curr and val == self.head.data):[0m
+[32m+ 71:         if not ((curr and val == self.head.data)):[0m
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+--------------------------------------------------------------------------------
+[0.16430 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: AssertionError
+[36m   -[0m [#  24] COI linkedList4: 
+--------------------------------------------------------------------------------
+  70:         curr = self.head
+  71:         if (curr and val == self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+[34m- 74:         while curr:[0m
+[32m+ 74:         while not curr:[0m
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.16309 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:27: AssertionError
+[36m   -[0m [#  25] COI linkedList4: 
+--------------------------------------------------------------------------------
+  71:         if (curr and val == self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+[34m- 75:             if (curr.next and curr.next.data == val):[0m
+[32m+ 75:             if not ((curr.next and curr.next.data == val)):[0m
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+--------------------------------------------------------------------------------
+[0.11457 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+>       linked_list.remove(30)
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f77530b3040>, val = 30
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList4:76: AttributeError
+[36m   -[0m [#  26] COI linkedList4: 
+--------------------------------------------------------------------------------
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+[34m- 84:         while curr:[0m
+[32m+ 84:         while not curr:[0m
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.13904 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+        display_string = linked_list.display()
+>       assert display_string == "(30, 10)"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:32: AssertionError
+[36m   -[0m [#  27] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  28:     '''
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+[34m- 32:         self._length = 0[0m
+[32m+ 32:         self._length = 1[0m
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+--------------------------------------------------------------------------------
+[0.11758 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: AssertionError
+[36m   -[0m [#  28] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+[34m- 45:         self._length += 1[0m
+[32m+ 45:         self._length += 2[0m
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+--------------------------------------------------------------------------------
+[0.14380 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: AssertionError
+[36m   -[0m [#  29] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+[34m- 50:             raise IndexError('Cannot pop from an empty list')[0m
+[32m+ 50:             raise IndexError('mutpy')[0m
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+--------------------------------------------------------------------------------
+[0.13881 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_exception_pop
+
+def test_exception_pop():
+        # Create an empty stack
+        linked_list = LinkedList()
+    
+        # Test the mutant code: pop should raise an exception with the original message
+        with pytest.raises(Exception) as exception:
+            linked_list.pop()
+>       assert str(exception.value) == "Cannot pop from an empty list"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:11: AssertionError
+[36m   -[0m [#  30] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+[34m- 50:             raise IndexError('Cannot pop from an empty list')[0m
+[32m+ 50:             raise IndexError('')[0m
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+--------------------------------------------------------------------------------
+[0.13326 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_exception_pop
+
+def test_exception_pop():
+        # Create an empty stack
+        linked_list = LinkedList()
+    
+        # Test the mutant code: pop should raise an exception with the original message
+        with pytest.raises(Exception) as exception:
+            linked_list.pop()
+>       assert str(exception.value) == "Cannot pop from an empty list"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:11: AssertionError
+[36m   -[0m [#  31] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+[34m- 53:         self._length -= 1[0m
+[32m+ 53:         self._length -= 2[0m
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+--------------------------------------------------------------------------------
+[0.13815 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_pop_and_verify_head
+
+def test_pop_and_verify_head():
+        linked_list = LinkedList([10, 20, 30])
+        popped_value = linked_list.pop()
+    
+        # Ensure that the popped value is correct and verify the new head of the linked list
+        assert popped_value == 30
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:40: AssertionError
+[36m   -[0m [#  32] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val == self.head.data):
+  72:             self.head = self.head.next
+[34m- 73:             self._length -= 1[0m
+[32m+ 73:             self._length -= 2[0m
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+--------------------------------------------------------------------------------
+[0.10795 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: AssertionError
+[36m   -[0m [#  33] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+[34m- 77:                 self._length -= 1[0m
+[32m+ 77:                 self._length -= 2[0m
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+--------------------------------------------------------------------------------
+[0.13211 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:27: AssertionError
+[36m   -[0m [#  34] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+[34m- 83:         display = '('[0m
+[32m+ 83:         display = 'mutpy'[0m
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.13694 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+        display_string = linked_list.display()
+>       assert display_string == "(30, 10)"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:32: AssertionError
+[36m   -[0m [#  35] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+[34m- 83:         display = '('[0m
+[32m+ 83:         display = ''[0m
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.12855 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+        display_string = linked_list.display()
+>       assert display_string == "(30, 10)"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:32: AssertionError
+[36m   -[0m [#  36] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+[34m- 85:             display += str(curr.data) + ', '[0m
+[32m+ 85:             display += str(curr.data) + 'mutpy'[0m
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.11429 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+        display_string = linked_list.display()
+>       assert display_string == "(30, 10)"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:32: AssertionError
+[36m   -[0m [#  37] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+[34m- 85:             display += str(curr.data) + ', '[0m
+[32m+ 85:             display += str(curr.data) + ''[0m
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.11934 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+        display_string = linked_list.display()
+>       assert display_string == "(30, 10)"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:32: AssertionError
+[36m   -[0m [#  38] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         return display[:-3] + ')'[0m
+--------------------------------------------------------------------------------
+[0.13334 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+        display_string = linked_list.display()
+>       assert display_string == "(30, 10)"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:32: AssertionError
+[36m   -[0m [#  39] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         return display[:-2] + 'mutpy'[0m
+--------------------------------------------------------------------------------
+[0.16158 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+        display_string = linked_list.display()
+>       assert display_string == "(30, 10)"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:32: AssertionError
+[36m   -[0m [#  40] CRP linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         return display[:-2] + ''[0m
+--------------------------------------------------------------------------------
+[0.14327 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+        display_string = linked_list.display()
+>       assert display_string == "(30, 10)"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:32: AssertionError
+[36m   -[0m [#  41] EHD linkedList4: 
+--------------------------------------------------------------------------------
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+[34m- 38:             if data:[0m
+[34m- 39:                 self.push(data)[0m
+[32m+ 38:             raise[0m
+[32m+ 39:     [0m
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.11109 s] [36mincompetent[0m
+
+TypeError: linkedList4:35: TypeError: 'NoneType' object is not iterable
+
+[36m   -[0m [#  42] EXS linkedList4: 
+--------------------------------------------------------------------------------
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+[34m- 38:             if data:[0m
+[34m- 39:                 self.push(data)[0m
+[32m+ 38:             pass[0m
+[32m+ 39:     [0m
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.11873 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MOSA.py::test_case_1
+
+def test_case_1():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MOSA.py:16: AssertionError
+[36m   -[0m [#  43] LCR linkedList4: 
+--------------------------------------------------------------------------------
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+[34m- 71:         if (curr and val == self.head.data):[0m
+[32m+ 71:         if (curr or val == self.head.data):[0m
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+--------------------------------------------------------------------------------
+[0.11038 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:27: AssertionError
+[36m   -[0m [#  44] LCR linkedList4: 
+--------------------------------------------------------------------------------
+  71:         if (curr and val == self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+[34m- 75:             if (curr.next and curr.next.data == val):[0m
+[32m+ 75:             if (curr.next or curr.next.data == val):[0m
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+--------------------------------------------------------------------------------
+[0.14005 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+>       linked_list.remove(30)
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752e11390>, val = 30
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList4:75: AttributeError
+[36m   -[0m [#  45] OIL linkedList4: 
+--------------------------------------------------------------------------------
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+[34m- 37:         except TypeError:[0m
+[32m+ 37:                 breakexcept TypeError:[0m
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+  41:     def push(self, val):
+--------------------------------------------------------------------------------
+[0.13027 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: AssertionError
+[36m   -[0m [#  46] OIL linkedList4: 
+--------------------------------------------------------------------------------
+  63:         while curr:
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+[34m- 67:     [0m
+[32m+ 67:             break[0m
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val == self.head.data):
+--------------------------------------------------------------------------------
+[0.15220 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_WHOLE_SUITE.py::test_case_4
+
+def test_case_4():
+        bool_0 = True
+        none_type_0 = None
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.push(none_type_0)
+        linked_list_1 = module_0.LinkedList()
+        assert linked_list_1.head is None
+        bool_1 = False
+        var_1 = linked_list_0.search(bool_0)
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_WHOLE_SUITE.py:57: AssertionError
+[36m   -[0m [#  47] OIL linkedList4: 
+--------------------------------------------------------------------------------
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+[34m- 79:     [0m
+[32m+ 79:             break[0m
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+--------------------------------------------------------------------------------
+[0.12739 s] [31msurvived[0m
+[36m   -[0m [#  48] OIL linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:             break[0m
+[32m+ 88:         return display[:-2] + ')'[0m
+--------------------------------------------------------------------------------
+[0.13371 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+        display_string = linked_list.display()
+>       assert display_string == "(30, 10)"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:32: AssertionError
+[36m   -[0m [#  49] RIL linkedList4: 
+--------------------------------------------------------------------------------
+  31:         '''Linked list initialized with head.'''
+  32:         self._length = 0
+  33:         self.head = None
+  34:         try:
+[34m- 35:             for val in data:[0m
+[32m+ 35:             for val in reversed(data):[0m
+  36:                 self.push(val)
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+--------------------------------------------------------------------------------
+[0.12909 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+        assert linked_list.size() == 2
+        assert linked_list.search(30) is None
+>       assert linked_list.head.data == 20
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:20: AssertionError
+[36m   -[0m [#  50] ROR linkedList4: 
+--------------------------------------------------------------------------------
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+[34m- 64:             if curr.data == val:[0m
+[32m+ 64:             if curr.data != val:[0m
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+--------------------------------------------------------------------------------
+[0.14445 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+        assert linked_list.size() == 2
+>       assert linked_list.search(30) is None
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:19: AssertionError
+[36m   -[0m [#  51] ROR linkedList4: 
+--------------------------------------------------------------------------------
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+[34m- 71:         if (curr and val == self.head.data):[0m
+[32m+ 71:         if (curr and val != self.head.data):[0m
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+--------------------------------------------------------------------------------
+[0.13305 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: AssertionError
+[36m   -[0m [#  52] ROR linkedList4: 
+--------------------------------------------------------------------------------
+  71:         if (curr and val == self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+[34m- 75:             if (curr.next and curr.next.data == val):[0m
+[32m+ 75:             if (curr.next and curr.next.data != val):[0m
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+--------------------------------------------------------------------------------
+[0.13092 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: AssertionError
+[36m   -[0m [#  53] SDI linkedList4: 
+--------------------------------------------------------------------------------
+   6: 
+   7:     Data attribute for data storage and Next for pointer to next node.
+   8:     '''
+   9:     
+[34m- 10:     def __init__(self, data, next_node=None):[0m
+[34m- 11:         '''Attribute data and next_node.'''[0m
+[34m- 12:         self.data = data[0m
+[34m- 13:         self.next = next_node[0m
+[34m- 14: [0m
+[32m+ 10:     @staticmethod[0m
+[32m+ 11:     def __init__(self, data, next_node=None):[0m
+[32m+ 12:         '''Attribute data and next_node.'''[0m
+[32m+ 13:         self.data = data[0m
+[32m+ 14:         self.next = next_node[0m
+  15: 
+  16: class LinkedList(object):
+  17:     '''Method for linked list.
+  18: 
+--------------------------------------------------------------------------------
+[0.14285 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+>       linked_list = LinkedList([10, 20, 30])
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+linkedList4:44: in push
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = 10, data = None, next_node = None
+
+>   ???
+E   AttributeError: 'int' object has no attribute 'data'
+
+linkedList4:13: AttributeError
+[36m   -[0m [#  54] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  26:     display() - will return a unicode string representing the list as
+  27:     if it were a Python tuple literal: "(12, \'sam\', 37, \'tango\')"
+  28:     '''
+  29:     
+[34m- 30:     def __init__(self, data=None):[0m
+[34m- 31:         '''Linked list initialized with head.'''[0m
+[34m- 32:         self._length = 0[0m
+[34m- 33:         self.head = None[0m
+[34m- 34:         try:[0m
+[34m- 35:             for val in data:[0m
+[34m- 36:                 self.push(val)[0m
+[34m- 37:         except TypeError:[0m
+[34m- 38:             if data:[0m
+[34m- 39:                 self.push(data)[0m
+[34m- 40:     [0m
+[32m+ 30:     @staticmethod[0m
+[32m+ 31:     def __init__(self, data=None):[0m
+[32m+ 32:         '''Linked list initialized with head.'''[0m
+[32m+ 33:         self._length = 0[0m
+[32m+ 34:         self.head = None[0m
+[32m+ 35:         try:[0m
+[32m+ 36:             for val in data:[0m
+[32m+ 37:                 self.push(val)[0m
+[32m+ 38:         except TypeError:[0m
+[32m+ 39:             if data:[0m
+[32m+ 40:                 self.push(data)[0m
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+--------------------------------------------------------------------------------
+[0.16329 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList4/ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:6: TypeError: LinkedList.__init__() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  55] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+[34m- 41:     def push(self, val):[0m
+[34m- 42:         '''Insert a value at the head of the list.'''[0m
+[34m- 43:         old_head = self.head[0m
+[34m- 44:         self.head = Node(val, old_head)[0m
+[34m- 45:         self._length += 1[0m
+[34m- 46:     [0m
+[32m+ 41:     @staticmethod[0m
+[32m+ 42:     def push(self, val):[0m
+[32m+ 43:         '''Insert a value at the head of the list.'''[0m
+[32m+ 44:         old_head = self.head[0m
+[32m+ 45:         self.head = Node(val, old_head)[0m
+[32m+ 46:         self._length += 1[0m
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+--------------------------------------------------------------------------------
+[0.15665 s] [36mincompetent[0m
+
+TypeError: linkedList4:39: TypeError: LinkedList.push() missing 1 required positional argument: 'val'
+
+[36m   -[0m [#  56] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+  45:         self._length += 1
+  46:     
+[34m- 47:     def pop(self):[0m
+[34m- 48:         '''Remove the first value and return it.'''[0m
+[34m- 49:         if not (self.head):[0m
+[34m- 50:             raise IndexError('Cannot pop from an empty list')[0m
+[34m- 51:         to_return = self.head[0m
+[34m- 52:         self.head = self.head.next[0m
+[34m- 53:         self._length -= 1[0m
+[34m- 54:         return to_return.data[0m
+[34m- 55:     [0m
+[32m+ 47:     @staticmethod[0m
+[32m+ 48:     def pop(self):[0m
+[32m+ 49:         '''Remove the first value and return it.'''[0m
+[32m+ 50:         if not (self.head):[0m
+[32m+ 51:             raise IndexError('Cannot pop from an empty list')[0m
+[32m+ 52:         to_return = self.head[0m
+[32m+ 53:         self.head = self.head.next[0m
+[32m+ 54:         self._length -= 1[0m
+[32m+ 55:         return to_return.data[0m
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+  59:     
+--------------------------------------------------------------------------------
+[0.14540 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_exception_pop
+
+def test_exception_pop():
+        # Create an empty stack
+        linked_list = LinkedList()
+    
+        # Test the mutant code: pop should raise an exception with the original message
+        with pytest.raises(Exception) as exception:
+            linked_list.pop()
+>       assert str(exception.value) == "Cannot pop from an empty list"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:11: AssertionError
+[36m   -[0m [#  57] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+[34m- 56:     def size(self):[0m
+[34m- 57:         '''Return the length of the list.'''[0m
+[34m- 58:         return self._length[0m
+[34m- 59:     [0m
+[32m+ 56:     @staticmethod[0m
+[32m+ 57:     def size(self):[0m
+[32m+ 58:         '''Return the length of the list.'''[0m
+[32m+ 59:         return self._length[0m
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+--------------------------------------------------------------------------------
+[0.11091 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList4/ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: TypeError: LinkedList.size() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  58] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+  59:     
+[34m- 60:     def search(self, val):[0m
+[34m- 61:         '''Return the node containing val.'''[0m
+[34m- 62:         curr = self.head[0m
+[34m- 63:         while curr:[0m
+[34m- 64:             if curr.data == val:[0m
+[34m- 65:                 return curr[0m
+[34m- 66:             curr = curr.next[0m
+[34m- 67:     [0m
+[32m+ 60:     @staticmethod[0m
+[32m+ 61:     def search(self, val):[0m
+[32m+ 62:         '''Return the node containing val.'''[0m
+[32m+ 63:         curr = self.head[0m
+[32m+ 64:         while curr:[0m
+[32m+ 65:             if curr.data == val:[0m
+[32m+ 66:                 return curr[0m
+[32m+ 67:             curr = curr.next[0m
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val == self.head.data):
+--------------------------------------------------------------------------------
+[0.12841 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList4/ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:19: TypeError: LinkedList.search() missing 1 required positional argument: 'val'
+
+[36m   -[0m [#  59] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+  67:     
+[34m- 68:     def remove(self, val):[0m
+[34m- 69:         '''Remove node from list if exists.'''[0m
+[34m- 70:         curr = self.head[0m
+[34m- 71:         if (curr and val == self.head.data):[0m
+[34m- 72:             self.head = self.head.next[0m
+[34m- 73:             self._length -= 1[0m
+[34m- 74:         while curr:[0m
+[34m- 75:             if (curr.next and curr.next.data == val):[0m
+[34m- 76:                 curr.next = curr.next.next[0m
+[34m- 77:                 self._length -= 1[0m
+[34m- 78:             curr = curr.next[0m
+[34m- 79:     [0m
+[32m+ 68:     @staticmethod[0m
+[32m+ 69:     def remove(self, val):[0m
+[32m+ 70:         '''Remove node from list if exists.'''[0m
+[32m+ 71:         curr = self.head[0m
+[32m+ 72:         if (curr and val == self.head.data):[0m
+[32m+ 73:             self.head = self.head.next[0m
+[32m+ 74:             self._length -= 1[0m
+[32m+ 75:         while curr:[0m
+[32m+ 76:             if (curr.next and curr.next.data == val):[0m
+[32m+ 77:                 curr.next = curr.next.next[0m
+[32m+ 78:                 self._length -= 1[0m
+[32m+ 79:             curr = curr.next[0m
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+--------------------------------------------------------------------------------
+[0.14179 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList4/ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:15: TypeError: LinkedList.remove() missing 1 required positional argument: 'val'
+
+[36m   -[0m [#  60] SDI linkedList4: 
+--------------------------------------------------------------------------------
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+[34m- 80:     def display(self):[0m
+[34m- 81:         '''Display list as a tuple.'''[0m
+[34m- 82:         curr = self.head[0m
+[34m- 83:         display = '('[0m
+[34m- 84:         while curr:[0m
+[34m- 85:             display += str(curr.data) + ', '[0m
+[34m- 86:             curr = curr.next[0m
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 80:     @staticmethod[0m
+[32m+ 81:     def display(self):[0m
+[32m+ 82:         '''Display list as a tuple.'''[0m
+[32m+ 83:         curr = self.head[0m
+[32m+ 84:         display = '('[0m
+[32m+ 85:         while curr:[0m
+[32m+ 86:             display += str(curr.data) + ', '[0m
+[32m+ 87:             curr = curr.next[0m
+[32m+ 88:         return display[:-2] + ')'[0m
+--------------------------------------------------------------------------------
+[0.13032 s] [36mincompetent[0m
+
+TypeError: /home/lucca/desktop/ic/experimento/testes/python_experiments/linkedList4/ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:31: TypeError: LinkedList.display() missing 1 required positional argument: 'self'
+
+[36m   -[0m [#  61] SDL linkedList4: 
+--------------------------------------------------------------------------------
+   8:     '''
+   9:     
+  10:     def __init__(self, data, next_node=None):
+  11:         '''Attribute data and next_node.'''
+[34m- 12:         self.data = data[0m
+[32m+ 12:         pass[0m
+  13:         self.next = next_node
+  14: 
+  15: 
+  16: class LinkedList(object):
+--------------------------------------------------------------------------------
+[0.13326 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+>       linked_list.remove(30)
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752f63010>, val = 30
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'data'
+
+linkedList4:71: AttributeError
+[36m   -[0m [#  62] SDL linkedList4: 
+--------------------------------------------------------------------------------
+   9:     
+  10:     def __init__(self, data, next_node=None):
+  11:         '''Attribute data and next_node.'''
+  12:         self.data = data
+[34m- 13:         self.next = next_node[0m
+[32m+ 13:         pass[0m
+  14: 
+  15: 
+  16: class LinkedList(object):
+  17:     '''Method for linked list.
+--------------------------------------------------------------------------------
+[0.14913 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+>       linked_list.remove(30)
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752c61870>, val = 30
+
+>   ???
+E   AttributeError: 'Node' object has no attribute 'next'
+
+linkedList4:72: AttributeError
+[36m   -[0m [#  63] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  28:     '''
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+[34m- 32:         self._length = 0[0m
+[32m+ 32:         pass[0m
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+--------------------------------------------------------------------------------
+[0.13825 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+>       linked_list = LinkedList([10, 20, 30])
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752c4f520>, val = 10
+
+>   ???
+E   AttributeError: 'LinkedList' object has no attribute '_length'
+
+linkedList4:45: AttributeError
+[36m   -[0m [#  64] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+  32:         self._length = 0
+[34m- 33:         self.head = None[0m
+[32m+ 33:         pass[0m
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+--------------------------------------------------------------------------------
+[0.11418 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_exception_pop
+
+def test_exception_pop():
+        # Create an empty stack
+        linked_list = LinkedList()
+    
+        # Test the mutant code: pop should raise an exception with the original message
+        with pytest.raises(Exception) as exception:
+            linked_list.pop()
+>       assert str(exception.value) == "Cannot pop from an empty list"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:11: AssertionError
+[36m   -[0m [#  65] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  32:         self._length = 0
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+[34m- 36:                 self.push(val)[0m
+[32m+ 36:                 pass[0m
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+--------------------------------------------------------------------------------
+[0.13827 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: AssertionError
+[36m   -[0m [#  66] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+  38:             if data:
+[34m- 39:                 self.push(data)[0m
+[32m+ 39:                 pass[0m
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.14873 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MOSA.py::test_case_1
+
+def test_case_1():
+        bool_0 = True
+        linked_list_0 = module_0.LinkedList(bool_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+>       assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MOSA.py:16: AssertionError
+[36m   -[0m [#  67] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  39:                 self.push(data)
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+[34m- 43:         old_head = self.head[0m
+[32m+ 43:         pass[0m
+  44:         self.head = Node(val, old_head)
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+--------------------------------------------------------------------------------
+[0.13878 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+>       linked_list = LinkedList([10, 20, 30])
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752c620e0>, val = 10
+
+>   ???
+E   NameError: name 'old_head' is not defined
+
+linkedList4:44: NameError
+[36m   -[0m [#  68] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+[34m- 44:         self.head = Node(val, old_head)[0m
+[32m+ 44:         pass[0m
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+--------------------------------------------------------------------------------
+[0.13032 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: AssertionError
+[36m   -[0m [#  69] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+[34m- 51:         to_return = self.head[0m
+[32m+ 51:         pass[0m
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+--------------------------------------------------------------------------------
+[0.11861 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_pop_and_verify_head
+
+def test_pop_and_verify_head():
+        linked_list = LinkedList([10, 20, 30])
+>       popped_value = linked_list.pop()
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752c4d7e0>
+
+>   ???
+E   NameError: name 'to_return' is not defined
+
+linkedList4:54: NameError
+[36m   -[0m [#  70] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+[34m- 52:         self.head = self.head.next[0m
+[32m+ 52:         pass[0m
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+--------------------------------------------------------------------------------
+[0.15600 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_pop_and_verify_head
+
+def test_pop_and_verify_head():
+        linked_list = LinkedList([10, 20, 30])
+        popped_value = linked_list.pop()
+    
+        # Ensure that the popped value is correct and verify the new head of the linked list
+        assert popped_value == 30
+        assert linked_list.size() == 2
+>       assert linked_list.head.data == 20
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:41: AssertionError
+[36m   -[0m [#  71] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+[34m- 54:         return to_return.data[0m
+[32m+ 54:         pass[0m
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+  58:         return self._length
+--------------------------------------------------------------------------------
+[0.15543 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_pop_and_verify_head
+
+def test_pop_and_verify_head():
+        linked_list = LinkedList([10, 20, 30])
+        popped_value = linked_list.pop()
+    
+        # Ensure that the popped value is correct and verify the new head of the linked list
+>       assert popped_value == 30
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:39: AssertionError
+[36m   -[0m [#  72] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+[34m- 58:         return self._length[0m
+[32m+ 58:         pass[0m
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+--------------------------------------------------------------------------------
+[0.13965 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: AssertionError
+[36m   -[0m [#  73] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  58:         return self._length
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+[34m- 62:         curr = self.head[0m
+[32m+ 62:         pass[0m
+  63:         while curr:
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.13178 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+        assert linked_list.size() == 2
+>       assert linked_list.search(30) is None
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752d77dc0>, val = 30
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+linkedList4:63: UnboundLocalError
+[36m   -[0m [#  74] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+  64:             if curr.data == val:
+[34m- 65:                 return curr[0m
+[32m+ 65:                 pass[0m
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+--------------------------------------------------------------------------------
+[0.13981 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MOSA.py::test_case_5
+
+def test_case_5():
+        int_0 = -1014
+        linked_list_0 = module_0.LinkedList(int_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.search(int_0)
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MOSA.py:46: AssertionError
+[36m   -[0m [#  75] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  62:         curr = self.head
+  63:         while curr:
+  64:             if curr.data == val:
+  65:                 return curr
+[34m- 66:             curr = curr.next[0m
+[32m+ 66:             pass[0m
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+--------------------------------------------------------------------------------
+[5.00664 s] [33mtimeout[0m
+[36m   -[0m [#  76] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+[34m- 70:         curr = self.head[0m
+[32m+ 70:         pass[0m
+  71:         if (curr and val == self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+--------------------------------------------------------------------------------
+[0.13717 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+>       linked_list.remove(30)
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752e6c550>, val = 30
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+linkedList4:71: UnboundLocalError
+[36m   -[0m [#  77] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val == self.head.data):
+[34m- 72:             self.head = self.head.next[0m
+[32m+ 72:             pass[0m
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+--------------------------------------------------------------------------------
+[0.13302 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+        assert linked_list.size() == 2
+>       assert linked_list.search(30) is None
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:19: AssertionError
+[36m   -[0m [#  78] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+[34m- 76:                 curr.next = curr.next.next[0m
+[32m+ 76:                 pass[0m
+  77:                 self._length -= 1
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+--------------------------------------------------------------------------------
+[0.13422 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+>       assert linked_list.search(20) is None
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:28: AssertionError
+[36m   -[0m [#  79] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+[34m- 78:             curr = curr.next[0m
+[32m+ 78:             pass[0m
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+--------------------------------------------------------------------------------
+[5.00693 s] [33mtimeout[0m
+[36m   -[0m [#  80] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+[34m- 82:         curr = self.head[0m
+[32m+ 82:         pass[0m
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.13783 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+>       display_string = linked_list.display()
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752e454b0>
+
+>   ???
+E   UnboundLocalError: local variable 'curr' referenced before assignment
+
+linkedList4:84: UnboundLocalError
+[36m   -[0m [#  81] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+[34m- 83:         display = '('[0m
+[32m+ 83:         pass[0m
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.13094 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+>       display_string = linked_list.display()
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f77530b0f70>
+
+>   ???
+E   UnboundLocalError: local variable 'display' referenced before assignment
+
+linkedList4:85: UnboundLocalError
+[36m   -[0m [#  82] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+[34m- 86:             curr = curr.next[0m
+[32m+ 86:             pass[0m
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[5.00537 s] [33mtimeout[0m
+[36m   -[0m [#  83] SDL linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         pass[0m
+--------------------------------------------------------------------------------
+[0.14253 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+        display_string = linked_list.display()
+>       assert display_string == "(30, 10)"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:32: AssertionError
+[36m   -[0m [#  84] SIR linkedList4: 
+--------------------------------------------------------------------------------
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+[34m- 87:         return display[:-2] + ')'[0m
+[32m+ 87:         return display[:] + ')'[0m
+--------------------------------------------------------------------------------
+[0.13679 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+        display_string = linked_list.display()
+>       assert display_string == "(30, 10)"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:32: AssertionError
+[36m   -[0m [#  85] SVD linkedList4: 
+--------------------------------------------------------------------------------
+   8:     '''
+   9:     
+  10:     def __init__(self, data, next_node=None):
+  11:         '''Attribute data and next_node.'''
+[34m- 12:         self.data = data[0m
+[32m+ 12:         data = data[0m
+  13:         self.next = next_node
+  14: 
+  15: 
+  16: class LinkedList(object):
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  86] SVD linkedList4: 
+--------------------------------------------------------------------------------
+   9:     
+  10:     def __init__(self, data, next_node=None):
+  11:         '''Attribute data and next_node.'''
+  12:         self.data = data
+[34m- 13:         self.next = next_node[0m
+[32m+ 13:         next = next_node[0m
+  14: 
+  15: 
+  16: class LinkedList(object):
+  17:     '''Method for linked list.
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  87] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  28:     '''
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+[34m- 32:         self._length = 0[0m
+[32m+ 32:         _length = 0[0m
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  88] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  29:     
+  30:     def __init__(self, data=None):
+  31:         '''Linked list initialized with head.'''
+  32:         self._length = 0
+[34m- 33:         self.head = None[0m
+[32m+ 33:         head = None[0m
+  34:         try:
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  89] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  32:         self._length = 0
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+[34m- 36:                 self.push(val)[0m
+[32m+ 36:                 push(val)[0m
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+--------------------------------------------------------------------------------
+[0.13872 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+>       linked_list = LinkedList([10, 20, 30])
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752e9cc10>, data = [10, 20, 30]
+
+>   ???
+E   NameError: name 'push' is not defined
+
+linkedList4:36: NameError
+[36m   -[0m [#  90] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  35:             for val in data:
+  36:                 self.push(val)
+  37:         except TypeError:
+  38:             if data:
+[34m- 39:                 self.push(data)[0m
+[32m+ 39:                 push(data)[0m
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+--------------------------------------------------------------------------------
+[0.15111 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MOSA.py::test_case_1
+
+self = <linkedList4.LinkedList object at 0x7f7752b16e90>, data = True
+
+>   ???
+E   TypeError: 'bool' object is not iterable
+
+linkedList4:35: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    def test_case_1():
+        bool_0 = True
+>       linked_list_0 = module_0.LinkedList(bool_0)
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MOSA.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752b16e90>, data = True
+
+>   ???
+E   NameError: name 'push' is not defined
+
+linkedList4:39: NameError
+[36m   -[0m [#  91] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  39:                 self.push(data)
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+[34m- 43:         old_head = self.head[0m
+[32m+ 43:         old_head = head[0m
+  44:         self.head = Node(val, old_head)
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+--------------------------------------------------------------------------------
+[0.13019 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+>       linked_list = LinkedList([10, 20, 30])
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+linkedList4:36: in __init__
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752d74c10>, val = 10
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:43: NameError
+[36m   -[0m [#  92] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  40:     
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+[34m- 44:         self.head = Node(val, old_head)[0m
+[32m+ 44:         head = Node(val, old_head)[0m
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  93] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  41:     def push(self, val):
+  42:         '''Insert a value at the head of the list.'''
+  43:         old_head = self.head
+  44:         self.head = Node(val, old_head)
+[34m- 45:         self._length += 1[0m
+[32m+ 45:         _length += 1[0m
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  94] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  45:         self._length += 1
+  46:     
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+[34m- 49:         if not (self.head):[0m
+[32m+ 49:         if not head:[0m
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+--------------------------------------------------------------------------------
+[0.13849 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_exception_pop
+
+def test_exception_pop():
+        # Create an empty stack
+        linked_list = LinkedList()
+    
+        # Test the mutant code: pop should raise an exception with the original message
+        with pytest.raises(Exception) as exception:
+            linked_list.pop()
+>       assert str(exception.value) == "Cannot pop from an empty list"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:11: AssertionError
+[36m   -[0m [#  95] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  47:     def pop(self):
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+[34m- 51:         to_return = self.head[0m
+[32m+ 51:         to_return = head[0m
+  52:         self.head = self.head.next
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+--------------------------------------------------------------------------------
+[0.13737 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_pop_and_verify_head
+
+def test_pop_and_verify_head():
+        linked_list = LinkedList([10, 20, 30])
+>       popped_value = linked_list.pop()
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752c63460>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:51: NameError
+[36m   -[0m [#  96] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+[34m- 52:         self.head = self.head.next[0m
+[32m+ 52:         head = self.head.next[0m
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  97] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  48:         '''Remove the first value and return it.'''
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+[34m- 52:         self.head = self.head.next[0m
+[32m+ 52:         self.head = head.next[0m
+  53:         self._length -= 1
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+--------------------------------------------------------------------------------
+[0.12424 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_pop_and_verify_head
+
+def test_pop_and_verify_head():
+        linked_list = LinkedList([10, 20, 30])
+>       popped_value = linked_list.pop()
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752d74040>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:52: NameError
+[36m   -[0m [#  98] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  49:         if not (self.head):
+  50:             raise IndexError('Cannot pop from an empty list')
+  51:         to_return = self.head
+  52:         self.head = self.head.next
+[34m- 53:         self._length -= 1[0m
+[32m+ 53:         _length -= 1[0m
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [#  99] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  54:         return to_return.data
+  55:     
+  56:     def size(self):
+  57:         '''Return the length of the list.'''
+[34m- 58:         return self._length[0m
+[32m+ 58:         return _length[0m
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+--------------------------------------------------------------------------------
+[0.13801 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752cfed70>
+
+>   ???
+E   NameError: name '_length' is not defined
+
+linkedList4:58: NameError
+[36m   -[0m [# 100] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  58:         return self._length
+  59:     
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+[34m- 62:         curr = self.head[0m
+[32m+ 62:         curr = head[0m
+  63:         while curr:
+  64:             if curr.data == val:
+  65:                 return curr
+  66:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.13191 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+        assert linked_list.size() == 2
+>       assert linked_list.search(30) is None
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752c62a40>, val = 30
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:62: NameError
+[36m   -[0m [# 101] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  66:             curr = curr.next
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+[34m- 70:         curr = self.head[0m
+[32m+ 70:         curr = head[0m
+  71:         if (curr and val == self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+--------------------------------------------------------------------------------
+[0.14064 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+>       linked_list.remove(30)
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752e464d0>, val = 30
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:70: NameError
+[36m   -[0m [# 102] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+[34m- 71:         if (curr and val == self.head.data):[0m
+[32m+ 71:         if (curr and val == head.data):[0m
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+--------------------------------------------------------------------------------
+[0.14460 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+>       linked_list.remove(30)
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752e9d150>, val = 30
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:71: NameError
+[36m   -[0m [# 103] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val == self.head.data):
+[34m- 72:             self.head = self.head.next[0m
+[32m+ 72:             head = self.head.next[0m
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 104] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val == self.head.data):
+[34m- 72:             self.head = self.head.next[0m
+[32m+ 72:             self.head = head.next[0m
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+--------------------------------------------------------------------------------
+[0.17040 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+>       linked_list.remove(30)
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752c6feb0>, val = 30
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:72: NameError
+[36m   -[0m [# 105] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+  71:         if (curr and val == self.head.data):
+  72:             self.head = self.head.next
+[34m- 73:             self._length -= 1[0m
+[32m+ 73:             _length -= 1[0m
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+  77:                 self._length -= 1
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 106] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  73:             self._length -= 1
+  74:         while curr:
+  75:             if (curr.next and curr.next.data == val):
+  76:                 curr.next = curr.next.next
+[34m- 77:                 self._length -= 1[0m
+[32m+ 77:                 _length -= 1[0m
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+--------------------------------------------------------------------------------
+[0.00000 s] [36mincompetent[0m
+
+ValueError: expression must have Store context but has Load instead
+
+[36m   -[0m [# 107] SVD linkedList4: 
+--------------------------------------------------------------------------------
+  78:             curr = curr.next
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+[34m- 82:         curr = self.head[0m
+[32m+ 82:         curr = head[0m
+  83:         display = '('
+  84:         while curr:
+  85:             display += str(curr.data) + ', '
+  86:             curr = curr.next
+--------------------------------------------------------------------------------
+[0.13611 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+>       display_string = linked_list.display()
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList4.LinkedList object at 0x7f7752b15ba0>
+
+>   ???
+E   NameError: name 'head' is not defined
+
+linkedList4:82: NameError
+[36m   -[0m [# 108] ZIL linkedList4: 
+--------------------------------------------------------------------------------
+  32:         self._length = 0
+  33:         self.head = None
+  34:         try:
+  35:             for val in data:
+[34m- 36:                 self.push(val)[0m
+[32m+ 36:                 break[0m
+  37:         except TypeError:
+  38:             if data:
+  39:                 self.push(data)
+  40:     
+--------------------------------------------------------------------------------
+[0.13991 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_head
+
+def test_remove_head():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(30)
+    
+        # Ensure that the head is removed, and the list is correct after removal
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:18: AssertionError
+[36m   -[0m [# 109] ZIL linkedList4: 
+--------------------------------------------------------------------------------
+  60:     def search(self, val):
+  61:         '''Return the node containing val.'''
+  62:         curr = self.head
+  63:         while curr:
+[34m- 64:             if curr.data == val:[0m
+[34m- 65:                 return curr[0m
+[34m- 66:             curr = curr.next[0m
+[32m+ 64:             break[0m
+[32m+ 65:     [0m
+[32m+ 66:     [0m
+  67:     
+  68:     def remove(self, val):
+  69:         '''Remove node from list if exists.'''
+  70:         curr = self.head
+--------------------------------------------------------------------------------
+[0.14881 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MOSA.py::test_case_5
+
+def test_case_5():
+        int_0 = -1014
+        linked_list_0 = module_0.LinkedList(int_0)
+        assert f'{type(linked_list_0).__module__}.{type(linked_list_0).__qualname__}' == 'linkedList4.LinkedList'
+        assert f'{type(linked_list_0.head).__module__}.{type(linked_list_0.head).__qualname__}' == 'linkedList4.Node'
+        var_0 = linked_list_0.search(int_0)
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList4.Node'
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MOSA.py:46: AssertionError
+[36m   -[0m [# 110] ZIL linkedList4: 
+--------------------------------------------------------------------------------
+  71:         if (curr and val == self.head.data):
+  72:             self.head = self.head.next
+  73:             self._length -= 1
+  74:         while curr:
+[34m- 75:             if (curr.next and curr.next.data == val):[0m
+[34m- 76:                 curr.next = curr.next.next[0m
+[34m- 77:                 self._length -= 1[0m
+[34m- 78:             curr = curr.next[0m
+[32m+ 75:             break[0m
+[32m+ 76:     [0m
+[32m+ 77:     [0m
+[32m+ 78:     [0m
+  79:     
+  80:     def display(self):
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+--------------------------------------------------------------------------------
+[0.13753 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+>       assert linked_list.size() == 2
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:27: AssertionError
+[36m   -[0m [# 111] ZIL linkedList4: 
+--------------------------------------------------------------------------------
+  81:         '''Display list as a tuple.'''
+  82:         curr = self.head
+  83:         display = '('
+  84:         while curr:
+[34m- 85:             display += str(curr.data) + ', '[0m
+[34m- 86:             curr = curr.next[0m
+[32m+ 85:             break[0m
+[32m+ 86:         [0m
+  87:         return display[:-2] + ')'
+--------------------------------------------------------------------------------
+[0.14082 s] [32mkilled[0m by ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py::test_remove_and_display
+
+def test_remove_and_display():
+        linked_list = LinkedList([10, 20, 30])
+        linked_list.remove(20)
+    
+        assert linked_list.size() == 2
+        assert linked_list.search(20) is None
+    
+        # Verify the state of the linked list using the display method
+        display_string = linked_list.display()
+>       assert display_string == "(30, 10)"
+E       AssertionError
+
+ALL-SMART-GPT-MUTMUT/test_linkedList4_MUTMUT.py:32: AssertionError
+[34m[*][0m Mutation score [39.30350 s]: [1m[34m98.9%[0m
+[36m   -[0m all: 111
+[36m   -[0m killed: 84 (75.7%)
+[36m   -[0m survived: 1 (0.9%)
+[36m   -[0m incompetent: 22 (19.8%)
+[36m   -[0m timeout: 4 (3.6%)

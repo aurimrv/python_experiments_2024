@@ -1,0 +1,252 @@
+<html><body><h1>linkedList3.py</h1>Killed 27 out of 50 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -3,7 +3,7 @@
+ from typing import TypeVar
+ 
+ 
+-T = TypeVar("T")
++T = TypeVar("XXTXX")
+ 
+ 
+ class Node:
+</pre><h3>Mutant 2</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -3,7 +3,7 @@
+ from typing import TypeVar
+ 
+ 
+-T = TypeVar("T")
++T = None
+ 
+ 
+ class Node:
+</pre><h3>Mutant 12</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -24,7 +24,7 @@
+ 
+         newNode = Node(value)
+         if self.__size == 0:
+-            self.__head.next = newNode
++            self.__head.next = None
+             self.__head = newNode
+             self.__size += 1
+         else:
+</pre><h3>Mutant 14</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -26,7 +26,7 @@
+         if self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+-            self.__size += 1
++            self.__size = 1
+         else:
+             self.__sentinel.next = newNode
+             newNode.next = self.__head
+</pre><h3>Mutant 17</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -28,7 +28,7 @@
+             self.__head = newNode
+             self.__size += 1
+         else:
+-            self.__sentinel.next = newNode
++            self.__sentinel.next = None
+             newNode.next = self.__head
+             self.__head = newNode
+             self.__size += 1
+</pre><h3>Mutant 25</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size >= 1:
++        if self.__size > 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+</pre><h3>Mutant 26</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size >= 1:
++        if self.__size >= 2:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+</pre><h3>Mutant 28</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -41,7 +41,7 @@
+             return None
+         if self.__size >= 1:
+             nodeToRemove = self.__head
+-            self.__sentinel.next = None
++            self.__sentinel.next = ""
+             self.__head = self.__sentinel
+             self.__size -= 1
+             return nodeToRemove
+</pre><h3>Mutant 29</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -42,7 +42,7 @@
+         if self.__size >= 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+-            self.__head = self.__sentinel
++            self.__head = None
+             self.__size -= 1
+             return nodeToRemove
+         else:
+</pre><h3>Mutant 30</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -43,7 +43,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+-            self.__size -= 1
++            self.__size = 1
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head
+</pre><h3>Mutant 31</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -43,7 +43,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+-            self.__size -= 1
++            self.__size += 1
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head
+</pre><h3>Mutant 32</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -43,7 +43,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head
+</pre><h3>Mutant 33</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -46,7 +46,7 @@
+             self.__size -= 1
+             return nodeToRemove
+         else:
+-            nodeToRemove = self.__head
++            nodeToRemove = None
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+             self.__size -= 1
+</pre><h3>Mutant 34</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -47,7 +47,7 @@
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head
+-            self.__sentinel.next = self.__head.next
++            self.__sentinel.next = None
+             self.__head = self.__sentinel.next
+             self.__size -= 1
+             return nodeToRemove
+</pre><h3>Mutant 35</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -48,7 +48,7 @@
+         else:
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+-            self.__head = self.__sentinel.next
++            self.__head = None
+             self.__size -= 1
+             return nodeToRemove
+ 
+</pre><h3>Mutant 36</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -49,7 +49,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+-            self.__size -= 1
++            self.__size = 1
+             return nodeToRemove
+ 
+     def getHead(self) -> T:
+</pre><h3>Mutant 37</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -49,7 +49,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+-            self.__size -= 1
++            self.__size += 1
+             return nodeToRemove
+ 
+     def getHead(self) -> T:
+</pre><h3>Mutant 38</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -49,7 +49,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+ 
+     def getHead(self) -> T:
+</pre><h3>Mutant 44</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -81,7 +81,7 @@
+         """Converts linkedlist to list."""
+ 
+         arr = []
+-        current = self.__head
++        current = None
+         while current:
+             arr.append(current.value)
+             current = current.next
+</pre><h3>Mutant 45</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -84,7 +84,7 @@
+         current = self.__head
+         while current:
+             arr.append(current.value)
+-            current = current.next
++            current = None
+         return arr
+ 
+     def __str__(self) -> str:
+</pre><h3>Mutant 48</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -95,7 +95,7 @@
+         current = self.__head
+         while current:
+             arr.append(current.value)
+-            current = current.next
++            current = None
+         return str(arr)
+ 
+ 
+</pre><h3>Mutant 49</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ != "__main__":
+     pass
+ 
+</pre><h3>Mutant 50</h3><pre>--- linkedList3.py
++++ linkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ == "XX__main__XX":
+     pass
+ 
+</pre></body></html>

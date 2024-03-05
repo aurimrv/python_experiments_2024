@@ -1,0 +1,1188 @@
+<html><body><h1>binarySearchTree3.py</h1>Killed 71 out of 179 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 2</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -6,7 +6,7 @@
+     def __init__(self, data=None, next_node=None, prev=None):
+         """Initialize Node."""
+         self.data = data
+-        self.next = next_node
++        self.next = None
+         self.prev = prev
+ 
+     def __repr__(self):
+</pre><h3>Mutant 9</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -40,7 +40,7 @@
+ 
+     def push(self, val):
+         """Add val to the head of the list."""
+-        old_head = self.head
++        old_head = None
+         self.head = NodeDLL(val, next_node=old_head)
+         if old_head:
+             old_head.prev = self.head
+</pre><h3>Mutant 20</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -52,7 +52,7 @@
+         """Remove the val from the head of the list."""
+         to_return = self.head
+         if self._length < 1:
+-            raise IndexError('Cannot pop from an empty list.')
++            raise IndexError('XXCannot pop from an empty list.XX')
+ 
+         new_head = self.head.next
+         if new_head:
+</pre><h3>Mutant 21</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -54,7 +54,7 @@
+         if self._length < 1:
+             raise IndexError('Cannot pop from an empty list.')
+ 
+-        new_head = self.head.next
++        new_head = None
+         if new_head:
+             new_head.prev = None
+         self.head = new_head
+</pre><h3>Mutant 22</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -56,7 +56,7 @@
+ 
+         new_head = self.head.next
+         if new_head:
+-            new_head.prev = None
++            new_head.prev = ""
+         self.head = new_head
+         self._length -= 1
+         if self._length < 1:
+</pre><h3>Mutant 23</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -57,7 +57,7 @@
+         new_head = self.head.next
+         if new_head:
+             new_head.prev = None
+-        self.head = new_head
++        self.head = None
+         self._length -= 1
+         if self._length < 1:
+             self.tail = None
+</pre><h3>Mutant 27</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -59,7 +59,7 @@
+             new_head.prev = None
+         self.head = new_head
+         self._length -= 1
+-        if self._length < 1:
++        if self._length <= 1:
+             self.tail = None
+         return to_return.data
+ 
+</pre><h3>Mutant 28</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -59,7 +59,7 @@
+             new_head.prev = None
+         self.head = new_head
+         self._length -= 1
+-        if self._length < 1:
++        if self._length < 2:
+             self.tail = None
+         return to_return.data
+ 
+</pre><h3>Mutant 30</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -65,7 +65,7 @@
+ 
+     def append(self, val):
+         """Add val to the tail of the list."""
+-        old_tail = self.tail
++        old_tail = None
+         self.tail = NodeDLL(val, prev=old_tail)
+         if old_tail:
+             old_tail.next = self.tail
+</pre><h3>Mutant 32</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -68,7 +68,7 @@
+         old_tail = self.tail
+         self.tail = NodeDLL(val, prev=old_tail)
+         if old_tail:
+-            old_tail.next = self.tail
++            old_tail.next = None
+         if self._length < 1:
+             self.head = self.tail
+         self._length += 1
+</pre><h3>Mutant 33</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -69,7 +69,7 @@
+         self.tail = NodeDLL(val, prev=old_tail)
+         if old_tail:
+             old_tail.next = self.tail
+-        if self._length < 1:
++        if self._length <= 1:
+             self.head = self.tail
+         self._length += 1
+ 
+</pre><h3>Mutant 34</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -69,7 +69,7 @@
+         self.tail = NodeDLL(val, prev=old_tail)
+         if old_tail:
+             old_tail.next = self.tail
+-        if self._length < 1:
++        if self._length < 2:
+             self.head = self.tail
+         self._length += 1
+ 
+</pre><h3>Mutant 42</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -77,7 +77,7 @@
+         """Remove the val from the tail of the list."""
+         to_return = self.tail
+         if self._length < 1:
+-            raise IndexError('Cannot shift from an empty list.')
++            raise IndexError('XXCannot shift from an empty list.XX')
+ 
+         new_tail = self.tail.prev
+         if new_tail:
+</pre><h3>Mutant 45</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -82,7 +82,7 @@
+         new_tail = self.tail.prev
+         if new_tail:
+             new_tail.next = None
+-        self.tail = new_tail
++        self.tail = None
+         self._length -= 1
+         if self._length < 1:
+             self.tail = None
+</pre><h3>Mutant 46</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -83,7 +83,7 @@
+         if new_tail:
+             new_tail.next = None
+         self.tail = new_tail
+-        self._length -= 1
++        self._length = 1
+         if self._length < 1:
+             self.tail = None
+         return to_return.data
+</pre><h3>Mutant 49</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -84,7 +84,7 @@
+             new_tail.next = None
+         self.tail = new_tail
+         self._length -= 1
+-        if self._length < 1:
++        if self._length <= 1:
+             self.tail = None
+         return to_return.data
+ 
+</pre><h3>Mutant 50</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -84,7 +84,7 @@
+             new_tail.next = None
+         self.tail = new_tail
+         self._length -= 1
+-        if self._length < 1:
++        if self._length < 2:
+             self.tail = None
+         return to_return.data
+ 
+</pre><h3>Mutant 57</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -95,7 +95,7 @@
+             if curr.data is val:
+                 if self._length == 1:
+                     self.head, self.tail = None, None
+-                elif curr is not self.head and curr is not self.tail:
++                elif curr is  self.head and curr is not self.tail:
+                     curr.next.prev, curr.prev.next = curr.prev, curr.next
+                 elif curr is self.head:
+                     self.head, curr.next.prev = curr.next, None
+</pre><h3>Mutant 58</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -95,7 +95,7 @@
+             if curr.data is val:
+                 if self._length == 1:
+                     self.head, self.tail = None, None
+-                elif curr is not self.head and curr is not self.tail:
++                elif curr is not self.head and curr is  self.tail:
+                     curr.next.prev, curr.prev.next = curr.prev, curr.next
+                 elif curr is self.head:
+                     self.head, curr.next.prev = curr.next, None
+</pre><h3>Mutant 59</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -95,7 +95,7 @@
+             if curr.data is val:
+                 if self._length == 1:
+                     self.head, self.tail = None, None
+-                elif curr is not self.head and curr is not self.tail:
++                elif curr is not self.head or curr is not self.tail:
+                     curr.next.prev, curr.prev.next = curr.prev, curr.next
+                 elif curr is self.head:
+                     self.head, curr.next.prev = curr.next, None
+</pre><h3>Mutant 60</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -96,7 +96,7 @@
+                 if self._length == 1:
+                     self.head, self.tail = None, None
+                 elif curr is not self.head and curr is not self.tail:
+-                    curr.next.prev, curr.prev.next = curr.prev, curr.next
++                    curr.next.prev, curr.prev.next = None
+                 elif curr is self.head:
+                     self.head, curr.next.prev = curr.next, None
+                 elif curr is self.tail:
+</pre><h3>Mutant 61</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -97,7 +97,7 @@
+                     self.head, self.tail = None, None
+                 elif curr is not self.head and curr is not self.tail:
+                     curr.next.prev, curr.prev.next = curr.prev, curr.next
+-                elif curr is self.head:
++                elif curr is not self.head:
+                     self.head, curr.next.prev = curr.next, None
+                 elif curr is self.tail:
+                     self.tail, curr.prev.next = curr.prev, None
+</pre><h3>Mutant 62</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -98,7 +98,7 @@
+                 elif curr is not self.head and curr is not self.tail:
+                     curr.next.prev, curr.prev.next = curr.prev, curr.next
+                 elif curr is self.head:
+-                    self.head, curr.next.prev = curr.next, None
++                    self.head, curr.next.prev = None
+                 elif curr is self.tail:
+                     self.tail, curr.prev.next = curr.prev, None
+                 self._length -= 1
+</pre><h3>Mutant 63</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -99,7 +99,7 @@
+                     curr.next.prev, curr.prev.next = curr.prev, curr.next
+                 elif curr is self.head:
+                     self.head, curr.next.prev = curr.next, None
+-                elif curr is self.tail:
++                elif curr is not self.tail:
+                     self.tail, curr.prev.next = curr.prev, None
+                 self._length -= 1
+                 return
+</pre><h3>Mutant 64</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -100,7 +100,7 @@
+                 elif curr is self.head:
+                     self.head, curr.next.prev = curr.next, None
+                 elif curr is self.tail:
+-                    self.tail, curr.prev.next = curr.prev, None
++                    self.tail, curr.prev.next = None
+                 self._length -= 1
+                 return
+             curr = curr.next
+</pre><h3>Mutant 67</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -101,7 +101,7 @@
+                     self.head, curr.next.prev = curr.next, None
+                 elif curr is self.tail:
+                     self.tail, curr.prev.next = curr.prev, None
+-                self._length -= 1
++                self._length -= 2
+                 return
+             curr = curr.next
+ 
+</pre><h3>Mutant 68</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -103,7 +103,7 @@
+                     self.tail, curr.prev.next = curr.prev, None
+                 self._length -= 1
+                 return
+-            curr = curr.next
++            curr = None
+ 
+         raise ValueError('{} is not in the list'.format(val))
+ 
+</pre><h3>Mutant 69</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -105,7 +105,7 @@
+                 return
+             curr = curr.next
+ 
+-        raise ValueError('{} is not in the list'.format(val))
++        raise ValueError('XX{} is not in the listXX'.format(val))
+ 
+     def _repr(self):
+         """Return list representation of dll."""
+</pre><h3>Mutant 70</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -109,7 +109,7 @@
+ 
+     def _repr(self):
+         """Return list representation of dll."""
+-        l = []
++        l = None
+         while True:
+             try:
+                 popped_data = self.pop()
+</pre><h3>Mutant 71</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -110,7 +110,7 @@
+     def _repr(self):
+         """Return list representation of dll."""
+         l = []
+-        while True:
++        while False:
+             try:
+                 popped_data = self.pop()
+                 l.append(popped_data)
+</pre><h3>Mutant 72</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -112,7 +112,7 @@
+         l = []
+         while True:
+             try:
+-                popped_data = self.pop()
++                popped_data = None
+                 l.append(popped_data)
+             except IndexError:
+                 break
+</pre><h3>Mutant 73</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -115,7 +115,7 @@
+                 popped_data = self.pop()
+                 l.append(popped_data)
+             except IndexError:
+-                break
++                continue
+         return l
+ 
+ class Queue(object):
+</pre><h3>Mutant 76</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -159,7 +159,7 @@
+     def __init__(self, val=None, parent=None):
+         """Create node object."""
+         self.val = val
+-        self.right = None
++        self.right = ""
+         self.left = None
+         self.parent = parent
+         self.height = 1
+</pre><h3>Mutant 77</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -160,7 +160,7 @@
+         """Create node object."""
+         self.val = val
+         self.right = None
+-        self.left = None
++        self.left = ""
+         self.parent = parent
+         self.height = 1
+ 
+</pre><h3>Mutant 81</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -166,7 +166,7 @@
+ 
+     def _is_leaf(self):
+         """Return true if a leaf."""
+-        return not (self.right or self.left)
++        return  (self.right or self.left)
+ 
+     def _is_interior(self):
+         """Return true if a interior node."""
+</pre><h3>Mutant 82</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -166,7 +166,7 @@
+ 
+     def _is_leaf(self):
+         """Return true if a leaf."""
+-        return not (self.right or self.left)
++        return not (self.right and self.left)
+ 
+     def _is_interior(self):
+         """Return true if a interior node."""
+</pre><h3>Mutant 83</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -170,7 +170,7 @@
+ 
+     def _is_interior(self):
+         """Return true if a interior node."""
+-        return (self.right and self.left)
++        return (self.right or self.left)
+ 
+     def _onlychild(self):
+         """Return string depending on children."""
+</pre><h3>Mutant 84</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -174,7 +174,7 @@
+ 
+     def _onlychild(self):
+         """Return string depending on children."""
+-        if self.left and not self.right:
++        if self.left and  self.right:
+             return 'left'
+         if self.right and not self.left:
+             return 'right'
+</pre><h3>Mutant 85</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -174,7 +174,7 @@
+ 
+     def _onlychild(self):
+         """Return string depending on children."""
+-        if self.left and not self.right:
++        if self.left or not self.right:
+             return 'left'
+         if self.right and not self.left:
+             return 'right'
+</pre><h3>Mutant 86</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -175,7 +175,7 @@
+     def _onlychild(self):
+         """Return string depending on children."""
+         if self.left and not self.right:
+-            return 'left'
++            return 'XXleftXX'
+         if self.right and not self.left:
+             return 'right'
+ 
+</pre><h3>Mutant 87</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -176,7 +176,7 @@
+         """Return string depending on children."""
+         if self.left and not self.right:
+             return 'left'
+-        if self.right and not self.left:
++        if self.right and  self.left:
+             return 'right'
+ 
+     def _side(self):
+</pre><h3>Mutant 88</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -176,7 +176,7 @@
+         """Return string depending on children."""
+         if self.left and not self.right:
+             return 'left'
+-        if self.right and not self.left:
++        if self.right or not self.left:
+             return 'right'
+ 
+     def _side(self):
+</pre><h3>Mutant 89</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -177,7 +177,7 @@
+         if self.left and not self.right:
+             return 'left'
+         if self.right and not self.left:
+-            return 'right'
++            return 'XXrightXX'
+ 
+     def _side(self):
+         """Return if left or right child of parent."""
+</pre><h3>Mutant 90</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -182,7 +182,7 @@
+     def _side(self):
+         """Return if left or right child of parent."""
+         if self.parent:
+-            return 'left' if self.parent.left == self else 'right'
++            return 'XXleftXX' if self.parent.left == self else 'right'
+ 
+ 
+ class Bst(object):
+</pre><h3>Mutant 91</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -182,7 +182,7 @@
+     def _side(self):
+         """Return if left or right child of parent."""
+         if self.parent:
+-            return 'left' if self.parent.left == self else 'right'
++            return 'left' if self.parent.left != self else 'right'
+ 
+ 
+ class Bst(object):
+</pre><h3>Mutant 92</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -182,7 +182,7 @@
+     def _side(self):
+         """Return if left or right child of parent."""
+         if self.parent:
+-            return 'left' if self.parent.left == self else 'right'
++            return 'left' if self.parent.left == self else 'XXrightXX'
+ 
+ 
+ class Bst(object):
+</pre><h3>Mutant 98</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -238,7 +238,7 @@
+         """Insert val into BST. If val is already present will be ignored."""
+         if not self.root:
+             self.root = Node(val)
+-            self._size += 1
++            self._size = 1
+         else:
+             self._step(val, self.root)
+ 
+</pre><h3>Mutant 101</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -244,7 +244,7 @@
+ 
+     def _step(self, val, curr):
+         """Decide left or right and returns height."""
+-        if val < curr.val:
++        if val <= curr.val:
+             curr = self._set_child(curr, 'left', val)
+         elif val > curr.val:
+             curr = self._set_child(curr, 'right', val)
+</pre><h3>Mutant 104</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -246,7 +246,7 @@
+         """Decide left or right and returns height."""
+         if val < curr.val:
+             curr = self._set_child(curr, 'left', val)
+-        elif val > curr.val:
++        elif val >= curr.val:
+             curr = self._set_child(curr, 'right', val)
+         return curr.height
+ 
+</pre><h3>Mutant 107</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -252,7 +252,7 @@
+ 
+     def _set_child(self, curr, side, val):
+         """Helping."""
+-        child = getattr(curr, side)
++        child = None
+         if child:
+             count = self._step(val, child)
+             if curr.height <= count:
+</pre><h3>Mutant 109</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -255,7 +255,7 @@
+         child = getattr(curr, side)
+         if child:
+             count = self._step(val, child)
+-            if curr.height <= count:
++            if curr.height < count:
+                 curr.height += 1
+         else:
+             setattr(curr, side, Node(val, curr))
+</pre><h3>Mutant 110</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -256,7 +256,7 @@
+         if child:
+             count = self._step(val, child)
+             if curr.height <= count:
+-                curr.height += 1
++                curr.height = 1
+         else:
+             setattr(curr, side, Node(val, curr))
+             self._size += 1
+</pre><h3>Mutant 111</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -256,7 +256,7 @@
+         if child:
+             count = self._step(val, child)
+             if curr.height <= count:
+-                curr.height += 1
++                curr.height -= 1
+         else:
+             setattr(curr, side, Node(val, curr))
+             self._size += 1
+</pre><h3>Mutant 112</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -256,7 +256,7 @@
+         if child:
+             count = self._step(val, child)
+             if curr.height <= count:
+-                curr.height += 1
++                curr.height += 2
+         else:
+             setattr(curr, side, Node(val, curr))
+             self._size += 1
+</pre><h3>Mutant 113</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -259,7 +259,7 @@
+                 curr.height += 1
+         else:
+             setattr(curr, side, Node(val, curr))
+-            self._size += 1
++            self._size = 1
+             if curr.height == 1:
+                 curr.height += 1
+         return curr
+</pre><h3>Mutant 114</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -259,7 +259,7 @@
+                 curr.height += 1
+         else:
+             setattr(curr, side, Node(val, curr))
+-            self._size += 1
++            self._size -= 1
+             if curr.height == 1:
+                 curr.height += 1
+         return curr
+</pre><h3>Mutant 115</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -259,7 +259,7 @@
+                 curr.height += 1
+         else:
+             setattr(curr, side, Node(val, curr))
+-            self._size += 1
++            self._size += 2
+             if curr.height == 1:
+                 curr.height += 1
+         return curr
+</pre><h3>Mutant 116</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -260,7 +260,7 @@
+         else:
+             setattr(curr, side, Node(val, curr))
+             self._size += 1
+-            if curr.height == 1:
++            if curr.height != 1:
+                 curr.height += 1
+         return curr
+ 
+</pre><h3>Mutant 117</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -260,7 +260,7 @@
+         else:
+             setattr(curr, side, Node(val, curr))
+             self._size += 1
+-            if curr.height == 1:
++            if curr.height == 2:
+                 curr.height += 1
+         return curr
+ 
+</pre><h3>Mutant 118</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -261,7 +261,7 @@
+             setattr(curr, side, Node(val, curr))
+             self._size += 1
+             if curr.height == 1:
+-                curr.height += 1
++                curr.height = 1
+         return curr
+ 
+     def search(self, val):
+</pre><h3>Mutant 119</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -261,7 +261,7 @@
+             setattr(curr, side, Node(val, curr))
+             self._size += 1
+             if curr.height == 1:
+-                curr.height += 1
++                curr.height -= 1
+         return curr
+ 
+     def search(self, val):
+</pre><h3>Mutant 120</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -261,7 +261,7 @@
+             setattr(curr, side, Node(val, curr))
+             self._size += 1
+             if curr.height == 1:
+-                curr.height += 1
++                curr.height += 2
+         return curr
+ 
+     def search(self, val):
+</pre><h3>Mutant 121</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -266,7 +266,7 @@
+ 
+     def search(self, val):
+         """Return the node containing val."""
+-        curr = self.root
++        curr = None
+         while curr:
+             if curr.val == val:
+                 return curr
+</pre><h3>Mutant 122</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -268,7 +268,7 @@
+         """Return the node containing val."""
+         curr = self.root
+         while curr:
+-            if curr.val == val:
++            if curr.val != val:
+                 return curr
+             elif val < curr.val:
+                 curr = curr.left
+</pre><h3>Mutant 123</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -270,7 +270,7 @@
+         while curr:
+             if curr.val == val:
+                 return curr
+-            elif val < curr.val:
++            elif val <= curr.val:
+                 curr = curr.left
+             else:
+                 curr = curr.right
+</pre><h3>Mutant 124</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -271,7 +271,7 @@
+             if curr.val == val:
+                 return curr
+             elif val < curr.val:
+-                curr = curr.left
++                curr = None
+             else:
+                 curr = curr.right
+ 
+</pre><h3>Mutant 125</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -273,7 +273,7 @@
+             elif val < curr.val:
+                 curr = curr.left
+             else:
+-                curr = curr.right
++                curr = None
+ 
+     def size(self):
+         """Return the size of the BST."""
+</pre><h3>Mutant 130</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -296,7 +296,7 @@
+         return 0.
+         """
+         if not tree:
+-            tree = self.root
++            tree = None
+             if not tree:
+                 return 0
+ 
+</pre><h3>Mutant 139</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -303,7 +303,7 @@
+         leftbranch = 0 if not tree.left else tree.left.height
+         rightbranch = 0 if not tree.right else tree.right.height
+ 
+-        return leftbranch - rightbranch
++        return leftbranch + rightbranch
+ 
+     def pre_order(self, node='root'):
+         """Depth first pre-order traversal of tree."""
+</pre><h3>Mutant 140</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -305,7 +305,7 @@
+ 
+         return leftbranch - rightbranch
+ 
+-    def pre_order(self, node='root'):
++    def pre_order(self, node='XXrootXX'):
+         """Depth first pre-order traversal of tree."""
+         if node == 'root':
+             node = self.root
+</pre><h3>Mutant 141</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -307,7 +307,7 @@
+ 
+     def pre_order(self, node='root'):
+         """Depth first pre-order traversal of tree."""
+-        if node == 'root':
++        if node != 'root':
+             node = self.root
+ 
+         if not node:
+</pre><h3>Mutant 142</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -307,7 +307,7 @@
+ 
+     def pre_order(self, node='root'):
+         """Depth first pre-order traversal of tree."""
+-        if node == 'root':
++        if node == 'XXrootXX':
+             node = self.root
+ 
+         if not node:
+</pre><h3>Mutant 143</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -308,7 +308,7 @@
+     def pre_order(self, node='root'):
+         """Depth first pre-order traversal of tree."""
+         if node == 'root':
+-            node = self.root
++            node = None
+ 
+         if not node:
+             return
+</pre><h3>Mutant 144</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -310,7 +310,7 @@
+         if node == 'root':
+             node = self.root
+ 
+-        if not node:
++        if  node:
+             return
+ 
+         yield node.val
+</pre><h3>Mutant 145</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -320,7 +320,7 @@
+         for n in self.pre_order(node=node.right):
+             yield n
+ 
+-    def in_order(self, node='root'):
++    def in_order(self, node='XXrootXX'):
+         """Depth first in-order traversal of tree."""
+         if node == 'root':
+             node = self.root
+</pre><h3>Mutant 146</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -322,7 +322,7 @@
+ 
+     def in_order(self, node='root'):
+         """Depth first in-order traversal of tree."""
+-        if node == 'root':
++        if node != 'root':
+             node = self.root
+ 
+         if not node:
+</pre><h3>Mutant 147</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -322,7 +322,7 @@
+ 
+     def in_order(self, node='root'):
+         """Depth first in-order traversal of tree."""
+-        if node == 'root':
++        if node == 'XXrootXX':
+             node = self.root
+ 
+         if not node:
+</pre><h3>Mutant 148</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -323,7 +323,7 @@
+     def in_order(self, node='root'):
+         """Depth first in-order traversal of tree."""
+         if node == 'root':
+-            node = self.root
++            node = None
+ 
+         if not node:
+             return
+</pre><h3>Mutant 149</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -325,7 +325,7 @@
+         if node == 'root':
+             node = self.root
+ 
+-        if not node:
++        if  node:
+             return
+ 
+         for n in self.in_order(node=node.left):
+</pre><h3>Mutant 150</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -334,7 +334,7 @@
+         for n in self.in_order(node=node.right):
+             yield n
+ 
+-    def post_order(self, node='root'):
++    def post_order(self, node='XXrootXX'):
+         """Depth frist post_order traversal of tree."""
+         if node == 'root':
+             node = self.root
+</pre><h3>Mutant 151</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -336,7 +336,7 @@
+ 
+     def post_order(self, node='root'):
+         """Depth frist post_order traversal of tree."""
+-        if node == 'root':
++        if node != 'root':
+             node = self.root
+ 
+         if not node:
+</pre><h3>Mutant 152</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -336,7 +336,7 @@
+ 
+     def post_order(self, node='root'):
+         """Depth frist post_order traversal of tree."""
+-        if node == 'root':
++        if node == 'XXrootXX':
+             node = self.root
+ 
+         if not node:
+</pre><h3>Mutant 153</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -337,7 +337,7 @@
+     def post_order(self, node='root'):
+         """Depth frist post_order traversal of tree."""
+         if node == 'root':
+-            node = self.root
++            node = None
+ 
+         if not node:
+             return
+</pre><h3>Mutant 155</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -350,7 +350,7 @@
+ 
+     def breadth_first(self):
+         """Breadth first traversal of tree."""
+-        q = Queue()
++        q = None
+         q.enqueue(self.root)
+         while q.peek():
+             node = q.dequeue()
+</pre><h3>Mutant 156</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -353,7 +353,7 @@
+         q = Queue()
+         q.enqueue(self.root)
+         while q.peek():
+-            node = q.dequeue()
++            node = None
+             yield node.val
+             if node.left:
+                 q.enqueue(node.left)
+</pre><h3>Mutant 157</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -362,7 +362,7 @@
+ 
+     def delete(self, val):
+         """Remove a node from the tree."""
+-        if self._size < 1 or not self.contains(val):
++        if self._size <= 1 or not self.contains(val):
+             return
+ 
+         node = self.search(val)
+</pre><h3>Mutant 158</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -362,7 +362,7 @@
+ 
+     def delete(self, val):
+         """Remove a node from the tree."""
+-        if self._size < 1 or not self.contains(val):
++        if self._size < 2 or not self.contains(val):
+             return
+ 
+         node = self.search(val)
+</pre><h3>Mutant 159</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -362,7 +362,7 @@
+ 
+     def delete(self, val):
+         """Remove a node from the tree."""
+-        if self._size < 1 or not self.contains(val):
++        if self._size < 1 or  self.contains(val):
+             return
+ 
+         node = self.search(val)
+</pre><h3>Mutant 160</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -362,7 +362,7 @@
+ 
+     def delete(self, val):
+         """Remove a node from the tree."""
+-        if self._size < 1 or not self.contains(val):
++        if self._size < 1 and not self.contains(val):
+             return
+ 
+         node = self.search(val)
+</pre><h3>Mutant 161</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -365,7 +365,7 @@
+         if self._size < 1 or not self.contains(val):
+             return
+ 
+-        node = self.search(val)
++        node = None
+ 
+         if node._is_leaf():  # no children
+             if node.parent:
+</pre><h3>Mutant 162</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -371,7 +371,7 @@
+             if node.parent:
+                 setattr(node.parent, node._side(), None)
+             else:
+-                self.root = None
++                self.root = ""
+ 
+         elif node._is_interior():  # two children
+             next_node = self._find_replacement(node)
+</pre><h3>Mutant 163</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -374,7 +374,7 @@
+                 self.root = None
+ 
+         elif node._is_interior():  # two children
+-            next_node = self._find_replacement(node)
++            next_node = None
+             self._size += 1
+             self.delete(next_node.val)
+             node.val = next_node.val
+</pre><h3>Mutant 164</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -375,7 +375,7 @@
+ 
+         elif node._is_interior():  # two children
+             next_node = self._find_replacement(node)
+-            self._size += 1
++            self._size = 1
+             self.delete(next_node.val)
+             node.val = next_node.val
+ 
+</pre><h3>Mutant 165</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -375,7 +375,7 @@
+ 
+         elif node._is_interior():  # two children
+             next_node = self._find_replacement(node)
+-            self._size += 1
++            self._size -= 1
+             self.delete(next_node.val)
+             node.val = next_node.val
+ 
+</pre><h3>Mutant 166</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -375,7 +375,7 @@
+ 
+         elif node._is_interior():  # two children
+             next_node = self._find_replacement(node)
+-            self._size += 1
++            self._size += 2
+             self.delete(next_node.val)
+             node.val = next_node.val
+ 
+</pre><h3>Mutant 167</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -377,7 +377,7 @@
+             next_node = self._find_replacement(node)
+             self._size += 1
+             self.delete(next_node.val)
+-            node.val = next_node.val
++            node.val = None
+ 
+         else:  # one children
+             child = getattr(node, node._onlychild())
+</pre><h3>Mutant 168</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -380,7 +380,7 @@
+             node.val = next_node.val
+ 
+         else:  # one children
+-            child = getattr(node, node._onlychild())
++            child = None
+             if node.parent:
+                 child.parent = node.parent
+                 setattr(node.parent, node._side(), child)
+</pre><h3>Mutant 169</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -382,7 +382,7 @@
+         else:  # one children
+             child = getattr(node, node._onlychild())
+             if node.parent:
+-                child.parent = node.parent
++                child.parent = None
+                 setattr(node.parent, node._side(), child)
+             else:
+                 self.root = child
+</pre><h3>Mutant 170</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -385,7 +385,7 @@
+                 child.parent = node.parent
+                 setattr(node.parent, node._side(), child)
+             else:
+-                self.root = child
++                self.root = None
+ 
+         self._size -= 1
+ 
+</pre><h3>Mutant 171</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -387,7 +387,7 @@
+             else:
+                 self.root = child
+ 
+-        self._size -= 1
++        self._size = 1
+ 
+     def _find_replacement(self, node):
+         """Find left most node of right subtree."""
+</pre><h3>Mutant 172</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -387,7 +387,7 @@
+             else:
+                 self.root = child
+ 
+-        self._size -= 1
++        self._size += 1
+ 
+     def _find_replacement(self, node):
+         """Find left most node of right subtree."""
+</pre><h3>Mutant 173</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -387,7 +387,7 @@
+             else:
+                 self.root = child
+ 
+-        self._size -= 1
++        self._size -= 2
+ 
+     def _find_replacement(self, node):
+         """Find left most node of right subtree."""
+</pre><h3>Mutant 174</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -395,7 +395,7 @@
+             return self._findmin(node.right)
+         else:
+             if node.parent:
+-                if node._side() == 'left':
++                if node._side() != 'left':
+                     return self.parent
+                 else:
+                     node.parent.right = None
+</pre><h3>Mutant 175</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -395,7 +395,7 @@
+             return self._findmin(node.right)
+         else:
+             if node.parent:
+-                if node._side() == 'left':
++                if node._side() == 'XXleftXX':
+                     return self.parent
+                 else:
+                     node.parent.right = None
+</pre><h3>Mutant 176</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -398,7 +398,7 @@
+                 if node._side() == 'left':
+                     return self.parent
+                 else:
+-                    node.parent.right = None
++                    node.parent.right = ""
+                     tmp = self._find_replacement(node.parent)
+                     node.parent.right = node
+                     return tmp
+</pre><h3>Mutant 177</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -399,7 +399,7 @@
+                     return self.parent
+                 else:
+                     node.parent.right = None
+-                    tmp = self._find_replacement(node.parent)
++                    tmp = None
+                     node.parent.right = node
+                     return tmp
+ 
+</pre><h3>Mutant 178</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -400,7 +400,7 @@
+                 else:
+                     node.parent.right = None
+                     tmp = self._find_replacement(node.parent)
+-                    node.parent.right = node
++                    node.parent.right = None
+                     return tmp
+ 
+     def _findmin(self, node):
+</pre><h3>Mutant 179</h3><pre>--- binarySearchTree3.py
++++ binarySearchTree3.py
+@@ -406,6 +406,6 @@
+     def _findmin(self, node):
+         """Find min of subtree, Min is always left most node."""
+         while node.left:
+-            node = node.left
++            node = None
+         return node
+ 
+</pre></body></html>

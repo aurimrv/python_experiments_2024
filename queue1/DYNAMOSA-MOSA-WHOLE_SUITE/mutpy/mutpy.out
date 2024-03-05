@@ -1,0 +1,1720 @@
+[*] Start mutation process:
+   - targets: queue1.py
+   - tests: ./DYNAMOSA-MOSA-WHOLE_SUITE
+[*] 26 tests passed:
+   - test_queue1_WHOLE_SUITE [0.05192 s]
+   - test_queue1_DYNAMOSA [0.03915 s]
+   - test_queue1_MOSA [0.03848 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR queue1: 
+--------------------------------------------------------------------------------
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+  30:             self.back = new_back
+  31:         
+- 32:         self.size += 1
++ 32:         self.size -= 1
+  33:     
+  34:     def dequeue(self):
+  35:         if self.front is None:
+  36:             raise ValueError()
+--------------------------------------------------------------------------------
+[0.07102 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        var_1 = queue_0.enqueue(queue_0)
+>       assert len(queue_0) == 1
+E       ValueError: __len__() should return >= 0
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:11: ValueError
+   - [#   2] ASR queue1: 
+--------------------------------------------------------------------------------
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+  39:             self.front = self.front.next
+- 40:             self.size -= 1
++ 40:             self.size += 1
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+  44:         if self.front is None:
+--------------------------------------------------------------------------------
+[0.07339 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+        var_2 = queue_0.dequeue()
+>       assert len(queue_0) == 0
+E       AssertionError
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:36: AssertionError
+   - [#   3] CDI queue1: 
+--------------------------------------------------------------------------------
+   5: '''
+   6: 
+   7: class Queue(object):
+   8:     
+-  9:     def __init__(self):
+- 10:         self.front = None
+- 11:         self.back = None
+- 12:         self.size = 0
+- 13:     
++  9:     @classmethod
++ 10:     def __init__(self):
++ 11:         self.front = None
++ 12:         self.back = None
++ 13:         self.size = 0
+  14:     def __str__(self):
+  15:         
+  16:         pass
+  17:     
+--------------------------------------------------------------------------------
+[0.06095 s] survived
+   - [#   4] CDI queue1: 
+--------------------------------------------------------------------------------
+  10:         self.front = None
+  11:         self.back = None
+  12:         self.size = 0
+  13:     
+- 14:     def __str__(self):
+- 15:         
+- 16:         pass
+- 17:     
++ 14:     @classmethod
++ 15:     def __str__(self):
++ 16:         
++ 17:         pass
+  18:     def __len__(self):
+  19:         return self.size
+  20:     
+  21:     def enqueue(self, item):
+--------------------------------------------------------------------------------
+[0.06208 s] survived
+   - [#   5] CDI queue1: 
+--------------------------------------------------------------------------------
+  14:     def __str__(self):
+  15:         
+  16:         pass
+  17:     
+- 18:     def __len__(self):
+- 19:         return self.size
+- 20:     
++ 18:     @classmethod
++ 19:     def __len__(self):
++ 20:         return self.size
+  21:     def enqueue(self, item):
+  22:         
+  23:         if self.front is None:
+  24:             new_node = QueueNode(item)
+--------------------------------------------------------------------------------
+[0.07103 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+>       assert len(queue_0) == 0
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'queue1.Queue'>
+
+>   ???
+E   AttributeError: type object 'Queue' has no attribute 'size'
+
+queue1:20: AttributeError
+   - [#   6] CDI queue1: 
+--------------------------------------------------------------------------------
+  17:     
+  18:     def __len__(self):
+  19:         return self.size
+  20:     
+- 21:     def enqueue(self, item):
+- 22:         
+- 23:         if self.front is None:
+- 24:             new_node = QueueNode(item)
+- 25:             self.front = new_node
+- 26:             self.back = new_node
+- 27:         else:
+- 28:             new_back = QueueNode(item)
+- 29:             self.back.next = new_back
+- 30:             self.back = new_back
+- 31:         
+- 32:         self.size += 1
+- 33:     
++ 21:     @classmethod
++ 22:     def enqueue(self, item):
++ 23:         
++ 24:         if self.front is None:
++ 25:             new_node = QueueNode(item)
++ 26:             self.front = new_node
++ 27:             self.back = new_node
++ 28:         else:
++ 29:             new_back = QueueNode(item)
++ 30:             self.back.next = new_back
++ 31:             self.back = new_back
++ 32:         
++ 33:         self.size += 1
+  34:     def dequeue(self):
+  35:         if self.front is None:
+  36:             raise ValueError()
+  37:         else:
+--------------------------------------------------------------------------------
+[0.07103 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+>       var_1 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'queue1.Queue'>, item = <queue1.Queue object at 0x7f6f24ef8b50>
+
+>   ???
+E   AttributeError: type object 'Queue' has no attribute 'front'
+
+queue1:24: AttributeError
+   - [#   7] CDI queue1: 
+--------------------------------------------------------------------------------
+  30:             self.back = new_back
+  31:         
+  32:         self.size += 1
+  33:     
+- 34:     def dequeue(self):
+- 35:         if self.front is None:
+- 36:             raise ValueError()
+- 37:         else:
+- 38:             front_node = self.front
+- 39:             self.front = self.front.next
+- 40:             self.size -= 1
+- 41:             return front_node.data
+- 42:     
++ 34:     @classmethod
++ 35:     def dequeue(self):
++ 36:         if self.front is None:
++ 37:             raise ValueError()
++ 38:         else:
++ 39:             front_node = self.front
++ 40:             self.front = self.front.next
++ 41:             self.size -= 1
++ 42:             return front_node.data
+  43:     def peek(self):
+  44:         if self.front is None:
+  45:             return None
+  46:         return self.front.data
+--------------------------------------------------------------------------------
+[0.07436 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_1
+
+def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+>           queue_0.dequeue()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'queue1.Queue'>
+
+>   ???
+E   AttributeError: type object 'Queue' has no attribute 'front'
+
+queue1:36: AttributeError
+   - [#   8] CDI queue1: 
+--------------------------------------------------------------------------------
+  39:             self.front = self.front.next
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+- 43:     def peek(self):
+- 44:         if self.front is None:
+- 45:             return None
+- 46:         return self.front.data
+- 47:     
++ 43:     @classmethod
++ 44:     def peek(self):
++ 45:         if self.front is None:
++ 46:             return None
++ 47:         return self.front.data
+  48:     def clear(self):
+  49:         self.size = 0
+  50:         self.front = None
+  51:         self.back = None
+--------------------------------------------------------------------------------
+[0.07102 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_2
+
+def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+>       var_0 = queue_0.peek()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'queue1.Queue'>
+
+>   ???
+E   AttributeError: type object 'Queue' has no attribute 'front'
+
+queue1:45: AttributeError
+   - [#   9] CDI queue1: 
+--------------------------------------------------------------------------------
+  44:         if self.front is None:
+  45:             return None
+  46:         return self.front.data
+  47:     
+- 48:     def clear(self):
+- 49:         self.size = 0
+- 50:         self.front = None
+- 51:         self.back = None
+- 52: 
++ 48:     @classmethod
++ 49:     def clear(self):
++ 50:         self.size = 0
++ 51:         self.front = None
++ 52:         self.back = None
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+  55:         self.data = item
+  56:         self.next = None
+--------------------------------------------------------------------------------
+[0.06312 s] survived
+   - [#  10] CDI queue1: 
+--------------------------------------------------------------------------------
+  50:         self.front = None
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+- 54:     def __init__(self, item):
+- 55:         self.data = item
+- 56:         self.next = None
++ 54:     @classmethod
++ 55:     def __init__(self, item):
++ 56:         self.data = item
++ 57:         self.next = None
+--------------------------------------------------------------------------------
+[0.06104 s] survived
+   - [#  11] COI queue1: 
+--------------------------------------------------------------------------------
+  19:         return self.size
+  20:     
+  21:     def enqueue(self, item):
+  22:         
+- 23:         if self.front is None:
++ 23:         if not (self.front is None):
+  24:             new_node = QueueNode(item)
+  25:             self.front = new_node
+  26:             self.back = new_node
+  27:         else:
+--------------------------------------------------------------------------------
+[0.07026 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+>       var_1 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24e61900>
+item = <queue1.Queue object at 0x7f6f24e61900>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1:29: AttributeError
+   - [#  12] COI queue1: 
+--------------------------------------------------------------------------------
+  31:         
+  32:         self.size += 1
+  33:     
+  34:     def dequeue(self):
+- 35:         if self.front is None:
++ 35:         if not (self.front is None):
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+  39:             self.front = self.front.next
+--------------------------------------------------------------------------------
+[0.07461 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_1
+
+def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+>           queue_0.dequeue()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24bc9120>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1:39: AttributeError
+   - [#  13] COI queue1: 
+--------------------------------------------------------------------------------
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+- 44:         if self.front is None:
++ 44:         if not (self.front is None):
+  45:             return None
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+--------------------------------------------------------------------------------
+[0.07088 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_2
+
+def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+>       var_0 = queue_0.peek()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24c1cb50>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1:46: AttributeError
+   - [#  14] CRP queue1: 
+--------------------------------------------------------------------------------
+   8:     
+   9:     def __init__(self):
+  10:         self.front = None
+  11:         self.back = None
+- 12:         self.size = 0
++ 12:         self.size = 1
+  13:     
+  14:     def __str__(self):
+  15:         
+  16:         pass
+--------------------------------------------------------------------------------
+[0.07035 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+>       assert len(queue_0) == 0
+E       AssertionError
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:7: AssertionError
+   - [#  15] CRP queue1: 
+--------------------------------------------------------------------------------
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+  30:             self.back = new_back
+  31:         
+- 32:         self.size += 1
++ 32:         self.size += 2
+  33:     
+  34:     def dequeue(self):
+  35:         if self.front is None:
+  36:             raise ValueError()
+--------------------------------------------------------------------------------
+[0.07280 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        var_1 = queue_0.enqueue(queue_0)
+>       assert len(queue_0) == 1
+E       AssertionError
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:11: AssertionError
+   - [#  16] CRP queue1: 
+--------------------------------------------------------------------------------
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+  39:             self.front = self.front.next
+- 40:             self.size -= 1
++ 40:             self.size -= 2
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+  44:         if self.front is None:
+--------------------------------------------------------------------------------
+[0.07578 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+        var_2 = queue_0.dequeue()
+>       assert len(queue_0) == 0
+E       ValueError: __len__() should return >= 0
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:36: ValueError
+   - [#  17] CRP queue1: 
+--------------------------------------------------------------------------------
+  45:             return None
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+- 49:         self.size = 0
++ 49:         self.size = 1
+  50:         self.front = None
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+--------------------------------------------------------------------------------
+[0.07765 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+        assert len(var_1) == 0
+        var_2 = queue_0.enqueue(var_1)
+        assert len(queue_0) == 1
+        assert len(var_1) == 1
+        var_3 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        assert len(var_3) == 0
+        var_4 = queue_0.peek()
+        var_5 = queue_0.enqueue(var_3)
+        assert len(queue_0) == 1
+        assert len(var_1) == 1
+        assert len(var_3) == 1
+        var_6 = var_3.dequeue()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        assert len(var_3) == 0
+        assert len(var_6) == 0
+        var_7 = var_6.clear()
+        var_8 = var_6.__len__()
+>       assert var_8 == 0
+E       AssertionError
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:64: AssertionError
+   - [#  18] SDI queue1: 
+--------------------------------------------------------------------------------
+   5: '''
+   6: 
+   7: class Queue(object):
+   8:     
+-  9:     def __init__(self):
+- 10:         self.front = None
+- 11:         self.back = None
+- 12:         self.size = 0
+- 13:     
++  9:     @staticmethod
++ 10:     def __init__(self):
++ 11:         self.front = None
++ 12:         self.back = None
++ 13:         self.size = 0
+  14:     def __str__(self):
+  15:         
+  16:         pass
+  17:     
+--------------------------------------------------------------------------------
+[0.06996 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:6: TypeError: Queue.__init__() missing 1 required positional argument: 'self'
+
+   - [#  19] SDI queue1: 
+--------------------------------------------------------------------------------
+  10:         self.front = None
+  11:         self.back = None
+  12:         self.size = 0
+  13:     
+- 14:     def __str__(self):
+- 15:         
+- 16:         pass
+- 17:     
++ 14:     @staticmethod
++ 15:     def __str__(self):
++ 16:         
++ 17:         pass
+  18:     def __len__(self):
+  19:         return self.size
+  20:     
+  21:     def enqueue(self, item):
+--------------------------------------------------------------------------------
+[0.07561 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:42: TypeError: Queue.__str__() missing 1 required positional argument: 'self'
+
+   - [#  20] SDI queue1: 
+--------------------------------------------------------------------------------
+  14:     def __str__(self):
+  15:         
+  16:         pass
+  17:     
+- 18:     def __len__(self):
+- 19:         return self.size
+- 20:     
++ 18:     @staticmethod
++ 19:     def __len__(self):
++ 20:         return self.size
+  21:     def enqueue(self, item):
+  22:         
+  23:         if self.front is None:
+  24:             new_node = QueueNode(item)
+--------------------------------------------------------------------------------
+[0.07050 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:7: TypeError: Queue.__len__() missing 1 required positional argument: 'self'
+
+   - [#  21] SDI queue1: 
+--------------------------------------------------------------------------------
+  17:     
+  18:     def __len__(self):
+  19:         return self.size
+  20:     
+- 21:     def enqueue(self, item):
+- 22:         
+- 23:         if self.front is None:
+- 24:             new_node = QueueNode(item)
+- 25:             self.front = new_node
+- 26:             self.back = new_node
+- 27:         else:
+- 28:             new_back = QueueNode(item)
+- 29:             self.back.next = new_back
+- 30:             self.back = new_back
+- 31:         
+- 32:         self.size += 1
+- 33:     
++ 21:     @staticmethod
++ 22:     def enqueue(self, item):
++ 23:         
++ 24:         if self.front is None:
++ 25:             new_node = QueueNode(item)
++ 26:             self.front = new_node
++ 27:             self.back = new_node
++ 28:         else:
++ 29:             new_back = QueueNode(item)
++ 30:             self.back.next = new_back
++ 31:             self.back = new_back
++ 32:         
++ 33:         self.size += 1
+  34:     def dequeue(self):
+  35:         if self.front is None:
+  36:             raise ValueError()
+  37:         else:
+--------------------------------------------------------------------------------
+[0.06939 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:10: TypeError: Queue.enqueue() missing 1 required positional argument: 'item'
+
+   - [#  22] SDI queue1: 
+--------------------------------------------------------------------------------
+  30:             self.back = new_back
+  31:         
+  32:         self.size += 1
+  33:     
+- 34:     def dequeue(self):
+- 35:         if self.front is None:
+- 36:             raise ValueError()
+- 37:         else:
+- 38:             front_node = self.front
+- 39:             self.front = self.front.next
+- 40:             self.size -= 1
+- 41:             return front_node.data
+- 42:     
++ 34:     @staticmethod
++ 35:     def dequeue(self):
++ 36:         if self.front is None:
++ 37:             raise ValueError()
++ 38:         else:
++ 39:             front_node = self.front
++ 40:             self.front = self.front.next
++ 41:             self.size -= 1
++ 42:             return front_node.data
+  43:     def peek(self):
+  44:         if self.front is None:
+  45:             return None
+  46:         return self.front.data
+--------------------------------------------------------------------------------
+[0.07378 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:17: TypeError: Queue.dequeue() missing 1 required positional argument: 'self'
+
+   - [#  23] SDI queue1: 
+--------------------------------------------------------------------------------
+  39:             self.front = self.front.next
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+- 43:     def peek(self):
+- 44:         if self.front is None:
+- 45:             return None
+- 46:         return self.front.data
+- 47:     
++ 43:     @staticmethod
++ 44:     def peek(self):
++ 45:         if self.front is None:
++ 46:             return None
++ 47:         return self.front.data
+  48:     def clear(self):
+  49:         self.size = 0
+  50:         self.front = None
+  51:         self.back = None
+--------------------------------------------------------------------------------
+[0.07086 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:22: TypeError: Queue.peek() missing 1 required positional argument: 'self'
+
+   - [#  24] SDI queue1: 
+--------------------------------------------------------------------------------
+  44:         if self.front is None:
+  45:             return None
+  46:         return self.front.data
+  47:     
+- 48:     def clear(self):
+- 49:         self.size = 0
+- 50:         self.front = None
+- 51:         self.back = None
+- 52: 
++ 48:     @staticmethod
++ 49:     def clear(self):
++ 50:         self.size = 0
++ 51:         self.front = None
++ 52:         self.back = None
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+  55:         self.data = item
+  56:         self.next = None
+--------------------------------------------------------------------------------
+[0.08582 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:48: TypeError: Queue.clear() missing 1 required positional argument: 'self'
+
+   - [#  25] SDI queue1: 
+--------------------------------------------------------------------------------
+  50:         self.front = None
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+- 54:     def __init__(self, item):
+- 55:         self.data = item
+- 56:         self.next = None
++ 54:     @staticmethod
++ 55:     def __init__(self, item):
++ 56:         self.data = item
++ 57:         self.next = None
+--------------------------------------------------------------------------------
+[0.07921 s] incompetent
+
+TypeError: queue1:24: TypeError: QueueNode.__init__() missing 1 required positional argument: 'item'
+
+   - [#  26] SDL queue1: 
+--------------------------------------------------------------------------------
+   6: 
+   7: class Queue(object):
+   8:     
+   9:     def __init__(self):
+- 10:         self.front = None
++ 10:         pass
+  11:         self.back = None
+  12:         self.size = 0
+  13:     
+  14:     def __str__(self):
+--------------------------------------------------------------------------------
+[0.06980 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+>       var_1 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24d31c90>
+item = <queue1.Queue object at 0x7f6f24d31c90>
+
+>   ???
+E   AttributeError: 'Queue' object has no attribute 'front'
+
+queue1:23: AttributeError
+   - [#  27] SDL queue1: 
+--------------------------------------------------------------------------------
+   7: class Queue(object):
+   8:     
+   9:     def __init__(self):
+  10:         self.front = None
+- 11:         self.back = None
++ 11:         pass
+  12:         self.size = 0
+  13:     
+  14:     def __str__(self):
+  15:         
+--------------------------------------------------------------------------------
+[0.06207 s] survived
+   - [#  28] SDL queue1: 
+--------------------------------------------------------------------------------
+   8:     
+   9:     def __init__(self):
+  10:         self.front = None
+  11:         self.back = None
+- 12:         self.size = 0
++ 12:         pass
+  13:     
+  14:     def __str__(self):
+  15:         
+  16:         pass
+--------------------------------------------------------------------------------
+[0.06984 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+>       assert len(queue_0) == 0
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24f6f790>
+
+>   ???
+E   AttributeError: 'Queue' object has no attribute 'size'
+
+queue1:19: AttributeError
+   - [#  29] SDL queue1: 
+--------------------------------------------------------------------------------
+  15:         
+  16:         pass
+  17:     
+  18:     def __len__(self):
+- 19:         return self.size
++ 19:         pass
+  20:     
+  21:     def enqueue(self, item):
+  22:         
+  23:         if self.front is None:
+--------------------------------------------------------------------------------
+[0.07010 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/queue1/DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:7: TypeError: 'NoneType' object cannot be interpreted as an integer
+
+   - [#  30] SDL queue1: 
+--------------------------------------------------------------------------------
+  20:     
+  21:     def enqueue(self, item):
+  22:         
+  23:         if self.front is None:
+- 24:             new_node = QueueNode(item)
++ 24:             pass
+  25:             self.front = new_node
+  26:             self.back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+--------------------------------------------------------------------------------
+[0.06915 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+>       var_1 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24af5e40>
+item = <queue1.Queue object at 0x7f6f24af5e40>
+
+>   ???
+E   NameError: name 'new_node' is not defined
+
+queue1:25: NameError
+   - [#  31] SDL queue1: 
+--------------------------------------------------------------------------------
+  21:     def enqueue(self, item):
+  22:         
+  23:         if self.front is None:
+  24:             new_node = QueueNode(item)
+- 25:             self.front = new_node
++ 25:             pass
+  26:             self.back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+--------------------------------------------------------------------------------
+[0.07215 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+>       var_2 = queue_0.dequeue()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24bc9c90>
+
+>   ???
+E   ValueError
+
+queue1:36: ValueError
+   - [#  32] SDL queue1: 
+--------------------------------------------------------------------------------
+  22:         
+  23:         if self.front is None:
+  24:             new_node = QueueNode(item)
+  25:             self.front = new_node
+- 26:             self.back = new_node
++ 26:             pass
+  27:         else:
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+  30:             self.back = new_back
+--------------------------------------------------------------------------------
+[0.07509 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_7
+
+def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+>       var_1 = queue_0.enqueue(var_0)
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24af7970>, item = None
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1:29: AttributeError
+   - [#  33] SDL queue1: 
+--------------------------------------------------------------------------------
+  24:             new_node = QueueNode(item)
+  25:             self.front = new_node
+  26:             self.back = new_node
+  27:         else:
+- 28:             new_back = QueueNode(item)
++ 28:             pass
+  29:             self.back.next = new_back
+  30:             self.back = new_back
+  31:         
+  32:         self.size += 1
+--------------------------------------------------------------------------------
+[0.07316 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_7
+
+def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+>       var_1 = queue_0.enqueue(var_0)
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24d326b0>, item = None
+
+>   ???
+E   NameError: name 'new_back' is not defined
+
+queue1:29: NameError
+   - [#  34] SDL queue1: 
+--------------------------------------------------------------------------------
+  25:             self.front = new_node
+  26:             self.back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+- 29:             self.back.next = new_back
++ 29:             pass
+  30:             self.back = new_back
+  31:         
+  32:         self.size += 1
+  33:     
+--------------------------------------------------------------------------------
+[0.06272 s] survived
+   - [#  35] SDL queue1: 
+--------------------------------------------------------------------------------
+  26:             self.back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+- 30:             self.back = new_back
++ 30:             pass
+  31:         
+  32:         self.size += 1
+  33:     
+  34:     def dequeue(self):
+--------------------------------------------------------------------------------
+[0.06089 s] survived
+   - [#  36] SDL queue1: 
+--------------------------------------------------------------------------------
+  34:     def dequeue(self):
+  35:         if self.front is None:
+  36:             raise ValueError()
+  37:         else:
+- 38:             front_node = self.front
++ 38:             pass
+  39:             self.front = self.front.next
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+--------------------------------------------------------------------------------
+[0.07245 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+>       var_2 = queue_0.dequeue()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24bcafb0>
+
+>   ???
+E   NameError: name 'front_node' is not defined
+
+queue1:41: NameError
+   - [#  37] SDL queue1: 
+--------------------------------------------------------------------------------
+  35:         if self.front is None:
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+- 39:             self.front = self.front.next
++ 39:             pass
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+--------------------------------------------------------------------------------
+[0.06294 s] survived
+   - [#  38] SDL queue1: 
+--------------------------------------------------------------------------------
+  37:         else:
+  38:             front_node = self.front
+  39:             self.front = self.front.next
+  40:             self.size -= 1
+- 41:             return front_node.data
++ 41:             pass
+  42:     
+  43:     def peek(self):
+  44:         if self.front is None:
+  45:             return None
+--------------------------------------------------------------------------------
+[0.07910 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+
+def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+        assert len(queue_0) == 0
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+E       AssertionError
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:43: AssertionError
+   - [#  39] SDL queue1: 
+--------------------------------------------------------------------------------
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+  44:         if self.front is None:
+- 45:             return None
++ 45:             pass
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+  49:         self.size = 0
+--------------------------------------------------------------------------------
+[0.07132 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_2
+
+def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+>       var_0 = queue_0.peek()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24d115a0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1:46: AttributeError
+   - [#  40] SDL queue1: 
+--------------------------------------------------------------------------------
+  42:     
+  43:     def peek(self):
+  44:         if self.front is None:
+  45:             return None
+- 46:         return self.front.data
++ 46:         pass
+  47:     
+  48:     def clear(self):
+  49:         self.size = 0
+  50:         self.front = None
+--------------------------------------------------------------------------------
+[0.07940 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9
+
+def test_case_9():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        queue_node_0 = module_0.QueueNode(queue_0)
+        assert len(queue_node_0.data) == 0
+        var_0 = queue_1.enqueue(queue_0)
+        assert len(queue_1) == 1
+        var_1 = queue_1.peek()
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+E       AssertionError
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:103: AssertionError
+   - [#  41] SDL queue1: 
+--------------------------------------------------------------------------------
+  45:             return None
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+- 49:         self.size = 0
++ 49:         pass
+  50:         self.front = None
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+--------------------------------------------------------------------------------
+[0.06252 s] survived
+   - [#  42] SDL queue1: 
+--------------------------------------------------------------------------------
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+  49:         self.size = 0
+- 50:         self.front = None
++ 50:         pass
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+--------------------------------------------------------------------------------
+[0.06135 s] survived
+   - [#  43] SDL queue1: 
+--------------------------------------------------------------------------------
+  47:     
+  48:     def clear(self):
+  49:         self.size = 0
+  50:         self.front = None
+- 51:         self.back = None
++ 51:         pass
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+  55:         self.data = item
+--------------------------------------------------------------------------------
+[0.06284 s] survived
+   - [#  44] SDL queue1: 
+--------------------------------------------------------------------------------
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+- 55:         self.data = item
++ 55:         pass
+  56:         self.next = None
+--------------------------------------------------------------------------------
+[0.07341 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+>       var_1 = queue_0.peek()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24e25ff0>
+
+>   ???
+E   AttributeError: 'QueueNode' object has no attribute 'data'
+
+queue1:46: AttributeError
+   - [#  45] SDL queue1: 
+--------------------------------------------------------------------------------
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+  55:         self.data = item
+- 56:         self.next = None
++ 56:         pass
+--------------------------------------------------------------------------------
+[0.07193 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+>       var_2 = queue_0.dequeue()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24c5b8e0>
+
+>   ???
+E   AttributeError: 'QueueNode' object has no attribute 'next'
+
+queue1:39: AttributeError
+   - [#  46] SVD queue1: 
+--------------------------------------------------------------------------------
+   6: 
+   7: class Queue(object):
+   8:     
+   9:     def __init__(self):
+- 10:         self.front = None
++ 10:         front = None
+  11:         self.back = None
+  12:         self.size = 0
+  13:     
+  14:     def __str__(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  47] SVD queue1: 
+--------------------------------------------------------------------------------
+   7: class Queue(object):
+   8:     
+   9:     def __init__(self):
+  10:         self.front = None
+- 11:         self.back = None
++ 11:         back = None
+  12:         self.size = 0
+  13:     
+  14:     def __str__(self):
+  15:         
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  48] SVD queue1: 
+--------------------------------------------------------------------------------
+   8:     
+   9:     def __init__(self):
+  10:         self.front = None
+  11:         self.back = None
+- 12:         self.size = 0
++ 12:         size = 0
+  13:     
+  14:     def __str__(self):
+  15:         
+  16:         pass
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  49] SVD queue1: 
+--------------------------------------------------------------------------------
+  15:         
+  16:         pass
+  17:     
+  18:     def __len__(self):
+- 19:         return self.size
++ 19:         return size
+  20:     
+  21:     def enqueue(self, item):
+  22:         
+  23:         if self.front is None:
+--------------------------------------------------------------------------------
+[0.07099 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+>       assert len(queue_0) == 0
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24e62260>
+
+>   ???
+E   NameError: name 'size' is not defined
+
+queue1:19: NameError
+   - [#  50] SVD queue1: 
+--------------------------------------------------------------------------------
+  19:         return self.size
+  20:     
+  21:     def enqueue(self, item):
+  22:         
+- 23:         if self.front is None:
++ 23:         if front is None:
+  24:             new_node = QueueNode(item)
+  25:             self.front = new_node
+  26:             self.back = new_node
+  27:         else:
+--------------------------------------------------------------------------------
+[0.07106 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0
+
+def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+>       var_1 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24bf2fb0>
+item = <queue1.Queue object at 0x7f6f24bf2fb0>
+
+>   ???
+E   NameError: name 'front' is not defined
+
+queue1:23: NameError
+   - [#  51] SVD queue1: 
+--------------------------------------------------------------------------------
+  21:     def enqueue(self, item):
+  22:         
+  23:         if self.front is None:
+  24:             new_node = QueueNode(item)
+- 25:             self.front = new_node
++ 25:             front = new_node
+  26:             self.back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  52] SVD queue1: 
+--------------------------------------------------------------------------------
+  22:         
+  23:         if self.front is None:
+  24:             new_node = QueueNode(item)
+  25:             self.front = new_node
+- 26:             self.back = new_node
++ 26:             back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+  30:             self.back = new_back
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  53] SVD queue1: 
+--------------------------------------------------------------------------------
+  25:             self.front = new_node
+  26:             self.back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+- 29:             self.back.next = new_back
++ 29:             back.next = new_back
+  30:             self.back = new_back
+  31:         
+  32:         self.size += 1
+  33:     
+--------------------------------------------------------------------------------
+[0.07484 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_7
+
+def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+>       var_1 = queue_0.enqueue(var_0)
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24cba7a0>, item = None
+
+>   ???
+E   NameError: name 'back' is not defined
+
+queue1:29: NameError
+   - [#  54] SVD queue1: 
+--------------------------------------------------------------------------------
+  26:             self.back = new_node
+  27:         else:
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+- 30:             self.back = new_back
++ 30:             back = new_back
+  31:         
+  32:         self.size += 1
+  33:     
+  34:     def dequeue(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  55] SVD queue1: 
+--------------------------------------------------------------------------------
+  28:             new_back = QueueNode(item)
+  29:             self.back.next = new_back
+  30:             self.back = new_back
+  31:         
+- 32:         self.size += 1
++ 32:         size += 1
+  33:     
+  34:     def dequeue(self):
+  35:         if self.front is None:
+  36:             raise ValueError()
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  56] SVD queue1: 
+--------------------------------------------------------------------------------
+  31:         
+  32:         self.size += 1
+  33:     
+  34:     def dequeue(self):
+- 35:         if self.front is None:
++ 35:         if front is None:
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+  39:             self.front = self.front.next
+--------------------------------------------------------------------------------
+[0.07203 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_1
+
+def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+>           queue_0.dequeue()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24c78fd0>
+
+>   ???
+E   NameError: name 'front' is not defined
+
+queue1:35: NameError
+   - [#  57] SVD queue1: 
+--------------------------------------------------------------------------------
+  34:     def dequeue(self):
+  35:         if self.front is None:
+  36:             raise ValueError()
+  37:         else:
+- 38:             front_node = self.front
++ 38:             front_node = front
+  39:             self.front = self.front.next
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+--------------------------------------------------------------------------------
+[0.07052 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+>       var_2 = queue_0.dequeue()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24cb9b40>
+
+>   ???
+E   NameError: name 'front' is not defined
+
+queue1:38: NameError
+   - [#  58] SVD queue1: 
+--------------------------------------------------------------------------------
+  35:         if self.front is None:
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+- 39:             self.front = self.front.next
++ 39:             front = self.front.next
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  59] SVD queue1: 
+--------------------------------------------------------------------------------
+  35:         if self.front is None:
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+- 39:             self.front = self.front.next
++ 39:             self.front = front.next
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+--------------------------------------------------------------------------------
+[0.06958 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+>       var_2 = queue_0.dequeue()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24c007f0>
+
+>   ???
+E   NameError: name 'front' is not defined
+
+queue1:39: NameError
+   - [#  60] SVD queue1: 
+--------------------------------------------------------------------------------
+  36:             raise ValueError()
+  37:         else:
+  38:             front_node = self.front
+  39:             self.front = self.front.next
+- 40:             self.size -= 1
++ 40:             size -= 1
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+  44:         if self.front is None:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  61] SVD queue1: 
+--------------------------------------------------------------------------------
+  40:             self.size -= 1
+  41:             return front_node.data
+  42:     
+  43:     def peek(self):
+- 44:         if self.front is None:
++ 44:         if front is None:
+  45:             return None
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+--------------------------------------------------------------------------------
+[0.07027 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_2
+
+def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+>       var_0 = queue_0.peek()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24c00b20>
+
+>   ???
+E   NameError: name 'front' is not defined
+
+queue1:44: NameError
+   - [#  62] SVD queue1: 
+--------------------------------------------------------------------------------
+  42:     
+  43:     def peek(self):
+  44:         if self.front is None:
+  45:             return None
+- 46:         return self.front.data
++ 46:         return front.data
+  47:     
+  48:     def clear(self):
+  49:         self.size = 0
+  50:         self.front = None
+--------------------------------------------------------------------------------
+[0.07016 s] killed by DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+>       var_1 = queue_0.peek()
+
+DYNAMOSA-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <queue1.Queue object at 0x7f6f24d11060>
+
+>   ???
+E   NameError: name 'front' is not defined
+
+queue1:46: NameError
+   - [#  63] SVD queue1: 
+--------------------------------------------------------------------------------
+  45:             return None
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+- 49:         self.size = 0
++ 49:         size = 0
+  50:         self.front = None
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  64] SVD queue1: 
+--------------------------------------------------------------------------------
+  46:         return self.front.data
+  47:     
+  48:     def clear(self):
+  49:         self.size = 0
+- 50:         self.front = None
++ 50:         front = None
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  65] SVD queue1: 
+--------------------------------------------------------------------------------
+  47:     
+  48:     def clear(self):
+  49:         self.size = 0
+  50:         self.front = None
+- 51:         self.back = None
++ 51:         back = None
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+  55:         self.data = item
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  66] SVD queue1: 
+--------------------------------------------------------------------------------
+  51:         self.back = None
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+- 55:         self.data = item
++ 55:         data = item
+  56:         self.next = None
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  67] SVD queue1: 
+--------------------------------------------------------------------------------
+  52: 
+  53: class QueueNode(object):
+  54:     def __init__(self, item):
+  55:         self.data = item
+- 56:         self.next = None
++ 56:         next = None
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+[*] Mutation score [5.19524 s]: 75.0%
+   - all: 67
+   - killed: 33 (49.3%)
+   - survived: 11 (16.4%)
+   - incompetent: 23 (34.3%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,232 @@
+<html><body><h1>identifier1.py</h1>Killed 40 out of 61 mutants<h2>Timeouts</h2>Mutants that made the test suite take a lot longer so the tests were killed.<h3>Mutant 51</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -30,7 +30,7 @@
+                     achar = s[i]
+                     if not self.valid_f(achar):
+                         valid_id = False
+-                    i += 1
++                    i = 1
+             if valid_id and (len(s) >= 1) and (len(s) <= 6):
+                 return True
+             else:
+</pre><h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -4,7 +4,7 @@
+ 
+     def valid_s(self, ch):
+         """ generated source for method valid_s """
+-        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')):
++        if ((ch > 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')):
+             return True
+         else:
+             return False
+</pre><h3>Mutant 2</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -4,7 +4,7 @@
+ 
+     def valid_s(self, ch):
+         """ generated source for method valid_s """
+-        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')):
++        if ((ch >= 'XXAXX') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')):
+             return True
+         else:
+             return False
+</pre><h3>Mutant 3</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -4,7 +4,7 @@
+ 
+     def valid_s(self, ch):
+         """ generated source for method valid_s """
+-        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')):
++        if ((ch >= 'A') and (ch < 'Z')) or ((ch >= 'a') and (ch <= 'z')):
+             return True
+         else:
+             return False
+</pre><h3>Mutant 6</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -4,7 +4,7 @@
+ 
+     def valid_s(self, ch):
+         """ generated source for method valid_s """
+-        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')):
++        if ((ch >= 'A') and (ch <= 'Z')) or ((ch > 'a') and (ch <= 'z')):
+             return True
+         else:
+             return False
+</pre><h3>Mutant 7</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -4,7 +4,7 @@
+ 
+     def valid_s(self, ch):
+         """ generated source for method valid_s """
+-        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')):
++        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'XXaXX') and (ch <= 'z')):
+             return True
+         else:
+             return False
+</pre><h3>Mutant 8</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -4,7 +4,7 @@
+ 
+     def valid_s(self, ch):
+         """ generated source for method valid_s """
+-        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')):
++        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch < 'z')):
+             return True
+         else:
+             return False
+</pre><h3>Mutant 14</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -11,7 +11,7 @@
+ 
+     def valid_f(self, ch):
+         """ generated source for method valid_f """
+-        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')) or ((ch >= '0') and (ch <= '9')):
++        if ((ch > 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')) or ((ch >= '0') and (ch <= '9')):
+             return True
+         else:
+             return False
+</pre><h3>Mutant 15</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -11,7 +11,7 @@
+ 
+     def valid_f(self, ch):
+         """ generated source for method valid_f """
+-        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')) or ((ch >= '0') and (ch <= '9')):
++        if ((ch >= 'XXAXX') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')) or ((ch >= '0') and (ch <= '9')):
+             return True
+         else:
+             return False
+</pre><h3>Mutant 16</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -11,7 +11,7 @@
+ 
+     def valid_f(self, ch):
+         """ generated source for method valid_f """
+-        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')) or ((ch >= '0') and (ch <= '9')):
++        if ((ch >= 'A') and (ch < 'Z')) or ((ch >= 'a') and (ch <= 'z')) or ((ch >= '0') and (ch <= '9')):
+             return True
+         else:
+             return False
+</pre><h3>Mutant 17</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -11,7 +11,7 @@
+ 
+     def valid_f(self, ch):
+         """ generated source for method valid_f """
+-        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')) or ((ch >= '0') and (ch <= '9')):
++        if ((ch >= 'A') and (ch <= 'XXZXX')) or ((ch >= 'a') and (ch <= 'z')) or ((ch >= '0') and (ch <= '9')):
+             return True
+         else:
+             return False
+</pre><h3>Mutant 19</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -11,7 +11,7 @@
+ 
+     def valid_f(self, ch):
+         """ generated source for method valid_f """
+-        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')) or ((ch >= '0') and (ch <= '9')):
++        if ((ch >= 'A') and (ch <= 'Z')) or ((ch > 'a') and (ch <= 'z')) or ((ch >= '0') and (ch <= '9')):
+             return True
+         else:
+             return False
+</pre><h3>Mutant 21</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -11,7 +11,7 @@
+ 
+     def valid_f(self, ch):
+         """ generated source for method valid_f """
+-        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')) or ((ch >= '0') and (ch <= '9')):
++        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch < 'z')) or ((ch >= '0') and (ch <= '9')):
+             return True
+         else:
+             return False
+</pre><h3>Mutant 24</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -11,7 +11,7 @@
+ 
+     def valid_f(self, ch):
+         """ generated source for method valid_f """
+-        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')) or ((ch >= '0') and (ch <= '9')):
++        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')) or ((ch > '0') and (ch <= '9')):
+             return True
+         else:
+             return False
+</pre><h3>Mutant 26</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -11,7 +11,7 @@
+ 
+     def valid_f(self, ch):
+         """ generated source for method valid_f """
+-        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')) or ((ch >= '0') and (ch <= '9')):
++        if ((ch >= 'A') and (ch <= 'Z')) or ((ch >= 'a') and (ch <= 'z')) or ((ch >= '0') and (ch < '9')):
+             return True
+         else:
+             return False
+</pre><h3>Mutant 32</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -18,7 +18,7 @@
+ 
+     def validateIdentifier(self, s):
+         """ generated source for method validateIdentifier """
+-        achar = str()
++        achar = None
+         valid_id = False
+         if (len(s) > 0):
+             achar = s[0]
+</pre><h3>Mutant 33</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -19,7 +19,7 @@
+     def validateIdentifier(self, s):
+         """ generated source for method validateIdentifier """
+         achar = str()
+-        valid_id = False
++        valid_id = True
+         if (len(s) > 0):
+             achar = s[0]
+             valid_id = self.valid_s(achar)
+</pre><h3>Mutant 34</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -19,7 +19,7 @@
+     def validateIdentifier(self, s):
+         """ generated source for method validateIdentifier """
+         achar = str()
+-        valid_id = False
++        valid_id = None
+         if (len(s) > 0):
+             achar = s[0]
+             valid_id = self.valid_s(achar)
+</pre><h3>Mutant 43</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -24,7 +24,7 @@
+             achar = s[0]
+             valid_id = self.valid_s(achar)
+             if len(s) > 1:
+-                achar = s[1]
++                achar = None
+                 i = 1
+                 while i < len(s):
+                     achar = s[i]
+</pre><h3>Mutant 50</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -29,7 +29,7 @@
+                 while i < len(s):
+                     achar = s[i]
+                     if not self.valid_f(achar):
+-                        valid_id = False
++                        valid_id = None
+                     i += 1
+             if valid_id and (len(s) >= 1) and (len(s) <= 6):
+                 return True
+</pre><h3>Mutant 56</h3><pre>--- identifier1.py
++++ identifier1.py
+@@ -31,7 +31,7 @@
+                     if not self.valid_f(achar):
+                         valid_id = False
+                     i += 1
+-            if valid_id and (len(s) >= 1) and (len(s) <= 6):
++            if valid_id and (len(s) >= 1) and (len(s) < 6):
+                 return True
+             else:
+                 return False
+</pre></body></html>

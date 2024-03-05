@@ -1,0 +1,2970 @@
+[*] Start mutation process:
+   - targets: stack1.py
+   - tests: ./DYNAMOSA-MOSA
+[*] 27 tests passed:
+   - test_stack1_MOSA [0.49339 s]
+   - test_stack1_DYNAMOSA [0.31418 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR stack1: 
+--------------------------------------------------------------------------------
+   90:         The add function can also be accessed via the ``operator``
+   91:         module.
+   92:     """
+   93:     stack = Stack()
+-  94:     ops = {'+': lambda a, b: (a + b), \
++  94:     ops = {'+': lambda a, b: (a - b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+--------------------------------------------------------------------------------
+[0.45835 s] survived
+   - [#   2] AOR stack1: 
+--------------------------------------------------------------------------------
+   91:         module.
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+-  95:         '-': lambda a, b: (a - b), \
++  95:         '-': lambda a, b: (a + b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+--------------------------------------------------------------------------------
+[0.45558 s] survived
+   - [#   3] AOR stack1: 
+--------------------------------------------------------------------------------
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+-  96:         '*': lambda a, b: (a * b), \
++  96:         '*': lambda a, b: (a / b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+--------------------------------------------------------------------------------
+[0.47570 s] survived
+   - [#   4] AOR stack1: 
+--------------------------------------------------------------------------------
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+-  96:         '*': lambda a, b: (a * b), \
++  96:         '*': lambda a, b: (a // b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+--------------------------------------------------------------------------------
+[0.49253 s] survived
+   - [#   5] AOR stack1: 
+--------------------------------------------------------------------------------
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+-  96:         '*': lambda a, b: (a * b), \
++  96:         '*': lambda a, b: (a ** b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+--------------------------------------------------------------------------------
+[0.40595 s] survived
+   - [#   6] AOR stack1: 
+--------------------------------------------------------------------------------
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+-  97:         '/': lambda a, b: (a / b), \
++  97:         '/': lambda a, b: (a // b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+--------------------------------------------------------------------------------
+[0.45155 s] survived
+   - [#   7] AOR stack1: 
+--------------------------------------------------------------------------------
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+-  97:         '/': lambda a, b: (a / b), \
++  97:         '/': lambda a, b: (a * b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+--------------------------------------------------------------------------------
+[0.43866 s] survived
+   - [#   8] AOR stack1: 
+--------------------------------------------------------------------------------
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+-  98:         '%': lambda a, b: (a % b), \
++  98:         '%': lambda a, b: (a * b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+--------------------------------------------------------------------------------
+[0.45639 s] survived
+   - [#   9] AOR stack1: 
+--------------------------------------------------------------------------------
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+-  99:         '^': lambda a, b: (a ** b)}
++  99:         '^': lambda a, b: (a * b)}
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+  103:     
+--------------------------------------------------------------------------------
+[0.46278 s] survived
+   - [#  10] ASR stack1: 
+--------------------------------------------------------------------------------
+   22:             
+   23:             self.top = item2
+   24:             item2.next = item1
+   25:         
+-  26:         self.size += 1
++  26:         self.size -= 1
+   27:     
+   28:     def pop(self):
+   29:         if self.top is None:
+   30:             raise ValueError()
+--------------------------------------------------------------------------------
+[0.57857 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        str_0 = '6'
+        var_0 = module_0.check_parenthesis(str_0)
+        assert var_0 is True
+        var_1 = str_0.__len__()
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        var_2 = stack_0.push(var_1)
+>       assert len(stack_0) == 1
+E       ValueError: __len__() should return >= 0
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:63: ValueError
+   - [#  11] ASR stack1: 
+--------------------------------------------------------------------------------
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+   34:             self.top = self.top.next
+-  35:             self.size -= 1
++  35:             self.size += 1
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+   39:         if self.top is None:
+--------------------------------------------------------------------------------
+[0.56252 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_11
+
+def test_case_11():
+        str_0 = '(T lON)_'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:92: AssertionError
+   - [#  12] CDI stack1: 
+--------------------------------------------------------------------------------
+    3:     thomas moll 2015
+    4: '''
+    5: 
+    6: class Stack(object):
+-   7:     def __init__(self):
+-   8:         self.size = 0
+-   9:         self.top = None
+-  10:     
++   7:     @classmethod
++   8:     def __init__(self):
++   9:         self.size = 0
++  10:         self.top = None
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+   14:     def push(self, item):
+--------------------------------------------------------------------------------
+[0.45265 s] survived
+   - [#  13] CDI stack1: 
+--------------------------------------------------------------------------------
+    7:     def __init__(self):
+    8:         self.size = 0
+    9:         self.top = None
+   10:     
+-  11:     def __len__(self):
+-  12:         return self.size
+-  13:     
++  11:     @classmethod
++  12:     def __len__(self):
++  13:         return self.size
+   14:     def push(self, item):
+   15:         if self.top is None:
+   16:             self.top = StackNode(item)
+   17:         else:
+--------------------------------------------------------------------------------
+[0.55070 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        stack_0 = module_0.Stack()
+>       assert len(stack_0) == 0
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack1.Stack'>
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute 'size'
+
+stack1:13: AttributeError
+   - [#  14] CDI stack1: 
+--------------------------------------------------------------------------------
+   10:     
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+-  14:     def push(self, item):
+-  15:         if self.top is None:
+-  16:             self.top = StackNode(item)
+-  17:         else:
+-  18:             
+-  19:             item1 = self.top
+-  20:             item2 = StackNode(item)
+-  21:             
++  14:     @classmethod
++  15:     def push(self, item):
++  16:         if self.top is None:
++  17:             self.top = StackNode(item)
++  18:         else:
++  19:             
++  20:             item1 = self.top
++  21:             item2 = StackNode(item)
+   22:             
+-  23:             self.top = item2
+-  24:             item2.next = item1
+-  25:         
+-  26:         self.size += 1
+-  27:     
++  23:             
++  24:             self.top = item2
++  25:             item2.next = item1
++  26:         
++  27:         self.size += 1
+   28:     def pop(self):
+   29:         if self.top is None:
+   30:             raise ValueError()
+   31:         else:
+--------------------------------------------------------------------------------
+[0.61480 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:124: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack1.Stack'>, item = 6
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute 'top'. Did you mean: 'pop'?
+
+stack1:16: AttributeError
+   - [#  15] CDI stack1: 
+--------------------------------------------------------------------------------
+   24:             item2.next = item1
+   25:         
+   26:         self.size += 1
+   27:     
+-  28:     def pop(self):
+-  29:         if self.top is None:
+-  30:             raise ValueError()
+-  31:         else:
+-  32:             top_data = self.top.data
+-  33:             
+-  34:             self.top = self.top.next
+-  35:             self.size -= 1
+-  36:             return top_data
+-  37:     
++  28:     @classmethod
++  29:     def pop(self):
++  30:         if self.top is None:
++  31:             raise ValueError()
++  32:         else:
++  33:             top_data = self.top.data
++  34:             
++  35:             self.top = self.top.next
++  36:             self.size -= 1
++  37:             return top_data
+   38:     def peek(self):
+   39:         if self.top is None:
+   40:             raise ValueError()
+   41:         else:
+--------------------------------------------------------------------------------
+[0.52666 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack1.Stack'>
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute 'top'. Did you mean: 'pop'?
+
+stack1:30: AttributeError
+   - [#  16] CDI stack1: 
+--------------------------------------------------------------------------------
+   34:             self.top = self.top.next
+   35:             self.size -= 1
+   36:             return top_data
+   37:     
+-  38:     def peek(self):
+-  39:         if self.top is None:
+-  40:             raise ValueError()
+-  41:         else:
+-  42:             return self.top.data
+-  43: 
++  38:     @classmethod
++  39:     def peek(self):
++  40:         if self.top is None:
++  41:             raise ValueError()
++  42:         else:
++  43:             return self.top.data
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+   47:         self.data = item
+--------------------------------------------------------------------------------
+[0.57024 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        with pytest.raises(ValueError):
+>           stack_0.peek()
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack1.Stack'>
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute 'top'. Did you mean: 'pop'?
+
+stack1:40: AttributeError
+   - [#  17] CDI stack1: 
+--------------------------------------------------------------------------------
+   42:             return self.top.data
+   43: 
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+-  46:     def __init__(self, item):
+-  47:         self.data = item
+-  48:         self.next = None
+-  49: 
++  46:     @classmethod
++  47:     def __init__(self, item):
++  48:         self.data = item
++  49:         self.next = None
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+   53:     brackets = {'{': '}', '[': ']', '(': ')'}
+--------------------------------------------------------------------------------
+[0.46264 s] survived
+   - [#  18] COI stack1: 
+--------------------------------------------------------------------------------
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+   14:     def push(self, item):
+-  15:         if self.top is None:
++  15:         if not (self.top is None):
+   16:             self.top = StackNode(item)
+   17:         else:
+   18:             
+   19:             item1 = self.top
+--------------------------------------------------------------------------------
+[0.46330 s] survived
+   - [#  19] COI stack1: 
+--------------------------------------------------------------------------------
+   25:         
+   26:         self.size += 1
+   27:     
+   28:     def pop(self):
+-  29:         if self.top is None:
++  29:         if not (self.top is None):
+   30:             raise ValueError()
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+--------------------------------------------------------------------------------
+[0.52600 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e41b98d0>
+
+>   ???
+E   ValueError
+
+stack1:30: ValueError
+   - [#  20] COI stack1: 
+--------------------------------------------------------------------------------
+   35:             self.size -= 1
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+-  39:         if self.top is None:
++  39:         if not (self.top is None):
+   40:             raise ValueError()
+   41:         else:
+   42:             return self.top.data
+   43: 
+--------------------------------------------------------------------------------
+[0.59044 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        with pytest.raises(ValueError):
+>           stack_0.peek()
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e3eea920>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+stack1:42: AttributeError
+   - [#  21] COI stack1: 
+--------------------------------------------------------------------------------
+   53:     brackets = {'{': '}', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+-  57:         if character in brackets.keys():
++  57:         if not (character in brackets.keys()):
+   58:             stack.push(character)
+   59:         
+   60:         
+   61:         if character in brackets.values():
+--------------------------------------------------------------------------------
+[0.54203 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+
+>   ???
+E   KeyError: ')'
+
+stack1:66: KeyError
+   - [#  22] COI stack1: 
+--------------------------------------------------------------------------------
+   53:     brackets = {'{': '}', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+-  57:         if character in brackets.keys():
++  57:         if character not in brackets.keys():
+   58:             stack.push(character)
+   59:         
+   60:         
+   61:         if character in brackets.values():
+--------------------------------------------------------------------------------
+[0.51862 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+
+>   ???
+E   KeyError: ')'
+
+stack1:66: KeyError
+   - [#  23] COI stack1: 
+--------------------------------------------------------------------------------
+   57:         if character in brackets.keys():
+   58:             stack.push(character)
+   59:         
+   60:         
+-  61:         if character in brackets.values():
++  61:         if not (character in brackets.values()):
+   62:             try:
+   63:                 other = stack.pop()
+   64:                 
+   65:                 
+--------------------------------------------------------------------------------
+[0.58295 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = '/'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:24: AssertionError
+   - [#  24] COI stack1: 
+--------------------------------------------------------------------------------
+   57:         if character in brackets.keys():
+   58:             stack.push(character)
+   59:         
+   60:         
+-  61:         if character in brackets.values():
++  61:         if character not in brackets.values():
+   62:             try:
+   63:                 other = stack.pop()
+   64:                 
+   65:                 
+--------------------------------------------------------------------------------
+[0.55256 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = '/'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:24: AssertionError
+   - [#  25] COI stack1: 
+--------------------------------------------------------------------------------
+   62:             try:
+   63:                 other = stack.pop()
+   64:                 
+   65:                 
+-  66:                 if brackets[other] != character:
++  66:                 if not (brackets[other] != character):
+   67:                     return False
+   68:             
+   69:             except ValueError:
+   70:                 return False
+--------------------------------------------------------------------------------
+[0.63162 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_11
+
+def test_case_11():
+        str_0 = '(T lON)_'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:92: AssertionError
+   - [#  26] COI stack1: 
+--------------------------------------------------------------------------------
+   68:             
+   69:             except ValueError:
+   70:                 return False
+   71:     
+-  72:     if stack.size != 0:
++  72:     if not (stack.size != 0):
+   73:         return False
+   74:     else:
+   75:         
+   76:         return True
+--------------------------------------------------------------------------------
+[0.59089 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = '/'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:24: AssertionError
+   - [#  27] COI stack1: 
+--------------------------------------------------------------------------------
+  102:     tokens = string.split(' ')
+  103:     
+  104:     for character in tokens:
+  105:         
+- 106:         if character in ops.keys():
++ 106:         if not (character in ops.keys()):
+  107:             try:
+  108:                 
+  109:                 right = stack.pop()
+  110:                 left = stack.pop()
+--------------------------------------------------------------------------------
+[0.51527 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:118: in postfix_eval
+    ???
+stack1:109: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e3f863e0>
+
+>   ???
+E   ValueError
+
+stack1:30: ValueError
+   - [#  28] COI stack1: 
+--------------------------------------------------------------------------------
+  102:     tokens = string.split(' ')
+  103:     
+  104:     for character in tokens:
+  105:         
+- 106:         if character in ops.keys():
++ 106:         if character not in ops.keys():
+  107:             try:
+  108:                 
+  109:                 right = stack.pop()
+  110:                 left = stack.pop()
+--------------------------------------------------------------------------------
+[0.51838 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:118: in postfix_eval
+    ???
+stack1:109: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e43c90c0>
+
+>   ???
+E   ValueError
+
+stack1:30: ValueError
+   - [#  29] COI stack1: 
+--------------------------------------------------------------------------------
+  126:             except ValueError as e:
+  127:                 raise e
+  128:     
+  129:     
+- 130:     if stack.size > 1:
++ 130:     if not (stack.size > 1):
+  131:         raise ValueError()
+  132:     
+  133:     return stack.pop()
+--------------------------------------------------------------------------------
+[0.57620 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '6'
+
+>   ???
+E   ValueError
+
+stack1:131: ValueError
+   - [#  30] CRP stack1: 
+--------------------------------------------------------------------------------
+    4: '''
+    5: 
+    6: class Stack(object):
+    7:     def __init__(self):
+-   8:         self.size = 0
++   8:         self.size = 1
+    9:         self.top = None
+   10:     
+   11:     def __len__(self):
+   12:         return self.size
+--------------------------------------------------------------------------------
+[0.53578 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '6'
+
+>   ???
+E   ValueError
+
+stack1:131: ValueError
+   - [#  31] CRP stack1: 
+--------------------------------------------------------------------------------
+   22:             
+   23:             self.top = item2
+   24:             item2.next = item1
+   25:         
+-  26:         self.size += 1
++  26:         self.size += 2
+   27:     
+   28:     def pop(self):
+   29:         if self.top is None:
+   30:             raise ValueError()
+--------------------------------------------------------------------------------
+[0.51922 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '6'
+
+>   ???
+E   ValueError
+
+stack1:131: ValueError
+   - [#  32] CRP stack1: 
+--------------------------------------------------------------------------------
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+   34:             self.top = self.top.next
+-  35:             self.size -= 1
++  35:             self.size -= 2
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+   39:         if self.top is None:
+--------------------------------------------------------------------------------
+[0.66264 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_11
+
+def test_case_11():
+        str_0 = '(T lON)_'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:92: AssertionError
+   - [#  33] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'mutpy': '}', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.55645 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        str_0 = 'dLrqj0=`{6N&8'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:45: AssertionError
+   - [#  34] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'': '}', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.54804 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        str_0 = 'dLrqj0=`{6N&8'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:45: AssertionError
+   - [#  35] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', 'mutpy': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.45226 s] survived
+   - [#  36] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', '': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.48059 s] survived
+   - [#  37] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', '[': ']', 'mutpy': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.62939 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_11
+
+def test_case_11():
+        str_0 = '(T lON)_'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:92: AssertionError
+   - [#  38] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', '[': ']', '': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.64228 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_11
+
+def test_case_11():
+        str_0 = '(T lON)_'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:92: AssertionError
+   - [#  39] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': 'mutpy', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.57305 s] survived
+   - [#  40] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.45224 s] survived
+   - [#  41] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', '[': 'mutpy', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.46686 s] survived
+   - [#  42] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', '[': '', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.47020 s] survived
+   - [#  43] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', '[': ']', '(': 'mutpy'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.64321 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:13: AssertionError
+   - [#  44] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', '[': ']', '(': ''}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.53572 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:13: AssertionError
+   - [#  45] CRP stack1: 
+--------------------------------------------------------------------------------
+   68:             
+   69:             except ValueError:
+   70:                 return False
+   71:     
+-  72:     if stack.size != 0:
++  72:     if stack.size != 1:
+   73:         return False
+   74:     else:
+   75:         
+   76:         return True
+--------------------------------------------------------------------------------
+[0.53731 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = '/'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:24: AssertionError
+   - [#  46] CRP stack1: 
+--------------------------------------------------------------------------------
+   90:         The add function can also be accessed via the ``operator``
+   91:         module.
+   92:     """
+   93:     stack = Stack()
+-  94:     ops = {'+': lambda a, b: (a + b), \
++  94:     ops = {'mutpy': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+--------------------------------------------------------------------------------
+[0.48100 s] survived
+   - [#  47] CRP stack1: 
+--------------------------------------------------------------------------------
+   90:         The add function can also be accessed via the ``operator``
+   91:         module.
+   92:     """
+   93:     stack = Stack()
+-  94:     ops = {'+': lambda a, b: (a + b), \
++  94:     ops = {'': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+--------------------------------------------------------------------------------
+[0.46051 s] survived
+   - [#  48] CRP stack1: 
+--------------------------------------------------------------------------------
+   91:         module.
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+-  95:         '-': lambda a, b: (a - b), \
++  95:         'mutpy': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+--------------------------------------------------------------------------------
+[0.49242 s] survived
+   - [#  49] CRP stack1: 
+--------------------------------------------------------------------------------
+   91:         module.
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+-  95:         '-': lambda a, b: (a - b), \
++  95:         '': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+--------------------------------------------------------------------------------
+[0.47291 s] survived
+   - [#  50] CRP stack1: 
+--------------------------------------------------------------------------------
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+-  96:         '*': lambda a, b: (a * b), \
++  96:         'mutpy': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+--------------------------------------------------------------------------------
+[0.48732 s] survived
+   - [#  51] CRP stack1: 
+--------------------------------------------------------------------------------
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+-  96:         '*': lambda a, b: (a * b), \
++  96:         '': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+--------------------------------------------------------------------------------
+[0.48976 s] survived
+   - [#  52] CRP stack1: 
+--------------------------------------------------------------------------------
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+-  97:         '/': lambda a, b: (a / b), \
++  97:         'mutpy': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+--------------------------------------------------------------------------------
+[0.46044 s] survived
+   - [#  53] CRP stack1: 
+--------------------------------------------------------------------------------
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+-  97:         '/': lambda a, b: (a / b), \
++  97:         '': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+--------------------------------------------------------------------------------
+[0.45374 s] survived
+   - [#  54] CRP stack1: 
+--------------------------------------------------------------------------------
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+-  98:         '%': lambda a, b: (a % b), \
++  98:         'mutpy': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+--------------------------------------------------------------------------------
+[0.55378 s] survived
+   - [#  55] CRP stack1: 
+--------------------------------------------------------------------------------
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+-  98:         '%': lambda a, b: (a % b), \
++  98:         '': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+--------------------------------------------------------------------------------
+[0.46366 s] survived
+   - [#  56] CRP stack1: 
+--------------------------------------------------------------------------------
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+-  99:         '^': lambda a, b: (a ** b)}
++  99:         'mutpy': lambda a, b: (a ** b)}
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+  103:     
+--------------------------------------------------------------------------------
+[0.46509 s] survived
+   - [#  57] CRP stack1: 
+--------------------------------------------------------------------------------
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+-  99:         '^': lambda a, b: (a ** b)}
++  99:         '': lambda a, b: (a ** b)}
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+  103:     
+--------------------------------------------------------------------------------
+[0.45671 s] survived
+   - [#  58] CRP stack1: 
+--------------------------------------------------------------------------------
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+- 102:     tokens = string.split(' ')
++ 102:     tokens = string.split('mutpy')
+  103:     
+  104:     for character in tokens:
+  105:         
+  106:         if character in ops.keys():
+--------------------------------------------------------------------------------
+[0.47096 s] survived
+   - [#  59] CRP stack1: 
+--------------------------------------------------------------------------------
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+- 102:     tokens = string.split(' ')
++ 102:     tokens = string.split('')
+  103:     
+  104:     for character in tokens:
+  105:         
+  106:         if character in ops.keys():
+--------------------------------------------------------------------------------
+[0.52367 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '6'
+
+>   ???
+E   ValueError: empty separator
+
+stack1:102: ValueError
+   - [#  60] CRP stack1: 
+--------------------------------------------------------------------------------
+  126:             except ValueError as e:
+  127:                 raise e
+  128:     
+  129:     
+- 130:     if stack.size > 1:
++ 130:     if stack.size > 2:
+  131:         raise ValueError()
+  132:     
+  133:     return stack.pop()
+--------------------------------------------------------------------------------
+[0.45858 s] survived
+   - [#  61] EHD stack1: 
+--------------------------------------------------------------------------------
+   66:                 if brackets[other] != character:
+   67:                     return False
+   68:             
+   69:             except ValueError:
+-  70:                 return False
++  70:                 raise
+   71:     
+   72:     if stack.size != 0:
+   73:         return False
+   74:     else:
+--------------------------------------------------------------------------------
+[0.61026 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:63: in check_parenthesis
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e4117070>
+
+>   ???
+E   ValueError
+
+stack1:30: ValueError
+   - [#  62] EXS stack1: 
+--------------------------------------------------------------------------------
+   66:                 if brackets[other] != character:
+   67:                     return False
+   68:             
+   69:             except ValueError:
+-  70:                 return False
++  70:                 pass
+   71:     
+   72:     if stack.size != 0:
+   73:         return False
+   74:     else:
+--------------------------------------------------------------------------------
+[0.58890 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:13: AssertionError
+   - [#  63] EXS stack1: 
+--------------------------------------------------------------------------------
+  114:                 stack.push(result)
+  115:             
+  116:             
+  117:             except ValueError as e:
+- 118:                 raise e
++ 118:                 pass
+  119:         else:
+  120:             
+  121:             try:
+  122:                 
+--------------------------------------------------------------------------------
+[0.47739 s] survived
+   - [#  64] EXS stack1: 
+--------------------------------------------------------------------------------
+  123:                 value = int(character)
+  124:                 stack.push(value)
+  125:             
+  126:             except ValueError as e:
+- 127:                 raise e
++ 127:                 pass
+  128:     
+  129:     
+  130:     if stack.size > 1:
+  131:         raise ValueError()
+--------------------------------------------------------------------------------
+[0.45790 s] survived
+   - [#  65] OIL stack1: 
+--------------------------------------------------------------------------------
+   66:                 if brackets[other] != character:
+   67:                     return False
+   68:             
+   69:             except ValueError:
+-  70:                 return False
++  70:                 return Falsebreak
+   71:     
+   72:     if stack.size != 0:
+   73:         return False
+   74:     else:
+--------------------------------------------------------------------------------
+[0.66616 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:13: AssertionError
+   - [#  66] OIL stack1: 
+--------------------------------------------------------------------------------
+  123:                 value = int(character)
+  124:                 stack.push(value)
+  125:             
+  126:             except ValueError as e:
+- 127:                 raise e
++ 127:                 raise ebreak
+  128:     
+  129:     
+  130:     if stack.size > 1:
+  131:         raise ValueError()
+--------------------------------------------------------------------------------
+[0.41995 s] survived
+   - [#  67] RIL stack1: 
+--------------------------------------------------------------------------------
+   51:     stack = Stack()
+   52:     
+   53:     brackets = {'{': '}', '[': ']', '(': ')'}
+   54:     
+-  55:     for character in string:
++  55:     for character in reversed(string):
+   56:         
+   57:         if character in brackets.keys():
+   58:             stack.push(character)
+   59:         
+--------------------------------------------------------------------------------
+[0.53169 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_11
+
+def test_case_11():
+        str_0 = '(T lON)_'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:92: AssertionError
+   - [#  68] RIL stack1: 
+--------------------------------------------------------------------------------
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+  103:     
+- 104:     for character in tokens:
++ 104:     for character in reversed(tokens):
+  105:         
+  106:         if character in ops.keys():
+  107:             try:
+  108:                 
+--------------------------------------------------------------------------------
+[0.48122 s] survived
+   - [#  69] ROR stack1: 
+--------------------------------------------------------------------------------
+   62:             try:
+   63:                 other = stack.pop()
+   64:                 
+   65:                 
+-  66:                 if brackets[other] != character:
++  66:                 if brackets[other] == character:
+   67:                     return False
+   68:             
+   69:             except ValueError:
+   70:                 return False
+--------------------------------------------------------------------------------
+[0.56445 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_11
+
+def test_case_11():
+        str_0 = '(T lON)_'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:92: AssertionError
+   - [#  70] ROR stack1: 
+--------------------------------------------------------------------------------
+   68:             
+   69:             except ValueError:
+   70:                 return False
+   71:     
+-  72:     if stack.size != 0:
++  72:     if stack.size == 0:
+   73:         return False
+   74:     else:
+   75:         
+   76:         return True
+--------------------------------------------------------------------------------
+[0.54823 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = '/'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:24: AssertionError
+   - [#  71] ROR stack1: 
+--------------------------------------------------------------------------------
+  126:             except ValueError as e:
+  127:                 raise e
+  128:     
+  129:     
+- 130:     if stack.size > 1:
++ 130:     if stack.size < 1:
+  131:         raise ValueError()
+  132:     
+  133:     return stack.pop()
+--------------------------------------------------------------------------------
+[0.54093 s] survived
+   - [#  72] ROR stack1: 
+--------------------------------------------------------------------------------
+  126:             except ValueError as e:
+  127:                 raise e
+  128:     
+  129:     
+- 130:     if stack.size > 1:
++ 130:     if stack.size >= 1:
+  131:         raise ValueError()
+  132:     
+  133:     return stack.pop()
+--------------------------------------------------------------------------------
+[0.59329 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '6'
+
+>   ???
+E   ValueError
+
+stack1:131: ValueError
+   - [#  73] SDI stack1: 
+--------------------------------------------------------------------------------
+    3:     thomas moll 2015
+    4: '''
+    5: 
+    6: class Stack(object):
+-   7:     def __init__(self):
+-   8:         self.size = 0
+-   9:         self.top = None
+-  10:     
++   7:     @staticmethod
++   8:     def __init__(self):
++   9:         self.size = 0
++  10:         self.top = None
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+   14:     def push(self, item):
+--------------------------------------------------------------------------------
+[0.54083 s] incompetent
+
+TypeError: stack1:93: TypeError: Stack.__init__() missing 1 required positional argument: 'self'
+
+   - [#  74] SDI stack1: 
+--------------------------------------------------------------------------------
+    7:     def __init__(self):
+    8:         self.size = 0
+    9:         self.top = None
+   10:     
+-  11:     def __len__(self):
+-  12:         return self.size
+-  13:     
++  11:     @staticmethod
++  12:     def __len__(self):
++  13:         return self.size
+   14:     def push(self, item):
+   15:         if self.top is None:
+   16:             self.top = StackNode(item)
+   17:         else:
+--------------------------------------------------------------------------------
+[0.53531 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack1/DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:17: TypeError: Stack.__len__() missing 1 required positional argument: 'self'
+
+   - [#  75] SDI stack1: 
+--------------------------------------------------------------------------------
+   10:     
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+-  14:     def push(self, item):
+-  15:         if self.top is None:
+-  16:             self.top = StackNode(item)
+-  17:         else:
+-  18:             
+-  19:             item1 = self.top
+-  20:             item2 = StackNode(item)
+-  21:             
++  14:     @staticmethod
++  15:     def push(self, item):
++  16:         if self.top is None:
++  17:             self.top = StackNode(item)
++  18:         else:
++  19:             
++  20:             item1 = self.top
++  21:             item2 = StackNode(item)
+   22:             
+-  23:             self.top = item2
+-  24:             item2.next = item1
+-  25:         
+-  26:         self.size += 1
+-  27:     
++  23:             
++  24:             self.top = item2
++  25:             item2.next = item1
++  26:         
++  27:         self.size += 1
+   28:     def pop(self):
+   29:         if self.top is None:
+   30:             raise ValueError()
+   31:         else:
+--------------------------------------------------------------------------------
+[0.58289 s] incompetent
+
+TypeError: stack1:124: TypeError: Stack.push() missing 1 required positional argument: 'item'
+
+   - [#  76] SDI stack1: 
+--------------------------------------------------------------------------------
+   24:             item2.next = item1
+   25:         
+   26:         self.size += 1
+   27:     
+-  28:     def pop(self):
+-  29:         if self.top is None:
+-  30:             raise ValueError()
+-  31:         else:
+-  32:             top_data = self.top.data
+-  33:             
+-  34:             self.top = self.top.next
+-  35:             self.size -= 1
+-  36:             return top_data
+-  37:     
++  28:     @staticmethod
++  29:     def pop(self):
++  30:         if self.top is None:
++  31:             raise ValueError()
++  32:         else:
++  33:             top_data = self.top.data
++  34:             
++  35:             self.top = self.top.next
++  36:             self.size -= 1
++  37:             return top_data
+   38:     def peek(self):
+   39:         if self.top is None:
+   40:             raise ValueError()
+   41:         else:
+--------------------------------------------------------------------------------
+[0.53348 s] incompetent
+
+TypeError: stack1:133: TypeError: Stack.pop() missing 1 required positional argument: 'self'
+
+   - [#  77] SDI stack1: 
+--------------------------------------------------------------------------------
+   34:             self.top = self.top.next
+   35:             self.size -= 1
+   36:             return top_data
+   37:     
+-  38:     def peek(self):
+-  39:         if self.top is None:
+-  40:             raise ValueError()
+-  41:         else:
+-  42:             return self.top.data
+-  43: 
++  38:     @staticmethod
++  39:     def peek(self):
++  40:         if self.top is None:
++  41:             raise ValueError()
++  42:         else:
++  43:             return self.top.data
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+   47:         self.data = item
+--------------------------------------------------------------------------------
+[0.56359 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack1/DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:19: TypeError: Stack.peek() missing 1 required positional argument: 'self'
+
+   - [#  78] SDI stack1: 
+--------------------------------------------------------------------------------
+   42:             return self.top.data
+   43: 
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+-  46:     def __init__(self, item):
+-  47:         self.data = item
+-  48:         self.next = None
+-  49: 
++  46:     @staticmethod
++  47:     def __init__(self, item):
++  48:         self.data = item
++  49:         self.next = None
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+   53:     brackets = {'{': '}', '[': ']', '(': ')'}
+--------------------------------------------------------------------------------
+[0.59524 s] incompetent
+
+TypeError: stack1:16: TypeError: StackNode.__init__() missing 1 required positional argument: 'item'
+
+   - [#  79] SDL stack1: 
+--------------------------------------------------------------------------------
+    4: '''
+    5: 
+    6: class Stack(object):
+    7:     def __init__(self):
+-   8:         self.size = 0
++   8:         pass
+    9:         self.top = None
+   10:     
+   11:     def __len__(self):
+   12:         return self.size
+--------------------------------------------------------------------------------
+[0.52917 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:124: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e3eea890>, item = 6
+
+>   ???
+E   AttributeError: 'Stack' object has no attribute 'size'
+
+stack1:26: AttributeError
+   - [#  80] SDL stack1: 
+--------------------------------------------------------------------------------
+    5: 
+    6: class Stack(object):
+    7:     def __init__(self):
+    8:         self.size = 0
+-   9:         self.top = None
++   9:         pass
+   10:     
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+--------------------------------------------------------------------------------
+[0.52041 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:124: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e4082d10>, item = 6
+
+>   ???
+E   AttributeError: 'Stack' object has no attribute 'top'. Did you mean: 'pop'?
+
+stack1:15: AttributeError
+   - [#  81] SDL stack1: 
+--------------------------------------------------------------------------------
+    8:         self.size = 0
+    9:         self.top = None
+   10:     
+   11:     def __len__(self):
+-  12:         return self.size
++  12:         pass
+   13:     
+   14:     def push(self, item):
+   15:         if self.top is None:
+   16:             self.top = StackNode(item)
+--------------------------------------------------------------------------------
+[0.56068 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack1/DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:17: TypeError: 'NoneType' object cannot be interpreted as an integer
+
+   - [#  82] SDL stack1: 
+--------------------------------------------------------------------------------
+   12:         return self.size
+   13:     
+   14:     def push(self, item):
+   15:         if self.top is None:
+-  16:             self.top = StackNode(item)
++  16:             pass
+   17:         else:
+   18:             
+   19:             item1 = self.top
+   20:             item2 = StackNode(item)
+--------------------------------------------------------------------------------
+[0.54121 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e3f66e00>
+
+>   ???
+E   ValueError
+
+stack1:30: ValueError
+   - [#  83] SDL stack1: 
+--------------------------------------------------------------------------------
+   15:         if self.top is None:
+   16:             self.top = StackNode(item)
+   17:         else:
+   18:             
+-  19:             item1 = self.top
++  19:             pass
+   20:             item2 = StackNode(item)
+   21:             
+   22:             
+   23:             self.top = item2
+--------------------------------------------------------------------------------
+[0.57362 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        str_0 = '6'
+        var_0 = module_0.check_parenthesis(str_0)
+        assert var_0 is True
+        var_1 = str_0.__len__()
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        var_2 = stack_0.push(var_1)
+        assert len(stack_0) == 1
+>       var_3 = stack_0.push(stack_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e40c6b00>
+item = <stack1.Stack object at 0x7f73e40c6b00>
+
+>   ???
+E   NameError: name 'item1' is not defined
+
+stack1:24: NameError
+   - [#  84] SDL stack1: 
+--------------------------------------------------------------------------------
+   16:             self.top = StackNode(item)
+   17:         else:
+   18:             
+   19:             item1 = self.top
+-  20:             item2 = StackNode(item)
++  20:             pass
+   21:             
+   22:             
+   23:             self.top = item2
+   24:             item2.next = item1
+--------------------------------------------------------------------------------
+[0.56851 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        str_0 = '6'
+        var_0 = module_0.check_parenthesis(str_0)
+        assert var_0 is True
+        var_1 = str_0.__len__()
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        var_2 = stack_0.push(var_1)
+        assert len(stack_0) == 1
+>       var_3 = stack_0.push(stack_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e3f64fd0>
+item = <stack1.Stack object at 0x7f73e3f64fd0>
+
+>   ???
+E   NameError: name 'item2' is not defined
+
+stack1:23: NameError
+   - [#  85] SDL stack1: 
+--------------------------------------------------------------------------------
+   19:             item1 = self.top
+   20:             item2 = StackNode(item)
+   21:             
+   22:             
+-  23:             self.top = item2
++  23:             pass
+   24:             item2.next = item1
+   25:         
+   26:         self.size += 1
+   27:     
+--------------------------------------------------------------------------------
+[0.46028 s] survived
+   - [#  86] SDL stack1: 
+--------------------------------------------------------------------------------
+   20:             item2 = StackNode(item)
+   21:             
+   22:             
+   23:             self.top = item2
+-  24:             item2.next = item1
++  24:             pass
+   25:         
+   26:         self.size += 1
+   27:     
+   28:     def pop(self):
+--------------------------------------------------------------------------------
+[0.48006 s] survived
+   - [#  87] SDL stack1: 
+--------------------------------------------------------------------------------
+   28:     def pop(self):
+   29:         if self.top is None:
+   30:             raise ValueError()
+   31:         else:
+-  32:             top_data = self.top.data
++  32:             pass
+   33:             
+   34:             self.top = self.top.next
+   35:             self.size -= 1
+   36:             return top_data
+--------------------------------------------------------------------------------
+[0.51831 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e40c7370>
+
+>   ???
+E   NameError: name 'top_data' is not defined
+
+stack1:36: NameError
+   - [#  88] SDL stack1: 
+--------------------------------------------------------------------------------
+   30:             raise ValueError()
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+-  34:             self.top = self.top.next
++  34:             pass
+   35:             self.size -= 1
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+--------------------------------------------------------------------------------
+[0.46003 s] survived
+   - [#  89] SDL stack1: 
+--------------------------------------------------------------------------------
+   32:             top_data = self.top.data
+   33:             
+   34:             self.top = self.top.next
+   35:             self.size -= 1
+-  36:             return top_data
++  36:             pass
+   37:     
+   38:     def peek(self):
+   39:         if self.top is None:
+   40:             raise ValueError()
+--------------------------------------------------------------------------------
+[0.56773 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+        var_0 = module_0.postfix_eval(str_0)
+>       assert var_0 == 6
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:8: AssertionError
+   - [#  90] SDL stack1: 
+--------------------------------------------------------------------------------
+   38:     def peek(self):
+   39:         if self.top is None:
+   40:             raise ValueError()
+   41:         else:
+-  42:             return self.top.data
++  42:             pass
+   43: 
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+--------------------------------------------------------------------------------
+[0.55542 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_9
+
+def test_case_9():
+        str_0 = '6'
+        var_0 = module_0.Stack()
+        assert len(var_0) == 0
+        var_1 = module_0.check_parenthesis(str_0)
+        assert var_1 is True
+        var_2 = var_0.push(var_0)
+        assert len(var_0) == 1
+        var_3 = var_0.peek()
+>       assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'stack1.Stack'
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:76: AssertionError
+   - [#  91] SDL stack1: 
+--------------------------------------------------------------------------------
+   43: 
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+-  47:         self.data = item
++  47:         pass
+   48:         self.next = None
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+--------------------------------------------------------------------------------
+[0.53417 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e41f4df0>
+
+>   ???
+E   AttributeError: 'StackNode' object has no attribute 'data'
+
+stack1:32: AttributeError
+   - [#  92] SDL stack1: 
+--------------------------------------------------------------------------------
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+   47:         self.data = item
+-  48:         self.next = None
++  48:         pass
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+--------------------------------------------------------------------------------
+[0.49782 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e4490b50>
+
+>   ???
+E   AttributeError: 'StackNode' object has no attribute 'next'
+
+stack1:34: AttributeError
+   - [#  93] SDL stack1: 
+--------------------------------------------------------------------------------
+   47:         self.data = item
+   48:         self.next = None
+   49: 
+   50: def check_parenthesis(string):
+-  51:     stack = Stack()
++  51:     pass
+   52:     
+   53:     brackets = {'{': '}', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+--------------------------------------------------------------------------------
+[0.56026 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+
+>   ???
+E   NameError: name 'stack' is not defined
+
+stack1:63: NameError
+   - [#  94] SDL stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     pass
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.52637 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+
+>   ???
+E   NameError: name 'brackets' is not defined
+
+stack1:57: NameError
+   - [#  95] SDL stack1: 
+--------------------------------------------------------------------------------
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+-  58:             stack.push(character)
++  58:             pass
+   59:         
+   60:         
+   61:         if character in brackets.values():
+   62:             try:
+--------------------------------------------------------------------------------
+[0.55646 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        str_0 = 'dLrqj0=`{6N&8'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:45: AssertionError
+   - [#  96] SDL stack1: 
+--------------------------------------------------------------------------------
+   59:         
+   60:         
+   61:         if character in brackets.values():
+   62:             try:
+-  63:                 other = stack.pop()
++  63:                 pass
+   64:                 
+   65:                 
+   66:                 if brackets[other] != character:
+   67:                     return False
+--------------------------------------------------------------------------------
+[0.50020 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+
+>   ???
+E   NameError: name 'other' is not defined
+
+stack1:66: NameError
+   - [#  97] SDL stack1: 
+--------------------------------------------------------------------------------
+   63:                 other = stack.pop()
+   64:                 
+   65:                 
+   66:                 if brackets[other] != character:
+-  67:                     return False
++  67:                     pass
+   68:             
+   69:             except ValueError:
+   70:                 return False
+   71:     
+--------------------------------------------------------------------------------
+[0.44562 s] survived
+   - [#  98] SDL stack1: 
+--------------------------------------------------------------------------------
+   66:                 if brackets[other] != character:
+   67:                     return False
+   68:             
+   69:             except ValueError:
+-  70:                 return False
++  70:                 pass
+   71:     
+   72:     if stack.size != 0:
+   73:         return False
+   74:     else:
+--------------------------------------------------------------------------------
+[0.53329 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:13: AssertionError
+   - [#  99] SDL stack1: 
+--------------------------------------------------------------------------------
+   69:             except ValueError:
+   70:                 return False
+   71:     
+   72:     if stack.size != 0:
+-  73:         return False
++  73:         pass
+   74:     else:
+   75:         
+   76:         return True
+   77: 
+--------------------------------------------------------------------------------
+[0.53701 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        str_0 = 'dLrqj0=`{6N&8'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:45: AssertionError
+   - [# 100] SDL stack1: 
+--------------------------------------------------------------------------------
+   72:     if stack.size != 0:
+   73:         return False
+   74:     else:
+   75:         
+-  76:         return True
++  76:         pass
+   77: 
+   78: def postfix_eval(string):
+   79:     """ Here we setup a dictionary relating the characters of 
+   80:         operations to lambda functions. It's similar to saying:
+--------------------------------------------------------------------------------
+[0.52617 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_3
+
+def test_case_3():
+        str_0 = '/'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:24: AssertionError
+   - [# 101] SDL stack1: 
+--------------------------------------------------------------------------------
+   89: 
+   90:         The add function can also be accessed via the ``operator``
+   91:         module.
+   92:     """
+-  93:     stack = Stack()
++  93:     pass
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+--------------------------------------------------------------------------------
+[0.52490 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '6'
+
+>   ???
+E   NameError: name 'stack' is not defined
+
+stack1:124: NameError
+   - [# 102] SDL stack1: 
+--------------------------------------------------------------------------------
+   90:         The add function can also be accessed via the ``operator``
+   91:         module.
+   92:     """
+   93:     stack = Stack()
+-  94:     ops = {'+': lambda a, b: (a + b), \
+-  95:         '-': lambda a, b: (a - b), \
+-  96:         '*': lambda a, b: (a * b), \
+-  97:         '/': lambda a, b: (a / b), \
+-  98:         '%': lambda a, b: (a % b), \
+-  99:         '^': lambda a, b: (a ** b)}
++  94:     pass
++  95:     
++  96:     
++  97:     
++  98:     
++  99:     
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+  103:     
+--------------------------------------------------------------------------------
+[0.51593 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '6'
+
+>   ???
+E   NameError: name 'ops' is not defined
+
+stack1:106: NameError
+   - [# 103] SDL stack1: 
+--------------------------------------------------------------------------------
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+- 102:     tokens = string.split(' ')
++ 102:     pass
+  103:     
+  104:     for character in tokens:
+  105:         
+  106:         if character in ops.keys():
+--------------------------------------------------------------------------------
+[0.51933 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '6'
+
+>   ???
+E   NameError: name 'tokens' is not defined
+
+stack1:104: NameError
+   - [# 104] SDL stack1: 
+--------------------------------------------------------------------------------
+  105:         
+  106:         if character in ops.keys():
+  107:             try:
+  108:                 
+- 109:                 right = stack.pop()
++ 109:                 pass
+  110:                 left = stack.pop()
+  111:                 
+  112:                 
+  113:                 result = ops[character](left, right)
+--------------------------------------------------------------------------------
+[0.45282 s] survived
+   - [# 105] SDL stack1: 
+--------------------------------------------------------------------------------
+  106:         if character in ops.keys():
+  107:             try:
+  108:                 
+  109:                 right = stack.pop()
+- 110:                 left = stack.pop()
++ 110:                 pass
+  111:                 
+  112:                 
+  113:                 result = ops[character](left, right)
+  114:                 stack.push(result)
+--------------------------------------------------------------------------------
+[0.46940 s] survived
+   - [# 106] SDL stack1: 
+--------------------------------------------------------------------------------
+  109:                 right = stack.pop()
+  110:                 left = stack.pop()
+  111:                 
+  112:                 
+- 113:                 result = ops[character](left, right)
++ 113:                 pass
+  114:                 stack.push(result)
+  115:             
+  116:             
+  117:             except ValueError as e:
+--------------------------------------------------------------------------------
+[0.45392 s] survived
+   - [# 107] SDL stack1: 
+--------------------------------------------------------------------------------
+  110:                 left = stack.pop()
+  111:                 
+  112:                 
+  113:                 result = ops[character](left, right)
+- 114:                 stack.push(result)
++ 114:                 pass
+  115:             
+  116:             
+  117:             except ValueError as e:
+  118:                 raise e
+--------------------------------------------------------------------------------
+[0.47140 s] survived
+   - [# 108] SDL stack1: 
+--------------------------------------------------------------------------------
+  119:         else:
+  120:             
+  121:             try:
+  122:                 
+- 123:                 value = int(character)
++ 123:                 pass
+  124:                 stack.push(value)
+  125:             
+  126:             except ValueError as e:
+  127:                 raise e
+--------------------------------------------------------------------------------
+[0.57567 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '6'
+
+>   ???
+E   NameError: name 'value' is not defined
+
+stack1:124: NameError
+   - [# 109] SDL stack1: 
+--------------------------------------------------------------------------------
+  120:             
+  121:             try:
+  122:                 
+  123:                 value = int(character)
+- 124:                 stack.push(value)
++ 124:                 pass
+  125:             
+  126:             except ValueError as e:
+  127:                 raise e
+  128:     
+--------------------------------------------------------------------------------
+[0.55781 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e41a5090>
+
+>   ???
+E   ValueError
+
+stack1:30: ValueError
+   - [# 110] SDL stack1: 
+--------------------------------------------------------------------------------
+  129:     
+  130:     if stack.size > 1:
+  131:         raise ValueError()
+  132:     
+- 133:     return stack.pop()
++ 133:     pass
+--------------------------------------------------------------------------------
+[0.57017 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+        var_0 = module_0.postfix_eval(str_0)
+>       assert var_0 == 6
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:8: AssertionError
+   - [# 111] SVD stack1: 
+--------------------------------------------------------------------------------
+    4: '''
+    5: 
+    6: class Stack(object):
+    7:     def __init__(self):
+-   8:         self.size = 0
++   8:         size = 0
+    9:         self.top = None
+   10:     
+   11:     def __len__(self):
+   12:         return self.size
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 112] SVD stack1: 
+--------------------------------------------------------------------------------
+    5: 
+    6: class Stack(object):
+    7:     def __init__(self):
+    8:         self.size = 0
+-   9:         self.top = None
++   9:         top = None
+   10:     
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 113] SVD stack1: 
+--------------------------------------------------------------------------------
+    8:         self.size = 0
+    9:         self.top = None
+   10:     
+   11:     def __len__(self):
+-  12:         return self.size
++  12:         return size
+   13:     
+   14:     def push(self, item):
+   15:         if self.top is None:
+   16:             self.top = StackNode(item)
+--------------------------------------------------------------------------------
+[0.46303 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        stack_0 = module_0.Stack()
+>       assert len(stack_0) == 0
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e40cd1e0>
+
+>   ???
+E   NameError: name 'size' is not defined
+
+stack1:12: NameError
+   - [# 114] SVD stack1: 
+--------------------------------------------------------------------------------
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+   14:     def push(self, item):
+-  15:         if self.top is None:
++  15:         if top is None:
+   16:             self.top = StackNode(item)
+   17:         else:
+   18:             
+   19:             item1 = self.top
+--------------------------------------------------------------------------------
+[0.46503 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:124: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e4008e80>, item = 6
+
+>   ???
+E   NameError: name 'top' is not defined
+
+stack1:15: NameError
+   - [# 115] SVD stack1: 
+--------------------------------------------------------------------------------
+   12:         return self.size
+   13:     
+   14:     def push(self, item):
+   15:         if self.top is None:
+-  16:             self.top = StackNode(item)
++  16:             top = StackNode(item)
+   17:         else:
+   18:             
+   19:             item1 = self.top
+   20:             item2 = StackNode(item)
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 116] SVD stack1: 
+--------------------------------------------------------------------------------
+   15:         if self.top is None:
+   16:             self.top = StackNode(item)
+   17:         else:
+   18:             
+-  19:             item1 = self.top
++  19:             item1 = top
+   20:             item2 = StackNode(item)
+   21:             
+   22:             
+   23:             self.top = item2
+--------------------------------------------------------------------------------
+[0.58265 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_8
+
+def test_case_8():
+        str_0 = '6'
+        var_0 = module_0.check_parenthesis(str_0)
+        assert var_0 is True
+        var_1 = str_0.__len__()
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        var_2 = stack_0.push(var_1)
+        assert len(stack_0) == 1
+>       var_3 = stack_0.push(stack_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e3f649a0>
+item = <stack1.Stack object at 0x7f73e3f649a0>
+
+>   ???
+E   NameError: name 'top' is not defined
+
+stack1:19: NameError
+   - [# 117] SVD stack1: 
+--------------------------------------------------------------------------------
+   19:             item1 = self.top
+   20:             item2 = StackNode(item)
+   21:             
+   22:             
+-  23:             self.top = item2
++  23:             top = item2
+   24:             item2.next = item1
+   25:         
+   26:         self.size += 1
+   27:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 118] SVD stack1: 
+--------------------------------------------------------------------------------
+   22:             
+   23:             self.top = item2
+   24:             item2.next = item1
+   25:         
+-  26:         self.size += 1
++  26:         size += 1
+   27:     
+   28:     def pop(self):
+   29:         if self.top is None:
+   30:             raise ValueError()
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 119] SVD stack1: 
+--------------------------------------------------------------------------------
+   25:         
+   26:         self.size += 1
+   27:     
+   28:     def pop(self):
+-  29:         if self.top is None:
++  29:         if top is None:
+   30:             raise ValueError()
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+--------------------------------------------------------------------------------
+[0.55870 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e3db9720>
+
+>   ???
+E   NameError: name 'top' is not defined
+
+stack1:29: NameError
+   - [# 120] SVD stack1: 
+--------------------------------------------------------------------------------
+   28:     def pop(self):
+   29:         if self.top is None:
+   30:             raise ValueError()
+   31:         else:
+-  32:             top_data = self.top.data
++  32:             top_data = top.data
+   33:             
+   34:             self.top = self.top.next
+   35:             self.size -= 1
+   36:             return top_data
+--------------------------------------------------------------------------------
+[0.52649 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e41995d0>
+
+>   ???
+E   NameError: name 'top' is not defined
+
+stack1:32: NameError
+   - [# 121] SVD stack1: 
+--------------------------------------------------------------------------------
+   30:             raise ValueError()
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+-  34:             self.top = self.top.next
++  34:             top = self.top.next
+   35:             self.size -= 1
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 122] SVD stack1: 
+--------------------------------------------------------------------------------
+   30:             raise ValueError()
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+-  34:             self.top = self.top.next
++  34:             self.top = top.next
+   35:             self.size -= 1
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+--------------------------------------------------------------------------------
+[0.56409 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e419a3b0>
+
+>   ???
+E   NameError: name 'top' is not defined
+
+stack1:34: NameError
+   - [# 123] SVD stack1: 
+--------------------------------------------------------------------------------
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+   34:             self.top = self.top.next
+-  35:             self.size -= 1
++  35:             size -= 1
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+   39:         if self.top is None:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 124] SVD stack1: 
+--------------------------------------------------------------------------------
+   35:             self.size -= 1
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+-  39:         if self.top is None:
++  39:         if top is None:
+   40:             raise ValueError()
+   41:         else:
+   42:             return self.top.data
+   43: 
+--------------------------------------------------------------------------------
+[0.53687 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_2
+
+def test_case_2():
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        with pytest.raises(ValueError):
+>           stack_0.peek()
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e419aa10>
+
+>   ???
+E   NameError: name 'top' is not defined
+
+stack1:39: NameError
+   - [# 125] SVD stack1: 
+--------------------------------------------------------------------------------
+   38:     def peek(self):
+   39:         if self.top is None:
+   40:             raise ValueError()
+   41:         else:
+-  42:             return self.top.data
++  42:             return top.data
+   43: 
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+--------------------------------------------------------------------------------
+[0.57976 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_9
+
+def test_case_9():
+        str_0 = '6'
+        var_0 = module_0.Stack()
+        assert len(var_0) == 0
+        var_1 = module_0.check_parenthesis(str_0)
+        assert var_1 is True
+        var_2 = var_0.push(var_0)
+        assert len(var_0) == 1
+>       var_3 = var_0.peek()
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e4491d80>
+
+>   ???
+E   NameError: name 'top' is not defined
+
+stack1:42: NameError
+   - [# 126] SVD stack1: 
+--------------------------------------------------------------------------------
+   43: 
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+-  47:         self.data = item
++  47:         data = item
+   48:         self.next = None
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 127] SVD stack1: 
+--------------------------------------------------------------------------------
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+   47:         self.data = item
+-  48:         self.next = None
++  48:         next = None
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 128] ZIL stack1: 
+--------------------------------------------------------------------------------
+   53:     brackets = {'{': '}', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+-  57:         if character in brackets.keys():
+-  58:             stack.push(character)
+-  59:         
+-  60:         
+-  61:         if character in brackets.values():
+-  62:             try:
+-  63:                 other = stack.pop()
+-  64:                 
+-  65:                 
+-  66:                 if brackets[other] != character:
+-  67:                     return False
+-  68:             
+-  69:             except ValueError:
+-  70:                 return False
++  57:         break
++  58:     
++  59:     
++  60:     
++  61:     
++  62:     
++  63:     
++  64:     
++  65:     
++  66:     
++  67:     
++  68:     
++  69:     
++  70:     
+   71:     
+   72:     if stack.size != 0:
+   73:         return False
+   74:     else:
+--------------------------------------------------------------------------------
+[0.53387 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:13: AssertionError
+   - [# 129] ZIL stack1: 
+--------------------------------------------------------------------------------
+  102:     tokens = string.split(' ')
+  103:     
+  104:     for character in tokens:
+  105:         
+- 106:         if character in ops.keys():
+- 107:             try:
+- 108:                 
+- 109:                 right = stack.pop()
+- 110:                 left = stack.pop()
+- 111:                 
+- 112:                 
+- 113:                 result = ops[character](left, right)
+- 114:                 stack.push(result)
+- 115:             
+- 116:             
+- 117:             except ValueError as e:
+- 118:                 raise e
+- 119:         else:
+- 120:             
+- 121:             try:
+- 122:                 
+- 123:                 value = int(character)
+- 124:                 stack.push(value)
+- 125:             
+- 126:             except ValueError as e:
+- 127:                 raise e
++ 106:         break
++ 107:     
++ 108:     
++ 109:     
++ 110:     
++ 111:     
++ 112:     
++ 113:     
++ 114:     
++ 115:     
++ 116:     
++ 117:     
++ 118:     
++ 119:     
++ 120:     
++ 121:     
++ 122:     
++ 123:     
++ 124:     
++ 125:     
++ 126:     
++ 127:     
+  128:     
+  129:     
+  130:     if stack.size > 1:
+  131:         raise ValueError()
+--------------------------------------------------------------------------------
+[0.51706 s] killed by DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py::test_case_0
+
+def test_case_0():
+        str_0 = '6'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MOSA/test_stack1_DYNAMOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f73e403fb20>
+
+>   ???
+E   ValueError
+
+stack1:30: ValueError
+[*] Mutation score [105.22632 s]: 60.2%
+   - all: 129
+   - killed: 68 (52.7%)
+   - survived: 45 (34.9%)
+   - incompetent: 16 (12.4%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,1982 @@
+[*] Start mutation process:
+   - targets: binarySearchTree4.py
+   - tests: ./DYNAMOSA-MIO-WHOLE_SUITE
+[*] 29 tests passed:
+   - test_binarySearchTree4_DYNAMOSA [0.06470 s]
+   - test_binarySearchTree4_MIO [0.04875 s]
+   - test_binarySearchTree4_WHOLE_SUITE [0.04902 s]
+[*] Start mutants generation and execution:
+   - [#   1] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data):
+-  4:         self.data = data
+-  5:         self.left = None
+-  6:         self.right = None
+-  7:         self.parent = None
+-  8:     
++  3:     @classmethod
++  4:     def __init__(self, data):
++  5:         self.data = data
++  6:         self.left = None
++  7:         self.right = None
++  8:         self.parent = None
+   9:     def __repr__(self):
+  10:         return str(self.data)
+  11: 
+  12: class Bst(object):
+--------------------------------------------------------------------------------
+[0.11134 s] incompetent
+
+TypeError: binarySearchTree4:29: TypeError: '<=' not supported between instances of 'float' and 'tuple'
+
+   - [#   2] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+   5:         self.left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+-  9:     def __repr__(self):
+- 10:         return str(self.data)
+- 11: 
++  9:     @classmethod
++ 10:     def __repr__(self):
++ 11:         return str(self.data)
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+--------------------------------------------------------------------------------
+[0.09081 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+>       var_2 = node_1.__repr__()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'binarySearchTree4.Node'>
+
+>   ???
+E   AttributeError: type object 'Node' has no attribute 'data'
+
+binarySearchTree4:11: AttributeError
+   - [#   3] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  10:         return str(self.data)
+  11: 
+  12: class Bst(object):
+  13:     
+- 14:     def __init__(self, root=None):
+- 15:         self.root = root
+- 16:     
++ 14:     @classmethod
++ 15:     def __init__(self, root=None):
++ 16:         self.root = root
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+--------------------------------------------------------------------------------
+[0.10616 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+
+def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+>       var_0 = bst_0.insert(bool_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f92d9e451e0>
+node = <binarySearchTree4.Bst object at 0x7f92d9e451e0>, data = False
+
+>   ???
+E   AttributeError: 'Bst' object has no attribute 'data'
+
+binarySearchTree4:29: AttributeError
+   - [#   4] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+  16:     
+- 17:     def insert(self, data):
+- 18:         if data is None:
+- 19:             raise TypeError('data cannot be None')
+- 20:         if self.root is None:
+- 21:             self.root = Node(data)
+- 22:             return self.root
+- 23:         else:
+- 24:             return self._insert(self.root, data)
+- 25:     
++ 17:     @classmethod
++ 18:     def insert(self, data):
++ 19:         if data is None:
++ 20:             raise TypeError('data cannot be None')
++ 21:         if self.root is None:
++ 22:             self.root = Node(data)
++ 23:             return self.root
++ 24:         else:
++ 25:             return self._insert(self.root, data)
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+--------------------------------------------------------------------------------
+[0.09244 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+>       var_0 = bst_0.insert(list_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'binarySearchTree4.Bst'>, data = [1568]
+
+>   ???
+E   AttributeError: type object 'Bst' has no attribute 'root'
+
+binarySearchTree4:21: AttributeError
+   - [#   5] CDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+- 26:     def _insert(self, node, data):
+- 27:         if node is None:
+- 28:             return Node(data)
+- 29:         if data <= node.data:
+- 30:             if node.left is None:
+- 31:                 node.left = self._insert(node.left, data)
+- 32:                 node.left.parent = node
+- 33:                 return node.left
+- 34:             else:
+- 35:                 return self._insert(node.left, data)
+- 36:         
+- 37:         elif node.right is None:
+- 38:             node.right = self._insert(node.right, data)
+- 39:             node.right.parent = node
+- 40:             return node.right
+- 41:         else:
+- 42:             return self._insert(node.right, data)
++ 26:     @classmethod
++ 27:     def _insert(self, node, data):
++ 28:         if node is None:
++ 29:             return Node(data)
++ 30:         if data <= node.data:
++ 31:             if node.left is None:
++ 32:                 node.left = self._insert(node.left, data)
++ 33:                 node.left.parent = node
++ 34:                 return node.left
++ 35:             else:
++ 36:                 return self._insert(node.left, data)
++ 37:         
++ 38:         elif node.right is None:
++ 39:             node.right = self._insert(node.right, data)
++ 40:             node.right.parent = node
++ 41:             return node.right
++ 42:         else:
++ 43:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[0.07599 s] survived
+   - [#   6] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+  16:     
+  17:     def insert(self, data):
+- 18:         if data is None:
++ 18:         if not (data is None):
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+--------------------------------------------------------------------------------
+[0.11518 s] incompetent
+
+TypeError: binarySearchTree4:19: TypeError: data cannot be None
+
+   - [#   7] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+- 20:         if self.root is None:
++ 20:         if not (self.root is None):
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+--------------------------------------------------------------------------------
+[0.08864 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+>       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:15: AssertionError
+   - [#   8] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+- 27:         if node is None:
++ 27:         if not (node is None):
+  28:             return Node(data)
+  29:         if data <= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+--------------------------------------------------------------------------------
+[0.08661 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+>       assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:31: AssertionError
+   - [#   9] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+- 29:         if data <= node.data:
++ 29:         if not (data <= node.data):
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+--------------------------------------------------------------------------------
+[0.08495 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+>       assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:31: AssertionError
+   - [#  10] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+- 30:             if node.left is None:
++ 30:             if not (node.left is None):
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+--------------------------------------------------------------------------------
+[0.09735 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+        assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_3.parent).__module__}.{type(var_3.parent).__qualname__}' == 'binarySearchTree4.Node'
+        node_2 = module_0.Node(none_type_0)
+        node_3 = bst_3.insert(float_0)
+>       assert f'{type(var_3.left).__module__}.{type(var_3.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:35: AssertionError
+   - [#  11] COI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  33:                 return node.left
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+- 37:         elif node.right is None:
++ 37:         elif not (node.right is None):
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+--------------------------------------------------------------------------------
+[0.10129 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+>       assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:31: AssertionError
+   - [#  12] CRP binarySearchTree4: 
+--------------------------------------------------------------------------------
+  15:         self.root = root
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+- 19:             raise TypeError('data cannot be None')
++ 19:             raise TypeError('mutpy')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+--------------------------------------------------------------------------------
+[0.08660 s] survived
+   - [#  13] CRP binarySearchTree4: 
+--------------------------------------------------------------------------------
+  15:         self.root = root
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+- 19:             raise TypeError('data cannot be None')
++ 19:             raise TypeError('')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+--------------------------------------------------------------------------------
+[0.08200 s] survived
+   - [#  14] ROR binarySearchTree4: 
+--------------------------------------------------------------------------------
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+- 29:         if data <= node.data:
++ 29:         if data >= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+--------------------------------------------------------------------------------
+[0.08700 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+>       assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:31: AssertionError
+   - [#  15] ROR binarySearchTree4: 
+--------------------------------------------------------------------------------
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+- 29:         if data <= node.data:
++ 29:         if data < node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+--------------------------------------------------------------------------------
+[0.08374 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+        assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_3.parent).__module__}.{type(var_3.parent).__qualname__}' == 'binarySearchTree4.Node'
+        node_2 = module_0.Node(none_type_0)
+        node_3 = bst_3.insert(float_0)
+>       assert f'{type(var_3.left).__module__}.{type(var_3.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:35: AssertionError
+   - [#  16] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+-  3:     def __init__(self, data):
+-  4:         self.data = data
+-  5:         self.left = None
+-  6:         self.right = None
+-  7:         self.parent = None
+-  8:     
++  3:     @staticmethod
++  4:     def __init__(self, data):
++  5:         self.data = data
++  6:         self.left = None
++  7:         self.right = None
++  8:         self.parent = None
+   9:     def __repr__(self):
+  10:         return str(self.data)
+  11: 
+  12: class Bst(object):
+--------------------------------------------------------------------------------
+[0.07960 s] incompetent
+
+TypeError: binarySearchTree4:21: TypeError: Node.__init__() missing 1 required positional argument: 'data'
+
+   - [#  17] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+   5:         self.left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+-  9:     def __repr__(self):
+- 10:         return str(self.data)
+- 11: 
++  9:     @staticmethod
++ 10:     def __repr__(self):
++ 11:         return str(self.data)
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+--------------------------------------------------------------------------------
+[0.08242 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/binarySearchTree4/DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:29: TypeError: Node.__repr__() missing 1 required positional argument: 'self'
+
+   - [#  18] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  10:         return str(self.data)
+  11: 
+  12: class Bst(object):
+  13:     
+- 14:     def __init__(self, root=None):
+- 15:         self.root = root
+- 16:     
++ 14:     @staticmethod
++ 15:     def __init__(self, root=None):
++ 16:         self.root = root
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+--------------------------------------------------------------------------------
+[0.08622 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/binarySearchTree4/DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:6: TypeError: Bst.__init__() missing 1 required positional argument: 'self'
+
+   - [#  19] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  13:     
+  14:     def __init__(self, root=None):
+  15:         self.root = root
+  16:     
+- 17:     def insert(self, data):
+- 18:         if data is None:
+- 19:             raise TypeError('data cannot be None')
+- 20:         if self.root is None:
+- 21:             self.root = Node(data)
+- 22:             return self.root
+- 23:         else:
+- 24:             return self._insert(self.root, data)
+- 25:     
++ 17:     @staticmethod
++ 18:     def insert(self, data):
++ 19:         if data is None:
++ 20:             raise TypeError('data cannot be None')
++ 21:         if self.root is None:
++ 22:             self.root = Node(data)
++ 23:             return self.root
++ 24:         else:
++ 25:             return self._insert(self.root, data)
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+--------------------------------------------------------------------------------
+[0.08447 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/binarySearchTree4/DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:14: TypeError: Bst.insert() missing 1 required positional argument: 'data'
+
+   - [#  20] SDI binarySearchTree4: 
+--------------------------------------------------------------------------------
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+- 26:     def _insert(self, node, data):
+- 27:         if node is None:
+- 28:             return Node(data)
+- 29:         if data <= node.data:
+- 30:             if node.left is None:
+- 31:                 node.left = self._insert(node.left, data)
+- 32:                 node.left.parent = node
+- 33:                 return node.left
+- 34:             else:
+- 35:                 return self._insert(node.left, data)
+- 36:         
+- 37:         elif node.right is None:
+- 38:             node.right = self._insert(node.right, data)
+- 39:             node.right.parent = node
+- 40:             return node.right
+- 41:         else:
+- 42:             return self._insert(node.right, data)
++ 26:     @staticmethod
++ 27:     def _insert(self, node, data):
++ 28:         if node is None:
++ 29:             return Node(data)
++ 30:         if data <= node.data:
++ 31:             if node.left is None:
++ 32:                 node.left = self._insert(node.left, data)
++ 33:                 node.left.parent = node
++ 34:                 return node.left
++ 35:             else:
++ 36:                 return self._insert(node.left, data)
++ 37:         
++ 38:         elif node.right is None:
++ 39:             node.right = self._insert(node.right, data)
++ 40:             node.right.parent = node
++ 41:             return node.right
++ 42:         else:
++ 43:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[0.11402 s] incompetent
+
+TypeError: binarySearchTree4:24: TypeError: Bst._insert() missing 1 required positional argument: 'data'
+
+   - [#  21] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+-  4:         self.data = data
++  4:         pass
+   5:         self.left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+--------------------------------------------------------------------------------
+[0.10905 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+>       assert var_0.data == [1568]
+E       AttributeError: 'Node' object has no attribute 'data'
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:17: AttributeError
+   - [#  22] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+-  5:         self.left = None
++  5:         pass
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+--------------------------------------------------------------------------------
+[0.09062 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+>       assert var_0.left is None
+E       AttributeError: 'Node' object has no attribute 'left'
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:18: AttributeError
+   - [#  23] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+   5:         self.left = None
+-  6:         self.right = None
++  6:         pass
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+  10:         return str(self.data)
+--------------------------------------------------------------------------------
+[0.08946 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+>       assert var_0.right is None
+E       AttributeError: 'Node' object has no attribute 'right'
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:19: AttributeError
+   - [#  24] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   3:     def __init__(self, data):
+   4:         self.data = data
+   5:         self.left = None
+   6:         self.right = None
+-  7:         self.parent = None
++  7:         pass
+   8:     
+   9:     def __repr__(self):
+  10:         return str(self.data)
+  11: 
+--------------------------------------------------------------------------------
+[0.09022 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+>       assert var_0.parent is None
+E       AttributeError: 'Node' object has no attribute 'parent'
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:20: AttributeError
+   - [#  25] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+- 10:         return str(self.data)
++ 10:         pass
+  11: 
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+--------------------------------------------------------------------------------
+[0.08391 s] survived
+   - [#  26] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  11: 
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+- 15:         self.root = root
++ 15:         pass
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+--------------------------------------------------------------------------------
+[0.08876 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+>       var_0 = bst_0.insert(list_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f92d9bfd0f0>, data = [1568]
+
+>   ???
+E   AttributeError: 'Bst' object has no attribute 'root'
+
+binarySearchTree4:20: AttributeError
+   - [#  27] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+- 21:             self.root = Node(data)
++ 21:             pass
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+--------------------------------------------------------------------------------
+[0.08410 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+>       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:15: AssertionError
+   - [#  28] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+- 22:             return self.root
++ 22:             pass
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+--------------------------------------------------------------------------------
+[0.08828 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:16: AssertionError
+   - [#  29] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+- 24:             return self._insert(self.root, data)
++ 24:             pass
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+--------------------------------------------------------------------------------
+[0.08641 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+>       assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:31: AssertionError
+   - [#  30] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  24:             return self._insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+- 28:             return Node(data)
++ 28:             pass
+  29:         if data <= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+--------------------------------------------------------------------------------
+[0.08954 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+>       var_3 = bst_3.insert(float_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+binarySearchTree4:38: in _insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f92d9bc3d60>, node = None
+data = 1099.91
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+binarySearchTree4:29: AttributeError
+   - [#  31] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+  30:             if node.left is None:
+- 31:                 node.left = self._insert(node.left, data)
++ 31:                 pass
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+  35:                 return self._insert(node.left, data)
+--------------------------------------------------------------------------------
+[0.10229 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+        assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_3.parent).__module__}.{type(var_3.parent).__qualname__}' == 'binarySearchTree4.Node'
+        node_2 = module_0.Node(none_type_0)
+>       node_3 = bst_3.insert(float_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+binarySearchTree4:42: in _insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f92d9c34220>, node = 1099.91
+data = 1099.91
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'parent'
+
+binarySearchTree4:32: AttributeError
+   - [#  32] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  28:             return Node(data)
+  29:         if data <= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+- 32:                 node.left.parent = node
++ 32:                 pass
+  33:                 return node.left
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+--------------------------------------------------------------------------------
+[0.11344 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+        assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_3.parent).__module__}.{type(var_3.parent).__qualname__}' == 'binarySearchTree4.Node'
+        node_2 = module_0.Node(none_type_0)
+        node_3 = bst_3.insert(float_0)
+        assert f'{type(var_3.left).__module__}.{type(var_3.left).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(node_3.parent).__module__}.{type(node_3.parent).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:36: AssertionError
+   - [#  33] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  29:         if data <= node.data:
+  30:             if node.left is None:
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+- 33:                 return node.left
++ 33:                 pass
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+--------------------------------------------------------------------------------
+[0.09027 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+        assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_3.parent).__module__}.{type(var_3.parent).__qualname__}' == 'binarySearchTree4.Node'
+        node_2 = module_0.Node(none_type_0)
+        node_3 = bst_3.insert(float_0)
+        assert f'{type(var_3.left).__module__}.{type(var_3.left).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(node_3.parent).__module__}.{type(node_3.parent).__qualname__}' == 'binarySearchTree4.Node'
+E       AttributeError: 'NoneType' object has no attribute 'parent'
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:36: AttributeError
+   - [#  34] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+- 35:                 return self._insert(node.left, data)
++ 35:                 pass
+  36:         
+  37:         elif node.right is None:
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+--------------------------------------------------------------------------------
+[0.09314 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+        var_2 = bst_0.insert(bool_0)
+>       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:108: AssertionError
+   - [#  35] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+- 38:             node.right = self._insert(node.right, data)
++ 38:             pass
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+  42:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[0.08724 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+>       var_3 = bst_3.insert(float_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f92d9f00130>, node = False
+data = 1099.91
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'parent'
+
+binarySearchTree4:39: AttributeError
+   - [#  36] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  35:                 return self._insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+  38:             node.right = self._insert(node.right, data)
+- 39:             node.right.parent = node
++ 39:             pass
+  40:             return node.right
+  41:         else:
+  42:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[0.08360 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+        assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(var_3.parent).__module__}.{type(var_3.parent).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:32: AssertionError
+   - [#  37] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  36:         
+  37:         elif node.right is None:
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+- 40:             return node.right
++ 40:             pass
+  41:         else:
+  42:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[0.08609 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+        assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+>       assert f'{type(var_3.parent).__module__}.{type(var_3.parent).__qualname__}' == 'binarySearchTree4.Node'
+E       AttributeError: 'NoneType' object has no attribute 'parent'
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:32: AttributeError
+   - [#  38] SDL binarySearchTree4: 
+--------------------------------------------------------------------------------
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+- 42:             return self._insert(node.right, data)
++ 42:             pass
+--------------------------------------------------------------------------------
+[0.08563 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+        assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_3.parent).__module__}.{type(var_3.parent).__qualname__}' == 'binarySearchTree4.Node'
+        node_2 = module_0.Node(none_type_0)
+        node_3 = bst_3.insert(float_0)
+>       assert f'{type(var_3.left).__module__}.{type(var_3.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:35: AssertionError
+   - [#  39] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+-  4:         self.data = data
++  4:         data = data
+   5:         self.left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  40] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   1: class Node(object):
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+-  5:         self.left = None
++  5:         left = None
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  41] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   2:     
+   3:     def __init__(self, data):
+   4:         self.data = data
+   5:         self.left = None
+-  6:         self.right = None
++  6:         right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+  10:         return str(self.data)
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  42] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   3:     def __init__(self, data):
+   4:         self.data = data
+   5:         self.left = None
+   6:         self.right = None
+-  7:         self.parent = None
++  7:         parent = None
+   8:     
+   9:     def __repr__(self):
+  10:         return str(self.data)
+  11: 
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  43] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+   6:         self.right = None
+   7:         self.parent = None
+   8:     
+   9:     def __repr__(self):
+- 10:         return str(self.data)
++ 10:         return str(data)
+  11: 
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+--------------------------------------------------------------------------------
+[0.08560 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+>       var_2 = node_1.__repr__()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[NameError("name 'data' is not defined") raised in repr()] Node object at 0x7f92d9c66d10>
+
+>   ???
+E   NameError: name 'data' is not defined
+
+binarySearchTree4:10: NameError
+   - [#  44] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  11: 
+  12: class Bst(object):
+  13:     
+  14:     def __init__(self, root=None):
+- 15:         self.root = root
++ 15:         root = root
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  45] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  16:     
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+- 20:         if self.root is None:
++ 20:         if root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+--------------------------------------------------------------------------------
+[0.09908 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+>       var_0 = bst_0.insert(list_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f92d9b71990>, data = [1568]
+
+>   ???
+E   NameError: name 'root' is not defined
+
+binarySearchTree4:20: NameError
+   - [#  46] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  17:     def insert(self, data):
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+- 21:             self.root = Node(data)
++ 21:             root = Node(data)
+  22:             return self.root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [#  47] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  18:         if data is None:
+  19:             raise TypeError('data cannot be None')
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+- 22:             return self.root
++ 22:             return root
+  23:         else:
+  24:             return self._insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+--------------------------------------------------------------------------------
+[0.11021 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+>       var_0 = bst_0.insert(list_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f92d9ca2680>, data = [1568]
+
+>   ???
+E   NameError: name 'root' is not defined
+
+binarySearchTree4:22: NameError
+   - [#  48] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+- 24:             return self._insert(self.root, data)
++ 24:             return _insert(self.root, data)
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+--------------------------------------------------------------------------------
+[0.08850 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+>       var_3 = bst_3.insert(float_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f92d9a6a290>, data = 1099.91
+
+>   ???
+E   NameError: name '_insert' is not defined
+
+binarySearchTree4:24: NameError
+   - [#  49] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  20:         if self.root is None:
+  21:             self.root = Node(data)
+  22:             return self.root
+  23:         else:
+- 24:             return self._insert(self.root, data)
++ 24:             return self._insert(root, data)
+  25:     
+  26:     def _insert(self, node, data):
+  27:         if node is None:
+  28:             return Node(data)
+--------------------------------------------------------------------------------
+[0.11321 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+>       var_3 = bst_3.insert(float_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f92d9e47b80>, data = 1099.91
+
+>   ???
+E   NameError: name 'root' is not defined
+
+binarySearchTree4:24: NameError
+   - [#  50] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  27:         if node is None:
+  28:             return Node(data)
+  29:         if data <= node.data:
+  30:             if node.left is None:
+- 31:                 node.left = self._insert(node.left, data)
++ 31:                 node.left = _insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+  35:                 return self._insert(node.left, data)
+--------------------------------------------------------------------------------
+[0.11030 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+        assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_3.parent).__module__}.{type(var_3.parent).__qualname__}' == 'binarySearchTree4.Node'
+        node_2 = module_0.Node(none_type_0)
+>       node_3 = bst_3.insert(float_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+binarySearchTree4:42: in _insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f92d9b70070>, node = 1099.91
+data = 1099.91
+
+>   ???
+E   NameError: name '_insert' is not defined
+
+binarySearchTree4:31: NameError
+   - [#  51] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  31:                 node.left = self._insert(node.left, data)
+  32:                 node.left.parent = node
+  33:                 return node.left
+  34:             else:
+- 35:                 return self._insert(node.left, data)
++ 35:                 return _insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+--------------------------------------------------------------------------------
+[0.09926 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+
+def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+>       var_2 = bst_0.insert(bool_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f92d9e47c10>, node = True
+data = True
+
+>   ???
+E   NameError: name '_insert' is not defined
+
+binarySearchTree4:35: NameError
+   - [#  52] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  34:             else:
+  35:                 return self._insert(node.left, data)
+  36:         
+  37:         elif node.right is None:
+- 38:             node.right = self._insert(node.right, data)
++ 38:             node.right = _insert(node.right, data)
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+  42:             return self._insert(node.right, data)
+--------------------------------------------------------------------------------
+[0.09121 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+>       var_3 = bst_3.insert(float_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f92d9b737c0>, node = False
+data = 1099.91
+
+>   ???
+E   NameError: name '_insert' is not defined
+
+binarySearchTree4:38: NameError
+   - [#  53] SVD binarySearchTree4: 
+--------------------------------------------------------------------------------
+  38:             node.right = self._insert(node.right, data)
+  39:             node.right.parent = node
+  40:             return node.right
+  41:         else:
+- 42:             return self._insert(node.right, data)
++ 42:             return _insert(node.right, data)
+--------------------------------------------------------------------------------
+[0.09362 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+
+def test_case_0():
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst()
+        bst_2 = module_0.Bst()
+        bst_3 = module_0.Bst()
+        bool_0 = False
+        int_0 = 1568
+        list_0 = [int_0]
+        complex_0 = -46.48 + 1184.7075j
+        var_0 = bst_0.insert(list_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == [1568]
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(complex_0)
+        complex_1 = 982.226 + 1493.681249j
+        var_1 = bst_3.insert(bool_0)
+        assert f'{type(bst_3.root).__module__}.{type(bst_3.root).__qualname__}' == 'binarySearchTree4.Node'
+        float_0 = 1099.91
+        tuple_0 = (complex_1, float_0)
+        none_type_0 = None
+        node_1 = module_0.Node(tuple_0)
+        var_2 = node_1.__repr__()
+        var_3 = bst_3.insert(float_0)
+        assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_3.parent).__module__}.{type(var_3.parent).__qualname__}' == 'binarySearchTree4.Node'
+        node_2 = module_0.Node(none_type_0)
+>       node_3 = bst_3.insert(float_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+binarySearchTree4:24: in insert
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <binarySearchTree4.Bst object at 0x7f92d9c36980>, node = False
+data = 1099.91
+
+>   ???
+E   NameError: name '_insert' is not defined
+
+binarySearchTree4:42: NameError
+[*] Mutation score [6.26389 s]: 90.0%
+   - all: 53
+   - killed: 36 (67.9%)
+   - survived: 4 (7.5%)
+   - incompetent: 13 (24.5%)
+   - timeout: 0 (0.0%)

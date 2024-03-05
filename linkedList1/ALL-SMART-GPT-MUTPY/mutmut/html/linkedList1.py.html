@@ -1,0 +1,23 @@
+<html><body><h1>linkedList1.py</h1>Killed 82 out of 84 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1</h3><pre>--- linkedList1.py
++++ linkedList1.py
+@@ -4,7 +4,7 @@
+ """
+ 
+ class SinglyLinkedList(object):
+-    __next__ = next # For Python 3.X compatibility
++    __next__ = None # For Python 3.X compatibility
+ 
+     def __init__(self):
+         self.head = None
+</pre><h3>Mutant 70</h3><pre>--- linkedList1.py
++++ linkedList1.py
+@@ -144,7 +144,7 @@
+                 self.head = c
+                 c.next = a
+                 a.prev = c
+-                self.cursor = None
++                self.cursor = ""
+             # It's between two nodes
+             else:
+                 a = self.head
+</pre></body></html>

@@ -1,0 +1,3007 @@
+[*] Start mutation process:
+   - targets: stack1.py
+   - tests: ./DYNAMOSA-MIO-WHOLE_SUITE
+[*] 45 tests passed:
+   - test_stack1_MIO [0.12207 s]
+   - test_stack1_WHOLE_SUITE [0.07662 s]
+   - test_stack1_DYNAMOSA [0.08767 s]
+[*] Start mutants generation and execution:
+   - [#   1] AOR stack1: 
+--------------------------------------------------------------------------------
+   90:         The add function can also be accessed via the ``operator``
+   91:         module.
+   92:     """
+   93:     stack = Stack()
+-  94:     ops = {'+': lambda a, b: (a + b), \
++  94:     ops = {'+': lambda a, b: (a - b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+--------------------------------------------------------------------------------
+[0.14561 s] survived
+   - [#   2] AOR stack1: 
+--------------------------------------------------------------------------------
+   91:         module.
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+-  95:         '-': lambda a, b: (a - b), \
++  95:         '-': lambda a, b: (a + b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+--------------------------------------------------------------------------------
+[0.13616 s] survived
+   - [#   3] AOR stack1: 
+--------------------------------------------------------------------------------
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+-  96:         '*': lambda a, b: (a * b), \
++  96:         '*': lambda a, b: (a / b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+--------------------------------------------------------------------------------
+[0.16103 s] survived
+   - [#   4] AOR stack1: 
+--------------------------------------------------------------------------------
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+-  96:         '*': lambda a, b: (a * b), \
++  96:         '*': lambda a, b: (a // b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+--------------------------------------------------------------------------------
+[0.16794 s] survived
+   - [#   5] AOR stack1: 
+--------------------------------------------------------------------------------
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+-  96:         '*': lambda a, b: (a * b), \
++  96:         '*': lambda a, b: (a ** b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+--------------------------------------------------------------------------------
+[0.22339 s] survived
+   - [#   6] AOR stack1: 
+--------------------------------------------------------------------------------
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+-  97:         '/': lambda a, b: (a / b), \
++  97:         '/': lambda a, b: (a // b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+--------------------------------------------------------------------------------
+[0.15563 s] survived
+   - [#   7] AOR stack1: 
+--------------------------------------------------------------------------------
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+-  97:         '/': lambda a, b: (a / b), \
++  97:         '/': lambda a, b: (a * b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+--------------------------------------------------------------------------------
+[0.14715 s] survived
+   - [#   8] AOR stack1: 
+--------------------------------------------------------------------------------
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+-  98:         '%': lambda a, b: (a % b), \
++  98:         '%': lambda a, b: (a * b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+--------------------------------------------------------------------------------
+[0.11358 s] survived
+   - [#   9] AOR stack1: 
+--------------------------------------------------------------------------------
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+-  99:         '^': lambda a, b: (a ** b)}
++  99:         '^': lambda a, b: (a * b)}
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+  103:     
+--------------------------------------------------------------------------------
+[0.11059 s] survived
+   - [#  10] ASR stack1: 
+--------------------------------------------------------------------------------
+   22:             
+   23:             self.top = item2
+   24:             item2.next = item1
+   25:         
+-  26:         self.size += 1
++  26:         self.size -= 1
+   27:     
+   28:     def pop(self):
+   29:         if self.top is None:
+   30:             raise ValueError()
+--------------------------------------------------------------------------------
+[0.10745 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_0
+
+def test_case_0():
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        var_0 = stack_0.push(stack_0)
+>       assert len(stack_0) == 1
+E       ValueError: __len__() should return >= 0
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:9: ValueError
+   - [#  11] ASR stack1: 
+--------------------------------------------------------------------------------
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+   34:             self.top = self.top.next
+-  35:             self.size -= 1
++  35:             self.size += 1
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+   39:         if self.top is None:
+--------------------------------------------------------------------------------
+[0.15735 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_9
+
+def test_case_9():
+        str_0 = '1~ZY[]TI0m%"BbE3G^'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:60: AssertionError
+   - [#  12] CDI stack1: 
+--------------------------------------------------------------------------------
+    3:     thomas moll 2015
+    4: '''
+    5: 
+    6: class Stack(object):
+-   7:     def __init__(self):
+-   8:         self.size = 0
+-   9:         self.top = None
+-  10:     
++   7:     @classmethod
++   8:     def __init__(self):
++   9:         self.size = 0
++  10:         self.top = None
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+   14:     def push(self, item):
+--------------------------------------------------------------------------------
+[0.13374 s] survived
+   - [#  13] CDI stack1: 
+--------------------------------------------------------------------------------
+    7:     def __init__(self):
+    8:         self.size = 0
+    9:         self.top = None
+   10:     
+-  11:     def __len__(self):
+-  12:         return self.size
+-  13:     
++  11:     @classmethod
++  12:     def __len__(self):
++  13:         return self.size
+   14:     def push(self, item):
+   15:         if self.top is None:
+   16:             self.top = StackNode(item)
+   17:         else:
+--------------------------------------------------------------------------------
+[0.13206 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_0
+
+def test_case_0():
+        stack_0 = module_0.Stack()
+>       assert len(stack_0) == 0
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack1.Stack'>
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute 'size'
+
+stack1:13: AttributeError
+   - [#  14] CDI stack1: 
+--------------------------------------------------------------------------------
+   10:     
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+-  14:     def push(self, item):
+-  15:         if self.top is None:
+-  16:             self.top = StackNode(item)
+-  17:         else:
+-  18:             
+-  19:             item1 = self.top
+-  20:             item2 = StackNode(item)
+-  21:             
++  14:     @classmethod
++  15:     def push(self, item):
++  16:         if self.top is None:
++  17:             self.top = StackNode(item)
++  18:         else:
++  19:             
++  20:             item1 = self.top
++  21:             item2 = StackNode(item)
+   22:             
+-  23:             self.top = item2
+-  24:             item2.next = item1
+-  25:         
+-  26:         self.size += 1
+-  27:     
++  23:             
++  24:             self.top = item2
++  25:             item2.next = item1
++  26:         
++  27:         self.size += 1
+   28:     def pop(self):
+   29:         if self.top is None:
+   30:             raise ValueError()
+   31:         else:
+--------------------------------------------------------------------------------
+[0.10971 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_0
+
+def test_case_0():
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+>       var_0 = stack_0.push(stack_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack1.Stack'>, item = <stack1.Stack object at 0x7f488f698190>
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute 'top'. Did you mean: 'pop'?
+
+stack1:16: AttributeError
+   - [#  15] CDI stack1: 
+--------------------------------------------------------------------------------
+   24:             item2.next = item1
+   25:         
+   26:         self.size += 1
+   27:     
+-  28:     def pop(self):
+-  29:         if self.top is None:
+-  30:             raise ValueError()
+-  31:         else:
+-  32:             top_data = self.top.data
+-  33:             
+-  34:             self.top = self.top.next
+-  35:             self.size -= 1
+-  36:             return top_data
+-  37:     
++  28:     @classmethod
++  29:     def pop(self):
++  30:         if self.top is None:
++  31:             raise ValueError()
++  32:         else:
++  33:             top_data = self.top.data
++  34:             
++  35:             self.top = self.top.next
++  36:             self.size -= 1
++  37:             return top_data
+   38:     def peek(self):
+   39:         if self.top is None:
+   40:             raise ValueError()
+   41:         else:
+--------------------------------------------------------------------------------
+[0.11050 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:63: in check_parenthesis
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack1.Stack'>
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute 'top'. Did you mean: 'pop'?
+
+stack1:30: AttributeError
+   - [#  16] CDI stack1: 
+--------------------------------------------------------------------------------
+   34:             self.top = self.top.next
+   35:             self.size -= 1
+   36:             return top_data
+   37:     
+-  38:     def peek(self):
+-  39:         if self.top is None:
+-  40:             raise ValueError()
+-  41:         else:
+-  42:             return self.top.data
+-  43: 
++  38:     @classmethod
++  39:     def peek(self):
++  40:         if self.top is None:
++  41:             raise ValueError()
++  42:         else:
++  43:             return self.top.data
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+   47:         self.data = item
+--------------------------------------------------------------------------------
+[0.10889 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_4
+
+def test_case_4():
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        with pytest.raises(ValueError):
+>           stack_0.peek()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <class 'stack1.Stack'>
+
+>   ???
+E   AttributeError: type object 'Stack' has no attribute 'top'. Did you mean: 'pop'?
+
+stack1:40: AttributeError
+   - [#  17] CDI stack1: 
+--------------------------------------------------------------------------------
+   42:             return self.top.data
+   43: 
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+-  46:     def __init__(self, item):
+-  47:         self.data = item
+-  48:         self.next = None
+-  49: 
++  46:     @classmethod
++  47:     def __init__(self, item):
++  48:         self.data = item
++  49:         self.next = None
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+   53:     brackets = {'{': '}', '[': ']', '(': ')'}
+--------------------------------------------------------------------------------
+[0.12503 s] survived
+   - [#  18] COI stack1: 
+--------------------------------------------------------------------------------
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+   14:     def push(self, item):
+-  15:         if self.top is None:
++  15:         if not (self.top is None):
+   16:             self.top = StackNode(item)
+   17:         else:
+   18:             
+   19:             item1 = self.top
+--------------------------------------------------------------------------------
+[0.11931 s] survived
+   - [#  19] COI stack1: 
+--------------------------------------------------------------------------------
+   25:         
+   26:         self.size += 1
+   27:     
+   28:     def pop(self):
+-  29:         if self.top is None:
++  29:         if not (self.top is None):
+   30:             raise ValueError()
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+--------------------------------------------------------------------------------
+[0.13213 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_2
+
+def test_case_2():
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        with pytest.raises(ValueError):
+>           stack_0.pop()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f38d9f0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+stack1:32: AttributeError
+   - [#  20] COI stack1: 
+--------------------------------------------------------------------------------
+   35:             self.size -= 1
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+-  39:         if self.top is None:
++  39:         if not (self.top is None):
+   40:             raise ValueError()
+   41:         else:
+   42:             return self.top.data
+   43: 
+--------------------------------------------------------------------------------
+[0.12491 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_4
+
+def test_case_4():
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        with pytest.raises(ValueError):
+>           stack_0.peek()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f2e03a0>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+stack1:42: AttributeError
+   - [#  21] COI stack1: 
+--------------------------------------------------------------------------------
+   53:     brackets = {'{': '}', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+-  57:         if character in brackets.keys():
++  57:         if not (character in brackets.keys()):
+   58:             stack.push(character)
+   59:         
+   60:         
+   61:         if character in brackets.values():
+--------------------------------------------------------------------------------
+[0.12545 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'p(hy;{K\nEB];*A}L\\'
+
+>   ???
+E   KeyError: ']'
+
+stack1:66: KeyError
+   - [#  22] COI stack1: 
+--------------------------------------------------------------------------------
+   53:     brackets = {'{': '}', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+-  57:         if character in brackets.keys():
++  57:         if character not in brackets.keys():
+   58:             stack.push(character)
+   59:         
+   60:         
+   61:         if character in brackets.values():
+--------------------------------------------------------------------------------
+[0.10196 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'p(hy;{K\nEB];*A}L\\'
+
+>   ???
+E   KeyError: ']'
+
+stack1:66: KeyError
+   - [#  23] COI stack1: 
+--------------------------------------------------------------------------------
+   57:         if character in brackets.keys():
+   58:             stack.push(character)
+   59:         
+   60:         
+-  61:         if character in brackets.values():
++  61:         if not (character in brackets.values()):
+   62:             try:
+   63:                 other = stack.pop()
+   64:                 
+   65:                 
+--------------------------------------------------------------------------------
+[0.17949 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_7
+
+def test_case_7():
+        str_0 = '}'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:50: AssertionError
+   - [#  24] COI stack1: 
+--------------------------------------------------------------------------------
+   57:         if character in brackets.keys():
+   58:             stack.push(character)
+   59:         
+   60:         
+-  61:         if character in brackets.values():
++  61:         if character not in brackets.values():
+   62:             try:
+   63:                 other = stack.pop()
+   64:                 
+   65:                 
+--------------------------------------------------------------------------------
+[0.12302 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_7
+
+def test_case_7():
+        str_0 = '}'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:50: AssertionError
+   - [#  25] COI stack1: 
+--------------------------------------------------------------------------------
+   62:             try:
+   63:                 other = stack.pop()
+   64:                 
+   65:                 
+-  66:                 if brackets[other] != character:
++  66:                 if not (brackets[other] != character):
+   67:                     return False
+   68:             
+   69:             except ValueError:
+   70:                 return False
+--------------------------------------------------------------------------------
+[0.18945 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:14: AssertionError
+   - [#  26] COI stack1: 
+--------------------------------------------------------------------------------
+   68:             
+   69:             except ValueError:
+   70:                 return False
+   71:     
+-  72:     if stack.size != 0:
++  72:     if not (stack.size != 0):
+   73:         return False
+   74:     else:
+   75:         
+   76:         return True
+--------------------------------------------------------------------------------
+[0.15349 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_6
+
+def test_case_6():
+        str_0 = 'b#:{&1y=1zRW~A-l9@@y'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:45: AssertionError
+   - [#  27] COI stack1: 
+--------------------------------------------------------------------------------
+  102:     tokens = string.split(' ')
+  103:     
+  104:     for character in tokens:
+  105:         
+- 106:         if character in ops.keys():
++ 106:         if not (character in ops.keys()):
+  107:             try:
+  108:                 
+  109:                 right = stack.pop()
+  110:                 left = stack.pop()
+--------------------------------------------------------------------------------
+[0.13797 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '4'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:118: in postfix_eval
+    ???
+stack1:109: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f3a0ac0>
+
+>   ???
+E   ValueError
+
+stack1:30: ValueError
+   - [#  28] COI stack1: 
+--------------------------------------------------------------------------------
+  102:     tokens = string.split(' ')
+  103:     
+  104:     for character in tokens:
+  105:         
+- 106:         if character in ops.keys():
++ 106:         if character not in ops.keys():
+  107:             try:
+  108:                 
+  109:                 right = stack.pop()
+  110:                 left = stack.pop()
+--------------------------------------------------------------------------------
+[0.10252 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '4'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:118: in postfix_eval
+    ???
+stack1:109: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f4e12a0>
+
+>   ???
+E   ValueError
+
+stack1:30: ValueError
+   - [#  29] COI stack1: 
+--------------------------------------------------------------------------------
+  126:             except ValueError as e:
+  127:                 raise e
+  128:     
+  129:     
+- 130:     if stack.size > 1:
++ 130:     if not (stack.size > 1):
+  131:         raise ValueError()
+  132:     
+  133:     return stack.pop()
+--------------------------------------------------------------------------------
+[0.11864 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '4'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '4'
+
+>   ???
+E   ValueError
+
+stack1:131: ValueError
+   - [#  30] CRP stack1: 
+--------------------------------------------------------------------------------
+    4: '''
+    5: 
+    6: class Stack(object):
+    7:     def __init__(self):
+-   8:         self.size = 0
++   8:         self.size = 1
+    9:         self.top = None
+   10:     
+   11:     def __len__(self):
+   12:         return self.size
+--------------------------------------------------------------------------------
+[0.11604 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_0
+
+def test_case_0():
+        stack_0 = module_0.Stack()
+>       assert len(stack_0) == 0
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:7: AssertionError
+   - [#  31] CRP stack1: 
+--------------------------------------------------------------------------------
+   22:             
+   23:             self.top = item2
+   24:             item2.next = item1
+   25:         
+-  26:         self.size += 1
++  26:         self.size += 2
+   27:     
+   28:     def pop(self):
+   29:         if self.top is None:
+   30:             raise ValueError()
+--------------------------------------------------------------------------------
+[0.10214 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_0
+
+def test_case_0():
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        var_0 = stack_0.push(stack_0)
+>       assert len(stack_0) == 1
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:9: AssertionError
+   - [#  32] CRP stack1: 
+--------------------------------------------------------------------------------
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+   34:             self.top = self.top.next
+-  35:             self.size -= 1
++  35:             self.size -= 2
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+   39:         if self.top is None:
+--------------------------------------------------------------------------------
+[0.16432 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_9
+
+def test_case_9():
+        str_0 = '1~ZY[]TI0m%"BbE3G^'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:60: AssertionError
+   - [#  33] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'mutpy': '}', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.16261 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_6
+
+def test_case_6():
+        str_0 = 'b#:{&1y=1zRW~A-l9@@y'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:45: AssertionError
+   - [#  34] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'': '}', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.11745 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_6
+
+def test_case_6():
+        str_0 = 'b#:{&1y=1zRW~A-l9@@y'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:45: AssertionError
+   - [#  35] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', 'mutpy': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.10810 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_9
+
+def test_case_9():
+        str_0 = '1~ZY[]TI0m%"BbE3G^'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:60: AssertionError
+   - [#  36] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', '': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.12641 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_9
+
+def test_case_9():
+        str_0 = '1~ZY[]TI0m%"BbE3G^'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:60: AssertionError
+   - [#  37] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', '[': ']', 'mutpy': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.12947 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_DYNAMOSA.py::test_case_11
+
+def test_case_11():
+        str_0 = '(T lON)_'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_DYNAMOSA.py:92: AssertionError
+   - [#  38] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', '[': ']', '': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.12348 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_DYNAMOSA.py::test_case_11
+
+def test_case_11():
+        str_0 = '(T lON)_'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_DYNAMOSA.py:92: AssertionError
+   - [#  39] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': 'mutpy', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.10811 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_7
+
+def test_case_7():
+        str_0 = '}'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:50: AssertionError
+   - [#  40] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.13961 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_7
+
+def test_case_7():
+        str_0 = '}'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:50: AssertionError
+   - [#  41] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', '[': 'mutpy', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.12730 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_9
+
+def test_case_9():
+        str_0 = '1~ZY[]TI0m%"BbE3G^'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:60: AssertionError
+   - [#  42] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', '[': '', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.11410 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_9
+
+def test_case_9():
+        str_0 = '1~ZY[]TI0m%"BbE3G^'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:60: AssertionError
+   - [#  43] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', '[': ']', '(': 'mutpy'}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.12687 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_DYNAMOSA.py:13: AssertionError
+   - [#  44] CRP stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     brackets = {'{': '}', '[': ']', '(': ''}
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.11787 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_DYNAMOSA.py::test_case_1
+
+def test_case_1():
+        str_0 = 'R\rip0|*r^)WN&\x0cVl=Z1\x0b'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_DYNAMOSA.py:13: AssertionError
+   - [#  45] CRP stack1: 
+--------------------------------------------------------------------------------
+   68:             
+   69:             except ValueError:
+   70:                 return False
+   71:     
+-  72:     if stack.size != 0:
++  72:     if stack.size != 1:
+   73:         return False
+   74:     else:
+   75:         
+   76:         return True
+--------------------------------------------------------------------------------
+[0.10221 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_6
+
+def test_case_6():
+        str_0 = 'b#:{&1y=1zRW~A-l9@@y'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:45: AssertionError
+   - [#  46] CRP stack1: 
+--------------------------------------------------------------------------------
+   90:         The add function can also be accessed via the ``operator``
+   91:         module.
+   92:     """
+   93:     stack = Stack()
+-  94:     ops = {'+': lambda a, b: (a + b), \
++  94:     ops = {'mutpy': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+--------------------------------------------------------------------------------
+[0.09529 s] survived
+   - [#  47] CRP stack1: 
+--------------------------------------------------------------------------------
+   90:         The add function can also be accessed via the ``operator``
+   91:         module.
+   92:     """
+   93:     stack = Stack()
+-  94:     ops = {'+': lambda a, b: (a + b), \
++  94:     ops = {'': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+--------------------------------------------------------------------------------
+[0.09765 s] survived
+   - [#  48] CRP stack1: 
+--------------------------------------------------------------------------------
+   91:         module.
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+-  95:         '-': lambda a, b: (a - b), \
++  95:         'mutpy': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+--------------------------------------------------------------------------------
+[0.13642 s] survived
+   - [#  49] CRP stack1: 
+--------------------------------------------------------------------------------
+   91:         module.
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+-  95:         '-': lambda a, b: (a - b), \
++  95:         '': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+--------------------------------------------------------------------------------
+[0.10176 s] survived
+   - [#  50] CRP stack1: 
+--------------------------------------------------------------------------------
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+-  96:         '*': lambda a, b: (a * b), \
++  96:         'mutpy': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+--------------------------------------------------------------------------------
+[0.10765 s] survived
+   - [#  51] CRP stack1: 
+--------------------------------------------------------------------------------
+   92:     """
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+-  96:         '*': lambda a, b: (a * b), \
++  96:         '': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+--------------------------------------------------------------------------------
+[0.09738 s] survived
+   - [#  52] CRP stack1: 
+--------------------------------------------------------------------------------
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+-  97:         '/': lambda a, b: (a / b), \
++  97:         'mutpy': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+--------------------------------------------------------------------------------
+[0.09186 s] survived
+   - [#  53] CRP stack1: 
+--------------------------------------------------------------------------------
+   93:     stack = Stack()
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+-  97:         '/': lambda a, b: (a / b), \
++  97:         '': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+--------------------------------------------------------------------------------
+[0.09927 s] survived
+   - [#  54] CRP stack1: 
+--------------------------------------------------------------------------------
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+-  98:         '%': lambda a, b: (a % b), \
++  98:         'mutpy': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+--------------------------------------------------------------------------------
+[0.09188 s] survived
+   - [#  55] CRP stack1: 
+--------------------------------------------------------------------------------
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+-  98:         '%': lambda a, b: (a % b), \
++  98:         '': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+--------------------------------------------------------------------------------
+[0.10302 s] survived
+   - [#  56] CRP stack1: 
+--------------------------------------------------------------------------------
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+-  99:         '^': lambda a, b: (a ** b)}
++  99:         'mutpy': lambda a, b: (a ** b)}
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+  103:     
+--------------------------------------------------------------------------------
+[0.11878 s] survived
+   - [#  57] CRP stack1: 
+--------------------------------------------------------------------------------
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+   98:         '%': lambda a, b: (a % b), \
+-  99:         '^': lambda a, b: (a ** b)}
++  99:         '': lambda a, b: (a ** b)}
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+  103:     
+--------------------------------------------------------------------------------
+[0.12080 s] survived
+   - [#  58] CRP stack1: 
+--------------------------------------------------------------------------------
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+- 102:     tokens = string.split(' ')
++ 102:     tokens = string.split('mutpy')
+  103:     
+  104:     for character in tokens:
+  105:         
+  106:         if character in ops.keys():
+--------------------------------------------------------------------------------
+[0.11524 s] survived
+   - [#  59] CRP stack1: 
+--------------------------------------------------------------------------------
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+- 102:     tokens = string.split(' ')
++ 102:     tokens = string.split('')
+  103:     
+  104:     for character in tokens:
+  105:         
+  106:         if character in ops.keys():
+--------------------------------------------------------------------------------
+[0.09267 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '4'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '4'
+
+>   ???
+E   ValueError: empty separator
+
+stack1:102: ValueError
+   - [#  60] CRP stack1: 
+--------------------------------------------------------------------------------
+  126:             except ValueError as e:
+  127:                 raise e
+  128:     
+  129:     
+- 130:     if stack.size > 1:
++ 130:     if stack.size > 2:
+  131:         raise ValueError()
+  132:     
+  133:     return stack.pop()
+--------------------------------------------------------------------------------
+[0.08990 s] survived
+   - [#  61] EHD stack1: 
+--------------------------------------------------------------------------------
+   66:                 if brackets[other] != character:
+   67:                     return False
+   68:             
+   69:             except ValueError:
+-  70:                 return False
++  70:                 raise
+   71:     
+   72:     if stack.size != 0:
+   73:         return False
+   74:     else:
+--------------------------------------------------------------------------------
+[0.10106 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_7
+
+def test_case_7():
+        str_0 = '}'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:63: in check_parenthesis
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f476d10>
+
+>   ???
+E   ValueError
+
+stack1:30: ValueError
+   - [#  62] EXS stack1: 
+--------------------------------------------------------------------------------
+   66:                 if brackets[other] != character:
+   67:                     return False
+   68:             
+   69:             except ValueError:
+-  70:                 return False
++  70:                 pass
+   71:     
+   72:     if stack.size != 0:
+   73:         return False
+   74:     else:
+--------------------------------------------------------------------------------
+[0.10322 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_7
+
+def test_case_7():
+        str_0 = '}'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:50: AssertionError
+   - [#  63] EXS stack1: 
+--------------------------------------------------------------------------------
+  114:                 stack.push(result)
+  115:             
+  116:             
+  117:             except ValueError as e:
+- 118:                 raise e
++ 118:                 pass
+  119:         else:
+  120:             
+  121:             try:
+  122:                 
+--------------------------------------------------------------------------------
+[0.09974 s] survived
+   - [#  64] EXS stack1: 
+--------------------------------------------------------------------------------
+  123:                 value = int(character)
+  124:                 stack.push(value)
+  125:             
+  126:             except ValueError as e:
+- 127:                 raise e
++ 127:                 pass
+  128:     
+  129:     
+  130:     if stack.size > 1:
+  131:         raise ValueError()
+--------------------------------------------------------------------------------
+[0.09625 s] survived
+   - [#  65] OIL stack1: 
+--------------------------------------------------------------------------------
+   66:                 if brackets[other] != character:
+   67:                     return False
+   68:             
+   69:             except ValueError:
+-  70:                 return False
++  70:                 return Falsebreak
+   71:     
+   72:     if stack.size != 0:
+   73:         return False
+   74:     else:
+--------------------------------------------------------------------------------
+[0.09973 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:14: AssertionError
+   - [#  66] OIL stack1: 
+--------------------------------------------------------------------------------
+  123:                 value = int(character)
+  124:                 stack.push(value)
+  125:             
+  126:             except ValueError as e:
+- 127:                 raise e
++ 127:                 raise ebreak
+  128:     
+  129:     
+  130:     if stack.size > 1:
+  131:         raise ValueError()
+--------------------------------------------------------------------------------
+[0.09856 s] survived
+   - [#  67] RIL stack1: 
+--------------------------------------------------------------------------------
+   51:     stack = Stack()
+   52:     
+   53:     brackets = {'{': '}', '[': ']', '(': ')'}
+   54:     
+-  55:     for character in string:
++  55:     for character in reversed(string):
+   56:         
+   57:         if character in brackets.keys():
+   58:             stack.push(character)
+   59:         
+--------------------------------------------------------------------------------
+[0.10795 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_9
+
+def test_case_9():
+        str_0 = '1~ZY[]TI0m%"BbE3G^'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:60: AssertionError
+   - [#  68] RIL stack1: 
+--------------------------------------------------------------------------------
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+  103:     
+- 104:     for character in tokens:
++ 104:     for character in reversed(tokens):
+  105:         
+  106:         if character in ops.keys():
+  107:             try:
+  108:                 
+--------------------------------------------------------------------------------
+[0.10370 s] survived
+   - [#  69] ROR stack1: 
+--------------------------------------------------------------------------------
+   62:             try:
+   63:                 other = stack.pop()
+   64:                 
+   65:                 
+-  66:                 if brackets[other] != character:
++  66:                 if brackets[other] == character:
+   67:                     return False
+   68:             
+   69:             except ValueError:
+   70:                 return False
+--------------------------------------------------------------------------------
+[0.09648 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:14: AssertionError
+   - [#  70] ROR stack1: 
+--------------------------------------------------------------------------------
+   68:             
+   69:             except ValueError:
+   70:                 return False
+   71:     
+-  72:     if stack.size != 0:
++  72:     if stack.size == 0:
+   73:         return False
+   74:     else:
+   75:         
+   76:         return True
+--------------------------------------------------------------------------------
+[0.10821 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_6
+
+def test_case_6():
+        str_0 = 'b#:{&1y=1zRW~A-l9@@y'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:45: AssertionError
+   - [#  71] ROR stack1: 
+--------------------------------------------------------------------------------
+  126:             except ValueError as e:
+  127:                 raise e
+  128:     
+  129:     
+- 130:     if stack.size > 1:
++ 130:     if stack.size < 1:
+  131:         raise ValueError()
+  132:     
+  133:     return stack.pop()
+--------------------------------------------------------------------------------
+[0.09564 s] survived
+   - [#  72] ROR stack1: 
+--------------------------------------------------------------------------------
+  126:             except ValueError as e:
+  127:                 raise e
+  128:     
+  129:     
+- 130:     if stack.size > 1:
++ 130:     if stack.size >= 1:
+  131:         raise ValueError()
+  132:     
+  133:     return stack.pop()
+--------------------------------------------------------------------------------
+[0.09938 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '4'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '4'
+
+>   ???
+E   ValueError
+
+stack1:131: ValueError
+   - [#  73] SDI stack1: 
+--------------------------------------------------------------------------------
+    3:     thomas moll 2015
+    4: '''
+    5: 
+    6: class Stack(object):
+-   7:     def __init__(self):
+-   8:         self.size = 0
+-   9:         self.top = None
+-  10:     
++   7:     @staticmethod
++   8:     def __init__(self):
++   9:         self.size = 0
++  10:         self.top = None
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+   14:     def push(self, item):
+--------------------------------------------------------------------------------
+[0.09866 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack1/DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:6: TypeError: Stack.__init__() missing 1 required positional argument: 'self'
+
+   - [#  74] SDI stack1: 
+--------------------------------------------------------------------------------
+    7:     def __init__(self):
+    8:         self.size = 0
+    9:         self.top = None
+   10:     
+-  11:     def __len__(self):
+-  12:         return self.size
+-  13:     
++  11:     @staticmethod
++  12:     def __len__(self):
++  13:         return self.size
+   14:     def push(self, item):
+   15:         if self.top is None:
+   16:             self.top = StackNode(item)
+   17:         else:
+--------------------------------------------------------------------------------
+[0.12448 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack1/DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:7: TypeError: Stack.__len__() missing 1 required positional argument: 'self'
+
+   - [#  75] SDI stack1: 
+--------------------------------------------------------------------------------
+   10:     
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+-  14:     def push(self, item):
+-  15:         if self.top is None:
+-  16:             self.top = StackNode(item)
+-  17:         else:
+-  18:             
+-  19:             item1 = self.top
+-  20:             item2 = StackNode(item)
+-  21:             
++  14:     @staticmethod
++  15:     def push(self, item):
++  16:         if self.top is None:
++  17:             self.top = StackNode(item)
++  18:         else:
++  19:             
++  20:             item1 = self.top
++  21:             item2 = StackNode(item)
+   22:             
+-  23:             self.top = item2
+-  24:             item2.next = item1
+-  25:         
+-  26:         self.size += 1
+-  27:     
++  23:             
++  24:             self.top = item2
++  25:             item2.next = item1
++  26:         
++  27:         self.size += 1
+   28:     def pop(self):
+   29:         if self.top is None:
+   30:             raise ValueError()
+   31:         else:
+--------------------------------------------------------------------------------
+[0.09920 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack1/DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:8: TypeError: Stack.push() missing 1 required positional argument: 'item'
+
+   - [#  76] SDI stack1: 
+--------------------------------------------------------------------------------
+   24:             item2.next = item1
+   25:         
+   26:         self.size += 1
+   27:     
+-  28:     def pop(self):
+-  29:         if self.top is None:
+-  30:             raise ValueError()
+-  31:         else:
+-  32:             top_data = self.top.data
+-  33:             
+-  34:             self.top = self.top.next
+-  35:             self.size -= 1
+-  36:             return top_data
+-  37:     
++  28:     @staticmethod
++  29:     def pop(self):
++  30:         if self.top is None:
++  31:             raise ValueError()
++  32:         else:
++  33:             top_data = self.top.data
++  34:             
++  35:             self.top = self.top.next
++  36:             self.size -= 1
++  37:             return top_data
+   38:     def peek(self):
+   39:         if self.top is None:
+   40:             raise ValueError()
+   41:         else:
+--------------------------------------------------------------------------------
+[0.10163 s] incompetent
+
+TypeError: stack1:63: TypeError: Stack.pop() missing 1 required positional argument: 'self'
+
+   - [#  77] SDI stack1: 
+--------------------------------------------------------------------------------
+   34:             self.top = self.top.next
+   35:             self.size -= 1
+   36:             return top_data
+   37:     
+-  38:     def peek(self):
+-  39:         if self.top is None:
+-  40:             raise ValueError()
+-  41:         else:
+-  42:             return self.top.data
+-  43: 
++  38:     @staticmethod
++  39:     def peek(self):
++  40:         if self.top is None:
++  41:             raise ValueError()
++  42:         else:
++  43:             return self.top.data
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+   47:         self.data = item
+--------------------------------------------------------------------------------
+[0.10759 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack1/DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:31: TypeError: Stack.peek() missing 1 required positional argument: 'self'
+
+   - [#  78] SDI stack1: 
+--------------------------------------------------------------------------------
+   42:             return self.top.data
+   43: 
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+-  46:     def __init__(self, item):
+-  47:         self.data = item
+-  48:         self.next = None
+-  49: 
++  46:     @staticmethod
++  47:     def __init__(self, item):
++  48:         self.data = item
++  49:         self.next = None
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+   53:     brackets = {'{': '}', '[': ']', '(': ')'}
+--------------------------------------------------------------------------------
+[0.15334 s] incompetent
+
+TypeError: stack1:16: TypeError: StackNode.__init__() missing 1 required positional argument: 'item'
+
+   - [#  79] SDL stack1: 
+--------------------------------------------------------------------------------
+    4: '''
+    5: 
+    6: class Stack(object):
+    7:     def __init__(self):
+-   8:         self.size = 0
++   8:         pass
+    9:         self.top = None
+   10:     
+   11:     def __len__(self):
+   12:         return self.size
+--------------------------------------------------------------------------------
+[0.11534 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_0
+
+def test_case_0():
+        stack_0 = module_0.Stack()
+>       assert len(stack_0) == 0
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f11e8c0>
+
+>   ???
+E   AttributeError: 'Stack' object has no attribute 'size'
+
+stack1:12: AttributeError
+   - [#  80] SDL stack1: 
+--------------------------------------------------------------------------------
+    5: 
+    6: class Stack(object):
+    7:     def __init__(self):
+    8:         self.size = 0
+-   9:         self.top = None
++   9:         pass
+   10:     
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+--------------------------------------------------------------------------------
+[0.11669 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_0
+
+def test_case_0():
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+>       var_0 = stack_0.push(stack_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f11f100>
+item = <stack1.Stack object at 0x7f488f11f100>
+
+>   ???
+E   AttributeError: 'Stack' object has no attribute 'top'. Did you mean: 'pop'?
+
+stack1:15: AttributeError
+   - [#  81] SDL stack1: 
+--------------------------------------------------------------------------------
+    8:         self.size = 0
+    9:         self.top = None
+   10:     
+   11:     def __len__(self):
+-  12:         return self.size
++  12:         pass
+   13:     
+   14:     def push(self, item):
+   15:         if self.top is None:
+   16:             self.top = StackNode(item)
+--------------------------------------------------------------------------------
+[0.14034 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/stack1/DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:7: TypeError: 'NoneType' object cannot be interpreted as an integer
+
+   - [#  82] SDL stack1: 
+--------------------------------------------------------------------------------
+   12:         return self.size
+   13:     
+   14:     def push(self, item):
+   15:         if self.top is None:
+-  16:             self.top = StackNode(item)
++  16:             pass
+   17:         else:
+   18:             
+   19:             item1 = self.top
+   20:             item2 = StackNode(item)
+--------------------------------------------------------------------------------
+[0.15715 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '4'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f55be80>
+
+>   ???
+E   ValueError
+
+stack1:30: ValueError
+   - [#  83] SDL stack1: 
+--------------------------------------------------------------------------------
+   15:         if self.top is None:
+   16:             self.top = StackNode(item)
+   17:         else:
+   18:             
+-  19:             item1 = self.top
++  19:             pass
+   20:             item2 = StackNode(item)
+   21:             
+   22:             
+   23:             self.top = item2
+--------------------------------------------------------------------------------
+[0.12919 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:58: in check_parenthesis
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f6e5ba0>, item = '{'
+
+>   ???
+E   NameError: name 'item1' is not defined
+
+stack1:24: NameError
+   - [#  84] SDL stack1: 
+--------------------------------------------------------------------------------
+   16:             self.top = StackNode(item)
+   17:         else:
+   18:             
+   19:             item1 = self.top
+-  20:             item2 = StackNode(item)
++  20:             pass
+   21:             
+   22:             
+   23:             self.top = item2
+   24:             item2.next = item1
+--------------------------------------------------------------------------------
+[0.13746 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:58: in check_parenthesis
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f4fbdc0>, item = '{'
+
+>   ???
+E   NameError: name 'item2' is not defined
+
+stack1:23: NameError
+   - [#  85] SDL stack1: 
+--------------------------------------------------------------------------------
+   19:             item1 = self.top
+   20:             item2 = StackNode(item)
+   21:             
+   22:             
+-  23:             self.top = item2
++  23:             pass
+   24:             item2.next = item1
+   25:         
+   26:         self.size += 1
+   27:     
+--------------------------------------------------------------------------------
+[0.15555 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_WHOLE_SUITE.py::test_case_1
+
+def test_case_1():
+        float_0 = -1074.68
+        stack_node_0 = module_0.StackNode(float_0)
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        stack_node_1 = module_0.StackNode(stack_0)
+        assert len(stack_node_1.data) == 0
+        stack_1 = module_0.Stack()
+        assert len(stack_1) == 0
+        var_0 = stack_1.push(stack_1)
+        assert len(stack_1) == 1
+        var_1 = stack_1.push(float_0)
+        assert len(stack_1) == 2
+        var_2 = stack_1.peek()
+>       assert var_2 == pytest.approx(-1074.68, abs=0.01, rel=0.01)
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_WHOLE_SUITE.py:26: AssertionError
+   - [#  86] SDL stack1: 
+--------------------------------------------------------------------------------
+   20:             item2 = StackNode(item)
+   21:             
+   22:             
+   23:             self.top = item2
+-  24:             item2.next = item1
++  24:             pass
+   25:         
+   26:         self.size += 1
+   27:     
+   28:     def pop(self):
+--------------------------------------------------------------------------------
+[0.11218 s] survived
+   - [#  87] SDL stack1: 
+--------------------------------------------------------------------------------
+   28:     def pop(self):
+   29:         if self.top is None:
+   30:             raise ValueError()
+   31:         else:
+-  32:             top_data = self.top.data
++  32:             pass
+   33:             
+   34:             self.top = self.top.next
+   35:             self.size -= 1
+   36:             return top_data
+--------------------------------------------------------------------------------
+[0.13793 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:63: in check_parenthesis
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f55ab60>
+
+>   ???
+E   NameError: name 'top_data' is not defined
+
+stack1:36: NameError
+   - [#  88] SDL stack1: 
+--------------------------------------------------------------------------------
+   30:             raise ValueError()
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+-  34:             self.top = self.top.next
++  34:             pass
+   35:             self.size -= 1
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+--------------------------------------------------------------------------------
+[0.12871 s] survived
+   - [#  89] SDL stack1: 
+--------------------------------------------------------------------------------
+   32:             top_data = self.top.data
+   33:             
+   34:             self.top = self.top.next
+   35:             self.size -= 1
+-  36:             return top_data
++  36:             pass
+   37:     
+   38:     def peek(self):
+   39:         if self.top is None:
+   40:             raise ValueError()
+--------------------------------------------------------------------------------
+[0.10539 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'p(hy;{K\nEB];*A}L\\'
+
+>   ???
+E   KeyError: None
+
+stack1:66: KeyError
+   - [#  90] SDL stack1: 
+--------------------------------------------------------------------------------
+   38:     def peek(self):
+   39:         if self.top is None:
+   40:             raise ValueError()
+   41:         else:
+-  42:             return self.top.data
++  42:             pass
+   43: 
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+--------------------------------------------------------------------------------
+[0.09825 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_5
+
+def test_case_5():
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        var_0 = stack_0.push(stack_0)
+        assert len(stack_0) == 1
+        var_1 = stack_0.peek()
+>       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'stack1.Stack'
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:39: AssertionError
+   - [#  91] SDL stack1: 
+--------------------------------------------------------------------------------
+   43: 
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+-  47:         self.data = item
++  47:         pass
+   48:         self.next = None
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+--------------------------------------------------------------------------------
+[0.09717 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:63: in check_parenthesis
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f2817e0>
+
+>   ???
+E   AttributeError: 'StackNode' object has no attribute 'data'
+
+stack1:32: AttributeError
+   - [#  92] SDL stack1: 
+--------------------------------------------------------------------------------
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+   47:         self.data = item
+-  48:         self.next = None
++  48:         pass
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+--------------------------------------------------------------------------------
+[0.10148 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '4'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f283460>
+
+>   ???
+E   AttributeError: 'StackNode' object has no attribute 'next'
+
+stack1:34: AttributeError
+   - [#  93] SDL stack1: 
+--------------------------------------------------------------------------------
+   47:         self.data = item
+   48:         self.next = None
+   49: 
+   50: def check_parenthesis(string):
+-  51:     stack = Stack()
++  51:     pass
+   52:     
+   53:     brackets = {'{': '}', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+--------------------------------------------------------------------------------
+[0.09717 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'p(hy;{K\nEB];*A}L\\'
+
+>   ???
+E   NameError: name 'stack' is not defined
+
+stack1:58: NameError
+   - [#  94] SDL stack1: 
+--------------------------------------------------------------------------------
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+-  53:     brackets = {'{': '}', '[': ']', '(': ')'}
++  53:     pass
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+--------------------------------------------------------------------------------
+[0.10933 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'p(hy;{K\nEB];*A}L\\'
+
+>   ???
+E   NameError: name 'brackets' is not defined
+
+stack1:57: NameError
+   - [#  95] SDL stack1: 
+--------------------------------------------------------------------------------
+   54:     
+   55:     for character in string:
+   56:         
+   57:         if character in brackets.keys():
+-  58:             stack.push(character)
++  58:             pass
+   59:         
+   60:         
+   61:         if character in brackets.values():
+   62:             try:
+--------------------------------------------------------------------------------
+[0.10309 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_6
+
+def test_case_6():
+        str_0 = 'b#:{&1y=1zRW~A-l9@@y'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:45: AssertionError
+   - [#  96] SDL stack1: 
+--------------------------------------------------------------------------------
+   59:         
+   60:         
+   61:         if character in brackets.values():
+   62:             try:
+-  63:                 other = stack.pop()
++  63:                 pass
+   64:                 
+   65:                 
+   66:                 if brackets[other] != character:
+   67:                     return False
+--------------------------------------------------------------------------------
+[0.12893 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = 'p(hy;{K\nEB];*A}L\\'
+
+>   ???
+E   NameError: name 'other' is not defined
+
+stack1:66: NameError
+   - [#  97] SDL stack1: 
+--------------------------------------------------------------------------------
+   63:                 other = stack.pop()
+   64:                 
+   65:                 
+   66:                 if brackets[other] != character:
+-  67:                     return False
++  67:                     pass
+   68:             
+   69:             except ValueError:
+   70:                 return False
+   71:     
+--------------------------------------------------------------------------------
+[0.13725 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:14: AssertionError
+   - [#  98] SDL stack1: 
+--------------------------------------------------------------------------------
+   66:                 if brackets[other] != character:
+   67:                     return False
+   68:             
+   69:             except ValueError:
+-  70:                 return False
++  70:                 pass
+   71:     
+   72:     if stack.size != 0:
+   73:         return False
+   74:     else:
+--------------------------------------------------------------------------------
+[0.17719 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_7
+
+def test_case_7():
+        str_0 = '}'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:50: AssertionError
+   - [#  99] SDL stack1: 
+--------------------------------------------------------------------------------
+   69:             except ValueError:
+   70:                 return False
+   71:     
+   72:     if stack.size != 0:
+-  73:         return False
++  73:         pass
+   74:     else:
+   75:         
+   76:         return True
+   77: 
+--------------------------------------------------------------------------------
+[0.12004 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_6
+
+def test_case_6():
+        str_0 = 'b#:{&1y=1zRW~A-l9@@y'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:45: AssertionError
+   - [# 100] SDL stack1: 
+--------------------------------------------------------------------------------
+   72:     if stack.size != 0:
+   73:         return False
+   74:     else:
+   75:         
+-  76:         return True
++  76:         pass
+   77: 
+   78: def postfix_eval(string):
+   79:     """ Here we setup a dictionary relating the characters of 
+   80:         operations to lambda functions. It's similar to saying:
+--------------------------------------------------------------------------------
+[0.13915 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_9
+
+def test_case_9():
+        str_0 = '1~ZY[]TI0m%"BbE3G^'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:60: AssertionError
+   - [# 101] SDL stack1: 
+--------------------------------------------------------------------------------
+   89: 
+   90:         The add function can also be accessed via the ``operator``
+   91:         module.
+   92:     """
+-  93:     stack = Stack()
++  93:     pass
+   94:     ops = {'+': lambda a, b: (a + b), \
+   95:         '-': lambda a, b: (a - b), \
+   96:         '*': lambda a, b: (a * b), \
+   97:         '/': lambda a, b: (a / b), \
+--------------------------------------------------------------------------------
+[0.10205 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '4'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '4'
+
+>   ???
+E   NameError: name 'stack' is not defined
+
+stack1:124: NameError
+   - [# 102] SDL stack1: 
+--------------------------------------------------------------------------------
+   90:         The add function can also be accessed via the ``operator``
+   91:         module.
+   92:     """
+   93:     stack = Stack()
+-  94:     ops = {'+': lambda a, b: (a + b), \
+-  95:         '-': lambda a, b: (a - b), \
+-  96:         '*': lambda a, b: (a * b), \
+-  97:         '/': lambda a, b: (a / b), \
+-  98:         '%': lambda a, b: (a % b), \
+-  99:         '^': lambda a, b: (a ** b)}
++  94:     pass
++  95:     
++  96:     
++  97:     
++  98:     
++  99:     
+  100:     
+  101:     
+  102:     tokens = string.split(' ')
+  103:     
+--------------------------------------------------------------------------------
+[0.09576 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '4'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '4'
+
+>   ???
+E   NameError: name 'ops' is not defined
+
+stack1:106: NameError
+   - [# 103] SDL stack1: 
+--------------------------------------------------------------------------------
+   98:         '%': lambda a, b: (a % b), \
+   99:         '^': lambda a, b: (a ** b)}
+  100:     
+  101:     
+- 102:     tokens = string.split(' ')
++ 102:     pass
+  103:     
+  104:     for character in tokens:
+  105:         
+  106:         if character in ops.keys():
+--------------------------------------------------------------------------------
+[0.11355 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '4'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '4'
+
+>   ???
+E   NameError: name 'tokens' is not defined
+
+stack1:104: NameError
+   - [# 104] SDL stack1: 
+--------------------------------------------------------------------------------
+  105:         
+  106:         if character in ops.keys():
+  107:             try:
+  108:                 
+- 109:                 right = stack.pop()
++ 109:                 pass
+  110:                 left = stack.pop()
+  111:                 
+  112:                 
+  113:                 result = ops[character](left, right)
+--------------------------------------------------------------------------------
+[0.11274 s] survived
+   - [# 105] SDL stack1: 
+--------------------------------------------------------------------------------
+  106:         if character in ops.keys():
+  107:             try:
+  108:                 
+  109:                 right = stack.pop()
+- 110:                 left = stack.pop()
++ 110:                 pass
+  111:                 
+  112:                 
+  113:                 result = ops[character](left, right)
+  114:                 stack.push(result)
+--------------------------------------------------------------------------------
+[0.15118 s] survived
+   - [# 106] SDL stack1: 
+--------------------------------------------------------------------------------
+  109:                 right = stack.pop()
+  110:                 left = stack.pop()
+  111:                 
+  112:                 
+- 113:                 result = ops[character](left, right)
++ 113:                 pass
+  114:                 stack.push(result)
+  115:             
+  116:             
+  117:             except ValueError as e:
+--------------------------------------------------------------------------------
+[0.13639 s] survived
+   - [# 107] SDL stack1: 
+--------------------------------------------------------------------------------
+  110:                 left = stack.pop()
+  111:                 
+  112:                 
+  113:                 result = ops[character](left, right)
+- 114:                 stack.push(result)
++ 114:                 pass
+  115:             
+  116:             
+  117:             except ValueError as e:
+  118:                 raise e
+--------------------------------------------------------------------------------
+[0.11954 s] survived
+   - [# 108] SDL stack1: 
+--------------------------------------------------------------------------------
+  119:         else:
+  120:             
+  121:             try:
+  122:                 
+- 123:                 value = int(character)
++ 123:                 pass
+  124:                 stack.push(value)
+  125:             
+  126:             except ValueError as e:
+  127:                 raise e
+--------------------------------------------------------------------------------
+[0.12634 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '4'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+string = '4'
+
+>   ???
+E   NameError: name 'value' is not defined
+
+stack1:124: NameError
+   - [# 109] SDL stack1: 
+--------------------------------------------------------------------------------
+  120:             
+  121:             try:
+  122:                 
+  123:                 value = int(character)
+- 124:                 stack.push(value)
++ 124:                 pass
+  125:             
+  126:             except ValueError as e:
+  127:                 raise e
+  128:     
+--------------------------------------------------------------------------------
+[0.10513 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '4'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f6e5db0>
+
+>   ???
+E   ValueError
+
+stack1:30: ValueError
+   - [# 110] SDL stack1: 
+--------------------------------------------------------------------------------
+  129:     
+  130:     if stack.size > 1:
+  131:         raise ValueError()
+  132:     
+- 133:     return stack.pop()
++ 133:     pass
+--------------------------------------------------------------------------------
+[0.09893 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '4'
+        var_0 = module_0.postfix_eval(str_0)
+>       assert var_0 == 4
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:25: AssertionError
+   - [# 111] SVD stack1: 
+--------------------------------------------------------------------------------
+    4: '''
+    5: 
+    6: class Stack(object):
+    7:     def __init__(self):
+-   8:         self.size = 0
++   8:         size = 0
+    9:         self.top = None
+   10:     
+   11:     def __len__(self):
+   12:         return self.size
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 112] SVD stack1: 
+--------------------------------------------------------------------------------
+    5: 
+    6: class Stack(object):
+    7:     def __init__(self):
+    8:         self.size = 0
+-   9:         self.top = None
++   9:         top = None
+   10:     
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 113] SVD stack1: 
+--------------------------------------------------------------------------------
+    8:         self.size = 0
+    9:         self.top = None
+   10:     
+   11:     def __len__(self):
+-  12:         return self.size
++  12:         return size
+   13:     
+   14:     def push(self, item):
+   15:         if self.top is None:
+   16:             self.top = StackNode(item)
+--------------------------------------------------------------------------------
+[0.09617 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_0
+
+def test_case_0():
+        stack_0 = module_0.Stack()
+>       assert len(stack_0) == 0
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f7b0430>
+
+>   ???
+E   NameError: name 'size' is not defined
+
+stack1:12: NameError
+   - [# 114] SVD stack1: 
+--------------------------------------------------------------------------------
+   11:     def __len__(self):
+   12:         return self.size
+   13:     
+   14:     def push(self, item):
+-  15:         if self.top is None:
++  15:         if top is None:
+   16:             self.top = StackNode(item)
+   17:         else:
+   18:             
+   19:             item1 = self.top
+--------------------------------------------------------------------------------
+[0.11991 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_0
+
+def test_case_0():
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+>       var_0 = stack_0.push(stack_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f533940>
+item = <stack1.Stack object at 0x7f488f533940>
+
+>   ???
+E   NameError: name 'top' is not defined
+
+stack1:15: NameError
+   - [# 115] SVD stack1: 
+--------------------------------------------------------------------------------
+   12:         return self.size
+   13:     
+   14:     def push(self, item):
+   15:         if self.top is None:
+-  16:             self.top = StackNode(item)
++  16:             top = StackNode(item)
+   17:         else:
+   18:             
+   19:             item1 = self.top
+   20:             item2 = StackNode(item)
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 116] SVD stack1: 
+--------------------------------------------------------------------------------
+   15:         if self.top is None:
+   16:             self.top = StackNode(item)
+   17:         else:
+   18:             
+-  19:             item1 = self.top
++  19:             item1 = top
+   20:             item2 = StackNode(item)
+   21:             
+   22:             
+   23:             self.top = item2
+--------------------------------------------------------------------------------
+[0.10364 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:58: in check_parenthesis
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f532d70>, item = '{'
+
+>   ???
+E   NameError: name 'top' is not defined
+
+stack1:19: NameError
+   - [# 117] SVD stack1: 
+--------------------------------------------------------------------------------
+   19:             item1 = self.top
+   20:             item2 = StackNode(item)
+   21:             
+   22:             
+-  23:             self.top = item2
++  23:             top = item2
+   24:             item2.next = item1
+   25:         
+   26:         self.size += 1
+   27:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 118] SVD stack1: 
+--------------------------------------------------------------------------------
+   22:             
+   23:             self.top = item2
+   24:             item2.next = item1
+   25:         
+-  26:         self.size += 1
++  26:         size += 1
+   27:     
+   28:     def pop(self):
+   29:         if self.top is None:
+   30:             raise ValueError()
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 119] SVD stack1: 
+--------------------------------------------------------------------------------
+   25:         
+   26:         self.size += 1
+   27:     
+   28:     def pop(self):
+-  29:         if self.top is None:
++  29:         if top is None:
+   30:             raise ValueError()
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+--------------------------------------------------------------------------------
+[0.10986 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:63: in check_parenthesis
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f509cc0>
+
+>   ???
+E   NameError: name 'top' is not defined
+
+stack1:29: NameError
+   - [# 120] SVD stack1: 
+--------------------------------------------------------------------------------
+   28:     def pop(self):
+   29:         if self.top is None:
+   30:             raise ValueError()
+   31:         else:
+-  32:             top_data = self.top.data
++  32:             top_data = top.data
+   33:             
+   34:             self.top = self.top.next
+   35:             self.size -= 1
+   36:             return top_data
+--------------------------------------------------------------------------------
+[0.15206 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:63: in check_parenthesis
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f49fa30>
+
+>   ???
+E   NameError: name 'top' is not defined
+
+stack1:32: NameError
+   - [# 121] SVD stack1: 
+--------------------------------------------------------------------------------
+   30:             raise ValueError()
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+-  34:             self.top = self.top.next
++  34:             top = self.top.next
+   35:             self.size -= 1
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 122] SVD stack1: 
+--------------------------------------------------------------------------------
+   30:             raise ValueError()
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+-  34:             self.top = self.top.next
++  34:             self.top = top.next
+   35:             self.size -= 1
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+--------------------------------------------------------------------------------
+[0.10012 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+>       var_0 = module_0.check_parenthesis(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:63: in check_parenthesis
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f531de0>
+
+>   ???
+E   NameError: name 'top' is not defined
+
+stack1:34: NameError
+   - [# 123] SVD stack1: 
+--------------------------------------------------------------------------------
+   31:         else:
+   32:             top_data = self.top.data
+   33:             
+   34:             self.top = self.top.next
+-  35:             self.size -= 1
++  35:             size -= 1
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+   39:         if self.top is None:
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 124] SVD stack1: 
+--------------------------------------------------------------------------------
+   35:             self.size -= 1
+   36:             return top_data
+   37:     
+   38:     def peek(self):
+-  39:         if self.top is None:
++  39:         if top is None:
+   40:             raise ValueError()
+   41:         else:
+   42:             return self.top.data
+   43: 
+--------------------------------------------------------------------------------
+[0.11403 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_4
+
+def test_case_4():
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        with pytest.raises(ValueError):
+>           stack_0.peek()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f49d3c0>
+
+>   ???
+E   NameError: name 'top' is not defined
+
+stack1:39: NameError
+   - [# 125] SVD stack1: 
+--------------------------------------------------------------------------------
+   38:     def peek(self):
+   39:         if self.top is None:
+   40:             raise ValueError()
+   41:         else:
+-  42:             return self.top.data
++  42:             return top.data
+   43: 
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+--------------------------------------------------------------------------------
+[0.11427 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_5
+
+def test_case_5():
+        stack_0 = module_0.Stack()
+        assert len(stack_0) == 0
+        var_0 = stack_0.push(stack_0)
+        assert len(stack_0) == 1
+>       var_1 = stack_0.peek()
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f57c8e0>
+
+>   ???
+E   NameError: name 'top' is not defined
+
+stack1:42: NameError
+   - [# 126] SVD stack1: 
+--------------------------------------------------------------------------------
+   43: 
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+-  47:         self.data = item
++  47:         data = item
+   48:         self.next = None
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 127] SVD stack1: 
+--------------------------------------------------------------------------------
+   44: class StackNode(object):
+   45:     ''' Look familiar? '''
+   46:     def __init__(self, item):
+   47:         self.data = item
+-  48:         self.next = None
++  48:         next = None
+   49: 
+   50: def check_parenthesis(string):
+   51:     stack = Stack()
+   52:     
+--------------------------------------------------------------------------------
+[0.00000 s] incompetent
+
+ValueError: expression must have Store context but has Load instead
+
+   - [# 128] ZIL stack1: 
+--------------------------------------------------------------------------------
+   53:     brackets = {'{': '}', '[': ']', '(': ')'}
+   54:     
+   55:     for character in string:
+   56:         
+-  57:         if character in brackets.keys():
+-  58:             stack.push(character)
+-  59:         
+-  60:         
+-  61:         if character in brackets.values():
+-  62:             try:
+-  63:                 other = stack.pop()
+-  64:                 
+-  65:                 
+-  66:                 if brackets[other] != character:
+-  67:                     return False
+-  68:             
+-  69:             except ValueError:
+-  70:                 return False
++  57:         break
++  58:     
++  59:     
++  60:     
++  61:     
++  62:     
++  63:     
++  64:     
++  65:     
++  66:     
++  67:     
++  68:     
++  69:     
++  70:     
+   71:     
+   72:     if stack.size != 0:
+   73:         return False
+   74:     else:
+--------------------------------------------------------------------------------
+[0.11425 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = 'p(hy;{K\nEB];*A}L\\'
+        var_0 = module_0.check_parenthesis(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:14: AssertionError
+   - [# 129] ZIL stack1: 
+--------------------------------------------------------------------------------
+  102:     tokens = string.split(' ')
+  103:     
+  104:     for character in tokens:
+  105:         
+- 106:         if character in ops.keys():
+- 107:             try:
+- 108:                 
+- 109:                 right = stack.pop()
+- 110:                 left = stack.pop()
+- 111:                 
+- 112:                 
+- 113:                 result = ops[character](left, right)
+- 114:                 stack.push(result)
+- 115:             
+- 116:             
+- 117:             except ValueError as e:
+- 118:                 raise e
+- 119:         else:
+- 120:             
+- 121:             try:
+- 122:                 
+- 123:                 value = int(character)
+- 124:                 stack.push(value)
+- 125:             
+- 126:             except ValueError as e:
+- 127:                 raise e
++ 106:         break
++ 107:     
++ 108:     
++ 109:     
++ 110:     
++ 111:     
++ 112:     
++ 113:     
++ 114:     
++ 115:     
++ 116:     
++ 117:     
++ 118:     
++ 119:     
++ 120:     
++ 121:     
++ 122:     
++ 123:     
++ 124:     
++ 125:     
++ 126:     
++ 127:     
+  128:     
+  129:     
+  130:     if stack.size > 1:
+  131:         raise ValueError()
+--------------------------------------------------------------------------------
+[0.13082 s] killed by DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '4'
+>       var_0 = module_0.postfix_eval(str_0)
+
+DYNAMOSA-MIO-WHOLE_SUITE/test_stack1_MIO.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack1:133: in postfix_eval
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <stack1.Stack object at 0x7f488f49f430>
+
+>   ???
+E   ValueError
+
+stack1:30: ValueError
+[*] Mutation score [23.94651 s]: 67.3%
+   - all: 129
+   - killed: 76 (58.9%)
+   - survived: 37 (28.7%)
+   - incompetent: 16 (12.4%)
+   - timeout: 0 (0.0%)

@@ -1,0 +1,705 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 20/04/2023 20:28:53</p><p>Total jobs: 18</p><p>Complete: 18 (100.00%)</p><p>Surviving mutants: 0 (0.00%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID d09fd9f8f9f940b89b4b29f754a8e3a3</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 16), end pos: (29, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_LtE_Eq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if data == node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py ..F.... [ 18%]
+..F                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py .F....F...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py ......FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py .... [ 86%]
+..F..                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_6
+========================= 8 failed, 30 passed in 0.14s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID 78cdafc9ea984a5faaee74380e53c368</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 16), end pos: (29, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_LtE_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if data != node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py ..F...F [ 18%]
+FFF                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py .F.FFFF...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py ......FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+..FF.                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+======================== 16 failed, 22 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 2fc9af11a5114e73939048b859bdaec5</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 16), end pos: (29, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_LtE_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if data &lt; node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py ....... [ 18%]
+FF.                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py ...F.FF...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py ......FF.   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+...F.                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+========================= 9 failed, 29 passed in 0.14s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID 3f1f2689a19c4fc79fdcb9b9b4591b55</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 16), end pos: (29, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_LtE_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if data &gt; node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py ......F [ 18%]
+FFF                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py ...FFFF...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py ......FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+...F.                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+======================== 13 failed, 25 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID fa3ff460b8904aefa75cb96c5e48944f</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 16), end pos: (29, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_LtE_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if data &gt;= node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py ......F [ 18%]
+..F                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py ....FFF...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py ......FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+.....                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+========================= 9 failed, 29 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID bde8214806cf4e63b324307a48707cd8</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 16), end pos: (29, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_LtE_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if data is node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py ..F.... [ 18%]
+..F                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py .F....F...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py ......FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py .... [ 86%]
+..F..                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_6
+========================= 8 failed, 30 passed in 0.14s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID ab3e0db51c564a98b22225ed02be2811</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 16), end pos: (29, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_LtE_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if data is not node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py ..F...F [ 18%]
+FFF                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py .F.FFFF...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py ......FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+..FF.                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+======================== 16 failed, 22 passed in 0.14s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID f70939bbfbf14782b405dfac3050db66</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=18" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (18, 16), end pos: (18, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -15,7 +15,7 @@
+         self.root = root
+ 
+     def insert(self, data):
+-        if data is None:
++        if data is not None:
+             raise TypeError('data cannot be None')
+         if self.root is None:
+             self.root = Node(data)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py FFF.F.F [ 18%]
+FFF                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py FFFFFFF...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py F.F.F.FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+FFFF.                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+======================== 26 failed, 12 passed in 0.14s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID 484b225d0ff3458dbbf03f1f428ef34a</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (20, 21), end pos: (20, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -17,7 +17,7 @@
+     def insert(self, data):
+         if data is None:
+             raise TypeError('data cannot be None')
+-        if self.root is None:
++        if self.root is not None:
+             self.root = Node(data)
+             return self.root
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py .FF.F.F [ 18%]
+FFF                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py FF.FFFF...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py F...F.FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+..FF.                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+======================== 21 failed, 17 passed in 0.14s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID c3206a479cf4474c842b9258708970c6</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (27, 16), end pos: (27, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -24,7 +24,7 @@
+             return self._insert(self.root, data)
+ 
+     def _insert(self, node, data):
+-        if node is None:
++        if node is not None:
+             return Node(data)
+         if data &lt;= node.data:
+             if node.left is None:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py ..F...F [ 18%]
+FFF                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py .F.FFFF...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py ......FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+..FF.                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+======================== 16 failed, 22 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID ee17d01c526e42159396894053e16c8b</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (30, 25), end pos: (30, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -27,7 +27,7 @@
+         if node is None:
+             return Node(data)
+         if data &lt;= node.data:
+-            if node.left is None:
++            if node.left is not None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node
+                 return node.left</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py ....... [ 18%]
+FFF                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py ...F.FF...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py ......FF.   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+...F.                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+======================== 10 failed, 28 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID 3ebaa64721304ffa87f9ae5b11dfb1f0</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=37" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (37, 26), end pos: (37, 28)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -34,7 +34,7 @@
+             else:
+                 return self._insert(node.left, data)
+         else:
+-            if node.right is None:
++            if node.right is not None:
+                 node.right = self._insert(node.right, data)
+                 node.right.parent = node
+                 return node.right</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py ......F [ 18%]
+..F                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py ....FF....   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py ......FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+.....                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+========================= 8 failed, 30 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID c91b980a2b454a459805ed4841cacc19</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=18" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (18, 11), end pos: (18, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -15,7 +15,7 @@
+         self.root = root
+ 
+     def insert(self, data):
+-        if data is None:
++        if not data is None:
+             raise TypeError('data cannot be None')
+         if self.root is None:
+             self.root = Node(data)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py FFF.F.F [ 18%]
+FFF                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py FFFFFFF...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py F.F.F.FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+FFFF.                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+======================== 26 failed, 12 passed in 0.14s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID 36c39fb6f23b45c5a960073e72c625cd</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (20, 11), end pos: (20, 28)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -17,7 +17,7 @@
+     def insert(self, data):
+         if data is None:
+             raise TypeError('data cannot be None')
+-        if self.root is None:
++        if not self.root is None:
+             self.root = Node(data)
+             return self.root
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py .FF.F.F [ 18%]
+FFF                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py FF.FFFF...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py F...F.FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+..FF.                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+======================== 21 failed, 17 passed in 0.14s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_15_1"><button class="btn btn-outline-success"><span class="job_id">15 : Job ID 19e34b3d660d4f76a3814719ddd24803</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (27, 11), end pos: (27, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -24,7 +24,7 @@
+             return self._insert(self.root, data)
+ 
+     def _insert(self, node, data):
+-        if node is None:
++        if not node is None:
+             return Node(data)
+         if data &lt;= node.data:
+             if node.left is None:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py ..F...F [ 18%]
+FFF                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py .F.FFFF...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py ......FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+..FF.                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+======================== 16 failed, 22 passed in 0.14s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_16_1"><button class="btn btn-outline-success"><span class="job_id">16 : Job ID 1082b32850044e95a91e7579cd0a0d4d</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 11), end pos: (29, 28)</button></a></pre><pre>operator: core/AddNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if not data &lt;= node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py ......F [ 18%]
+FFF                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py ...FFFF...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py ......FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+...F.                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+======================== 13 failed, 25 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_17_1"><button class="btn btn-outline-success"><span class="job_id">17 : Job ID 79c838c11151452ba62b517d22d1af65</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (30, 15), end pos: (30, 32)</button></a></pre><pre>operator: core/AddNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -27,7 +27,7 @@
+         if node is None:
+             return Node(data)
+         if data &lt;= node.data:
+-            if node.left is None:
++            if not node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node
+                 return node.left</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py ....... [ 18%]
+FFF                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py ...F.FF...   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py ......FF.   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+...F.                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_7
+======================== 10 failed, 28 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_18_1"><button class="btn btn-outline-success"><span class="job_id">18 : Job ID ea13c940bd2f4d558149b2609790fd43</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=37" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (37, 15), end pos: (37, 33)</button></a></pre><pre>operator: core/AddNot, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -34,7 +34,7 @@
+             else:
+                 return self._insert(node.left, data)
+         else:
+-            if node.right is None:
++            if not node.right is None:
+                 node.right = self._insert(node.right, data)
+                 node.right.parent = node
+                 return node.right</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 38 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py ......F [ 18%]
+..F                                                                      [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py ....FF....   [ 52%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py ......FFF   [ 76%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py F... [ 86%]
+.....                                                                    [100%]
+
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_DYNAMOSA.py::test_case_9
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MIO.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_MOSA.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_binarySearchTree4_WHOLE_SUITE.py::test_case_0
+========================= 8 failed, 30 passed in 0.13s =========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

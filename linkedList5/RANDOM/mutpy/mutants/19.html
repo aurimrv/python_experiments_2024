@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MutPy mutation report - mutation #19</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css" />
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPython.js" type="text/javascript"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.all();
+    window.setTimeout(function () {
+        
+        $('.line.number48').attr('title', 'COI');
+        
+    }, 0);
+</script>
+
+</head>
+<body>
+    <div class="container">
+        
+<div class="page-header">
+    <h1>Mutation #19</h1>
+</div>
+<h3>Details</h3>
+<ul>
+    <li>module - <code><module 'linkedList5' from '/home/auri/temp/lucca/python_experiments/linkedList5/./linkedList5.py'></code></li>
+    <li><span class="label label-success">killed</span> by <code>RANDOM/test_linkedList5_RANDOM.py::test_case_86</code></li>
+    
+    <li>duration - 7.408 s</li>
+    
+    
+    <li>tests run - 87</li>
+    
+</ul>
+
+<h3>Exception traceback</h3>
+<pre>def test_case_86():
+        linked_list_0 = module_0.LinkedList()
+        assert len(linked_list_0) == 0
+        var_0 = linked_list_0.__len__()
+        assert var_0 == 0
+        bytes_0 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        node_0 = module_0.Node(bytes_0)
+        linked_list_1 = module_0.LinkedList()
+        assert len(linked_list_1) == 0
+        var_1 = linked_list_1.append(node_0)
+        assert len(linked_list_1) == 1
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'linkedList5.Node'
+        assert var_1.next is None
+        assert f'{type(var_1.data).__module__}.{type(var_1.data).__qualname__}' == 'linkedList5.Node'
+        var_2 = var_1.__str__()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'linkedList5.Node'
+        assert var_2.next is None
+        assert var_2.data == b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        str_0 = 'JLcd4+\n\\'
+        var_3 = linked_list_0.append(str_0)
+        assert len(linked_list_0) == 1
+        assert f'{type(var_3).__module__}.{type(var_3).__qualname__}' == 'linkedList5.Node'
+        assert var_3.next is None
+        assert var_3.data == 'JLcd4+\n\\'
+        bytes_1 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        node_1 = module_0.Node(bytes_1)
+        linked_list_2 = module_0.LinkedList()
+        assert len(linked_list_2) == 0
+        var_4 = linked_list_2.append(node_1)
+        assert len(linked_list_2) == 1
+        assert f'{type(var_4).__module__}.{type(var_4).__qualname__}' == 'linkedList5.Node'
+        assert var_4.next is None
+        assert f'{type(var_4.data).__module__}.{type(var_4.data).__qualname__}' == 'linkedList5.Node'
+        var_5 = var_4.__str__()
+        assert f'{type(var_5).__module__}.{type(var_5).__qualname__}' == 'linkedList5.Node'
+        assert var_5.next is None
+        assert var_5.data == b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_list_3 = module_0.LinkedList()
+        assert len(linked_list_3) == 0
+        var_6 = linked_list_3.__len__()
+        assert var_6 == 0
+        bytes_2 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        node_2 = module_0.Node(bytes_2)
+        linked_list_4 = module_0.LinkedList()
+        assert len(linked_list_4) == 0
+        var_7 = linked_list_4.append(node_2)
+        assert len(linked_list_4) == 1
+        assert f'{type(var_7).__module__}.{type(var_7).__qualname__}' == 'linkedList5.Node'
+        assert var_7.next is None
+        assert f'{type(var_7.data).__module__}.{type(var_7.data).__qualname__}' == 'linkedList5.Node'
+        var_8 = var_7.__str__()
+        assert f'{type(var_8).__module__}.{type(var_8).__qualname__}' == 'linkedList5.Node'
+        assert var_8.next is None
+        assert var_8.data == b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        bytes_3 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        node_3 = module_0.Node(bytes_3)
+        bytes_4 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        node_4 = module_0.Node(bytes_4)
+        linked_list_5 = module_0.LinkedList()
+        assert len(linked_list_5) == 0
+        var_9 = linked_list_5.append(node_4)
+        assert len(linked_list_5) == 1
+        assert f'{type(var_9).__module__}.{type(var_9).__qualname__}' == 'linkedList5.Node'
+        assert var_9.next is None
+        assert f'{type(var_9.data).__module__}.{type(var_9.data).__qualname__}' == 'linkedList5.Node'
+        var_10 = node_3.__str__()
+        var_11 = var_10.find(bytes_3)
+        linked_list_6 = module_0.LinkedList()
+        assert len(linked_list_6) == 0
+        var_12 = linked_list_6.__len__()
+        assert var_12 == 0
+        complex_0 = -1571.872432 - 1247.364j
+        linked_list_7 = module_0.LinkedList()
+        assert len(linked_list_7) == 0
+        var_13 = linked_list_7.delete(complex_0)
+        bytes_5 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        node_5 = module_0.Node(bytes_5)
+        bytes_6 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        node_6 = module_0.Node(bytes_6)
+        linked_list_8 = module_0.LinkedList()
+        assert len(linked_list_8) == 0
+        var_14 = linked_list_8.append(node_6)
+        assert len(linked_list_8) == 1
+        assert f'{type(var_14).__module__}.{type(var_14).__qualname__}' == 'linkedList5.Node'
+        assert var_14.next is None
+        assert f'{type(var_14.data).__module__}.{type(var_14.data).__qualname__}' == 'linkedList5.Node'
+        var_15 = node_5.__str__()
+        bytes_7 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        node_7 = module_0.Node(bytes_7)
+        bytes_8 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        node_8 = module_0.Node(bytes_8)
+        linked_list_9 = module_0.LinkedList()
+        assert len(linked_list_9) == 0
+        var_16 = linked_list_9.append(node_8)
+        assert len(linked_list_9) == 1
+        assert f'{type(var_16).__module__}.{type(var_16).__qualname__}' == 'linkedList5.Node'
+        assert var_16.next is None
+        assert f'{type(var_16.data).__module__}.{type(var_16.data).__qualname__}' == 'linkedList5.Node'
+        var_17 = var_16.__str__()
+        assert f'{type(var_17).__module__}.{type(var_17).__qualname__}' == 'linkedList5.Node'
+        assert var_17.next is None
+        assert var_17.data == b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        linked_list_10 = module_0.LinkedList()
+        assert len(linked_list_10) == 0
+        bytes_9 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        node_9 = module_0.Node(bytes_9)
+        bytes_10 = b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+        node_10 = module_0.Node(bytes_10)
+        linked_list_11 = module_0.LinkedList()
+        assert len(linked_list_11) == 0
+        var_18 = linked_list_11.append(node_10)
+        assert len(linked_list_11) == 1
+        assert f'{type(var_18).__module__}.{type(var_18).__qualname__}' == 'linkedList5.Node'
+        assert var_18.next is None
+        assert f'{type(var_18.data).__module__}.{type(var_18.data).__qualname__}' == 'linkedList5.Node'
+        var_19 = var_18.__str__()
+        assert f'{type(var_19).__module__}.{type(var_19).__qualname__}' == 'linkedList5.Node'
+        assert var_19.next is None
+        assert var_19.data == b'5\xf8\xd2\xaca\xef\xdf\xea\xf5G'
+>       var_20 = linked_list_10.find(linked_list_11)
+
+RANDOM/test_linkedList5_RANDOM.py:4829: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <linkedList5.LinkedList object at 0x7f2724f86140>
+data = <linkedList5.LinkedList object at 0x7f2724f84760>
+
+>   ???
+E   AttributeError: 'NoneType' object has no attribute 'data'
+
+linkedList5:49: AttributeError</pre>
+
+<h3>Mutations</h3>
+<ul>
+    
+    <li>COI - line 48</li>
+    
+</ul>
+<h3>Mutant</h3>
+<pre class="brush: python; first-line: 1; highlight: [48]; toolbar: false;">class Node(object):
+    
+    def __init__(self, data, next=None):
+        self.next = next
+        self.data = data
+    
+    def __str__(self):
+        return self.data
+
+
+class LinkedList(object):
+    
+    def __init__(self, head=None):
+        self.head = head
+    
+    def __len__(self):
+        curr = self.head
+        counter = 0
+        while curr is not None:
+            counter += 1
+            curr = curr.next
+        return counter
+    
+    def insert_to_front(self, data):
+        if data is None:
+            return None
+        node = Node(data, self.head)
+        self.head = node
+        return node
+    
+    def append(self, data):
+        if data is None:
+            return None
+        node = Node(data)
+        if self.head is None:
+            self.head = node
+            return node
+        curr_node = self.head
+        while curr_node.next is not None:
+            curr_node = curr_node.next
+        curr_node.next = node
+        return node
+    
+    def find(self, data):
+        if data is None:
+            return None
+        curr_node = self.head
+        while not (curr_node is not None):
+            if curr_node.data == data:
+                return curr_node
+            curr_node = curr_node.next
+        return None
+    
+    def delete(self, data):
+        if data is None:
+            return
+        if self.head is None:
+            return
+        if self.head.data == data:
+            self.head = self.head.next
+            return
+        prev_node = self.head
+        curr_node = self.head.next
+        while curr_node is not None:
+            if curr_node.data == data:
+                prev_node.next = curr_node.next
+                return
+            prev_node = curr_node
+            curr_node = curr_node.next
+    
+    def delete_alt(self, data):
+        if data is None:
+            return
+        if self.head is None:
+            return
+        curr_node = self.head
+        if curr_node.data == data:
+            curr_node = curr_node.next
+            return
+        while curr_node.next is not None:
+            if curr_node.next.data == data:
+                curr_node.next = curr_node.next.next
+                return
+            curr_node = curr_node.next
+    
+    def print_list(self):
+        curr_node = self.head
+        while curr_node is not None:
+            print(curr_node.data)
+            curr_node = curr_node.next
+    
+    def get_all_data(self):
+        data = []
+        curr_node = self.head
+        while curr_node is not None:
+            data.append(curr_node.data)
+            curr_node = curr_node.next
+        return data</pre>
+
+    </div>
+</body>
+</html>
