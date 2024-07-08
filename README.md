@@ -1,6 +1,6 @@
 # Python Experiments
 
-Repository to store data and scripts relate to Python programs experiments for ISSRE'2024 submission.
+Repository to store data and scripts relate to Python program experiments for ISSRE'2024 submission.
 
 ## Repository Content
 
@@ -19,7 +19,7 @@ python_experiments_2024/
 ├── files-full.txt                  => defines the files under evaluation
 ├── files.txt                       => defines the files under evaluation
 ├── identifier1                     => subject
-├── LICENSE                         => licensing iformation
+├── LICENSE                         => licensing information
 ├── linkedList1                     => subject
 ├── linkedList2                     => subject
 ├── linkedList3                     => subject
@@ -50,7 +50,7 @@ python_experiments_2024/
 ├── test-sets.txt                   => defines the test-set under evaluation
 ```
 
-The content of a given subject is as show below:
+The content of a given subject is as shown below:
 
 ```
 python_experiments_2024/binarySearchTree1/
@@ -83,22 +83,22 @@ python_experiments_2024/binarySearchTree1/
 
 ## LLM Prompts for Test Generation
 
-In order to achieve adequate test sets, the following prompts were used for chat-gpt 3.5 to generate tests:
+To achieve adequate test sets, the following prompts were used for chat-gpt 3.5 to generate tests:
 
 Firstly, a general prompt to create initial tests:
 
 ```
-Consider this code to create tests in the Pytest format, the tests must cover all methods {code}
+Consider this code to create tests in the Pytest format. The tests must cover all methods {code}
 ```
 
 After executing the initially generated tests, if an error occurs in Pytest, the following prompt is fed back to the LLM:
 ```
-The test you have given me returned this error message {error message}, return me the corrected test sets
+The test you gave me returned this error message {error message}. Return me the corrected test sets.
 ```
 
 Finally, when executing the mutation tool, if there are still living mutants, the following prompt is fed back to the LLM:
 ```
-I am trying to kill mutants in a specific method, give me a test that covers all lines of this method {method}
+I am trying to kill mutants in a specific method. Give me a test that covers all lines of this method {method}
 ```
 
 Therefore, if there are still living mutants, the next step is a manual analysis to identify equivalent mutants.
@@ -110,11 +110,11 @@ Given examples for the module to be mutated = Identifier.py
 
 ### Pynguin 0.27.0
 
-First, set the security variable
+First, set the security variable.
 ```
     export PYNGUIN_DANGER_AWARE=1
 ```
-Generate tests, mutations, and reports
+Generate tests, mutations, and reports.
 ```
     pynguin --project-path ./ --output-path ./output --module name Identifier -v
 extra parameters
@@ -128,9 +128,9 @@ valid algorithms `DYNAMOSA(default)`, `MIO`, `MOSA`, `RANDOM`, `WHOLE_SUITE`
 
 Parser tc_transformer.py
 
-Function: remove xfail marks and the last line of marked codes
+Function: remove `xfail` marks and the last line of marked codes
 
-Run parser on code and generate output
+Run parser on code and generate output.
 
 ```
     python3 tc_transformer.py test_Identifier.py > test_Identifier_parsed.py
@@ -146,7 +146,7 @@ For pytest
 
 ### Coverage.py 5.5
 
-For tests in unittest format
+For tests in UnitTest format
 ```
 		coverage run --source=Identifier --branch -m pytest test_Identifier_parsed.py
 ```
@@ -160,7 +160,7 @@ For generating reports
 
 ### Mut.py 0.6.1
 
-Run Mutpy and generate report
+Run Mutpy and generate the report
 
 ```
 	time mut.py -t Identifier.py -u test_Identifier_parsed.py --runner pytest --report-html mutpy
@@ -182,7 +182,7 @@ For generating reports
 
 ### Mutatest 3.1.0
 
-Run Mutatest and generate report 
+Run Mutatest and generate the report 
 ```
     time mutatest -s Identifier.py -t pytest -m f -o mutatest/name-report.rst
 ```    
