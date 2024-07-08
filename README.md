@@ -1,24 +1,10 @@
 # Python Experiments
 
-<<<<<<< HEAD
 Repository to store data and scripts relate to Python programs experiments for ISSRE'2024 submssion.
-=======
-A repository to store data and scripts relate to Python program experiments for ISSRE'2024 paper.
->>>>>>> 9c1fb8fc69cefba3ad6335a1fec1d03ead1d57a8
 
 ## Repository Content
 
-<<<<<<< HEAD
 This repository is organized as follows:
-=======
-## Pynguin
-
-For two programs, we have to limit the number of iterations to 2200. If we leave the tool running for 600 seconds, it causes an execution error and finishes before generating the test set.
-
-This happens for programs binarySearchTree3 and sort1.
-
-In this case, we run `pynguin` as follows:
->>>>>>> 9c1fb8fc69cefba3ad6335a1fec1d03ead1d57a8
 
 ```
 python_experiments_2024/
