@@ -45,4 +45,3 @@ def test_print_list_with_multiple_elements(capsys):
     # Ensure that the printed output matches the expected result
     assert captured.out == "10\n20\n30\n"
 
-##VERIFICAR O USO DE IO E SYS ACIMA E AS INCONSISTENCIAS DO RELATORIO

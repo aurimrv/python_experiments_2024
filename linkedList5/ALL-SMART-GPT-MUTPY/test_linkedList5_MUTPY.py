@@ -68,7 +68,7 @@ def test_delete():
     assert linked_list.head.next.data == 20
     assert linked_list.head.next.next.data == 10
 
-# Delete alt aparentemente nao deleta
+
 def test_delete_alt_remove_head():
     linked_list = LinkedList()
     linked_list.append(10)
