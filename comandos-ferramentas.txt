@@ -1,45 +1,45 @@
-Exemplos dados para o módulo a ser mutacionado = Identifier.py
+Given examples for the module to be mutated = Identifier.py
 
 ---------------------------------------------------------------------------------------
 
 Pynguin 0.27.0
 
-Primeiramente, setar variavel de segurança
+First, set the security variable
     export PYNGUIN_DANGER_AWARE=1
 
-Gerar testes, mutações e relatórios
+Generate tests, mutations, and reports
     pynguin --project-path ./ --output-path ./output --module name Identifier -v
-parametros extras
+extra parameters
     --create-coverage-report True --algorithm=DYNAMOSA --seed 1234
-algoritmos válidos
+valid algorithms
     DYNAMOSA(default),MIO, MOSA, RANDOM, WHOLE_SUITE
 
 ---------------------------------------------------------------------------------------
 
 Parser tc_transformer.py
 
-Função: remover marcas de xfail e última linha dos códigos marcados
+Function: remove xfail marks and the last line of marked codes
 
-Executar parser em código e gerar output
+Run parser on code and generate output
     python3 tc_transformer.py test_Identifier.py > test_Identifier_parsed.py
 
 ---------------------------------------------------------------------------------------
 
-Gerar mutantes
+Generate mutants
 
-Python3 3.10.6 (Inclui pytest)
+Python3 3.10.6 (Includes pytest)
 
-Para pytest
+For pytest
 	python3 -m pytest test_Identifier_parsed.py
 
 -------------------------------------------------------------------------------------
 
 Coverage.py 5.5
 
-Para testes no formato unittest
+For tests in unittest format
 		coverage run --source=Identifier --branch -m pytest test_Identifier_parsed.py
 
-Para a geração dos relatórios
+For generating reports
 	coverage report
 	coverage html -d coverage
 
@@ -47,33 +47,33 @@ Para a geração dos relatórios
 
 Mut.py 0.6.1
 
-Executar Mutpy e gerar relatorio
+Run Mutpy and generate report
     time mut.py -t Identifier.py -u test_Identifier_parsed.py --runner pytest --report-html mutpy
 
 -------------------------------------------------------------------------------------
 
 Mutmut 2.4.1
 
-Executar Mutmut
-    time mutmut run --paths-to-mutate Identifier.py --tests-dir test_Identifier_parsed.py --runner   'python3 -m pytest test_validate.py'
+Run Mutmut
+    time mutmut run --paths-to-mutate Identifier.py --tests-dir test_Identifier_parsed.py --runner 'python3 -m pytest test_validate.py'
 
-Para a geração dos relatórios
+For generating reports
     mutmut html
 
 -------------------------------------------------------------------------------------
 
 Mutatest 3.1.0
 
-Executar Mutatest e gerar relatório 
-    time mutatest -s Identifier.py -t pytest -m f -o mutatest/nome-report.rst
-(executa todos os arquivos com test_ da pasta)
+Run Mutatest and generate report 
+    time mutatest -s Identifier.py -t pytest -m f -o mutatest/name-report.rst
+(runs all files with test_ in the folder)
 
 -------------------------------------------------------------------------------------
 
 Cosmic-ray 8.3.5
 
-Criar nova config
-    cosmic-ray new-config testes.toml
+Create new config
+    cosmic-ray new-config tests.toml
     
     [?] Top-level module path: Identifier.py
     [?] Test execution timeout (seconds): 20
@@ -83,11 +83,11 @@ Criar nova config
       (1) local
     [?] Enter menu selection: 1
 
-Inicializar sessão
-    cosmic-ray init testes.toml testes.sqlite
+Initialize session
+    cosmic-ray init tests.toml tests.sqlite
 
-Executar sessão
-    cosmic-ray exec testes.toml testes.sqlite
+Run session
+    cosmic-ray exec tests.toml tests.sqlite
 
-Criar relatório
+Create report
     cr-report testes.sqlite > report.html
