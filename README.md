@@ -1,11 +1,11 @@
 # Python Experiments
 
-Repository to store data and scripts relate to Python programs experiments
+A repository to store data and scripts relate to Python program experiments for ISSRE'2024 paper.
 
 
 ## Pynguin
 
-For two programs we have to limit the number of iteractions to 2200. If we leave the tool running for 600 seconds it causes an execution error and finishes before to generate the test set.
+For two programs, we have to limit the number of iterations to 2200. If we leave the tool running for 600 seconds, it causes an execution error and finishes before generating the test set.
 
 This happens for programs binarySearchTree3 and sort1.
 
@@ -22,4 +22,4 @@ We have to set up Timeout limit to RANDOM tests to 60s instead the default value
 
 ## Running scripts on all test set directories
 
-for alg in $(cat test-sets.txt); do echo ${alg}; ./scripts/coverageReport.sh /home/auri/temp/lucca/python_experiments files.txt ${alg};./scripts/coverageSummary.py /home/auri/temp/lucca/python_experiments files.txt ${alg}; done
+for alg in $(cat test-sets.txt); do echo ${alg}; ./scripts/coverageReport.sh <<directoy-to-subjects>> files.txt ${alg};./scripts/coverageSummary.py <<directoy-to-subjects>> files.txt ${alg}; done
