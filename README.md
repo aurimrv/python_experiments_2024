@@ -166,7 +166,6 @@ Run Mutpy and generate report
 	time mut.py -t Identifier.py -u test_Identifier_parsed.py --runner pytest --report-html mutpy
 ```
 
-<<<<<<< HEAD
 ### Mutmut 2.4.1
 
 Run Mutmut
@@ -219,6 +218,3 @@ Create report
 ```
     cr-report testes.sqlite > report.html
 ```
-=======
-for alg in $(cat test-sets.txt); do echo ${alg}; ./scripts/coverageReport.sh path-to-subjects files.txt ${alg};./scripts/coverageSummary.py path-to-subjects files.txt ${alg}; done
->>>>>>> 9c1fb8fc69cefba3ad6335a1fec1d03ead1d57a8
