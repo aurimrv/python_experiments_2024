@@ -22,4 +22,4 @@ We have to set up Timeout limit to RANDOM tests to 60s instead the default value
 
 ## Running scripts on all test set directories
 
-for alg in $(cat test-sets.txt); do echo ${alg}; ./scripts/coverageReport.sh <<directoy-to-subjects>> files.txt ${alg};./scripts/coverageSummary.py <<directoy-to-subjects>> files.txt ${alg}; done
+for alg in $(cat test-sets.txt); do echo ${alg}; ./scripts/coverageReport.sh path-to-subjects files.txt ${alg};./scripts/coverageSummary.py path-to-subjects files.txt ${alg}; done
